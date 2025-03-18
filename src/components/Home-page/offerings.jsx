@@ -19,7 +19,7 @@ const Offerings = () => {
 
     return (
         <Box sx={{ py: 8, backgroundColor: "white" }}>
-            <Container maxWidth="xxl">
+            <Container maxWidth="xl">
                 {/* Title */}
                 <Typography variant="h4" align="center" color="#012765" sx={{
                     fontWeight: "700",
