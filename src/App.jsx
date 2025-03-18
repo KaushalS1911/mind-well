@@ -15,7 +15,7 @@ function App() {
             <Herosection/>
             <MindWell/>
             <Offering/>
-            <Footer/>
+{/*             <Footer/> */}
         </>
     )
 
