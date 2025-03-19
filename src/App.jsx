@@ -11,6 +11,19 @@ import Organization from "./pages/services/organization.jsx";
 import CorporatePartners from "./pages/services/corporatePartners.jsx";
 import Consultation from "./components/global/consultation.jsx";
 import ExpertsWorker from "./pages/experts/expertsWorker.jsx";
+import Touch from "./pages/homepage/touch.jsx";
+import Crisis from "./pages/homepage/crisis.jsx";
+import Lookingfor from "./components/Home-page/lookingfor.jsx";
+import Lookingfors from "./pages/homepage/lookingfors.jsx";
+import Strugglings from "./pages/homepage/strugglings.jsx";
+import Wetreat from "./components/Home-page/wetreat.jsx";
+import Wetreats from "./pages/homepage/wetreats.jsx";
+import Expertselection from "./components/Home-page/expertselection.jsx";
+import Expertselections from "./pages/homepage/expertselections.jsx";
+import Clientsreview from "./components/Home-page/clientsreview.jsx";
+import Clientsreviews from "./pages/homepage/clientsreviews.jsx";
+import Featuredlatesthelp from "./components/resources/featuredlatesthelp.jsx";
+import Resource from "./pages/resource/resource.jsx";
 
 function App() {
 
@@ -26,6 +39,14 @@ function App() {
             <Organization/>
             <CorporatePartners/>
             <ExpertsWorker/>
+            <Crisis/>
+            <Touch/>
+            <Lookingfors/>
+            <Strugglings/>
+            <Wetreats/>
+            <Expertselections/>
+            <Clientsreviews/>
+            <Resource/>
             <Footer/>
         </>
     )
