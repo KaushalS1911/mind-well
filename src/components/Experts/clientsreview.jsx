@@ -1,7 +1,7 @@
 import React from "react";
 import {Box, Typography, Button, Card, Avatar, Grid, Container} from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 const testimonials = [
     {
@@ -65,16 +65,16 @@ const reviews = [
 
 function ClientsReview() {
     return (
-        <Container maxWidth={"xl"}>
-            <Box sx={{py:4,pt:10, bgcolor: "#F8F9FC" }}>
+        <Box sx={{p: "96px 0", pt: 10, bgcolor: "#F8F9FC"}}>
+            <Container maxWidth={"xl"}>
                 {/* Header */}
                 <Typography className={"Montserrat"}
-                    variant="h4"
-                    sx={{ fontWeight: 700, textAlign: "center", color: "#012765", mb: "16px" }}
+                            variant="h4"
+                            sx={{fontWeight: 700, textAlign: "center", color: "#012765", mb: "16px"}}
                 >
                     What Our Clients Say
                 </Typography>
-                <Typography className={"Montserrat"} sx={{ textAlign: "center", opacity: 0.7, mb: 3,fontSize:"20px", }}>
+                <Typography className={"Montserrat"} sx={{textAlign: "center", opacity: 0.7, mb: 3, fontSize: "20px",}}>
                     Read what our community of students and professionals have to say <br/> about
                     their mental wellness journey with MindWell.
                 </Typography>
@@ -85,23 +85,25 @@ function ClientsReview() {
                         display: "flex",
                         justifyContent: "center",
                         flexWrap: "wrap",
-                        gap: { xs: 2, sm: 4 },
-                        mt:5,
+                        gap: {xs: 2, sm: 4},
+                        mt: 5,
                         textAlign: "center",
                         mb: 4,
                     }}
                 >
                     {[
-                        { value: "15,000+", label: "Active Clients" },
-                        { value: "4.9/5", label: "Average Rating" },
-                        { value: "92%", label: "Success Rate" },
-                        { value: "1,600+", label: "Licensed Therapists" },
+                        {value: "15,000+", label: "Active Clients"},
+                        {value: "4.9/5", label: "Average Rating"},
+                        {value: "92%", label: "Success Rate"},
+                        {value: "1,600+", label: "Licensed Therapists"},
                     ].map((item, index) => (
-                        <Box key={index}>
-                            <Typography sx={{ color: "#FF7F1E", fontSize: {md:48,sm:40,xs:35}, fontWeight: 700 }}>
+                        <Box key={index} sx={{
+                            mb: 2
+                        }}>
+                            <Typography sx={{color: "#FF7F1E", fontSize: {md: 48, sm: 40, xs: 35}, fontWeight: 700}}>
                                 {item.value}
                             </Typography>
-                            <Typography sx={{ color: "#4A4A4A", fontSize: 16 }}>
+                            <Typography sx={{color: "#4A4A4A", fontSize: 16}}>
                                 {item.label}
                             </Typography>
                         </Box>
@@ -109,7 +111,7 @@ function ClientsReview() {
                 </Box>
 
                 {/* Featured Testimonials */}
-                <Grid container spacing={3} sx={{ justifyContent: "center" }}>
+                <Grid container spacing={3} sx={{justifyContent: "center"}}>
                     {testimonials.map((testimonial, index) => (
                         <Grid item xs={12} sm={6} key={index}>
                             <Card
@@ -120,38 +122,38 @@ function ClientsReview() {
                                     borderRadius: 3,
                                     display: "flex",
                                     flexDirection: "column",
-                                    height: "100%", // Ensures equal height for all cards
+                                    height: "100%",
                                 }}
                             >
                                 {/* User Info */}
-                                <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+                                <Box sx={{display: "flex", alignItems: "center", mb: 2}}>
                                     <Avatar
                                         sx={{
                                             bgcolor: testimonial.name === "Jason Davis" ? "#FF7F1E" : "#012765",
                                             color: "#fff",
                                             fontWeight: "bold",
                                             mr: 2,
-                                            width: 65, // Increased width
-                                            height: 65, // Increased height
-                                            fontSize: 20, // Larger text inside the Avatar
+                                            width: 65,
+                                            height: 65,
+                                            fontSize: 20,
                                         }}
                                     >
                                         {testimonial.name.split(" ").map((n) => n[0]).join("")}
                                     </Avatar>
 
                                     <Box>
-                                        <Typography sx={{ fontWeight: 700, fontSize: 20, lineHeight: "28px" }}>
+                                        <Typography sx={{fontWeight: 700, fontSize: 20, lineHeight: "28px"}}>
                                             {testimonial.name}
                                         </Typography>
-                                        <Typography sx={{ fontSize: 14, opacity: 0.8 }}>
+                                        <Typography sx={{fontSize: 14, opacity: 0.8}}>
                                             {testimonial.role}
                                         </Typography>
                                     </Box>
                                 </Box>
 
                                 {/* Star Rating */}
-                                <Box sx={{ display: "flex", gap: 0.5, mb: 3 }}>
-                                    {Array.from({ length: 5 }).map((_, i) => (
+                                <Box sx={{display: "flex", gap: 0.5, mb: 3}}>
+                                    {Array.from({length: 5}).map((_, i) => (
                                         <StarIcon
                                             key={i}
                                             sx={{
@@ -162,12 +164,12 @@ function ClientsReview() {
                                 </Box>
 
                                 {/* Review Text */}
-                                <Typography sx={{ mb: 3, fontSize: "18px", lineHeight: "28px", flexGrow: 1 }}>
+                                <Typography sx={{mb: 3, fontSize: "18px", lineHeight: "28px", flexGrow: 1}}>
                                     {testimonial.review}
                                 </Typography>
 
                                 {/* Duration & Sessions */}
-                                <Box sx={{ display: "flex", gap: 2, fontSize: 14 }}>
+                                <Box sx={{display: "flex", gap: 2, fontSize: 14}}>
                                     <Box
                                         sx={{
                                             bgcolor: "rgba(255, 255, 255, 0.2)",
@@ -196,7 +198,7 @@ function ClientsReview() {
 
 
                 {/* Client Reviews */}
-                <Grid container spacing={3} sx={{ mt: 4 }}>
+                <Grid container spacing={3} sx={{mt: 4}}>
                     {reviews.map((review, index) => (
                         <Grid item xs={12} sm={6} md={4} key={index}>
                             <Card
@@ -205,41 +207,41 @@ function ClientsReview() {
                                     borderRadius: 2,
                                     display: "flex",
                                     flexDirection: "column",
-                                    height: "100%", // Ensures equal height for all cards
+                                    height: "100%",
                                 }}
                             >
                                 {/* User Info */}
-                                <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                                <Box sx={{display: "flex", alignItems: "center", mb: 1}}>
                                     <Avatar
                                         sx={{
                                             bgcolor: "#012765",
                                             color: "#fff",
                                             mr: 2,
                                             fontWeight: "700",
-                                            width: 50, // Increased width
-                                            height: 50, // Increased height
-                                            fontSize: 15, // Larger text inside the Avatar
+                                            width: 50,
+                                            height: 50,
+                                            fontSize: 15,
                                         }}
                                     >
                                         {review.name[0] + [1]}
                                     </Avatar>
                                     <Box>
-                                        <Typography sx={{ fontWeight: 700, fontSize: "16px", color: "#012765" }}>
+                                        <Typography sx={{fontWeight: 700, fontSize: "16px", color: "#012765"}}>
                                             {review.name}
                                         </Typography>
-                                        <Typography sx={{ fontSize: 14, opacity: 0.9 }}>{review.role}</Typography>
+                                        <Typography sx={{fontSize: 14, opacity: 0.9}}>{review.role}</Typography>
                                     </Box>
                                 </Box>
 
                                 {/* Star Rating */}
-                                <Box sx={{ display: "flex", color: "#FF7F1E", mt: 2, mb: 2 }}>
+                                <Box sx={{display: "flex", color: "#FF7F1E", mt: 2, mb: 2}}>
                                     {[...Array(5)].map((_, i) => (
-                                        <StarIcon key={i} fontSize="small" />
+                                        <StarIcon key={i} fontSize="small"/>
                                     ))}
                                 </Box>
 
                                 {/* Review Text (Flexible Height) */}
-                                <Typography sx={{ mb: 2, flexGrow: 1 }}>{review.review}</Typography>
+                                <Typography sx={{mb: 2, flexGrow: 1}}>{review.review}</Typography>
                             </Card>
                         </Grid>
                     ))}
@@ -248,11 +250,11 @@ function ClientsReview() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    mt:8,
+                    mt: 8,
                     fontSize: 24,
-                    mb:"32px",
+                    mb: "32px",
                     fontWeight: 800,
-                    color:"#012765"
+                    color: "#012765"
                 }}>
                     Hear from Our Clients
                 </Box>
@@ -269,25 +271,38 @@ function ClientsReview() {
                         borderRadius: 3,
                         boxShadow: 2,
                         maxWidth: 800,
-                        mx: "auto", // Centers the box horizontally
+                        mx: "auto",
                     }}
                 >
                     {/* Video Placeholder with Play Button */}
                     <Box
                         sx={{
                             width: "100%",
-                            bgcolor: "#E8EAF0", // Light gray background
+                            bgcolor: "#E8EAF0",
                             borderRadius: 2,
-                            height: 120, // Fixed height
+                            height: 120,
                             display: "flex",
-                            flexDirection: "column", // Ensures vertical alignment
+                            flexDirection: "column",
                             alignItems: "center",
                             justifyContent: "center",
-                            mb: 1, // Adjusted margin for proper spacing
+                            mb: 1,
                         }}
                     >
-                        <PlayCircleOutlineIcon sx={{ fontSize: 50, color: "#FF7F1E", mb: 1 }} />
-                        <Box sx={{ color: "#012765",pt:2.4 }}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                padding: "10px 10px",
+                                borderRadius: "50%",
+                                backgroundColor: "#FF7F1E",
+                                mb: 1
+                            }}
+                        >
+                            <PlayArrowIcon sx={{fontSize: "36px", color: "#fff"}}/>
+                        </Box>
+
+                        <Box sx={{color: "#012765", pt: 2.4}}>
                             Video Testimonials
                         </Box>
                     </Box>
@@ -297,12 +312,11 @@ function ClientsReview() {
 
 
                     {/* Quote Text */}
-                    <Typography sx={{ textAlign: "center", opacity: 0.7, fontStyle: "italic", mt: 1 }}>
+                    <Typography sx={{textAlign: "center", opacity: 0.7, fontStyle: "italic", mt: 1}}>
                         "MindWell has been life-changing for me. Watch these client stories to see the real impact
                         of our therapeutic approach."
                     </Typography>
                 </Box>
-
 
 
                 {/* Call to Action */}
@@ -312,18 +326,18 @@ function ClientsReview() {
                         bgcolor: "#012765",
                         color: "#fff",
                         py: 5.5,
-                        px:7,
+                        px: 7,
                         borderRadius: 2,
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "space-between", // Ensures proper spacing
+                        justifyContent: "space-between",
                     }}
                 >
                     <Box>
-                        <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+                        <Typography variant="h6" sx={{fontWeight: 700, mb: 1}}>
                             Ready to start your mental wellness journey?
                         </Typography>
-                        <Typography sx={{ opacity: 0.8,width:"90%" }}>
+                        <Typography sx={{opacity: 0.8, width: "90%"}}>
                             Join thousands of students and professionals who have improved their mental wellbeing with
                             MindWell.
                         </Typography>
@@ -336,16 +350,16 @@ function ClientsReview() {
                             color: "#fff",
                             fontWeight: 600,
                             px: 3,
-                            py:1.4,
-                            "&:hover": { bgcolor: "#E56F1A" },
+                            py: 1.4,
+                            "&:hover": {bgcolor: "#E56F1A"},
                         }}
                     >
                         Get Started Today
                     </Button>
                 </Box>
 
-            </Box>
-        </Container>
+            </Container>
+        </Box>
     );
 }
 

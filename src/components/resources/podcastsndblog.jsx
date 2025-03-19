@@ -69,13 +69,13 @@ const blogs = [
 function PodcastsAndBlog() {
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{px: 3, py: 5,}}>
+            <Box sx={{px: 3, py: 2,}}>
                 {/* Podcasts & Videos Section */}
                 <Box mb={5}>
                     <Box display="flex" justifyContent="space-between" alignItems="center" sx={{
                         mb: 4
                     }}>
-                        <Typography variant="h5" fontWeight={700} sx={{
+                        <Typography variant="h5" fontWeight={"bold"} sx={{
                             color: "#012765"
                         }}>
                             Podcasts & Videos
@@ -192,10 +192,10 @@ function PodcastsAndBlog() {
                 </Box>
 
                 {/* From Our Blog Section */}
-                <Box sx={{maxWidth: "1200px", mx: "auto", p: 2}}>
+                <Box sx={{ p: 2}}>
                     {/* Header Section */}
                     <Box display="flex" justifyContent="space-between" alignItems="center">
-                        <Typography fontSize={24} fontWeight={700} color="#1E293B">
+                        <Typography fontSize={24} fontWeight={"bold"} color="#1E293B">
                             From Our Blog
                         </Typography>
                         <Button sx={{
@@ -220,7 +220,7 @@ function PodcastsAndBlog() {
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    // borderRadius: 2,
+                                    borderRadius: "4px",
                                     fontWeight: "500",
                                     color: "#012765",
                                 }}
@@ -259,7 +259,7 @@ function PodcastsAndBlog() {
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    // borderRadius: 2,
+                                    borderRadius: "4px",
                                     fontWeight: "500",
                                     color: "#012765",
                                 }}

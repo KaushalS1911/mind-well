@@ -74,7 +74,7 @@ function Worker() {
             rating: "4.8 (91 reviews)",
             experience: "11+ years experience",
             specialization: "Specializes in medication management for depression, anxiety, bipolar disorder, and ADHD with an integrative approach.",
-            tags: ["Depression", "Bipolar","ADHD"],
+            tags: ["Depression", "Bipolar", "ADHD"],
             category: "Counselor",
         },
         {
@@ -84,7 +84,7 @@ function Worker() {
             rating: "4.9 (76 reviews)",
             experience: "6+ years experience",
             specialization: "Specializes in student mental health, academic stress, identity development, and multicultural issues using a strengths-based approach.",
-            tags: ["Student Stress", "Identity","Culture"],
+            tags: ["Student Stress", "Identity", "Culture"],
             category: "Counselor",
         }
     ];
@@ -235,7 +235,7 @@ function Worker() {
                                     }}>
                                         <Box sx={{display: "flex"}}>
                                             {[...Array(5)].map((_, index) => (
-                                                <StarIcon key={index} sx={{color: "#f65a06",fontSize:"17px"}}/>
+                                                <StarIcon key={index} sx={{color: "#f65a06", fontSize: "17px"}}/>
                                             ))}
                                         </Box>
                                         <Box sx={{

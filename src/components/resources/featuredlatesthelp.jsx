@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Typography, Button, Chip, Grid, Card, CardContent, Avatar} from "@mui/material";
+import {Box, Typography, Button, Chip, Grid, Card, CardContent, Avatar, Container} from "@mui/material";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
@@ -61,7 +61,8 @@ function FeaturedLatestHelp() {
 
 
     return (
-        <Box sx={{ px: 4, py: 6 }}>
+        <Container maxWidth={"xl"}>
+        <Box sx={{ px: 4, p:"96px 0 0 0" }}>
             {/* Header */}
             <Typography variant="h4" fontWeight={700} textAlign="center" mb={"16px"} sx={{
                 color:"#012765"
@@ -114,7 +115,7 @@ function FeaturedLatestHelp() {
             <Grid container spacing={2} mb={4}>
                 {resources.map((resource, index) => (
                     <Grid item xs={12} md={6} key={index}>
-                        <Card sx={{ borderRadius: 3, boxShadow: 1 }}>
+                        <Card sx={{ borderRadius: 3, boxShadow: 1,height:"100%" }}>
                             <CardContent sx={{ p: 0 }}>
                                 <Typography sx={{
                                     bgcolor: "#D7DAE5",
@@ -190,7 +191,7 @@ function FeaturedLatestHelp() {
             <Grid container spacing={2} mb={4}>
                 {articles.map((article, index) => (
                     <Grid item xs={12} md={4} key={index}>
-                        <Card sx={{ borderRadius: 3, boxShadow: 1 }}>
+                        <Card sx={{ borderRadius: 3, boxShadow: 1,height:"100%" }}>
                             {/* Top Gray Section */}
                             <Typography sx={{ bgcolor: "#E7EAEE", p: 2, fontWeight: 500,display:"flex",justifyContent:"center",color:"#012765" }}>
                                 Article Thumbnail
@@ -337,6 +338,7 @@ function FeaturedLatestHelp() {
             </Grid>
 
         </Box>
+        </Container>
     );
 }
 

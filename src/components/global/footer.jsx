@@ -6,6 +6,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CallIcon from '@mui/icons-material/Call';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import logo from "../../assets/logo.jpg";
 
 const socialMedia = [
     {icon: <Facebook/>, link: "#"},
@@ -30,15 +31,14 @@ const Footer = () => {
             <Container maxWidth="xl">
                 <Grid container spacing={4} justifyContent="center">
                     <Grid item xs={12} lg={5}>
-                        <Box
-                            sx={{
-                                fontWeight: 700,
-                                fontSize: "24px",
-                                lineHeight: "30px",
-                                margin: "0px 0px 24px",
-                            }}
-                        >
-                            MindWell
+                        <Box sx={{
+                            height: "80px",
+                            width: "80px",
+                            mb:2
+                        }}>
+                            <img src={logo} alt="logo" style={{
+                                height: "100%"
+                            }} />
                         </Box>
                         <Box
                             sx={{

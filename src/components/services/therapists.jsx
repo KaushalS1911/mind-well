@@ -74,7 +74,7 @@ const struggles = [
 function Therapists() {
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{ px: { xs: 2, md: 5 }, py: 5 }}>
+            <Box sx={{ padding:"96px 0"}}>
                 <Typography className={"Montserrat"} variant="h4" align="center" color="#012765" sx={{fontWeight: "bold", mb: 2}}>
                     What Are You Struggling With?
                 </Typography>

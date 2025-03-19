@@ -70,7 +70,7 @@ const GetInTouch = () => {
     ];
 
     return (
-        <Container maxWidth="xl" sx={{py: 6}}>
+        <Container maxWidth="xl" sx={{p:"96px 0"}}>
             <Box
                 sx={{
                     textAlign: "center",

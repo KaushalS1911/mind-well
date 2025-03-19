@@ -31,8 +31,9 @@ const expertCriteria = [
 function Expertselection() {
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{p: 1, backgroundColor: "#F8FAFD", textAlign: "center", borderRadius: "20px"}}>
-                <Typography className={"Montserrat"} variant="h5" sx={{fontWeight: 800, mb: 3, mt: 2, color: "#012765"}}>
+            <Box sx={{p: "48px", backgroundColor: "#F8FAFD", textAlign: "center", borderRadius: "20px"}}>
+                <Typography className={"Montserrat"} variant="h5"
+                            sx={{fontWeight: 800, mb: 3, mt: 2, color: "#012765"}}>
                     Our Rigorous Expert Selection Process
                 </Typography>
                 <Box className={"Montserrat"} sx={{mb: 4, opacity: 0.8}}>
@@ -78,15 +79,15 @@ function Expertselection() {
                 </Box>
 
             </Box>
-            <Box sx={{ mt: 10, textAlign: "center" }}>
-                <Typography variant="h5" sx={{ fontWeight: 700, mb: 1, color: "#012765" }}>
+            <Box sx={{mt: 10, textAlign: "center"}}>
+                <Typography variant="h5" sx={{fontWeight: 700, mb: 1, color: "#012765"}}>
                     Find Your Perfect Match
                 </Typography>
-                <Typography sx={{ opacity: 0.7, mb: 3 }}>
-                    Take our brief assessment and we'll match you with therapists who specialize in <br />
+                <Typography sx={{opacity: 0.7, mb: 3}}>
+                    Take our brief assessment and we'll match you with therapists who specialize in <br/>
                     your specific needs and preferences.
                 </Typography>
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Box sx={{display: "flex", justifyContent: "center"}}>
                     <Button
                         variant="contained"
                         sx={{
@@ -96,9 +97,9 @@ function Expertselection() {
                             textTransform: "none",
                             px: 4,
                             fontSize: 15,
-                            py:1.4,
-                            mb:10,
-                            '&:hover': { backgroundColor: "#E56F1A" }
+                            py: 1.4,
+                            mb: 10,
+                            '&:hover': {backgroundColor: "#E56F1A"}
                         }}
                     >
                         Get Matched Today

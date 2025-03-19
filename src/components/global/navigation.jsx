@@ -11,6 +11,7 @@ import {
     Collapse
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import logo from "../../assets/logo.jpg";
 
 function Navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,15 +24,21 @@ function Navigation() {
 
     return (
         <Box>
-            <AppBar position="static" sx={{backgroundColor: "white", color: "navy"}}>
+            <AppBar position="fixed" sx={{backgroundColor: "white", color: "navy"}}>
                 <Toolbar sx={{
                     justifyContent: "space-between",
                     margin: {xl: "0 172px", lg: "0 80px"},
                     padding: "12px 16px"
                 }}>
-                    <Box sx={{fontWeight: "700", lineHeight: "2rem", fontSize: "24px", color: "#012765"}}>
-                        MindWell
+                    <Box sx={{
+                        height: "80px",
+                        width: "80px",
+                    }}>
+                        <img src={logo} alt="logo" style={{
+                            height: "100%"
+                        }} />
                     </Box>
+
 
                     {/* Desktop Menu */}
                     <Box sx={{display: {xs: "none", md: "flex"}, gap: 2}}>
