@@ -2,6 +2,7 @@ import React from "react";
 import {Box, Typography, Button, Card, Avatar, Grid, Container} from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import Consultation from "../global/consultation.jsx";
 
 const testimonials = [
     {
@@ -196,7 +197,6 @@ function ClientsReview() {
                     ))}
                 </Grid>
 
-
                 {/* Client Reviews */}
                 <Grid container spacing={3} sx={{mt: 4}}>
                     {reviews.map((review, index) => (
@@ -307,10 +307,6 @@ function ClientsReview() {
                         </Box>
                     </Box>
 
-
-                    {/* Video Testimonial Text - Moved Below */}
-
-
                     {/* Quote Text */}
                     <Typography sx={{textAlign: "center", opacity: 0.7, fontStyle: "italic", mt: 1}}>
                         "MindWell has been life-changing for me. Watch these client stories to see the real impact
@@ -318,46 +314,9 @@ function ClientsReview() {
                     </Typography>
                 </Box>
 
-
-                {/* Call to Action */}
-                <Box
-                    sx={{
-                        mt: 6,
-                        bgcolor: "#012765",
-                        color: "#fff",
-                        py: 5.5,
-                        px: 7,
-                        borderRadius: 2,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                    }}
-                >
-                    <Box>
-                        <Typography variant="h6" sx={{fontWeight: 700, mb: 1}}>
-                            Ready to start your mental wellness journey?
-                        </Typography>
-                        <Typography sx={{opacity: 0.8, width: "90%"}}>
-                            Join thousands of students and professionals who have improved their mental wellbeing with
-                            MindWell.
-                        </Typography>
-                    </Box>
-
-                    <Button
-                        variant="contained"
-                        sx={{
-                            bgcolor: "#FF7F1E",
-                            color: "#fff",
-                            fontWeight: 600,
-                            px: 3,
-                            py: 1.4,
-                            "&:hover": {bgcolor: "#E56F1A"},
-                        }}
-                    >
-                        Get Started Today
-                    </Button>
-                </Box>
-
+                <Consultation title={"Ready to start your mental wellness journey?"}
+                              Description={"Join thousands of students and professionals who have improved their mental wellbeing with MindWell."}
+                              Btn={"Get Started Today"}/>
             </Container>
         </Box>
     );
