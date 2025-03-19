@@ -15,10 +15,10 @@ function Services() {
             <Struggling/>
             <LookingFor/>
             <Therapists/>
-            <Wetreat/>
-            <MentalHealth/>
-            <Plans/>
-            <Partners/>
+            {/*<Wetreat/>*/}
+            {/*<MentalHealth/>*/}
+            {/*<Plans/>*/}
+            {/*<Partners/>*/}
         </>
     );
 }

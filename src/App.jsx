@@ -13,8 +13,8 @@ function App() {
             <Navigation/>
             <Home/>
             <Services/>
-            <ExpertsWorker/>
-            <Resource/>
+            {/*<ExpertsWorker/>*/}
+            {/*<Resource/>*/}
             <Footer/>
         </>
     )
