@@ -1,12 +1,12 @@
 import React from 'react';
-import Works from "../../components/home/works.jsx";
+import WorksTable from "../../components/Home-page/worksTable.jsx";
 
-function HowItworks() {
+function Howitworks() {
     return (
         <>
-            <Works />
+            <WorksTable/>
         </>
     );
 }
 
-export default HowItworks;
+export default Howitworks;

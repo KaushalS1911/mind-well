@@ -43,10 +43,10 @@ const features = [
 
 function Mindwell() {
     return (
-        <Box sx={{ backgroundColor: "white", py: 6 }}>
-            <Container maxWidth="xxl">
-                {/* Title Section */}
-                <Box sx={{
+        <Box sx={{ backgroundColor: "white", padding:"96px 0" }}>
+            <Container maxWidth="xl">
+
+                <Box className={"Montserrat"} sx={{
                     fontSize: "36px",
                     marginBottom: "16px",
                     lineHeight: "40px",
@@ -57,12 +57,11 @@ function Mindwell() {
                 }}>
                     Why MindWell?
                 </Box>
-                <Box sx={{ maxWidth: 600, mx: "auto", mb: 8, fontSize: "18px", color: "#4B5563", textAlign: "center", lineHeight: "25px", }}>
+                <Box className={"Montserrat"} sx={{ maxWidth: 600, mx: "auto", mb: 8, fontSize: "18px", color: "#4B5563", textAlign: "center", lineHeight: "25px", }}>
                     We combine professional expertise with innovative technology to make
                     mental healthcare accessible, effective, and personalized.
                 </Box>
 
-                {/* Feature Cards */}
                 <Grid container spacing={3}>
                     {features.map((feature, index) => (
                         <Grid item xs={12} md={4} key={index}>
@@ -78,7 +77,6 @@ function Mindwell() {
                                     "&:hover": { transform: "translateY(-5px)" },
                                 }}
                             >
-                                {/* Icon */}
                                 <Box
                                     sx={{
                                         width: 70,
@@ -93,8 +91,6 @@ function Mindwell() {
                                 >
                                     {feature.icon}
                                 </Box>
-
-                                {/* Title */}
                                 <Box sx={{
                                     fontSize: "18px",
                                     fontWeight: "700",
@@ -104,12 +100,10 @@ function Mindwell() {
                                     {feature.title}
                                 </Box>
 
-                                {/* Description */}
                                 <Box sx={{ mb: 2, fontSize: "16px", color: "#4B5563", }}>
                                     {feature.description}
                                 </Box>
 
-                                {/* Bullet Points */}
                                 {feature.points.map((point, idx) => (
                                     <Box key={idx} sx={{ display: "flex", alignItems: "center", mb: 1 }}>
                                         <CheckCircleIcon sx={{ color: "#FF7F1E", fontSize: 20, mr: 1 }} />
@@ -123,28 +117,27 @@ function Mindwell() {
                     ))}
                 </Grid>
 
-                {/* Our Impact Section */}
                 <Box sx={{
                     backgroundColor: "#002F6C",
                     borderRadius: "16px",
                     color: "white",
-                    mt: 10,
+                    mt: 7,
                     py: 6,
                     px: 4
                 }}>
                     <Container maxWidth="lg">
                         <Grid container spacing={3} alignItems="center">
-                            {/* Left Side Text */}
+
                             <Grid item xs={12} md={6}>
-                                <Typography variant="h5" fontWeight="bold">
+                                <Typography className={"Montserrat"} variant="h5" fontWeight="bold">
                                     Our Impact
                                 </Typography>
-                                <Typography variant="body1" sx={{ mt: 1, color: "#D1E1FF",width:"85%" }}>
+                                <Typography className={"Montserrat"} variant="body1" sx={{ mt: 1, color: "#D1E1FF",width:"85%" }}>
                                     At MindWell, we're committed to making a difference in how people access and experience mental healthcare.
                                 </Typography>
                             </Grid>
 
-                            {/* Stats Section */}
+
                             <Grid item xs={12} md={6}>
                                 <Grid container spacing={4}>
                                     <Grid item sm={4} xs={6}>
