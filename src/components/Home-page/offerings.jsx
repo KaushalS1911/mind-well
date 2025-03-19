@@ -1,109 +1,43 @@
 import React, { useState } from "react";
 import { Box, Button, Container, Grid, Paper, Tab, Tabs, Typography } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import PersonIcon from '@mui/icons-material/Person';
-import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
-import TextsmsIcon from '@mui/icons-material/Textsms';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import ImportContactsIcon from '@mui/icons-material/ImportContacts';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import GppGoodIcon from '@mui/icons-material/GppGood';
-import PublicIcon from '@mui/icons-material/Public';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import BoltIcon from '@mui/icons-material/Bolt';
+import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
+import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 
 const offerings = ["Individual Therapy", "Couples Therapy", "Teen Counseling", "Group Sessions"];
 
-const therapyData = [
-    {
-        maindescription: "One-on-one therapy sessions with a licensed professional who can help you navigate life's challenges, manage symptoms, and develop coping strategies.",
-        firsttitle: "Personalized approach", fstitle: "Treatment tailored to your specific needs and goals",
-        secondtitle: "Flexible scheduling", sstitle: "Book sessions that fit into your busy life",
-        thirdtitle: "Private and secure", tstitle: "Confidential sessions in a safe environment",
-        maintitle: "What type of therapy are you looking for?",
-        options: [
-            { title: "Cognitive Behavioral Therapy (CBT)", description: "Change negative patterns of thinking and behavior.",icon:<SentimentSatisfiedAltIcon/> },
-            { title: "Mindfulness-Based Therapy", description: "Become more aware of thoughts without judgment.",icon:<ErrorOutlineIcon/> },
-            { title: "Psychodynamic Therapy", description: "Understand how past experiences influence present behavior.",icon:<PersonIcon/> },
-            { title: "Solution-Focused Therapy", description: "Focus on solutions rather than problems.",icon:<PeopleOutlineIcon/> }
-        ]
-    },
-    {
-        maindescription: "Strengthen your relationship with therapy that helps you and your partner communicate better, resolve conflicts, and build a healthier connection.",
-        firsttitle: "Improved communication", fstitle: "Learn to express needs and listen effectively",
-        secondtitle: "Conflict resolution", sstitle: "Develop healthy ways to resolve disagreements",
-        thirdtitle: "Rebuilding intimacy", tstitle: "Strengthen emotional and physical connection",
-        maintitle: "Common Relationship Challenges",
-        options: [
-            { title: "Communication Issues", description: "Difficulty expressing needs or understanding each other",icon:<TextsmsIcon/> },
-            { title: "Trust Issues", description: "Rebuilding trust after betrayal or disappointment",icon:<ErrorOutlineIcon/> },
-            { title: "Intimacy Challenges", description: "Reconnecting emotionally and physically",icon:<FavoriteIcon/> },
-            { title: "Financial Conflicts", description: "Navigating money disagreements and planning",icon:<CurrencyRupeeIcon/> }
-        ]
-    },
-    {
-        maindescription: "Specialized support for teenagers dealing with the unique challenges of adolescence, from academic pressure to identity formation and peer relationships.",
-        firsttitle: "Age-appropriate approach", fstitle: "Methods tailored specifically for teens",
-        secondtitle: "Building resilience", sstitle: "Develop coping skills for life's challenges",
-        thirdtitle: "Parent collaboration", tstitle: "Optional support for parents to help their teens",
-        maintitle: "Common Teen Challenges",
-        options: [
-            { title: "Academic Stress", description: "Managing school pressure and expectations",icon:<ImportContactsIcon/> },
-            { title: "Social Anxiety", description: "Navigating peer relationships and social pressure",icon:<PeopleOutlineIcon/> },
-            { title: "Identity & Self-Esteem", description: "Developing a positive sense of self",icon:<ContentCopyIcon/> },
-            { title: "Depression & Anxiety", description: "Managing mood and worry during adolescence",icon:<GppGoodIcon/> }
-        ]
-    },
-    {
-        maindescription: "Join a supportive community of individuals facing similar challenges. Our therapist-led group sessions provide connection, shared insights, and collective growth.",
-        firsttitle: "Community support", fstitle: "Connect with others who understand your experience",
-        secondtitle: "Cost-effective option", sstitle: "More affordable than individual therapy",
-        thirdtitle: "Professional facilitation", tstitle: "Led by experienced group therapists",
-        maintitle: "Available Group Topics",
-        options: [
-            { title: "Anxiety Management", description: "Mondays at 6:00 PM | 8 Sessions",icon:<PublicIcon/> },
-            { title: "Mindfulness Practice", description: "Wednesdays at 7:00 PM | 6 Sessions",icon:<AutoAwesomeIcon/> },
-            { title: "Grief Support", description: "Tuesdays at 5:30 PM | 10 Sessions",icon:<SentimentSatisfiedAltIcon/> },
-            { title: "Stress Management", description: "Thursdays at 6:30 PM | 8 Sessions",icon:<BoltIcon/> }
-        ]
-    }
+const therapyOptions = [
+    { title: "Cognitive Behavioral Therapy (CBT)", description: "Change negative patterns of thinking and behavior." },
+    { title: "Mindfulness-Based Therapy", description: "Become more aware of thoughts without judgment." },
+    { title: "Psychodynamic Therapy", description: "Understand how past experiences influence present behavior." },
+    { title: "Solution-Focused Therapy", description: "Focus on solutions rather than problems." }
 ];
 
 const Offerings = () => {
     const [selectedTab, setSelectedTab] = useState(0);
-
-    const selectedData = therapyData[selectedTab];
+    const [selectedTherapy, setSelectedTherapy] = useState(null);
 
     return (
-        <Box sx={{ p:"96px 0", backgroundColor: "white" }}>
-            <Container maxWidth="xl">
-                <Typography className={"Montserrat"} variant="h4" align="center" color="#012765" sx={{ fontWeight: "700" }}>
+        <Box sx={{ py: 8, backgroundColor: "white" }}>
+            <Container maxWidth="xxl">
+                {/* Title */}
+                <Typography variant="h4" align="center" color="#012765" sx={{
+                    fontWeight: "700",
+                }}>
                     Our Mental Healthcare Offerings
                 </Typography>
-                <Typography className={"Montserrat"} variant="body1" align="center" sx={{ color: "#4B5563", mt: 1, mb: 7.5 }}>
+                <Typography variant="body1" align="center" sx={{ color: "#4B5563", mt: 1, mb: 7.5 }}>
                     Comprehensive support for your mental wellbeing, tailored to your unique <br/> needs and preferences.
                 </Typography>
 
+                {/* Tabs Section */}
                 <Box sx={{ display: "flex", justifyContent: "center", mb: 7 }}>
                     <Tabs
                         value={selectedTab}
                         onChange={(event, newValue) => setSelectedTab(newValue)}
                         variant="scrollable"
                         scrollButtons="auto"
-                        orientation="horizontal" // Default horizontal
                         sx={{
-                            width: "100%", // Full width on all screens
-                            display: "flex",
-                            justifyContent: "center", // Keep tabs centered
-                            "& .MuiTabs-flexContainer": {
-                                display: "flex",
-                                flexWrap: "wrap", // Allow wrapping on small screens
-                                justifyContent: "center", // Ensure centering
-                                width: "100%",
-                            },
                             "& .MuiTabs-indicator": { display: "none" },
                             "& .MuiTab-root": {
                                 textTransform: "none",
@@ -111,18 +45,13 @@ const Offerings = () => {
                                 px: 3,
                                 fontSize: 16,
                                 borderRadius: 2,
-                                backgroundColor: selectedTab === 0 ? "#E5E7EB" : "#F3F4F6",
-                                mx: { sm: 1, xs: 0 }, // Remove margin on mobile
-                                minWidth: "auto",
-                                width: { xs: "auto", sm: "auto" }, // Keep original width behavior
-                                mb: { xs: 1, sm: 0 }, // Add spacing on mobile
+                                backgroundColor: selectedTab === offerings.indexOf(offerings[selectedTab]) ? "#E5E7EB" : "#F3F4F6",
+                                color: selectedTab === offerings.indexOf(offerings[selectedTab]) ? "#374151" : "#1F2937",
+                                mx: 1
                             },
                             "& .Mui-selected": {
                                 backgroundColor: "#012765",
-                                color: "#fff",
-                            },
-                            "& .css-1usuzwp-MuiButtonBase-root-MuiTab-root.Mui-selected": {
-                                color: "#fff",
+                                color: "#fff"
                             }
                         }}
                     >
@@ -130,42 +59,51 @@ const Offerings = () => {
                             <Tab key={index} label={offer} />
                         ))}
                     </Tabs>
-
                 </Box>
 
-
                 <Grid container spacing={4}>
+                    {/* Left Section */}
                     <Grid item xs={12} md={6}>
-                        <Typography variant="h5" sx={{ color:"#012765", fontWeight: 700 }}>
-                            {offerings[selectedTab]}
+                        <Typography variant="h5" sx={{
+                            color:"#012765",
+                            fontWeight: 700,
+                        }}>{offerings[selectedTab]}</Typography>
+                        <Typography variant="body1" sx={{ color: "#515863", mt: 1, mb: 2,fontSize: 17,width:"90%" }}>
+                            One-on-one therapy sessions with a licensed professional who can help you navigate life's
+                            challenges, manage symptoms, and develop coping strategies.
                         </Typography>
-                        <Typography variant="body1" sx={{ color: "#515863", mt: 1, mb: 2, fontSize: 17, width:"95%" }}>
-                            {selectedData.maindescription}
-                        </Typography>
-                        {[selectedData.firsttitle, selectedData.secondtitle, selectedData.thirdtitle].map((title, index) => (
+
+                        {/* Features List */}
+                        {[
+                            { text: "Personalized approach", subtext: "Treatment tailored to your specific needs and goals" },
+                            { text: "Flexible scheduling", subtext: "Book sessions that fit into your busy life" },
+                            { text: "Private and secure", subtext: "Confidential sessions in a safe environment" }
+                        ].map((feature, index) => (
                             <Box key={index} sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                                 <CheckCircleIcon sx={{ color: "#FF7F1E", fontSize: 20, mr: 1 }} />
                                 <Box>
-                                    <Typography fontWeight="normal">{title}</Typography>
-                                    <Typography variant="body2" sx={{ color: "#4B5563" }}>
-                                        {selectedData[["fstitle", "sstitle", "tstitle"][index]]}
-                                    </Typography>
+                                    <Typography fontWeight="bold">{feature.text}</Typography>
+                                    <Typography variant="body2" sx={{ color: "#4B5563" }}>{feature.subtext}</Typography>
                                 </Box>
                             </Box>
                         ))}
-                        <Button variant="contained" sx={{ backgroundColor: "#FF7F1E", textTransform: "none", fontWeight: "bold", mt: 2, px:3, py:1.5 }}>
+
+                        <Button
+                            variant="contained"
+                            sx={{ backgroundColor: "#FF7F1E", textTransform: "none", fontWeight: "bold", mt: 2 }}
+                        >
                             Learn More
                         </Button>
                     </Grid>
 
-                    {/*right side*/}
-
+                    {/* Right Section */}
                     <Grid item xs={12} md={6}>
-                        <Paper elevation={3} sx={{ p: 3, borderRadius: 3, backgroundColor: "#F9FAFB" }}>
-                            <Typography variant="h6" fontWeight="bold" sx={{ color: "#012765" }}>
-                                {selectedData.maintitle}
+                        <Paper elevation={3} sx={{ p: 3, borderRadius: 3 }}>
+                            <Typography variant="h6" fontWeight="bold">
+                                What type of therapy are you looking for?
                             </Typography>
-                            {selectedData.options.map((therapy, index) => (
+
+                            {therapyOptions.map((therapy, index) => (
                                 <Box
                                     key={index}
                                     sx={{
@@ -174,37 +112,29 @@ const Offerings = () => {
                                         p: 2,
                                         mt: 2,
                                         borderRadius: 2,
-                                        backgroundColor: "#fff",
+                                        backgroundColor: "#F9FAFB",
                                         cursor: "pointer",
                                         transition: "0.3s",
-                                        "&:hover": { boxShadow: "1px 1px 3px gray" }
+                                        "&:hover": { backgroundColor: "#E6EAF3" }
                                     }}
+                                    onClick={() => setSelectedTherapy(index)}
                                 >
+                                    {selectedTherapy === index ? (
+                                        <RadioButtonCheckedIcon sx={{ color: "#012765", fontSize: 22, mr: 2 }} />
+                                    ) : (
+                                        <RadioButtonUncheckedIcon sx={{ color: "#012765", fontSize: 22, mr: 2 }} />
+                                    )}
 
-                                    <Box
-                                        sx={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center",
-                                            width: 40,
-                                            height: 40,
-                                            borderRadius: "50%",
-                                            backgroundColor: "#E6EAF3",
-                                            mr: 2
-                                        }}
-                                    >
-                                        {therapy.icon}
-                                        {/* If you want to add an icon, you can replace this comment with an icon */}
-                                    </Box>
                                     <Box>
-                                        <Typography sx={{ fontWeight: "600" }}>{therapy.title}</Typography>
-                                        <Typography variant="body2" sx={{ color: "#4B5563" }}>{therapy.description}</Typography>
+                                        <Typography fontWeight="bold">{therapy.title}</Typography>
+                                        <Typography variant="body2" sx={{ color: "#4B5563" }}>
+                                            {therapy.description}
+                                        </Typography>
                                     </Box>
                                 </Box>
                             ))}
                         </Paper>
                     </Grid>
-
                 </Grid>
             </Container>
         </Box>
