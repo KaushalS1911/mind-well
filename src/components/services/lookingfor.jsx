@@ -60,7 +60,7 @@ const LookingFor = () => {
                 <Typography className={"Montserrat"} variant="h4" align="center" color="#012765" sx={{fontWeight: "bold", mb: 2}}>
                     What Type of Therapy Are You Looking For?
                 </Typography>
-                <Box className={"Montserrat"} sx={{
+                <Box  sx={{
                     color: "#4B5563",
                     mt: 1,
                     mb: 7,

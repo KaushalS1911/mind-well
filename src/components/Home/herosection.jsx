@@ -25,7 +25,7 @@ function HeroSection() {
     };
 
     return (
-        <Box sx={{position: "relative",mt:13, backgroundColor: "#002F6C", color: "white", padding: "80px 0"}}>
+        <Box sx={{position: "relative",mt: {md:13,xs:0}, backgroundColor: "#002F6C", color: "white", padding: "80px 0"}}>
             <Container maxWidth={"xl"}>
                 <Grid container spacing={1} alignItems="center" justifyContent="space-around">
                     <Box
@@ -53,7 +53,7 @@ function HeroSection() {
                         >
                             Your Mental Wellbeing Matters
                         </Box>
-                        <Box className={"Montserrat"} sx={{marginTop: "20px", fontSize: "20px", lineHeight: "28px", width: "80%"}}>
+                        <Box  sx={{marginTop: "20px", fontSize: "20px", lineHeight: "28px", width: "80%"}}>
                             Connect with licensed therapists online and start your journey to better mental health
                             today. Professional support whenever and wherever you need it.
                         </Box>
@@ -90,9 +90,9 @@ function HeroSection() {
                     <Grid item xs={12} md={4}>
                         <Box sx={{textAlign: "left"}}>
                             <Paper sx={{padding: "30px", borderRadius: "12px"}}>
-                                <Typography variant="h6" fontWeight="bold" sx={{color: "#002F6C"}}>
+                                <Box variant="h6" fontWeight="bold" sx={{color: "#002F6C"}}>
                                     Take the first step
-                                </Typography>
+                                </Box>
                                 <form onSubmit={handleSubmit(onSubmit)}>
 
                                     <Controller

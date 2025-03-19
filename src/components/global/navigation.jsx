@@ -24,7 +24,7 @@ function Navigation() {
 
     return (
         <Box>
-            <AppBar position="fixed" sx={{backgroundColor: "white", color: "navy"}}>
+            <AppBar  sx={{backgroundColor: "white", color: "navy",position: {md:"fixed",xs:"static"}}}>
                 <Toolbar sx={{
                     justifyContent: "space-between",
                     margin: {xl: "0 172px", lg: "0 80px"},
@@ -83,7 +83,7 @@ function Navigation() {
                             sx={{
                                 p: 0,
                                 cursor: "pointer",
-                                "&:hover .MuiTypography-root": { color: "#FF6600" }, // Proper hover effect
+                                "&:hover .MuiTypography-root": { color: "#FF6600" },
                             }}
                         >
                             <ListItemText

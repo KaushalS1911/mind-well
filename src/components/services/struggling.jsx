@@ -65,7 +65,7 @@ function Struggling() {
                              sx={{fontSize: {xs: "24px", sm: "32px"}, color: "#012765", fontWeight: "700", mb: 2}}>
                             What Are You Struggling With?
                         </Box>
-                        <Box className={"Montserrat"}
+                        <Box
                              sx={{color: "#4B5563", fontSize: {xs: "14px", sm: "18px"}, maxWidth: "600px", mx: "auto"}}>
                             We provide expert support for a wide range of mental health concerns. Select your challenge
                             to

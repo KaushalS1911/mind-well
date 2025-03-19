@@ -48,14 +48,13 @@ function WorksTable() {
                 <Typography className={"Montserrat"} variant="h4" align="center" fontWeight={700} color="#012765" gutterBottom>
                     How It Works
                 </Typography>
-                <Typography
-                    className={"Montserrat"}
+                <Box
                     variant="body1"
                     align="center"
                     sx={{mx: {xs: 2, sm: 10, md: 20}, color: "#4B5563", lineHeight: 1.75}}
                 >
                     Getting started with MindWell is simple. Follow these steps to begin your mental wellness journey.
-                </Typography>
+                </Box>
 
                 <Box sx={{position: 'relative', mt: 6}}>
                     <Box
@@ -86,7 +85,7 @@ function WorksTable() {
                         >
                             <Grid item xs={12} md={6}
                                   textAlign={{xs: 'center', sm: index % 2 === 0 ? 'right' : 'left'}}>
-                                <Box sx={{p: {lg:5,md:3,xs:2}, bgcolor: '#fff', boxShadow: 1, borderRadius: 2, mr: 5}}>
+                                <Box sx={{p: {lg:5,md:3,xs:2}, bgcolor: '#fff', boxShadow: 1, borderRadius: 2, mr: 5,}}>
                                     <Box sx={{p: 0, zIndex: 1}}>
                                         <Box sx={{
                                             fontWeight: '700',
@@ -127,7 +126,7 @@ function WorksTable() {
                             <Grid item xs={12} md={6}>
                                 <Box sx={{bgcolor: "#003366", color: "#fff", p: 3, borderRadius: 2, ml: 5, mt: 7}}>
                                     {step.details.map((detail, i) => (
-                                        <Box key={i} display="flex" alignItems="center" mb={1}>
+                                        <Box key={i} display="flex" alignItems="center" mb={1} >
                                             <CheckCircleIcon sx={{color: "#FE6A00", mr: 1}}/>
                                             <Box>{detail}</Box>
                                         </Box>

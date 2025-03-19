@@ -140,30 +140,30 @@ const Offerings = () => {
                             sx={{fontWeight: "700"}}>
                     Our Mental Healthcare Offerings
                 </Typography>
-                <Typography className={"Montserrat"} variant="body1" align="center"
+                <Box  variant="body1" align="center"
                             sx={{color: "#4B5563", mt: 1, mb: 7.5}}>
                     Comprehensive support for your mental wellbeing, tailored to your unique <br/> needs and
                     preferences.
-                </Typography>
+                </Box>
 
-                <Box sx={{display: "flex", justifyContent: "center", mb: 7}}>
+                <Box sx={{ display: "flex", justifyContent: "center", mb: 7 }}>
                     <Tabs
                         value={selectedTab}
                         onChange={(event, newValue) => setSelectedTab(newValue)}
                         variant="scrollable"
                         scrollButtons="auto"
-                        orientation="horizontal" // Default horizontal
+                        orientation="horizontal"
                         sx={{
-                            width: "100%", // Full width on all screens
+                            width: "100%",
                             display: "flex",
-                            justifyContent: "center", // Keep tabs centered
+                            justifyContent: "center",
                             "& .MuiTabs-flexContainer": {
                                 display: "flex",
-                                flexWrap: "wrap", // Allow wrapping on small screens
-                                justifyContent: "center", // Ensure centering
+                                flexWrap: "wrap",
+                                justifyContent: "center",
                                 width: "100%",
                             },
-                            "& .MuiTabs-indicator": {display: "none"},
+                            "& .MuiTabs-indicator": { display: "none" },
                             "& .MuiTab-root": {
                                 textTransform: "none",
                                 fontWeight: 500,
@@ -171,31 +171,32 @@ const Offerings = () => {
                                 fontSize: 16,
                                 borderRadius: 2,
                                 backgroundColor: selectedTab === 0 ? "#E5E7EB" : "#F3F4F6",
-                                mx: {sm: 1, xs: 0}, // Remove margin on mobile
+                                mx: { sm: 1, xs: 0 },
                                 minWidth: "auto",
-                                width: {xs: "auto", sm: "auto"}, // Keep original width behavior
-                                mb: {xs: 1, sm: 0}, // Add spacing on mobile
+                                width: { xs: "auto", sm: "auto" },
+                                mb: { xs: 1, sm: 0 },
                             },
                             "& .Mui-selected": {
                                 backgroundColor: "#012765",
                                 color: "#fff",
+                                border: "2px solid #DD6006", // Border added here
                             },
                             "& .css-1usuzwp-MuiButtonBase-root-MuiTab-root.Mui-selected": {
                                 color: "#fff",
-                            }
+                            },
                         }}
                     >
                         {offerings.map((offer, index) => (
-                            <Tab key={index} label={offer}/>
+                            <Tab key={index} label={offer} />
                         ))}
                     </Tabs>
-
                 </Box>
+
 
 
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <Typography variant="h5" sx={{color: "#012765", fontWeight: 700}}>
+                        <Typography variant="h5" sx={{color: "#012765", fontWeight: 700,}}>
                             {offerings[selectedTab]}
                         </Typography>
                         <Typography variant="body1" sx={{color: "#515863", mt: 1, mb: 2, fontSize: 17, width: "95%"}}>

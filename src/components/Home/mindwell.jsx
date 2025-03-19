@@ -57,7 +57,7 @@ function Mindwell() {
                 }}>
                     Why MindWell?
                 </Box>
-                <Box className={"Montserrat"} sx={{ maxWidth: 600, mx: "auto", mb: 8, fontSize: "18px", color: "#4B5563", textAlign: "center", lineHeight: "25px", }}>
+                <Box sx={{ maxWidth: 600, mx: "auto", mb: 8, fontSize: "18px", color: "#4B5563", textAlign: "center", lineHeight: "25px", }}>
                     We combine professional expertise with innovative technology to make
                     mental healthcare accessible, effective, and personalized.
                 </Box>
@@ -132,7 +132,7 @@ function Mindwell() {
                                 <Typography className={"Montserrat"} variant="h5" fontWeight="bold">
                                     Our Impact
                                 </Typography>
-                                <Typography className={"Montserrat"} variant="body1" sx={{ mt: 1, color: "#D1E1FF",width:"85%" }}>
+                                <Typography variant="body1" sx={{ mt: 1, color: "#D1E1FF",width:"85%" }}>
                                     At MindWell, we're committed to making a difference in how people access and experience mental healthcare.
                                 </Typography>
                             </Grid>
