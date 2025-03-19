@@ -1,0 +1,192 @@
+import React from "react";
+import {Box, Grid, Paper, Typography, Button, Container} from "@mui/material";
+import MoodBadIcon from "@mui/icons-material/MoodBad";
+import SentimentDissatisfiedIcon from "@mui/icons-material/SentimentDissatisfied";
+import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
+const struggles = [
+    {
+        icon: <MoodBadIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        title: "Anxiety",
+        description: "Constant worry, fear, racing thoughts, restlessness, and physical symptoms like rapid heartbeat can be signs of anxiety.",
+        approach: [
+            "Evidence-based anxiety reduction techniques",
+            "Cognitive strategies to manage worry",
+            "Mindfulness and relaxation training",
+        ],
+    },
+    {
+        icon: <SentimentDissatisfiedIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        title: "Depression",
+        description: "Persistent sadness, loss of interest, low energy, changes in sleep or appetite, and feelings of worthlessness are common signs of depression.",
+        approach: [
+            "Evidence-based depression treatments",
+            "Behavioral activation to increase joy",
+            "Cognitive techniques to challenge negative thoughts",
+        ],
+    },
+    {
+        icon: <SentimentVeryDissatisfiedIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        title: "Stress",
+        description: "Feeling overwhelmed, irritable, having difficulty concentrating, and experiencing physical tension are common symptoms of excessive stress.",
+        approach: [
+            "Stress management techniques",
+            "Work-life balance strategies",
+            "Progressive muscle relaxation and mindfulness",
+        ],
+    },
+    {
+        icon: <FavoriteBorderIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        title: "Relationship Issues",
+        description: "Frequent conflicts, communication problems, trust issues, feeling disconnected, or navigating life transitions with a partner.",
+        approach: [
+            "Communication skills enhancement",
+            "Conflict resolution techniques",
+            "Rebuilding trust and intimacy",
+        ],
+    },
+    {
+        icon: <ShieldOutlinedIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        title: "Trauma & PTSD",
+        description: "Flashbacks, nightmares, heightened anxiety, emotional numbness, and avoidance behaviors following a traumatic experience.",
+        approach: [
+            "Trauma-focused therapy (EMDR, CPT)",
+            "Safety and stabilization techniques",
+            "Processing traumatic memories safely",
+        ],
+    },
+    {
+        icon: <PersonOutlineIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        title: "Self-esteem",
+        description: "Persistent self-criticism, feeling not good enough, fear of judgment, difficulty accepting compliments, and comparing yourself to others.",
+        approach: [
+            "Self-compassion development",
+            "Challenging negative self-perception",
+            "Building confidence and self-worth",
+        ],
+    },
+];
+
+function Therapists() {
+    return (
+        <Container maxWidth={"xl"}>
+            <Box sx={{ px: { xs: 2, md: 5 }, py: 5 }}>
+                <Typography className={"Montserrat"} variant="h4" align="center" color="#012765" sx={{fontWeight: "bold", mb: 2}}>
+                    What Are You Struggling With?
+                </Typography>
+                <Box sx={{
+                    color: "#4B5563",
+                    mt: 1,
+                    mb: 7,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    textAlign: "center",
+                    fontSize: 18
+                }}>
+                    Everyone faces challenges in life. Identify your concerns and discover how <br/> our therapists can help you navigate through them.
+                </Box>
+                <Grid container spacing={3}>
+                    {struggles.map((struggle, index) => (
+                        <Grid item xs={12} sm={6} md={4} key={index}>
+                            <Paper elevation={3} sx={{
+                                position: "relative",
+                                p: 3,
+                                borderRadius: "12px",
+                                backgroundColor: "#fff",
+                                overflow: "hidden",
+                                height: "100%", // Fixed height for all cards
+                                display: "flex",
+                                flexDirection: "column",
+                                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Optional shadow
+                                "&::before": {
+                                    content: '""',
+                                    position: "absolute",
+                                    top: 0,
+                                    left: 0,
+                                    width: "100%",
+                                    height: "9px", // Reduced from 13px to 8px
+                                    borderTopLeftRadius: "12px",
+                                    borderTopRightRadius: "12px",
+                                    background: "linear-gradient(to right, #012765, #FF7F1E)",
+                                },
+                            }}>
+
+                                <Box display="flex" alignItems="center" gap={1.5} mb={2}>
+                                    <Box sx={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        width: 50,
+                                        my:1,
+                                        height: 50,
+                                        borderRadius: "50%",
+                                        backgroundColor: "#E6EAF3",
+                                    }}>
+                                        {struggle.icon}
+                                    </Box>
+                                    <Typography variant="h6" color="#012765" sx={{
+                                        fontWeight:700
+                                    }}>
+                                        {struggle.title}
+                                    </Typography>
+                                </Box>
+                                <Box sx={{
+                                    mb:2,
+                                    fontSize: 15,
+                                    lineHeight: 1.5,
+                                    color:"#4B5563"
+                                }}>
+                                    {struggle.description}
+                                </Box>
+                                <Box sx={{fontWeight: "600", color: "#012765", mb: 1,fontSize:16}}>
+                                    Our approach:
+                                </Box>
+                                <Box>
+                                    {struggle.approach.map((point, idx) => (
+                                        <Typography key={idx} variant="body2" sx={{ display: "flex", alignItems: "center", color: "#4B5563", mb: 1,fontSize: 16 }}>
+                                            <Box component="span" sx={{ mr: 1, color: "#FF7F1E" }}><CheckCircleIcon sx={{color: "#FE6A00", mr: 1}}/></Box>
+                                            {point}
+                                        </Typography>
+                                    ))}
+                                </Box>
+                                <Box sx={{mt: "auto"}}>
+                                    <Button sx={{
+                                        textTransform: "none",
+                                        color: "#FF7F1E",
+                                        fontWeight: "500",
+                                        fontSize: 15
+                                    }}>
+                                        Learn how we can help →
+                                    </Button>
+                                </Box>
+                            </Paper>
+                        </Grid>
+                    ))}
+                </Grid>
+                <Box textAlign="center" mt={4}>
+                    <Button
+                        variant="contained"
+                        sx={{
+                            backgroundColor: "#012765",
+                            color: "white",
+                            fontWeight: "bold",
+                            py:1.4,
+                            mt:4,
+                            px:3,
+                            "&:hover": { backgroundColor: "#011B47" },
+                        }}
+                    >
+                        See All Conditions We Treat
+                    </Button>
+                </Box>
+            </Box>
+        </Container>
+    );
+}
+
+export default Therapists;
