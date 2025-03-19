@@ -76,29 +76,37 @@ function FeaturedLatestHelp() {
             </Typography>
 
             {/* Filters */}
-            <Box sx={{ display: "flex", justifyContent: "center", gap: 2, mt: 8, mb: 4 }}>
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexWrap: "wrap", // Allows buttons to wrap on smaller screens
+                    gap: 2,
+                    mt: 8,
+                    mb: 4,
+                }}
+            >
                 {["All Resources", "Articles", "Self-Help Tools", "Videos", "Podcasts"].map((label, index) => (
                     <Button
                         key={index}
                         variant="contained"
-                        disableElevation // Shadow completely removed
+                        disableElevation
                         sx={{
                             borderRadius: "20px",
                             textTransform: "none",
                             fontSize: 16,
-                            px:2.8,
+                            // px: isMobile ? 2 : 2.8, // Slightly smaller padding on mobile
                             bgcolor: label === "All Resources" ? "#012765" : "#F5F6FA",
                             color: label === "All Resources" ? "#fff" : "#012765",
                             boxShadow: "none",
+                            whiteSpace: "nowrap", // Prevents text from breaking
                             "&:hover": {
-                                bgcolor: label === "All Resources" ? "#012765" : "#F5F6FA", // No color change on hover
-                                boxShadow: "none", // No shadow on hover
+                                bgcolor: label === "All Resources" ? "#012765" : "#F5F6FA",
+                                boxShadow: "none",
                             },
                         }}
                     >
-                        {label
-                            .toLowerCase()
-                            .replace(/\b\w/, (char) => char.toUpperCase())}
+                        {label}
                     </Button>
                 ))}
             </Box>

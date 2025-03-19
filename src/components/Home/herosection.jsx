@@ -25,7 +25,7 @@ function HeroSection() {
     };
 
     return (
-        <Box sx={{position: "relative", backgroundColor: "#002F6C", color: "white", padding: "80px 0"}}>
+        <Box sx={{position: "relative",mt:13, backgroundColor: "#002F6C", color: "white", padding: "80px 0"}}>
             <Container maxWidth={"xl"}>
                 <Grid container spacing={1} alignItems="center" justifyContent="space-around">
                     <Box
