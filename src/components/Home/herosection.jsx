@@ -27,7 +27,7 @@ function HeroSection() {
     return (
         <Box sx={{
             position: "relative",
-            mt: {md: 13, xs: 0},
+            mt: {md: 9, xs: 0},
             backgroundColor: "#002F6C",
             color: "white",
             padding: "80px 0"
@@ -71,7 +71,12 @@ function HeroSection() {
                                 fontSize: "16px",
                                 display: "inline-block",
                                 borderRadius: "0.375rem",
-                                fontWeight: "600"
+                                fontWeight: "600",
+                                cursor: "pointer",
+                                transition: "0.3s",
+                                '&:hover': {
+                                    backgroundColor: "#E05D00",
+                                }
                             }}>
                                 Get Started
                             </Box>
@@ -83,7 +88,12 @@ function HeroSection() {
                                 backgroundColor: "transparent",
                                 border: "1px solid #fff",
                                 borderRadius: "0.375rem",
-                                fontWeight: "600"
+                                fontWeight: "600",
+                                cursor: "pointer",
+                                transition: "0.3s",
+                                '&:hover': {
+                                    backgroundColor: "#1B3D75",
+                                }
                             }}>
                                 Learn More
                             </Box>
@@ -193,8 +203,8 @@ function HeroSection() {
                                         fontSize: "16px",
                                         color: "#fff",
                                         fontWeight: "600",
-                                        borderRadius:"0.375rem",
-                                        textAlign:"center",
+                                        borderRadius: "0.375rem",
+                                        textAlign: "center",
                                         cursor: "pointer",
                                     }}>
                                         Match Me With A Therapist

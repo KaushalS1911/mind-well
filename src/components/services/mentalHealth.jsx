@@ -51,7 +51,6 @@ function MentalHealth() {
                     Employee Mental Health Program
                 </Box>
                 <Box
-                    className={"Montserrat"}
                     sx={{
                         fontSize: {xs: "16px", sm: "18px"},
                         color: "#4b5563",
@@ -242,7 +241,7 @@ function MentalHealth() {
                                 </Box>
                             ))}
                             <Divider sx={{my: 3, width: "100%"}}/>
-                            <Button
+                            <Box
                                 sx={{
                                     padding: "12px 24px",
                                     backgroundColor: "#fe6a00",
@@ -256,7 +255,7 @@ function MentalHealth() {
                                 }}
                             >
                                 Request a Demo
-                            </Button>
+                            </Box>
                             <Box
                                 sx={{
                                     fontSize: "14px",

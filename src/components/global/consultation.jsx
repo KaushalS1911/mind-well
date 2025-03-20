@@ -1,29 +1,29 @@
 import React from 'react';
 import {Box, Button, Container} from "@mui/material";
 
-function Consultation({title , Description , Btn}) {
+function Consultation({title, Description, Btn}) {
     return (
         <Container maxWidth="xl">
             <Box
                 sx={{
-                    padding: { xs: "24px", md: "48px" },
+                    padding: {xs: "24px", md: "48px"},
                     backgroundColor: "#012765",
                     mt: 8,
                     display: "flex",
-                    flexDirection: { xs: "column", md: "row" },
+                    flexDirection: {xs: "column", md: "row"},
                     alignItems: "center",
                     justifyContent: "space-between",
                     gap: 2,
-                    borderRadius:"10px"
+                    borderRadius: "10px"
                 }}
             >
-                <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+                <Box sx={{textAlign: {xs: "center", md: "left"}}}>
                     <Box
                         sx={{
-                            fontSize: { xs: "20px", md: "24px" },
+                            fontSize: {xs: "20px", md: "24px"},
                             color: "#fff",
                             marginBottom: "12px",
-                            fontWeight:"bold"
+                            fontWeight: "bold"
                         }}
                     >
                         {title}
@@ -32,23 +32,24 @@ function Consultation({title , Description , Btn}) {
                         sx={{
                             fontSize: "16px",
                             color: "#fff",
-                            width: { xs: "100%", md: "90%" },
+                            width: {xs: "100%", md: "90%"},
                         }}
                     >
                         {Description}
                     </Box>
                 </Box>
-                <Button
+                <Box
                     sx={{
                         padding: "12px 32px",
                         backgroundColor: "#fe6a00",
                         color: "#fff",
                         borderRadius: "0.375rem",
-                        "&:hover": { backgroundColor: "#e65a00" },
+                        cursor: "pointer",
+                        "&:hover": {backgroundColor: "#e65a00"},
                     }}
                 >
                     {Btn}
-                </Button>
+                </Box>
             </Box>
         </Container>
     );

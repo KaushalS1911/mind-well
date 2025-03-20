@@ -113,8 +113,8 @@ function WorksTable() {
                             <Box
                                 sx={{
                                     position: "absolute",
-                                    top: {xs: "60%", sm: "60%", md: "50%"},
-                                    right: {xs: "17%", sm: "5%", md: "48.3%"},
+                                    top: {xs: "60%", sm: "60%",md:"50%", lg: "50%"},
+                                    right: {xs: "17%", sm: "5%",md:"47.3%", lg: "48.3%"},
                                     display: {sm: 'inline-flex', xs: "none"},
                                     alignItems: 'center',
                                     justifyContent: 'center',

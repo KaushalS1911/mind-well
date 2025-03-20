@@ -24,19 +24,19 @@ function Navigation() {
 
     return (
         <Box>
-            <AppBar  sx={{backgroundColor: "white", color: "navy",position: {md:"fixed",xs:"static"}}}>
+            <AppBar sx={{backgroundColor: "white", color: "navy", position: {md: "fixed", xs: "static"}}}>
                 <Toolbar sx={{
                     justifyContent: "space-between",
                     margin: {xl: "0 172px", lg: "0 80px"},
                     padding: "12px 16px"
                 }}>
                     <Box sx={{
-                        height: "80px",
-                        width: "80px",
+                        height: "70px",
+                        width: "70px",
                     }}>
                         <img src={logo} alt="logo" style={{
                             height: "100%"
-                        }} />
+                        }}/>
                     </Box>
 
 
@@ -56,15 +56,20 @@ function Navigation() {
                         ))}
                     </Box>
 
-                    <Button variant="contained"
-                            sx={{
-                                backgroundColor: "#FE6A00",
-                                padding: "8px 20px",
-                                display: {md: "flex", xs: "none"},
-                                "&:hover": {backgroundColor: "#da5e05"}
-                            }}>
+                    <Box
+                        sx={{
+                            fontSize: "16px",
+                            color: "#fff",
+                            borderRadius: "0.375rem",
+                            cursor: "pointer",
+                            backgroundColor: "#FE6A00",
+                            padding: "8px 20px",
+                            display: {md: "flex", xs: "none"},
+                            transition: "0.5s",
+                            "&:hover": {backgroundColor: "#da5e05"}
+                        }}>
                         Get Started
-                    </Button>
+                    </Box>
 
                     {/* Mobile Menu Icon */}
                     <IconButton edge="end" color="inherit" aria-label="menu"
@@ -83,7 +88,7 @@ function Navigation() {
                             sx={{
                                 p: 0,
                                 cursor: "pointer",
-                                "&:hover .MuiTypography-root": { color: "#FF6600" },
+                                "&:hover .MuiTypography-root": {color: "#FF6600"},
                             }}
                         >
                             <ListItemText
@@ -98,10 +103,13 @@ function Navigation() {
                         </ListItem>
                     ))}
 
-                    <Button
-                        variant="contained"
+                    <Box
                         sx={{
                             backgroundColor: "#FE6A00",
+                            color: "#fff",
+                            cursor: "pointer",
+                            textAlign: "center",
+                            borderRadius: "0.375rem",
                             padding: "8px 20px",
                             width: "100%",
                             marginTop: "26px",
@@ -109,7 +117,7 @@ function Navigation() {
                         }}
                     >
                         Get Started
-                    </Button>
+                    </Box>
 
                 </List>
             </Collapse>

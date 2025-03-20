@@ -18,7 +18,7 @@ const sections = [
         bgColor: "#224379",
         textColor: "#fff",
         noteBg: "rgba(255, 255, 255, 0.2)",
-        iconColor: "#FE6A00" // Orange icon for students
+        iconColor: "#FE6A00"
     },
     {
         title: "For Professionals",
@@ -32,22 +32,22 @@ const sections = [
         ],
         note: "Early morning, evening, and weekend appointments available",
         buttonText: "Professional Support Programs",
-        bgColor: "#FF7F1E",
+        bgColor: "#FE7717",
         textColor: "#fff",
         noteBg: "rgba(255, 255, 255, 0.2)",
-        iconColor: "#fff" // White icon for professionals
+        iconColor: "#fff"
     }
 ];
 
 function Wetreat() {
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{ p: 3 }}>
+            <Box sx={{p: 3}}>
                 {/* Flex container for student & professional boxes */}
                 <Box
                     sx={{
                         display: 'flex',
-                        flexDirection: { xs: 'column', md: 'row' },
+                        flexDirection: {xs: 'column', md: 'row'},
                         justifyContent: "center",
                         gap: 3
                     }}
@@ -61,79 +61,96 @@ function Wetreat() {
                                 color: section.textColor,
                                 p: 4,
                                 borderRadius: 3,
-                                minWidth: { xs: '100%', md: '48%' } // Full width on small screens, side by side on medium+
+                                minWidth: {xs: '100%', md: '48%'}
                             }}
                             elevation={3}
                         >
-                            <Typography variant="h5" sx={{ fontWeight: 800, mb: "24px", fontSize: 24 }}>
+                            <Box sx={{fontWeight: 700, mb: "16px", fontSize: "24px", lineHeight: "2rem"}}>
                                 {section.title}
-                            </Typography>
-                            <Typography sx={{ mb: 2, opacity: 0.9 }}>
+                            </Box>
+                            <Box sx={{fontSize: "16px", color: "#fff", mb: "24px", opacity: "0.9"}}>
                                 {section.description}
-                            </Typography>
-                            {section.points.map((point, idx) => (
-                                <Typography
-                                    key={idx}
-                                    sx={{ display: 'flex', alignItems: 'center', mb: 1, opacity: 0.9,lineHeight:2 }}
-                                >
-                                    <CheckCircleIcon sx={{ color: section.iconColor, mr: 1 }} />
-                                    {point}
-                                </Typography>
-                            ))}
+                            </Box>
+                            <Box sx={{
+                                mb: "32px"
+                            }}>
+                                {section.points.map((point, idx) => (
+                                    <Box
+                                        key={idx}
+                                        sx={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            fontSize: "16px",
+                                            mb: 1,
+                                            opacity: 0.9,
+                                            lineHeight: 2
+                                        }}
+                                    >
+                                        <CheckCircleIcon sx={{color: section.iconColor, mr: 1}}/>
+                                        {point}
+                                    </Box>
+                                ))}
+                            </Box>
                             <Box sx={{
                                 backgroundColor: section.noteBg,
-                                p: 2,
+                                p: "16px",
+                                margin: "0 0 24px",
                                 borderRadius: 2,
-                                mt: 2,
-                                fontWeight:"600",
-                                fontSize: 14
+                                fontWeight: "500",
+                                fontSize: "16px",
+                                lineHeight: "1.25rem",
                             }}>
                                 {section.note}
                             </Box>
-                            <Button
-                                variant="contained"
+                            <Box
                                 sx={{
-                                    mt: 3,
-                                    px:2.5,
-                                    py:1.5,
+                                    padding: "12px 24px",
                                     backgroundColor: "#fff",
-                                    color: section.bgColor,
+                                    color: "#012765",
                                     textTransform: "none",
                                     fontWeight: 600,
-                                    fontSize: 15,
-                                    '&:hover': { backgroundColor: "#f1f1f1" }
+                                    fontSize: "16px",
+                                    borderRadius: "0.375rem",
+                                    display: "inline-block",
+                                    transition: "0.5s",
+                                    cursor: "pointer",
+                                    '&:hover': {backgroundColor: "#f1f1f1"}
                                 }}
                             >
                                 {section.buttonText}
-                            </Button>
+                            </Box>
                         </Paper>
                     ))}
                 </Box>
 
                 {/* Bottom Section */}
                 <Box textAlign="center" mt={7}>
-                    <Box sx={{ fontWeight: 700, mb: "16px",fontSize: 30,lineHeight: "36px",color:"#012765" }}>
+                    <Box className={"Montserrat"}
+                         sx={{fontWeight: 700, mb: "16px", fontSize: 30, lineHeight: "36px", color: "#012765"}}>
                         Not Sure What You're Struggling With?
                     </Box>
-                    <Typography sx={{ opacity: 0.7, mb: 4,fontSize: 18 }}>
-                        Take our confidential mental health assessment to gain insight into your <br/> symptoms and receive personalized recommendations.
-                    </Typography>
-                    <Button
-                        variant="contained"
+                    <Box sx={{opacity: 0.7, color: "#4b5563", mb: 4, fontSize: "18px"}}>
+                        Take our confidential mental health assessment to gain insight into your <br/> symptoms and
+                        receive personalized recommendations.
+                    </Box>
+                    <Box
                         sx={{
-                            backgroundColor: "#FF7F1E",
+                            backgroundColor: "#fe6a00",
+                            display: "inline-block",
                             color: "#fff",
                             textTransform: "none",
                             fontWeight: 600,
-                            px: 4,
-                            py:1.4,
-                            fontSize: 15,
-                            mb:10,
-                            '&:hover': { backgroundColor: "#E56F1A" }
+                            padding: "12px 32px",
+                            fontSize: "16px",
+                            mb: 10,
+                            borderRadius: "0.375rem",
+                            transition: "0.5s",
+                            cursor: "pointer",
+                            '&:hover': {backgroundColor: "#E56F1A"}
                         }}
                     >
                         Take Free Assessment
-                    </Button>
+                    </Box>
                 </Box>
             </Box>
         </Container>

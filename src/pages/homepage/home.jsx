@@ -6,8 +6,8 @@ import WorksTable from "../../components/Home/worksTable.jsx";
 function Home() {
     return (
         <>
-            <HeroSection/>
-            <Mindwell/>
+            {/*<HeroSection/>*/}
+            {/*<Mindwell/>*/}
             <WorksTable/>
         </>
     );

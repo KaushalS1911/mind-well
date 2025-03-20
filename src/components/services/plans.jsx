@@ -45,7 +45,7 @@ const plans = [
 
 function Plans() {
     return (
-        <Box sx={{margin: "auto",backgroundColor:"#F9FAFB"}}>
+        <Box sx={{padding: "0 0 56px 0", backgroundColor: "#F9FAFB"}}>
             <Container maxWidth={"xl"}>
                 <Box sx={{
                     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
@@ -73,7 +73,7 @@ function Plans() {
                                         position: "relative",
                                         borderRadius: "10px",
                                         height: "100%",
-                                        overflow: "hidden"
+                                        overflow: "hidden",
                                     }}
                                 >
                                     <Box>
@@ -82,7 +82,13 @@ function Plans() {
                                                 label="MOST POPULAR"
                                                 color="warning"
                                                 size="small"
-                                                sx={{position: "absolute", top: 0, right: 0,borderRadius:"0 5px 0 10px",fontWeight:"bold"}}
+                                                sx={{
+                                                    position: "absolute",
+                                                    top: 0,
+                                                    right: 0,
+                                                    borderRadius: "0 5px 0 10px",
+                                                    fontWeight: "bold"
+                                                }}
                                             />
                                         )}
                                         <Box sx={{
@@ -115,7 +121,13 @@ function Plans() {
                                         }}>
                                             <Box sx={{textAlign: "left", marginTop: 2}}>
                                                 {plan.features.map((feature, idx) => (
-                                                    <Box key={idx} sx={{display: "flex", alignItems: "center",fontSize:"16px",color:"#374151",mb:1}}>
+                                                    <Box key={idx} sx={{
+                                                        display: "flex",
+                                                        alignItems: "center",
+                                                        fontSize: "16px",
+                                                        color: "#374151",
+                                                        mb: 1
+                                                    }}>
                                                         <CheckCircleIcon sx={{color: "#FE6A00", mr: 1}}/> {feature}
                                                     </Box>
                                                 ))}
