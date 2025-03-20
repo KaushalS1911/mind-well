@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Grid, Paper, Typography, Button, Container} from "@mui/material";
+import {Box, Grid, Paper, Typography, Button, Container, Stack} from "@mui/material";
 import MoodBadIcon from "@mui/icons-material/MoodBad";
 import SentimentDissatisfiedIcon from "@mui/icons-material/SentimentDissatisfied";
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
@@ -129,11 +129,14 @@ function Therapists() {
                                     }}>
                                         {struggle.icon}
                                     </Box>
-                                    <Typography variant="h6" color="#012765" sx={{
-                                        fontWeight:700
+                                    <Box sx={{
+                                        fontWeight:700,
+                                        fontSize:"20px",
+                                        color:"#012765",
+                                        lineHeight: "1.75rem",
                                     }}>
                                         {struggle.title}
-                                    </Typography>
+                                    </Box>
                                 </Box>
                                 <Box sx={{
                                     mb:2,
@@ -146,43 +149,55 @@ function Therapists() {
                                 <Box sx={{fontWeight: "600", color: "#012765", mb: 1,fontSize:16}}>
                                     Our approach:
                                 </Box>
-                                <Box>
-                                    {struggle.approach.map((point, idx) => (
-                                        <Typography key={idx} variant="body2" sx={{ display: "flex", alignItems: "center", color: "#4B5563", mb: 1,fontSize: 16 }}>
-                                            <Box component="span" sx={{ mr: 1, color: "#FF7F1E" }}><CheckCircleIcon sx={{color: "#FE6A00", mr: 1}}/></Box>
-                                            {point}
-                                        </Typography>
-                                    ))}
+                                <Box sx={{ alignItems: "center" }}>
+                                    <Stack spacing={1}>
+                                        {struggle.approach.map((point, idx) => (
+                                            <Stack key={idx} direction="row" alignItems="center" sx={{ color: "#4B5563", fontSize: "16px" }}>
+                                                <CheckCircleIcon sx={{ color: "#FE6A00", mr: 1 }} />
+                                                <Box sx={{
+                                                    fontSize:"16px",
+                                                    color: "#4b5563",
+                                                }}>
+                                                    {point}
+                                                </Box>
+                                            </Stack>
+                                        ))}
+                                    </Stack>
                                 </Box>
-                                <Box sx={{mt: "auto"}}>
-                                    <Button sx={{
+                                <Box sx={{mt: 2}}>
+                                    <Box sx={{
                                         textTransform: "none",
-                                        color: "#FF7F1E",
+                                        cursor: "pointer",
+                                        color: "#fe6a00",
                                         fontWeight: "500",
-                                        fontSize: 15
+                                        fontSize: "16px"
                                     }}>
                                         Learn how we can help →
-                                    </Button>
+                                    </Box>
                                 </Box>
                             </Paper>
                         </Grid>
                     ))}
                 </Grid>
                 <Box textAlign="center" mt={4}>
-                    <Button
+                    <Box
                         variant="contained"
                         sx={{
                             backgroundColor: "#012765",
+                            display: "inline-block",
                             color: "white",
                             fontWeight: "bold",
-                            py:1.4,
+                            cursor: "pointer",
+                            borderRadius:"0.375rem",
+                            padding:"12px 32px",
+                            fontSize:"16px",
                             mt:4,
-                            px:3,
-                            "&:hover": { backgroundColor: "#011B47" },
+                            transition:"0.3s",
+                            "&:hover": { backgroundColor: "#1A3C74" },
                         }}
                     >
                         See All Conditions We Treat
-                    </Button>
+                    </Box>
                 </Box>
             </Box>
         </Container>

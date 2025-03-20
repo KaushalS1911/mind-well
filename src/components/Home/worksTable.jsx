@@ -170,21 +170,23 @@ function WorksTable() {
                 </Box>
 
                 <Grid container justifyContent="center" sx={{mt: 6}}>
-                    <Button
-                        variant="contained"
+                    <Box
                         sx={{
                             bgcolor: '#FE6A00',
                             color: '#fff',
                             fontWeight: 600,
-                            px: 4,
-                            py: 1.5,
-                            borderRadius: 2,
+                            fontSize:"16px",
+                            padding:"12px 32px",
+                            borderRadius: "0.375rem",
+                            display: 'inline-block',
+                            cursor: "pointer",
                             textTransform: 'none',
+                            transition: '0.3s',
                             '&:hover': {bgcolor: '#dd6006'}
                         }}
                     >
                         Start Your Journey Today
-                    </Button>
+                    </Box>
                 </Grid>
                 <Box  sx={{textAlign:"center",fontSize:"16px",mt: 2, color: '#4B5563'}}>
                     No commitment required. Free consultation available.

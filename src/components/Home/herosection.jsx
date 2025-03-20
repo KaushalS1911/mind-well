@@ -25,7 +25,13 @@ function HeroSection() {
     };
 
     return (
-        <Box sx={{position: "relative",mt: {md:13,xs:0}, backgroundColor: "#002F6C", color: "white", padding: "80px 0"}}>
+        <Box sx={{
+            position: "relative",
+            mt: {md: 13, xs: 0},
+            backgroundColor: "#002F6C",
+            color: "white",
+            padding: "80px 0"
+        }}>
             <Container maxWidth={"xl"}>
                 <Grid container spacing={1} alignItems="center" justifyContent="space-around">
                     <Box
@@ -53,19 +59,34 @@ function HeroSection() {
                         >
                             Your Mental Wellbeing Matters
                         </Box>
-                        <Box  sx={{marginTop: "20px", fontSize: "20px", lineHeight: "28px", width: "80%"}}>
+                        <Box sx={{marginTop: "20px", fontSize: "20px", lineHeight: "28px", width: "80%"}}>
                             Connect with licensed therapists online and start your journey to better mental health
                             today. Professional support whenever and wherever you need it.
                         </Box>
-                        <Box sx={{marginTop: "30px"}}>
-                            <Button variant="contained"
-                                    sx={{backgroundColor: "#FE6A00", marginRight: "10px", py: 1.5, fontWeight: "600"}}>
+                        <Box sx={{marginTop: "30px", display: "flex"}}>
+                            <Box sx={{
+                                backgroundColor: "#FE6A00",
+                                marginRight: "10px",
+                                padding: "12px 24px",
+                                fontSize: "16px",
+                                display: "inline-block",
+                                borderRadius: "0.375rem",
+                                fontWeight: "600"
+                            }}>
                                 Get Started
-                            </Button>
-                            <Button variant="outlined"
-                                    sx={{borderColor: "white", color: "white", py: 1.5, fontWeight: "600"}}>
+                            </Box>
+                            <Box sx={{
+                                borderColor: "white",
+                                color: "white",
+                                padding: "12px 24px",
+                                fontSize: "16px",
+                                backgroundColor: "transparent",
+                                border: "1px solid #fff",
+                                borderRadius: "0.375rem",
+                                fontWeight: "600"
+                            }}>
                                 Learn More
-                            </Button>
+                            </Box>
                         </Box>
                         <Box sx={{marginTop: "40px", display: "flex", alignItems: "center",}}>
 
@@ -77,7 +98,7 @@ function HeroSection() {
 
 
                             <Box sx={{
-                                fontSize:"14px",
+                                fontSize: "14px",
                                 marginLeft: "10px",
                                 color: "white",
                                 marginBottom: {xs: "30px", md: "0px"}
@@ -165,14 +186,23 @@ function HeroSection() {
                                     />
 
 
-                                    <Button type="submit" fullWidth variant="contained"
-                                            sx={{backgroundColor: "#FE6A00", marginTop: "20px"}}>
+                                    <Box sx={{
+                                        backgroundColor: "#FE6A00",
+                                        margin: "16px 0 0",
+                                        padding: "12px 24px",
+                                        fontSize: "16px",
+                                        color: "#fff",
+                                        fontWeight: "600",
+                                        borderRadius:"0.375rem",
+                                        textAlign:"center",
+                                        cursor: "pointer",
+                                    }}>
                                         Match Me With A Therapist
-                                    </Button>
+                                    </Box>
                                 </form>
 
                                 <Box
-                                            sx={{display: "block", marginTop: "10px", textAlign: "center",fontSize:"12px"}}>
+                                    sx={{display: "block", marginTop: "10px", textAlign: "center", fontSize: "12px"}}>
                                     By continuing, you agree to our{" "}
                                     <a href="#" style={{color: "#002F6C", fontWeight: "bold"}}>
                                         Terms of Service

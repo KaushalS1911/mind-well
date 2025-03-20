@@ -125,17 +125,19 @@ function Struggling() {
                                 ))}
                             </Grid>
                             <Box sx={{mt: 3}}>
-                                <Button sx={{
+                                <Box sx={{
                                     fontSize: "16px",
+                                    display:"inline-block",
+                                    borderRadius:"7px",
                                     backgroundColor: "#fff",
                                     color: "#012765",
                                     fontWeight: "600",
-                                    px: 3,
-                                    py: 1,
-                                    mb: {lg: 0, xs: 3}
+                                    padding:"12px 24px",
+                                    mb: {lg: 0, xs: 3},
+                                    cursor: "pointer",
                                 }}>
                                     Request information
-                                </Button>
+                                </Box>
                             </Box>
                         </Grid>
                         <Grid item xs={12} lg={4}>

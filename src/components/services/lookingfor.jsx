@@ -7,7 +7,7 @@ import FaceIcon from "@mui/icons-material/Face";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-// Therapy Data (Dynamic)
+
 const therapies = [
     {
         title: "Cognitive Behavioral Therapy (CBT)",
@@ -85,9 +85,9 @@ const LookingFor = () => {
                                     borderRadius: 3,
                                     backgroundColor: "#fff",
                                     borderTop: "13px solid #FF7F1E",
-                                    height: "100%", // Fixed height for all cards
+                                    height: "100%",
                                     display: "flex",
-                                    flexDirection: "column" // Ensures even spacing
+                                    flexDirection: "column"
                                 }}
                             >
                                 <Box sx={{alignItems: "center", mb: 2}}>
@@ -105,16 +105,16 @@ const LookingFor = () => {
                                     >
                                         {therapy.icon}
                                     </Box>
-                                    <Typography variant="h6" sx={{fontWeight: "bold", color: "#012765"}}>
+                                    <Box sx={{fontSize:"20px",margin:"0 0 12px",fontWeight: "700", color: "#012765"}}>
                                         {therapy.title}
-                                    </Typography>
+                                    </Box>
                                 </Box>
-                                <Typography variant="body2" sx={{color: "#4B5563", mb: 2}}>
+                                <Box sx={{color: "#4B5563", mb: "24px",fontSize:"16px"}}>
                                     {therapy.description}
-                                </Typography>
-                                <Typography variant="subtitle2" sx={{fontWeight: "bold", color: "#012765", mb: 1}}>
+                                </Box>
+                                <Box sx={{fontWeight: "600", color: "#012765", mb: "8px",fontSize:"16px"}}>
                                     Best For:
-                                </Typography>
+                                </Box>
                                 <Box sx={{display: "flex", flexWrap: "wrap", gap: 1, mb: 2}}>
                                     {therapy.bestFor.map((item, idx) => (
                                         <Chip key={idx} label={item} sx={{
@@ -127,14 +127,15 @@ const LookingFor = () => {
                                 </Box>
                                 {/* Push button to bottom */}
                                 <Box sx={{mt: "auto"}}>
-                                    <Button href={therapy.link} sx={{
+                                    <Box sx={{
                                         textTransform: "none",
-                                        color: "#FF7F1E",
+                                        cursor: "pointer",
+                                        color: "#fe6a00",
                                         fontWeight: "500",
-                                        fontSize: 15
+                                        fontSize: "16px"
                                     }}>
                                         Learn more about {therapy.title.split(" ")[0]} →
-                                    </Button>
+                                    </Box>
                                 </Box>
                             </Paper>
                         </Grid>
@@ -155,16 +156,19 @@ const LookingFor = () => {
                                 Complete our brief assessment, and we’ll match you with a therapist who specializes in
                                 the most effective techniques for your needs.
                             </Box>
-                            <Button variant="contained" sx={{
-                                backgroundColor: "#FF7F1E",
+                            <Box sx={{
+                                display: "inline-block",
+                                backgroundColor: "#fe6a00",
+                                color:"#fff",
                                 textTransform: "none",
-                                fontWeight: "bold",
+                                fontWeight: "600",
+                                borderRadius:"0.375rem",
                                 mt: 2,
-                                py: 1.5,
-                                px: 3
+                                padding:"12px 24px",
+                                cursor: "pointer",
                             }}>
                                 Take the Assessment
-                            </Button>
+                            </Box>
                         </Grid>
                         <Grid item xs={12} md={4}>
                             <Paper elevation={2} sx={{ p: 3, borderRadius: 3, backgroundColor: "#F2F4F7" }}>
@@ -189,7 +193,7 @@ const LookingFor = () => {
                                             cursor: "pointer",
                                             transition: "all 0.3s ease",
                                             "&:hover": { color: "#FF7F1E" },
-                                            "&:hover .arrow": { transform: "translateX(5px)" } // Arrow move hover on text also
+                                            "&:hover .arrow": { transform: "translateX(5px)" }
                                         }}
                                     >
                                         <Box

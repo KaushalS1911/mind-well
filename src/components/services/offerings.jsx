@@ -196,40 +196,48 @@ const Offerings = () => {
 
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <Typography variant="h5" sx={{color: "#012765", fontWeight: 700,}}>
+                        <Box className={"Montserrat"} sx={{fontSize:"24px",color: "#012765", fontWeight: 700,}}>
                             {offerings[selectedTab]}
-                        </Typography>
-                        <Typography variant="body1" sx={{color: "#515863", mt: 1, mb: 2, fontSize: 17, width: "95%"}}>
+                        </Box>
+                        <Box sx={{color: "#515863", mt: 1, mb: 2, fontSize: "16px", width: "95%"}}>
                             {selectedData.maindescription}
-                        </Typography>
+                        </Box>
                         {[selectedData.firsttitle, selectedData.secondtitle, selectedData.thirdtitle].map((title, index) => (
                             <Box key={index} sx={{display: "flex", alignItems: "center", mb: 2}}>
                                 <CheckCircleIcon sx={{color: "#FF7F1E", fontSize: 20, mr: 1}}/>
                                 <Box>
-                                    <Typography fontWeight="normal">{title}</Typography>
-                                    <Typography variant="body2" sx={{color: "#4B5563"}}>
+                                    <Box sx={{
+                                        fontSize:"16px",
+                                        color: "#1f2937",
+                                        fontWeight:"500"
+                                    }}>{title}</Box>
+                                    <Box sx={{fontSize:"14px",color: "#6b7280",lineHeight:"1.25rem"}}>
                                         {selectedData[["fstitle", "sstitle", "tstitle"][index]]}
-                                    </Typography>
+                                    </Box>
                                 </Box>
                             </Box>
                         ))}
-                        <Button variant="contained" sx={{
-                            backgroundColor: "#FF7F1E",
+                        <Box  sx={{
+                            backgroundColor: "#FE6A00",
+                            display: "inline-block",
                             textTransform: "none",
-                            fontWeight: "bold",
+                            fontWeight: "600",
+                            borderRadius:"7px",
+                            cursor:"pointer",
+                            color: "#fff",
                             mt: 2,
                             px: 3,
                             py: 1.5
                         }}>
                             Learn More
-                        </Button>
+                        </Box>
                     </Grid>
 
                     <Grid item xs={12} md={6}>
                         <Paper elevation={3} sx={{p: 3, borderRadius: 3, backgroundColor: "#F9FAFB"}}>
-                            <Typography variant="h6" fontWeight="bold" sx={{color: "#012765"}}>
+                            <Box sx={{fontSize:"20px",fontWeight:"700",margin:"0 0 24px",color: "#012765"}}>
                                 {selectedData.maintitle}
-                            </Typography>
+                            </Box>
                             {selectedData.options.map((therapy, index) => (
                                 <Box
                                     key={index}
@@ -262,9 +270,8 @@ const Offerings = () => {
                                         {/* If you want to add an icon, you can replace this comment with an icon */}
                                     </Box>
                                     <Box>
-                                        <Typography sx={{fontWeight: "600"}}>{therapy.title}</Typography>
-                                        <Typography variant="body2"
-                                                    sx={{color: "#4B5563"}}>{therapy.description}</Typography>
+                                        <Box sx={{fontSize:"16px",fontWeight: "500",color:"#1f2937"}}>{therapy.title}</Box>
+                                        <Box sx={{fontSize:"14px",color: "#6b7280",lineHeight:"1.25rem"}}>{therapy.description}</Box>
                                     </Box>
                                 </Box>
                             ))}
