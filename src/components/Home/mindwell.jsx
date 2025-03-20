@@ -159,7 +159,7 @@ function Mindwell() {
                                         <Typography variant="h4" sx={{ color: "#FF7F1E", fontWeight: "700",textAlign:"center" }}>
                                             4.9
                                         </Typography>
-                                        <Box sx={{fontSize:"14px", color: "#D1E1FF" }}>
+                                        <Box sx={{fontSize:"14px", color: "#D1E1FF",textAlign:"center" }}>
                                             Average therapist rating
                                         </Box>
                                     </Grid>
