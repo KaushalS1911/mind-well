@@ -43,9 +43,10 @@ const steps = [
 
 function WorksTable() {
     return (
-        <Box sx={{padding:"96px 0", bgcolor: "#f9f9f9"}}>
+        <Box sx={{padding: "96px 0", bgcolor: "#f9f9f9"}}>
             <Container maxWidth="xl">
-                <Typography className={"Montserrat"} variant="h4" align="center" fontWeight={700} color="#012765" gutterBottom>
+                <Typography className={"Montserrat"} variant="h4" align="center" fontWeight={700} color="#012765"
+                            gutterBottom>
                     How It Works
                 </Typography>
                 <Box
@@ -56,7 +57,7 @@ function WorksTable() {
                     Getting started with MindWell is simple. Follow these steps to begin your mental wellness journey.
                 </Box>
 
-                <Box sx={{position: 'relative', mt: 6}}>
+                <Box sx={{position: "relative", mt: 6}}>
                     <Box
                         sx={{
                             position: 'absolute',
@@ -85,7 +86,13 @@ function WorksTable() {
                         >
                             <Grid item xs={12} md={6}
                                   textAlign={{xs: 'center', sm: index % 2 === 0 ? 'right' : 'left'}}>
-                                <Box sx={{p: {lg:5,md:3,xs:2}, bgcolor: '#fff', boxShadow: 1, borderRadius: 2, mr: 5,}}>
+                                <Box sx={{
+                                    p: {lg: 5, md: 3, xs: 2},
+                                    bgcolor: '#fff',
+                                    boxShadow: 1,
+                                    borderRadius: 2,
+                                    mr: {md:5,xs:0},
+                                }}>
                                     <Box sx={{p: 0, zIndex: 1}}>
                                         <Box sx={{
                                             fontWeight: '700',
@@ -96,9 +103,9 @@ function WorksTable() {
                                         }}>
                                             {step.title}
                                         </Box>
-                                        <Typography variant="body2" sx={{color: '#4B5563', fontSize: "16px"}}>
+                                        <Box sx={{color: '#4B5563', fontSize: "16px"}}>
                                             {step.description}
-                                        </Typography>
+                                        </Box>
                                     </Box>
                                 </Box>
                             </Grid>
@@ -106,9 +113,9 @@ function WorksTable() {
                             <Box
                                 sx={{
                                     position: "absolute",
-                                    top: {xs: "60%",sm:"60%", md: "50%"},
-                                    right: {xs: "17%",sm:"5%", md: "48.3%"},
-                                    display: 'inline-flex',
+                                    top: {xs: "60%", sm: "60%", md: "50%"},
+                                    right: {xs: "17%", sm: "5%", md: "48.3%"},
+                                    display: {sm: 'inline-flex', xs: "none"},
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     width: {xs: 35, sm: 45, md: 50},
@@ -117,20 +124,45 @@ function WorksTable() {
                                     bgcolor: '#FE6A00',
                                     color: '#fff',
                                     fontWeight: 'bold',
-                                    fontSize: {xs: '14px', sm: '16px', md: '18px'}
+                                    fontSize: {xs: '14px', sm: '16px', md: '18px'},
+                                    zIndex: "1"
                                 }}
                             >
                                 {index + 1}
                             </Box>
 
+
                             <Grid item xs={12} md={6}>
-                                <Box sx={{bgcolor: "#003366", color: "#fff", p: 3, borderRadius: 2, ml: 5, mt: 7}}>
+                                <Box sx={{
+                                    bgcolor: "#003366",
+                                    color: "#fff",
+                                    p: 3,
+                                    borderRadius: 2,
+                                    ml: {md:5,xs:0},
+                                    mt: 7,
+                                    position: "relative",
+                                }}>
                                     {step.details.map((detail, i) => (
-                                        <Box key={i} display="flex" alignItems="center" mb={1} >
+                                        <Box key={i} display="flex" alignItems="center" mb={1}>
                                             <CheckCircleIcon sx={{color: "#FE6A00", mr: 1}}/>
                                             <Box>{detail}</Box>
                                         </Box>
                                     ))}
+                                    <Box sx={{
+                                        position: "absolute",
+                                        top: {xs: "7%",},
+                                        right: {xs: "2%",},
+                                        display: {xs: 'inline-flex', sm: "none"},
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: {xs: 35, sm: 45, md: 50},
+                                        height: {xs: 35, sm: 45, md: 50},
+                                        borderRadius: '50%',
+                                        bgcolor: '#FE6A00',
+                                        color: '#fff',
+                                        fontWeight: 'bold',
+                                        fontSize: {xs: '14px', sm: '16px', md: '18px'}
+                                    }}>{index + 1}</Box>
                                 </Box>
                             </Grid>
                         </Grid>
@@ -154,9 +186,9 @@ function WorksTable() {
                         Start Your Journey Today
                     </Button>
                 </Grid>
-                <Typography align="center" sx={{mt: 2, color: '#4B5563'}}>
+                <Box  sx={{textAlign:"center",fontSize:"16px",mt: 2, color: '#4B5563'}}>
                     No commitment required. Free consultation available.
-                </Typography>
+                </Box>
             </Container>
         </Box>
     );

@@ -125,49 +125,47 @@ function Mindwell() {
                     py: 6,
                     px: 4
                 }}>
-                    <Container maxWidth="lg">
-                        <Grid container spacing={3} alignItems="center">
+                        <Grid container spacing={0} alignItems="center">
 
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} md={5}>
                                 <Typography className={"Montserrat"} variant="h5" fontWeight="bold">
                                     Our Impact
                                 </Typography>
-                                <Typography variant="body1" sx={{ mt: 1, color: "#D1E1FF",width:"85%" }}>
+                                <Box variant="body1" sx={{ mt: 1, color: "#D1E1FF",width:"85%" }}>
                                     At MindWell, we're committed to making a difference in how people access and experience mental healthcare.
-                                </Typography>
+                                </Box>
                             </Grid>
 
 
-                            <Grid item xs={12} md={6}>
+                            <Grid item xs={12} md={7}>
                                 <Grid container spacing={4}>
                                     <Grid item sm={4} xs={6}>
                                         <Typography variant="h4" sx={{ color: "#FF7F1E", fontWeight: "700",textAlign:"center" }}>
                                             93%
                                         </Typography>
-                                        <Typography variant="body2" sx={{ color: "#D1E1FF",textAlign:"center" }}>
+                                        <Box variant="body2" sx={{fontSize:"14px", color: "#D1E1FF",textAlign:"center" }}>
                                             Report significant improvement
-                                        </Typography>
+                                        </Box>
                                     </Grid>
                                     <Grid item sm={4} xs={6}>
                                         <Typography variant="h4" sx={{ color: "#FF7F1E", fontWeight: "700",textAlign:"center" }}>
                                             25K+
                                         </Typography>
-                                        <Typography variant="body2" sx={{ color: "#D1E1FF",textAlign:"center" }}>
+                                        <Box variant="body2" sx={{fontSize:"14px", color: "#D1E1FF",textAlign:"center" }}>
                                             Sessions completed
-                                        </Typography>
+                                        </Box>
                                     </Grid>
                                     <Grid item sm={4} xs={6}>
                                         <Typography variant="h4" sx={{ color: "#FF7F1E", fontWeight: "700",textAlign:"center" }}>
                                             4.9
                                         </Typography>
-                                        <Typography variant="body2" sx={{ color: "#D1E1FF" }}>
+                                        <Box sx={{fontSize:"14px", color: "#D1E1FF" }}>
                                             Average therapist rating
-                                        </Typography>
+                                        </Box>
                                     </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Container>
                 </Box>
 
             </Container>

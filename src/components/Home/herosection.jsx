@@ -76,13 +76,14 @@ function HeroSection() {
                             </AvatarGroup>
 
 
-                            <Typography variant="body2" sx={{
+                            <Box sx={{
+                                fontSize:"14px",
                                 marginLeft: "10px",
                                 color: "white",
                                 marginBottom: {xs: "30px", md: "0px"}
                             }}>
                                 Trusted by <b>10,000+</b> students and professionals
-                            </Typography>
+                            </Box>
                         </Box>
                     </Grid>
 
@@ -170,8 +171,8 @@ function HeroSection() {
                                     </Button>
                                 </form>
 
-                                <Typography variant="caption"
-                                            sx={{display: "block", marginTop: "10px", textAlign: "center"}}>
+                                <Box
+                                            sx={{display: "block", marginTop: "10px", textAlign: "center",fontSize:"12px"}}>
                                     By continuing, you agree to our{" "}
                                     <a href="#" style={{color: "#002F6C", fontWeight: "bold"}}>
                                         Terms of Service
@@ -180,7 +181,7 @@ function HeroSection() {
                                     <a href="#" style={{color: "#002F6C", fontWeight: "bold"}}>
                                         Privacy Policy
                                     </a>
-                                </Typography>
+                                </Box>
                             </Paper>
                         </Box>
                     </Grid>
