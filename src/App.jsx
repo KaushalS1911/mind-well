@@ -13,7 +13,7 @@ function App() {
             <Navigation/>
             <Home/>
             <Services/>
-            {/*<ExpertsWorker/>*/}
+            <ExpertsWorker/>
             {/*<Resource/>*/}
             <Footer/>
         </>

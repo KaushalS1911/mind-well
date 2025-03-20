@@ -100,11 +100,11 @@ function Worker() {
     const [selected, setSelected] = useState("All Experts");
 
     return (
-        <Box className={"Poppins"} sx={{textAlign: "center", p: "96px 0"}}>
+        <Box sx={{textAlign: "center", p: "96px 0"}}>
             <Container maxWidth="xl">
                 <Box sx={{textAlign: "center", mb: 8, px: 2}}>
-                    <Typography
-                        variant="h3"
+                    <Box
+                        className={"Montserrat"}
                         sx={{
                             color: "#012765",
                             fontWeight: 700,
@@ -114,9 +114,8 @@ function Worker() {
                         }}
                     >
                         Meet Our Mental Health Experts
-                    </Typography>
-                    <Typography
-                        variant="body1"
+                    </Box>
+                    <Box
                         sx={{
                             color: "#4b5563",
                             maxWidth: "600px",
@@ -128,13 +127,13 @@ function Worker() {
                         Our team of licensed therapists and counselors are committed to providing high-quality,
                         evidence-based
                         care tailored to your unique needs.
-                    </Typography>
+                    </Box>
                     {/* Filter Buttons */}
                     <Box sx={{width: "100%", display: "flex", justifyContent: "center"}}>
                         <Grid container spacing={2} justifyContent="center">
                             {filters.map((filter) => (
                                 <Grid item key={filter}>
-                                    <Button
+                                    <Box
                                         onClick={() => setSelected(filter)}
                                         sx={{
                                             fontSize: "16px",
@@ -144,13 +143,14 @@ function Worker() {
                                             color: selected === filter ? "#fff" : "#000",
                                             fontWeight: 500,
                                             borderRadius: "50px",
+                                            cursor:"pointer",
                                             "&:hover": {
                                                 backgroundColor: selected === filter ? "#011a45" : "#D1D5DB",
                                             },
                                         }}
                                     >
                                         {filter}
-                                    </Button>
+                                    </Box>
                                 </Grid>
                             ))}
                         </Grid>
@@ -285,31 +285,34 @@ function Worker() {
                                             fontSize: "14px",
                                             color: "#012765",
                                         }}>View Profile</Box>
-                                        <Button sx={{
+                                        <Box sx={{
                                             padding: "8px 16px",
                                             backgroundColor: "#fe6a00",
                                             color: "#fff",
-                                            fontSize: "12px",
-                                            borderRadius: "10px",
+                                            fontSize: "14px",
+                                            borderRadius: "0.375rem",
+                                            cursor:"pointer"
                                         }}>
                                             Book Session
-                                        </Button>
+                                        </Box>
                                     </Box>
                                 </Box>
                             </Box>
                         </Grid>
                     ))}
                 </Grid>
-                <Button sx={{
+                <Box sx={{
+                    display: "inline-block",
                     padding: "12px 32px",
                     backgroundColor: "#012765",
                     color: "#fff",
                     fontSize: "16px",
                     mt: 8,
-                    borderRadius: "10px"
+                    borderRadius: "0.375rem",
+                    cursor: "pointer",
                 }}>
                     View All Experts
-                </Button>
+                </Box>
             </Container>
         </Box>
     );

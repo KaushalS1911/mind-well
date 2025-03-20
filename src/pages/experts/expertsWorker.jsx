@@ -7,8 +7,8 @@ function ExpertsWorker() {
     return (
         <>
             <Worker/>
-            <Expertselection/>
-            <Clientsreview/>
+            {/*<Expertselection/>*/}
+            {/*<Clientsreview/>*/}
         </>
     );
 }
