@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useForm} from "react-hook-form";
+import {Controller, useForm} from "react-hook-form";
 import {
     TextField,
     Button,
@@ -23,8 +23,8 @@ import {Facebook, Twitter, Instagram, LinkedIn, ExpandMore} from "@mui/icons-mat
 import {Phone, Email, LocationOn} from "@mui/icons-material";
 
 const GetInTouch = () => {
-    const {register, handleSubmit, formState: {errors}} = useForm();
-    const [privacyChecked, setPrivacyChecked] = useState(false);
+    const {register, handleSubmit,control, formState: {errors}} = useForm();
+
 
     const onSubmit = (data) => {
         console.log("Form Data:", data);
@@ -295,11 +295,17 @@ const GetInTouch = () => {
                                 <Grid item xs={12}>
                                     <FormControlLabel
                                         control={
-                                            <Checkbox
-                                                id="privacy-policy-checkbox"
-                                                checked={privacyChecked}
-                                                onChange={() => setPrivacyChecked(!privacyChecked)}
-                                                {...register("privacyPolicy", { required: "You must agree to the privacy policy" })}
+                                            <Controller
+                                                name="privacyPolicy"
+                                                control={control}
+                                                rules={{ required: "You must agree to the privacy policy" }}
+                                                render={({ field }) => (
+                                                    <Checkbox
+                                                        id="privacy-policy-checkbox"
+                                                        {...field}
+                                                        checked={!!field.value}
+                                                    />
+                                                )}
                                             />
                                         }
                                         label={
