@@ -32,7 +32,7 @@ const GetInTouch = () => {
     const contactInfo = {
         phone: {
             title: "Phone",
-            icon: <Phone sx={{color: "#FFA500", mr: 1}}/>,
+            icon: <Phone sx={{color: "#FF6600", mr: 1}}/>,
             details: [
                 "General Inquiries: +1 (123) 456-7890",
                 "Support: +1 (800) 123-4567"
@@ -40,7 +40,7 @@ const GetInTouch = () => {
         },
         email: {
             title: "Email",
-            icon: <Email sx={{color: "#FFA500", mr: 1}}/>,
+            icon: <Email sx={{color: "#FF6600", mr: 1}}/>,
             details: [
                 "Info: info@mindwell.com",
                 "Support: support@mindwell.com"
@@ -48,7 +48,7 @@ const GetInTouch = () => {
         },
         location: {
             title: "Office Locations",
-            icon: <LocationOn sx={{color: "#FFA500", mr: 1}}/>,
+            icon: <LocationOn sx={{color: "#FF6600", mr: 1}}/>,
             details: [
                 "New York: 123 Broadway, Suite 456, New York, NY 10001",
                 "San Francisco: 789 Market St, Suite 1011, San Francisco, CA 94103"
@@ -83,27 +83,27 @@ const GetInTouch = () => {
                     margin:"0 0 64px"
                 }}
             >
-                <Typography
+                <Box className={"Montserrat"}
                     sx={{
                         color: "#002D62",
                         margin: "0 0 16px",
-                        fontSize: { xs: "28px", sm: "36px" }, // Responsive font size
-                        lineHeight: { xs: "32px", sm: "40px" }, // Adjust line height for smaller screens
+                        fontSize: { xs: "28px", sm: "36px" },
+                        lineHeight: { xs: "32px", sm: "40px" },
                         fontWeight: "700"
                     }}
                 >
                     Get in Touch
-                </Typography>
-                <Typography
+                </Box>
+                <Box
                     sx={{
                         color: "#4F4F4F",
                         maxWidth: "600px",
-                        fontSize: { xs: "16px", sm: "18px" }, // Responsive text
-                        textAlign: "center" // Ensure it's centered
+                        fontSize: { xs: "16px", sm: "18px" },
+                        textAlign: "center"
                     }}
                 >
                     Have questions about our services? Reach out to our team for personalized support on your mental wellness journey.
-                </Typography>
+                </Box>
             </Box>
 
 
@@ -123,21 +123,21 @@ const GetInTouch = () => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
-                                    <Typography sx={{
+                                    <Box sx={{
                                         fontSize: "24px",
                                         margin: "0 0 24px",
                                         fontWeight: "700",
                                         lineHeight: "32px"
                                     }}>
                                         Send Us a Message
-                                    </Typography>
+                                    </Box>
                                 </Grid>
 
                                 {/* First Name */}
                                 <Grid item xs={12} sm={6}>
-                                    <Typography sx={{margin: "0 0 4px", fontSize: "14px"}}>
+                                    <Box sx={{margin: "0 0 4px", fontSize: "14px"}}>
                                         First Name*
-                                    </Typography>
+                                    </Box>
                                     <TextField
                                         fullWidth
                                         placeholder="Your first name"
@@ -153,9 +153,9 @@ const GetInTouch = () => {
 
                                 {/* Last Name */}
                                 <Grid item xs={12} sm={6}>
-                                    <Typography sx={{margin: "0 0 4px", fontSize: "14px"}}>
+                                    <Box sx={{margin: "0 0 4px", fontSize: "14px"}}>
                                         Last Name*
-                                    </Typography>
+                                    </Box>
                                     <TextField
                                         fullWidth
                                         placeholder="Your last name"
@@ -171,9 +171,9 @@ const GetInTouch = () => {
 
                                 {/* Email */}
                                 <Grid item xs={12}>
-                                    <Typography sx={{margin: "0 0 4px", fontSize: "14px"}}>
+                                    <Box sx={{margin: "0 0 4px", fontSize: "14px"}}>
                                         Email Address*
-                                    </Typography>
+                                    </Box>
                                     <TextField
                                         fullWidth
                                         placeholder="your.email@example.com"
@@ -195,9 +195,9 @@ const GetInTouch = () => {
 
                                 {/* Phone Number */}
                                 <Grid item xs={12}>
-                                    <Typography sx={{margin: "0 0 4px", fontSize: "14px"}}>
+                                    <Box sx={{margin: "0 0 4px", fontSize: "14px"}}>
                                         Phone Number
-                                    </Typography>
+                                    </Box>
                                     <TextField
                                         fullWidth
                                         placeholder="(123) 456-7890"
@@ -218,9 +218,9 @@ const GetInTouch = () => {
 
                                 {/* Inquiry Type */}
                                 <Grid item xs={12}>
-                                    <Typography sx={{margin: "0 0 4px", fontSize: "14px"}}>
+                                    <Box sx={{margin: "0 0 4px", fontSize: "14px"}}>
                                         Inquiry Type*
-                                    </Typography>
+                                    </Box>
                                     <FormControl fullWidth error={!!errors.inquiryType}>
                                         <Select
                                             displayEmpty
@@ -229,7 +229,7 @@ const GetInTouch = () => {
                                                 borderRadius: "8px",
                                                 height: "48px",
                                                 fontSize: "16px",
-                                                '& .MuiSelect-icon': {display: 'none'}  // Hides dropdown arrow
+                                                '& .MuiSelect-icon': {display: 'none'}
                                             }}
                                             defaultValue=""
                                             {...register("inquiryType", {required: "Inquiry type is required"})}
@@ -273,9 +273,9 @@ const GetInTouch = () => {
 
                                 {/* Message */}
                                 <Grid item xs={12}>
-                                    <Typography sx={{margin: "0 0 4px", fontSize: "14px"}}>
+                                    <Box sx={{margin: "0 0 4px", fontSize: "14px"}}>
                                         Message*
-                                    </Typography>
+                                    </Box>
                                     <TextField
                                         fullWidth
                                         placeholder="How can we help you?"
@@ -296,26 +296,26 @@ const GetInTouch = () => {
                                     <FormControlLabel
                                         control={
                                             <Checkbox
-                                                id="privacy-policy-checkbox" // Linking label to checkbox
+                                                id="privacy-policy-checkbox"
                                                 checked={privacyChecked}
                                                 onChange={() => setPrivacyChecked(!privacyChecked)}
                                                 {...register("privacyPolicy", { required: "You must agree to the privacy policy" })}
                                             />
                                         }
                                         label={
-                                            <Typography sx={{ color: "#4F5866" }}>
+                                            <Box sx={{ color: "#4F5866" }}>
                                                 I agree to the{" "}
                                                 <Link href="#" sx={{ color: "#012765", textDecoration: "none", fontWeight: "bold" }}>
                                                     Privacy Policy
                                                 </Link>{" "}
                                                 and consent to having my data processed.
-                                            </Typography>
+                                            </Box>
                                         }
                                     />
                                     {errors.privacyPolicy && (
-                                        <Typography variant="body2" color="error">
+                                        <Box variant="body2" color="error">
                                             {errors.privacyPolicy.message}
-                                        </Typography>
+                                        </Box>
                                     )}
                                 </Grid>
 
@@ -355,9 +355,9 @@ const GetInTouch = () => {
                             }}>
 
                                 {/* Title */}
-                                <Typography sx={{fontSize: "24px", margin: "0 0 24px", fontWeight:"700", lineHeight: "32px"}}>
+                                <Box sx={{fontSize: "24px", margin: "0 0 24px", fontWeight:"700", lineHeight: "32px"}}>
                                     Contact Information
-                                </Typography>
+                                </Box>
 
                                 {/* Mapping through contactInfo object */}
                                 {Object.values(contactInfo).map((info, index) => (
@@ -365,16 +365,16 @@ const GetInTouch = () => {
                                         {/* Icon & Title */}
                                         <Box sx={{display: "flex", alignItems: "center"}}>
                                             {info.icon}
-                                            <Typography sx={{fontSize: "18px", fontWeight: "500" , margin: "0 0 4px"}}>
+                                            <Box sx={{fontSize: "18px", fontWeight: "500" , margin: "0 0 4px"}}>
                                                 {info.title}
-                                            </Typography>
+                                            </Box>
                                         </Box>
 
                                         {/* Details */}
-                                        <Typography sx={{ml: 4,color:"#CCD4E0"}}>
+                                        <Box sx={{ml: 4,color:"#CCD4E0"}}>
                                             {info.details.map((line, i) => (
                                                 <span key={i}>{line}<br/></span>))}
-                                        </Typography>
+                                        </Box>
                                     </Box>
                                 ))}
                             </Box>
@@ -387,22 +387,22 @@ const GetInTouch = () => {
                             <Grid item xs={12} sm={6}>
                                 <Box sx={{ padding:"24px", backgroundColor: "white", borderRadius: 2, boxShadow: 1 }}>
                                     {/* Title */}
-                                    <Typography  sx={{ color: "#012765",fontSize: "18px",fontWeight:"700",margin: "0 0 16px", lineHeight: "28px"  }}>
+                                    <Box  sx={{ color: "#012765",fontSize: "18px",fontWeight:"700",margin: "0 0 16px", lineHeight: "28px"  }}>
                                         Business Hours
-                                    </Typography>
+                                    </Box>
 
                                     {/* Hours Details - Dynamically Rendered */}
                                     {businessHours.map((entry, index) => (
                                         <Box key={index} sx={{ display: "flex", justifyContent: "space-between", margin: "8px 0 0" }}>
-                                            <Typography>{entry.day}:</Typography>
-                                            <Typography>{entry.time}</Typography>
+                                            <Box>{entry.day}:</Box>
+                                            <Box>{entry.time}</Box>
                                         </Box>
                                     ))}
 
                                     {/* Customer Support Message */}
-                                    <Typography sx={{ mt: 2, fontSize: "14px", color: "#6B7280" }}>
+                                    <Box sx={{ mt: 2, fontSize: "14px", color: "#6B7280" }}>
                                         Customer support is available 24/7 through our app and online portal.
-                                    </Typography>
+                                    </Box>
                                 </Box>
                             </Grid>
 
@@ -417,9 +417,9 @@ const GetInTouch = () => {
                                     height: "100%",
                                 }}>
                                     {/* Title */}
-                                    <Typography  sx={{ color: "#002D62",fontWeight:"700", fontSize: "18px",margin: "0 0 16px", lineHeight: "28px"  }}>
+                                    <Box  sx={{ color: "#002D62",fontWeight:"700", fontSize: "18px",margin: "0 0 16px", lineHeight: "28px"  }}>
                                         Connect With Us
-                                    </Typography>
+                                    </Box>
 
                                     {/* Social Media Icons - Dynamically Rendered */}
                                     <Box sx={{ display: "flex", gap: 2 }}>
@@ -445,9 +445,9 @@ const GetInTouch = () => {
                                     </Box>
 
                                     {/* Description */}
-                                    <Typography sx={{ margin:"16px 0 0", fontSize: "14px", color: "#6B7280" ,}}>
+                                    <Box sx={{ margin:"16px 0 0", fontSize: "14px", color: "#6B7280" ,}}>
                                         Follow us on social media for the latest updates, mental health tips, and special offers.
-                                    </Typography>
+                                    </Box>
                                 </Box>
                             </Grid>
 
@@ -466,9 +466,9 @@ const GetInTouch = () => {
                                 }}
                             >
                                 {/* FAQ Title */}
-                                <Typography  sx={{ color: "#002D62",fontWeight:"700", fontSize: "18px",margin: "0 0 16px", lineHeight: "28px" }}>
+                                <Box  sx={{ color: "#002D62",fontWeight:"700", fontSize: "18px",margin: "0 0 16px", lineHeight: "28px" }}>
                                     Frequently Asked Questions
-                                </Typography>
+                                </Box>
 
                                 {/* FAQ Items */}
                                 {[
@@ -483,9 +483,9 @@ const GetInTouch = () => {
                                 ].map((faq, index) => (
                                     <Box key={index} sx={{
                                         borderBottom:"1px solid #E5E7EB",
-                                        padding:"0 0 16px"
+                                        padding: "0 0 16px"
                                     }}>
-                                        <Typography  sx={{
+                                        <Box  sx={{
                                             color: "#002D62",
                                             display: "flex",
                                             justifyContent: "space-between",
@@ -493,21 +493,20 @@ const GetInTouch = () => {
                                         }}>
 
                                             {faq.question} <ExpandMore sx={{color: "#FF7A00",fontWeight:"500",fontSize:"16px",margin:"0 0 10px",}}/>
-                                        </Typography>
-                                        <Typography sx={{ color: "#6B7280"}}>{faq.answer}</Typography>
+                                        </Box>
+                                        <Box sx={{ color: "#6B7280"}}>{faq.answer}</Box>
                                     </Box>
                                 ))}
 
                                 {/* View All FAQs Link */}
                                 <Box sx={{ display: "flex", flexDirection: "column" }}>
-                                    <Typography
+                                    <Box
                                         sx={{
                                             mt: 2,
-                                            color: "#FF7A00",
-                                            fontWeight: "bold",
+                                            color: "#FF6600",
                                             cursor: "pointer",
                                             textDecoration: "none",
-                                            display: "inline-block", // Ensures margin works
+                                            display: "inline-block",
                                             transition: "color 0.3s ease-in-out",
                                             "&:hover": { color: "#012765" }
                                         }}
@@ -515,7 +514,7 @@ const GetInTouch = () => {
                                         href="/faqs"
                                     >
                                         View all FAQs →
-                                    </Typography>
+                                    </Box>
                                 </Box>
 
 

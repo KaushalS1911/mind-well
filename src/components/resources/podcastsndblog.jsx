@@ -69,38 +69,43 @@ const blogs = [
 function PodcastsAndBlog() {
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{px: 3, py: 2,}}>
+            <Box>
                 {/* Podcasts & Videos Section */}
                 <Box mb={5}>
                     <Box display="flex" justifyContent="space-between" alignItems="center" sx={{
-                        mb: 4
+                        mb: 4,
+                        mt: 4
                     }}>
-                        <Typography variant="h5" fontWeight={"bold"} sx={{
-                            color: "#012765"
+                        <Box className={"Montserrat"} sx={{
+                            color: "#012765",
+                            fontSize: "24px",
+                            fontWeight: "700",
+                            lineHeight: "2rem",
                         }}>
                             Podcasts & Videos
-                        </Typography>
-                        <Button sx={{color: "#FE6A00", fontWeight: "600",transition: ".3s",
+                        </Box>
+                        <Box sx={{
+                            fontSize: "16px",
+                            color: "#FE6A00", fontWeight: "500", transition: ".3s",
                             "&:hover": {
-                                color:"#012765"
-                            }}}>
+                                color: "#012765"
+                            }
+                        }}>
                             View All Media →
-                        </Button>
+                        </Box>
                     </Box>
 
 
                     <Grid container spacing={2} mb={4}>
                         {articles.map((article, index) => (
                             <Grid item xs={12} md={4} key={index}>
-                                <Card sx={{borderRadius: 3, boxShadow: 1}}>
+                                <Box sx={{borderRadius: 3, boxShadow: 1}}>
                                     {/* Top Gray Section */}
-                                    <Typography
+                                    <Box
                                         sx={{
-                                            bgcolor: "#E7EAEE",
-                                            p: 2,
+                                            bgcolor: "#0127650D",
+                                            p: "16px",
                                             fontWeight: 500,
-
-
                                         }}
                                     >
                                         <Box sx={{
@@ -111,43 +116,48 @@ function PodcastsAndBlog() {
                                             {article.icon}
                                         </Box>
                                         <Box sx={{
-                                            display: "flex",
-                                            justifyContent: "center",
+                                            textAlign: "center",
                                             mt: 1,
-                                            color: "#012765"
+                                            color: "#012765",
+                                            fontSize: "16px",
+                                            fontWeight: "500"
                                         }}>
                                             {article.name}
                                         </Box>
-                                    </Typography>
+                                    </Box>
 
 
-                                    <CardContent sx={{p: "24px"}}>
+                                    <Box sx={{p: "24px"}}>
+                                        <Chip
+                                            label={article.tag}
+                                            size="small"
+                                            sx={{
+                                                bgcolor: "#0127651A",
+                                                color: "#012765",
+                                                alignItems: "center",
+                                                fontSize: 12,
+                                                fontWeight: 500,
+                                                mb: "12px",
+                                                padding: "4px 12px",
+                                            }}
+                                        />
                                         <Box sx={{
-                                            display: "flex",
-                                            justifyContent: "space-between",
-                                            alignItems: "center",
-                                        }}>
-                                            <Chip
-                                                label={article.tag}
-                                                size="small"
-                                                sx={{
-                                                    bgcolor: "#E8EAF0",
-                                                    color: "#012765",
-                                                    alignItems: "center",
-                                                    fontSize: 12,
-                                                    fontWeight: 500
-                                                }}
-                                            />
-                                        </Box>
-                                        <Typography fontWeight={700} mt={1.4} sx={{
-                                            color: "rgb(1 39 101 / var(--tw-text-opacity, 1))",
-                                            fontSize: "18px"
+                                            color: "#012765",
+                                            margin: "0 0 8px",
+                                            fontSize: "18px",
+                                            fontWeight: "700",
+                                            lineHeight: "1.75rem",
                                         }}>
                                             {article.title}
-                                        </Typography>
-                                        <Typography variant="body2" color="#4B5563" mt={1}>
+                                        </Box>
+                                        <Box sx={{
+                                            fontSize: "14px",
+                                            mb: "16px",
+                                            lineHeight: "1.25rem",
+                                            color: "#4b5563",
+                                        }}>
                                             {article.description}
-                                        </Typography>
+                                        </Box>
 
                                         {/* Author Section */}
                                         <Box sx={{
@@ -155,25 +165,23 @@ function PodcastsAndBlog() {
                                             justifyContent: "space-between",
                                             alignItems: "center",
                                         }}>
-                                            <Box display="flex" alignItems="center" mt={2}>
-                                                {/*<Avatar sx={{ bgcolor: "#012765", color: "#fff", width: 32, height: 32, fontSize: 13,fontWeight:"700" }}>*/}
-                                                {/*    {article.initials}*/}
-                                                {/*</Avatar>*/}
-                                                <Typography variant="body2" sx={{
+                                            <Box display="flex" alignItems="center">
+                                                <Box variant="body2" sx={{
                                                     color: "#6B7280",
                                                     fontSize: 12,
+                                                    lineHeight: "1rem",
                                                 }}>
                                                     {article.author}
-                                                </Typography>
+                                                </Box>
                                             </Box>
 
                                             {/* Read More Link */}
-                                            <Typography
-                                                variant="body2"
-                                                fontWeight={500}
-                                                color="#FF7F1E"
-                                                mt={2}
+                                            <Box
                                                 sx={{
+                                                    fontSize: "14px",
+                                                    color: "#fe6A00",
+                                                    fontWeight: "500",
+                                                    lineHeight: "1.25rem",
                                                     cursor: "pointer",
                                                     transition: ".3s",
                                                     "&:hover": {
@@ -182,108 +190,80 @@ function PodcastsAndBlog() {
                                                 }}
                                             >
                                                 {article.link}
-                                            </Typography>
+                                            </Box>
                                         </Box>
-                                    </CardContent>
-                                </Card>
+                                    </Box>
+                                </Box>
                             </Grid>
                         ))}
                     </Grid>
                 </Box>
 
                 {/* From Our Blog Section */}
-                <Box sx={{ p: 2}}>
+                <Box>
                     {/* Header Section */}
-                    <Box display="flex" justifyContent="space-between" alignItems="center">
-                        <Typography fontSize={24} fontWeight={"bold"} color="#1E293B">
+                    <Box className={"Montserrat"} display="flex" justifyContent="space-between" alignItems="center">
+                        <Box sx={{
+                            color: "#012765",
+                            fontSize: "24px",
+                            fontWeight: "700",
+                            lineHeight: "2rem",
+                        }}>
                             From Our Blog
-                        </Typography>
+                        </Box>
                         <Button sx={{
+                            fontSize: "16px",
                             color: "#FE6A00",
                             fontWeight: "500",
                             transition: ".3s",
-                            "&:hover": {
-                                color:"#012765"
-                            }
+                            "&:hover": {color: "#012765"}
                         }}>Visit Blog →</Button>
                     </Box>
 
-                    {/* Blog Cards in 4-Column Grid */}
+                    {/* Blog Cards */}
                     <Grid container spacing={4} mt={2}>
-                        {/* Blog 1 */}
-                        <Grid item xs={12} sm={2}>
-                            <Box
-                                sx={{
-                                    bgcolor: "#E7EAEE",
-                                    width: "100%",
-                                    height: 50,
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    borderRadius: "4px",
-                                    fontWeight: "500",
-                                    color: "#012765",
-                                }}
-                            >
-                                Blog Image
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Typography fontSize={12} color="#64748B">
-                                {blogs[0].date} •{" "}
-                                <span style={{color: "#FE6A00", fontWeight: "400"}}>{blogs[0].category}</span>
-                            </Typography>
-                            <Typography fontSize={18} fontWeight={700} mt={0.5}
-                                        sx={{
+                        {blogs.map((blog, index) => (
+                            <>
+                                <Grid item xs={12} sm={4} md={2} key={`image-${index}`}>
+                                    <Box sx={{
+                                        color: "#1f2937",
+                                        padding: "16px",
+                                        backgroundColor: "#E7EAEE",
+                                        borderRadius: "0.375rem",
+                                    }}>
+                                        <Box sx={{
+                                            fontSize: "16px",
                                             color: "#012765",
+                                            fontWeight: "500",
+                                            textAlign: "center",
                                         }}>
-                                {blogs[0].title}
-                            </Typography>
-                            <Typography fontSize={14} color="#4B5563" mt={0.5}>
-                                {blogs[0].description}
-                            </Typography>
-                            <Typography fontSize={14} fontWeight={500} color="#FE6A00" mt={1.7} sx={{transition:".3s",cursor: "pointer","&:hover": {
-                                    color:"#012765"
-                                }}}>
-                                {blogs[0].action}
-                            </Typography>
-                        </Grid>
-
-                        {/* Blog 2 */}
-                        <Grid item xs={12} sm={2}>
-                            <Box
-                                sx={{
-                                    bgcolor: "#E7EAEE",
-                                    width: "100%",
-                                    height: 50,
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    borderRadius: "4px",
-                                    fontWeight: "500",
-                                    color: "#012765",
-                                }}
-                            >
-                                Blog Image
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Typography fontSize={12} color="#64748B">
-                                {blogs[1].date} •{" "}
-                                <span style={{color: "#FE6A00", fontWeight: "400"}}>{blogs[1].category}</span>
-                            </Typography>
-                            <Typography fontSize={18} fontWeight={700} mt={0.5} color="#1E293B">
-                                {blogs[1].title}
-                            </Typography>
-                            <Typography fontSize={14} color="#4B5563" mt={0.5}>
-                                {blogs[1].description}
-                            </Typography>
-                            <Typography fontSize={14} fontWeight={500} color="#FE6A00" mt={1.7} sx={{transition:".3s",cursor: "pointer","&:hover": {
-                                    color:"#012765"
-                                }}}>
-                                {blogs[1].action}
-                            </Typography>
-                        </Grid>
+                                            Blog Image
+                                        </Box>
+                                    </Box>
+                                </Grid>
+                                <Grid item xs={12} sm={6} md={4} key={`content-${index}`}>
+                                    <Box fontSize={12} color="#6b7280" mb="12px">
+                                        {blog.date} • <span style={{
+                                        fontSize: "12px",
+                                        ml: "8px",
+                                        color: "#FE6A00",
+                                        fontWeight: "400"
+                                    }}>{blog.category}</span>
+                                    </Box>
+                                    <Box fontSize={18} fontWeight={700} sx={{color: "#012765", mb: "8px"}}>
+                                        {blog.title}
+                                    </Box>
+                                    <Box fontSize={14} color="#4B5563" mb="12px">
+                                        {blog.description}
+                                    </Box>
+                                    <Box fontSize={14} fontWeight={500} color="#FE6A00" mt={1.7} sx={{
+                                        transition: ".3s", cursor: "pointer", "&:hover": {color: "#012765"}
+                                    }}>
+                                        {blog.action}
+                                    </Box>
+                                </Grid>
+                            </>
+                        ))}
                     </Grid>
                 </Box>
             </Box>

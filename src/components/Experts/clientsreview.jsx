@@ -75,10 +75,10 @@ function ClientsReview() {
                 >
                     What Our Clients Say
                 </Typography>
-                <Typography className={"Montserrat"} sx={{textAlign: "center", opacity: 0.7, mb: 3, fontSize: "20px",}}>
+                <Box sx={{textAlign: "center", opacity: 0.7, mb: 3, fontSize: "20px",}}>
                     Read what our community of students and professionals have to say <br/> about
                     their mental wellness journey with MindWell.
-                </Typography>
+                </Box>
 
                 {/* Statistics */}
                 <Box
@@ -101,12 +101,12 @@ function ClientsReview() {
                         <Box key={index} sx={{
                             mb: 2
                         }}>
-                            <Typography sx={{color: "#FF7F1E", fontSize: {md: 48, sm: 40, xs: 35}, fontWeight: 700}}>
+                            <Box sx={{color: "#FF7F1E", fontSize: {md: 48, sm: 40, xs: 35}, fontWeight: 700}}>
                                 {item.value}
-                            </Typography>
-                            <Typography sx={{color: "#4A4A4A", fontSize: 16}}>
+                            </Box>
+                            <Box sx={{color: "#4A4A4A", fontSize: "16px"}}>
                                 {item.label}
-                            </Typography>
+                            </Box>
                         </Box>
                     ))}
                 </Box>
@@ -143,12 +143,12 @@ function ClientsReview() {
                                     </Avatar>
 
                                     <Box>
-                                        <Typography sx={{fontWeight: 700, fontSize: 20, lineHeight: "28px"}}>
+                                        <Box sx={{fontWeight: 700, fontSize: 20, lineHeight: "28px"}}>
                                             {testimonial.name}
-                                        </Typography>
-                                        <Typography sx={{fontSize: 14, opacity: 0.8}}>
+                                        </Box>
+                                        <Box sx={{fontSize: 14, opacity: 0.8}}>
                                             {testimonial.role}
-                                        </Typography>
+                                        </Box>
                                     </Box>
                                 </Box>
 
@@ -165,9 +165,9 @@ function ClientsReview() {
                                 </Box>
 
                                 {/* Review Text */}
-                                <Typography sx={{mb: 3, fontSize: "18px", lineHeight: "28px", flexGrow: 1}}>
+                                <Box sx={{mb: 3, fontSize: "18px", lineHeight: "28px", flexGrow: 1}}>
                                     {testimonial.review}
-                                </Typography>
+                                </Box>
 
                                 {/* Duration & Sessions */}
                                 <Box sx={{display: "flex", gap: 2, fontSize: 14}}>
@@ -226,10 +226,10 @@ function ClientsReview() {
                                         {review.name[0] + [1]}
                                     </Avatar>
                                     <Box>
-                                        <Typography sx={{fontWeight: 700, fontSize: "16px", color: "#012765"}}>
+                                        <Box sx={{fontWeight: 700, fontSize: "16px", color: "#012765"}}>
                                             {review.name}
-                                        </Typography>
-                                        <Typography sx={{fontSize: 14, opacity: 0.9}}>{review.role}</Typography>
+                                        </Box>
+                                        <Box sx={{fontSize: 14, opacity: 0.9}}>{review.role}</Box>
                                     </Box>
                                 </Box>
 
@@ -241,12 +241,12 @@ function ClientsReview() {
                                 </Box>
 
                                 {/* Review Text (Flexible Height) */}
-                                <Typography sx={{mb: 2, flexGrow: 1}}>{review.review}</Typography>
+                                <Box sx={{mb: 2, flexGrow: 1}}>{review.review}</Box>
                             </Card>
                         </Grid>
                     ))}
                 </Grid>
-                <Box sx={{
+                <Box className={"Montserrat"} sx={{
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -302,16 +302,23 @@ function ClientsReview() {
                             <PlayArrowIcon sx={{fontSize: "36px", color: "#fff"}}/>
                         </Box>
 
-                        <Box sx={{color: "#012765", pt: 2.4}}>
+                        <Box sx={{color: "#012765", pt: 2.4, fontSize: "16px"}}>
                             Video Testimonials
                         </Box>
                     </Box>
 
                     {/* Quote Text */}
-                    <Typography sx={{textAlign: "center", opacity: 0.7, fontStyle: "italic", mt: 1}}>
+                    <Box sx={{
+                        fontSize: "16px",
+                        color: "#374151",
+                        textAlign: "center",
+                        opacity: 0.7,
+                        fontStyle: "italic",
+                        mt: 1
+                    }}>
                         "MindWell has been life-changing for me. Watch these client stories to see the real impact
                         of our therapeutic approach."
-                    </Typography>
+                    </Box>
                 </Box>
 
                 <Consultation title={"Ready to start your mental wellness journey?"}

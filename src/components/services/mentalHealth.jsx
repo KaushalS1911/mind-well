@@ -251,6 +251,8 @@ function MentalHealth() {
                                     textAlign: "center",
                                     cursor: "pointer",
                                     width: "100%",
+                                    borderRadius: ".375rem",
+                                    transition: "0.3s",
                                     '&:hover': {backgroundColor: "#e65a00"},
                                 }}
                             >

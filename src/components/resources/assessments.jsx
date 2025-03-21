@@ -66,14 +66,14 @@ function Assessments() {
                                 >
                                     <BoltIcon />
                                 </Box>
-                                <Typography fontWeight={700} sx={{ fontSize: { xs: "24px", md: "30px" } }}>
+                                <Box sx={{ fontWeight:"700",fontSize: { xs: "24px", md: "30px" } }}>
                                     Mental Health Assessments
-                                </Typography>
+                                </Box>
                             </Box>
-                            <Typography fontSize={{ xs: 14, md: 18 }} color="#CBD5E1" sx={{ mb: "32px" }}>
+                            <Box fontSize={{ xs: 14, md: 18 }} color="#CBD5E1" sx={{ mb: "32px" }}>
                                 Take our scientifically-validated assessments to gain insights into your mental health
                                 and determine whether you might benefit from professional support.
-                            </Typography>
+                            </Box>
                             <Grid container spacing={2}>
                                 {assessments.map((assessment, index) => (
                                     <Grid item xs={12} sm={6} key={index}>
@@ -93,15 +93,15 @@ function Assessments() {
                                                 <Avatar sx={{ bgcolor: "#FE6A0033", mr: 2, fontSize: "16px" }}>
                                                     {assessment.icon}
                                                 </Avatar>
-                                                <Typography fontWeight={600} sx={{ fontSize: { xs: "16px", md: "18px" } }}>
+                                                <Box fontWeight={600} sx={{ fontSize: { xs: "16px", md: "18px" } }}>
                                                     {assessment.title}
-                                                </Typography>
+                                                </Box>
                                             </Box>
-                                            <Typography variant="body2" color="#CBD5E1" mb={2} sx={{ fontSize: "14px" }}>
+                                            <Box variant="body2" color="#CBD5E1" mb={2} sx={{ fontSize: "14px" }}>
                                                 {assessment.description}
-                                            </Typography>
+                                            </Box>
                                             <Box display="flex" justifyContent="space-between" alignItems="center" mt="16px">
-                                                <Typography
+                                                <Box
                                                     sx={{
                                                         bgcolor: "#FFFFFF33",
                                                         padding: "4px 12px",
@@ -111,10 +111,10 @@ function Assessments() {
                                                     }}
                                                 >
                                                     {assessment.questions}
-                                                </Typography>
-                                                <Typography color="#FFFFFFB3" sx={{ fontSize: "12px" }}>
+                                                </Box>
+                                                <Box color="#FFFFFFB3" sx={{ fontSize: "12px" }}>
                                                     {assessment.time}
-                                                </Typography>
+                                                </Box>
                                             </Box>
                                         </Box>
                                     </Grid>
@@ -128,46 +128,55 @@ function Assessments() {
                                         <DescriptionIcon sx={{ color: "#FE6A00", fontSize: "40px" }} />
                                     </Avatar>
                                 </Box>
-                                <Typography fontWeight={600} fontSize={20} mb="12px" textAlign="center">
+                                <Box fontWeight={600} fontSize={20} mb="12px" textAlign="center">
                                     Complete Mental Health Check
-                                </Typography>
-                                <Typography variant="body2" color="#4B5563" fontSize={16} textAlign="center" mb="24px">
+                                </Box>
+                                <Box variant="body2" color="#4B5563" fontSize={16} textAlign="center" mb="24px">
                                     Take our comprehensive assessment to evaluate multiple aspects of your mental wellbeing in one go.
-                                </Typography>
-                                <Typography fontSize={16} color="#4B5563" mb={1}>
+                                </Box>
+                                <Box fontSize={16} color="#4B5563" mb={1} >
                                     <CheckIcon sx={{ color: "#4CAF50" }} /> Covers all key areas
-                                </Typography>
-                                <Typography fontSize={16} color="#4B5563" mb={1}>
+                                </Box>
+                                <Box fontSize={16} color="#4B5563" mb={1}>
                                     <CheckIcon sx={{ color: "#4CAF50" }} /> Detailed report
-                                </Typography>
-                                <Typography fontSize={16} color="#4B5563" mb={2}>
+                                </Box>
+                                <Box fontSize={16} color="#4B5563" mb={2}>
                                     <CheckIcon sx={{ color: "#4CAF50" }} /> Personalized recommendations
-                                </Typography>
-                                <Button
+                                </Box>
+                                <Box
                                     sx={{
                                         padding: {lg:"12px 24px",xs:"10px 20px"},
+                                        textAlign: "center",
+                                        borderRadius:"0.375rem",
+                                        cursor: "pointer",
+                                        fontSize:"16px",
                                         mt: 0.54,
                                         bgcolor: "#012765",
                                         width: "100%",
                                         color: "#fff",
+                                        transition: "0.3s",
                                         "&:hover": { bgcolor: "#011A4B" },
                                     }}
                                 >
                                     Start Comprehensive Assessment
-                                </Button>
+                                </Box>
                             </Box>
-                            <Button
-                                fullWidth
+                            <Box
                                 sx={{
+                                    textAlign: "center",
+                                    borderRadius:"0.375rem",
                                     mt: 2,
                                     padding: "12px 24px",
                                     bgcolor: "#FE6A00",
                                     color: "#fff",
+                                    cursor: "pointer",
+                                    transition: "0.3s",
+                                    fontSize:"16px",
                                     "&:hover": { bgcolor: "#D45D00" },
                                 }}
                             >
                                 Take Selected Assessment
-                            </Button>
+                            </Box>
                         </Grid>
                     </Grid>
                 </Box>

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Grid, Box, Typography, Card, CardContent, TextField, Button } from "@mui/material";
 import { Phone } from "@mui/icons-material";
 
-// Crisis Resources Data
+
 const crisisResources = [
     {
         title: "National Suicide Prevention Lifeline",
@@ -28,64 +28,63 @@ function CrisisResources() {
         <Container maxWidth={"xl"} sx={{ mt: 4 }}>
             {/* Crisis Resources Section */}
             <Box sx={{ backgroundColor: "#F8FAFC", p: 3, borderRadius: 2, padding: "40px", margin: "0 0 60px" }}>
-                <Typography sx={{ color: "#012765", fontSize: "24px", fontWeight: "700", lineHeight: "32px", margin: "0 0 24px" }}>
+                <Box sx={{ color: "#012765", fontSize: "24px", fontWeight: "700", lineHeight: "32px", margin: "0 0 24px" }}>
                     Crisis Resources
-                </Typography>
-                <Typography sx={{ color: "#4B5563", margin: "0 0 32px", fontSize: "16px" }}>
+                </Box>
+                <Box sx={{ color: "#4B5563", margin: "0 0 32px", fontSize: "16px" }}>
                     If you or someone you know is experiencing a mental health emergency, please contact these resources for immediate support.
-                </Typography>
+                </Box>
 
                 {/* Crisis Resource Cards */}
                 <Grid container spacing={2}>
                     {crisisResources.map((resource, index) => (
                         <Grid item xs={12} sm={4} key={index}>
-                            <Card sx={{ boxShadow: 1, borderRadius: 2, padding: "24px" ,height:"100%" }} >
+                            <Box sx={{ boxShadow: 1, borderRadius: 2, padding: "24px" ,height:"100%" }} >
                                 <Box>
-                                    <Typography fontWeight="bold" sx={{ color: "#012765", fontSize: "16px", fontWeight: "700", margin: "0 0 8px" }}>
+                                    <Box fontWeight="bold" sx={{ color: "#012765", fontSize: "16px", fontWeight: "700", margin: "0 0 8px" }}>
                                         {resource.title}
-                                    </Typography>
-                                    <Typography sx={{ color: "#4B5563", fontSize: "14px", margin: "0 0 16px", lineHeight: "20px" }}>
+                                    </Box>
+                                    <Box sx={{ color: "#4B5563", fontSize: "14px", margin: "0 0 16px", lineHeight: "20px" }}>
                                         {resource.description}
-                                    </Typography>
-                                    <Typography fontWeight="bold" sx={{ color: "#FE6A00" }}>
+                                    </Box>
+                                    <Box fontWeight="bold" alignItems={"center"} display={"flex"} sx={{ color: "#FE6A00",gap:"5px" }}>
                                         {resource.icon} {resource.contact}
-                                    </Typography>
+                                    </Box>
                                 </Box>
-                            </Card>
+                            </Box>
                         </Grid>
                     ))}
                 </Grid>
 
                 {/* Note Section */}
                 <Box sx={{ backgroundColor: "#ECEFF3", padding: "16px", margin: "24px 0 0", borderRadius: 1 }}>
-                    <Typography sx={{ fontSize: "14px", color: "#012765" }}>
+                    <Box sx={{ fontSize: "14px", color: "#012765" }}>
                         <b>Note:</b> MindWell is not a crisis service. If you are experiencing a mental health emergency, please contact the resources above for immediate assistance.
-                    </Typography>
+                    </Box>
                 </Box>
             </Box>
 
             {/* Newsletter Subscription Section */}
-
             <Box
                 sx={{
                     backgroundColor: "#FE6A00",
                     padding: "40px",
                     borderRadius: "12px",
                     display: "flex",
-                    flexDirection: { xs: "column", md: "row" }, // Column on mobile, row on desktop
+                    flexDirection: { xs: "column", md: "row" },
                     alignItems: "center",
                     justifyContent: "space-between",
-                    gap: "20px", // Space between elements
+                    gap: "20px",
                 }}
             >
                 {/* Left Section - 50% Width */}
                 <Box sx={{ flex: 1, minWidth: "50%" }}>
-                    <Typography sx={{ color: "#FFFFFF", fontSize: "24px", fontWeight: "700", marginBottom: "12px" }}>
+                    <Box sx={{ color: "#FFFFFF", fontSize: "24px", fontWeight: "700", marginBottom: "12px" }}>
                         Subscribe to Our Mental Wellness Newsletter
-                    </Typography>
-                    <Typography sx={{ color: "#FFFFFF", fontSize: "16px" }}>
+                    </Box>
+                    <Box sx={{ color: "#FFFFFF", fontSize: "16px" }}>
                         Get the latest mental health tips, resources, and insights delivered to your inbox bi-weekly.
-                    </Typography>
+                    </Box>
                 </Box>
 
                 {/* Right Section - 50% Width (Input, Button & Privacy Text) */}
@@ -94,7 +93,7 @@ function CrisisResources() {
                     <Box
                         sx={{
                             display: "flex",
-                            flexDirection: { xs: "column", sm: "row" }, // Column under 800px, row above
+                            flexDirection: { xs: "column", sm: "row" },
                             width: "100%",
                             gap: "10px"
                         }}
@@ -116,27 +115,27 @@ function CrisisResources() {
                                 },
                             }}
                         />
-                        <Button
+                        <Box
                             variant="contained"
                             sx={{
                                 backgroundColor: "#012765",
                                 color: "#FFFFFF",
                                 padding: "12px 24px",
-                                borderRadius: "8px",
-                                minWidth: "120px",
-                                width: { xs: "100%", sm: "auto" }, // Full width on small screens
+                                borderRadius: "0.375rem",
+                                transition:"0.3s",
+                                cursor: "pointer",
                                 "&:hover": { backgroundColor: "#011B40" },
                             }}
                         >
                             Subscribe
-                        </Button>
+                        </Box>
                     </Box>
 
 
                     {/* Privacy Text Below */}
-                    <Typography sx={{ color: "#FFFFFF", fontSize: "12px", width: "100%", margin: "12px 0 0" }}>
+                    <Box sx={{ color: "#FFFFFF", fontSize: "12px", width: "100%", margin: "12px 0 0" }}>
                         We respect your privacy. Unsubscribe at any time.
-                    </Typography>
+                    </Box>
                 </Box>
 
             </Box>

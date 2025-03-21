@@ -14,7 +14,7 @@ function App() {
             <Home/>
             <Services/>
             <ExpertsWorker/>
-            {/*<Resource/>*/}
+            <Resource/>
             <Footer/>
         </>
     )

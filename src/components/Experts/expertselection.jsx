@@ -30,84 +30,86 @@ const expertCriteria = [
 
 function Expertselection() {
     return (
-        <Container maxWidth={"xl"}>
-            <Box sx={{p: "48px", backgroundColor: "#F8FAFD", textAlign: "center", borderRadius: "20px"}}>
-                <Typography className={"Montserrat"} variant="h5"
-                            sx={{fontWeight: 800, mb: 3, mt: 2, color: "#012765"}}>
-                    Our Rigorous Expert Selection Process
-                </Typography>
-                <Box className={"Montserrat"} sx={{mb: 4, opacity: 0.8}}>
-                    We maintain the highest standards when selecting our mental health professionals. Here's how <br/>
-                    we ensure you receive care from only the best qualified experts:
-                </Box>
+        <Box sx={{padding: "0 0 96px 0"}}>
+            <Container maxWidth={"xl"}>
+                <Box sx={{p: "48px", backgroundColor: "#F8FAFD", textAlign: "center", borderRadius: "20px"}}>
+                    <Typography className={"Montserrat"} variant="h5"
+                                sx={{fontWeight: 800, mb: 3, mt: 2, color: "#012765"}}>
+                        Our Rigorous Expert Selection Process
+                    </Typography>
+                    <Box sx={{mb: 4, opacity: 0.8, fontSize: "16px", color: "#4b5563"}}>
+                        We maintain the highest standards when selecting our mental health professionals. Here's
+                        how <br/>
+                        we ensure you receive care from only the best qualified experts:
+                    </Box>
 
-                <Box sx={{display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 2.5}}>
-                    {expertCriteria.map((item, index) => (
-                        <Paper
-                            key={index}
+                    <Box sx={{display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 2}}>
+                        {expertCriteria.map((item, index) => (
+                            <Paper
+                                key={index}
+                                sx={{
+                                    width: {xs: '100%', sm: '48%', md: '22%'},
+                                    p: 3,
+                                    textAlign: 'center',
+                                    borderRadius: 3,
+                                    boxShadow: 3,
+                                }}
+                            >
+                                <Box sx={{mb: 2, display: 'flex', justifyContent: 'center'}}>
+                                    <Box
+                                        sx={{
+                                            width: 65,
+                                            height: 65,
+                                            backgroundColor: "#F1F5F9",
+                                            borderRadius: "50%",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                        }}
+                                    >
+                                        {item.icon}
+                                    </Box>
+                                </Box>
+                                <Box sx={{fontWeight: 700, color: "#012765", fontSize: 16}}>
+                                    {item.title}
+                                </Box>
+                                <Box sx={{opacity: 0.8, mt: 1, fontSize: "14px"}}>
+                                    {item.description}
+                                </Box>
+                            </Paper>
+                        ))}
+                    </Box>
+
+                </Box>
+                <Box sx={{mt: 10, textAlign: "center"}}>
+                    <Box sx={{fontWeight: 700, mb: "16px", color: "#012765", fontSize: "24px"}}>
+                        Find Your Perfect Match
+                    </Box>
+                    <Box sx={{opacity: 0.7, mb: "32px", fontSize: "16px", color: "#4b5563"}}>
+                        Take our brief assessment and we'll match you with therapists who specialize in <br/>
+                        your specific needs and preferences.
+                    </Box>
+                    <Box sx={{display: "flex", justifyContent: "center"}}>
+                        <Box
                             sx={{
-                                width: {xs: '100%', sm: '48%', md: '22%'},
-                                p: 3,
-                                textAlign: 'center',
-                                borderRadius: 3,
-                                boxShadow: 3,
+                                padding: "12px 32px",
+                                backgroundColor: "#FE6A00",
+                                color: "#fff",
+                                fontWeight: 600,
+                                textTransform: "none",
+                                fontSize: 15,
+                                transition: "0.3s",
+                                cursor: "pointer",
+                                borderRadius: "0.375rem",
+                                '&:hover': {backgroundColor: "#E56F1A"}
                             }}
                         >
-                            <Box sx={{mb: 2, display: 'flex', justifyContent: 'center'}}>
-                                <Box
-                                    sx={{
-                                        width: 65,
-                                        height: 65,
-                                        backgroundColor: "#F1F5F9",
-                                        borderRadius: "50%",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                    }}
-                                >
-                                    {item.icon}
-                                </Box>
-                            </Box>
-                            <Box sx={{fontWeight: 700, color: "#012765", fontSize: 16}}>
-                                {item.title}
-                            </Box>
-                            <Typography sx={{opacity: 0.8, mt: 1, fontSize: 14}}>
-                                {item.description}
-                            </Typography>
-                        </Paper>
-                    ))}
+                            Get Matched Today
+                        </Box>
+                    </Box>
                 </Box>
-
-            </Box>
-            <Box sx={{mt: 10, textAlign: "center"}}>
-                <Typography variant="h5" sx={{fontWeight: 700, mb: 1, color: "#012765"}}>
-                    Find Your Perfect Match
-                </Typography>
-                <Typography sx={{opacity: 0.7, mb: 3}}>
-                    Take our brief assessment and we'll match you with therapists who specialize in <br/>
-                    your specific needs and preferences.
-                </Typography>
-                <Box sx={{display: "flex", justifyContent: "center"}}>
-                    <Button
-                        variant="contained"
-                        sx={{
-                            backgroundColor: "#FF7F1E",
-                            color: "#fff",
-                            fontWeight: 600,
-                            textTransform: "none",
-                            px: 4,
-                            fontSize: 15,
-                            py: 1.4,
-                            mb: 10,
-                            '&:hover': {backgroundColor: "#E56F1A"}
-                        }}
-                    >
-                        Get Matched Today
-                    </Button>
-                </Box>
-            </Box>
-
-        </Container>
+            </Container>
+        </Box>
     );
 }
 

@@ -35,7 +35,8 @@ function Navigation() {
                         width: "70px",
                     }}>
                         <img src={logo} alt="logo" style={{
-                            height: "100%"
+                            height: "100%",
+                            cursor: "pointer"
                         }}/>
                     </Box>
 
