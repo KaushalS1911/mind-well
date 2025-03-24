@@ -147,7 +147,7 @@ const LookingFor = () => {
                 <Paper elevation={3} sx={{mt: 6, p: 4, borderRadius: 3, backgroundColor: "#fff"}}>
                     <Grid container spacing={3} alignItems="center">
                         <Grid item xs={12} md={8}>
-                            <Box sx={{fontWeight: "bold", color: "#012765", fontSize: "24px", mb: "16px", mt: 2}}>
+                            <Box className={"Montserrat"} sx={{fontWeight: "bold", color: "#012765", fontSize: "24px", mb: "16px", mt: 2}}>
                                 Not Sure Which Therapy Type is Right for You?
                             </Box>
                             <Box sx={{color: "#4B5563", mt: 1, fontSize: "16px", mb: "24px"}}>

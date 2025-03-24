@@ -66,7 +66,7 @@ function Assessments() {
                                 >
                                     <BoltIcon />
                                 </Box>
-                                <Box sx={{ fontWeight:"700",fontSize: { xs: "24px", md: "30px" } }}>
+                                <Box className={"Montserrat"} sx={{ fontWeight:"700",fontSize: { xs: "24px", md: "30px" } }}>
                                     Mental Health Assessments
                                 </Box>
                             </Box>
