@@ -74,7 +74,7 @@ function PodcastsAndBlog() {
                 <Box mb={5}>
                     <Box display="flex" justifyContent="space-between" alignItems="center" sx={{
                         mb: 4,
-                        mt: 4
+                        mt: 4,
                     }}>
                         <Box className={"Montserrat"} sx={{
                             color: "#012765",
@@ -99,7 +99,7 @@ function PodcastsAndBlog() {
                     <Grid container spacing={2} mb={4}>
                         {articles.map((article, index) => (
                             <Grid item xs={12} md={4} key={index}>
-                                <Box sx={{borderRadius: 3, boxShadow: 1}}>
+                                <Box sx={{borderRadius: 3, boxShadow: 1 , height: "100%"}}>
                                     {/* Top Gray Section */}
                                     <Box
                                         sx={{
