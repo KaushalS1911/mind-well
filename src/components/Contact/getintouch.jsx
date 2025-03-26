@@ -23,7 +23,7 @@ import {Facebook, Twitter, Instagram, LinkedIn, ExpandMore} from "@mui/icons-mat
 import {Phone, Email, LocationOn} from "@mui/icons-material";
 
 const GetInTouch = () => {
-    const {register, handleSubmit,control, formState: {errors}} = useForm();
+    const {register, handleSubmit, control, formState: {errors}} = useForm();
 
 
     const onSubmit = (data) => {
@@ -57,20 +57,20 @@ const GetInTouch = () => {
     };
 
     const businessHours = [
-        { day: "Monday - Friday", time: "8:00 AM - 8:00 PM" },
-        { day: "Saturday", time: "9:00 AM - 5:00 PM" },
-        { day: "Sunday", time: "Closed" }
+        {day: "Monday - Friday", time: "8:00 AM - 8:00 PM"},
+        {day: "Saturday", time: "9:00 AM - 5:00 PM"},
+        {day: "Sunday", time: "Closed"}
     ];
 
     const socialMediaLinks = [
-        { name: "Facebook", icon: <Facebook fontSize="medium" />, url: "https://www.facebook.com" },
-        { name: "Twitter", icon: <Twitter fontSize="medium" />, url: "https://www.twitter.com" },
-        { name: "Instagram", icon: <Instagram fontSize="medium" />, url: "https://www.instagram.com" },
-        { name: "LinkedIn", icon: <LinkedIn fontSize="medium" />, url: "https://www.linkedin.com" }
+        {name: "Facebook", icon: <Facebook fontSize="medium"/>, url: "https://www.facebook.com"},
+        {name: "Twitter", icon: <Twitter fontSize="medium"/>, url: "https://www.twitter.com"},
+        {name: "Instagram", icon: <Instagram fontSize="medium"/>, url: "https://www.instagram.com"},
+        {name: "LinkedIn", icon: <LinkedIn fontSize="medium"/>, url: "https://www.linkedin.com"}
     ];
 
     return (
-        <Container maxWidth="xl" sx={{p:"96px 0",mt: {md:10,sm:0}}}>
+        <Container maxWidth="xl" sx={{p: "96px 0", mt: {md: 10, sm: 0}}}>
             <Box
                 sx={{
                     textAlign: "center",
@@ -80,17 +80,17 @@ const GetInTouch = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     width: "100%",
-                    margin:"0 0 64px"
+                    margin: "0 0 64px"
                 }}
             >
                 <Box className={"Montserrat"}
-                    sx={{
-                        color: "#002D62",
-                        margin: "0 0 16px",
-                        fontSize: { xs: "28px", sm: "36px" },
-                        lineHeight: { xs: "32px", sm: "40px" },
-                        fontWeight: "700"
-                    }}
+                     sx={{
+                         color: "#002D62",
+                         margin: "0 0 16px",
+                         fontSize: {xs: "28px", sm: "36px"},
+                         lineHeight: {xs: "32px", sm: "40px"},
+                         fontWeight: "700"
+                     }}
                 >
                     Get in Touch
                 </Box>
@@ -98,14 +98,14 @@ const GetInTouch = () => {
                     sx={{
                         color: "#4F4F4F",
                         maxWidth: "600px",
-                        fontSize: { xs: "16px", sm: "18px" },
+                        fontSize: {xs: "16px", sm: "18px"},
                         textAlign: "center"
                     }}
                 >
-                    Have questions about our services? Reach out to our team for personalized support on your mental wellness journey.
+                    Have questions about our services? Reach out to our team for personalized support on your mental
+                    wellness journey.
                 </Box>
             </Box>
-
 
 
             <Grid container spacing={4}>
@@ -298,8 +298,8 @@ const GetInTouch = () => {
                                             <Controller
                                                 name="privacyPolicy"
                                                 control={control}
-                                                rules={{ required: "You must agree to the privacy policy" }}
-                                                render={({ field }) => (
+                                                rules={{required: "You must agree to the privacy policy"}}
+                                                render={({field}) => (
                                                     <Checkbox
                                                         id="privacy-policy-checkbox"
                                                         {...field}
@@ -309,9 +309,13 @@ const GetInTouch = () => {
                                             />
                                         }
                                         label={
-                                            <Box sx={{ color: "#4F5866" }}>
+                                            <Box sx={{color: "#4F5866"}}>
                                                 I agree to the{" "}
-                                                <Link href="#" sx={{ color: "#012765", textDecoration: "none", fontWeight: "bold" }}>
+                                                <Link href="#" sx={{
+                                                    color: "#012765",
+                                                    textDecoration: "none",
+                                                    fontWeight: "bold"
+                                                }}>
                                                     Privacy Policy
                                                 </Link>{" "}
                                                 and consent to having my data processed.
@@ -361,23 +365,23 @@ const GetInTouch = () => {
                             }}>
 
                                 {/* Title */}
-                                <Box sx={{fontSize: "24px", margin: "0 0 24px", fontWeight:"700", lineHeight: "32px"}}>
+                                <Box sx={{fontSize: "24px", margin: "0 0 24px", fontWeight: "700", lineHeight: "32px"}}>
                                     Contact Information
                                 </Box>
 
                                 {/* Mapping through contactInfo object */}
                                 {Object.values(contactInfo).map((info, index) => (
-                                    <Box key={index} sx={{margin:"24px 0 0 "}}>
+                                    <Box key={index} sx={{margin: "24px 0 0 "}}>
                                         {/* Icon & Title */}
                                         <Box sx={{display: "flex", alignItems: "center"}}>
                                             {info.icon}
-                                            <Box sx={{fontSize: "18px", fontWeight: "500" , margin: "0 0 4px"}}>
+                                            <Box sx={{fontSize: "18px", fontWeight: "500", margin: "0 0 4px"}}>
                                                 {info.title}
                                             </Box>
                                         </Box>
 
                                         {/* Details */}
-                                        <Box sx={{ml: 4,color:"#CCD4E0"}}>
+                                        <Box sx={{ml: 4, color: "#CCD4E0"}}>
                                             {info.details.map((line, i) => (
                                                 <span key={i}>{line}<br/></span>))}
                                         </Box>
@@ -391,22 +395,29 @@ const GetInTouch = () => {
                         <Grid item xs={12} container spacing={2}>
                             {/* Business Hours */}
                             <Grid item xs={12} sm={6}>
-                                <Box sx={{ padding:"24px", backgroundColor: "white", borderRadius: 2, boxShadow: 1 }}>
+                                <Box sx={{padding: "24px", backgroundColor: "white", borderRadius: 2, boxShadow: 1}}>
                                     {/* Title */}
-                                    <Box  sx={{ color: "#012765",fontSize: "18px",fontWeight:"700",margin: "0 0 16px", lineHeight: "28px"  }}>
+                                    <Box sx={{
+                                        color: "#012765",
+                                        fontSize: "18px",
+                                        fontWeight: "700",
+                                        margin: "0 0 16px",
+                                        lineHeight: "28px"
+                                    }}>
                                         Business Hours
                                     </Box>
 
                                     {/* Hours Details - Dynamically Rendered */}
                                     {businessHours.map((entry, index) => (
-                                        <Box key={index} sx={{ display: "flex", justifyContent: "space-between", margin: "8px 0 0" }}>
+                                        <Box key={index}
+                                             sx={{display: "flex", justifyContent: "space-between", margin: "8px 0 0"}}>
                                             <Box>{entry.day}:</Box>
                                             <Box>{entry.time}</Box>
                                         </Box>
                                     ))}
 
                                     {/* Customer Support Message */}
-                                    <Box sx={{ mt: 2, fontSize: "14px", color: "#6B7280" }}>
+                                    <Box sx={{mt: 2, fontSize: "14px", color: "#6B7280"}}>
                                         Customer support is available 24/7 through our app and online portal.
                                     </Box>
                                 </Box>
@@ -416,19 +427,25 @@ const GetInTouch = () => {
                             {/* Social Media */}
                             <Grid item xs={12} sm={6}>
                                 <Box sx={{
-                                    padding:"24px",
+                                    padding: "24px",
                                     backgroundColor: "white",
                                     borderRadius: 2,
                                     boxShadow: 1,
                                     height: "100%",
                                 }}>
                                     {/* Title */}
-                                    <Box  sx={{ color: "#002D62",fontWeight:"700", fontSize: "18px",margin: "0 0 16px", lineHeight: "28px"  }}>
+                                    <Box sx={{
+                                        color: "#002D62",
+                                        fontWeight: "700",
+                                        fontSize: "18px",
+                                        margin: "0 0 16px",
+                                        lineHeight: "28px"
+                                    }}>
                                         Connect With Us
                                     </Box>
 
                                     {/* Social Media Icons - Dynamically Rendered */}
-                                    <Box sx={{ display: "flex", gap: 2 }}>
+                                    <Box sx={{display: "flex", gap: 2}}>
                                         {socialMediaLinks.map((social, index) => (
                                             <IconButton
                                                 key={index}
@@ -437,7 +454,7 @@ const GetInTouch = () => {
                                                     color: "white",
                                                     width: 40,
                                                     height: 40,
-                                                    "&:hover": { backgroundColor: "#001B44" }
+                                                    "&:hover": {backgroundColor: "#001B44"}
                                                 }}
                                                 component="a"
                                                 href={social.url}
@@ -451,8 +468,9 @@ const GetInTouch = () => {
                                     </Box>
 
                                     {/* Description */}
-                                    <Box sx={{ margin:"16px 0 0", fontSize: "14px", color: "#6B7280" ,}}>
-                                        Follow us on social media for the latest updates, mental health tips, and special offers.
+                                    <Box sx={{margin: "16px 0 0", fontSize: "14px", color: "#6B7280",}}>
+                                        Follow us on social media for the latest updates, mental health tips, and
+                                        special offers.
                                     </Box>
                                 </Box>
                             </Grid>
@@ -467,12 +485,18 @@ const GetInTouch = () => {
                                     backgroundColor: "#FFFFFF",
                                     boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
                                     borderRadius: "10px",
-                                    margin:"32px 0 0",
-                                    padding:"24px"
+                                    margin: "32px 0 0",
+                                    padding: "24px"
                                 }}
                             >
                                 {/* FAQ Title */}
-                                <Box  sx={{ color: "#002D62",fontWeight:"700", fontSize: "18px",margin: "0 0 16px", lineHeight: "28px" }}>
+                                <Box sx={{
+                                    color: "#002D62",
+                                    fontWeight: "700",
+                                    fontSize: "18px",
+                                    margin: "0 0 16px",
+                                    lineHeight: "28px"
+                                }}>
                                     Frequently Asked Questions
                                 </Box>
 
@@ -488,24 +512,29 @@ const GetInTouch = () => {
                                     }
                                 ].map((faq, index) => (
                                     <Box key={index} sx={{
-                                        borderBottom:"1px solid #E5E7EB",
+                                        borderBottom: "1px solid #E5E7EB",
                                         padding: "0 0 16px"
                                     }}>
-                                        <Box  sx={{
+                                        <Box sx={{
                                             color: "#002D62",
                                             display: "flex",
                                             justifyContent: "space-between",
-                                            mt:2,
+                                            mt: 2,
                                         }}>
 
-                                            {faq.question} <ExpandMore sx={{color: "#FF7A00",fontWeight:"500",fontSize:"16px",margin:"0 0 10px",}}/>
+                                            {faq.question} <ExpandMore sx={{
+                                            color: "#FF7A00",
+                                            fontWeight: "500",
+                                            fontSize: "16px",
+                                            margin: "0 0 10px",
+                                        }}/>
                                         </Box>
-                                        <Box sx={{ color: "#6B7280"}}>{faq.answer}</Box>
+                                        <Box sx={{color: "#6B7280"}}>{faq.answer}</Box>
                                     </Box>
                                 ))}
 
                                 {/* View All FAQs Link */}
-                                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                                <Box sx={{display: "flex", flexDirection: "column"}}>
                                     <Box
                                         sx={{
                                             mt: 2,
@@ -514,7 +543,7 @@ const GetInTouch = () => {
                                             textDecoration: "none",
                                             display: "inline-block",
                                             transition: "color 0.3s ease-in-out",
-                                            "&:hover": { color: "#012765" }
+                                            "&:hover": {color: "#012765"}
                                         }}
                                         component="a"
                                         href="/faqs"

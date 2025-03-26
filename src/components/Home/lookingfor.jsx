@@ -57,10 +57,11 @@ const LookingFor = () => {
     return (
         <Box sx={{py: 8, backgroundColor: "#F9FAFB"}}>
             <Container maxWidth="xl">
-                <Typography className={"Montserrat"} variant="h4" align="center" color="#012765" sx={{fontWeight: "bold", mb: 2}}>
+                <Typography className={"Montserrat"} variant="h4" align="center" color="#012765"
+                            sx={{fontWeight: "bold", mb: 2}}>
                     What Type of Therapy Are You Looking For?
                 </Typography>
-                <Box  sx={{
+                <Box sx={{
                     color: "#4B5563",
                     mt: 1,
                     mb: 7,
@@ -105,14 +106,19 @@ const LookingFor = () => {
                                     >
                                         {therapy.icon}
                                     </Box>
-                                    <Box sx={{fontSize:"20px",margin:"0 0 12px",fontWeight: "700", color: "#012765"}}>
+                                    <Box sx={{
+                                        fontSize: "20px",
+                                        margin: "0 0 12px",
+                                        fontWeight: "700",
+                                        color: "#012765"
+                                    }}>
                                         {therapy.title}
                                     </Box>
                                 </Box>
-                                <Box sx={{color: "#4B5563", mb: "24px",fontSize:"16px"}}>
+                                <Box sx={{color: "#4B5563", mb: "24px", fontSize: "16px"}}>
                                     {therapy.description}
                                 </Box>
-                                <Box sx={{fontWeight: "600", color: "#012765", mb: "8px",fontSize:"16px"}}>
+                                <Box sx={{fontWeight: "600", color: "#012765", mb: "8px", fontSize: "16px"}}>
                                     Best For:
                                 </Box>
                                 <Box sx={{display: "flex", flexWrap: "wrap", gap: 1, mb: 2}}>
@@ -147,7 +153,8 @@ const LookingFor = () => {
                 <Paper elevation={3} sx={{mt: 6, p: 4, borderRadius: 3, backgroundColor: "#fff"}}>
                     <Grid container spacing={3} alignItems="center">
                         <Grid item xs={12} md={8}>
-                            <Box className={"Montserrat"} sx={{fontWeight: "bold", color: "#012765", fontSize: "24px", mb: "16px", mt: 2}}>
+                            <Box className={"Montserrat"}
+                                 sx={{fontWeight: "bold", color: "#012765", fontSize: "24px", mb: "16px", mt: 2}}>
                                 Not Sure Which Therapy Type is Right for You?
                             </Box>
                             <Box sx={{color: "#4B5563", mt: 1, fontSize: "16px", mb: "24px"}}>
@@ -159,20 +166,20 @@ const LookingFor = () => {
                             <Box sx={{
                                 display: "inline-block",
                                 backgroundColor: "#fe6a00",
-                                color:"#fff",
+                                color: "#fff",
                                 textTransform: "none",
                                 fontWeight: "600",
-                                borderRadius:"0.375rem",
+                                borderRadius: "0.375rem",
                                 mt: 2,
-                                padding:"12px 24px",
+                                padding: "12px 24px",
                                 cursor: "pointer",
                             }}>
                                 Take the Assessment
                             </Box>
                         </Grid>
                         <Grid item xs={12} md={4}>
-                            <Paper elevation={2} sx={{ p: 3, borderRadius: 3, backgroundColor: "#F2F4F7" }}>
-                                <Box sx={{ fontWeight: "bold", color: "#012765", fontSize: "16px", mb: "16px" }}>
+                            <Paper elevation={2} sx={{p: 3, borderRadius: 3, backgroundColor: "#F2F4F7"}}>
+                                <Box sx={{fontWeight: "bold", color: "#012765", fontSize: "16px", mb: "16px"}}>
                                     Therapy Approaches FAQ
                                 </Box>
                                 {[
@@ -192,8 +199,8 @@ const LookingFor = () => {
                                             mb: 1.4,
                                             cursor: "pointer",
                                             transition: "all 0.3s ease",
-                                            "&:hover": { color: "#FF7F1E" },
-                                            "&:hover .arrow": { transform: "translateX(5px)" }
+                                            "&:hover": {color: "#FF7F1E"},
+                                            "&:hover .arrow": {transform: "translateX(5px)"}
                                         }}
                                     >
                                         <Box

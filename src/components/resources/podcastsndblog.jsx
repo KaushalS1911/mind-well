@@ -99,7 +99,7 @@ function PodcastsAndBlog() {
                     <Grid container spacing={2} mb={4}>
                         {articles.map((article, index) => (
                             <Grid item xs={12} md={4} key={index}>
-                                <Box sx={{borderRadius: 3, boxShadow: 1 , height: "100%"}}>
+                                <Box sx={{borderRadius: 3, boxShadow: 1, height: "100%"}}>
                                     {/* Top Gray Section */}
                                     <Box
                                         sx={{

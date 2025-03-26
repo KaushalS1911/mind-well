@@ -7,6 +7,7 @@ import CallIcon from '@mui/icons-material/Call';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import logo from "../../assets/logo.jpg";
+import {Link as RouterLink} from "react-router-dom";
 
 const socialMedia = [
     {icon: <Facebook/>, link: "https://www.facebook.com"},
@@ -14,8 +15,15 @@ const socialMedia = [
     {icon: <Instagram/>, link: "https://www.instagram.com"},
     {icon: <LinkedIn/>, link: "https://www.linkedin.com"},
 ];
-
-const navigationLinks = ["Home", "About Us", "Services", "Experts", "Centres", "Partners", "Resources", "Contact"];
+const navigationLinks = [
+    {name: "Home", path: "/"},
+    {name: "About Us", path: "/about"},
+    {name: "Engagement", path: "/engagement"},
+    {name: "Partner", path: "/partner"},
+    {name: "Careers", path: "/careers"},
+    {name: "Resources", path: "/resources"},
+    {name: "Contact", path: "/contact"},
+];
 const services = ["Individual Therapy", "Couples Therapy", "Student Services", "Corporate Wellness", "Therapy Types", "Mental Health Assessments"];
 const contactDetails = {
     phone: "+1 (123) 456-7890",
@@ -36,10 +44,12 @@ const Footer = () => {
                             width: "80px",
                             mb: 2
                         }}>
-                            <img src={logo} alt="logo" style={{
-                                height: "100%",
-                                cursor:"pointer",
-                            }}/>
+                            <Link href="/">
+                                <img src={logo} alt="logo" style={{
+                                    height: "100%",
+                                    cursor: "pointer"
+                                }}/>
+                            </Link>
                         </Box>
                         <Box
                             sx={{
@@ -95,11 +105,12 @@ const Footer = () => {
                             }}>
                                 <Typography component={"span"}><NotificationsIcon sx={{fontSize: 20}}/></Typography>
                                 <Box sx={{ml: 1}}>
-                                    <Typography sx={{fontSize: "12px", fontWeight: "400", lineHeight: "16px"}}>Download
-                                        on the</Typography>
-                                    <Typography sx={{fontSize: "14px", fontWeight: "600", lineHeight: "18px"}}>App
-                                        Store</Typography>
-
+                                    <Typography sx={{fontSize: "12px", fontWeight: "400", lineHeight: "16px"}}>
+                                        Download on the
+                                    </Typography>
+                                    <Typography sx={{fontSize: "14px", fontWeight: "600", lineHeight: "18px"}}>
+                                        App Store
+                                    </Typography>
                                 </Box>
                             </Box>
                             <Box sx={{
@@ -109,17 +120,19 @@ const Footer = () => {
                                 backgroundColor: "#000",
                                 padding: "8px 16px",
                                 borderRadius: 2,
+                                cursor: "pointer",
                                 "&:hover": {
                                     backgroundColor: "#1F2937",
                                 }
                             }}>
                                 <Typography component={"span"}><PlayArrowIcon sx={{fontSize: 20}}/></Typography>
                                 <Box sx={{ml: 1}}>
-                                    <Typography sx={{fontSize: "12px", fontWeight: "400", lineHeight: "16px"}}> Get it
-                                        on</Typography>
-                                    <Typography sx={{fontSize: "14px", fontWeight: "600", lineHeight: "18px"}}>Google
-                                        Play</Typography>
-
+                                    <Typography sx={{fontSize: "12px", fontWeight: "400", lineHeight: "16px"}}>
+                                        Get it on
+                                    </Typography>
+                                    <Typography sx={{fontSize: "14px", fontWeight: "600", lineHeight: "18px"}}>
+                                        Google Play
+                                    </Typography>
                                 </Box>
                             </Box>
                         </Box>
@@ -137,7 +150,7 @@ const Footer = () => {
                         </Box>
                         {navigationLinks.map((link, index) => (
                             <Box key={index} sx={{
-                                fontSize: "16px",
+                                mt: 1, fontSize: "16px",
                                 margin: "15px 0px 0px ",
                                 color: "#FFFFFFCC",
                                 transition: "0.3s",
@@ -146,8 +159,8 @@ const Footer = () => {
                                     textDecoration: "underline",
                                 }
                             }}>
-                                <Link href="#" color="inherit" underline="none">
-                                    {link}
+                                <Link component={RouterLink} to={link.path} color="inherit" underline="none">
+                                    {link.name}
                                 </Link>
                             </Box>
                         ))}

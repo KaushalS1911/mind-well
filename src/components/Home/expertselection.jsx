@@ -82,7 +82,8 @@ function Expertselection() {
 
                 </Box>
                 <Box sx={{mt: 10, textAlign: "center"}}>
-                    <Box className={"Montserrat"} sx={{fontWeight: 700, mb: "16px", color: "#012765", fontSize: "24px"}}>
+                    <Box className={"Montserrat"}
+                         sx={{fontWeight: 700, mb: "16px", color: "#012765", fontSize: "24px"}}>
                         Find Your Perfect Match
                     </Box>
                     <Box sx={{opacity: 0.7, mb: "32px", fontSize: "16px", color: "#4b5563"}}>

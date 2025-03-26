@@ -143,7 +143,7 @@ function Worker() {
                                             color: selected === filter ? "#fff" : "#000",
                                             fontWeight: 500,
                                             borderRadius: "50px",
-                                            cursor:"pointer",
+                                            cursor: "pointer",
                                             "&:hover": {
                                                 backgroundColor: selected === filter ? "#011a45" : "#D1D5DB",
                                             },
@@ -291,7 +291,7 @@ function Worker() {
                                             color: "#fff",
                                             fontSize: "14px",
                                             borderRadius: "0.375rem",
-                                            cursor:"pointer"
+                                            cursor: "pointer"
                                         }}>
                                             Book Session
                                         </Box>

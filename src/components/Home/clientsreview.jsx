@@ -321,9 +321,9 @@ function ClientsReview() {
                     </Box>
                 </Box>
 
-                <Consultation title={"Ready to start your mental wellness journey?"}
-                              Description={"Join thousands of students and professionals who have improved their mental wellbeing with MindWell."}
-                              Btn={"Get Started Today"}/>
+                {/*<Consultation title={"Ready to start your mental wellness journey?"}*/}
+                {/*              Description={"Join thousands of students and professionals who have improved their mental wellbeing with MindWell."}*/}
+                {/*              Btn={"Get Started Today"}/>*/}
             </Container>
         </Box>
     );

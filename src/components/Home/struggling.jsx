@@ -66,7 +66,7 @@ function Struggling() {
                             What Are You Struggling With?
                         </Box>
                         <Box
-                             sx={{color: "#4B5563", fontSize: {xs: "14px", sm: "18px"}, maxWidth: "600px", mx: "auto"}}>
+                            sx={{color: "#4B5563", fontSize: {xs: "14px", sm: "18px"}, maxWidth: "600px", mx: "auto"}}>
                             We provide expert support for a wide range of mental health concerns. Select your challenge
                             to
                             learn more about how we can help.
@@ -127,12 +127,12 @@ function Struggling() {
                             <Box sx={{mt: 3}}>
                                 <Box sx={{
                                     fontSize: "16px",
-                                    display:"inline-block",
-                                    borderRadius:"7px",
+                                    display: "inline-block",
+                                    borderRadius: "7px",
                                     backgroundColor: "#fff",
                                     color: "#012765",
                                     fontWeight: "600",
-                                    padding:"12px 24px",
+                                    padding: "12px 24px",
                                     mb: {lg: 0, xs: 3},
                                     cursor: "pointer",
                                 }}>

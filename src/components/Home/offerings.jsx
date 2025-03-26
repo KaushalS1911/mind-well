@@ -140,13 +140,13 @@ const Offerings = () => {
                             sx={{fontWeight: "700"}}>
                     Our Mental Healthcare Offerings
                 </Typography>
-                <Box  variant="body1" align="center"
-                            sx={{color: "#4B5563", mt: 1, mb: 7.5}}>
+                <Box variant="body1" align="center"
+                     sx={{color: "#4B5563", mt: 1, mb: 7.5}}>
                     Comprehensive support for your mental wellbeing, tailored to your unique <br/> needs and
                     preferences.
                 </Box>
 
-                <Box sx={{ display: "flex", justifyContent: "center", mb: 7 }}>
+                <Box sx={{display: "flex", justifyContent: "center", mb: 7}}>
                     <Tabs
                         value={selectedTab}
                         onChange={(event, newValue) => setSelectedTab(newValue)}
@@ -164,7 +164,7 @@ const Offerings = () => {
                                 gap: "16px",
                                 width: "100%",
                             },
-                            "& .MuiTabs-indicator": { display: "none" },
+                            "& .MuiTabs-indicator": {display: "none"},
                             "& .MuiTab-root": {
                                 fontFamily: "Montserrat",
                                 fontSize: "16px",
@@ -179,10 +179,10 @@ const Offerings = () => {
                                 position: "relative",
                                 overflow: "hidden",
                                 backgroundColor: "transparent",
-                                mx: { sm: 0, xs: 0 },
+                                mx: {sm: 0, xs: 0},
                                 minWidth: "auto",
-                                width: { xs: "auto", sm: "auto" },
-                                mb: { xs: 1, sm: 0 },
+                                width: {xs: "auto", sm: "auto"},
+                                mb: {xs: 1, sm: 0},
                                 "&::before": {
                                     content: '""',
                                     position: "absolute",
@@ -244,16 +244,15 @@ const Offerings = () => {
                         }}
                     >
                         {offerings.map((offer, index) => (
-                            <Tab key={index} label={offer} />
+                            <Tab key={index} label={offer}/>
                         ))}
                     </Tabs>
                 </Box>
 
 
-
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <Box className={"Montserrat"} sx={{fontSize:"24px",color: "#012765", fontWeight: 700,}}>
+                        <Box className={"Montserrat"} sx={{fontSize: "24px", color: "#012765", fontWeight: 700,}}>
                             {offerings[selectedTab]}
                         </Box>
                         <Box sx={{color: "#515863", mt: 1, mb: 2, fontSize: "16px", width: "95%"}}>
@@ -264,23 +263,23 @@ const Offerings = () => {
                                 <CheckCircleIcon sx={{color: "#FF7F1E", fontSize: 20, mr: 1}}/>
                                 <Box>
                                     <Box sx={{
-                                        fontSize:"16px",
+                                        fontSize: "16px",
                                         color: "#1f2937",
-                                        fontWeight:"500"
+                                        fontWeight: "500"
                                     }}>{title}</Box>
-                                    <Box sx={{fontSize:"14px",color: "#6b7280",lineHeight:"1.25rem"}}>
+                                    <Box sx={{fontSize: "14px", color: "#6b7280", lineHeight: "1.25rem"}}>
                                         {selectedData[["fstitle", "sstitle", "tstitle"][index]]}
                                     </Box>
                                 </Box>
                             </Box>
                         ))}
-                        <Box  sx={{
+                        <Box sx={{
                             backgroundColor: "#FE6A00",
                             display: "inline-block",
                             textTransform: "none",
                             fontWeight: "600",
-                            borderRadius:"7px",
-                            cursor:"pointer",
+                            borderRadius: "7px",
+                            cursor: "pointer",
                             color: "#fff",
                             mt: 2,
                             px: 3,
@@ -292,7 +291,7 @@ const Offerings = () => {
 
                     <Grid item xs={12} md={6}>
                         <Paper elevation={3} sx={{p: 3, borderRadius: 3, backgroundColor: "#F9FAFB"}}>
-                            <Box sx={{fontSize:"20px",fontWeight:"700",margin:"0 0 24px",color: "#012765"}}>
+                            <Box sx={{fontSize: "20px", fontWeight: "700", margin: "0 0 24px", color: "#012765"}}>
                                 {selectedData.maintitle}
                             </Box>
                             {selectedData.options.map((therapy, index) => (
@@ -327,8 +326,16 @@ const Offerings = () => {
                                         {/* If you want to add an icon, you can replace this comment with an icon */}
                                     </Box>
                                     <Box>
-                                        <Box sx={{fontSize:"16px",fontWeight: "500",color:"#1f2937"}}>{therapy.title}</Box>
-                                        <Box sx={{fontSize:"14px",color: "#6b7280",lineHeight:"1.25rem"}}>{therapy.description}</Box>
+                                        <Box sx={{
+                                            fontSize: "16px",
+                                            fontWeight: "500",
+                                            color: "#1f2937"
+                                        }}>{therapy.title}</Box>
+                                        <Box sx={{
+                                            fontSize: "14px",
+                                            color: "#6b7280",
+                                            lineHeight: "1.25rem"
+                                        }}>{therapy.description}</Box>
                                     </Box>
                                 </Box>
                             ))}

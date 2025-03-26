@@ -30,7 +30,7 @@ const testimonials = [
 
 function Partners() {
     return (
-        <Box sx={{p: "30px 0 96px 0", backgroundColor:"#F9FAFB" }}>
+        <Box sx={{p: "30px 0 96px 0", backgroundColor: "#F9FAFB"}}>
             <Container maxWidth={"xl"}>
                 <Box className={"Montserrat"} sx={{
                     fontSize: "24px",

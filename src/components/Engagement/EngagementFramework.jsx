@@ -211,44 +211,68 @@ const EngagementFramework = () => {
     const framework = frameworks[currentTab];
 
     return (
-        <Box sx={{py: 8, backgroundColor: 'white'}}>
+        <Box sx={{py: 8, mt: {md: 10, sm: 0}, backgroundColor: 'white'}}>
             <Container maxWidth="xl">
                 <CategoryTitle>
                     Engagement Framework
                 </CategoryTitle>
-                <SubTitle>
+                <Box sx={{
+                    color: "#4B5563",
+                    mt: 1,
+                    mb: 7,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    textAlign: "center",
+                    fontSize: 18
+                }}>
                     Comprehensive year-round support for emotional well-being and academic excellence
-                </SubTitle>
+                </Box>
 
                 <StyledTabs
                     value={currentTab}
                     onChange={handleTabChange}
                     variant="scrollable"
                     scrollButtons="auto"
-                    TabIndicatorProps={{style: {display: 'none'}}}
+                    TabIndicatorProps={{style: {display: "none"}}}
+                    sx={{width: "100%", maxWidth: "100vw", overflowX: "auto"}}
                 >
                     {Object.keys(frameworks).map((category) => (
-                        <StyledTab key={category} label={category} value={category}/>
+                        <StyledTab
+                            key={category}
+                            label={category}
+                            value={category}
+                            sx={{
+                                fontSize: {xs: "12px", sm: "14px", md: "16px"},
+                                minWidth: "80px",
+                                padding: {xs: "6px", sm: "15px", md: "16px"},
+                            }}
+                        />
                     ))}
                 </StyledTabs>
 
                 <Box sx={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 3}}>
                     {framework.sections.map((section, sectionIndex) => (
                         <StyledPaper key={sectionIndex} elevation={3}>
-                            <FrameworkTitle>
+                            <Box sx={{
+                                fontSize: "18px",
+                                fontWeight: "700",
+                                color: "#012765",
+                                mb: "12px",
+                            }}>
                                 {section.title}
-                            </FrameworkTitle>
+                            </Box>
                             <Box>
                                 {section.items.map((item, index) => (
                                     <Box key={index} sx={{display: 'flex', alignItems: 'flex-start', mb: 2}}>
                                         <CheckCircleIcon sx={{color: '#FF7F1E', fontSize: 20, mr: 1, mt: 0.5}}/>
-                                        <Typography sx={{
+                                        <Box sx={{
                                             color: '#4B5563',
                                             fontSize: '16px',
                                             fontFamily: 'Poppins, sans-serif'
                                         }}>
                                             {item}
-                                        </Typography>
+                                        </Box>
                                     </Box>
                                 ))}
                             </Box>

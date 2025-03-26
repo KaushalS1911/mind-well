@@ -5,32 +5,32 @@ import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 
 function Map() {
     return (
-        <Container maxWidth="xl" sx={{p:"0 0 96px 0"}}>
+        <Container maxWidth="xl" sx={{p: "0 0 96px 0"}}>
             <Box
                 sx={{
                     backgroundColor: "#f2f2f5",
-                    height: { xs: "auto", md: 320 },
+                    height: {xs: "auto", md: 320},
                     borderRadius: "10px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
                     textAlign: "center",
-                    padding: { xs: 2, md: 4 },
+                    padding: {xs: 2, md: 4},
                 }}
             >
                 <Box
                     sx={{
-                        padding: { xs: 2, md: "24px" },
-                        margin: { xs: "0 auto", xl: "0 528px" },
+                        padding: {xs: 2, md: "24px"},
+                        margin: {xs: "0 auto", xl: "0 528px"},
                         maxWidth: "90%",
                     }}
                 >
                     <LocationOnIcon
-                        sx={{ fontSize: { xs: 30, md: 40 }, color: "#003366", mb: 2 }}
+                        sx={{fontSize: {xs: 30, md: 40}, color: "#003366", mb: 2}}
                     />
                     <Box fontWeight={700} sx={{
-                        fontSize: { xs: "16px", md: "18px" },
+                        fontSize: {xs: "16px", md: "18px"},
                         color: "#012765",
                         marginBottom: "8px",
                         lineHeight: "1.75rem"
@@ -38,7 +38,7 @@ function Map() {
                         Find Us on the Map
                     </Box>
                     <Box sx={{
-                        fontSize: { xs: "12px", sm: "14px", md: "16px" },
+                        fontSize: {xs: "12px", sm: "14px", md: "16px"},
                         marginBottom: "16px",
                         color: "#4b5563",
                     }}>
@@ -49,7 +49,7 @@ function Map() {
                             padding: "8px 16px",
                             backgroundColor: "#012765",
                             color: "#fff",
-                            fontSize: { xs: "14px", md: "16px" },
+                            fontSize: {xs: "14px", md: "16px"},
                             borderRadius: "0.375rem",
                             cursor: "pointer",
                             display: "inline-block",
@@ -61,9 +61,16 @@ function Map() {
                 </Box>
             </Box>
 
-            <Box sx={{backgroundColor: "#fef2f2",display:"flex", mt: "48px", padding: "16px", borderRadius: 2,borderLeft:"4px solid red"}}>
+            <Box sx={{
+                backgroundColor: "#fef2f2",
+                display: "flex",
+                mt: "48px",
+                padding: "16px",
+                borderRadius: 2,
+                borderLeft: "4px solid red"
+            }}>
                 <Box>
-                    <ReportProblemIcon sx={{color:"red",mr:1.5,fontSize:20}}/>
+                    <ReportProblemIcon sx={{color: "red", mr: 1.5, fontSize: 20}}/>
                 </Box>
                 <Box>
                     <Box sx={{

@@ -10,7 +10,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const struggles = [
     {
-        icon: <MoodBadIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        icon: <MoodBadIcon sx={{fontSize: 30, color: "#012765"}}/>,
         title: "Anxiety",
         description: "Constant worry, fear, racing thoughts, restlessness, and physical symptoms like rapid heartbeat can be signs of anxiety.",
         approach: [
@@ -20,7 +20,7 @@ const struggles = [
         ],
     },
     {
-        icon: <SentimentDissatisfiedIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        icon: <SentimentDissatisfiedIcon sx={{fontSize: 30, color: "#012765"}}/>,
         title: "Depression",
         description: "Persistent sadness, loss of interest, low energy, changes in sleep or appetite, and feelings of worthlessness are common signs of depression.",
         approach: [
@@ -30,7 +30,7 @@ const struggles = [
         ],
     },
     {
-        icon: <SentimentVeryDissatisfiedIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        icon: <SentimentVeryDissatisfiedIcon sx={{fontSize: 30, color: "#012765"}}/>,
         title: "Stress",
         description: "Feeling overwhelmed, irritable, having difficulty concentrating, and experiencing physical tension are common symptoms of excessive stress.",
         approach: [
@@ -40,7 +40,7 @@ const struggles = [
         ],
     },
     {
-        icon: <FavoriteBorderIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        icon: <FavoriteBorderIcon sx={{fontSize: 30, color: "#012765"}}/>,
         title: "Relationship Issues",
         description: "Frequent conflicts, communication problems, trust issues, feeling disconnected, or navigating life transitions with a partner.",
         approach: [
@@ -50,7 +50,7 @@ const struggles = [
         ],
     },
     {
-        icon: <ShieldOutlinedIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        icon: <ShieldOutlinedIcon sx={{fontSize: 30, color: "#012765"}}/>,
         title: "Trauma & PTSD",
         description: "Flashbacks, nightmares, heightened anxiety, emotional numbness, and avoidance behaviors following a traumatic experience.",
         approach: [
@@ -60,7 +60,7 @@ const struggles = [
         ],
     },
     {
-        icon: <PersonOutlineIcon sx={{ fontSize: 30, color: "#012765" }} />,
+        icon: <PersonOutlineIcon sx={{fontSize: 30, color: "#012765"}}/>,
         title: "Self-esteem",
         description: "Persistent self-criticism, feeling not good enough, fear of judgment, difficulty accepting compliments, and comparing yourself to others.",
         approach: [
@@ -74,8 +74,9 @@ const struggles = [
 function Therapists() {
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{ padding:"96px 0"}}>
-                <Typography className={"Montserrat"} variant="h4" align="center" color="#012765" sx={{fontWeight: "bold", mb: 2}}>
+            <Box sx={{padding: "96px 0"}}>
+                <Typography className={"Montserrat"} variant="h4" align="center" color="#012765"
+                            sx={{fontWeight: "bold", mb: 2}}>
                     What Are You Struggling With?
                 </Typography>
                 <Box sx={{
@@ -88,7 +89,8 @@ function Therapists() {
                     textAlign: "center",
                     fontSize: 18
                 }}>
-                    Everyone faces challenges in life. Identify your concerns and discover how <br/> our therapists can help you navigate through them.
+                    Everyone faces challenges in life. Identify your concerns and discover how <br/> our therapists can
+                    help you navigate through them.
                 </Box>
                 <Grid container spacing={3}>
                     {struggles.map((struggle, index) => (
@@ -122,7 +124,7 @@ function Therapists() {
                                         alignItems: "center",
                                         justifyContent: "center",
                                         width: 50,
-                                        my:1,
+                                        my: 1,
                                         height: 50,
                                         borderRadius: "50%",
                                         backgroundColor: "#E6EAF3",
@@ -130,32 +132,33 @@ function Therapists() {
                                         {struggle.icon}
                                     </Box>
                                     <Box sx={{
-                                        fontWeight:700,
-                                        fontSize:"20px",
-                                        color:"#012765",
+                                        fontWeight: 700,
+                                        fontSize: "20px",
+                                        color: "#012765",
                                         lineHeight: "1.75rem",
                                     }}>
                                         {struggle.title}
                                     </Box>
                                 </Box>
                                 <Box sx={{
-                                    mb:2,
+                                    mb: 2,
                                     fontSize: 15,
                                     lineHeight: 1.5,
-                                    color:"#4B5563"
+                                    color: "#4B5563"
                                 }}>
                                     {struggle.description}
                                 </Box>
-                                <Box sx={{fontWeight: "600", color: "#012765", mb: 1,fontSize:16}}>
+                                <Box sx={{fontWeight: "600", color: "#012765", mb: 1, fontSize: 16}}>
                                     Our approach:
                                 </Box>
-                                <Box sx={{ alignItems: "center" }}>
+                                <Box sx={{alignItems: "center"}}>
                                     <Stack spacing={1}>
                                         {struggle.approach.map((point, idx) => (
-                                            <Stack key={idx} direction="row" alignItems="center" sx={{ color: "#4B5563", fontSize: "16px" }}>
-                                                <CheckCircleIcon sx={{ color: "#FE6A00", mr: 1 }} />
+                                            <Stack key={idx} direction="row" alignItems="center"
+                                                   sx={{color: "#4B5563", fontSize: "16px"}}>
+                                                <CheckCircleIcon sx={{color: "#FE6A00", mr: 1}}/>
                                                 <Box sx={{
-                                                    fontSize:"16px",
+                                                    fontSize: "16px",
                                                     color: "#4b5563",
                                                 }}>
                                                     {point}
@@ -188,12 +191,12 @@ function Therapists() {
                             color: "white",
                             fontWeight: "bold",
                             cursor: "pointer",
-                            borderRadius:"0.375rem",
-                            padding:"12px 32px",
-                            fontSize:"16px",
-                            mt:4,
-                            transition:"0.3s",
-                            "&:hover": { backgroundColor: "#1A3C74" },
+                            borderRadius: "0.375rem",
+                            padding: "12px 32px",
+                            fontSize: "16px",
+                            mt: 4,
+                            transition: "0.3s",
+                            "&:hover": {backgroundColor: "#1A3C74"},
                         }}
                     >
                         See All Conditions We Treat

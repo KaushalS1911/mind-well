@@ -62,7 +62,7 @@ function FeaturedLatestHelp() {
 
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{px: 4, p: "96px 0",mt: {md:10,sm:0}}}>
+            <Box sx={{px: 4, p: "96px 0", mt: {md: 10, sm: 0}}}>
                 {/* Header */}
                 <Box className={"Montserrat"} sx={{
                     color: "#012765",
@@ -386,7 +386,7 @@ function FeaturedLatestHelp() {
                                 <Box sx={{
                                     fontSize: 14,
                                     mb: "16px",
-                                    color:"#4b5563",
+                                    color: "#4b5563",
                                     lineHeight: "1.25rem",
                                 }}>
                                     {tool.description}
@@ -394,7 +394,7 @@ function FeaturedLatestHelp() {
                                 <Box sx={{
                                     fontSize: 14,
                                     color: "#FE6A00",
-                                    fontWeight:"500",
+                                    fontWeight: "500",
                                     lineHeight: "1.25rem",
                                     cursor: "pointer",
                                     transition: ".3s",
