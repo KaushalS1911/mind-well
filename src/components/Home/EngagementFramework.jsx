@@ -95,7 +95,7 @@ const StyledTab = styled(Tab)(() => ({
     fontWeight: 700,
     boxShadow: '0 4px 10px rgba(1, 39, 101, 0.2)',
     '&:hover': {
-      backgroundColor: '#012765',
+      backgroundColor: '#fff',
       borderColor: '#FF7F1E',
     },
     '&::before': {
