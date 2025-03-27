@@ -75,7 +75,10 @@ const Description = styled(Typography)(() => ({
 
 const VisionMission = () => {
     return (
-        <Box sx={{p: "96px 0", mt: {md: 10, sm: 0}, backgroundColor: 'white'}}>
+        <Box sx={{
+            py: { xs: 4, sm: 5, md: 6 },
+            backgroundColor: 'white'
+        }}>
             <Container maxWidth="xl">
                 <Box className={"Montserrat"} sx={{
                     fontSize: {sm:"36px",xs:"30px"},
