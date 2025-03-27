@@ -54,7 +54,7 @@ function WorksTable() {
                     align="center"
                     sx={{mx: {xs: 2, sm: 10, md: 20}, color: "#4B5563", lineHeight: 1.75}}
                 >
-                    Getting started with MindWell is simple. Follow these steps to begin your mental wellness journey.
+                    Getting started with Emotionall Yours is simple. Follow these steps to begin your mental wellness journey.
                 </Box>
 
                 <Box sx={{position: "relative", mt: 6}}>

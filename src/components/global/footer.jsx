@@ -26,9 +26,9 @@ const navigationLinks = [
 ];
 const services = ["Individual Therapy", "Couples Therapy", "Student Services", "Corporate Wellness", "Therapy Types", "Mental Health Assessments"];
 const contactDetails = {
-    phone: "+1 (123) 456-7890",
-    email: "info@mindwell.com",
-    address: "123 Broadway, Suite 456, New York, NY 10001",
+    phone: "7977135096",
+    email: "devesh.tripathi@mahadevasth.com",
+    address: "MTPL, B- 204, Kanakia Wall Street Chakala,Andheri East, Mumbai, 400093",
 };
 
 const paymentMethods = ["VISA", "MC", "AMEX", "HSA"];
@@ -59,7 +59,7 @@ const Footer = () => {
                                 color: "#FFFFFFCC"
                             }}
                         >
-                            MindWell provides accessible, professional mental health services for students and
+                            Emotionall Yours provides accessible, professional mental health services for students and
                             professionals. Our mission is to make quality therapy and mental wellness resources
                             available to everyone who needs them.
                         </Box>
@@ -139,7 +139,7 @@ const Footer = () => {
                     </Grid>
 
 
-                    <Grid item xs={12} sm={4} lg={2}>
+                    <Grid item xs={12} sm={3} lg={2}>
                         <Box sx={{
                             fontWeight: 700,
                             fontSize: "24px",
@@ -166,7 +166,7 @@ const Footer = () => {
                         ))}
                     </Grid>
 
-                    <Grid item xs={12} sm={4} lg={3}>
+                    <Grid item xs={12} sm={3} lg={2}>
                         <Box sx={{
                             fontWeight: 700,
                             fontSize: "24px",
@@ -193,7 +193,7 @@ const Footer = () => {
                         ))}
                     </Grid>
 
-                    <Grid item xs={12} sm={4} lg={2}>
+                    <Grid item xs={12} sm={5} md={6} lg={3}>
                         <Box sx={{
                             fontWeight: 700,
                             fontSize: "24px",
@@ -206,38 +206,29 @@ const Footer = () => {
                         <Box
                             sx={{
                                 fontSize: "16px",
-                                margin: "16px 0px 0px ",
+                                marginTop: "16px",
                                 color: "#FFFFFFCC"
                             }}
                         >
-                            <Box sx={{
-                                fontSize: "15px",
-                                margin: "16px 0px 0px ",
-                                display: "flex",
-                                alignItems: "center"
-                            }}><CallIcon sx={{
-                                color: "#FE6A00",
-                                mr: 1
-                            }}/> {contactDetails.phone}</Box>
-                            <Box sx={{
-                                fontSize: "15px",
-                                margin: "16px 0px 0px ",
-                                display: "flex",
-                                alignItems: "center"
-                            }}><MailOutlineIcon sx={{
-                                color: "#FE6A00",
-                                mr: 1
-                            }}/> {contactDetails.email}</Box>
-                            <Box sx={{
-                                fontSize: "15px",
-                                margin: "16px 0px 0px ",
-                                display: "flex",
-                                alignItems: "center"
-                            }}><LocationOnIcon sx={{
-                                color: "#FE6A00",
-                                mr: 1
-                            }}/> {contactDetails.address}</Box>
+                            {[
+                                { icon: <CallIcon />, text: contactDetails.phone },
+                                { icon: <MailOutlineIcon />, text: contactDetails.email },
+                                { icon: <LocationOnIcon />, text: contactDetails.address }
+                            ].map((item, index) => (
+                                <Box
+                                    key={index}
+                                    sx={{
+                                        fontSize: "14px",
+                                        marginTop: "16px",
+                                        display: "flex",
+                                        alignItems: "center"
+                                    }}
+                                >
+                                    <Box sx={{ color: "#FE6A00", mr: 1 }}>{item.icon}</Box> {item.text}
+                                </Box>
+                            ))}
                         </Box>
+
                         <Box sx={{margin: "32px 0px 16px", fontSize: "18px", fontWeight: "bold"}}>
                             We Accept
                         </Box>
@@ -319,7 +310,7 @@ const Footer = () => {
                             <Box
                                 sx={{fontSize: "14px", textAlign: "center"}}
                             >
-                                © 2023 MindWell. All rights reserved.
+                                © 2023 Emotionall Yours. All rights reserved.
                             </Box>
                         </Grid>
 
@@ -380,7 +371,7 @@ const Footer = () => {
                     >
                         If you are in crisis or think you may have an emergency, call your doctor or emergency services
                         immediately.
-                        MindWell does not offer crisis counseling or emergency services.
+                        Emotionall Yours does not offer crisis counseling or emergency services.
                     </Box>
                 </Box>
 

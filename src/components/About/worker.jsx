@@ -85,7 +85,7 @@ function Worker() {
             experience: "6+ years experience",
             specialization: "Specializes in student mental health, academic stress, identity development, and multicultural issues using a strengths-based approach.",
             tags: ["Student Stress", "Identity", "Culture"],
-            category: "Counselor",
+            category: "Social Worker",
         }
     ];
 

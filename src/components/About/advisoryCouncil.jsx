@@ -2,9 +2,11 @@ import React from 'react';
 import {Box, Container, Grid, Paper, Typography, Avatar} from '@mui/material';
 import {styled} from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
-import img1 from '../../assets/images/about/Founder/Pandey Nidhi .png'
-import img2 from '../../assets/images/about/Founder/Devesh Kumar.png'
-import img3 from '../../assets/images/about/Founder/Ashutosh_Mishra.png'
+import img1 from '../../assets/images/about/AdvisoryCouncil/Dr. Pramod Pathak.png';
+import img2 from '../../assets/images/about/AdvisoryCouncil/A N Tripathi.png';
+import img3 from '../../assets/images/about/AdvisoryCouncil/Manish Kumar.png';
+import img4 from '../../assets/images/about/AdvisoryCouncil/Pandey Rakesh.png';
+import img5 from '../../assets/images/about/AdvisoryCouncil/sudhanshu kumar.png';
 
 const Title = styled(Typography)(() => ({
     color: '#012765',
@@ -108,53 +110,40 @@ const Description = styled(Typography)(() => ({
     flex: 1,
 }));
 
-const QRCode = styled(Box)(() => ({
-    width: '80px',
-    height: '80px',
-    marginTop: 'auto',
-    backgroundColor: '#E6EAF3',
-    borderRadius: '8px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#012765',
-    fontSize: '12px',
-    fontFamily: 'Poppins, sans-serif',
-    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.05)',
-}));
-
 const founders = [
     {
         img: img1,
-        role: "Founder & Director",
-        name: "Pandey Nidhi",
-        description: "Mass-com Graduate with experience in Media and Entertainment transitioned herself to a Therapeutic Counsellor.",
+        role: "Retd IIT Professor& Psychology Coach",
+        name: "Dr. Pramod Pathak",
+        description: "Ph.D in Stress Management, M.Sc. in Psychology and an MBA in HR. Former Professor and HOD of Management at IIT(ISM), Dhanbad is a Psychology Coach and our Chief Mentor.",
     },
     {
         img: img2,
-        role: "Founder & CBO",
-        name: "Devesh Tripathi",
-        description: "MBA from IIT(Dhanbad) with over 24 years of experience in Corporate World. A Mental Health Advocate and Life Coach.",
+        role: "Retired IIT COE",
+        name: "Sh. A.N.Tripathi",
+        description: "Superannuated from IIT(ISM), Dhanbad in different administrative roles covering Examination reforms and Digitisation to student affairs. Post retirement assignments as COE at IMS Unison, Dehradun",
     },
     {
         img: img3,
-        role: "Founder & Director",
-        name: "Ashutosh Mishra",
-        description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid.",
+        role: "XLRI Alumni & Lead HR",
+        name: "Sh. Manish Kumar",
+        description: "Alumni of XISS, he has experience of Leading HR with MNCs and Large Corporates. With immense experience in different sectors he is a strategist and also a Mentor, Community Worker, Angel Investor and Columnist on Social Issues.",
     },
     {
-        role: "Product Head",
-        name: "Fatima Lobo",
-        description: "Masters in Psychology, PGD In Therapeutic Counselling and a Certified NLP Practitioner with over 15 Years of experience.",
+        img: img4,
+        role: "Certified Trainer from DoPT, GoI",
+        name: "Sh. Pandey Rakesh",
+        description: "M. A. Public Policy, M. Phil in Development Communication, Diploma in Psychological Counselling and Behaviour Modification, Certified Trainer from DoPT, GoI",
     },
     {
-        role: "Director- Sales",
-        name: "Chaman Kumar",
-        description: "A visionary with a successful 25-year corporate career. Worked in Banks and NBFC institutions in sales & Business Development.",
+        img: img5,
+        role: "Brand & Media Consultant",
+        name: "Sh. Sudhanshu Chaudhary",
+        description: "35 years of experience in the education sector as a media and brand consultant. Creatively convey knowledge by blending visual storytelling with academic insights and enriching the learning experience.",
     }
 ];
 
-const Founders = () => {
+const AdvisoryCouncil = () => {
     return (
         <Box sx={{
             padding: "96px 0",
@@ -170,7 +159,7 @@ const Founders = () => {
                     color: "#012765",
                     fontWeight: "700"
                 }}>
-                    Founding members
+                    Advisory Council
                 </Box>
                 <Box sx={{
                     maxWidth: 600,
@@ -200,15 +189,14 @@ const Founders = () => {
                                             <img src={founder.img} alt={founder.name} style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
                                         </StyledAvatar>
                                     </AvatarWrapper>
-                                    <Role>{founder.role}</Role>
                                     <Box sx={{
                                         fontSize: "18px",
                                         fontWeight: "700",
                                         color: "#012765",
                                         mb: "12px",
                                     }}>{founder.name}</Box>
+                                    <Role>{founder.role}</Role>
                                     <Description>{founder.description}</Description>
-                                    <QRCode>QR Code</QRCode>
                                 </StyledPaper>
                             </Grid>
                         ))}
@@ -220,13 +208,12 @@ const Founders = () => {
                                 <StyledPaper elevation={3}>
                                     <AvatarWrapper className="avatar-wrapper">
                                         <StyledAvatar>
-                                            <PersonIcon/>
+                                            <img src={founder.img} alt={founder.name} style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
                                         </StyledAvatar>
                                     </AvatarWrapper>
-                                    <Role>{founder.role}</Role>
                                     <Name>{founder.name}</Name>
+                                    <Role>{founder.role}</Role>
                                     <Description>{founder.description}</Description>
-                                    <QRCode>QR Code</QRCode>
                                 </StyledPaper>
                             </Grid>
                         ))}
@@ -237,4 +224,4 @@ const Founders = () => {
     );
 };
 
-export default Founders; 
+export default AdvisoryCouncil;

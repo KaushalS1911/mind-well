@@ -34,24 +34,23 @@ const GetInTouch = () => {
             title: "Phone",
             icon: <Phone sx={{color: "#FF6600", mr: 1}}/>,
             details: [
-                "General Inquiries: +1 (123) 456-7890",
-                "Support: +1 (800) 123-4567"
+                "General Inquiries: 7977135096",
+                "Support: 9717666339"
             ]
         },
         email: {
             title: "Email",
             icon: <Email sx={{color: "#FF6600", mr: 1}}/>,
             details: [
-                "Info: info@mindwell.com",
-                "Support: support@mindwell.com"
+                "Info: devesh.tripathi@mahadevasth.com",
+                "Support: kumar@mahadevasth.com"
             ]
         },
         location: {
             title: "Office Locations",
             icon: <LocationOn sx={{color: "#FF6600", mr: 1}}/>,
             details: [
-                "New York: 123 Broadway, Suite 456, New York, NY 10001",
-                "San Francisco: 789 Market St, Suite 1011, San Francisco, CA 94103"
+                "MTPL, B- 204, Kanakia Wall Street Chakala,Andheri East, Mumbai, 400093"
             ]
         }
     };

@@ -62,7 +62,7 @@ function FeaturedLatestHelp() {
 
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{px: 4, p: "96px 0", mt: {md: 10, sm: 0}}}>
+            <Box sx={{px: 4, p: "96px 0", mt: {md: 10, xs: 0}}}>
                 {/* Header */}
                 <Box className={"Montserrat"} sx={{
                     color: "#012765",

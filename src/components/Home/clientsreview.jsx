@@ -9,8 +9,8 @@ const testimonials = [
         name: "Jason Davis",
         role: "Marketing Professional • Anxiety & Stress",
         review:
-            "\"As a high-pressure marketing executive, I was constantly struggling with anxiety and burnout. MindWell matched me with Dr. Chen, who completely transformed my approach to work stress. The CBT techniques she taught me have been invaluable, and I can now manage my workload without sacrificing my mental health.\"",
-        duration: "6 months with MindWell",
+            "\"As a high-pressure marketing executive, I was constantly struggling with anxiety and burnout. Emotionall Yours matched me with Dr. Chen, who completely transformed my approach to work stress. The CBT techniques she taught me have been invaluable, and I can now manage my workload without sacrificing my mental health.\"",
+        duration: "6 months with Emotionall Yours",
         sessions: "12 sessions completed",
         color: "#012765",
     },
@@ -18,8 +18,8 @@ const testimonials = [
         name: "Sarah Rodriguez",
         role: "Graduate Student • Depression & Academic Stress",
         review:
-            "\"Balancing PhD research with teaching duties sent me into a deep depression. MindWell's student program was affordable and life-changing. My therapist Robert understood academic pressure perfectly. He helped me develop practical strategies for academic success without sacrificing my mental wellbeing. I wouldn't have completed my degree without this support.\"",
-        duration: "1 year with MindWell",
+            "\"Balancing PhD research with teaching duties sent me into a deep depression. Emotionall Yours student program was affordable and life-changing. My therapist Robert understood academic pressure perfectly. He helped me develop practical strategies for academic success without sacrificing my mental wellbeing. I wouldn't have completed my degree without this support.\"",
+        duration: "1 year with Emotionall Yours",
         sessions: "18 sessions completed",
         color: "#FF7F1E",
     },
@@ -27,28 +27,24 @@ const testimonials = [
 
 const reviews = [
     {
-        name: "Michael B.",
-        role: "Financial Analyst • Stress & Anxiety",
-        review:
-            "\"The flexibility of scheduling sessions outside of work hours has been a game-changer. My therapist has helped me develop effective techniques to manage work-related stress. I'm sleeping better and finally achieving a healthier work-life balance.\"",
+        name: "Sh. S Sutaria",
+        role: "Principal,RKHK Academy, Surat",
+        review: "\"I saw a huge difference in attaining timely deliveries of our product with the new rejuvenated students, parents and teachers. In just 8 months, the premise is livelier than before. Way to go Team Mahadevasth\"",
     },
     {
-        name: "Alice T.",
-        role: "College Student • Depression & Anxiety",
-        review:
-            "\"As a student, the affordable pricing was critical for me. My therapist has helped me manage my depression and anxiety during a really tough time. Being able to do sessions in my dorm room made getting help so much easier.\"",
-    },
+        name: "Sh. Manoj Suvarna",
+        role: "Director, Agribid",
+        review: "\"We are happy to tie up with Mahadevasth Technologies. They are a digital platform for Emotional Wellness that brings Healing through Awareness, Diagnosis and Evaluation. This tie-up is contributing towards Agribid’s initiatives in bringing growth and positive developments in the lives of the Farmers. Good mental and emotional health is essential; we must prioritize it.\n"},
     {
-        name: "James L.",
-        role: "Software Engineer • Work-Life Balance",
-        review:
-            "\"I was skeptical about online therapy at first, but my therapist at MindWell has been amazing. They've helped me set boundaries at work and learn to disconnect. The convenience of video sessions fits perfectly with my unpredictable schedule.\"",
+        name: "Sh. Rajat Kumar",
+        role: "Founder, Tathagat Tutorials",
+        review:"\"A healthy mind is imperative for a healthy life . Team Mahadev is successfully delivering this important element of human development that focuses on Emotional and Mental well being. I congratulate and thank them for this great initiative . I highly recommend thi to all growing kids and even grown ups.",
     },
     {
         name: "Kelly P.",
         role: "Healthcare Professional • Burnout",
         review:
-            "\"After years of caring for others, I was suffering from severe burnout. My therapist at MindWell understood the unique stressors of healthcare work. The specialized techniques for compassion fatigue have been invaluable. I'm rediscovering my passion for my work.\"",
+            "\"After years of caring for others, I was suffering from severe burnout. My therapist at Emotionall Yours understood the unique stressors of healthcare work. The specialized techniques for compassion fatigue have been invaluable. I'm rediscovering my passion for my work.\"",
     },
     {
         name: "David H.",
@@ -77,7 +73,7 @@ function ClientsReview() {
                 </Typography>
                 <Box sx={{textAlign: "center", opacity: 0.7, mb: 3, fontSize: "20px",}}>
                     Read what our community of students and professionals have to say <br/> about
-                    their mental wellness journey with MindWell.
+                    their mental wellness journey with Emotionall Yours.
                 </Box>
 
                 {/* Statistics */}
@@ -316,13 +312,14 @@ function ClientsReview() {
                         fontStyle: "italic",
                         mt: 1
                     }}>
-                        "MindWell has been life-changing for me. Watch these client stories to see the real impact
+                        "Emotionall Yours has been life-changing for me. Watch these client stories to see the real
+                        impact
                         of our therapeutic approach."
                     </Box>
                 </Box>
 
                 {/*<Consultation title={"Ready to start your mental wellness journey?"}*/}
-                {/*              Description={"Join thousands of students and professionals who have improved their mental wellbeing with MindWell."}*/}
+                {/*              Description={"Join thousands of students and professionals who have improved their mental wellbeing with Emotionall Yours."}*/}
                 {/*              Btn={"Get Started Today"}/>*/}
             </Container>
         </Box>

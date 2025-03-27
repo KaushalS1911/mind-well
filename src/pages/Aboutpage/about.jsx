@@ -6,6 +6,7 @@ import Worker from "../../components/About/worker.jsx";
 import VisionMission from "../../components/About/VisionMission.jsx";
 import Goals from "../../components/About/Goals.jsx";
 import Founders from "../../components/About/Founders.jsx";
+import AdvisoryCouncil from "../../components/About/advisoryCouncil.jsx";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
@@ -65,7 +66,7 @@ const About = () => {
                 '&::after': {
                     content: '""',
                     position: 'absolute',
-                    bottom: 0,
+                    bottom: '-5%',
                     left: '50%',
                     transform: 'translateX(-50%)',
                     width: '200px',
@@ -183,6 +184,7 @@ const About = () => {
             <VisionMission/>
             <Goals/>
             <Founders/>
+            <AdvisoryCouncil/>
             <Worker/>
         </Box>
     );
