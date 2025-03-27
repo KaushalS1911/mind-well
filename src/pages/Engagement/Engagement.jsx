@@ -1,10 +1,13 @@
 import React from 'react';
 import EngagementFramework from "../../components/Engagement/EngagementFramework.jsx";
+import {Box} from "@mui/material";
 
 function Engagement() {
     return (
         <>
-            <EngagementFramework/>
+            <Box id="EngagementFramework">
+                <EngagementFramework/>
+            </Box>
         </>
     );
 }

@@ -2,73 +2,164 @@ import React, {useState} from "react";
 import {
     AppBar,
     Toolbar,
-    Button,
     IconButton,
     List,
     ListItem,
     ListItemText,
     Box,
-    Collapse, Link
+    Collapse,
+    Link,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import logo from "../../assets/logo.jpg";
 
 function Navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [hoverMenu, setHoverMenu] = useState(null);
 
     const handleMobileMenuToggle = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
+    const handleScrollToSection = (sectionId, parentPath) => {
+        if (window.location.pathname !== parentPath) {
+            window.location.href = parentPath;
+            setTimeout(() => {
+                scrollToSection(sectionId);
+            }, 500);
+        } else {
+            scrollToSection(sectionId);
+        }
+    };
+
+    const scrollToSection = (sectionId) => {
+        setTimeout(() => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offset = 100;
+                const top = section.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: "smooth" });
+            }
+        }, 100);
+    };
+
+
     const navItems = [
         {label: "Home", path: "/"},
         {label: "About Us", path: "/about"},
-        {label: "Engagement", path: "/engagement"},
+        {
+            label: "Engagement",
+            path: "/engagement",
+            submenu: [
+                {label: "Shape", sectionId: "shape"},
+                {label: "ESOP", sectionId: "esop"},
+                // {label: "ManMitra", sectionId: "manMitra"},
+            ],
+        },
         {label: "Partner", path: "/partner"},
         {label: "Careers", path: "/careers"},
-        {label: "Resources", path: "/resources"},
-        {label: "Contact Us", path: "/contact"}
+        {
+            label: "Resources",
+            path: "/resources",
+            submenu: [
+                {label: "Journaling", sectionId: "featured-latest-help"},
+                {label: "Assessments", sectionId: "assessments"},
+                {label: "Self Help Tools", sectionId: "self-help-tools"},
+                {label: "Forms", sectionId: "forms"},
+                {label: "Blogs", sectionId: "blogs"},
+            ],
+        },
+        {label: "Contact Us", path: "/contact"},
     ];
 
     return (
         <Box>
             <AppBar sx={{backgroundColor: "white", color: "navy", position: {md: "fixed", xs: "static"}}}>
-                <Toolbar sx={{
-                    justifyContent: "space-between",
-                    margin: {xl: "0 172px", lg: "0 80px"},
-                    padding: "12px 16px"
-                }}>
-                    <Box sx={{
-                        height: "70px",
-                        width: "70px",
-                    }}>
+                <Toolbar
+                    sx={{justifyContent: "space-between", margin: {xl: "0 172px", lg: "0 80px"}, padding: "12px 16px"}}>
+                    <Box sx={{height: "70px", width: "70px"}}>
                         <Link href="/">
-                            <img src={logo} alt="logo" style={{
-                                height: "100%",
-                                cursor: "pointer"
-                            }}/>
+                            <img src={logo} alt="logo" style={{height: "100%", cursor: "pointer"}}/>
                         </Link>
                     </Box>
 
                     {/* Desktop Menu */}
                     <Box sx={{display: {xs: "none", md: "flex"}, gap: 2}}>
-                        {navItems.map((item) => (
-                            <Link key={item.label} href={item.path} passHref style={{textDecoration: "none"}}>
-                                <Box sx={{
-                                    color: "#012765",
-                                    fontSize: "16px",
-                                    fontWeight: "500",
-                                    transition: "color 0.3s ease",
-                                    cursor: "pointer",
-                                    "&:hover": {color: "#FF6600"},
-                                }}>
-                                    {item.label}
+                        {navItems.map((item) =>
+                            item.submenu ? (
+                                <Box
+                                    key={item.label}
+                                    sx={{position: "relative", display: "flex", alignItems: "center", gap: "4px"}}
+                                    onMouseEnter={() => setHoverMenu(item.label)}
+                                    onMouseLeave={() => setHoverMenu(null)}
+                                >
+                                    <Box
+                                        sx={{
+                                            color: "#012765",
+                                            fontSize: "16px",
+                                            fontWeight: "500",
+                                            cursor: "pointer",
+                                            "&:hover": {color: "#FF6600"},
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: "4px",
+                                        }}
+                                        onClick={() => (window.location.href = item.path)}
+                                    >
+                                        {item.label}
+                                        <KeyboardArrowDownIcon fontSize="small"/>
+                                    </Box>
+                                    {hoverMenu === item.label && (
+                                        <Box
+                                            sx={{
+                                                position: "absolute",
+                                                top: "100%",
+                                                left: 0,
+                                                backgroundColor: "white",
+                                                boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+                                                borderRadius: "5px",
+                                                zIndex: 10,
+                                                width: "150px",
+                                            }}
+                                        >
+                                            {item.submenu.map((sub) => (
+                                                <Box
+                                                    key={sub.label}
+                                                    onClick={() => handleScrollToSection(sub.sectionId, item.path)}
+                                                    sx={{
+                                                        padding: "10px",
+                                                        color: "#012765",
+                                                        fontSize: "14px",
+                                                        cursor: "pointer",
+                                                        "&:hover": {backgroundColor: "#FF6600", color: "#fff"},
+                                                    }}
+                                                >
+                                                    {sub.label}
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    )}
                                 </Box>
-                            </Link>
-                        ))}
+                            ) : (
+                                <Link key={item.label} href={item.path} style={{textDecoration: "none"}}>
+                                    <Box
+                                        sx={{
+                                            color: "#012765",
+                                            fontSize: "16px",
+                                            fontWeight: "500",
+                                            cursor: "pointer",
+                                            "&:hover": {color: "#FF6600"},
+                                        }}
+                                    >
+                                        {item.label}
+                                    </Box>
+                                </Link>
+                            )
+                        )}
                     </Box>
 
-                    <Link href="/contact" passHref style={{textDecoration: "none"}}>
+                    <Link href="/contact" style={{textDecoration: "none"}}>
                         <Box
                             sx={{
                                 fontSize: "16px",
@@ -79,15 +170,16 @@ function Navigation() {
                                 padding: "8px 20px",
                                 display: {md: "flex", xs: "none"},
                                 transition: "0.5s",
-                                "&:hover": {backgroundColor: "#da5e05"}
-                            }}>
+                                "&:hover": {backgroundColor: "#da5e05"},
+                            }}
+                        >
                             Get Started
                         </Box>
                     </Link>
 
                     {/* Mobile Menu Icon */}
-                    <IconButton edge="end" color="inherit" aria-label="menu"
-                                sx={{display: {md: "none"}}} onClick={handleMobileMenuToggle}>
+                    <IconButton edge="end" color="inherit" sx={{display: {md: "none"}}}
+                                onClick={handleMobileMenuToggle}>
                         <MenuIcon/>
                     </IconButton>
                 </Toolbar>
@@ -97,13 +189,10 @@ function Navigation() {
             <Collapse in={mobileMenuOpen} timeout="auto" unmountOnExit sx={{display: {xs: "block", md: "none"}}}>
                 <List sx={{backgroundColor: "#fff", color: "#000", padding: "8px 16px 16px"}}>
                     {navItems.map((item, index) => (
-                        <Link key={index} href={item.path} passHref style={{textDecoration: "none"}}>
+                        <Box key={index}>
                             <ListItem
-                                sx={{
-                                    p: 0,
-                                    cursor: "pointer",
-                                    "&:hover .MuiTypography-root": {color: "#FF6600"},
-                                }}
+                                sx={{p: 0, cursor: "pointer", "&:hover .MuiTypography-root": {color: "#FF6600"}}}
+                                onClick={() => (window.location.href = item.path)}
                             >
                                 <ListItemText
                                     primary={item.label}
@@ -111,13 +200,35 @@ function Navigation() {
                                         fontSize: "16px",
                                         letterSpacing: "1px",
                                         color: "#012765",
-                                        padding: "8px 0",
+                                        padding: "8px 0"
                                     }}
                                 />
                             </ListItem>
-                        </Link>
-                    ))}
 
+                            {item.submenu && (
+                                <List sx={{paddingLeft: "20px"}}>
+                                    {item.submenu.map((sub, subIndex) => (
+                                        <ListItem
+                                            key={subIndex}
+                                            sx={{
+                                                p: 0,
+                                                cursor: "pointer",
+                                                "&:hover .MuiTypography-root": {color: "#FF6600"}
+                                            }}
+                                            onClick={() => handleScrollToSection(sub.sectionId, item.path)}
+                                        >
+                                            <ListItemText primary={sub.label} primaryTypographyProps={{
+                                                fontSize: "14px",
+                                                color: "#012765",
+                                                padding: "4px 0"
+                                            }}/>
+                                        </ListItem>
+                                    ))}
+                                </List>
+                            )}
+
+                        </Box>
+                    ))}
                     <Link href="/contact" passHref style={{textDecoration: "none"}}>
                         <Box
                             component="a"
@@ -131,13 +242,12 @@ function Navigation() {
                                 width: "100%",
                                 marginTop: "26px",
                                 textDecoration: "none",
-                                "&:hover": { backgroundColor: "#da5e05" }
+                                "&:hover": {backgroundColor: "#da5e05"},
                             }}
                         >
                             Get Started
                         </Box>
                     </Link>
-
                 </List>
             </Collapse>
         </Box>

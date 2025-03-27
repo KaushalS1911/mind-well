@@ -25,7 +25,7 @@ const crisisResources = [
 
 function CrisisResources() {
     return (
-        <Container maxWidth={"xl"} sx={{mt: 4, padding: "30px 0 96px 0"}}>
+        <Container maxWidth={"xl"} sx={{mt: 4, padding: "30px 0 0 0"}}>
             {/* Crisis Resources Section */}
             <Box sx={{backgroundColor: "#F8FAFC", p: 3, borderRadius: 2, padding: "40px", margin: "0 0 60px"}}>
                 <Box sx={{
