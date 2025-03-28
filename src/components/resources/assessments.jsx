@@ -105,7 +105,7 @@ function Assessments() {
                             <Grid container spacing={2}>
                                 <Grid container spacing={2}>
                                     {assessments.map((assessment, index) => (
-                                        <Grid item xs={12} sm={4} key={index}>
+                                        <Grid item xs={12} sm={6} md={4} key={index}>
                                             <Box
                                                 sx={{
                                                     p: "20px",
@@ -165,7 +165,6 @@ function Assessments() {
                                                 <Box
                                                     sx={{
                                                         alignSelf: "flex-end",
-                                                        mt: "auto",
                                                         fontWeight: 400,
                                                         fontSize: "14px",
                                                         color: "#FE6A00",
@@ -173,6 +172,7 @@ function Assessments() {
                                                         display: "flex",
                                                         alignItems: "center",
                                                         transition:"0.5s",
+                                                        mt:{xs:3},
                                                         '&:hover': {
                                                             color: "#fff",
                                                         }
@@ -184,6 +184,64 @@ function Assessments() {
                                         </Grid>
                                     ))}
                                 </Grid>
+                                {/*<Grid item xs={12} md={4}>*/}
+                                {/*    <Box sx={{p: "24px", bgcolor: "#F8FAFC", color: "#1E293B", borderRadius: 2}}>*/}
+                                {/*        <Box sx={{display: "flex", justifyContent: "center", mb: 2}}>*/}
+                                {/*            <Avatar sx={{bgcolor: "#FFE1CC", p: "40px"}}>*/}
+                                {/*                <DescriptionIcon sx={{color: "#FE6A00", fontSize: "40px"}}/>*/}
+                                {/*            </Avatar>*/}
+                                {/*        </Box>*/}
+                                {/*        <Box fontWeight={600} fontSize={20} mb="12px" textAlign="center">*/}
+                                {/*            Complete Mental Health Check*/}
+                                {/*        </Box>*/}
+                                {/*        <Box variant="body2" color="#4B5563" fontSize={16} textAlign="center" mb="24px">*/}
+                                {/*            Take our comprehensive assessment to evaluate multiple aspects of your mental*/}
+                                {/*            wellbeing in one go.*/}
+                                {/*        </Box>*/}
+                                {/*        <Box fontSize={16} color="#4B5563" mb={1}>*/}
+                                {/*            <CheckIcon sx={{color: "#4CAF50"}}/> Covers all key areas*/}
+                                {/*        </Box>*/}
+                                {/*        <Box fontSize={16} color="#4B5563" mb={1}>*/}
+                                {/*            <CheckIcon sx={{color: "#4CAF50"}}/> Detailed report*/}
+                                {/*        </Box>*/}
+                                {/*        <Box fontSize={16} color="#4B5563" mb={2}>*/}
+                                {/*            <CheckIcon sx={{color: "#4CAF50"}}/> Personalized recommendations*/}
+                                {/*        </Box>*/}
+                                {/*        <Box*/}
+                                {/*            sx={{*/}
+                                {/*                padding: {lg: "12px 24px", xs: "10px 20px"},*/}
+                                {/*                textAlign: "center",*/}
+                                {/*                borderRadius: "0.375rem",*/}
+                                {/*                cursor: "pointer",*/}
+                                {/*                fontSize: "16px",*/}
+                                {/*                mt: 0.54,*/}
+                                {/*                bgcolor: "#012765",*/}
+                                {/*                width: "100%",*/}
+                                {/*                color: "#fff",*/}
+                                {/*                transition: "0.3s",*/}
+                                {/*                "&:hover": {bgcolor: "#011A4B"},*/}
+                                {/*            }}*/}
+                                {/*        >*/}
+                                {/*            Start Comprehensive Assessment*/}
+                                {/*        </Box>*/}
+                                {/*    </Box>*/}
+                                {/*    <Box*/}
+                                {/*        sx={{*/}
+                                {/*            textAlign: "center",*/}
+                                {/*            borderRadius: "0.375rem",*/}
+                                {/*            mt: 2,*/}
+                                {/*            padding: "12px 24px",*/}
+                                {/*            bgcolor: "#FE6A00",*/}
+                                {/*            color: "#fff",*/}
+                                {/*            cursor: "pointer",*/}
+                                {/*            transition: "0.3s",*/}
+                                {/*            fontSize: "16px",*/}
+                                {/*            "&:hover": {bgcolor: "#D45D00"},*/}
+                                {/*        }}*/}
+                                {/*    >*/}
+                                {/*        Take Selected Assessment*/}
+                                {/*    </Box>*/}
+                                {/*</Grid>*/}
 
                             </Grid>
                         </Grid>
@@ -195,3 +253,7 @@ function Assessments() {
 }
 
 export default Assessments;
+
+
+
+
