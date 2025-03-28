@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Grid, Container } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import BoltIcon from "@mui/icons-material/Bolt";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
@@ -13,6 +14,17 @@ import img7 from "../../assets/images/Resources/Assessments/Work_Life_Balance.jp
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
 function Assessments() {
+    const navigate = useNavigate();
+    const [selectedIndex, setSelectedIndex] = useState(null);
+
+    const handleAssessmentClick = (index) => {
+        setSelectedIndex(index);
+        // Navigate to specific assessment pages based on index
+        if (index === 2) { // Index 2 is for General Stress and Anxiety
+            navigate('/assessments/general-stress');
+        }
+    };
+
     const assessments = [
         {
             img: img1,
@@ -70,8 +82,6 @@ function Assessments() {
         },
     ];
 
-    const [selectedIndex, setSelectedIndex] = useState(null);
-
     return (
         <Container maxWidth="xl">
             <Box sx={{ padding: "50px 0" }}>
@@ -116,8 +126,9 @@ function Assessments() {
                                                     border: selectedIndex === index ? "2px solid #FE6A00" : "none",
                                                     display: "flex",
                                                     flexDirection: "column",
+                                                    cursor: "pointer",
                                                 }}
-                                                onClick={() => setSelectedIndex(index)}
+                                                onClick={() => handleAssessmentClick(index)}
                                             >
                                                 <Box display="flex" alignItems="center" mb="12px">
                                                     <img
@@ -168,11 +179,10 @@ function Assessments() {
                                                         fontWeight: 400,
                                                         fontSize: "14px",
                                                         color: "#FE6A00",
-                                                        cursor: "pointer",
                                                         display: "flex",
                                                         alignItems: "center",
-                                                        transition:"0.5s",
-                                                        mt:{xs:3},
+                                                        transition: "0.5s",
+                                                        mt: {xs: 3},
                                                         '&:hover': {
                                                             color: "#fff",
                                                         }
