@@ -1,30 +1,19 @@
-import React, {useState} from 'react';
-import {
-    Box,
-    Container,
-    Typography,
-    Button,
-    Paper,
-    Radio,
-    RadioGroup,
-    FormControlLabel,
-    FormControl,
-    LinearProgress
-} from '@mui/material';
-import {styled} from '@mui/material/styles';
+import React, { useState } from 'react';
+import { Box, Container, Typography, Button, Paper, Radio, RadioGroup, FormControlLabel, FormControl, LinearProgress } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import {useNavigate} from 'react-router-dom';
-import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
+import { useNavigate } from 'react-router-dom';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
-const StyledPaper = styled(Paper)(({theme}) => ({
+const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(4),
     backgroundColor: '#FFFFFF',
     borderRadius: '16px',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
 }));
 
-const NavigationButton = styled(Button)(({theme}) => ({
+const NavigationButton = styled(Button)(({ theme }) => ({
     padding: '12px 24px',
     fontSize: '16px',
     fontWeight: 600,
@@ -36,72 +25,60 @@ const NavigationButton = styled(Button)(({theme}) => ({
 const questions = [
     {
         id: 1,
-        text: "Look at this picture. How do you think this person is feeling? (Show a picture of a happy face).",
+        text: "I have Experienced Headaches, Muscle Tension or Unexplained Pain or Aches.",
     },
     {
         id: 2,
-        text: " How do you feel when you get to play with your favourite toy?",
+        text: "I experienced trouble falling asleep, staying asleep, or woke up interrupted",
     },
     {
         id: 3,
-        text: "When someone takes your toy without asking, how do you feel?",
+        text: "I experienced Fatigue and felt tired even after resting",
     },
     {
         id: 4,
-        text: "How do you feel when you lose a game?",
+        text: "I experienced rapid heartbeat, shortness of breath and sweating",
     },
     {
         id: 5,
-        text: "When you get a hug from a family member, how do you feel?" + "specify",
+        text: "Was unable to cope up with daily tasks and felt overwhelmed",
     },
     {
         id: 6,
-        text: "What do you do when you feel happy?",
+        text: "Worried excessively with unlikely or about small problems",
     },
     {
         id: 7,
-        text: "What do you do when you feel sad?",
+        text: "I feel irritable and easily frustrated",
     },
     {
         id: 8,
-        text: "If you feel angry, what can you do to feel better?",
+        text: "I have trouble concentrating and staying focused",
     },
     {
         id: 9,
-        text: "When you are scared, what do you do?",
+        text: "I avoid situations or tasks if they make me anxious",
     },
     {
         id: 10,
-        text: " What do you do when you feel frustrated?",
+        text: "I procrastinate (Delay my Tasks) due to feeling stressed or overwhelmed",
     },
     {
         id: 11,
-        text: "If your friend is crying, how do you think they feel?",
+        text: "I have eating issues (Overeating or Undereating) or rely on substances (Caffeine, Nicotine, Alcohol) to manage stress.",
     },
     {
         id: 12,
-        text: "If your friend is yelling, how do you think they feel?",
-    },
-    {
-        id: 13,
-        text: "If your friend is laughing, how do you think they feel?",
-    },
-    {
-        id: 14,
-        text: "If your friend is very quiet, how do you think they feel?",
-    },
-    {
-        id: 15,
-        text: "If your friend is playing alone, how do you think they feel?",
+        text: "I find it hard to relax even during non-working or leisure hours",
     },
 ];
 
 const options = [
-    {value: 4, label: 'Always'},
-    {value: 3, label: 'Often'},
-    {value: 2, label: 'Sometimes'},
-    {value: 1, label: 'Rarely'},
-    {value: 0, label: 'Never'},
+    { value: 4, label: 'Always' },
+    { value: 3, label: 'Often' },
+    { value: 2, label: 'Sometimes' },
+    { value: 1, label: 'Rarely' },
+    { value: 0, label: 'Never' },
 ];
 
 const getScoreCategory = (totalScore) => {
@@ -128,11 +105,11 @@ const getScoreCategory = (totalScore) => {
     }
 };
 
-const GaugeChart = ({score, maxScore}) => {
+const GaugeChart = ({ score, maxScore }) => {
     const percentage = (score / maxScore) * 100;
     const data = [
-        {name: 'Score', value: percentage},
-        {name: 'Remaining', value: 100 - percentage}
+        { name: 'Score', value: percentage },
+        { name: 'Remaining', value: 100 - percentage }
     ];
 
     const getColor = (percentage) => {
@@ -180,8 +157,8 @@ const GaugeChart = ({score, maxScore}) => {
                             paddingAngle={5}
                             dataKey="value"
                         >
-                            <Cell fill={getColor(percentage)}/>
-                            <Cell fill="#E6EAF3"/>
+                            <Cell fill={getColor(percentage)} />
+                            <Cell fill="#E6EAF3" />
                         </Pie>
                         <Tooltip
                             formatter={(value) => [`${value.toFixed(1)}%`, '']}
@@ -207,7 +184,7 @@ const GaugeChart = ({score, maxScore}) => {
                         fontWeight: 700,
                         fontFamily: 'Montserrat',
                         lineHeight: 1,
-                        fontSize: {xs: '3rem', sm: '4rem'}
+                        fontSize: { xs: '3rem', sm: '4rem' }
                     }}>
                         {score}
                     </Typography>
@@ -244,7 +221,7 @@ const GaugeChart = ({score, maxScore}) => {
     );
 };
 
-const GeneralStressQuestions = () => {
+const EmotionalAwarenessQuestions = () => {
     const navigate = useNavigate();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [answers, setAnswers] = useState(new Array(questions.length).fill(null));
@@ -289,8 +266,8 @@ const GeneralStressQuestions = () => {
                 display: 'flex',
                 alignItems: 'center',
                 backgroundColor: '#F3F4F6',
-                mt: {xs: '64px', sm: '72px'},
-                py: {xs: 4, md: 6},
+                mt: { xs: '64px', sm: '72px' },
+                py: { xs: 4, md: 6 },
             }}>
                 <Container maxWidth="md">
                     <StyledPaper>
@@ -304,7 +281,7 @@ const GeneralStressQuestions = () => {
                             Assessment Results
                         </Typography>
 
-                        <GaugeChart score={totalScore} maxScore={48}/>
+                        <GaugeChart score={totalScore} maxScore={48} />
 
                         <Box sx={{
                             mb: 4,
@@ -350,8 +327,7 @@ const GeneralStressQuestions = () => {
                                     fontFamily: 'Poppins',
                                     fontWeight: 500
                                 }}>
-                                    Note: This is a self-assessment tool and not a diagnostic test. For professional
-                                    evaluation, please consult with a certified mental health professional.
+                                    Note: This is a self-assessment tool and not a diagnostic test. For professional evaluation, please consult with a certified mental health professional.
                                 </Typography>
                             </Box>
                         </Box>
@@ -364,7 +340,7 @@ const GeneralStressQuestions = () => {
                         }}>
                             <NavigationButton
                                 variant="outlined"
-                                onClick={() => navigate('/assessments/general-stress')}
+                                onClick={() => navigate('/assessments/emotional-awareness')}
                                 sx={{
                                     color: '#012765',
                                     borderColor: '#012765',
@@ -381,7 +357,7 @@ const GeneralStressQuestions = () => {
                                 onClick={handleRestart}
                                 sx={{
                                     backgroundColor: '#FF7F1E',
-                                    '&:hover': {backgroundColor: '#E66C00'},
+                                    '&:hover': { backgroundColor: '#E66C00' },
                                     boxShadow: '0 4px 12px rgba(255, 127, 30, 0.2)'
                                 }}
                             >
@@ -400,12 +376,12 @@ const GeneralStressQuestions = () => {
             display: 'flex',
             alignItems: 'center',
             backgroundColor: '#F3F4F6',
-            mt: {xs: '64px', sm: '72px'},
-            py: {xs: 4, md: 6},
+            mt: { xs: '64px', sm: '72px' },
+            py: { xs: 4, md: 6 },
         }}>
             <Container maxWidth="md">
                 <StyledPaper>
-                    <Box sx={{mb: 4}}>
+                    <Box sx={{ mb: 4 }}>
                         <Typography variant="h6" sx={{
                             mb: 1,
                             color: '#012765',
@@ -438,7 +414,7 @@ const GeneralStressQuestions = () => {
                         {questions[currentQuestion].text}
                     </Typography>
 
-                    <FormControl component="fieldset" sx={{width: '100%', mb: 4}}>
+                    <FormControl component="fieldset" sx={{ width: '100%', mb: 4 }}>
                         <RadioGroup
                             value={answers[currentQuestion] || ''}
                             onChange={(e) => handleAnswer(e.target.value)}
@@ -481,23 +457,23 @@ const GeneralStressQuestions = () => {
                         </RadioGroup>
                     </FormControl>
 
-                    <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                         <NavigationButton
                             variant="outlined"
-                            startIcon={<ArrowBackIcon/>}
+                            startIcon={<ArrowBackIcon />}
                             onClick={handleBack}
-                            sx={{color: '#012765', borderColor: '#012765'}}
+                            sx={{ color: '#012765', borderColor: '#012765' }}
                         >
                             Back
                         </NavigationButton>
                         <NavigationButton
                             variant="contained"
-                            endIcon={<ArrowForwardIcon/>}
+                            endIcon={<ArrowForwardIcon />}
                             onClick={handleNext}
                             disabled={answers[currentQuestion] === null}
                             sx={{
                                 backgroundColor: '#FF7F1E',
-                                '&:hover': {backgroundColor: '#E66C00'},
+                                '&:hover': { backgroundColor: '#E66C00' },
                                 '&.Mui-disabled': {
                                     backgroundColor: '#E6EAF3',
                                     color: '#9CA3AF',
@@ -513,4 +489,4 @@ const GeneralStressQuestions = () => {
     );
 };
 
-export default GeneralStressQuestions; 
+export default EmotionalAwarenessQuestions;

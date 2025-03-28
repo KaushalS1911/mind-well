@@ -20,10 +20,19 @@ function Assessments() {
     const handleAssessmentClick = (index) => {
         setSelectedIndex(index);
         // Navigate to specific assessment pages based on index
-        if (index === 2) { // Index 2 is for General Stress and Anxiety
+        if (index === 2) { // General Stress and Anxiety
             navigate('/assessments/general-stress');
+        } else if (index === 3) { // Emotional Awareness
+            navigate('/assessments/emotional-awareness');
+        } else if (index === 4) {
+            navigate('/assessments/academic-stress');
+        } else if (index === 5) {
+            navigate('/assessments/self-esteem-scale');
+        } else if (index === 6) {
+            navigate('/assessments/work-life-balance');
         }
     };
+
 
     const assessments = [
         {
@@ -108,7 +117,7 @@ function Assessments() {
                                     Mental Health Assessments
                                 </Box>
                             </Box>
-                            <Box fontSize={{ xs: 14, md: 18 }} color="#CBD5E1" sx={{ mb: "32px" }}>
+                            <Box fontSize={{ xs: 14, md: 18 }} color="#CBD5E1" sx={{ mb: "40px" }}>
                                 Take our scientifically-validated assessments to gain insights into your mental health
                                 and determine whether you might benefit from professional support.
                             </Box>
@@ -126,9 +135,8 @@ function Assessments() {
                                                     border: selectedIndex === index ? "2px solid #FE6A00" : "none",
                                                     display: "flex",
                                                     flexDirection: "column",
-                                                    cursor: "pointer",
                                                 }}
-                                                onClick={() => handleAssessmentClick(index)}
+
                                             >
                                                 <Box display="flex" alignItems="center" mb="12px">
                                                     <img
@@ -182,11 +190,13 @@ function Assessments() {
                                                         display: "flex",
                                                         alignItems: "center",
                                                         transition: "0.5s",
+                                                        cursor:"pointer",
                                                         mt: {xs: 3},
                                                         '&:hover': {
                                                             color: "#fff",
                                                         }
                                                     }}
+                                                    onClick={() => handleAssessmentClick(index)}
                                                 >
                                                     TAKE ASSESSMENT <KeyboardDoubleArrowRightIcon/>
                                                 </Box>

@@ -101,17 +101,17 @@ function Therapists() {
                                 borderRadius: "12px",
                                 backgroundColor: "#fff",
                                 overflow: "hidden",
-                                height: "100%", // Fixed height for all cards
+                                height: "100%",
                                 display: "flex",
                                 flexDirection: "column",
-                                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Optional shadow
+                                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                                 "&::before": {
                                     content: '""',
                                     position: "absolute",
                                     top: 0,
                                     left: 0,
                                     width: "100%",
-                                    height: "9px", // Reduced from 13px to 8px
+                                    height: "9px",
                                     borderTopLeftRadius: "12px",
                                     borderTopRightRadius: "12px",
                                     background: "linear-gradient(to right, #012765, #FF7F1E)",

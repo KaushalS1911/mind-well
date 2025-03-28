@@ -10,6 +10,13 @@ import Contact from "./pages/Contact/contact.jsx";
 import GeneralStressAssessment from "./components/resources/GeneralStressAssessment.jsx";
 import GeneralStressQuestions from './components/resources/GeneralStressQuestions';
 import {useEffect} from "react";
+import EmotionalAwarenessAssessment from "./components/resources/EmotionalAwarenessAssessment.jsx";
+import AcademicStressAssessment from "./components/resources/AcademicStressAssessment.jsx";
+import AcademicStressQuestions from "./components/resources/AcademicStressQuestions.jsx";
+import SelfEsteemScaleAssessment from "./components/resources/SelfEsteemScaleAssessment.jsx";
+import SelfEsteemScaleQuestions from "./components/resources/SelfEsteemScaleQuestions.jsx";
+import WorkLifeBalanceAssessment from "./components/resources/WorkLifeBalanceAssessment.jsx";
+import WorkLifeBalanceQuestions from "./components/resources/WorkLifeBalanceQuestions.jsx";
 
 function App() {
 
@@ -35,6 +42,14 @@ function App() {
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/assessments/general-stress" element={<GeneralStressAssessment/>}/>
                 <Route path="/assessments/general-stress/questions" element={<GeneralStressQuestions/>}/>
+                <Route path="/assessments/emotional-awareness" element={<EmotionalAwarenessAssessment/>}/>
+                <Route path="/assessments/emotional-awareness/questions" element={<GeneralStressQuestions/>}/>
+                <Route path="/assessments/academic-stress" element={<AcademicStressAssessment/>}/>
+                <Route path="/assessments/academic-stress/questions" element={<AcademicStressQuestions/>}/>
+                <Route path="/assessments/self-esteem-scale" element={<SelfEsteemScaleAssessment/>}/>
+                <Route path="/assessments/self-esteem-scale/questions" element={<SelfEsteemScaleQuestions/>}/>
+                <Route path="/assessments/work-life-balance" element={<WorkLifeBalanceAssessment/>}/>
+                <Route path="/assessments/work-life-balance/questions" element={<WorkLifeBalanceQuestions/>}/>
             </Routes>
 
             <Footer/>
