@@ -43,224 +43,185 @@ const NavigationButton = styled(Button)(({theme}) => ({
 const questions = [
     {
         id: 1,
-        text: "I feel good about myself.",
+        text: "How often does your child seem happy?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Very Often", value: "0" },
+            { label: "Often", value: "1" },
+            { label: "Sometimes", value: "2" },
+            { label: "Rarely", value: "3" },
+            { label: "Never", value: "4" }
         ]
     },
     {
         id: 2,
-        text: "I am happy with the way I look.",
+        text: "Does your child express sadness or tearfulness?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Yes", value: "0" },
+            { label: "No", value: "1" },
+            { label: "Occasionally", value: "2" }
         ]
     },
     {
         id: 3,
-        text: "I feel proud of the things I do.",
+        text: "How often does your child express feelings of anger or frustration?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Very Often", value: "0" },
+            { label: "Often", value: "1" },
+            { label: "Sometimes", value: "2" },
+            { label: "Rarely", value: "3" },
+            { label: "Never", value: "4" }
         ]
     },
     {
         id: 4,
-        text: "I believe I can do things well.",
+        text: "How would you rate your child's overall mood lately?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Happy", value: "0" },
+            { label: "Content", value: "1" },
+            { label: "Neutral", value: "2" },
+            { label: "Sad", value: "3" },
+            { label: "Angry", value: "4" }
         ]
     },
     {
         id: 5,
-        text: " I think I am a good person.",
+        text: "Does your child express worries or anxiety about specific things?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Academic performance", value: "0" },
+            { label: "Social relationships", value: "1" },
+            { label: "Family matters", value: "2" },
+            { label: "Other (please specify)", value: "3" }
         ]
     },
+
+    // Behavioral Wellbeing
     {
         id: 6,
-        text: "I feel confident when I try new things.",
+        text: "How does your child typically behave at home?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Cooperative", value: "0" },
+            { label: "Defiant", value: "1" },
+            { label: "Quiet", value: "2" },
+            { label: "Hyperactive", value: "3" },
+            { label: "Withdrawn", value: "4" }
         ]
     },
     {
         id: 7,
-        text: "I feel good about my abilities.",
+        text: "How does your child behave in social settings (e.g., with friends, at school)?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Sociable and outgoing", value: "0" },
+            { label: "Shy and reserved", value: "1" },
+            { label: "Aggressive", value: "2" },
+            { label: "Passive", value: "3" },
+            { label: "Other (please specify)", value: "4" }
         ]
     },
     {
         id: 8,
-        text: "I think positively about myself.",
+        text: "Does your child exhibit repetitive behaviors (e.g., hand-flapping, rocking)?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Yes", value: "0" },
+            { label: "No", value: "1" }
         ]
     },
+
+    // Physical Wellbeing
     {
         id: 9,
-        text: "I feel that others like me.",
+        text: "How would you describe your child's overall physical health?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Poor", value: "0" },
+            { label: "Average", value: "1" },
+            { label: "Good", value: "2" },
+            { label: "Very Good", value: "3" }
         ]
     },
     {
         id: 10,
-        text: "I am satisfied with my achievements.",
+        text: "How often does your child engage in physical activity (e.g., playing sports, outdoor play)?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Everyday", value: "0" },
+            { label: "Occasionally", value: "1" },
+            { label: "Rarely", value: "2" },
+            { label: "Never", value: "3" }
         ]
     },
+
+    // Academic Wellbeing
     {
         id: 11,
-        text: "I feel comfortable in social situations.",
+        text: "How do you rate your child's last year's academic performance?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Outstanding (Above 90%)", value: "0" },
+            { label: "Very Good (80%-90%)", value: "1" },
+            { label: "Good (70%-80%)", value: "2" },
+            { label: "Average (50%-70%)", value: "3" },
+            { label: "Poor (Less than 50%)", value: "4" }
         ]
     },
     {
         id: 12,
-        text: "I can handle my problems well",
+        text: "Are you worried about your child’s performance?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Yes", value: "0" },
+            { label: "No", value: "1" },
+            { label: "Don’t Know", value: "2" }
         ]
     },
+
+    // Nutritional Wellbeing
     {
         id: 13,
-        text: "I feel respected by others.",
+        text: "What are your child's eating habits like?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Poor", value: "0" },
+            { label: "Average", value: "1" },
+            { label: "Good", value: "2" },
+            { label: "Very Good", value: "3" }
         ]
     },
     {
         id: 14,
-        text: "I believe I am important. ",
+        text: "How often does your child demand outside/junk food?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Regularly", value: "0" },
+            { label: "Occasionally", value: "1" },
+            { label: "Rarely", value: "2" },
+            { label: "Never", value: "3" }
         ]
     },
+
+    // Digital Wellbeing
     {
         id: 15,
-        text: "I accept my mistakes and learn from them.",
+        text: "How much time does your child spend using screens (e.g., TV, computer, tablet, smartphone) each day?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Less Than 1 Hour", value: "0" },
+            { label: "1-4 Hours", value: "1" },
+            { label: "Beyond 4 Hours", value: "2" }
         ]
     },
     {
         id: 16,
-        text: "I feel happy with my friendships.",
+        text: "Does your child sleep or eat while using mobile/laptop/other electronic devices?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Regularly", value: "0" },
+            { label: "Sometimes", value: "1" },
+            { label: "Never", value: "2" }
         ]
     },
+
+    // Safety and Environmental Wellbeing
     {
         id: 17,
-        text: "I like myself even when things go wrong.",
+        text: "Does your child feel safe at home, school, and in the community?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Yes", value: "0" },
+            { label: "No", value: "1" },
+            { label: "Don’t Know", value: "2" }
         ]
-    },
-    {
-        id: 18,
-        text: "I believe I can achieve my goals.",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 19,
-        text: "I feel positive about my future.",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 20,
-        text: "I think I am special.",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
+    }
 ];
 
 const options = [
@@ -494,7 +455,7 @@ const GaugeChartComponent = ({score, maxScore}) => {
     );
 };
 
-const SelfEsteemScaleQuestions = () => {
+const ShapeK12Questions = () => {
     const navigate = useNavigate();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [answers, setAnswers] = useState(Array(20).fill(''));
@@ -752,7 +713,7 @@ const SelfEsteemScaleQuestions = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            onClick={() => navigate('/assessments/self-esteem-scale')}
+                            onClick={() => navigate('/assessments/shape-k12')}
                             sx={{
                                 bgcolor: '#F5811E',
                                 color: '#fff',
@@ -890,4 +851,4 @@ const SelfEsteemScaleQuestions = () => {
     );
 };
 
-export default SelfEsteemScaleQuestions;
+export default ShapeK12Questions;

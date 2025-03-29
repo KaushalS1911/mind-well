@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     Box,
     Container,
@@ -9,13 +9,20 @@ import {
     RadioGroup,
     FormControlLabel,
     FormControl,
-    LinearProgress
+    LinearProgress,
+    CircularProgress,
+    Grid,
+    Card,
+    Divider
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
+import GaugeChart from 'react-gauge-chart';
+import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -36,63 +43,135 @@ const NavigationButton = styled(Button)(({theme}) => ({
 const questions = [
     {
         id: 1,
-        text: "Look at this picture. How do you think this person is feeling? (Show a picture of a happy face).",
+        text: " I have Experienced Headaches, Muscle Tension or Unexplained Pain or Aches.",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 2,
-        text: " How do you feel when you get to play with your favourite toy?",
+        text: "I experienced trouble falling asleep, staying asleep, or woke up interrupted",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 3,
-        text: "When someone takes your toy without asking, how do you feel?",
+        text: "I experienced Fatigue and felt tired even after resting",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 4,
-        text: "How do you feel when you lose a game?",
+        text: "I experienced rapid heartbeat, shortness of breath and sweating",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 5,
-        text: "When you get a hug from a family member, how do you feel?" + "specify",
+        text: "Was unable to cope up with daily tasks and felt overwhelmed",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 6,
-        text: "What do you do when you feel happy?",
+        text: "Worried excessively with unlikely or about small problems",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 7,
-        text: "What do you do when you feel sad?",
+        text: "I feel irritable and easily frustrated",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 8,
-        text: "If you feel angry, what can you do to feel better?",
+        text: "I have trouble concentrating and staying focused",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 9,
-        text: "When you are scared, what do you do?",
+        text: "I avoid situations or tasks if they make me anxious",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 10,
-        text: " What do you do when you feel frustrated?",
+        text: " I procrastinate (Delay my Tasks) due to feeling stressed or overwhelmed",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 11,
-        text: "If your friend is crying, how do you think they feel?",
+        text: "I have eating issues (Overeating or Undereating) or rely on substances (Caffeine, Nicotine, Alcohol) to manage stress.",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
     {
         id: 12,
-        text: "If your friend is yelling, how do you think they feel?",
-    },
-    {
-        id: 13,
-        text: "If your friend is laughing, how do you think they feel?",
-    },
-    {
-        id: 14,
-        text: "If your friend is very quiet, how do you think they feel?",
-    },
-    {
-        id: 15,
-        text: "If your friend is playing alone, how do you think they feel?",
+        text: "I find it hard to relax even during non-working or leisure hours",
+        options: [
+            {label: "Always", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
+        ]
     },
 ];
 
@@ -104,31 +183,114 @@ const options = [
     {value: 0, label: 'Never'},
 ];
 
-const getScoreCategory = (totalScore) => {
-    if (totalScore <= 12) {
+const options2 = [
+    {value: 0, label: 'Not at all'},
+    {value: 1, label: 'Slightly'},
+    {value: 2, label: 'Moderately'},
+    {value: 3, label: 'A lot'},
+    {value: 4, label: 'Extremely'},
+];
+
+const getScoreCategory = (score) => {
+    if (score >= 61 && score <= 80) {
         return {
-            level: 'Low Stress/Anxiety',
-            report: 'You appear to control Strain and tension well. Keep Practicing healthful habits. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, we suggest to engage with certified Psychologists and Professionals.'
+            level: "High Academic Stress",
+            interpretation: "You experience high levels of academic stress but have developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
+            recommendations: [
+                {
+                    title: "Maintain Current Strategies",
+                    description: "Continue using and refining your current coping strategies to ensure they remain effective."
+                },
+                {
+                    title: "Share Techniques",
+                    description: "Consider sharing your successful coping techniques with peers, which can help reinforce your own strategies and provide support to others."
+                },
+                {
+                    title: "Balance Life",
+                    description: "Maintain a balanced lifestyle, incorporating academic responsibilities and personal well-being activities to sustain mental and emotional health."
+                }
+            ]
         };
-    } else if (totalScore <= 24) {
+    } else if (score >= 41 && score <= 60) {
         return {
-            level: 'Moderate Stress/Anxiety',
-            report: 'You may be experiencing stress or anxiety at manageable levels. Consider mindfulness, self-care, or seeking support if needed. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, we suggest to engage with certified Psychologists and Professionals.'
+            level: "Moderate-High Academic Stress",
+            interpretation: "You experience moderate to high levels of academic stress and use some effective coping strategies but may need improvement in certain areas. While you have some good techniques in place, there is room to enhance your ability to manage stress.",
+            recommendations: [
+                {
+                    title: "Develop Targeted Strategies",
+                    description: "Identify specific areas of stress and develop targeted coping strategies to address them effectively."
+                },
+                {
+                    title: "Engage in Workshops",
+                    description: "Consider participating in stress management workshops or seeking guidance from academic advisors or counsellors to improve coping skills."
+                },
+                {
+                    title: "Time Management & Self-Care",
+                    description: "Focus on enhancing time management and self-care routines to better handle academic pressures."
+                }
+            ]
         };
-    } else if (totalScore <= 36) {
+    } else if (score >= 21 && score <= 40) {
         return {
-            level: 'High Stress/Anxiety',
-            report: 'Your stress and anxiety levels may be impacting your daily life. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, it is recommended that you engage with certified Psychologists and Professionals.'
+            level: "Moderate Academic Stress",
+            interpretation: "You experience moderate levels of academic stress and have inconsistent coping strategies. You may sometimes manage stress well but struggle at other times.",
+            recommendations: [
+                {
+                    title: "Increase Effective Strategies",
+                    description: "Promote the use of effective coping strategies such as time management, relaxation techniques, and seeking support from friends, family, or professionals."
+                },
+                {
+                    title: "Stress Reduction Programs",
+                    description: "Consider participating in stress reduction programs to learn and implement new coping methods."
+                },
+                {
+                    title: "Structured Plan",
+                    description: "Create a structured study and relaxation plan to manage your academic workload more effectively."
+                }
+            ]
+        };
+    } else if (score >= 11 && score <= 20) {
+        return {
+            level: "Low-Moderate Academic Stress",
+            interpretation: "You experience low to moderate levels of academic stress but have limited or ineffective coping strategies. This suggests that while your stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
+            recommendations: [
+                {
+                    title: "Develop New Strategies",
+                    description: "Work on developing and practicing new coping strategies that can help manage stress better."
+                },
+                {
+                    title: "Seek Support",
+                    description: "Consider seeking regular support from peers, professors, or counsellors to gain different perspectives and coping methods."
+                },
+                {
+                    title: "Build a Routine",
+                    description: "Focus on building a routine that includes regular breaks, physical activity, and adequate sleep to maintain overall well-being."
+                }
+            ]
         };
     } else {
         return {
-            level: 'Severe Stress/Anxiety',
-            report: 'Significant levels of stress and anxiety are present. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, it is strongly advised that you engage with certified Psychologists and Professionals.'
+            level: "Low Academic Stress",
+            interpretation: "You experience low levels of academic stress but may still benefit from improved coping strategies. Even though your stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
+            recommendations: [
+                {
+                    title: "Proactive Coping",
+                    description: "Adopt proactive coping strategies to maintain low stress levels and prevent future stress buildup."
+                },
+                {
+                    title: "Well-Being Activities",
+                    description: "Participate in activities that support overall well-being and help in preventing stress."
+                },
+                {
+                    title: "Monitor Stress Levels",
+                    description: "Stay vigilant about any potential increase in stress levels and address them promptly to ensure they do not escalate."
+                }
+            ]
         };
     }
 };
 
-const GaugeChart = ({score, maxScore}) => {
+const GaugeChartComponent = ({score, maxScore}) => {
     const percentage = (score / maxScore) * 100;
     const data = [
         {name: 'Score', value: percentage},
@@ -136,10 +298,10 @@ const GaugeChart = ({score, maxScore}) => {
     ];
 
     const getColor = (percentage) => {
-        if (percentage <= 25) return '#4CAF50'; // Green for low stress
-        if (percentage <= 50) return '#FFC107'; // Yellow for moderate stress
-        if (percentage <= 75) return '#FF9800'; // Orange for high stress
-        return '#F44336'; // Red for severe stress
+        if (percentage <= 25) return '#4CAF50';
+        if (percentage <= 50) return '#FFC107';
+        if (percentage <= 75) return '#FF9800';
+        return '#F44336';
     };
 
     const getStressLevel = (percentage) => {
@@ -247,151 +409,277 @@ const GaugeChart = ({score, maxScore}) => {
 const GeneralStressQuestions = () => {
     const navigate = useNavigate();
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [answers, setAnswers] = useState(new Array(questions.length).fill(null));
+    const [answers, setAnswers] = useState(Array(20).fill(''));
     const [showResults, setShowResults] = useState(false);
+    const [totalScore, setTotalScore] = useState(0);
 
-    const handleAnswer = (value) => {
+    const handleAnswerChange = (event) => {
         const newAnswers = [...answers];
-        newAnswers[currentQuestion] = parseInt(value);
+        newAnswers[currentQuestion] = event.target.value;
         setAnswers(newAnswers);
+    };
+
+    const calculateScore = () => {
+        return answers.reduce((sum, value) => sum + parseInt(value || '0', 10), 0);
     };
 
     const handleNext = () => {
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
         } else {
+            const score = calculateScore();
+            setTotalScore(score);
             setShowResults(true);
         }
     };
 
-    const handleBack = () => {
+    const handlePrevious = () => {
         if (currentQuestion > 0) {
             setCurrentQuestion(currentQuestion - 1);
-        } else {
-            navigate(-1);
         }
     };
 
     const handleRestart = () => {
         setCurrentQuestion(0);
-        setAnswers(new Array(questions.length).fill(null));
+        setAnswers(Array(20).fill(''));
         setShowResults(false);
     };
 
-    const totalScore = answers.reduce((acc, curr) => acc + (curr || 0), 0);
     const progress = ((currentQuestion + 1) / questions.length) * 100;
     const scoreCategory = getScoreCategory(totalScore);
 
     if (showResults) {
+        const result = getScoreCategory(totalScore);
+        const percentage = (totalScore / 80) * 100;
+
         return (
-            <Box sx={{
-                minHeight: 'calc(100vh - 72px)',
-                display: 'flex',
-                alignItems: 'center',
-                backgroundColor: '#F3F4F6',
-                mt: {xs: '64px', sm: '72px'},
-                py: {xs: 4, md: 6},
-            }}>
-                <Container maxWidth="md">
-                    <StyledPaper>
-                        <Typography variant="h4" sx={{
-                            mb: 4,
-                            color: '#012765',
-                            fontWeight: 700,
-                            fontFamily: 'Montserrat',
-                            textAlign: 'center'
-                        }}>
-                            Assessment Results
+            <Container maxWidth="lg">
+                <Box
+                    mt={12}
+                    sx={{
+                        py: 5,
+                        px: {xs: 2, md: 4},
+                        minHeight: '100vh',
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}>
+                    {/* Header Section */}
+                    <Box sx={{textAlign: 'center', mb: 4}}>
+                        <Typography
+                            className={"Montserrat"}
+                            variant="h3"
+                            sx={{
+                                color: '#0D2152',
+                                fontWeight: 700,
+                                mb: 2,
+                                fontSize: {xs: '2rem', md: '2.5rem'}
+                            }}
+                        >
+                            Your Assessment Results
                         </Typography>
 
-                        <GaugeChart score={totalScore} maxScore={48}/>
+                    </Box>
 
-                        <Box sx={{
-                            mb: 4,
-                            p: 4,
-                            backgroundColor: '#F8FAFC',
-                            borderRadius: 3,
-                            border: '1px solid #E6EAF3',
-                            position: 'relative',
-                            '&::before': {
-                                content: '""',
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                right: 0,
-                                height: '4px',
-                                backgroundColor: '#FF7F1E',
-                                borderRadius: '3px 3px 0 0'
-                            }
-                        }}>
-                            <Typography sx={{
-                                color: '#4B5563',
-                                fontSize: '16px',
-                                lineHeight: 1.8,
-                                fontFamily: 'Poppins',
-                                mb: 3
-                            }}>
-                                {scoreCategory.report}
-                            </Typography>
-
-                            <Box sx={{
+                    <Grid container spacing={4}>
+                        {/* Score Display Section */}
+                        <Grid item xs={12} md={6}>
+                            <Card sx={{
+                                p: 4,
+                                height: '100%',
+                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                borderRadius: 4,
                                 display: 'flex',
+                                flexDirection: 'column',
                                 alignItems: 'center',
-                                gap: 2,
-                                mt: 3,
-                                p: 2,
-                                backgroundColor: '#FFFFFF',
-                                borderRadius: 2,
-                                border: '1px solid #E6EAF3'
+                                justifyContent: "space-between"
                             }}>
-                                <Typography sx={{
-                                    color: '#012765',
-                                    fontSize: '14px',
-                                    fontFamily: 'Poppins',
-                                    fontWeight: 500
-                                }}>
-                                    Note: This is a self-assessment tool and not a diagnostic test. For professional
-                                    evaluation, please consult with a certified mental health professional.
-                                </Typography>
-                            </Box>
-                        </Box>
+                                <Box>
+                                    <Box sx={{
+                                        position: 'relative',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        mb: 3
+                                    }}>
+                                        <CircularProgress
+                                            variant="determinate"
+                                            value={percentage}
+                                            size={200}
+                                            thickness={4}
+                                            sx={{
+                                                color: totalScore >= 61 ? '#ff4d4d' :
+                                                    totalScore >= 41 ? '#ffa500' :
+                                                        totalScore >= 21 ? '#ffff00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
+                                            }}
+                                        />
+                                        {/*<CircularProgress*/}
+                                        {/*    variant="determinate"*/}
+                                        {/*    value={percentage}*/}
+                                        {/*    size={200}*/}
+                                        {/*    thickness={4}*/}
+                                        {/*    sx={{*/}
+                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                        {/*                totalScore >= 21 ? '#ffff00' :*/}
+                                        {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
+                                        {/*        position: 'absolute',*/}
+                                        {/*        left: 34,*/}
+                                        {/*    }}*/}
+                                        {/*/>*/}
+                                        <Box
+                                            sx={{
+                                                position: 'absolute',
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
+                                                {totalScore}
+                                            </Typography>
+                                            <Typography variant="h5" sx={{color: '#4A5568'}}>
+                                                out of 80
+                                            </Typography>
+                                        </Box>
+                                    </Box>
 
-                        <Box sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            gap: 2,
-                            mt: 4
-                        }}>
-                            <NavigationButton
-                                variant="outlined"
-                                onClick={() => navigate('/assessments/general-stress')}
-                                sx={{
-                                    color: '#012765',
-                                    borderColor: '#012765',
-                                    '&:hover': {
-                                        borderColor: '#012765',
-                                        backgroundColor: '#F8FAFC'
-                                    }
-                                }}
-                            >
-                                Back to Start
-                            </NavigationButton>
-                            <NavigationButton
-                                variant="contained"
-                                onClick={handleRestart}
-                                sx={{
-                                    backgroundColor: '#FF7F1E',
-                                    '&:hover': {backgroundColor: '#E66C00'},
-                                    boxShadow: '0 4px 12px rgba(255, 127, 30, 0.2)'
-                                }}
-                            >
-                                Take Again
-                            </NavigationButton>
-                        </Box>
-                    </StyledPaper>
-                </Container>
-            </Box>
-        );
+                                    <Typography
+                                        variant="h5"
+                                        sx={{
+                                            color: '#F5811E',
+                                            fontWeight: 600,
+                                            mb: 2,
+                                            textAlign: 'center',
+                                        }}
+                                    >
+                                        {result.level}
+                                    </Typography>
+                                </Box>
+                                <Typography
+                                    variant="body1"
+                                    sx={{
+                                        p: 2.5,
+                                        borderRadius: 2,
+                                        bgcolor: 'rgb(227,234,246)',
+                                        border: '1px solid rgba(245, 129, 30, 0.1)',
+                                        transition: 'transform 0.2s',
+                                        textAlign: "justify",
+                                        '&:hover': {
+                                            transform: 'translateY(-2px)',
+                                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                        }
+                                    }}
+                                >
+                                    {result.interpretation}
+                                </Typography>
+                            </Card>
+                        </Grid>
+
+                        {/* Recommendations Section */
+                        }
+                        <Grid item xs={12} md={6}>
+                            <Card sx={{
+                                p: 4,
+                                height: '100%',
+                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                borderRadius: 4
+                            }}>
+                                <Box sx={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    mb: 2
+                                }}>
+                                    <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
+                                    <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                        Recommendations
+                                    </Typography>
+                                </Box>
+
+                                <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                    {result.recommendations.map((rec, index) => (
+                                        <Box
+                                            key={index}
+                                            sx={{
+                                                p: 2.5,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            <Typography
+                                                variant="h6"
+                                                sx={{
+                                                    color: '#F5811E',
+                                                    fontSize: "19px",
+                                                    fontWeight: 600,
+                                                    mb: 1,
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    gap: 1
+                                                }}
+                                            >
+                                                <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
+                                                {rec.title}
+                                            </Typography>
+                                            <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>
+                                                {rec.description}
+                                            </Typography>
+                                        </Box>
+                                    ))}
+                                </Box>
+                            </Card>
+                        </Grid>
+                    </Grid>
+
+                    {/* Action Buttons */
+                    }
+                    <Box sx={{
+                        display: 'flex',
+                        gap: 2,
+                        justifyContent: 'center',
+                        mt: 4
+                    }}>
+                        <Button
+                            variant="outlined"
+                            onClick={() => window.print()}
+                            sx={{
+                                color: '#F5811E',
+                                borderColor: '#F5811E',
+                                py: 1.5,
+                                px: 4,
+                                '&:hover': {
+                                    borderColor: '#E26C0A',
+                                    bgcolor: 'rgba(245, 129, 30, 0.1)'
+                                }
+                            }}
+                        >
+                            Save Results
+                        </Button>
+                        <Button
+                            variant="contained"
+                            onClick={() => navigate('/assessments/general-stress')}
+                            sx={{
+                                bgcolor: '#F5811E',
+                                color: '#fff',
+                                py: 1.5,
+                                px: 4,
+                                '&:hover': {bgcolor: '#E26C0A'}
+                            }}
+                        >
+                            Return to Assessments
+                        </Button>
+                    </Box>
+                </Box>
+            </Container>
+        )
+            ;
     }
 
     return (
@@ -440,12 +728,12 @@ const GeneralStressQuestions = () => {
 
                     <FormControl component="fieldset" sx={{width: '100%', mb: 4}}>
                         <RadioGroup
-                            value={answers[currentQuestion] || ''}
-                            onChange={(e) => handleAnswer(e.target.value)}
+                            value={answers[currentQuestion]}
+                            onChange={handleAnswerChange}
                         >
-                            {options.map((option) => (
+                            {questions[currentQuestion].options.map((option) => (
                                 <FormControlLabel
-                                    key={option.value}
+                                    key={option.label}
                                     value={option.value}
                                     control={
                                         <Radio
@@ -482,19 +770,21 @@ const GeneralStressQuestions = () => {
                     </FormControl>
 
                     <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
-                        <NavigationButton
-                            variant="outlined"
-                            startIcon={<ArrowBackIcon/>}
-                            onClick={handleBack}
-                            sx={{color: '#012765', borderColor: '#012765'}}
-                        >
-                            Back
-                        </NavigationButton>
+
+                        {currentQuestion !== 0 ?
+                            <NavigationButton
+                                variant="outlined"
+                                startIcon={<ArrowBackIcon/>}
+                                onClick={handlePrevious}
+                                sx={{color: '#012765', borderColor: '#012765'}}
+                            >
+                                Back
+                            </NavigationButton> : <Box/>}
                         <NavigationButton
                             variant="contained"
                             endIcon={<ArrowForwardIcon/>}
                             onClick={handleNext}
-                            disabled={answers[currentQuestion] === null}
+                            disabled={!answers[currentQuestion]}
                             sx={{
                                 backgroundColor: '#FF7F1E',
                                 '&:hover': {backgroundColor: '#E66C00'},
@@ -504,7 +794,7 @@ const GeneralStressQuestions = () => {
                                 }
                             }}
                         >
-                            {currentQuestion === questions.length - 1 ? 'Finish' : 'Next'}
+                            {currentQuestion === questions.length - 1 ? 'Submit' : 'Next'}
                         </NavigationButton>
                     </Box>
                 </StyledPaper>
@@ -513,4 +803,4 @@ const GeneralStressQuestions = () => {
     );
 };
 
-export default GeneralStressQuestions; 
+export default GeneralStressQuestions;

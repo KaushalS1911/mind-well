@@ -17,6 +17,10 @@ import SelfEsteemScaleAssessment from "./components/resources/SelfEsteemScaleAss
 import SelfEsteemScaleQuestions from "./components/resources/SelfEsteemScaleQuestions.jsx";
 import WorkLifeBalanceAssessment from "./components/resources/WorkLifeBalanceAssessment.jsx";
 import WorkLifeBalanceQuestions from "./components/resources/WorkLifeBalanceQuestions.jsx";
+import ExamStressGaugeAssessments from "./components/resources/ExamStressGaugeAssessments.jsx";
+import ExamStressGaugeQuestions from "./components/resources/ExamStressGaugeQuestions.jsx";
+import ShapeK12Assessment from "./components/resources/ShapeK12Assessment.jsx";
+import ShapeK12Questions from "./components/resources/ShapeK12Questions.jsx";
 
 function App() {
 
@@ -40,6 +44,10 @@ function App() {
                 {/*<Route path="/careers" element={ <Careers/> }/>*/}
                 <Route path="/resources" element={<Resource/>}/>
                 <Route path="/contact" element={<Contact/>}/>
+                <Route path="/assessments/exam-stress" element={<ExamStressGaugeAssessments/>}/>
+                <Route path="/assessments/exam-stress/questions" element={<ExamStressGaugeQuestions/>}/>
+                <Route path="/assessments/shape-k12" element={<ShapeK12Assessment/>}/>
+                <Route path="/assessments/shape-k12/questions" element={<ShapeK12Questions/>}/>
                 <Route path="/assessments/general-stress" element={<GeneralStressAssessment/>}/>
                 <Route path="/assessments/general-stress/questions" element={<GeneralStressQuestions/>}/>
                 <Route path="/assessments/emotional-awareness" element={<EmotionalAwarenessAssessment/>}/>

@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import { Box, Grid, Container } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import React, {useState} from "react";
+import {Box, Grid, Container} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 import BoltIcon from "@mui/icons-material/Bolt";
-import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import img1 from "../../assets/images/Resources/Assessments/home1.jpg";
-import img2 from "../../assets/images/Resources/Assessments/home2.jpeg";
+import img1 from "../../assets/images/Resources/Assessments/Exam_Stress.jpg";
+import img2 from "../../assets/images/Resources/Assessments/Shape_K12.jpeg";
 import img3 from "../../assets/images/Resources/Assessments/General_Stress_Anxiety.jpeg";
 import img4 from "../../assets/images/Resources/Assessments/Emotional_Awareness.jpg";
 import img5 from "../../assets/images/Resources/Assessments/Academic_Stress.jpg";
@@ -19,10 +17,13 @@ function Assessments() {
 
     const handleAssessmentClick = (index) => {
         setSelectedIndex(index);
-        // Navigate to specific assessment pages based on index
-        if (index === 2) { // General Stress and Anxiety
+        if (index === 0) {
+            navigate('/assessments/exam-stress');
+        } else if (index === 1) {
+            navigate('/assessments/shape-k12');
+        } else if (index === 2) {
             navigate('/assessments/general-stress');
-        } else if (index === 3) { // Emotional Awareness
+        } else if (index === 3) {
             navigate('/assessments/emotional-awareness');
         } else if (index === 4) {
             navigate('/assessments/academic-stress');
@@ -32,7 +33,6 @@ function Assessments() {
             navigate('/assessments/work-life-balance');
         }
     };
-
 
     const assessments = [
         {
@@ -93,11 +93,11 @@ function Assessments() {
 
     return (
         <Container maxWidth="xl">
-            <Box sx={{ padding: "50px 0" }}>
-                <Box sx={{ p: { xs: 3, md: 5 }, bgcolor: "#012765", borderRadius: 3, color: "#fff" }}>
+            <Box sx={{padding: "50px 0"}}>
+                <Box sx={{p: {xs: 3, md: 5}, bgcolor: "#012765", borderRadius: 3, color: "#fff"}}>
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={12}>
-                            <Box sx={{ display: "flex", alignItems: "center", mb: "24px" }}>
+                            <Box sx={{display: "flex", alignItems: "center", mb: "24px"}}>
                                 <Box
                                     sx={{
                                         bgcolor: "#FE6A00",
@@ -107,17 +107,18 @@ function Assessments() {
                                         justifyContent: "center",
                                         borderRadius: "30px",
                                         padding: "10px",
-                                        fontSize: { xs: 16, md: 20 },
+                                        fontSize: {xs: 16, md: 20},
                                         mr: 2,
                                     }}
                                 >
-                                    <BoltIcon />
+                                    <BoltIcon/>
                                 </Box>
-                                <Box className={"Montserrat"} sx={{ fontWeight: "700", fontSize: { xs: "24px", md: "30px" } }}>
+                                <Box className={"Montserrat"}
+                                     sx={{fontWeight: "700", fontSize: {xs: "24px", md: "30px"}}}>
                                     Mental Health Assessments
                                 </Box>
                             </Box>
-                            <Box fontSize={{ xs: 14, md: 18 }} color="#CBD5E1" sx={{ mb: "40px" }}>
+                            <Box fontSize={{xs: 14, md: 18}} color="#CBD5E1" sx={{mb: "40px"}}>
                                 Take our scientifically-validated assessments to gain insights into your mental health
                                 and determine whether you might benefit from professional support.
                             </Box>
@@ -149,11 +150,11 @@ function Assessments() {
                                                             marginRight: "12px",
                                                         }}
                                                     />
-                                                    <Box fontWeight={600} sx={{ fontSize: { xs: "16px", md: "18px" } }}>
+                                                    <Box fontWeight={600} sx={{fontSize: {xs: "16px", md: "18px"}}}>
                                                         {assessment.icon} {assessment.title}
                                                     </Box>
                                                 </Box>
-                                                <Box variant="body2" color="#CBD5E1" mb={2} sx={{ fontSize: "14px" }}>
+                                                <Box variant="body2" color="#CBD5E1" mb={2} sx={{fontSize: "14px"}}>
                                                     {assessment.description}
                                                 </Box>
                                                 <Box display="flex" gap={1} alignItems="center" mt="16px">
@@ -180,7 +181,7 @@ function Assessments() {
                                                         {assessment.time}
                                                     </Box>
                                                 </Box>
-                                                <Box sx={{ flexGrow: 1 }} />
+                                                <Box sx={{flexGrow: 1}}/>
                                                 <Box
                                                     sx={{
                                                         alignSelf: "flex-end",
@@ -190,7 +191,7 @@ function Assessments() {
                                                         display: "flex",
                                                         alignItems: "center",
                                                         transition: "0.5s",
-                                                        cursor:"pointer",
+                                                        cursor: "pointer",
                                                         mt: {xs: 3},
                                                         '&:hover': {
                                                             color: "#fff",

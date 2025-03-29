@@ -58,7 +58,9 @@ const EmotionalAwarenessAssessment = () => {
                 <Grid container spacing={4} justifyContent="center">
                     {/* Left Column - Main Content */}
                     <Grid item xs={12} md={8}>
-                        <StyledPaper>
+                        <StyledPaper sx={{
+                            height: '100%',
+                        }}>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                                 <img
                                     src={img4}
@@ -70,7 +72,7 @@ const EmotionalAwarenessAssessment = () => {
                                         marginRight: '16px',
                                     }}
                                 />
-                                <Typography variant="h4" sx={{
+                                <Typography className={"Montserrat"} variant="h4" sx={{
                                     fontWeight: 700,
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
@@ -124,7 +126,7 @@ const EmotionalAwarenessAssessment = () => {
                     {/* Right Column - Additional Info */}
                     <Grid item xs={12} md={4}>
                         <StyledPaper>
-                            <Typography variant="h6" sx={{
+                            <Typography className={"Montserrat"} variant="h6" sx={{
                                 mb: 2,
                                 color: '#012765',
                                 fontWeight: 600,

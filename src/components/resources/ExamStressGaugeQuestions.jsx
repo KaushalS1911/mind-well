@@ -43,222 +43,202 @@ const NavigationButton = styled(Button)(({theme}) => ({
 const questions = [
     {
         id: 1,
-        text: "I feel good about myself.",
+        text: "How do you typically handle high-pressure situations?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Stay calm and focused", value: "0"},
+            {label: "Get anxious but manage to push through", value: "1"},
+            {label: "Struggle to maintain composure", value: "2"},
+            {label: " Avoid the situation altogether", value: "3"},
         ]
     },
     {
         id: 2,
-        text: "I am happy with the way I look.",
+        text: "When faced with multiple deadlines, how do you prioritize tasks?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "By urgency and importance", value: "0"},
+            {label: "By deadlines only", value: "1"},
+            {label: "Randomly", value: "2"},
+            {label: "Often get overwhelmed and delay decision-making", value: "3"},
         ]
     },
     {
         id: 3,
-        text: "I feel proud of the things I do.",
+        text: "How often do you take breaks to manage stress during study sessions?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Regularly, every 1-2 hours", value: "0"},
+            {label: "Occasionally, when I feel tired", value: "1"},
+            {label: "Rarely, only when exhausted", value: "2"},
+            {label: "Never, I just push through", value: "3"},
         ]
     },
     {
         id: 4,
-        text: "I believe I can do things well.",
+        text: "What techniques do you use to cope with exam-related anxiety?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Deep breathing and meditation", value: "0"},
+            {label: "Talking to friends and family", value: "1"},
+            {label: "Ignoring it and hoping it goes away", value: "2"},
+            {label: "Procrastinating or avoiding study", value: "3"},
         ]
     },
     {
         id: 5,
-        text: " I think I am a good person.",
+        text: "How do you react to failure or setbacks?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Analyse what went wrong and try again", value: "0"},
+            {label: "Feel disappointed but move on quickly", value: "1"},
+            {label: "Get very upset and demotivated", value: "2"},
+            {label: "Consider giving up", value: "3"},
         ]
     },
     {
         id: 6,
-        text: "I feel confident when I try new things.",
+        text: "When you receive criticism, how do you respond?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Constructively, using it to improve", value: "0"},
+            {label: "Neutrally, with little impact on my emotions", value: "1"},
+            {label: "Defensively, often taking it personally", value: "2"},
+            {label: "Negatively, feeling discouraged", value: "3"},
         ]
     },
     {
         id: 7,
-        text: "I feel good about my abilities.",
+        text: "How do you deal with feelings of frustration during your preparation?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Find a way to resolve the issue causing frustration", value: "0" },
+            { label: "Take a break and come back to it later", value: "1" },
+            { label: "Vent to friends or family", value: "2" },
+            { label: "Let it affect my motivation and productivity", value: "3" }
         ]
     },
     {
         id: 8,
-        text: "I think positively about myself.",
+        text: "How often do you reflect on your emotional responses to situations?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Frequently, to understand and improve", value: "0" },
+            { label: "Sometimes, when things go wrong", value: "1" },
+            { label: "Rarely, only in extreme cases", value: "2" },
+            { label: "Never, I don't think about my emotions much", value: "3" }
         ]
     },
     {
         id: 9,
-        text: "I feel that others like me.",
+        text: "How do you make decisions when you have insufficient information?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Gather as much information as possible and then decide", value: "0" },
+            { label: "Go with my intuition", value: "1" },
+            { label: "Seek advice from others", value: "2" },
+            { label: "Postpone the decision until more information is available", value: "3" }
         ]
     },
     {
         id: 10,
-        text: "I am satisfied with my achievements.",
+        text: "When making a tough decision, what is your primary consideration?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Long-term consequences", value: "0" },
+            { label: "Immediate benefits", value: "1" },
+            { label: "Opinions of others", value: "2" },
+            { label: "Avoiding conflict", value: "3" }
         ]
     },
     {
         id: 11,
-        text: "I feel comfortable in social situations.",
+        text: "How confident are you in your decision-making abilities?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Very confident", value: "0" },
+            { label: "Fairly confident", value: "1" },
+            { label: "Sometimes doubt my decisions", value: "2" },
+            { label: "Often unsure and second-guess myself", value: "3" }
         ]
     },
     {
         id: 12,
-        text: "I can handle my problems well",
+        text: "How do you handle situations where you have made a wrong decision?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Accept it, learn from it, and move on", value: "0" },
+            { label: "Feel regret but try to fix it", value: "1" },
+            { label: "Get upset and dwell on it", value: "2" },
+            { label: "Blame external factors", value: "3" }
         ]
     },
     {
         id: 13,
-        text: "I feel respected by others.",
+        text: "What motivates you to pursue your chosen career path?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Desire to make a positive impact on society", value: "0" },
+            { label: "Prestige and respect associated with the job", value: "1" },
+            { label: "Job security and benefits", value: "2" },
+            { label: "Pressure from family or peers", value: "3" }
         ]
     },
     {
         id: 14,
-        text: "I believe I am important. ",
+        text: "How do you keep yourself motivated during tough times?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Remind myself of my goals and aspirations", value: "0" },
+            { label: "Seek inspiration from successful people", value: "1" },
+            { label: "Take breaks and relax", value: "2" },
+            { label: "Struggle to stay motivated", value: "3" }
         ]
     },
     {
         id: 15,
-        text: "I accept my mistakes and learn from them.",
+        text: "How do you handle distractions while studying?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Create a strict study schedule and stick to it", value: "0" },
+            { label: "Limit distractions by creating a study-friendly environment", value: "1" },
+            { label: "Occasionally give in to distractions but get back on track", value: "2" },
+            { label: "Often find myself distracted and unable to focus", value: "3" }
         ]
     },
     {
         id: 16,
-        text: "I feel happy with my friendships.",
+        text: "How committed are you to your preparation routine?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Fully committed, rarely miss a study session", value: "0" },
+            { label: "Mostly committed, but sometimes flexible", value: "1" },
+            { label: "Somewhat committed, often get sidetracked", value: "2" },
+            { label: "Struggle to maintain a consistent routine", value: "3" }
         ]
     },
     {
         id: 17,
-        text: "I like myself even when things go wrong.",
+        text: "How do you handle conflicts or disagreements with others?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Try to understand their perspective and resolve amicably", value: "0" },
+            { label: "Stand firm on my viewpoint but remain respectful", value: "1" },
+            { label: "Avoid confrontation as much as possible", value: "2" },
+            { label: "Get frustrated and let emotions take over", value: "3" }
         ]
     },
     {
         id: 18,
-        text: "I believe I can achieve my goals.",
+        text: "How often do you seek feedback from others about your performance?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Regularly, to improve and grow", value: "0" },
+            { label: "Occasionally, when I feel it's needed", value: "1" },
+            { label: "Rarely, only when asked", value: "2" },
+            { label: "Never, I rely on self-assessment", value: "3" }
         ]
     },
     {
         id: 19,
-        text: "I feel positive about my future.",
+        text: "How do you contribute to group study sessions or discussions?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Actively participate and share my knowledge", value: "0" },
+            { label: "Listen and contribute when I have something valuable to add", value: "1" },
+            { label: "Mostly listen, rarely contribute", value: "2" },
+            { label: "Prefer to study alone and avoid group sessions", value: "3" }
         ]
     },
     {
         id: 20,
-        text: "I think I am special.",
+        text: "When working with others, what role do you typically take?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            { label: "Leader, organizing and directing the group", value: "0" },
+            { label: "Collaborator, working closely with others", value: "1" },
+            { label: "Supporter, helping where needed", value: "2" },
+            { label: "Observer, letting others take the lead", value: "3" }
         ]
     },
 ];
@@ -494,7 +474,7 @@ const GaugeChartComponent = ({score, maxScore}) => {
     );
 };
 
-const SelfEsteemScaleQuestions = () => {
+const ExamStressGaugeQuestions = () => {
     const navigate = useNavigate();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [answers, setAnswers] = useState(Array(20).fill(''));
@@ -752,7 +732,7 @@ const SelfEsteemScaleQuestions = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            onClick={() => navigate('/assessments/self-esteem-scale')}
+                            onClick={() => navigate('/assessments/exam-stress')}
                             sx={{
                                 bgcolor: '#F5811E',
                                 color: '#fff',
@@ -890,4 +870,4 @@ const SelfEsteemScaleQuestions = () => {
     );
 };
 
-export default SelfEsteemScaleQuestions;
+export default ExamStressGaugeQuestions;

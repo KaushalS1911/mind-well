@@ -1,21 +1,21 @@
 import React from 'react';
-import {Box, Container, Typography, Button, Grid, Paper} from '@mui/material';
-import {styled} from '@mui/material/styles';
+import { Box, Container, Typography, Button, Grid, Paper } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import img3 from "../../assets/images/Resources/Assessments/General_Stress_Anxiety.jpeg";
-import {useNavigate} from 'react-router-dom';
+import img1 from "../../assets/images/Resources/Assessments/Exam_Stress.jpg";
+import { useNavigate } from 'react-router-dom';
 
-const StyledPaper = styled(Paper)(({theme}) => ({
+const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(4),
     backgroundColor: '#FFFFFF',
     borderRadius: '16px',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
 }));
 
-const IconBox = styled(Box)(({theme}) => ({
+const IconBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     marginBottom: theme.spacing(2),
@@ -25,7 +25,7 @@ const IconBox = styled(Box)(({theme}) => ({
     },
 }));
 
-const StartButton = styled(Button)(({theme}) => ({
+const StartButton = styled(Button)(({ theme }) => ({
     backgroundColor: '#FF7F1E',
     color: '#FFFFFF',
     padding: '12px 32px',
@@ -38,32 +38,32 @@ const StartButton = styled(Button)(({theme}) => ({
     },
 }));
 
-const GeneralStressAssessment = () => {
+const ExamStressGaugeAssessments = () => {
     const navigate = useNavigate();
 
     const handleStartAssessment = () => {
-        navigate('/assessments/general-stress/questions');
+        navigate('/assessments/exam-stress/questions');
     };
 
     return (
         <Box sx={{
-            minHeight: 'calc(100vh - 72px)', // Full viewport height minus navbar
+            minHeight: 'calc(100vh - 72px)',
             display: 'flex',
             alignItems: 'center',
             backgroundColor: '#F3F4F6',
-            mt: {xs: '64px', sm: '72px'},
-            py: {xs: 4, md: 6},
+            mt: { xs: '64px', sm: '72px' },
+            py: { xs: 4, md: 6 },
         }}>
-            <Container maxWidth="lg" sx={{my: 'auto'}}>
+            <Container maxWidth="lg" sx={{ my: 'auto' }}>
                 <Grid container spacing={4} justifyContent="center">
                     {/* Left Column - Main Content */}
                     <Grid item xs={12} md={8}>
                         <StyledPaper sx={{
                             height: '100%',
                         }}>
-                            <Box sx={{display: 'flex', alignItems: 'center', mb: 3}}>
+                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                                 <img
-                                    src={img3}
+                                    src={img1}
                                     alt="General Stress and Anxiety"
                                     style={{
                                         width: '64px',
@@ -76,9 +76,9 @@ const GeneralStressAssessment = () => {
                                     fontWeight: 700,
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
-                                    fontSize: {xs: '24px', sm: '28px', md: '32px'}, // Responsive font size
+                                    fontSize: { xs: '24px', sm: '28px', md: '32px' },
                                 }}>
-                                    General Stress and Anxiety Assessment
+                                    Exam Stress Gauge (Age 18-21)
                                 </Typography>
                             </Box>
 
@@ -89,27 +89,25 @@ const GeneralStressAssessment = () => {
                                 lineHeight: 1.6,
                                 fontFamily: 'Poppins'
                             }}>
-                                This assessment helps measure your current stress and anxiety levels, identifying
-                                potential areas of concern and providing insights into your mental well-being. Your
-                                responses will help us understand your situation better and offer appropriate guidance.
+                                This assessment helps measure your current stress and anxiety levels, identifying potential areas of concern and providing insights into your mental well-being. Your responses will help us understand your situation better and offer appropriate guidance.
                             </Typography>
 
-                            <Box sx={{mb: 4}}>
+                            <Box sx={{ mb: 4 }}>
                                 <IconBox>
-                                    <TimerOutlinedIcon/>
-                                    <Typography sx={{color: '#012765', fontFamily: 'Poppins'}}>
+                                    <TimerOutlinedIcon />
+                                    <Typography sx={{ color: '#012765', fontFamily: 'Poppins' }}>
                                         Time to complete: ~5 minutes
                                     </Typography>
                                 </IconBox>
                                 <IconBox>
-                                    <HelpOutlineIcon/>
-                                    <Typography sx={{color: '#012765', fontFamily: 'Poppins'}}>
+                                    <HelpOutlineIcon />
+                                    <Typography sx={{ color: '#012765', fontFamily: 'Poppins' }}>
                                         5 questions to answer
                                     </Typography>
                                 </IconBox>
                                 <IconBox>
-                                    <DescriptionOutlinedIcon/>
-                                    <Typography sx={{color: '#012765', fontFamily: 'Poppins'}}>
+                                    <DescriptionOutlinedIcon />
+                                    <Typography sx={{ color: '#012765', fontFamily: 'Poppins' }}>
                                         Receive immediate results and recommendations
                                     </Typography>
                                 </IconBox>
@@ -117,7 +115,7 @@ const GeneralStressAssessment = () => {
 
                             <StartButton
                                 variant="contained"
-                                endIcon={<ArrowForwardIcon/>}
+                                endIcon={<ArrowForwardIcon />}
                                 onClick={handleStartAssessment}
                             >
                                 Start Assessment
@@ -137,7 +135,7 @@ const GeneralStressAssessment = () => {
                                 Before you begin
                             </Typography>
 
-                            <Box sx={{mb: 3}}>
+                            <Box sx={{ mb: 3 }}>
                                 <Typography sx={{
                                     mb: 2,
                                     color: '#4B5563',
@@ -196,8 +194,7 @@ const GeneralStressAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    This assessment is not a diagnostic tool. If you're experiencing severe distress,
-                                    please seek professional help immediately.
+                                    This assessment is not a diagnostic tool. If you're experiencing severe distress, please seek professional help immediately.
                                 </Typography>
                             </Box>
                         </StyledPaper>
@@ -208,4 +205,4 @@ const GeneralStressAssessment = () => {
     );
 };
 
-export default GeneralStressAssessment; 
+export default ExamStressGaugeAssessments;

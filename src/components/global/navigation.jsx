@@ -186,13 +186,22 @@ function Navigation() {
             </AppBar>
 
             {/* Mobile Menu */}
-            <Collapse in={mobileMenuOpen} timeout="auto" unmountOnExit sx={{display: {xs: "block", md: "none"}}}>
-                <List sx={{backgroundColor: "#fff", color: "#000", padding: "8px 16px 16px"}}>
+            <Collapse
+                in={mobileMenuOpen}
+                timeout="auto"
+                unmountOnExit
+                sx={{ display: { xs: "block", md: "none" } }}
+                onExited={() => setMobileMenuOpen(false)} // Optional: Close animation finished pachi execute thase
+            >
+                <List sx={{ backgroundColor: "#fff", color: "#000", padding: "8px 16px 16px" }}>
                     {navItems.map((item, index) => (
                         <Box key={index}>
                             <ListItem
-                                sx={{p: 0, cursor: "pointer", "&:hover .MuiTypography-root": {color: "#FF6600"}}}
-                                onClick={() => (window.location.href = item.path)}
+                                sx={{ p: 0, cursor: "pointer", "&:hover .MuiTypography-root": { color: "#FF6600" } }}
+                                onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    window.location.href = item.path;
+                                }}
                             >
                                 <ListItemText
                                     primary={item.label}
@@ -206,30 +215,32 @@ function Navigation() {
                             </ListItem>
 
                             {item.submenu && (
-                                <List sx={{paddingLeft: "20px"}}>
+                                <List sx={{ paddingLeft: "20px" }}>
                                     {item.submenu.map((sub, subIndex) => (
                                         <ListItem
                                             key={subIndex}
                                             sx={{
                                                 p: 0,
                                                 cursor: "pointer",
-                                                "&:hover .MuiTypography-root": {color: "#FF6600"}
+                                                "&:hover .MuiTypography-root": { color: "#FF6600" }
                                             }}
-                                            onClick={() => handleScrollToSection(sub.sectionId, item.path)}
+                                            onClick={() => {
+                                                handleScrollToSection(sub.sectionId, item.path);
+                                                setMobileMenuOpen(false);
+                                            }}
                                         >
                                             <ListItemText primary={sub.label} primaryTypographyProps={{
                                                 fontSize: "14px",
                                                 color: "#012765",
                                                 padding: "4px 0"
-                                            }}/>
+                                            }} />
                                         </ListItem>
                                     ))}
                                 </List>
                             )}
-
                         </Box>
                     ))}
-                    <Link href="/contact" passHref style={{textDecoration: "none"}}>
+                    <Link href="/contact" passHref style={{ textDecoration: "none" }}>
                         <Box
                             component="a"
                             sx={{
@@ -242,14 +253,16 @@ function Navigation() {
                                 width: "100%",
                                 marginTop: "26px",
                                 textDecoration: "none",
-                                "&:hover": {backgroundColor: "#da5e05"},
+                                "&:hover": { backgroundColor: "#da5e05" },
                             }}
+                            onClick={() => setMobileMenuOpen(false)}
                         >
                             Get Started
                         </Box>
                     </Link>
                 </List>
             </Collapse>
+
         </Box>
     );
 }
