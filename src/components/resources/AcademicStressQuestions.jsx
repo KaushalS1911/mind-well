@@ -283,26 +283,26 @@ const getScoreCategory = (score) => {
     if (score >= 61 && score <= 80) {
         return {
             level: "High Academic Stress",
-            interpretation: "You experience high levels of academic stress but have developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
+            interpretation: " The student experiences high levels of academic stress but has developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
             recommendations: [
                 {
                     title: "Maintain Current Strategies",
-                    description: "Continue using and refining your current coping strategies to ensure they remain effective."
+                    description: "Encourage the student to continue using and refining their current coping strategies to ensure they remain effective."
                 },
                 {
                     title: "Share Techniques",
-                    description: "Consider sharing your successful coping techniques with peers, which can help reinforce your own strategies and provide support to others."
+                    description: "Suggest that the student share their successful coping techniques with peers, which can help reinforce their own strategies and provide support to others."
                 },
                 {
                     title: "Balance Life",
-                    description: "Maintain a balanced lifestyle, incorporating academic responsibilities and personal well-being activities to sustain mental and emotional health."
+                    description: "Advise maintaining a balanced lifestyle, incorporating academic responsibilities and personal well-being activities to sustain mental and emotional health."
                 }
             ]
         };
     } else if (score >= 41 && score <= 60) {
         return {
             level: "Moderate-High Academic Stress",
-            interpretation: "You experience moderate to high levels of academic stress and use some effective coping strategies but may need improvement in certain areas. While you have some good techniques in place, there is room to enhance your ability to manage stress.",
+            interpretation: "The student experiences moderate to high levels of academic stress and uses some effective coping strategies but may need improvement in certain areas. While they have some good techniques in place, there is room to enhance their ability to manage stress.",
             recommendations: [
                 {
                     title: "Develop Targeted Strategies",
@@ -310,7 +310,7 @@ const getScoreCategory = (score) => {
                 },
                 {
                     title: "Engage in Workshops",
-                    description: "Consider participating in stress management workshops or seeking guidance from academic advisors or counsellors to improve coping skills."
+                    description: "Encourage participation in stress management workshops or seeking guidance from academic advisors or counsellors to improve coping skills"
                 },
                 {
                     title: "Time Management & Self-Care",
@@ -321,7 +321,7 @@ const getScoreCategory = (score) => {
     } else if (score >= 21 && score <= 40) {
         return {
             level: "Moderate Academic Stress",
-            interpretation: "You experience moderate levels of academic stress and have inconsistent coping strategies. You may sometimes manage stress well but struggle at other times.",
+            interpretation: " The student experiences moderate levels of academic stress and has inconsistent coping strategies. They may sometimes manage stress well but struggle at other times.",
             recommendations: [
                 {
                     title: "Increase Effective Strategies",
@@ -329,18 +329,18 @@ const getScoreCategory = (score) => {
                 },
                 {
                     title: "Stress Reduction Programs",
-                    description: "Consider participating in stress reduction programs to learn and implement new coping methods."
+                    description: "Encourage participation in stress reduction programs to learn and implement new coping methods."
                 },
                 {
                     title: "Structured Plan",
-                    description: "Create a structured study and relaxation plan to manage your academic workload more effectively."
+                    description: "Help the student create a structured study and relaxation plan to manage their academic workload more effectively."
                 }
             ]
         };
     } else if (score >= 11 && score <= 20) {
         return {
             level: "Low-Moderate Academic Stress",
-            interpretation: "You experience low to moderate levels of academic stress but have limited or ineffective coping strategies. This suggests that while your stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
+            interpretation: "The student experiences low to moderate levels of academic stress but has limited or ineffective coping strategies. This suggests that while stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
             recommendations: [
                 {
                     title: "Develop New Strategies",
@@ -348,7 +348,7 @@ const getScoreCategory = (score) => {
                 },
                 {
                     title: "Seek Support",
-                    description: "Consider seeking regular support from peers, professors, or counsellors to gain different perspectives and coping methods."
+                    description: " Advise seeking regular support from peers, professors, or counsellors to gain different perspectives and coping methods."
                 },
                 {
                     title: "Build a Routine",
@@ -359,15 +359,15 @@ const getScoreCategory = (score) => {
     } else {
         return {
             level: "Low Academic Stress",
-            interpretation: "You experience low levels of academic stress but may still benefit from improved coping strategies. Even though your stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
+            interpretation: "The student experiences low levels of academic stress but may still benefit from improved coping strategies. Even though the stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
             recommendations: [
                 {
                     title: "Proactive Coping",
-                    description: "Adopt proactive coping strategies to maintain low stress levels and prevent future stress buildup."
+                    description: "Encourage the adoption of proactive coping strategies to maintain low stress levels and prevent future stress buildup."
                 },
                 {
                     title: "Well-Being Activities",
-                    description: "Participate in activities that support overall well-being and help in preventing stress."
+                    description: "Promote participation in activities that support overall well-being and help in preventing stress."
                 },
                 {
                     title: "Monitor Stress Levels",

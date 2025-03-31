@@ -369,7 +369,6 @@ function ShapeK12FamilyForm() {
                                 </Box>
                             </Box>
                             <TextField
-                                sx={{width: {md: "250px", xs: "100%"}}}
                                 margin="normal"
                                 id="fatherAge"
                                 name="whatsappNumber"
@@ -385,6 +384,7 @@ function ShapeK12FamilyForm() {
                                         "&:hover fieldset": {borderColor: "#FF7F1E"},
                                         "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
                                     },
+                                    width: {md: "250px", xs: "100%"}
                                 }}
                             />
 
@@ -422,7 +422,6 @@ function ShapeK12FamilyForm() {
                                 </Box>
                             </Box>
                             <TextField
-                                sx={{width: {md: "300px", xs: "100%"}}}
                                 margin="normal"
                                 id="fatherAge"
                                 name="emailId"
@@ -438,6 +437,7 @@ function ShapeK12FamilyForm() {
                                         "&:hover fieldset": {borderColor: "#FF7F1E"},
                                         "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
                                     },
+                                    width: {md: "300px", xs: "100%"}
                                 }}
                             />
                         </Box>
