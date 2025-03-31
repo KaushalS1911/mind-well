@@ -45,52 +45,52 @@ const questions = [
         id: 1,
         text: "How often does your child seem happy?",
         options: [
-            { label: "Very Often", value: "0" },
-            { label: "Often", value: "1" },
-            { label: "Sometimes", value: "2" },
-            { label: "Rarely", value: "3" },
-            { label: "Never", value: "4" }
+            {label: "Very Often", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
         ]
     },
     {
         id: 2,
         text: "Does your child express sadness or tearfulness?",
         options: [
-            { label: "Yes", value: "0" },
-            { label: "No", value: "1" },
-            { label: "Occasionally", value: "2" }
+            {label: "Yes", value: "0"},
+            {label: "No", value: "1"},
+            {label: "Occasionally", value: "2"}
         ]
     },
     {
         id: 3,
         text: "How often does your child express feelings of anger or frustration?",
         options: [
-            { label: "Very Often", value: "0" },
-            { label: "Often", value: "1" },
-            { label: "Sometimes", value: "2" },
-            { label: "Rarely", value: "3" },
-            { label: "Never", value: "4" }
+            {label: "Very Often", value: "0"},
+            {label: "Often", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Rarely", value: "3"},
+            {label: "Never", value: "4"}
         ]
     },
     {
         id: 4,
         text: "How would you rate your child's overall mood lately?",
         options: [
-            { label: "Happy", value: "0" },
-            { label: "Content", value: "1" },
-            { label: "Neutral", value: "2" },
-            { label: "Sad", value: "3" },
-            { label: "Angry", value: "4" }
+            {label: "Happy", value: "0"},
+            {label: "Content", value: "1"},
+            {label: "Neutral", value: "2"},
+            {label: "Sad", value: "3"},
+            {label: "Angry", value: "4"}
         ]
     },
     {
         id: 5,
         text: "Does your child express worries or anxiety about specific things?",
         options: [
-            { label: "Academic performance", value: "0" },
-            { label: "Social relationships", value: "1" },
-            { label: "Family matters", value: "2" },
-            { label: "Other (please specify)", value: "3" }
+            {label: "Academic performance", value: "0"},
+            {label: "Social relationships", value: "1"},
+            {label: "Family matters", value: "2"},
+            {label: "Other (please specify)", value: "3"}
         ]
     },
 
@@ -99,30 +99,30 @@ const questions = [
         id: 6,
         text: "How does your child typically behave at home?",
         options: [
-            { label: "Cooperative", value: "0" },
-            { label: "Defiant", value: "1" },
-            { label: "Quiet", value: "2" },
-            { label: "Hyperactive", value: "3" },
-            { label: "Withdrawn", value: "4" }
+            {label: "Cooperative", value: "0"},
+            {label: "Defiant", value: "1"},
+            {label: "Quiet", value: "2"},
+            {label: "Hyperactive", value: "3"},
+            {label: "Withdrawn", value: "4"}
         ]
     },
     {
         id: 7,
         text: "How does your child behave in social settings (e.g., with friends, at school)?",
         options: [
-            { label: "Sociable and outgoing", value: "0" },
-            { label: "Shy and reserved", value: "1" },
-            { label: "Aggressive", value: "2" },
-            { label: "Passive", value: "3" },
-            { label: "Other (please specify)", value: "4" }
+            {label: "Sociable and outgoing", value: "0"},
+            {label: "Shy and reserved", value: "1"},
+            {label: "Aggressive", value: "2"},
+            {label: "Passive", value: "3"},
+            {label: "Other (please specify)", value: "4"}
         ]
     },
     {
         id: 8,
         text: "Does your child exhibit repetitive behaviors (e.g., hand-flapping, rocking)?",
         options: [
-            { label: "Yes", value: "0" },
-            { label: "No", value: "1" }
+            {label: "Yes", value: "0"},
+            {label: "No", value: "1"}
         ]
     },
 
@@ -131,20 +131,20 @@ const questions = [
         id: 9,
         text: "How would you describe your child's overall physical health?",
         options: [
-            { label: "Poor", value: "0" },
-            { label: "Average", value: "1" },
-            { label: "Good", value: "2" },
-            { label: "Very Good", value: "3" }
+            {label: "Poor", value: "0"},
+            {label: "Average", value: "1"},
+            {label: "Good", value: "2"},
+            {label: "Very Good", value: "3"}
         ]
     },
     {
         id: 10,
         text: "How often does your child engage in physical activity (e.g., playing sports, outdoor play)?",
         options: [
-            { label: "Everyday", value: "0" },
-            { label: "Occasionally", value: "1" },
-            { label: "Rarely", value: "2" },
-            { label: "Never", value: "3" }
+            {label: "Everyday", value: "0"},
+            {label: "Occasionally", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Never", value: "3"}
         ]
     },
 
@@ -153,20 +153,20 @@ const questions = [
         id: 11,
         text: "How do you rate your child's last year's academic performance?",
         options: [
-            { label: "Outstanding (Above 90%)", value: "0" },
-            { label: "Very Good (80%-90%)", value: "1" },
-            { label: "Good (70%-80%)", value: "2" },
-            { label: "Average (50%-70%)", value: "3" },
-            { label: "Poor (Less than 50%)", value: "4" }
+            {label: "Outstanding (Above 90%)", value: "0"},
+            {label: "Very Good (80%-90%)", value: "1"},
+            {label: "Good (70%-80%)", value: "2"},
+            {label: "Average (50%-70%)", value: "3"},
+            {label: "Poor (Less than 50%)", value: "4"}
         ]
     },
     {
         id: 12,
         text: "Are you worried about your child’s performance?",
         options: [
-            { label: "Yes", value: "0" },
-            { label: "No", value: "1" },
-            { label: "Don’t Know", value: "2" }
+            {label: "Yes", value: "0"},
+            {label: "No", value: "1"},
+            {label: "Don’t Know", value: "2"}
         ]
     },
 
@@ -175,20 +175,20 @@ const questions = [
         id: 13,
         text: "What are your child's eating habits like?",
         options: [
-            { label: "Poor", value: "0" },
-            { label: "Average", value: "1" },
-            { label: "Good", value: "2" },
-            { label: "Very Good", value: "3" }
+            {label: "Poor", value: "0"},
+            {label: "Average", value: "1"},
+            {label: "Good", value: "2"},
+            {label: "Very Good", value: "3"}
         ]
     },
     {
         id: 14,
         text: "How often does your child demand outside/junk food?",
         options: [
-            { label: "Regularly", value: "0" },
-            { label: "Occasionally", value: "1" },
-            { label: "Rarely", value: "2" },
-            { label: "Never", value: "3" }
+            {label: "Regularly", value: "0"},
+            {label: "Occasionally", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Never", value: "3"}
         ]
     },
 
@@ -197,18 +197,18 @@ const questions = [
         id: 15,
         text: "How much time does your child spend using screens (e.g., TV, computer, tablet, smartphone) each day?",
         options: [
-            { label: "Less Than 1 Hour", value: "0" },
-            { label: "1-4 Hours", value: "1" },
-            { label: "Beyond 4 Hours", value: "2" }
+            {label: "Less Than 1 Hour", value: "0"},
+            {label: "1-4 Hours", value: "1"},
+            {label: "Beyond 4 Hours", value: "2"}
         ]
     },
     {
         id: 16,
         text: "Does your child sleep or eat while using mobile/laptop/other electronic devices?",
         options: [
-            { label: "Regularly", value: "0" },
-            { label: "Sometimes", value: "1" },
-            { label: "Never", value: "2" }
+            {label: "Regularly", value: "0"},
+            {label: "Sometimes", value: "1"},
+            {label: "Never", value: "2"}
         ]
     },
 
@@ -217,9 +217,9 @@ const questions = [
         id: 17,
         text: "Does your child feel safe at home, school, and in the community?",
         options: [
-            { label: "Yes", value: "0" },
-            { label: "No", value: "1" },
-            { label: "Don’t Know", value: "2" }
+            {label: "Yes", value: "0"},
+            {label: "No", value: "1"},
+            {label: "Don’t Know", value: "2"}
         ]
     }
 ];
@@ -502,7 +502,7 @@ const ShapeK12Questions = () => {
         const percentage = (totalScore / 80) * 100;
 
         return (
-            <Container maxWidth="lg">
+            <Container maxWidth="md">
                 <Box
                     mt={12}
                     sx={{
@@ -529,9 +529,9 @@ const ShapeK12Questions = () => {
 
                     </Box>
 
-                    <Grid container spacing={4}>
+                    {/*<Grid container spacing={4}>*/}
                         {/* Score Display Section */}
-                        <Grid item xs={12} md={6}>
+                        {/*<Grid item xs={12} md={6}>*/}
                             <Card sx={{
                                 p: 4,
                                 height: '100%',
@@ -623,69 +623,69 @@ const ShapeK12Questions = () => {
                                     {result.interpretation}
                                 </Typography>
                             </Card>
-                        </Grid>
+                        {/*</Grid>*/}
 
                         {/* Recommendations Section */
                         }
-                        <Grid item xs={12} md={6}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4
-                            }}>
-                                <Box sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    mb: 2
-                                }}>
-                                    <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
-                                    <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
-                                        Recommendations
-                                    </Typography>
-                                </Box>
+                        {/*<Grid item xs={12} md={6}>*/}
+                        {/*    <Card sx={{*/}
+                        {/*        p: 4,*/}
+                        {/*        height: '100%',*/}
+                        {/*        background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',*/}
+                        {/*        boxShadow: '0 8px 32px rgba(0,0,0,0.1)',*/}
+                        {/*        borderRadius: 4*/}
+                        {/*    }}>*/}
+                        {/*        <Box sx={{*/}
+                        {/*            display: 'flex',*/}
+                        {/*            alignItems: 'center',*/}
+                        {/*            mb: 2*/}
+                        {/*        }}>*/}
+                        {/*            <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>*/}
+                        {/*            <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>*/}
+                        {/*                Recommendations*/}
+                        {/*            </Typography>*/}
+                        {/*        </Box>*/}
 
-                                <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
-                                    {result.recommendations.map((rec, index) => (
-                                        <Box
-                                            key={index}
-                                            sx={{
-                                                p: 2.5,
-                                                borderRadius: 2,
-                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
-                                                border: '1px solid rgba(245, 129, 30, 0.1)',
-                                                transition: 'transform 0.2s',
-                                                '&:hover': {
-                                                    transform: 'translateY(-2px)',
-                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                                }
-                                            }}
-                                        >
-                                            <Typography
-                                                variant="h6"
-                                                sx={{
-                                                    color: '#F5811E',
-                                                    fontSize: "19px",
-                                                    fontWeight: 600,
-                                                    mb: 1,
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    gap: 1
-                                                }}
-                                            >
-                                                <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
-                                                {rec.title}
-                                            </Typography>
-                                            <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>
-                                                {rec.description}
-                                            </Typography>
-                                        </Box>
-                                    ))}
-                                </Box>
-                            </Card>
-                        </Grid>
-                    </Grid>
+                        {/*        <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>*/}
+                        {/*            {result.recommendations.map((rec, index) => (*/}
+                        {/*                <Box*/}
+                        {/*                    key={index}*/}
+                        {/*                    sx={{*/}
+                        {/*                        p: 2.5,*/}
+                        {/*                        borderRadius: 2,*/}
+                        {/*                        bgcolor: 'rgba(245, 129, 30, 0.05)',*/}
+                        {/*                        border: '1px solid rgba(245, 129, 30, 0.1)',*/}
+                        {/*                        transition: 'transform 0.2s',*/}
+                        {/*                        '&:hover': {*/}
+                        {/*                            transform: 'translateY(-2px)',*/}
+                        {/*                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'*/}
+                        {/*                        }*/}
+                        {/*                    }}*/}
+                        {/*                >*/}
+                        {/*                    <Typography*/}
+                        {/*                        variant="h6"*/}
+                        {/*                        sx={{*/}
+                        {/*                            color: '#F5811E',*/}
+                        {/*                            fontSize: "19px",*/}
+                        {/*                            fontWeight: 600,*/}
+                        {/*                            mb: 1,*/}
+                        {/*                            display: 'flex',*/}
+                        {/*                            alignItems: 'center',*/}
+                        {/*                            gap: 1*/}
+                        {/*                        }}*/}
+                        {/*                    >*/}
+                        {/*                        <AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
+                        {/*                        {rec.title}*/}
+                        {/*                    </Typography>*/}
+                        {/*                    <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>*/}
+                        {/*                        {rec.description}*/}
+                        {/*                    </Typography>*/}
+                        {/*                </Box>*/}
+                        {/*            ))}*/}
+                        {/*        </Box>*/}
+                        {/*    </Card>*/}
+                        {/*</Grid>*/}
+                    {/*</Grid>*/}
 
                     {/* Action Buttons */
                     }
@@ -697,7 +697,7 @@ const ShapeK12Questions = () => {
                     }}>
                         <Button
                             variant="outlined"
-                            onClick={() => window.print()}
+                            onClick={() => navigate('/assessments/shape-k12')}
                             sx={{
                                 color: '#F5811E',
                                 borderColor: '#F5811E',
@@ -713,7 +713,7 @@ const ShapeK12Questions = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            onClick={() => navigate('/assessments/shape-k12')}
+                            onClick={() => navigate('/resources?scrollTo=assessments')}
                             sx={{
                                 bgcolor: '#F5811E',
                                 color: '#fff',

@@ -136,6 +136,7 @@ function PodcastsAndBlog() {
                                             mb: "16px",
                                             lineHeight: "1.25rem",
                                             color: "#4b5563",
+                                            textAlign:"justify",
                                         }}>
                                             {article.description}
                                         </Box>

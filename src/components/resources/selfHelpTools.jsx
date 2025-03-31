@@ -68,6 +68,7 @@ function SelfHelpTools() {
                                     mb: "16px",
                                     color: "#4b5563",
                                     lineHeight: "1.25rem",
+                                    textAlign:"justify",
                                 }}>
                                     {tool.description}
                                 </Box>

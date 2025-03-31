@@ -42,7 +42,7 @@ const ShapeK12Assessment = () => {
     const navigate = useNavigate();
 
     const handleStartAssessment = () => {
-        navigate('/assessments/shape-k12/questions');
+        navigate('/assessments/shape-k12/shape-child-form');
     };
 
     return (

@@ -736,7 +736,7 @@ const AcademicStressQuestions = () => {
                     }}>
                         <Button
                             variant="outlined"
-                            onClick={() => window.print()}
+                            onClick={() => navigate('/assessments/academic-stress')}
                             sx={{
                                 color: '#F5811E',
                                 borderColor: '#F5811E',
@@ -752,7 +752,7 @@ const AcademicStressQuestions = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            onClick={() => navigate('/assessments/academic-stress')}
+                            onClick={() => navigate('/resources?scrollTo=assessments')}
                             sx={{
                                 bgcolor: '#F5811E',
                                 color: '#fff',

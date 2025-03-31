@@ -736,7 +736,7 @@ const SelfEsteemScaleQuestions = () => {
                     }}>
                         <Button
                             variant="outlined"
-                            onClick={() => window.print()}
+                            onClick={() => navigate('/assessments/self-esteem-scale')}
                             sx={{
                                 color: '#F5811E',
                                 borderColor: '#F5811E',
@@ -752,7 +752,7 @@ const SelfEsteemScaleQuestions = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            onClick={() => navigate('/assessments/self-esteem-scale')}
+                            onClick={() => navigate('/resources?scrollTo=assessments')}
                             sx={{
                                 bgcolor: '#F5811E',
                                 color: '#fff',

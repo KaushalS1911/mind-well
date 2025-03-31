@@ -21,6 +21,10 @@ import ExamStressGaugeAssessments from "./components/resources/ExamStressGaugeAs
 import ExamStressGaugeQuestions from "./components/resources/ExamStressGaugeQuestions.jsx";
 import ShapeK12Assessment from "./components/resources/ShapeK12Assessment.jsx";
 import ShapeK12Questions from "./components/resources/ShapeK12Questions.jsx";
+import ExamStressAssessmentForm from "./components/resources/ExamStressAssessmentForm.jsx";
+import ShapeK12ChildForm from "./components/resources/ShapeK12ChildForm.jsx";
+import ShapeK12FamilyForm from "./components/resources/ShapeK12FamilyForm.jsx";
+import EmotionalAwarenessQuestions from "./components/resources/EmotionalAwarenessQuestions.jsx";
 
 function App() {
 
@@ -36,6 +40,7 @@ function App() {
         <>
             <Navigation/>
             <ScrollToTop/>
+
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>
@@ -46,12 +51,15 @@ function App() {
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/assessments/exam-stress" element={<ExamStressGaugeAssessments/>}/>
                 <Route path="/assessments/exam-stress/questions" element={<ExamStressGaugeQuestions/>}/>
+                <Route path="/assessments/exam-stress/assessment-form" element={<ExamStressAssessmentForm/>}/>
                 <Route path="/assessments/shape-k12" element={<ShapeK12Assessment/>}/>
                 <Route path="/assessments/shape-k12/questions" element={<ShapeK12Questions/>}/>
+                <Route path="/assessments/shape-k12/shape-child-form" element={<ShapeK12ChildForm/>}/>
+                <Route path="/assessments/shape-k12/shape-family-form" element={<ShapeK12FamilyForm/>}/>
                 <Route path="/assessments/general-stress" element={<GeneralStressAssessment/>}/>
                 <Route path="/assessments/general-stress/questions" element={<GeneralStressQuestions/>}/>
                 <Route path="/assessments/emotional-awareness" element={<EmotionalAwarenessAssessment/>}/>
-                <Route path="/assessments/emotional-awareness/questions" element={<GeneralStressQuestions/>}/>
+                <Route path="/assessments/emotional-awareness/questions" element={<EmotionalAwarenessQuestions/>}/>
                 <Route path="/assessments/academic-stress" element={<AcademicStressAssessment/>}/>
                 <Route path="/assessments/academic-stress/questions" element={<AcademicStressQuestions/>}/>
                 <Route path="/assessments/self-esteem-scale" element={<SelfEsteemScaleAssessment/>}/>

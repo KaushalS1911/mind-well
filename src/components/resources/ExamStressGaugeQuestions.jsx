@@ -521,13 +521,12 @@ const ExamStressGaugeQuestions = () => {
         const percentage = (totalScore / 80) * 100;
 
         return (
-            <Container maxWidth="lg">
+            <Container maxWidth="md">
                 <Box
                     mt={12}
                     sx={{
-                        py: 5,
-                        px: {xs: 2, md: 4},
-                        minHeight: '100vh',
+                        py: 10,
+                        px: {xs: 2, md: 10},
                         display: 'flex',
                         flexDirection: 'column',
                     }}>
@@ -548,163 +547,154 @@ const ExamStressGaugeQuestions = () => {
 
                     </Box>
 
-                    <Grid container spacing={4}>
+                    {/*<Grid container spacing={4}>*/}
                         {/* Score Display Section */}
-                        <Grid item xs={12} md={6}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                justifyContent: "space-between"
-                            }}>
-                                <Box>
-                                    <Box sx={{
-                                        position: 'relative',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        mb: 3
-                                    }}>
-                                        <CircularProgress
-                                            variant="determinate"
-                                            value={percentage}
-                                            size={200}
-                                            thickness={4}
-                                            sx={{
-                                                color: totalScore >= 61 ? '#ff4d4d' :
-                                                    totalScore >= 41 ? '#ffa500' :
-                                                        totalScore >= 21 ? '#ffff00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
-                                            }}
-                                        />
-                                        {/*<CircularProgress*/}
-                                        {/*    variant="determinate"*/}
-                                        {/*    value={percentage}*/}
-                                        {/*    size={200}*/}
-                                        {/*    thickness={4}*/}
-                                        {/*    sx={{*/}
-                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                        {/*                totalScore >= 21 ? '#ffff00' :*/}
-                                        {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
-                                        {/*        position: 'absolute',*/}
-                                        {/*        left: 34,*/}
-                                        {/*    }}*/}
-                                        {/*/>*/}
-                                        <Box
-                                            sx={{
-                                                position: 'absolute',
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'center',
-                                            }}
-                                        >
-                                            <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                                {totalScore}
-                                            </Typography>
-                                            <Typography variant="h5" sx={{color: '#4A5568'}}>
-                                                out of 80
-                                            </Typography>
-                                        </Box>
-                                    </Box>
-
-                                    <Typography
-                                        variant="h5"
+                        {/*<Grid item xs={12} md={6}>*/}
+                    <Box sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}>
+                        <Card sx={{
+                            p: 4,
+                            height: '100%',
+                            background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                            borderRadius: 4,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: "space-between",
+                        }}>
+                            <Box>
+                                <Box sx={{
+                                    position: 'relative',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    mb: 3
+                                }}>
+                                    <CircularProgress
+                                        variant="determinate"
+                                        value={percentage}
+                                        size={200}
+                                        thickness={4}
                                         sx={{
-                                            color: '#F5811E',
-                                            fontWeight: 600,
-                                            mb: 2,
-                                            textAlign: 'center',
+                                            color: totalScore >= 61 ? '#ff4d4d' :
+                                                totalScore >= 41 ? '#ffa500' :
+                                                    totalScore >= 21 ? '#ffff00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
+                                        }}
+                                    />
+                                    <Box
+                                        sx={{
+                                            position: 'absolute',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
                                         }}
                                     >
-                                        {result.level}
-                                    </Typography>
+                                        <Typography variant="h3" sx={{ fontWeight: 700, color: '#0D2152' }}>
+                                            {totalScore}
+                                        </Typography>
+                                        <Typography variant="h5" sx={{ color: '#4A5568' }}>
+                                            out of 80
+                                        </Typography>
+                                    </Box>
                                 </Box>
+
                                 <Typography
-                                    variant="body1"
+                                    variant="h5"
                                     sx={{
-                                        p: 2.5,
-                                        borderRadius: 2,
-                                        bgcolor: 'rgb(227,234,246)',
-                                        border: '1px solid rgba(245, 129, 30, 0.1)',
-                                        transition: 'transform 0.2s',
-                                        textAlign: "justify",
-                                        '&:hover': {
-                                            transform: 'translateY(-2px)',
-                                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                        }
+                                        color: '#F5811E',
+                                        fontWeight: 600,
+                                        mb: 2,
+                                        textAlign: 'center',
                                     }}
                                 >
-                                    {result.interpretation}
+                                    {result.level}
                                 </Typography>
-                            </Card>
-                        </Grid>
+                            </Box>
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    p: 2.5,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgb(227,234,246)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    textAlign: "justify",
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.interpretation}
+                            </Typography>
+                        </Card>
+                    </Box>
+                        {/*</Grid>*/}
 
                         {/* Recommendations Section */
                         }
-                        <Grid item xs={12} md={6}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4
-                            }}>
-                                <Box sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    mb: 2
-                                }}>
-                                    <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
-                                    <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
-                                        Recommendations
-                                    </Typography>
-                                </Box>
+                        {/*<Grid item xs={12} md={6}>*/}
+                        {/*    <Card sx={{*/}
+                        {/*        p: 4,*/}
+                        {/*        height: '100%',*/}
+                        {/*        background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',*/}
+                        {/*        boxShadow: '0 8px 32px rgba(0,0,0,0.1)',*/}
+                        {/*        borderRadius: 4*/}
+                        {/*    }}>*/}
+                        {/*        <Box sx={{*/}
+                        {/*            display: 'flex',*/}
+                        {/*            alignItems: 'center',*/}
+                        {/*            mb: 2*/}
+                        {/*        }}>*/}
+                        {/*            <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>*/}
+                        {/*            <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>*/}
+                        {/*                Recommendations*/}
+                        {/*            </Typography>*/}
+                        {/*        </Box>*/}
 
-                                <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
-                                    {result.recommendations.map((rec, index) => (
-                                        <Box
-                                            key={index}
-                                            sx={{
-                                                p: 2.5,
-                                                borderRadius: 2,
-                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
-                                                border: '1px solid rgba(245, 129, 30, 0.1)',
-                                                transition: 'transform 0.2s',
-                                                '&:hover': {
-                                                    transform: 'translateY(-2px)',
-                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                                }
-                                            }}
-                                        >
-                                            <Typography
-                                                variant="h6"
-                                                sx={{
-                                                    color: '#F5811E',
-                                                    fontSize: "19px",
-                                                    fontWeight: 600,
-                                                    mb: 1,
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    gap: 1
-                                                }}
-                                            >
-                                                <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
-                                                {rec.title}
-                                            </Typography>
-                                            <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>
-                                                {rec.description}
-                                            </Typography>
-                                        </Box>
-                                    ))}
-                                </Box>
-                            </Card>
-                        </Grid>
-                    </Grid>
+                        {/*        <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>*/}
+                        {/*            {result.recommendations.map((rec, index) => (*/}
+                        {/*                <Box*/}
+                        {/*                    key={index}*/}
+                        {/*                    sx={{*/}
+                        {/*                        p: 2.5,*/}
+                        {/*                        borderRadius: 2,*/}
+                        {/*                        bgcolor: 'rgba(245, 129, 30, 0.05)',*/}
+                        {/*                        border: '1px solid rgba(245, 129, 30, 0.1)',*/}
+                        {/*                        transition: 'transform 0.2s',*/}
+                        {/*                        '&:hover': {*/}
+                        {/*                            transform: 'translateY(-2px)',*/}
+                        {/*                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'*/}
+                        {/*                        }*/}
+                        {/*                    }}*/}
+                        {/*                >*/}
+                        {/*                    <Typography*/}
+                        {/*                        variant="h6"*/}
+                        {/*                        sx={{*/}
+                        {/*                            color: '#F5811E',*/}
+                        {/*                            fontSize: "19px",*/}
+                        {/*                            fontWeight: 600,*/}
+                        {/*                            mb: 1,*/}
+                        {/*                            display: 'flex',*/}
+                        {/*                            alignItems: 'center',*/}
+                        {/*                            gap: 1*/}
+                        {/*                        }}*/}
+                        {/*                    >*/}
+                        {/*                        <AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
+                        {/*                        {rec.title}*/}
+                        {/*                    </Typography>*/}
+                        {/*                    <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>*/}
+                        {/*                        {rec.description}*/}
+                        {/*                    </Typography>*/}
+                        {/*                </Box>*/}
+                        {/*            ))}*/}
+                        {/*        </Box>*/}
+                        {/*    </Card>*/}
+                        {/*</Grid>*/}
+                    {/*</Grid>*/}
 
                     {/* Action Buttons */
                     }
@@ -716,7 +706,7 @@ const ExamStressGaugeQuestions = () => {
                     }}>
                         <Button
                             variant="outlined"
-                            onClick={() => window.print()}
+                            onClick={() => navigate('/assessments/exam-stress')}
                             sx={{
                                 color: '#F5811E',
                                 borderColor: '#F5811E',
@@ -732,7 +722,7 @@ const ExamStressGaugeQuestions = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            onClick={() => navigate('/assessments/exam-stress')}
+                            onClick={() => navigate('/resources?scrollTo=assessments')}
                             sx={{
                                 bgcolor: '#F5811E',
                                 color: '#fff',
@@ -745,7 +735,7 @@ const ExamStressGaugeQuestions = () => {
                         </Button>
                     </Box>
                 </Box>
-            </Container>
+             </Container>
         )
             ;
     }

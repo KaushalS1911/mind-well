@@ -681,7 +681,7 @@ const WorkLifeBalanceQuestions = () => {
                     }}>
                         <Button
                             variant="outlined"
-                            onClick={() => window.print()}
+                            onClick={() => navigate('/assessments/work-life-balance')}
                             sx={{
                                 color: '#F5811E',
                                 borderColor: '#F5811E',
@@ -697,7 +697,7 @@ const WorkLifeBalanceQuestions = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            onClick={() => navigate('/assessments/work-life-balance')}
+                            onClick={() => navigate('/resources?scrollTo=assessments')}
                             sx={{
                                 bgcolor: '#F5811E',
                                 color: '#fff',
@@ -708,6 +708,7 @@ const WorkLifeBalanceQuestions = () => {
                         >
                             Return to Assessments
                         </Button>
+
                     </Box>
                 </Box>
             </Container>

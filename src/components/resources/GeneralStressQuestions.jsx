@@ -648,7 +648,7 @@ const GeneralStressQuestions = () => {
                     }}>
                         <Button
                             variant="outlined"
-                            onClick={() => window.print()}
+                            onClick={() => navigate('/assessments/general-stress')}
                             sx={{
                                 color: '#F5811E',
                                 borderColor: '#F5811E',
@@ -664,7 +664,7 @@ const GeneralStressQuestions = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            onClick={() => navigate('/assessments/general-stress')}
+                            onClick={() => navigate('/resources?scrollTo=assessments')}
                             sx={{
                                 bgcolor: '#F5811E',
                                 color: '#fff',

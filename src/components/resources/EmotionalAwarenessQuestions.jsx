@@ -650,7 +650,7 @@ const EmotionalAwarenessQuestions = () => {
                     }}>
                         <Button
                             variant="outlined"
-                            onClick={() => window.print()}
+                            onClick={() => navigate('/assessments/emotional-awareness')}
                             sx={{
                                 color: '#F5811E',
                                 borderColor: '#F5811E',
@@ -666,7 +666,7 @@ const EmotionalAwarenessQuestions = () => {
                         </Button>
                         <Button
                             variant="contained"
-                            onClick={() => navigate('/assessments/emotional-awareness')}
+                            onClick={() => navigate('/resources?scrollTo=assessments')}
                             sx={{
                                 bgcolor: '#F5811E',
                                 color: '#fff',
