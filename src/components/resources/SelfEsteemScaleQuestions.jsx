@@ -13,14 +13,12 @@ import {
     CircularProgress,
     Grid,
     Card,
-    Divider
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
-import GaugeChart from 'react-gauge-chart';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 
@@ -263,22 +261,6 @@ const questions = [
     },
 ];
 
-const options = [
-    {value: 4, label: 'Always'},
-    {value: 3, label: 'Often'},
-    {value: 2, label: 'Sometimes'},
-    {value: 1, label: 'Rarely'},
-    {value: 0, label: 'Never'},
-];
-
-const options2 = [
-    {value: 0, label: 'Not at all'},
-    {value: 1, label: 'Slightly'},
-    {value: 2, label: 'Moderately'},
-    {value: 3, label: 'A lot'},
-    {value: 4, label: 'Extremely'},
-];
-
 const getScoreCategory = (score) => {
     if (score >= 61 && score <= 80) {
         return {
@@ -286,17 +268,13 @@ const getScoreCategory = (score) => {
             interpretation: "You experience high levels of academic stress but have developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
             recommendations: [
                 {
-                    title: "Maintain Current Strategies",
-                    description: "Continue using and refining your current coping strategies to ensure they remain effective."
+                    title: "High Self-Esteem",
+                    description: "The student has a very positive self-image and high self-esteem. They demonstrate a strong sense of self-worth and" +
+                        " confidence in their abilities. To maintain and further enhance this positive self-perception, it is crucial to encourage" +
+                        " continued self-affirmation and support. Recognize and celebrate their achievements and strengths regularly. Provide an " +
+                        "environment that fosters self-confidence and reinforces their positive self-image. Engage them in activities that challenge" +
+                        " and help them grow, while also acknowledging their successes."
                 },
-                {
-                    title: "Share Techniques",
-                    description: "Consider sharing your successful coping techniques with peers, which can help reinforce your own strategies and provide support to others."
-                },
-                {
-                    title: "Balance Life",
-                    description: "Maintain a balanced lifestyle, incorporating academic responsibilities and personal well-being activities to sustain mental and emotional health."
-                }
             ]
         };
     } else if (score >= 41 && score <= 60) {
@@ -305,36 +283,27 @@ const getScoreCategory = (score) => {
             interpretation: "You experience moderate to high levels of academic stress and use some effective coping strategies but may need improvement in certain areas. While you have some good techniques in place, there is room to enhance your ability to manage stress.",
             recommendations: [
                 {
-                    title: "Develop Targeted Strategies",
-                    description: "Identify specific areas of stress and develop targeted coping strategies to address them effectively."
+                    title: "Moderate-High Self-Esteem",
+                    description: "The student generally feels good about themselves but may have some areas where they feel less confident." +
+                        " It is important to identify these specific areas for improvement and focus on targeted self-affirmation exercises. " +
+                        "Encourage their participation in activities that build confidence and self-worth. Offer constructive feedback that " +
+                        "highlights both their strengths and areas for growth. Create opportunities for them to succeed and feel competent, " +
+                        "reinforcing their overall positive self-image."
                 },
-                {
-                    title: "Engage in Workshops",
-                    description: "Consider participating in stress management workshops or seeking guidance from academic advisors or counsellors to improve coping skills."
-                },
-                {
-                    title: "Time Management & Self-Care",
-                    description: "Focus on enhancing time management and self-care routines to better handle academic pressures."
-                }
             ]
         };
     } else if (score >= 21 && score <= 40) {
         return {
-            level: "Moderate Academic Stress",
+            level: "Moderate Self-Esteem",
             interpretation: "You experience moderate levels of academic stress and have inconsistent coping strategies. You may sometimes manage stress well but struggle at other times.",
             recommendations: [
                 {
                     title: "Increase Effective Strategies",
-                    description: "Promote the use of effective coping strategies such as time management, relaxation techniques, and seeking support from friends, family, or professionals."
+                    description: "The student has an average self-image with some positive feelings about themselves but also experiences areas of " +
+                        "self-doubt. Providing support and encouragement is essential to boost their self-esteem. Engage them in regular self-affirmation" +
+                        " and positive self-talk exercises. Focus on building their strengths and recognizing their achievements, no matter how small." +
+                        " Help them set realistic goals and celebrate their progress, fostering a sense of accomplishment and improved self-worth."
                 },
-                {
-                    title: "Stress Reduction Programs",
-                    description: "Consider participating in stress reduction programs to learn and implement new coping methods."
-                },
-                {
-                    title: "Structured Plan",
-                    description: "Create a structured study and relaxation plan to manage your academic workload more effectively."
-                }
             ]
         };
     } else if (score >= 11 && score <= 20) {
@@ -343,17 +312,13 @@ const getScoreCategory = (score) => {
             interpretation: "You experience low to moderate levels of academic stress but have limited or ineffective coping strategies. This suggests that while your stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
             recommendations: [
                 {
-                    title: "Develop New Strategies",
-                    description: "Work on developing and practicing new coping strategies that can help manage stress better."
+                    title: " Low-Moderate Self-Esteem",
+                    description: "The student may struggle with self-esteem and has significant areas of self-doubt and negative self-perception." +
+                        " Consistent support and encouragement are vital. Work on self-esteem-building activities, such as positive affirmations" +
+                        " and goal setting. Provide frequent opportunities to highlight and celebrate their strengths and achievements. Encourage" +
+                        " them to participate in activities where they can experience success and feel valued. Gradually help them build a more positive" +
+                        " self-image by focusing on their unique qualities and capabilities."
                 },
-                {
-                    title: "Seek Support",
-                    description: "Consider seeking regular support from peers, professors, or counsellors to gain different perspectives and coping methods."
-                },
-                {
-                    title: "Build a Routine",
-                    description: "Focus on building a routine that includes regular breaks, physical activity, and adequate sleep to maintain overall well-being."
-                }
             ]
         };
     } else {
@@ -362,17 +327,14 @@ const getScoreCategory = (score) => {
             interpretation: "You experience low levels of academic stress but may still benefit from improved coping strategies. Even though your stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
             recommendations: [
                 {
-                    title: "Proactive Coping",
-                    description: "Adopt proactive coping strategies to maintain low stress levels and prevent future stress buildup."
+                    title: "Low Self-Esteem",
+                    description: "The student has a very low self-image and struggles significantly with self-esteem. Intensive support and intervention" +
+                        " may be needed to help them develop a more positive self-perception. Encourage their participation in counselling or group" +
+                        " activities focused on building self-esteem. Consistently reinforce their value and worth through positive affirmations and" +
+                        " supportive feedback. Help them set small, achievable goals and celebrate every success, no matter how minor. Provide a safe" +
+                        " and nurturing environment where they feel accepted and valued, gradually helping them build a stronger sense of self-worth" +
+                        " and confidence."
                 },
-                {
-                    title: "Well-Being Activities",
-                    description: "Participate in activities that support overall well-being and help in preventing stress."
-                },
-                {
-                    title: "Monitor Stress Levels",
-                    description: "Stay vigilant about any potential increase in stress levels and address them promptly to ensure they do not escalate."
-                }
             ]
         };
     }
@@ -527,14 +489,7 @@ const SelfEsteemScaleQuestions = () => {
         }
     };
 
-    const handleRestart = () => {
-        setCurrentQuestion(0);
-        setAnswers(Array(20).fill(''));
-        setShowResults(false);
-    };
-
     const progress = ((currentQuestion + 1) / questions.length) * 100;
-    const scoreCategory = getScoreCategory(totalScore);
 
     if (showResults) {
         const result = getScoreCategory(totalScore);

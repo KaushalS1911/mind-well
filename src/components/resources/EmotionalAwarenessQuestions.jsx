@@ -13,16 +13,13 @@ import {
     CircularProgress,
     Grid,
     Card,
-    Divider
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
-import GaugeChart from 'react-gauge-chart';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
-import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -196,97 +193,52 @@ const questions = [
 const getScoreCategory = (score) => {
     if (score >= 61 && score <= 80) {
         return {
-            level: "High Academic Stress",
-            interpretation: "You experience high levels of academic stress but have developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
+            level: "High Score",
+            interpretation: "The child has a strong understanding of emotions and demonstrates effective emotional regulation skills.",
             recommendations: [
                 {
-                    title: "Maintain Current Strategies",
-                    description: "Continue using and refining your current coping strategies to ensure they remain effective."
+                    description: "Encourage continued emotional development through positive reinforcement and activities that promote emotional intelligence. Engage the child in more complex emotional awareness activities to further enhance their skills."
                 },
-                {
-                    title: "Share Techniques",
-                    description: "Consider sharing your successful coping techniques with peers, which can help reinforce your own strategies and provide support to others."
-                },
-                {
-                    title: "Balance Life",
-                    description: "Maintain a balanced lifestyle, incorporating academic responsibilities and personal well-being activities to sustain mental and emotional health."
-                }
             ]
         };
     } else if (score >= 41 && score <= 60) {
         return {
-            level: "Moderate-High Academic Stress",
-            interpretation: "You experience moderate to high levels of academic stress and use some effective coping strategies but may need improvement in certain areas. While you have some good techniques in place, there is room to enhance your ability to manage stress.",
+            level: "Moderate-High Score",
+            interpretation: " The child has a good understanding of emotions and generally manages and expresses emotions appropriately, but there may be some areas needing slight improvement.",
             recommendations: [
                 {
-                    title: "Develop Targeted Strategies",
-                    description: "Identify specific areas of stress and develop targeted coping strategies to address them effectively."
+                    description: "Provide additional support through structured activities and discussions that focus on understanding and managing emotions. Reinforce positive behaviors and work on specific areas where the child showed some difficulty."
                 },
-                {
-                    title: "Engage in Workshops",
-                    description: "Consider participating in stress management workshops or seeking guidance from academic advisors or counsellors to improve coping skills."
-                },
-                {
-                    title: "Time Management & Self-Care",
-                    description: "Focus on enhancing time management and self-care routines to better handle academic pressures."
-                }
             ]
         };
     } else if (score >= 21 && score <= 40) {
         return {
-            level: "Moderate Academic Stress",
-            interpretation: "You experience moderate levels of academic stress and have inconsistent coping strategies. You may sometimes manage stress well but struggle at other times.",
+            level: "Moderate Score",
+            interpretation: "The child has a basic understanding of emotions but shows inconsistencies in emotional regulation and expression.",
             recommendations: [
                 {
-                    title: "Increase Effective Strategies",
-                    description: "Promote the use of effective coping strategies such as time management, relaxation techniques, and seeking support from friends, family, or professionals."
+                    description: "Engage the child in more frequent and varied emotional learning activities. Use role-playing, storytelling, and interactive games to help the child better recognize and manage emotions. Consider involving a school counselor or psychologist if needed for targeted interventions."
                 },
-                {
-                    title: "Stress Reduction Programs",
-                    description: "Consider participating in stress reduction programs to learn and implement new coping methods."
-                },
-                {
-                    title: "Structured Plan",
-                    description: "Create a structured study and relaxation plan to manage your academic workload more effectively."
-                }
             ]
         };
     } else if (score >= 11 && score <= 20) {
         return {
-            level: "Low-Moderate Academic Stress",
-            interpretation: "You experience low to moderate levels of academic stress but have limited or ineffective coping strategies. This suggests that while your stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
+            level: "Low-Moderate Score",
+            interpretation: "The child has significant difficulty in identifying and managing emotions, indicating a need for targeted emotional learning and support.",
             recommendations: [
                 {
-                    title: "Develop New Strategies",
-                    description: "Work on developing and practicing new coping strategies that can help manage stress better."
+                    description: "Implement a structured emotional learning program with daily activities focused on identifying and managing emotions. Collaborate with teachers and parents to ensure consistent support across environments. Consider professional guidance from a child psychologist or counselor to develop personalized strategies for improvement."
                 },
-                {
-                    title: "Seek Support",
-                    description: "Consider seeking regular support from peers, professors, or counsellors to gain different perspectives and coping methods."
-                },
-                {
-                    title: "Build a Routine",
-                    description: "Focus on building a routine that includes regular breaks, physical activity, and adequate sleep to maintain overall well-being."
-                }
             ]
         };
     } else {
         return {
-            level: "Low Academic Stress",
-            interpretation: "You experience low levels of academic stress but may still benefit from improved coping strategies. Even though your stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
+            level: "Low Score",
+            interpretation: "The child has major challenges in understanding and regulating emotions, which could impact their social interactions and overall well-being.",
             recommendations: [
                 {
-                    title: "Proactive Coping",
-                    description: "Adopt proactive coping strategies to maintain low stress levels and prevent future stress buildup."
+                    description: "Immediate intervention is recommended. Develop a comprehensive support plan involving teachers, parents, and mental health professionals. Intensive emotional learning activities and one-on-one counseling sessions may be necessary to address the child's needs. Close monitoring and continuous support will be crucial for progress."
                 },
-                {
-                    title: "Well-Being Activities",
-                    description: "Participate in activities that support overall well-being and help in preventing stress."
-                },
-                {
-                    title: "Monitor Stress Levels",
-                    description: "Stay vigilant about any potential increase in stress levels and address them promptly to ensure they do not escalate."
-                }
             ]
         };
     }
@@ -441,14 +393,7 @@ const EmotionalAwarenessQuestions = () => {
         }
     };
 
-    const handleRestart = () => {
-        setCurrentQuestion(0);
-        setAnswers(Array(20).fill(''));
-        setShowResults(false);
-    };
-
     const progress = ((currentQuestion + 1) / questions.length) * 100;
-    const scoreCategory = getScoreCategory(totalScore);
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
@@ -627,7 +572,7 @@ const EmotionalAwarenessQuestions = () => {
                                                     gap: 1
                                                 }}
                                             >
-                                                <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
+                                                {/*<AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
                                                 {rec.title}
                                             </Typography>
                                             <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>
@@ -680,8 +625,7 @@ const EmotionalAwarenessQuestions = () => {
                     </Box>
                 </Box>
             </Container>
-        )
-            ;
+        );
     }
 
     return (

@@ -20,7 +20,6 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
-import GaugeChart from 'react-gauge-chart';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 
@@ -261,22 +260,6 @@ const questions = [
             {label: "Always", value: "4"}
         ]
     },
-];
-
-const options = [
-    {value: 4, label: 'Always'},
-    {value: 3, label: 'Often'},
-    {value: 2, label: 'Sometimes'},
-    {value: 1, label: 'Rarely'},
-    {value: 0, label: 'Never'},
-];
-
-const options2 = [
-    {value: 0, label: 'Not at all'},
-    {value: 1, label: 'Slightly'},
-    {value: 2, label: 'Moderately'},
-    {value: 3, label: 'A lot'},
-    {value: 4, label: 'Extremely'},
 ];
 
 const getScoreCategory = (score) => {
@@ -527,14 +510,8 @@ const AcademicStressQuestions = () => {
         }
     };
 
-    const handleRestart = () => {
-        setCurrentQuestion(0);
-        setAnswers(Array(20).fill(''));
-        setShowResults(false);
-    };
 
     const progress = ((currentQuestion + 1) / questions.length) * 100;
-    const scoreCategory = getScoreCategory(totalScore);
 
     if (showResults) {
         const result = getScoreCategory(totalScore);

@@ -13,16 +13,13 @@ import {
     CircularProgress,
     Grid,
     Card,
-    Divider
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
-import GaugeChart from 'react-gauge-chart';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
-import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -208,116 +205,35 @@ const questions = [
     },
 ];
 
-const options = [
-    {value: 4, label: 'Always'},
-    {value: 3, label: 'Often'},
-    {value: 2, label: 'Sometimes'},
-    {value: 1, label: 'Rarely'},
-    {value: 0, label: 'Never'},
-];
-
-const options2 = [
-    {value: 0, label: 'Not at all'},
-    {value: 1, label: 'Slightly'},
-    {value: 2, label: 'Moderately'},
-    {value: 3, label: 'A lot'},
-    {value: 4, label: 'Extremely'},
-];
-
 const getScoreCategory = (score) => {
     if (score >= 61 && score <= 80) {
         return {
-            level: "High Academic Stress",
-            interpretation: "You experience high levels of academic stress but have developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
+            level: "Strong Work-Life Balance",
+            interpretation: "This Self-Assessment shows an indicative result based on your responses. These are not Psychometric Tests. For accurate and scientific approach, you should consult professional psychology practitioners.",
             recommendations: [
                 {
-                    title: "Maintain Current Strategies",
-                    description: "Continue using and refining your current coping strategies to ensure they remain effective."
+                    description: "\"Your responses reflect a strong ability to balance work and personal life effectively. You set clear boundaries, prioritize self-care, and manage your time well, which leads to both professional success and personal satisfaction. Continue practicing these healthy habits and remain mindful of maintaining this balance even during challenging times."
                 },
-                {
-                    title: "Share Techniques",
-                    description: "Consider sharing your successful coping techniques with peers, which can help reinforce your own strategies and provide support to others."
-                },
-                {
-                    title: "Balance Life",
-                    description: "Maintain a balanced lifestyle, incorporating academic responsibilities and personal well-being activities to sustain mental and emotional health."
-                }
             ]
         };
     } else if (score >= 41 && score <= 60) {
         return {
-            level: "Moderate-High Academic Stress",
-            interpretation: "You experience moderate to high levels of academic stress and use some effective coping strategies but may need improvement in certain areas. While you have some good techniques in place, there is room to enhance your ability to manage stress.",
+            level: "Moderate Work-Life Balance; Improvement Needed",
+            interpretation: "This Self-Assessment shows an indicative result based on your responses. These are not Psychometric Tests. For accurate and scientific approach, you should consult professional psychology practitioners.",
             recommendations: [
                 {
-                    title: "Develop Targeted Strategies",
-                    description: "Identify specific areas of stress and develop targeted coping strategies to address them effectively."
+                    description: "You have a fair degree of balance between your work and personal life, but some areas may need attention. Consider focusing on improving specific aspects such as stress management, setting clearer boundaries, or dedicating more time to personal well-being. By addressing these areas, you can elevate your overall sense of harmony and satisfaction."
                 },
-                {
-                    title: "Engage in Workshops",
-                    description: "Consider participating in stress management workshops or seeking guidance from academic advisors or counsellors to improve coping skills."
-                },
-                {
-                    title: "Time Management & Self-Care",
-                    description: "Focus on enhancing time management and self-care routines to better handle academic pressures."
-                }
             ]
         };
-    } else if (score >= 21 && score <= 40) {
+    } else if (score <= 40) {
         return {
-            level: "Moderate Academic Stress",
-            interpretation: "You experience moderate levels of academic stress and have inconsistent coping strategies. You may sometimes manage stress well but struggle at other times.",
+            level: "Significant Challenges Requiring Immediate Attention",
+            interpretation: "This Self-Assessment shows an indicative result based on your responses. These are not Psychometric Tests. For accurate and scientific approach, you should consult professional psychology practitioners.",
             recommendations: [
                 {
-                    title: "Increase Effective Strategies",
-                    description: "Promote the use of effective coping strategies such as time management, relaxation techniques, and seeking support from friends, family, or professionals."
+                    description: "Your score indicates significant challenges in maintaining a healthy work-life balance. You may experience stress, burnout, or dissatisfaction due to a lack of boundaries or insufficient time for personal needs. It's essential to reevaluate your priorities, develop better time management strategies, and incorporate regular self-care practices into your routine. Seeking guidance from a mentor, counselor, or professional may also be beneficial in helping you regain balance and improve your overall well-being."
                 },
-                {
-                    title: "Stress Reduction Programs",
-                    description: "Consider participating in stress reduction programs to learn and implement new coping methods."
-                },
-                {
-                    title: "Structured Plan",
-                    description: "Create a structured study and relaxation plan to manage your academic workload more effectively."
-                }
-            ]
-        };
-    } else if (score >= 11 && score <= 20) {
-        return {
-            level: "Low-Moderate Academic Stress",
-            interpretation: "You experience low to moderate levels of academic stress but have limited or ineffective coping strategies. This suggests that while your stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
-            recommendations: [
-                {
-                    title: "Develop New Strategies",
-                    description: "Work on developing and practicing new coping strategies that can help manage stress better."
-                },
-                {
-                    title: "Seek Support",
-                    description: "Consider seeking regular support from peers, professors, or counsellors to gain different perspectives and coping methods."
-                },
-                {
-                    title: "Build a Routine",
-                    description: "Focus on building a routine that includes regular breaks, physical activity, and adequate sleep to maintain overall well-being."
-                }
-            ]
-        };
-    } else {
-        return {
-            level: "Low Academic Stress",
-            interpretation: "You experience low levels of academic stress but may still benefit from improved coping strategies. Even though your stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
-            recommendations: [
-                {
-                    title: "Proactive Coping",
-                    description: "Adopt proactive coping strategies to maintain low stress levels and prevent future stress buildup."
-                },
-                {
-                    title: "Well-Being Activities",
-                    description: "Participate in activities that support overall well-being and help in preventing stress."
-                },
-                {
-                    title: "Monitor Stress Levels",
-                    description: "Stay vigilant about any potential increase in stress levels and address them promptly to ensure they do not escalate."
-                }
             ]
         };
     }
@@ -472,14 +388,7 @@ const WorkLifeBalanceQuestions = () => {
         }
     };
 
-    const handleRestart = () => {
-        setCurrentQuestion(0);
-        setAnswers(Array(20).fill(''));
-        setShowResults(false);
-    };
-
     const progress = ((currentQuestion + 1) / questions.length) * 100;
-    const scoreCategory = getScoreCategory(totalScore);
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
@@ -658,7 +567,7 @@ const WorkLifeBalanceQuestions = () => {
                                                     gap: 1
                                                 }}
                                             >
-                                                <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
+                                                {/*<AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
                                                 {rec.title}
                                             </Typography>
                                             <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>
@@ -712,8 +621,7 @@ const WorkLifeBalanceQuestions = () => {
                     </Box>
                 </Box>
             </Container>
-        )
-            ;
+        );
     }
 
     return (

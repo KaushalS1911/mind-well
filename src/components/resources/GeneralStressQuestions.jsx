@@ -13,16 +13,12 @@ import {
     CircularProgress,
     Grid,
     Card,
-    Divider
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
-import GaugeChart from 'react-gauge-chart';
-import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
-import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -175,117 +171,26 @@ const questions = [
     },
 ];
 
-const options = [
-    {value: 4, label: 'Always'},
-    {value: 3, label: 'Often'},
-    {value: 2, label: 'Sometimes'},
-    {value: 1, label: 'Rarely'},
-    {value: 0, label: 'Never'},
-];
-
-const options2 = [
-    {value: 0, label: 'Not at all'},
-    {value: 1, label: 'Slightly'},
-    {value: 2, label: 'Moderately'},
-    {value: 3, label: 'A lot'},
-    {value: 4, label: 'Extremely'},
-];
-
 const getScoreCategory = (score) => {
     if (score >= 61 && score <= 80) {
         return {
-            level: "High Academic Stress",
-            interpretation: "You experience high levels of academic stress but have developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
-            recommendations: [
-                {
-                    title: "Maintain Current Strategies",
-                    description: "Continue using and refining your current coping strategies to ensure they remain effective."
-                },
-                {
-                    title: "Share Techniques",
-                    description: "Consider sharing your successful coping techniques with peers, which can help reinforce your own strategies and provide support to others."
-                },
-                {
-                    title: "Balance Life",
-                    description: "Maintain a balanced lifestyle, incorporating academic responsibilities and personal well-being activities to sustain mental and emotional health."
-                }
-            ]
+            level: "Severe Stress/Anxiety",
+            interpretation: " Significant levels of stress and anxiety are present. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, it is strongly advised that you engage with certified Psychologists and Professionals.",
         };
     } else if (score >= 41 && score <= 60) {
         return {
-            level: "Moderate-High Academic Stress",
-            interpretation: "You experience moderate to high levels of academic stress and use some effective coping strategies but may need improvement in certain areas. While you have some good techniques in place, there is room to enhance your ability to manage stress.",
-            recommendations: [
-                {
-                    title: "Develop Targeted Strategies",
-                    description: "Identify specific areas of stress and develop targeted coping strategies to address them effectively."
-                },
-                {
-                    title: "Engage in Workshops",
-                    description: "Consider participating in stress management workshops or seeking guidance from academic advisors or counsellors to improve coping skills."
-                },
-                {
-                    title: "Time Management & Self-Care",
-                    description: "Focus on enhancing time management and self-care routines to better handle academic pressures."
-                }
-            ]
+            level: "High Stress/Anxiety",
+            interpretation: "Your stress and anxiety levels may be impacting your daily life. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, it is recommended that you engage with certified Psychologists and Professionals.",
         };
     } else if (score >= 21 && score <= 40) {
         return {
-            level: "Moderate Academic Stress",
-            interpretation: "You experience moderate levels of academic stress and have inconsistent coping strategies. You may sometimes manage stress well but struggle at other times.",
-            recommendations: [
-                {
-                    title: "Increase Effective Strategies",
-                    description: "Promote the use of effective coping strategies such as time management, relaxation techniques, and seeking support from friends, family, or professionals."
-                },
-                {
-                    title: "Stress Reduction Programs",
-                    description: "Consider participating in stress reduction programs to learn and implement new coping methods."
-                },
-                {
-                    title: "Structured Plan",
-                    description: "Create a structured study and relaxation plan to manage your academic workload more effectively."
-                }
-            ]
+            level: "Moderate Stress/Anxiety",
+            interpretation: "You may be experiencing stress or anxiety at manageable levels. Consider mindfulness, self-care, or seeking support if needed. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, we suggest to engage with certified Psychologists and Professionals.",
         };
-    } else if (score >= 11 && score <= 20) {
+    } else if (score <= 20) {
         return {
-            level: "Low-Moderate Academic Stress",
-            interpretation: "You experience low to moderate levels of academic stress but have limited or ineffective coping strategies. This suggests that while your stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
-            recommendations: [
-                {
-                    title: "Develop New Strategies",
-                    description: "Work on developing and practicing new coping strategies that can help manage stress better."
-                },
-                {
-                    title: "Seek Support",
-                    description: "Consider seeking regular support from peers, professors, or counsellors to gain different perspectives and coping methods."
-                },
-                {
-                    title: "Build a Routine",
-                    description: "Focus on building a routine that includes regular breaks, physical activity, and adequate sleep to maintain overall well-being."
-                }
-            ]
-        };
-    } else {
-        return {
-            level: "Low Academic Stress",
-            interpretation: "You experience low levels of academic stress but may still benefit from improved coping strategies. Even though your stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
-            recommendations: [
-                {
-                    title: "Proactive Coping",
-                    description: "Adopt proactive coping strategies to maintain low stress levels and prevent future stress buildup."
-                },
-                {
-                    title: "Well-Being Activities",
-                    description: "Participate in activities that support overall well-being and help in preventing stress."
-                },
-                {
-                    title: "Monitor Stress Levels",
-                    description: "Stay vigilant about any potential increase in stress levels and address them promptly to ensure they do not escalate."
-                }
-            ]
+            level: "Low Stress/Anxiety",
+            interpretation: "You appear to control Strain and tension well. Keep Practicing healthful habits. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, we suggest to engage with certified Psychologists and Professionals.",
         };
     }
 };
@@ -439,21 +344,14 @@ const GeneralStressQuestions = () => {
         }
     };
 
-    const handleRestart = () => {
-        setCurrentQuestion(0);
-        setAnswers(Array(20).fill(''));
-        setShowResults(false);
-    };
-
     const progress = ((currentQuestion + 1) / questions.length) * 100;
-    const scoreCategory = getScoreCategory(totalScore);
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
         const percentage = (totalScore / 80) * 100;
 
         return (
-            <Container maxWidth="lg">
+            <Container maxWidth="md">
                 <Box
                     mt={12}
                     sx={{
@@ -480,166 +378,99 @@ const GeneralStressQuestions = () => {
 
                     </Box>
 
-                    <Grid container spacing={4}>
-                        {/* Score Display Section */}
-                        <Grid item xs={12} md={6}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4,
+                    <Card sx={{
+                        p: 4,
+                        height: '100%',
+                        background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                        borderRadius: 4,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: "space-between"
+                    }}>
+                        <Box>
+                            <Box sx={{
+                                position: 'relative',
                                 display: 'flex',
-                                flexDirection: 'column',
+                                justifyContent: 'center',
                                 alignItems: 'center',
-                                justifyContent: "space-between"
+                                mb: 3
                             }}>
-                                <Box>
-                                    <Box sx={{
-                                        position: 'relative',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        mb: 3
-                                    }}>
-                                        <CircularProgress
-                                            variant="determinate"
-                                            value={percentage}
-                                            size={200}
-                                            thickness={4}
-                                            sx={{
-                                                color: totalScore >= 61 ? '#ff4d4d' :
-                                                    totalScore >= 41 ? '#ffa500' :
-                                                        totalScore >= 21 ? '#ffff00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
-                                            }}
-                                        />
-                                        {/*<CircularProgress*/}
-                                        {/*    variant="determinate"*/}
-                                        {/*    value={percentage}*/}
-                                        {/*    size={200}*/}
-                                        {/*    thickness={4}*/}
-                                        {/*    sx={{*/}
-                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                        {/*                totalScore >= 21 ? '#ffff00' :*/}
-                                        {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
-                                        {/*        position: 'absolute',*/}
-                                        {/*        left: 34,*/}
-                                        {/*    }}*/}
-                                        {/*/>*/}
-                                        <Box
-                                            sx={{
-                                                position: 'absolute',
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'center',
-                                            }}
-                                        >
-                                            <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                                {totalScore}
-                                            </Typography>
-                                            <Typography variant="h5" sx={{color: '#4A5568'}}>
-                                                out of 80
-                                            </Typography>
-                                        </Box>
-                                    </Box>
-
-                                    <Typography
-                                        variant="h5"
-                                        sx={{
-                                            color: '#F5811E',
-                                            fontWeight: 600,
-                                            mb: 2,
-                                            textAlign: 'center',
-                                        }}
-                                    >
-                                        {result.level}
-                                    </Typography>
-                                </Box>
-                                <Typography
-                                    variant="body1"
+                                <CircularProgress
+                                    variant="determinate"
+                                    value={percentage}
+                                    size={200}
+                                    thickness={4}
                                     sx={{
-                                        p: 2.5,
-                                        borderRadius: 2,
-                                        bgcolor: 'rgb(227,234,246)',
-                                        border: '1px solid rgba(245, 129, 30, 0.1)',
-                                        transition: 'transform 0.2s',
-                                        textAlign: "justify",
-                                        '&:hover': {
-                                            transform: 'translateY(-2px)',
-                                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                        }
+                                        color: totalScore >= 61 ? '#ff4d4d' :
+                                            totalScore >= 41 ? '#ffa500' :
+                                                totalScore >= 21 ? '#ffff00' : totalScore >= 1 ? '#90EE90' : '#00ff00',
+                                    }}
+                                />
+                                {/*<CircularProgress*/}
+                                {/*    variant="determinate"*/}
+                                {/*    value={percentage}*/}
+                                {/*    size={200}*/}
+                                {/*    thickness={4}*/}
+                                {/*    sx={{*/}
+                                {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                {/*                totalScore >= 21 ? '#ffff00' :*/}
+                                {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
+                                {/*        position: 'absolute',*/}
+                                {/*        left: 34,*/}
+                                {/*    }}*/}
+                                {/*/>*/}
+                                <Box
+                                    sx={{
+                                        position: 'absolute',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
                                     }}
                                 >
-                                    {result.interpretation}
-                                </Typography>
-                            </Card>
-                        </Grid>
-
-                        {/* Recommendations Section */
-                        }
-                        <Grid item xs={12} md={6}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4
-                            }}>
-                                <Box sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    mb: 2
-                                }}>
-                                    <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
-                                    <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
-                                        Recommendations
+                                    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
+                                        {totalScore}
+                                    </Typography>
+                                    <Typography variant="h5" sx={{color: '#4A5568'}}>
+                                        out of 80
                                     </Typography>
                                 </Box>
+                            </Box>
 
-                                <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
-                                    {result.recommendations.map((rec, index) => (
-                                        <Box
-                                            key={index}
-                                            sx={{
-                                                p: 2.5,
-                                                borderRadius: 2,
-                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
-                                                border: '1px solid rgba(245, 129, 30, 0.1)',
-                                                transition: 'transform 0.2s',
-                                                '&:hover': {
-                                                    transform: 'translateY(-2px)',
-                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                                }
-                                            }}
-                                        >
-                                            <Typography
-                                                variant="h6"
-                                                sx={{
-                                                    color: '#F5811E',
-                                                    fontSize: "19px",
-                                                    fontWeight: 600,
-                                                    mb: 1,
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    gap: 1
-                                                }}
-                                            >
-                                                <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
-                                                {rec.title}
-                                            </Typography>
-                                            <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>
-                                                {rec.description}
-                                            </Typography>
-                                        </Box>
-                                    ))}
-                                </Box>
-                            </Card>
-                        </Grid>
-                    </Grid>
+                            <Typography
+                                variant="h5"
+                                sx={{
+                                    color: '#F5811E',
+                                    fontWeight: 600,
+                                    mb: 2,
+                                    textAlign: 'center',
+                                }}
+                            >
+                                {result.level}
+                            </Typography>
+                        </Box>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                p: 2.5,
+                                borderRadius: 2,
+                                bgcolor: 'rgb(227,234,246)',
+                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                transition: 'transform 0.2s',
+                                textAlign: "justify",
+                                '&:hover': {
+                                    transform: 'translateY(-2px)',
+                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                }
+                            }}
+                        >
+                            {result.interpretation}
+                        </Typography>
+                    </Card>
 
-                    {/* Action Buttons */
-                    }
+                    {/* Action Buttons */}
                     <Box sx={{
                         display: 'flex',
                         gap: 2,

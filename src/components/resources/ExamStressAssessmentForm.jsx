@@ -21,8 +21,8 @@ import {useNavigate} from "react-router-dom";
 const organization = [
     {id: 1, name: "Organization A"},
     {id: 2, name: "Organization B"},
-    {id: 2, name: "Organization C"},
-    {id: 2, name: "Organization D"}
+    {id: 3, name: "Organization C"},
+    {id: 4, name: "Organization D"}
 ];
 
 

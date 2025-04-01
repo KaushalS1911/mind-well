@@ -40,54 +40,54 @@ function Assessments() {
             title: "Exam Stress Gauge\n" +
                 "(Age 18-21)",
             description: "Evaluate your anxiety levels and identify potential triggers.",
-            questions: "7 questions",
-            time: "~ 5 min quiz",
+            questions: "20 questions",
+            time: "~ 10 min",
         },
         {
             img: img2,
             title: "SHAPE K-12",
             description: "Assess symptoms of depression and their impact on daily life.",
-            questions: "9 questions",
-            time: "~ 5 min quiz",
+            questions: "17 questions",
+            time: "~ 8 min",
         },
         {
             img: img3,
             title: "General Stress and Anxiety",
             description: "Measure your current stress levels and coping mechanisms.",
-            questions: "5 questions",
-            time: "~ 5 min quiz",
+            questions: "12 questions",
+            time: "~ 6 min",
         },
         {
             img: img4,
             title: "Emotional Awareness and Regulation\n" +
                 "(Age 4-10)",
             description: "Understand your emotional intelligence and self-awareness.",
-            questions: "6 questions",
-            time: "~ 5 min quiz",
+            questions: "15 questions",
+            time: "~ 7 min",
         },
         {
             img: img5,
             title: "Academic Stress\n" +
                 "(Age 16-25)",
             description: "Analyze stress levels related to academic pressure and workload.",
-            questions: "8 questions",
-            time: "~ 5 min quiz",
+            questions: "20 questions",
+            time: "~ 10 min",
         },
         {
             img: img6,
             title: "Self-Esteem Scale for Pre-Adolescents\n" +
                 "(Age 11-13)",
             description: "Measure your self-esteem and confidence levels.",
-            questions: "10 questions",
-            time: "~ 5 min quiz",
+            questions: "20 questions",
+            time: "~ 10 min",
         },
         {
             img: img7,
             title: "Work-Life Balance\n" +
                 "(Age 21+)",
             description: "Evaluate your balance between work and personal life.",
-            questions: "7 questions",
-            time: "~ 5 min quiz",
+            questions: "15 questions",
+            time: "~ 7 min",
         },
     ];
 

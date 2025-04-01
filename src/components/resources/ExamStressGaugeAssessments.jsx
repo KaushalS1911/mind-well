@@ -15,7 +15,6 @@ import {styled} from '@mui/material/styles';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import img1 from "../../assets/images/Resources/Assessments/Exam_Stress.jpg";
 import {useNavigate} from 'react-router-dom';
 

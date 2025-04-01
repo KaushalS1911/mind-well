@@ -13,16 +13,12 @@ import {
     CircularProgress,
     Grid,
     Card,
-    Divider
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
-import GaugeChart from 'react-gauge-chart';
-import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
-import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -222,22 +218,6 @@ const questions = [
             {label: "Don’t Know", value: "2"}
         ]
     }
-];
-
-const options = [
-    {value: 4, label: 'Always'},
-    {value: 3, label: 'Often'},
-    {value: 2, label: 'Sometimes'},
-    {value: 1, label: 'Rarely'},
-    {value: 0, label: 'Never'},
-];
-
-const options2 = [
-    {value: 0, label: 'Not at all'},
-    {value: 1, label: 'Slightly'},
-    {value: 2, label: 'Moderately'},
-    {value: 3, label: 'A lot'},
-    {value: 4, label: 'Extremely'},
 ];
 
 const getScoreCategory = (score) => {
@@ -488,14 +468,7 @@ const ShapeK12Questions = () => {
         }
     };
 
-    const handleRestart = () => {
-        setCurrentQuestion(0);
-        setAnswers(Array(20).fill(''));
-        setShowResults(false);
-    };
-
     const progress = ((currentQuestion + 1) / questions.length) * 100;
-    const scoreCategory = getScoreCategory(totalScore);
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
@@ -529,166 +502,98 @@ const ShapeK12Questions = () => {
 
                     </Box>
 
-                    {/*<Grid container spacing={4}>*/}
-                        {/* Score Display Section */}
-                        {/*<Grid item xs={12} md={6}>*/}
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4,
+                    <Card sx={{
+                        p: 4,
+                        height: '100%',
+                        background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                        borderRadius: 4,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: "space-between"
+                    }}>
+                        <Box>
+                            <Box sx={{
+                                position: 'relative',
                                 display: 'flex',
-                                flexDirection: 'column',
+                                justifyContent: 'center',
                                 alignItems: 'center',
-                                justifyContent: "space-between"
+                                mb: 3
                             }}>
-                                <Box>
-                                    <Box sx={{
-                                        position: 'relative',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        mb: 3
-                                    }}>
-                                        <CircularProgress
-                                            variant="determinate"
-                                            value={percentage}
-                                            size={200}
-                                            thickness={4}
-                                            sx={{
-                                                color: totalScore >= 61 ? '#ff4d4d' :
-                                                    totalScore >= 41 ? '#ffa500' :
-                                                        totalScore >= 21 ? '#ffff00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
-                                            }}
-                                        />
-                                        {/*<CircularProgress*/}
-                                        {/*    variant="determinate"*/}
-                                        {/*    value={percentage}*/}
-                                        {/*    size={200}*/}
-                                        {/*    thickness={4}*/}
-                                        {/*    sx={{*/}
-                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                        {/*                totalScore >= 21 ? '#ffff00' :*/}
-                                        {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
-                                        {/*        position: 'absolute',*/}
-                                        {/*        left: 34,*/}
-                                        {/*    }}*/}
-                                        {/*/>*/}
-                                        <Box
-                                            sx={{
-                                                position: 'absolute',
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'center',
-                                            }}
-                                        >
-                                            <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                                {totalScore}
-                                            </Typography>
-                                            <Typography variant="h5" sx={{color: '#4A5568'}}>
-                                                out of 80
-                                            </Typography>
-                                        </Box>
-                                    </Box>
-
-                                    <Typography
-                                        variant="h5"
-                                        sx={{
-                                            color: '#F5811E',
-                                            fontWeight: 600,
-                                            mb: 2,
-                                            textAlign: 'center',
-                                        }}
-                                    >
-                                        {result.level}
-                                    </Typography>
-                                </Box>
-                                <Typography
-                                    variant="body1"
+                                <CircularProgress
+                                    variant="determinate"
+                                    value={percentage}
+                                    size={200}
+                                    thickness={4}
                                     sx={{
-                                        p: 2.5,
-                                        borderRadius: 2,
-                                        bgcolor: 'rgb(227,234,246)',
-                                        border: '1px solid rgba(245, 129, 30, 0.1)',
-                                        transition: 'transform 0.2s',
-                                        textAlign: "justify",
-                                        '&:hover': {
-                                            transform: 'translateY(-2px)',
-                                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                        }
+                                        color: totalScore >= 61 ? '#ff4d4d' :
+                                            totalScore >= 41 ? '#ffa500' :
+                                                totalScore >= 21 ? '#ffff00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
+                                    }}
+                                />
+                                {/*<CircularProgress*/}
+                                {/*    variant="determinate"*/}
+                                {/*    value={percentage}*/}
+                                {/*    size={200}*/}
+                                {/*    thickness={4}*/}
+                                {/*    sx={{*/}
+                                {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                {/*                totalScore >= 21 ? '#ffff00' :*/}
+                                {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
+                                {/*        position: 'absolute',*/}
+                                {/*        left: 34,*/}
+                                {/*    }}*/}
+                                {/*/>*/}
+                                <Box
+                                    sx={{
+                                        position: 'absolute',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
                                     }}
                                 >
-                                    {result.interpretation}
-                                </Typography>
-                            </Card>
-                        {/*</Grid>*/}
+                                    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
+                                        {totalScore}
+                                    </Typography>
+                                    <Typography variant="h5" sx={{color: '#4A5568'}}>
+                                        out of 80
+                                    </Typography>
+                                </Box>
+                            </Box>
 
-                        {/* Recommendations Section */
-                        }
-                        {/*<Grid item xs={12} md={6}>*/}
-                        {/*    <Card sx={{*/}
-                        {/*        p: 4,*/}
-                        {/*        height: '100%',*/}
-                        {/*        background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',*/}
-                        {/*        boxShadow: '0 8px 32px rgba(0,0,0,0.1)',*/}
-                        {/*        borderRadius: 4*/}
-                        {/*    }}>*/}
-                        {/*        <Box sx={{*/}
-                        {/*            display: 'flex',*/}
-                        {/*            alignItems: 'center',*/}
-                        {/*            mb: 2*/}
-                        {/*        }}>*/}
-                        {/*            <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>*/}
-                        {/*            <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>*/}
-                        {/*                Recommendations*/}
-                        {/*            </Typography>*/}
-                        {/*        </Box>*/}
+                            <Typography
+                                variant="h5"
+                                sx={{
+                                    color: '#F5811E',
+                                    fontWeight: 600,
+                                    mb: 2,
+                                    textAlign: 'center',
+                                }}
+                            >
+                                {result.level}
+                            </Typography>
+                        </Box>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                p: 2.5,
+                                borderRadius: 2,
+                                bgcolor: 'rgb(227,234,246)',
+                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                transition: 'transform 0.2s',
+                                textAlign: "justify",
+                                '&:hover': {
+                                    transform: 'translateY(-2px)',
+                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                }
+                            }}
+                        >
+                            {result.interpretation}
+                        </Typography>
+                    </Card>
 
-                        {/*        <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>*/}
-                        {/*            {result.recommendations.map((rec, index) => (*/}
-                        {/*                <Box*/}
-                        {/*                    key={index}*/}
-                        {/*                    sx={{*/}
-                        {/*                        p: 2.5,*/}
-                        {/*                        borderRadius: 2,*/}
-                        {/*                        bgcolor: 'rgba(245, 129, 30, 0.05)',*/}
-                        {/*                        border: '1px solid rgba(245, 129, 30, 0.1)',*/}
-                        {/*                        transition: 'transform 0.2s',*/}
-                        {/*                        '&:hover': {*/}
-                        {/*                            transform: 'translateY(-2px)',*/}
-                        {/*                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'*/}
-                        {/*                        }*/}
-                        {/*                    }}*/}
-                        {/*                >*/}
-                        {/*                    <Typography*/}
-                        {/*                        variant="h6"*/}
-                        {/*                        sx={{*/}
-                        {/*                            color: '#F5811E',*/}
-                        {/*                            fontSize: "19px",*/}
-                        {/*                            fontWeight: 600,*/}
-                        {/*                            mb: 1,*/}
-                        {/*                            display: 'flex',*/}
-                        {/*                            alignItems: 'center',*/}
-                        {/*                            gap: 1*/}
-                        {/*                        }}*/}
-                        {/*                    >*/}
-                        {/*                        <AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
-                        {/*                        {rec.title}*/}
-                        {/*                    </Typography>*/}
-                        {/*                    <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>*/}
-                        {/*                        {rec.description}*/}
-                        {/*                    </Typography>*/}
-                        {/*                </Box>*/}
-                        {/*            ))}*/}
-                        {/*        </Box>*/}
-                        {/*    </Card>*/}
-                        {/*</Grid>*/}
-                    {/*</Grid>*/}
-
-                    {/* Action Buttons */
-                    }
                     <Box sx={{
                         display: 'flex',
                         gap: 2,
