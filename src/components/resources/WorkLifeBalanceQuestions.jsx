@@ -452,7 +452,7 @@ const WorkLifeBalanceQuestions = () => {
                                             sx={{
                                                 color: totalScore >= 61 ? '#ff4d4d' :
                                                     totalScore >= 41 ? '#ffa500' :
-                                                        totalScore >= 21 ? '#ffff00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
+                                                        totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
                                             }}
                                         />
                                         {/*<CircularProgress*/}
