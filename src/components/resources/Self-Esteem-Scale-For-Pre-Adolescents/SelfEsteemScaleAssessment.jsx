@@ -5,7 +5,7 @@ import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import img2 from "../../assets/images/Resources/Assessments/Shape_K12.jpeg";
+import img6 from "../../../assets/images/Resources/Assessments/Self_Esteem_Scale.jpg";
 import {useNavigate} from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
@@ -38,11 +38,11 @@ const StartButton = styled(Button)(({theme}) => ({
     },
 }));
 
-const ShapeK12Assessment = () => {
+const SelfEsteemScaleAssessment = () => {
     const navigate = useNavigate();
 
     const handleStartAssessment = () => {
-        navigate('/assessments/shape-k12/shape-child-form');
+        navigate('/assessments/self-esteem-scale/self-assessment-form');
     };
 
     return (
@@ -63,7 +63,7 @@ const ShapeK12Assessment = () => {
                         }}>
                             <Box sx={{display: 'flex', alignItems: 'center', mb: 3}}>
                                 <img
-                                    src={img2}
+                                    src={img6}
                                     alt="General Stress and Anxiety"
                                     style={{
                                         width: '64px',
@@ -72,14 +72,14 @@ const ShapeK12Assessment = () => {
                                         marginRight: '16px',
                                     }}
                                 />
-                                <Box className={"Montserrat"} variant="h4" sx={{
+                                <Typography className={"Montserrat"} variant="h4" sx={{
                                     fontWeight: 700,
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
                                     fontSize: {xs: '24px', sm: '28px', md: '32px'},
                                 }}>
-                                    SHAPE K-12
-                                </Box>
+                                    Self-Esteem Scale for Pre-Adolescents (Age 11-13)
+                                </Typography>
                             </Box>
 
                             <Typography sx={{
@@ -208,4 +208,4 @@ const ShapeK12Assessment = () => {
     );
 };
 
-export default ShapeK12Assessment;
+export default SelfEsteemScaleAssessment;

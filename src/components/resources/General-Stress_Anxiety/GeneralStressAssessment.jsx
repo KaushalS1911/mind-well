@@ -1,21 +1,11 @@
-import React, {useState} from 'react';
-import {
-    Box,
-    Container,
-    Typography,
-    Button,
-    Grid,
-    Paper,
-    FormLabel,
-    RadioGroup,
-    FormControlLabel,
-    Radio, Checkbox
-} from '@mui/material';
+import React from 'react';
+import {Box, Container, Typography, Button, Grid, Paper} from '@mui/material';
 import {styled} from '@mui/material/styles';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
-import img1 from "../../assets/images/Resources/Assessments/Exam_Stress.jpg";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import img3 from "../../../assets/images/Resources/Assessments/General_Stress_Anxiety.jpeg";
 import {useNavigate} from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
@@ -48,23 +38,16 @@ const StartButton = styled(Button)(({theme}) => ({
     },
 }));
 
-const ExamStressGaugeAssessments = () => {
+const GeneralStressAssessment = () => {
     const navigate = useNavigate();
-    const [check, setCheck] = useState()
-    const [language, setLanguage] = useState()
 
-    // const handleStartAssessment = () => {
-    //     navigate('/assessments/exam-stress/questions');
-    // };
-
-    const handleChange = (e) => {
-        setLanguage(e.target.checked)
-        sessionStorage.setItem("language", e.target.value)
-    }
+    const handleStartAssessment = () => {
+        navigate('/assessments/general-stress/general-assessment-form');
+    };
 
     return (
         <Box sx={{
-            minHeight: 'calc(100vh - 72px)',
+            minHeight: 'calc(100vh - 72px)', // Full viewport height minus navbar
             display: 'flex',
             alignItems: 'center',
             backgroundColor: '#F3F4F6',
@@ -80,7 +63,7 @@ const ExamStressGaugeAssessments = () => {
                         }}>
                             <Box sx={{display: 'flex', alignItems: 'center', mb: 3}}>
                                 <img
-                                    src={img1}
+                                    src={img3}
                                     alt="General Stress and Anxiety"
                                     style={{
                                         width: '64px',
@@ -93,9 +76,9 @@ const ExamStressGaugeAssessments = () => {
                                     fontWeight: 700,
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
-                                    fontSize: {xs: '24px', sm: '28px', md: '32px'},
+                                    fontSize: {xs: '24px', sm: '28px', md: '32px'}, // Responsive font size
                                 }}>
-                                    Exam Stress Gauge (Age 18-21)
+                                    General Stress and Anxiety Assessment
                                 </Typography>
                             </Box>
 
@@ -111,7 +94,7 @@ const ExamStressGaugeAssessments = () => {
                                 responses will help us understand your situation better and offer appropriate guidance.
                             </Typography>
 
-                            <Box sx={{mb: 2}}>
+                            <Box sx={{mb: 4}}>
                                 <IconBox>
                                     <TimerOutlinedIcon/>
                                     <Typography sx={{color: '#012765', fontFamily: 'Poppins'}}>
@@ -131,87 +114,20 @@ const ExamStressGaugeAssessments = () => {
                                     </Typography>
                                 </IconBox>
                             </Box>
-                            <Box display={{sm: "flex"}} alignItems="center" margin="normal" my={2}
-                                 sx={{fontWeight: 700}} className={"overpass"}>
-                                <FormLabel sx={{color: '#012765', fontFamily: 'Poppins'}}>Language
-                                    :</FormLabel>
-                                <RadioGroup
-                                    onChange={handleChange}
-                                    row
-                                >
-                                    <FormControlLabel value="english" control={<Radio/>} label="English"
-                                                      sx={{color: "#012765", ml: 1}}/>
-                                    <FormControlLabel value="hindi" control={<Radio/>} label="Hindi"
-                                                      sx={{color: "#012765"}}/>
-                                </RadioGroup>
-                            </Box>
-                            <Box sx={{display: "flex", alignItems: "center"}}>
-                                <Checkbox onChange={(e) => setCheck(e.target.checked)}/>
-                                <Box sx={{
-                                    color: "#012765",
-                                }}>
-                                    I accept the terms and conditions outlined above.
-                                </Box>
-                            </Box>
-                            <Box sx={{display: {sm: "flex"}, justifyContent: "end"}}>
-                                <Box sx={{mt: "20px", display: {sm: "flex"}, justifyContent: "end"}}>
-                                    <Button
-                                        onClick={() => navigate('/resources?scrollTo=assessments')}
-                                        sx={{
-                                            backgroundColor: "#FF7F1E",
-                                            py: "5px",
-                                            px: "28px",
-                                            textTransform: "unset",
-                                            fontSize: "18px",
-                                            color: "white",
-                                            borderRadius: "0.375rem",
-                                            "&:hover": {
-                                                backgroundColor: "#DA5E05",
-                                            },
-                                            mt: "10px",
-                                            marginRight: 1,
-                                            width: {xs: "100%", sm: "unset"}
-                                        }}
-                                    >
-                                        Cancel
-                                    </Button>
-                                    <Button
-                                        onClick={() => navigate("/assessments/exam-stress/assessment-form")}
-                                        disabled={check && language === true ? false : true}
-                                        sx={{
-                                            backgroundColor: "#FF7F1E",
-                                            py: "5px",
-                                            px: "28px",
-                                            textTransform: "unset",
-                                            fontSize: "18px",
-                                            color: "white",
-                                            borderRadius: "0.375rem",
-                                            "&:hover": {
-                                                backgroundColor: "#DA5E05",
-                                            },
-                                            mt: "10px",
-                                            width: {xs: "100%", sm: "unset"}
-                                        }}
-                                    >
-                                        I Agree
-                                    </Button>
-                                </Box>
 
-                            </Box>
-
-                            {/*<StartButton*/}
-                            {/*    variant="contained"*/}
-                            {/*    endIcon={<ArrowForwardIcon />}*/}
-                            {/*    onClick={handleStartAssessment}*/}
-                            {/*>*/}
-                            {/*    Start Assessment*/}
-                            {/*</StartButton>*/}
+                            <StartButton
+                                variant="contained"
+                                endIcon={<ArrowForwardIcon/>}
+                                onClick={handleStartAssessment}
+                            >
+                                Start Assessment
+                            </StartButton>
                         </StyledPaper>
                     </Grid>
 
                     {/* Right Column - Additional Info */}
                     <Grid item xs={12} md={4}>
-                        <StyledPaper sx={{height: '100%'}}>
+                        <StyledPaper>
                             <Typography className={"Montserrat"} variant="h6" sx={{
                                 mb: 2,
                                 color: '#012765',
@@ -292,4 +208,4 @@ const ExamStressGaugeAssessments = () => {
     );
 };
 
-export default ExamStressGaugeAssessments;
+export default GeneralStressAssessment; 

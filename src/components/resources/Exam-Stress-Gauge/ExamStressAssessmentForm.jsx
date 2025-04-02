@@ -34,22 +34,14 @@ function ExamStressAssessmentForm() {
 
     const formik = useFormik({
         initialValues: {
-            organization: '',
-            admissionId: '',
             fullName: '',
-            phone: '',
             email: '',
             age: '',
-            gender: ''
         },
         validationSchema: Yup.object({
-            organization: Yup.string().required("Organization is required"),
-            admissionId: Yup.string().required("Admission ID is required"),
             fullName: Yup.string().required("Full Name is required"),
-            phone: Yup.string().required("Phone is required"),
             email: Yup.string().email("Invalid email").required("Email is required"),
             age: Yup.number().required("Age is required"),
-            gender: Yup.string().required("Gender is required"),
         }),
         onSubmit: () => {
             navigate("/assessments/exam-stress/questions");
@@ -79,53 +71,53 @@ function ExamStressAssessmentForm() {
                     borderRadius: "10px"
                 }}>
                     <form onSubmit={formik.handleSubmit}>
-                        <FormControl
-                            fullWidth
-                            margin="normal"
-                            error={formik.touched.organization && Boolean(formik.errors.organization)}
-                            sx={{
-                                "& label.Mui-focused": {color: "#FF7F1E"},
-                                "& .MuiOutlinedInput-root": {
-                                    "& fieldset": {borderColor: "#FF7F1E"},
-                                    "&:hover fieldset": {borderColor: "#FF7F1E"},
-                                    "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
-                                },
-                            }}
-                        >
-                            <InputLabel>Organization</InputLabel>
-                            <Select
-                                input={<OutlinedInput label="Organization"/>}
-                                name="organization"
-                                value={formik.values.organization}
-                                onChange={formik.handleChange}
-                            >
-                                {organization.map((option) => (
-                                    <MenuItem key={option.id} value={option.id}>{option.name}</MenuItem>
-                                ))}
-                            </Select>
-                            {formik.touched.organization && formik.errors.organization && (
-                                <FormHelperText>{formik.errors.organization}</FormHelperText>
-                            )}
-                        </FormControl>
+                        {/*<FormControl*/}
+                        {/*    fullWidth*/}
+                        {/*    margin="normal"*/}
+                        {/*    error={formik.touched.organization && Boolean(formik.errors.organization)}*/}
+                        {/*    sx={{*/}
+                        {/*        "& label.Mui-focused": {color: "#FF7F1E"},*/}
+                        {/*        "& .MuiOutlinedInput-root": {*/}
+                        {/*            "& fieldset": {borderColor: "#FF7F1E"},*/}
+                        {/*            "&:hover fieldset": {borderColor: "#FF7F1E"},*/}
+                        {/*            "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},*/}
+                        {/*        },*/}
+                        {/*    }}*/}
+                        {/*>*/}
+                        {/*    <InputLabel>Organization</InputLabel>*/}
+                        {/*    <Select*/}
+                        {/*        input={<OutlinedInput label="Organization"/>}*/}
+                        {/*        name="organization"*/}
+                        {/*        value={formik.values.organization}*/}
+                        {/*        onChange={formik.handleChange}*/}
+                        {/*    >*/}
+                        {/*        {organization.map((option) => (*/}
+                        {/*            <MenuItem key={option.id} value={option.id}>{option.name}</MenuItem>*/}
+                        {/*        ))}*/}
+                        {/*    </Select>*/}
+                        {/*    {formik.touched.organization && formik.errors.organization && (*/}
+                        {/*        <FormHelperText>{formik.errors.organization}</FormHelperText>*/}
+                        {/*    )}*/}
+                        {/*</FormControl>*/}
 
-                        <TextField
-                            fullWidth
-                            margin="normal"
-                            label="Admission ID"
-                            name="admissionId"
-                            value={formik.values.admissionId}
-                            onChange={formik.handleChange}
-                            error={formik.touched.admissionId && Boolean(formik.errors.admissionId)}
-                            helperText={formik.touched.admissionId && formik.errors.admissionId}
-                            sx={{
-                                "& label.Mui-focused": {color: "#FF7F1E"},
-                                "& .MuiOutlinedInput-root": {
-                                    "& fieldset": {borderColor: "#FF7F1E"},
-                                    "&:hover fieldset": {borderColor: "#FF7F1E"},
-                                    "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
-                                },
-                            }}
-                        />
+                        {/*<TextField*/}
+                        {/*    fullWidth*/}
+                        {/*    margin="normal"*/}
+                        {/*    label="Admission ID"*/}
+                        {/*    name="admissionId"*/}
+                        {/*    value={formik.values.admissionId}*/}
+                        {/*    onChange={formik.handleChange}*/}
+                        {/*    error={formik.touched.admissionId && Boolean(formik.errors.admissionId)}*/}
+                        {/*    helperText={formik.touched.admissionId && formik.errors.admissionId}*/}
+                        {/*    sx={{*/}
+                        {/*        "& label.Mui-focused": {color: "#FF7F1E"},*/}
+                        {/*        "& .MuiOutlinedInput-root": {*/}
+                        {/*            "& fieldset": {borderColor: "#FF7F1E"},*/}
+                        {/*            "&:hover fieldset": {borderColor: "#FF7F1E"},*/}
+                        {/*            "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},*/}
+                        {/*        },*/}
+                        {/*    }}*/}
+                        {/*/>*/}
 
 
                         <TextField color="#FF7F1E" fullWidth margin="normal" label="Full Name" name="fullName"
@@ -181,18 +173,18 @@ function ExamStressAssessmentForm() {
                         </FormControl>
 
 
-                        <TextField color="#FF7F1E" fullWidth margin="normal" label="Phone" name="phone"
-                                   value={formik.values.phone} onChange={formik.handleChange}
-                                   error={formik.touched.phone && Boolean(formik.errors.phone)}
-                                   helperText={formik.touched.phone && formik.errors.phone}
-                                   sx={{
-                                       "& label.Mui-focused": {color: "#FF7F1E"},
-                                       "& .MuiOutlinedInput-root": {
-                                           "& fieldset": {borderColor: "#FF7F1E"},
-                                           "&:hover fieldset": {borderColor: "#FF7F1E"},
-                                           "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
-                                       },
-                                   }}/>
+                        {/*<TextField color="#FF7F1E" fullWidth margin="normal" label="Phone" name="phone"*/}
+                        {/*           value={formik.values.phone} onChange={formik.handleChange}*/}
+                        {/*           error={formik.touched.phone && Boolean(formik.errors.phone)}*/}
+                        {/*           helperText={formik.touched.phone && formik.errors.phone}*/}
+                        {/*           sx={{*/}
+                        {/*               "& label.Mui-focused": {color: "#FF7F1E"},*/}
+                        {/*               "& .MuiOutlinedInput-root": {*/}
+                        {/*                   "& fieldset": {borderColor: "#FF7F1E"},*/}
+                        {/*                   "&:hover fieldset": {borderColor: "#FF7F1E"},*/}
+                        {/*                   "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},*/}
+                        {/*               },*/}
+                        {/*           }}/>*/}
 
                         <TextField color="#FF7F1E" fullWidth margin="normal" label="Email" name="email"
                                    value={formik.values.email} onChange={formik.handleChange}
@@ -209,18 +201,18 @@ function ExamStressAssessmentForm() {
                         />
 
 
-                        <Box display="flex" alignItems="center" marginTop={2}>
-                            <FormLabel component="legend" sx={{marginRight: '1rem', color: "#012765"}}>Gender
-                                :</FormLabel>
-                            <RadioGroup name="gender" value={formik.values.gender} onChange={formik.handleChange}
-                                        row>
-                                <FormControlLabel value="male" sx={{color: "#012765"}} control={<Radio/>} label="Male"/>
-                                <FormControlLabel value="female" sx={{color: "#012765"}} control={<Radio/>}
-                                                  label="Female"/>
-                                <FormControlLabel value="other" sx={{color: "#012765"}} control={<Radio/>}
-                                                  label="Other"/>
-                            </RadioGroup>
-                        </Box>
+                        {/*<Box display="flex" alignItems="center" marginTop={2}>*/}
+                        {/*    <FormLabel component="legend" sx={{marginRight: '1rem', color: "#012765"}}>Gender*/}
+                        {/*        :</FormLabel>*/}
+                        {/*    <RadioGroup name="gender" value={formik.values.gender} onChange={formik.handleChange}*/}
+                        {/*                row>*/}
+                        {/*        <FormControlLabel value="male" sx={{color: "#012765"}} control={<Radio/>} label="Male"/>*/}
+                        {/*        <FormControlLabel value="female" sx={{color: "#012765"}} control={<Radio/>}*/}
+                        {/*                          label="Female"/>*/}
+                        {/*        <FormControlLabel value="other" sx={{color: "#012765"}} control={<Radio/>}*/}
+                        {/*                          label="Other"/>*/}
+                        {/*    </RadioGroup>*/}
+                        {/*</Box>*/}
                         {formik.touched.gender && formik.errors.gender && (
                             <div style={{color: "red"}}>{formik.errors.gender}</div>
                         )}

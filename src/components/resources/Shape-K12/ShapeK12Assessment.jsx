@@ -5,7 +5,7 @@ import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import img3 from "../../assets/images/Resources/Assessments/General_Stress_Anxiety.jpeg";
+import img2 from "../../../assets/images/Resources/Assessments/Shape_K12.jpeg";
 import {useNavigate} from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
@@ -38,16 +38,16 @@ const StartButton = styled(Button)(({theme}) => ({
     },
 }));
 
-const GeneralStressAssessment = () => {
+const ShapeK12Assessment = () => {
     const navigate = useNavigate();
 
     const handleStartAssessment = () => {
-        navigate('/assessments/general-stress/questions');
+        navigate('/assessments/shape-k12/shape-child-form');
     };
 
     return (
         <Box sx={{
-            minHeight: 'calc(100vh - 72px)', // Full viewport height minus navbar
+            minHeight: 'calc(100vh - 72px)',
             display: 'flex',
             alignItems: 'center',
             backgroundColor: '#F3F4F6',
@@ -63,7 +63,7 @@ const GeneralStressAssessment = () => {
                         }}>
                             <Box sx={{display: 'flex', alignItems: 'center', mb: 3}}>
                                 <img
-                                    src={img3}
+                                    src={img2}
                                     alt="General Stress and Anxiety"
                                     style={{
                                         width: '64px',
@@ -72,14 +72,14 @@ const GeneralStressAssessment = () => {
                                         marginRight: '16px',
                                     }}
                                 />
-                                <Typography className={"Montserrat"} variant="h4" sx={{
+                                <Box className={"Montserrat"} variant="h4" sx={{
                                     fontWeight: 700,
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
-                                    fontSize: {xs: '24px', sm: '28px', md: '32px'}, // Responsive font size
+                                    fontSize: {xs: '24px', sm: '28px', md: '32px'},
                                 }}>
-                                    General Stress and Anxiety Assessment
-                                </Typography>
+                                    SHAPE K-12
+                                </Box>
                             </Box>
 
                             <Typography sx={{
@@ -208,4 +208,4 @@ const GeneralStressAssessment = () => {
     );
 };
 
-export default GeneralStressAssessment; 
+export default ShapeK12Assessment;

@@ -5,7 +5,7 @@ import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import img4 from "../../assets/images/Resources/Assessments/Emotional_Awareness.jpg";
+import img5 from "../../../assets/images/Resources/Assessments/Academic_Stress.jpg";
 import { useNavigate } from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
@@ -38,11 +38,11 @@ const StartButton = styled(Button)(({ theme }) => ({
     },
 }));
 
-const EmotionalAwarenessAssessment = () => {
+const AcademicStressAssessment = () => {
     const navigate = useNavigate();
 
     const handleStartAssessment = () => {
-        navigate('/assessments/emotional-awareness/questions');
+        navigate('/assessments/academic-stress/academic-assessment-form');
     };
 
     return (
@@ -63,7 +63,7 @@ const EmotionalAwarenessAssessment = () => {
                         }}>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                                 <img
-                                    src={img4}
+                                    src={img5}
                                     alt="General Stress and Anxiety"
                                     style={{
                                         width: '64px',
@@ -78,7 +78,7 @@ const EmotionalAwarenessAssessment = () => {
                                     fontFamily: 'Montserrat',
                                     fontSize: { xs: '24px', sm: '28px', md: '32px' },
                                 }}>
-                                    Emotional Awareness and Regulation (Age 4-10)
+                                    Academic Stress (Age 16-25)
                                 </Typography>
                             </Box>
 
@@ -205,4 +205,4 @@ const EmotionalAwarenessAssessment = () => {
     );
 };
 
-export default EmotionalAwarenessAssessment;
+export default AcademicStressAssessment;

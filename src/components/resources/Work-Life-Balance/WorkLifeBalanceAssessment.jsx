@@ -5,7 +5,7 @@ import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import img6 from "../../assets/images/Resources/Assessments/Self_Esteem_Scale.jpg";
+import img7 from "../../../assets/images/Resources/Assessments/Work_Life_Balance.jpg";
 import {useNavigate} from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
@@ -38,11 +38,11 @@ const StartButton = styled(Button)(({theme}) => ({
     },
 }));
 
-const SelfEsteemScaleAssessment = () => {
+const WorkLifeBalanceAssessment = () => {
     const navigate = useNavigate();
 
     const handleStartAssessment = () => {
-        navigate('/assessments/self-esteem-scale/questions');
+        navigate('/assessments/work-life-balance/work-assessment-form');
     };
 
     return (
@@ -63,7 +63,7 @@ const SelfEsteemScaleAssessment = () => {
                         }}>
                             <Box sx={{display: 'flex', alignItems: 'center', mb: 3}}>
                                 <img
-                                    src={img6}
+                                    src={img7}
                                     alt="General Stress and Anxiety"
                                     style={{
                                         width: '64px',
@@ -72,14 +72,14 @@ const SelfEsteemScaleAssessment = () => {
                                         marginRight: '16px',
                                     }}
                                 />
-                                <Typography className={"Montserrat"} variant="h4" sx={{
+                                <Box className={"Montserrat"} variant="h4" sx={{
                                     fontWeight: 700,
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
                                     fontSize: {xs: '24px', sm: '28px', md: '32px'},
                                 }}>
-                                    Self-Esteem Scale for Pre-Adolescents (Age 11-13)
-                                </Typography>
+                                    Work-Life Balance (Age 21+)
+                                </Box>
                             </Box>
 
                             <Typography sx={{
@@ -208,4 +208,4 @@ const SelfEsteemScaleAssessment = () => {
     );
 };
 
-export default SelfEsteemScaleAssessment;
+export default WorkLifeBalanceAssessment;

@@ -13,7 +13,7 @@ import {
     CircularProgress,
     Grid,
     Card,
-    Divider
+    Divider, Dialog, DialogActions
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -22,6 +22,8 @@ import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
+import {PDFViewer} from "@react-pdf/renderer";
+import PdfView from "../../global/pdf-view.jsx";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -62,204 +64,204 @@ const questions = [
             {label: "Always", value: "4"}
         ]
     },
-    {
-        id: 3,
-        text: " How much pressure do you feel to achieve high grades?",
-        options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "A lot", value: "3"},
-            {label: "Extremely", value: "4"}
-        ]
-    },
-    {
-        id: 4,
-        text: "How often do you experience physical symptoms (e.g., headaches, stomach aches) due to academic stress?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 5,
-        text: "How much does academic stress affect your sleep?",
-        options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "A lot", value: "3"},
-            {label: "Extremely", value: "4"}
-        ]
-    },
-    {
-        id: 6,
-        text: "How often do you feel anxious about exams or assignments?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 7,
-        text: "How frequently do you skip meals due to academic commitments?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 8,
-        text: "How often do you feel that you have too many assignments due at the same time?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 9,
-        text: "How much does academic stress interfere with your personal relationships?",
-        options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "A lot", value: "3"},
-            {label: "Extremely", value: "4"}
-        ]
-    },
-    {
-        id: 10,
-        text: "How often do you feel that your academic workload is unmanageable?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 11,
-        text: "How often do you use time management techniques (e.g., scheduling, to-do lists) to manage your academic work?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 12,
-        text: "How frequently do you seek help from professors or tutors when stressed about academics?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 13,
-        text: "How often do you take breaks to relax or engage in leisure activities while studying?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 14,
-        text: "How frequently do you use exercise as a way to cope with academic stress? ",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 15,
-        text: "How often do you talk to friends or family about your academic stress?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 16,
-        text: "How often do you use relaxation techniques (e.g., meditation, deep breathing) to manage stress? ",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 17,
-        text: "How frequently do you get adequate sleep during the academic term?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 18,
-        text: "How often do you plan and organize your study sessions in advance?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 19,
-        text: "How often do you participate in activities or hobbies to take your mind off academic stress?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 20,
-        text: "How frequently do you feel that your coping strategies are effective in managing your academic stress?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
+    // {
+    //     id: 3,
+    //     text: " How much pressure do you feel to achieve high grades?",
+    //     options: [
+    //         {label: "Not at all", value: "0"},
+    //         {label: "Slightly", value: "1"},
+    //         {label: "Moderately", value: "2"},
+    //         {label: "A lot", value: "3"},
+    //         {label: "Extremely", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 4,
+    //     text: "How often do you experience physical symptoms (e.g., headaches, stomach aches) due to academic stress?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 5,
+    //     text: "How much does academic stress affect your sleep?",
+    //     options: [
+    //         {label: "Not at all", value: "0"},
+    //         {label: "Slightly", value: "1"},
+    //         {label: "Moderately", value: "2"},
+    //         {label: "A lot", value: "3"},
+    //         {label: "Extremely", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 6,
+    //     text: "How often do you feel anxious about exams or assignments?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 7,
+    //     text: "How frequently do you skip meals due to academic commitments?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 8,
+    //     text: "How often do you feel that you have too many assignments due at the same time?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 9,
+    //     text: "How much does academic stress interfere with your personal relationships?",
+    //     options: [
+    //         {label: "Not at all", value: "0"},
+    //         {label: "Slightly", value: "1"},
+    //         {label: "Moderately", value: "2"},
+    //         {label: "A lot", value: "3"},
+    //         {label: "Extremely", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 10,
+    //     text: "How often do you feel that your academic workload is unmanageable?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 11,
+    //     text: "How often do you use time management techniques (e.g., scheduling, to-do lists) to manage your academic work?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 12,
+    //     text: "How frequently do you seek help from professors or tutors when stressed about academics?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 13,
+    //     text: "How often do you take breaks to relax or engage in leisure activities while studying?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 14,
+    //     text: "How frequently do you use exercise as a way to cope with academic stress? ",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 15,
+    //     text: "How often do you talk to friends or family about your academic stress?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 16,
+    //     text: "How often do you use relaxation techniques (e.g., meditation, deep breathing) to manage stress? ",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 17,
+    //     text: "How frequently do you get adequate sleep during the academic term?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 18,
+    //     text: "How often do you plan and organize your study sessions in advance?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 19,
+    //     text: "How often do you participate in activities or hobbies to take your mind off academic stress?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
+    // {
+    //     id: 20,
+    //     text: "How frequently do you feel that your coping strategies are effective in managing your academic stress?",
+    //     options: [
+    //         {label: "Never", value: "0"},
+    //         {label: "Rarely", value: "1"},
+    //         {label: "Sometimes", value: "2"},
+    //         {label: "Often", value: "3"},
+    //         {label: "Always", value: "4"}
+    //     ]
+    // },
 ];
 
 const getScoreCategory = (score) => {
@@ -483,6 +485,7 @@ const AcademicStressQuestions = () => {
     const [answers, setAnswers] = useState(Array(20).fill(''));
     const [showResults, setShowResults] = useState(false);
     const [totalScore, setTotalScore] = useState(0);
+    const [view, setView] = useState(false);
 
     const handleAnswerChange = (event) => {
         const newAnswers = [...answers];
@@ -518,6 +521,7 @@ const AcademicStressQuestions = () => {
         const percentage = (totalScore / 80) * 100;
 
         return (
+            <>
             <Container maxWidth="lg">
                 <Box
                     mt={12}
@@ -713,7 +717,7 @@ const AcademicStressQuestions = () => {
                     }}>
                         <Button
                             variant="outlined"
-                            onClick={() => navigate('/assessments/academic-stress')}
+                            onClick={() => setView(true)}
                             sx={{
                                 color: '#F5811E',
                                 borderColor: '#F5811E',
@@ -743,6 +747,21 @@ const AcademicStressQuestions = () => {
                     </Box>
                 </Box>
             </Container>
+                <Dialog fullScreen open={view}>
+                    <Box sx={{height: 1, display: 'flex', flexDirection: 'column'}}>
+                        <DialogActions sx={{p: 1.5}}>
+                            <Button color="inherit" variant="contained" onClick={() => setView(false)}>
+                                Close
+                            </Button>
+                        </DialogActions>
+                        <Box sx={{flexGrow: 1, height: 1, overflow: 'hidden'}}>
+                            <PDFViewer width="100%" height="100%" style={{border: 'none'}}>
+                                <PdfView data={{totalScore: totalScore,level: result.level,interpretation: result.interpretation}} />
+                            </PDFViewer>
+                        </Box>
+                    </Box>
+                </Dialog>
+            </>
         )
             ;
     }

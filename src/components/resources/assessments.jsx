@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Box, Grid, Container} from "@mui/material";
+import {Box, Grid, Container, TextField, DialogContent, DialogTitle, Dialog, Button, IconButton} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import BoltIcon from "@mui/icons-material/Bolt";
 import img1 from "../../assets/images/Resources/Assessments/Exam_Stress.jpg";
@@ -10,84 +10,92 @@ import img5 from "../../assets/images/Resources/Assessments/Academic_Stress.jpg"
 import img6 from "../../assets/images/Resources/Assessments/Self_Esteem_Scale.jpg";
 import img7 from "../../assets/images/Resources/Assessments/Work_Life_Balance.jpg";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import ShareIcon from '@mui/icons-material/Share';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Assessments() {
     const navigate = useNavigate();
     const [selectedIndex, setSelectedIndex] = useState(null);
+    const [open, setOpen] = useState(false);
+    const [assessmentUrl, setAssessmentUrl] = useState("");
 
     const handleAssessmentClick = (index) => {
         setSelectedIndex(index);
-        if (index === 0) {
-            navigate('/assessments/exam-stress');
-        } else if (index === 1) {
-            navigate('/assessments/shape-k12');
-        } else if (index === 2) {
-            navigate('/assessments/general-stress');
-        } else if (index === 3) {
-            navigate('/assessments/emotional-awareness');
-        } else if (index === 4) {
-            navigate('/assessments/academic-stress');
-        } else if (index === 5) {
-            navigate('/assessments/self-esteem-scale');
-        } else if (index === 6) {
-            navigate('/assessments/work-life-balance');
-        }
+        const url = assessments[index].url;
+        setAssessmentUrl(window.location.origin + url);
+        navigate(url);
     };
+
+    const handleOpen = (index) => {
+        const url = assessments[index].url;
+        setAssessmentUrl(window.location.origin + url);
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(assessmentUrl);
+        const notify = () => toast("Copied!");
+        notify();
+    };
+
 
     const assessments = [
         {
             img: img1,
-            title: "Exam Stress Gauge\n" +
-                "(Age 18-21)",
+            title: "Exam Stress Gauge",
+            subTitle: "(Age 18-21)",
             description: "Evaluate your anxiety levels and identify potential triggers.",
+            url: '/assessments/exam-stress',
             questions: "20 questions",
-            time: "~ 10 min",
-        },
-        {
-            img: img2,
-            title: "SHAPE K-12",
-            description: "Assess symptoms of depression and their impact on daily life.",
-            questions: "17 questions",
-            time: "~ 8 min",
+            time: "~ 10 min"
         },
         {
             img: img3,
-            title: "General Stress and Anxiety",
+            title: "General Stress & Anxiety",
             description: "Measure your current stress levels and coping mechanisms.",
+            url: '/assessments/general-stress',
             questions: "12 questions",
-            time: "~ 6 min",
+            time: "~ 6 min"
         },
         {
             img: img4,
-            title: "Emotional Awareness and Regulation\n" +
-                "(Age 4-10)",
+            title: "Emotional Awareness & Regulation",
+            subTitle: "(Age 4-10)",
             description: "Understand your emotional intelligence and self-awareness.",
+            url: '/assessments/emotional-awareness',
             questions: "15 questions",
-            time: "~ 7 min",
+            time: "~ 7 min"
         },
         {
             img: img5,
-            title: "Academic Stress\n" +
-                "(Age 16-25)",
+            title: "Academic Stress",
+            subTitle: "(Age 16-25)",
             description: "Analyze stress levels related to academic pressure and workload.",
+            url: '/assessments/academic-stress',
             questions: "20 questions",
-            time: "~ 10 min",
+            time: "~ 10 min"
         },
         {
             img: img6,
-            title: "Self-Esteem Scale for Pre-Adolescents\n" +
-                "(Age 11-13)",
+            title: "Self-Esteem Scale for Pre-Adolescents",
+            subTitle: "(Age 11-13)",
             description: "Measure your self-esteem and confidence levels.",
+            url: '/assessments/self-esteem-scale',
             questions: "20 questions",
-            time: "~ 10 min",
+            time: "~ 10 min"
         },
         {
             img: img7,
-            title: "Work-Life Balance\n" +
-                "(Age 21+)",
+            title: "Work-Life Balance",
+            subTitle: "(Age 21+)",
             description: "Evaluate your balance between work and personal life.",
+            url: '/assessments/work-life-balance',
             questions: "15 questions",
-            time: "~ 7 min",
+            time: "~ 7 min"
         },
     ];
 
@@ -128,41 +136,76 @@ function Assessments() {
                                         <Grid item xs={12} sm={6} md={4} key={index}>
                                             <Box
                                                 sx={{
-                                                    p: "20px",
+                                                    p: 2,
                                                     borderRadius: 2,
                                                     bgcolor: "#FFFFFF1A",
                                                     color: "#fff",
                                                     height: "100%",
-                                                    border: selectedIndex === index ? "2px solid #FE6A00" : "none",
                                                     display: "flex",
                                                     flexDirection: "column",
                                                 }}
-
                                             >
-                                                <Box display="flex" alignItems="center" mb="12px">
-                                                    <img
-                                                        src={assessment.img}
-                                                        alt={assessment.title}
-                                                        style={{
-                                                            width: "40px",
-                                                            height: "40px",
-                                                            borderRadius: "50%",
-                                                            marginRight: "12px",
-                                                        }}
-                                                    />
-                                                    <Box fontWeight={600} sx={{fontSize: {xs: "16px", md: "18px"}}}>
-                                                        {assessment.icon} {assessment.title}
+                                                <Box display="flex" alignItems="center"
+                                                     sx={{justifyContent: "space-Between"}} mb={1.5}>
+                                                    <Box sx={{display: "flex", alignItems: "center"}}>
+                                                        <img
+                                                            src={assessment.img}
+                                                            alt={assessment.title}
+                                                            style={{
+                                                                width: 40,
+                                                                height: 40,
+                                                                borderRadius: "50%",
+                                                                marginRight: 12,
+                                                            }}
+                                                        />
+                                                        <Box display="flex" flexDirection="column">
+                                                            <Box fontWeight={600} sx={{
+                                                                fontSize: {xs: 16, md: 18},
+                                                                display: "flex",
+                                                                alignItems: "center"
+                                                            }}>
+                                                                {assessment.icon} <span
+                                                                style={{marginLeft: 6}}>{assessment.title}</span>
+                                                            </Box>
+                                                            {assessment.subTitle && (
+                                                                <Box sx={{
+                                                                    fontSize: {xs: 14, md: 16},
+                                                                    color: "#fff",
+                                                                    fontWeight: 500
+                                                                }}>
+                                                                    {assessment.subTitle}
+                                                                </Box>
+                                                            )}
+                                                        </Box>
                                                     </Box>
+                                                    <IconButton
+                                                        onClick={() => handleOpen(index)}
+                                                        sx={{
+                                                            backgroundColor: "#FE6A00",
+                                                            color: "#fff",
+                                                            p: 0.3,
+                                                            borderRadius: 2,
+                                                            "&:hover": {
+                                                                backgroundColor: "#FE6A00"
+                                                            }
+                                                        }}
+                                                    >
+                                                        <ShareIcon/>
+                                                    </IconButton>
+
                                                 </Box>
-                                                <Box variant="body2" color="#CBD5E1" mb={2} sx={{fontSize: "14px"}}>
+
+                                                <Box color="#CBD5E1" mb={2} sx={{fontSize: 14}}>
                                                     {assessment.description}
                                                 </Box>
-                                                <Box display="flex" gap={1} alignItems="center" mt="16px">
+
+                                                <Box display="flex" gap={1} alignItems="center" mt={2}>
                                                     <Box
                                                         sx={{
                                                             bgcolor: "#FFFFFF33",
-                                                            padding: "4px 12px",
-                                                            fontSize: "12px",
+                                                            px: 1.5,
+                                                            py: 0.5,
+                                                            fontSize: 12,
                                                             color: "#fff",
                                                             borderRadius: 10,
                                                         }}
@@ -172,8 +215,9 @@ function Assessments() {
                                                     <Box
                                                         sx={{
                                                             bgcolor: "#FFFFFF33",
-                                                            padding: "4px 12px",
-                                                            fontSize: "12px",
+                                                            px: 1.5,
+                                                            py: 0.5,
+                                                            fontSize: 12,
                                                             color: "#fff",
                                                             borderRadius: 10,
                                                         }}
@@ -181,12 +225,14 @@ function Assessments() {
                                                         {assessment.time}
                                                     </Box>
                                                 </Box>
+
                                                 <Box sx={{flexGrow: 1}}/>
+
                                                 <Box
                                                     sx={{
                                                         alignSelf: "flex-end",
                                                         fontWeight: 400,
-                                                        fontSize: "14px",
+                                                        fontSize: 14,
                                                         color: "#FE6A00",
                                                         display: "flex",
                                                         alignItems: "center",
@@ -195,7 +241,7 @@ function Assessments() {
                                                         mt: {xs: 3},
                                                         '&:hover': {
                                                             color: "#fff",
-                                                        }
+                                                        },
                                                     }}
                                                     onClick={() => handleAssessmentClick(index)}
                                                 >
@@ -205,70 +251,19 @@ function Assessments() {
                                         </Grid>
                                     ))}
                                 </Grid>
-                                {/*<Grid item xs={12} md={4}>*/}
-                                {/*    <Box sx={{p: "24px", bgcolor: "#F8FAFC", color: "#1E293B", borderRadius: 2}}>*/}
-                                {/*        <Box sx={{display: "flex", justifyContent: "center", mb: 2}}>*/}
-                                {/*            <Avatar sx={{bgcolor: "#FFE1CC", p: "40px"}}>*/}
-                                {/*                <DescriptionIcon sx={{color: "#FE6A00", fontSize: "40px"}}/>*/}
-                                {/*            </Avatar>*/}
-                                {/*        </Box>*/}
-                                {/*        <Box fontWeight={600} fontSize={20} mb="12px" textAlign="center">*/}
-                                {/*            Complete Mental Health Check*/}
-                                {/*        </Box>*/}
-                                {/*        <Box variant="body2" color="#4B5563" fontSize={16} textAlign="center" mb="24px">*/}
-                                {/*            Take our comprehensive assessment to evaluate multiple aspects of your mental*/}
-                                {/*            wellbeing in one go.*/}
-                                {/*        </Box>*/}
-                                {/*        <Box fontSize={16} color="#4B5563" mb={1}>*/}
-                                {/*            <CheckIcon sx={{color: "#4CAF50"}}/> Covers all key areas*/}
-                                {/*        </Box>*/}
-                                {/*        <Box fontSize={16} color="#4B5563" mb={1}>*/}
-                                {/*            <CheckIcon sx={{color: "#4CAF50"}}/> Detailed report*/}
-                                {/*        </Box>*/}
-                                {/*        <Box fontSize={16} color="#4B5563" mb={2}>*/}
-                                {/*            <CheckIcon sx={{color: "#4CAF50"}}/> Personalized recommendations*/}
-                                {/*        </Box>*/}
-                                {/*        <Box*/}
-                                {/*            sx={{*/}
-                                {/*                padding: {lg: "12px 24px", xs: "10px 20px"},*/}
-                                {/*                textAlign: "center",*/}
-                                {/*                borderRadius: "0.375rem",*/}
-                                {/*                cursor: "pointer",*/}
-                                {/*                fontSize: "16px",*/}
-                                {/*                mt: 0.54,*/}
-                                {/*                bgcolor: "#012765",*/}
-                                {/*                width: "100%",*/}
-                                {/*                color: "#fff",*/}
-                                {/*                transition: "0.3s",*/}
-                                {/*                "&:hover": {bgcolor: "#011A4B"},*/}
-                                {/*            }}*/}
-                                {/*        >*/}
-                                {/*            Start Comprehensive Assessment*/}
-                                {/*        </Box>*/}
-                                {/*    </Box>*/}
-                                {/*    <Box*/}
-                                {/*        sx={{*/}
-                                {/*            textAlign: "center",*/}
-                                {/*            borderRadius: "0.375rem",*/}
-                                {/*            mt: 2,*/}
-                                {/*            padding: "12px 24px",*/}
-                                {/*            bgcolor: "#FE6A00",*/}
-                                {/*            color: "#fff",*/}
-                                {/*            cursor: "pointer",*/}
-                                {/*            transition: "0.3s",*/}
-                                {/*            fontSize: "16px",*/}
-                                {/*            "&:hover": {bgcolor: "#D45D00"},*/}
-                                {/*        }}*/}
-                                {/*    >*/}
-                                {/*        Take Selected Assessment*/}
-                                {/*    </Box>*/}
-                                {/*</Grid>*/}
-
                             </Grid>
                         </Grid>
                     </Grid>
                 </Box>
             </Box>
+            <Dialog open={open}  onClose={handleClose}>
+                <DialogTitle>Share this URL</DialogTitle>
+                <DialogContent>
+                    <TextField fullWidth value={assessmentUrl} InputProps={{readOnly: true}} sx={{mt: 1}}/>
+                    <Button variant="contained" onClick={handleCopy} sx={{mt: 2}}>Copy URL</Button>
+                    <ToastContainer />
+                </DialogContent>
+            </Dialog>
         </Container>
     );
 }

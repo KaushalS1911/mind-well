@@ -119,7 +119,7 @@ function MajorClients() {
                                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
                                 "&:hover": {
                                     transform: "scale(1.1)",
-                                    backgroundColor: "#f1e4dc",
+                                    backgroundColor: "#f6efea",
                                     // #f1e4dc
                                 },
                             }}

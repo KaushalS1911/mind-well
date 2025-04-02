@@ -12,13 +12,15 @@ import {
     LinearProgress,
     CircularProgress,
     Grid,
-    Card,
+    Card, Dialog, DialogActions,
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
+import {PDFViewer} from "@react-pdf/renderer";
+import PdfView from "../../global/pdf-view.jsx";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -391,6 +393,7 @@ const ExamStressGaugeQuestions = () => {
     const [answers, setAnswers] = useState(Array(20).fill(''));
     const [showResults, setShowResults] = useState(false);
     const [totalScore, setTotalScore] = useState(0);
+    const [view, setView] = useState(false);
 
     const handleAnswerChange = (event) => {
         const newAnswers = [...answers];
@@ -425,275 +428,296 @@ const ExamStressGaugeQuestions = () => {
         const percentage = (totalScore / 80) * 100;
 
         return (
-            <Container maxWidth="md">
-                <Box
-                    mt={12}
-                    sx={{
-                        py: 10,
-                        px: {xs: 2, md: 10},
-                        display: 'flex',
-                        flexDirection: 'column',
-                    }}>
-                    {/* Header Section */}
-                    <Box sx={{textAlign: 'center', mb: 4}}>
-                        <Typography
-                            className={"Montserrat"}
-                            variant="h3"
-                            sx={{
-                                color: '#0D2152',
-                                fontWeight: 700,
-                                mb: 2,
-                                fontSize: {xs: '2rem', md: '2.5rem'}
-                            }}
-                        >
-                            Your Assessment Results
-                        </Typography>
-
-                    </Box>
-
-                    <Box sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}>
-                        <Card sx={{
-                            p: 4,
-                            height: '100%',
-                            background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                            boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                            borderRadius: 4,
+            <>
+                <Container maxWidth="md">
+                    <Box
+                        mt={12}
+                        sx={{
+                            py: 10,
+                            px: {xs: 2, md: 10},
                             display: 'flex',
                             flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: "space-between",
                         }}>
-                            <Box>
-                                <Box sx={{
-                                    position: 'relative',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    mb: 3
-                                }}>
-                                    <CircularProgress
-                                        variant="determinate"
-                                        value={percentage}
-                                        size={200}
-                                        thickness={4}
+                        {/* Header Section */}
+                        <Box sx={{textAlign: 'center', mb: 4}}>
+                            <Typography
+                                className={"Montserrat"}
+                                variant="h3"
+                                sx={{
+                                    color: '#0D2152',
+                                    fontWeight: 700,
+                                    mb: 2,
+                                    fontSize: {xs: '2rem', md: '2.5rem'}
+                                }}
+                            >
+                                Your Assessment Results
+                            </Typography>
+
+                        </Box>
+
+                        <Box sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}>
+                            <Card sx={{
+                                p: 4,
+                                height: '100%',
+                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                borderRadius: 4,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: "space-between",
+                            }}>
+                                <Box>
+                                    <Box sx={{
+                                        position: 'relative',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        mb: 3
+                                    }}>
+                                        <CircularProgress
+                                            variant="determinate"
+                                            value={percentage}
+                                            size={200}
+                                            thickness={4}
+                                            sx={{
+                                                color: totalScore >= 61 ? '#ff4d4d' :
+                                                    totalScore >= 41 ? '#ffa500' :
+                                                        totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
+                                            }}
+                                        />
+                                        <Box
+                                            sx={{
+                                                position: 'absolute',
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
+                                                {totalScore}
+                                            </Typography>
+                                            <Typography variant="h5" sx={{color: '#4A5568'}}>
+                                                out of 80
+                                            </Typography>
+                                        </Box>
+                                    </Box>
+
+                                    <Typography
+                                        variant="h5"
                                         sx={{
-                                            color: totalScore >= 61 ? '#ff4d4d' :
-                                                totalScore >= 41 ? '#ffa500' :
-                                                    totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
-                                        }}
-                                    />
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            alignItems: 'center',
+                                            color: '#F5811E',
+                                            fontWeight: 600,
+                                            mb: 2,
+                                            textAlign: 'center',
                                         }}
                                     >
-                                        <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                            {totalScore}
-                                        </Typography>
-                                        <Typography variant="h5" sx={{color: '#4A5568'}}>
-                                            out of 80
-                                        </Typography>
-                                    </Box>
+                                        {result.level}
+                                    </Typography>
                                 </Box>
-
                                 <Typography
-                                    variant="h5"
+                                    variant="body1"
                                     sx={{
-                                        color: '#F5811E',
-                                        fontWeight: 600,
-                                        mb: 2,
-                                        textAlign: 'center',
+                                        p: 2.5,
+                                        borderRadius: 2,
+                                        bgcolor: 'rgb(227,234,246)',
+                                        border: '1px solid rgba(245, 129, 30, 0.1)',
+                                        transition: 'transform 0.2s',
+                                        textAlign: "justify",
+                                        '&:hover': {
+                                            transform: 'translateY(-2px)',
+                                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                        }
                                     }}
                                 >
-                                    {result.level}
+                                    {result.interpretation}
                                 </Typography>
-                            </Box>
-                            <Typography
-                                variant="body1"
+                            </Card>
+                        </Box>
+
+                        {/* Action Buttons */}
+                        <Box sx={{
+                            display: 'flex',
+                            gap: 2,
+                            justifyContent: 'center',
+                            mt: 4
+                        }}>
+                            <Button
+                                variant="outlined"
+                                onClick={() => setView(true)}
                                 sx={{
-                                    p: 2.5,
-                                    borderRadius: 2,
-                                    bgcolor: 'rgb(227,234,246)',
-                                    border: '1px solid rgba(245, 129, 30, 0.1)',
-                                    transition: 'transform 0.2s',
-                                    textAlign: "justify",
+                                    color: '#F5811E',
+                                    borderColor: '#F5811E',
+                                    py: 1.5,
+                                    px: 4,
                                     '&:hover': {
-                                        transform: 'translateY(-2px)',
-                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                        borderColor: '#E26C0A',
+                                        bgcolor: 'rgba(245, 129, 30, 0.1)'
                                     }
                                 }}
                             >
-                                {result.interpretation}
-                            </Typography>
-                        </Card>
+                                Save Results
+                            </Button>
+                            <Button
+                                variant="contained"
+                                onClick={() => navigate('/resources?scrollTo=assessments')}
+                                sx={{
+                                    bgcolor: '#F5811E',
+                                    color: '#fff',
+                                    py: 1.5,
+                                    px: 4,
+                                    '&:hover': {bgcolor: '#E26C0A'}
+                                }}
+                            >
+                                Return to Assessments
+                            </Button>
+                        </Box>
                     </Box>
+                </Container>
+                <Dialog fullScreen open={view}>
+                    <Box sx={{height: 1, display: 'flex', flexDirection: 'column'}}>
+                        <DialogActions sx={{p: 1.5}}>
+                            <Button color="inherit" variant="contained" onClick={() => setView(false)}>
+                                Close
+                            </Button>
+                        </DialogActions>
+                        <Box sx={{flexGrow: 1, height: 1, overflow: 'hidden'}}>
+                            <PDFViewer width="100%" height="100%" style={{border: 'none'}}>
+                                <PdfView data={{totalScore: totalScore,level: result.level,interpretation: result.interpretation}} />
+                            </PDFViewer>
+                        </Box>
+                    </Box>
+                </Dialog>
 
-                    {/* Action Buttons */}
-                    <Box sx={{
-                        display: 'flex',
-                        gap: 2,
-                        justifyContent: 'center',
-                        mt: 4
-                    }}>
-                        <Button
-                            variant="outlined"
-                            onClick={() => navigate('/assessments/exam-stress')}
-                            sx={{
-                                color: '#F5811E',
-                                borderColor: '#F5811E',
-                                py: 1.5,
-                                px: 4,
-                                '&:hover': {
-                                    borderColor: '#E26C0A',
-                                    bgcolor: 'rgba(245, 129, 30, 0.1)'
-                                }
-                            }}
-                        >
-                            Save Results
-                        </Button>
-                        <Button
-                            variant="contained"
-                            onClick={() => navigate('/resources?scrollTo=assessments')}
-                            sx={{
-                                bgcolor: '#F5811E',
-                                color: '#fff',
-                                py: 1.5,
-                                px: 4,
-                                '&:hover': {bgcolor: '#E26C0A'}
-                            }}
-                        >
-                            Return to Assessments
-                        </Button>
-                    </Box>
-                </Box>
-            </Container>
+            </>
+
         );
     }
 
     return (
-        <Box sx={{
-            minHeight: 'calc(100vh - 72px)',
-            display: 'flex',
-            alignItems: 'center',
-            backgroundColor: '#F3F4F6',
-            mt: {xs: '64px', sm: '72px'},
-            py: {xs: 4, md: 6},
-        }}>
-            <Container maxWidth="md">
-                <StyledPaper>
-                    <Box sx={{mb: 4}}>
-                        <Typography variant="h6" sx={{
-                            mb: 1,
-                            color: '#012765',
-                            fontFamily: 'Montserrat'
-                        }}>
-                            Question {currentQuestion + 1} of {questions.length}
-                        </Typography>
-                        <LinearProgress
-                            variant="determinate"
-                            value={progress}
-                            sx={{
-                                height: 8,
-                                borderRadius: 4,
-                                backgroundColor: '#E6EAF3',
-                                '& .MuiLinearProgress-bar': {
-                                    backgroundColor: '#FF7F1E',
-                                }
-                            }}
-                        />
-                    </Box>
-
-                    <Typography sx={{
-                        mb: 4,
-                        color: '#012765',
-                        fontSize: '20px',
-                        fontWeight: 600,
-                        lineHeight: 1.5,
-                        fontFamily: 'Poppins'
-                    }}>
-                        {questions[currentQuestion].text}
-                    </Typography>
-
-                    <FormControl component="fieldset" sx={{width: '100%', mb: 4}}>
-                        <RadioGroup
-                            value={answers[currentQuestion]}
-                            onChange={handleAnswerChange}
-                        >
-                            {questions[currentQuestion].options.map((option) => (
-                                <FormControlLabel
-                                    key={option.label}
-                                    value={option.value}
-                                    control={
-                                        <Radio
-                                            sx={{
-                                                color: '#012765',
-                                                '&.Mui-checked': {
-                                                    color: '#FF7F1E',
-                                                },
-                                            }}
-                                        />
-                                    }
-                                    label={
-                                        <Typography sx={{
-                                            fontFamily: 'Poppins',
-                                            fontSize: '16px',
-                                            color: '#4B5563'
-                                        }}>
-                                            {option.label}
-                                        </Typography>
-                                    }
-                                    sx={{
-                                        mb: 1,
-                                        p: 1.5,
-                                        borderRadius: 2,
-                                        width: '100%',
-                                        backgroundColor: answers[currentQuestion] === option.value ? '#FFF5EB' : 'transparent',
-                                        '&:hover': {
-                                            backgroundColor: '#F8FAFC',
-                                        },
-                                    }}
-                                />
-                            ))}
-                        </RadioGroup>
-                    </FormControl>
-
-                    <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
-                        {currentQuestion !== 0 ?
-                            <NavigationButton
-                                variant="outlined"
-                                startIcon={<ArrowBackIcon/>}
-                                onClick={handlePrevious}
-                                sx={{color: '#012765', borderColor: '#012765'}}
-                            >
-                                Back
-                            </NavigationButton> : <Box/>}
-                        <NavigationButton
-                            variant="contained"
-                            endIcon={<ArrowForwardIcon/>}
-                            onClick={handleNext}
-                            disabled={!answers[currentQuestion]}
-                            sx={{
-                                backgroundColor: '#FF7F1E',
-                                '&:hover': {backgroundColor: '#E66C00'},
-                                '&.Mui-disabled': {
+        <>
+            <Box sx={{
+                minHeight: 'calc(100vh - 72px)',
+                display: 'flex',
+                alignItems: 'center',
+                backgroundColor: '#F3F4F6',
+                mt: {xs: '64px', sm: '72px'},
+                py: {xs: 4, md: 6},
+            }}>
+                <Container maxWidth="md">
+                    <StyledPaper>
+                        <Box sx={{mb: 4}}>
+                            <Typography variant="h6" sx={{
+                                mb: 1,
+                                color: '#012765',
+                                fontFamily: 'Montserrat'
+                            }}>
+                                Question {currentQuestion + 1} of {questions.length}
+                            </Typography>
+                            <LinearProgress
+                                variant="determinate"
+                                value={progress}
+                                sx={{
+                                    height: 8,
+                                    borderRadius: 4,
                                     backgroundColor: '#E6EAF3',
-                                    color: '#9CA3AF',
-                                }
-                            }}
-                        >
-                            {currentQuestion === questions.length - 1 ? 'Submit' : 'Next'}
-                        </NavigationButton>
-                    </Box>
-                </StyledPaper>
-            </Container>
-        </Box>
-    );
+                                    '& .MuiLinearProgress-bar': {
+                                        backgroundColor: '#FF7F1E',
+                                    }
+                                }}
+                            />
+                        </Box>
+
+                        <Typography sx={{
+                            mb: 4,
+                            color: '#012765',
+                            fontSize: '20px',
+                            fontWeight: 600, lineHeight: 1.5,
+                            fontFamily: 'Poppins'
+                        }}>
+                            {questions[currentQuestion].text}
+                        </Typography>
+
+                        <FormControl component="fieldset" sx={{width: '100%', mb: 4}}>
+                            <RadioGroup
+                                value={answers[currentQuestion]}
+                                onChange={handleAnswerChange}
+                            >
+                                {questions[currentQuestion].options.map((option) => (
+                                    <FormControlLabel
+                                        key={option.label}
+                                        value={option.value}
+                                        control={
+                                            <Radio
+                                                sx={{
+                                                    color: '#012765',
+                                                    '&.Mui-checked': {
+                                                        color: '#FF7F1E',
+                                                    },
+                                                }}
+                                            />
+                                        }
+                                        label={
+                                            <Typography sx={{
+                                                fontFamily: 'Poppins',
+                                                fontSize: '16px',
+                                                color: '#4B5563'
+                                            }}>
+                                                {option.label}
+                                            </Typography>
+                                        }
+                                        sx={{
+                                            mb: 1,
+                                            p: 1.5,
+                                            borderRadius: 2,
+                                            width: '100%',
+                                            backgroundColor: answers[currentQuestion] === option.value ? '#FFF5EB' : 'transparent',
+                                            '&:hover': {
+                                                backgroundColor: '#F8FAFC',
+                                            },
+                                        }}
+                                    />
+                                ))}
+                            </RadioGroup>
+                        </FormControl>
+
+                        <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
+                            {currentQuestion !== 0 ?
+                                <NavigationButton
+                                    variant="outlined"
+                                    startIcon={<ArrowBackIcon/>}
+                                    onClick={handlePrevious}
+                                    sx={{color: '#012765', borderColor: '#012765'}}
+                                >
+                                    Back
+                                </NavigationButton> : <Box/>}
+                            <NavigationButton
+                                variant="contained"
+                                endIcon={<ArrowForwardIcon/>}
+                                onClick={handleNext}
+                                disabled={!answers[currentQuestion]}
+                                sx={{
+                                    backgroundColor: '#FF7F1E',
+                                    '&:hover': {backgroundColor: '#E66C00'},
+                                    '&.Mui-disabled': {
+                                        backgroundColor: '#E6EAF3',
+                                        color: '#9CA3AF',
+                                    }
+                                }}
+                            >
+                                {currentQuestion === questions.length - 1 ? 'Submit' : 'Next'}
+                            </NavigationButton>
+                        </Box>
+                    </StyledPaper>
+                </Container>
+            </Box>
+
+        </>
+    )
+        ;
 };
 
 export default ExamStressGaugeQuestions;

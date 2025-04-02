@@ -7,24 +7,36 @@ import About from "./pages/Aboutpage/about.jsx";
 import Engagement from "./pages/Engagement/Engagement.jsx";
 import Resource from "./pages/resource/resource.jsx";
 import Contact from "./pages/Contact/contact.jsx";
-import GeneralStressAssessment from "./components/resources/GeneralStressAssessment.jsx";
-import GeneralStressQuestions from './components/resources/GeneralStressQuestions';
 import {useEffect} from "react";
-import EmotionalAwarenessAssessment from "./components/resources/EmotionalAwarenessAssessment.jsx";
-import AcademicStressAssessment from "./components/resources/AcademicStressAssessment.jsx";
-import AcademicStressQuestions from "./components/resources/AcademicStressQuestions.jsx";
-import SelfEsteemScaleAssessment from "./components/resources/SelfEsteemScaleAssessment.jsx";
-import SelfEsteemScaleQuestions from "./components/resources/SelfEsteemScaleQuestions.jsx";
-import WorkLifeBalanceAssessment from "./components/resources/WorkLifeBalanceAssessment.jsx";
-import WorkLifeBalanceQuestions from "./components/resources/WorkLifeBalanceQuestions.jsx";
-import ExamStressGaugeAssessments from "./components/resources/ExamStressGaugeAssessments.jsx";
-import ExamStressGaugeQuestions from "./components/resources/ExamStressGaugeQuestions.jsx";
-import ShapeK12Assessment from "./components/resources/ShapeK12Assessment.jsx";
-import ShapeK12Questions from "./components/resources/ShapeK12Questions.jsx";
-import ExamStressAssessmentForm from "./components/resources/ExamStressAssessmentForm.jsx";
-import ShapeK12ChildForm from "./components/resources/ShapeK12ChildForm.jsx";
-import ShapeK12FamilyForm from "./components/resources/ShapeK12FamilyForm.jsx";
-import EmotionalAwarenessQuestions from "./components/resources/EmotionalAwarenessQuestions.jsx";
+
+import AcademicStressAssessment from "./components/resources/Academic-Stress/AcademicStressAssessment.jsx";
+import AcademicStressQuestions from "./components/resources/Academic-Stress/AcademicStressQuestions.jsx";
+import AcademicStressAssessmentForm from "./components/resources/Academic-Stress/AcademicStressAssessmentForm.jsx";
+import ExamStressGaugeAssessments from "./components/resources/Exam-Stress-Gauge/ExamStressGaugeAssessments.jsx";
+import ExamStressGaugeQuestions from "./components/resources/Exam-Stress-Gauge/ExamStressGaugeQuestions.jsx";
+import ExamStressAssessmentForm from "./components/resources/Exam-Stress-Gauge/ExamStressAssessmentForm.jsx";
+import ShapeK12Assessment from "./components/resources/Shape-K12/ShapeK12Assessment.jsx";
+import ShapeK12Questions from "./components/resources/Shape-K12/ShapeK12Questions.jsx";
+import ShapeK12ChildForm from "./components/resources/Shape-K12/ShapeK12ChildForm.jsx";
+import ShapeK12FamilyForm from "./components/resources/Shape-K12/ShapeK12FamilyForm.jsx";
+import GeneralStressAssessmentForm from "./components/resources/General-Stress_Anxiety/GeneralStressAssessmentForm.jsx";
+import EmotionalAwarenessAssessment
+    from "./components/resources/Emotional-Awareness-Regulation/EmotionalAwarenessAssessment.jsx";
+import EmotionalAwarenessQuestions
+    from "./components/resources/Emotional-Awareness-Regulation/EmotionalAwarenessQuestions.jsx";
+import EmotionalAwarenessAssessmentsForm
+    from "./components/resources/Emotional-Awareness-Regulation/EmotionalAwarenessAssessmentsForm.jsx";
+import SelfEsteemScaleAssessment
+    from "./components/resources/Self-Esteem-Scale-For-Pre-Adolescents/SelfEsteemScaleAssessment.jsx";
+import SelfEsteemScaleQuestions
+    from "./components/resources/Self-Esteem-Scale-For-Pre-Adolescents/SelfEsteemScaleQuestions.jsx";
+import SelfEsteemScaleAssessmentForm
+    from "./components/resources/Self-Esteem-Scale-For-Pre-Adolescents/SelfEsteemScaleAssessmentForm.jsx";
+import WorkLifeBalanceAssessment from "./components/resources/Work-Life-Balance/WorkLifeBalanceAssessment.jsx";
+import WorkLifeBalanceQuestions from "./components/resources/Work-Life-Balance/WorkLifeBalanceQuestions.jsx";
+import WorkLifeBalanceAssessmentForm from "./components/resources/Work-Life-Balance/WorkLifeBalanceAssessmentForm.jsx";
+import GeneralStressAssessment from "./components/resources/General-Stress_Anxiety/GeneralStressAssessment.jsx";
+import GeneralStressQuestions from "./components/resources/General-Stress_Anxiety/GeneralStressQuestions.jsx";
 
 function App() {
 
@@ -51,21 +63,26 @@ function App() {
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/assessments/exam-stress" element={<ExamStressGaugeAssessments/>}/>
                 <Route path="/assessments/exam-stress/questions" element={<ExamStressGaugeQuestions/>}/>
-                <Route path="/assessments/exam-stress/assessment-form" element={<ExamStressAssessmentForm/>}/>
+                <Route path="/assessments/exam-stress/exam-assessment-form" element={<ExamStressAssessmentForm/>}/>
                 <Route path="/assessments/shape-k12" element={<ShapeK12Assessment/>}/>
                 <Route path="/assessments/shape-k12/questions" element={<ShapeK12Questions/>}/>
                 <Route path="/assessments/shape-k12/shape-child-form" element={<ShapeK12ChildForm/>}/>
                 <Route path="/assessments/shape-k12/shape-family-form" element={<ShapeK12FamilyForm/>}/>
                 <Route path="/assessments/general-stress" element={<GeneralStressAssessment/>}/>
                 <Route path="/assessments/general-stress/questions" element={<GeneralStressQuestions/>}/>
+                <Route path="/assessments/general-stress/general-assessment-form" element={<GeneralStressAssessmentForm/>}/>
                 <Route path="/assessments/emotional-awareness" element={<EmotionalAwarenessAssessment/>}/>
                 <Route path="/assessments/emotional-awareness/questions" element={<EmotionalAwarenessQuestions/>}/>
+                <Route path="/assessments/emotional-awareness/emotional-assessment-form" element={<EmotionalAwarenessAssessmentsForm/>}/>
                 <Route path="/assessments/academic-stress" element={<AcademicStressAssessment/>}/>
                 <Route path="/assessments/academic-stress/questions" element={<AcademicStressQuestions/>}/>
+                <Route path="/assessments/academic-stress/academic-assessment-form" element={<AcademicStressAssessmentForm/>}/>
                 <Route path="/assessments/self-esteem-scale" element={<SelfEsteemScaleAssessment/>}/>
                 <Route path="/assessments/self-esteem-scale/questions" element={<SelfEsteemScaleQuestions/>}/>
+                <Route path="/assessments/self-esteem-scale/self-assessment-form" element={<SelfEsteemScaleAssessmentForm/>}/>
                 <Route path="/assessments/work-life-balance" element={<WorkLifeBalanceAssessment/>}/>
                 <Route path="/assessments/work-life-balance/questions" element={<WorkLifeBalanceQuestions/>}/>
+                <Route path="/assessments/work-life-balance/work-assessment-form" element={<WorkLifeBalanceAssessmentForm/>}/>
             </Routes>
 
             <Footer/>
