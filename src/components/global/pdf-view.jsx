@@ -20,19 +20,52 @@ const useStyles = (score) =>
                     display: 'flex',
                     alignItems: 'center',
                 },
+                pageItem: {
+                    height: '95%',
+                },
                 card: {
-                    width: '80%',
+                    width: '100%',
                     backgroundColor: '#FFFFFF',
                     padding: 20,
                     borderRadius: 10,
                     textAlign: 'center',
                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
                 },
+                personaldata: {
+                    textAlign: 'left',
+                    marginBottom: 10
+                },
+                personal: {
+                    marginBottom: 28,
+                    borderBottom: "1px solid #FF7F1E",
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                },
+                name: {
+                    fontSize: 12,
+                    fontWeight: '600',
+                    color: '#0D2152',
+                    marginBottom: 8,
+                },
+                email: {
+                    fontSize: 12,
+                    fontWeight: '600',
+                    color: '#0D2152',
+                    marginBottom: 8,
+                },
+                date: {
+                    fontSize: 12,
+                    fontWeight: '600',
+                    color: '#0D2152',
+                },
                 header: {
-                    fontSize: 24,
+                    fontSize: 18,
                     fontWeight: 'bold',
                     color: '#0D2152',
                     marginBottom: 15,
+                    textAlign: "center"
                 },
                 scoreContainer: {
                     display: 'flex',
@@ -60,7 +93,7 @@ const useStyles = (score) =>
                     marginBottom: 10,
                 },
                 level: {
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: 'bold',
                     color: '#F5811E',
                     marginVertical: 10,
@@ -126,56 +159,68 @@ export default function PdfView({data}) {
     return (
         <Document>
             <Page size="A4" style={styles.page}>
-                <View style={styles.card}>
-                    <Text style={styles.header}>Your Assessment Results</Text>
-
-                    <View style={styles.scoreContainer}>
-                        <View style={styles.svgContainer}>
-                            <Svg width="100" height="100" viewBox="0 0 100 100">
-                                <Circle cx="50" cy="50" r="45" stroke="#E3EAF6" strokeWidth="10" fill="none"/>
-                                <Circle
-                                    cx="50"
-                                    cy="50"
-                                    r="45"
-                                    stroke={strokeColor}
-                                    strokeWidth="10"
-                                    fill="none"
-                                    strokeDasharray={`${circumference}`}
-                                    strokeDashoffset={`${offset}`}
-                                    strokeLinecap="round"
-                                />
-                            </Svg>
-                            <Text style={styles.score}>{data.totalScore}</Text>
-                        </View>
-                        <Text style={styles.outOf}>out of 80</Text>
-                    </View>
-                    <Text style={styles.level}>{data.level}</Text>
-                    <View style={styles.interpretationContainer}>
-                        <Text style={styles.interpretation}>{data.interpretation}</Text>
-                    </View>
-
-                    {data.recommendations && data.recommendations.length > 0 && (
-                        <View style={styles.recommendationsContainer}>
-                            <View style={styles.recommendationHeader}>
-                                <Text style={styles.recommendationTitle}>Recommendations :</Text>
+                <View style={styles.pageItem}>
+                    <View style={styles.card}>
+                        <View style={styles.personal}>
+                            <View style={styles.personaldata}>
+                                <Text style={styles.name}>Name: John-Deo</Text>
+                                <Text style={styles.email}>Email: john12@gmail.com</Text>
                             </View>
-                            {data.recommendations.map((rec, index) => (
-                                <View
-                                    key={index}
-                                    style={[
-                                        styles.recommendationCard,
-                                        rec.title ? { marginBottom: 10 } : {}
-                                    ]}
-                                >
-                                    {rec.title && (
-                                        <Text style={styles.recommendationBoxTitle}>{rec.title}{rec.title ? ":" : ""}</Text>
-                                    )}
-                                    <Text style={styles.recommendationDescription}>{rec.description}</Text>
-                                </View>
-                            ))}
+                            <View>
+                                <Text style={styles.date}>Date: {new Date().toLocaleDateString()}</Text>
+                            </View>
                         </View>
-                    )}
+                        <Text style={styles.header}>Emotional Awareness Assessment Results</Text>
 
+                        <View style={styles.scoreContainer}>
+                            <View style={styles.svgContainer}>
+                                <Svg width="100" height="100" viewBox="0 0 100 100">
+                                    <Circle cx="50" cy="50" r="45" stroke="#E3EAF6" strokeWidth="10" fill="none"/>
+                                    <Circle
+                                        cx="50"
+                                        cy="50"
+                                        r="45"
+                                        stroke={strokeColor}
+                                        strokeWidth="10"
+                                        fill="none"
+                                        strokeDasharray={`${circumference}`}
+                                        strokeDashoffset={`${offset}`}
+                                        strokeLinecap="round"
+                                    />
+                                </Svg>
+                                <Text style={styles.score}>{data.totalScore}</Text>
+                            </View>
+                            <Text style={styles.outOf}>out of 80</Text>
+                        </View>
+                        <Text style={styles.level}>{data.level}</Text>
+                        <View style={styles.interpretationContainer}>
+                            <Text style={styles.interpretation}>{data.interpretation}</Text>
+                        </View>
+
+                        {data.recommendations && data.recommendations.length > 0 && (
+                            <View style={styles.recommendationsContainer}>
+                                <View style={styles.recommendationHeader}>
+                                    <Text style={styles.recommendationTitle}>Recommendations :</Text>
+                                </View>
+                                {data.recommendations.map((rec, index) => (
+                                    <View
+                                        key={index}
+                                        style={[
+                                            styles.recommendationCard,
+                                            rec.title ? {marginBottom: 10} : {}
+                                        ]}
+                                    >
+                                        {rec.title && (
+                                            <Text
+                                                style={styles.recommendationBoxTitle}>{rec.title}{rec.title ? ":" : ""}</Text>
+                                        )}
+                                        <Text style={styles.recommendationDescription}>{rec.description}</Text>
+                                    </View>
+                                ))}
+                            </View>
+                        )}
+
+                    </View>
                 </View>
             </Page>
         </Document>
