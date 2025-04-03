@@ -486,7 +486,7 @@ const ExamStressGaugeQuestions = () => {
                                             sx={{
                                                 color: totalScore >= 61 ? '#ff4d4d' :
                                                     totalScore >= 41 ? '#ffa500' :
-                                                        totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
+                                                        totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#47e447',
                                             }}
                                         />
                                         <Box
@@ -586,7 +586,12 @@ const ExamStressGaugeQuestions = () => {
                         </DialogActions>
                         <Box sx={{flexGrow: 1, height: 1, overflow: 'hidden'}}>
                             <PDFViewer width="100%" height="100%" style={{border: 'none'}}>
-                                <PdfView data={{totalScore: totalScore,level: result.level,interpretation: result.interpretation}} />
+                                <PdfView data={{
+                                    totalScore: totalScore,
+                                    level: result.level,
+                                    interpretation: result.interpretation,
+                                    recommendations: result.recommendations
+                                }}/>
                             </PDFViewer>
                         </Box>
                     </Box>

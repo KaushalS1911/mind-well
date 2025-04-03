@@ -64,204 +64,204 @@ const questions = [
             {label: "Always", value: "4"}
         ]
     },
-    // {
-    //     id: 3,
-    //     text: " How much pressure do you feel to achieve high grades?",
-    //     options: [
-    //         {label: "Not at all", value: "0"},
-    //         {label: "Slightly", value: "1"},
-    //         {label: "Moderately", value: "2"},
-    //         {label: "A lot", value: "3"},
-    //         {label: "Extremely", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 4,
-    //     text: "How often do you experience physical symptoms (e.g., headaches, stomach aches) due to academic stress?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 5,
-    //     text: "How much does academic stress affect your sleep?",
-    //     options: [
-    //         {label: "Not at all", value: "0"},
-    //         {label: "Slightly", value: "1"},
-    //         {label: "Moderately", value: "2"},
-    //         {label: "A lot", value: "3"},
-    //         {label: "Extremely", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 6,
-    //     text: "How often do you feel anxious about exams or assignments?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 7,
-    //     text: "How frequently do you skip meals due to academic commitments?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 8,
-    //     text: "How often do you feel that you have too many assignments due at the same time?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 9,
-    //     text: "How much does academic stress interfere with your personal relationships?",
-    //     options: [
-    //         {label: "Not at all", value: "0"},
-    //         {label: "Slightly", value: "1"},
-    //         {label: "Moderately", value: "2"},
-    //         {label: "A lot", value: "3"},
-    //         {label: "Extremely", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 10,
-    //     text: "How often do you feel that your academic workload is unmanageable?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 11,
-    //     text: "How often do you use time management techniques (e.g., scheduling, to-do lists) to manage your academic work?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 12,
-    //     text: "How frequently do you seek help from professors or tutors when stressed about academics?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 13,
-    //     text: "How often do you take breaks to relax or engage in leisure activities while studying?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 14,
-    //     text: "How frequently do you use exercise as a way to cope with academic stress? ",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 15,
-    //     text: "How often do you talk to friends or family about your academic stress?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 16,
-    //     text: "How often do you use relaxation techniques (e.g., meditation, deep breathing) to manage stress? ",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 17,
-    //     text: "How frequently do you get adequate sleep during the academic term?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 18,
-    //     text: "How often do you plan and organize your study sessions in advance?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 19,
-    //     text: "How often do you participate in activities or hobbies to take your mind off academic stress?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
-    // {
-    //     id: 20,
-    //     text: "How frequently do you feel that your coping strategies are effective in managing your academic stress?",
-    //     options: [
-    //         {label: "Never", value: "0"},
-    //         {label: "Rarely", value: "1"},
-    //         {label: "Sometimes", value: "2"},
-    //         {label: "Often", value: "3"},
-    //         {label: "Always", value: "4"}
-    //     ]
-    // },
+    {
+        id: 3,
+        text: " How much pressure do you feel to achieve high grades?",
+        options: [
+            {label: "Not at all", value: "0"},
+            {label: "Slightly", value: "1"},
+            {label: "Moderately", value: "2"},
+            {label: "A lot", value: "3"},
+            {label: "Extremely", value: "4"}
+        ]
+    },
+    {
+        id: 4,
+        text: "How often do you experience physical symptoms (e.g., headaches, stomach aches) due to academic stress?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 5,
+        text: "How much does academic stress affect your sleep?",
+        options: [
+            {label: "Not at all", value: "0"},
+            {label: "Slightly", value: "1"},
+            {label: "Moderately", value: "2"},
+            {label: "A lot", value: "3"},
+            {label: "Extremely", value: "4"}
+        ]
+    },
+    {
+        id: 6,
+        text: "How often do you feel anxious about exams or assignments?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 7,
+        text: "How frequently do you skip meals due to academic commitments?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 8,
+        text: "How often do you feel that you have too many assignments due at the same time?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 9,
+        text: "How much does academic stress interfere with your personal relationships?",
+        options: [
+            {label: "Not at all", value: "0"},
+            {label: "Slightly", value: "1"},
+            {label: "Moderately", value: "2"},
+            {label: "A lot", value: "3"},
+            {label: "Extremely", value: "4"}
+        ]
+    },
+    {
+        id: 10,
+        text: "How often do you feel that your academic workload is unmanageable?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 11,
+        text: "How often do you use time management techniques (e.g., scheduling, to-do lists) to manage your academic work?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 12,
+        text: "How frequently do you seek help from professors or tutors when stressed about academics?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 13,
+        text: "How often do you take breaks to relax or engage in leisure activities while studying?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 14,
+        text: "How frequently do you use exercise as a way to cope with academic stress? ",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 15,
+        text: "How often do you talk to friends or family about your academic stress?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 16,
+        text: "How often do you use relaxation techniques (e.g., meditation, deep breathing) to manage stress? ",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 17,
+        text: "How frequently do you get adequate sleep during the academic term?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 18,
+        text: "How often do you plan and organize your study sessions in advance?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 19,
+        text: "How often do you participate in activities or hobbies to take your mind off academic stress?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
+    {
+        id: 20,
+        text: "How frequently do you feel that your coping strategies are effective in managing your academic stress?",
+        options: [
+            {label: "Never", value: "0"},
+            {label: "Rarely", value: "1"},
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "3"},
+            {label: "Always", value: "4"}
+        ]
+    },
 ];
 
 const getScoreCategory = (score) => {
@@ -522,231 +522,232 @@ const AcademicStressQuestions = () => {
 
         return (
             <>
-            <Container maxWidth="lg">
-                <Box
-                    mt={12}
-                    sx={{
-                        py: 5,
-                        px: {xs: 2, md: 4},
-                        minHeight: '100vh',
-                        display: 'flex',
-                        flexDirection: 'column',
-                    }}>
-                    {/* Header Section */}
-                    <Box sx={{textAlign: 'center', mb: 4}}>
-                        <Typography
-                            className={"Montserrat"}
-                            variant="h3"
-                            sx={{
-                                color: '#0D2152',
-                                fontWeight: 700,
-                                mb: 2,
-                                fontSize: {xs: '2rem', md: '2.5rem'}
-                            }}
-                        >
-                            Your Assessment Results
-                        </Typography>
+                <Container maxWidth="lg">
+                    <Box
+                        mt={12}
+                        sx={{
+                            py: 5,
+                            px: {xs: 2, md: 4},
+                            minHeight: '100vh',
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}>
+                        {/* Header Section */}
+                        <Box sx={{textAlign: 'center', mb: 4}}>
+                            <Typography
+                                className={"Montserrat"}
+                                variant="h3"
+                                sx={{
+                                    color: '#0D2152',
+                                    fontWeight: 700,
+                                    mb: 2,
+                                    fontSize: {xs: '2rem', md: '2.5rem'}
+                                }}
+                            >
+                                Your Assessment Results
+                            </Typography>
 
-                    </Box>
+                        </Box>
 
-                    <Grid container spacing={4}>
-                        {/* Score Display Section */}
-                        <Grid item xs={12} md={6}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                justifyContent: "space-between"
-                            }}>
-                                <Box>
-                                    <Box sx={{
-                                        position: 'relative',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        mb: 3
-                                    }}>
-                                        <CircularProgress
-                                            variant="determinate"
-                                            value={percentage}
-                                            size={200}
-                                            thickness={4}
-                                            sx={{
-                                                color: totalScore >= 61 ? '#ff4d4d' :
-                                                    totalScore >= 41 ? '#ffa500' :
-                                                        totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
-                                            }}
-                                        />
-                                        {/*<CircularProgress*/}
-                                        {/*    variant="determinate"*/}
-                                        {/*    value={percentage}*/}
-                                        {/*    size={200}*/}
-                                        {/*    thickness={4}*/}
-                                        {/*    sx={{*/}
-                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                        {/*                totalScore >= 21 ? '#ffff00' :*/}
-                                        {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
-                                        {/*        position: 'absolute',*/}
-                                        {/*        left: 34,*/}
-                                        {/*    }}*/}
-                                        {/*/>*/}
-                                        <Box
-                                            sx={{
-                                                position: 'absolute',
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'center',
-                                            }}
-                                        >
-                                            <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                                {totalScore}
-                                            </Typography>
-                                            <Typography variant="h6" sx={{color: '#4A5568'}}>
-                                                out of 80
-                                            </Typography>
-                                        </Box>
-                                    </Box>
-
-                                    <Typography
-                                        variant="h5"
-                                        sx={{
-                                            color: '#F5811E',
-                                            fontWeight: 600,
-                                            mb: 2,
-                                            textAlign: 'center',
-                                        }}
-                                    >
-                                        {result.level}
-                                    </Typography>
-                                </Box>
-                                <Typography
-                                    variant="body1"
-                                    sx={{
-                                        p: 2.5,
-                                        borderRadius: 2,
-                                        bgcolor: 'rgb(227,234,246)',
-                                        border: '1px solid rgba(245, 129, 30, 0.1)',
-                                        transition: 'transform 0.2s',
-                                        textAlign: "justify",
-                                        '&:hover': {
-                                            transform: 'translateY(-2px)',
-                                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                        }
-                                    }}
-                                >
-                                    {result.interpretation}
-                                </Typography>
-                            </Card>
-                        </Grid>
-
-                        {/* Recommendations Section */
-                        }
-                        <Grid item xs={12} md={6}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4
-                            }}>
-                                <Box sx={{
+                        <Grid container spacing={4}>
+                            {/* Score Display Section */}
+                            <Grid item xs={12} md={6}>
+                                <Card sx={{
+                                    p: 4,
+                                    height: '100%',
+                                    background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                    borderRadius: 4,
                                     display: 'flex',
+                                    flexDirection: 'column',
                                     alignItems: 'center',
-                                    mb: 2
+                                    justifyContent: "space-between"
                                 }}>
-                                    <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
-                                    <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
-                                        Recommendations
-                                    </Typography>
-                                </Box>
-
-                                <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
-                                    {result.recommendations.map((rec, index) => (
-                                        <Box
-                                            key={index}
-                                            sx={{
-                                                p: 2.5,
-                                                borderRadius: 2,
-                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
-                                                border: '1px solid rgba(245, 129, 30, 0.1)',
-                                                transition: 'transform 0.2s',
-                                                '&:hover': {
-                                                    transform: 'translateY(-2px)',
-                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                                }
-                                            }}
-                                        >
-                                            <Typography
-                                                variant="h6"
+                                    <Box>
+                                        <Box sx={{
+                                            position: 'relative',
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            mb: 3
+                                        }}>
+                                            <CircularProgress
+                                                variant="determinate"
+                                                value={percentage}
+                                                size={200}
+                                                thickness={4}
                                                 sx={{
-                                                    color: '#F5811E',
-                                                    fontSize: "19px",
-                                                    fontWeight: 600,
-                                                    mb: 1,
+                                                    color: totalScore >= 61 ? '#ff4d4d' :
+                                                        totalScore >= 41 ? '#ffa500' :
+                                                            totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#47e447',
+                                                }}
+                                            />
+                                            {/*<CircularProgress*/}
+                                            {/*    variant="determinate"*/}
+                                            {/*    value={percentage}*/}
+                                            {/*    size={200}*/}
+                                            {/*    thickness={4}*/}
+                                            {/*    sx={{*/}
+                                            {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                            {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                            {/*                totalScore >= 21 ? '#ffff00' :*/}
+                                            {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
+                                            {/*        position: 'absolute',*/}
+                                            {/*        left: 34,*/}
+                                            {/*    }}*/}
+                                            {/*/>*/}
+                                            <Box
+                                                sx={{
+                                                    position: 'absolute',
                                                     display: 'flex',
+                                                    flexDirection: 'column',
                                                     alignItems: 'center',
-                                                    gap: 1
                                                 }}
                                             >
-                                                <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
-                                                {rec.title}
-                                            </Typography>
-                                            <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>
-                                                {rec.description}
-                                            </Typography>
+                                                <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
+                                                    {totalScore}
+                                                </Typography>
+                                                <Typography variant="h6" sx={{color: '#4A5568'}}>
+                                                    out of 80
+                                                </Typography>
+                                            </Box>
                                         </Box>
-                                    ))}
-                                </Box>
-                            </Card>
-                        </Grid>
-                    </Grid>
 
-                    {/* Action Buttons */
-                    }
-                    <Box sx={{
-                        display: 'flex',
-                        gap: 2,
-                        justifyContent: 'center',
-                        mt: 4
-                    }}>
-                        <Button
-                            variant="outlined"
-                            onClick={() => setView(true)}
-                            sx={{
-                                color: '#F5811E',
-                                borderColor: '#F5811E',
-                                py: 1.5,
-                                px: 4,
-                                '&:hover': {
-                                    borderColor: '#E26C0A',
-                                    bgcolor: 'rgba(245, 129, 30, 0.1)'
-                                }
-                            }}
-                        >
-                            Save Results
-                        </Button>
-                        <Button
-                            variant="contained"
-                            onClick={() => navigate('/resources?scrollTo=assessments')}
-                            sx={{
-                                bgcolor: '#F5811E',
-                                color: '#fff',
-                                py: 1.5,
-                                px: 4,
-                                '&:hover': {bgcolor: '#E26C0A'}
-                            }}
-                        >
-                            Return to Assessments
-                        </Button>
+                                        <Typography
+                                            variant="h5"
+                                            sx={{
+                                                color: '#F5811E',
+                                                fontWeight: 600,
+                                                mb: 2,
+                                                textAlign: 'center',
+                                            }}
+                                        >
+                                            {result.level}
+                                        </Typography>
+                                    </Box>
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            p: 2.5,
+                                            borderRadius: 2,
+                                            bgcolor: 'rgb(227,234,246)',
+                                            border: '1px solid rgba(245, 129, 30, 0.1)',
+                                            transition: 'transform 0.2s',
+                                            textAlign: "justify",
+                                            '&:hover': {
+                                                transform: 'translateY(-2px)',
+                                                boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                            }
+                                        }}
+                                    >
+                                        {result.interpretation}
+                                    </Typography>
+                                </Card>
+                            </Grid>
+
+                            {/* Recommendations Section */
+                            }
+                            <Grid item xs={12} md={6}>
+                                <Card sx={{
+                                    p: 4,
+                                    height: '100%',
+                                    background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                    borderRadius: 4
+                                }}>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Recommendations
+                                        </Typography>
+                                    </Box>
+
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        {result.recommendations.map((rec, index) => (
+                                            <Box
+                                                key={index}
+                                                sx={{
+                                                    p: 2.5,
+                                                    borderRadius: 2,
+                                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                    transition: 'transform 0.2s',
+                                                    '&:hover': {
+                                                        transform: 'translateY(-2px)',
+                                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                    }
+                                                }}
+                                            >
+                                                <Typography
+                                                    variant="h6"
+                                                    sx={{
+                                                        color: '#F5811E',
+                                                        fontSize: "19px",
+                                                        fontWeight: 600,
+                                                        mb: 1,
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: 1
+                                                    }}
+                                                >
+                                                    <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
+                                                    {rec.title}
+                                                </Typography>
+                                                <Typography variant="body1"
+                                                            sx={{color: '#4A5568', textAlign: "justify",}}>
+                                                    {rec.description}
+                                                </Typography>
+                                            </Box>
+                                        ))}
+                                    </Box>
+                                </Card>
+                            </Grid>
+                        </Grid>
+
+                        {/* Action Buttons */
+                        }
+                        <Box sx={{
+                            display: 'flex',
+                            gap: 2,
+                            justifyContent: 'center',
+                            mt: 4
+                        }}>
+                            <Button
+                                variant="outlined"
+                                onClick={() => setView(true)}
+                                sx={{
+                                    color: '#F5811E',
+                                    borderColor: '#F5811E',
+                                    py: 1.5,
+                                    px: 4,
+                                    '&:hover': {
+                                        borderColor: '#E26C0A',
+                                        bgcolor: 'rgba(245, 129, 30, 0.1)'
+                                    }
+                                }}
+                            >
+                                Save Results
+                            </Button>
+                            <Button
+                                variant="contained"
+                                onClick={() => navigate('/resources?scrollTo=assessments')}
+                                sx={{
+                                    bgcolor: '#F5811E',
+                                    color: '#fff',
+                                    py: 1.5,
+                                    px: 4,
+                                    '&:hover': {bgcolor: '#E26C0A'}
+                                }}
+                            >
+                                Return to Assessments
+                            </Button>
+                        </Box>
                     </Box>
-                </Box>
-            </Container>
+                </Container>
                 <Dialog fullScreen open={view}>
                     <Box sx={{height: 1, display: 'flex', flexDirection: 'column'}}>
                         <DialogActions sx={{p: 1.5}}>
@@ -756,7 +757,12 @@ const AcademicStressQuestions = () => {
                         </DialogActions>
                         <Box sx={{flexGrow: 1, height: 1, overflow: 'hidden'}}>
                             <PDFViewer width="100%" height="100%" style={{border: 'none'}}>
-                                <PdfView data={{totalScore: totalScore,level: result.level,interpretation: result.interpretation}} />
+                                <PdfView data={{
+                                    totalScore: totalScore,
+                                    level: result.level,
+                                    interpretation: result.interpretation,
+                                    recommendations: result.recommendations
+                                }}/>
                             </PDFViewer>
                         </Box>
                     </Box>

@@ -12,7 +12,7 @@ import {
     LinearProgress,
     CircularProgress,
     Grid,
-    Card,
+    Card, DialogActions, Dialog,
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -20,6 +20,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
+import {PDFViewer} from "@react-pdf/renderer";
+import PdfView from "../../global/pdf-view.jsx";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -366,6 +368,7 @@ const EmotionalAwarenessQuestions = () => {
     const [answers, setAnswers] = useState(Array(20).fill(''));
     const [showResults, setShowResults] = useState(false);
     const [totalScore, setTotalScore] = useState(0);
+    const [view, setView] = useState(false);
 
     const handleAnswerChange = (event) => {
         const newAnswers = [...answers];
@@ -400,232 +403,255 @@ const EmotionalAwarenessQuestions = () => {
         const percentage = (totalScore / 80) * 100;
 
         return (
-            <Container maxWidth="lg">
-                <Box
-                    mt={12}
-                    sx={{
-                        py: 5,
-                        px: {xs: 2, md: 4},
-                        minHeight: '100vh',
-                        display: 'flex',
-                        flexDirection: 'column',
-                    }}>
-                    {/* Header Section */}
-                    <Box sx={{textAlign: 'center', mb: 4}}>
-                        <Typography
-                            className={"Montserrat"}
-                            variant="h3"
-                            sx={{
-                                color: '#0D2152',
-                                fontWeight: 700,
-                                mb: 2,
-                                fontSize: {xs: '2rem', md: '2.5rem'}
-                            }}
-                        >
-                            Your Assessment Results
-                        </Typography>
+            <>
+                <Container maxWidth="lg">
+                    <Box
+                        mt={12}
+                        sx={{
+                            py: 5,
+                            px: {xs: 2, md: 4},
+                            minHeight: '100vh',
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}>
+                        {/* Header Section */}
+                        <Box sx={{textAlign: 'center', mb: 4}}>
+                            <Typography
+                                className={"Montserrat"}
+                                variant="h3"
+                                sx={{
+                                    color: '#0D2152',
+                                    fontWeight: 700,
+                                    mb: 2,
+                                    fontSize: {xs: '2rem', md: '2.5rem'}
+                                }}
+                            >
+                                Your Assessment Results
+                            </Typography>
 
-                    </Box>
+                        </Box>
 
-                    <Grid container spacing={4}>
-                        {/* Score Display Section */}
-                        <Grid item xs={12} md={6}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                justifyContent: "space-between"
-                            }}>
-                                <Box>
-                                    <Box sx={{
-                                        position: 'relative',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        mb: 3
-                                    }}>
-                                        <CircularProgress
-                                            variant="determinate"
-                                            value={percentage}
-                                            size={200}
-                                            thickness={4}
-                                            sx={{
-                                                color: totalScore >= 61 ? '#ff4d4d' :
-                                                    totalScore >= 41 ? '#ffa500' :
-                                                        totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#00ff00',
-                                            }}
-                                        />
-                                        {/*<CircularProgress*/}
-                                        {/*    variant="determinate"*/}
-                                        {/*    value={percentage}*/}
-                                        {/*    size={200}*/}
-                                        {/*    thickness={4}*/}
-                                        {/*    sx={{*/}
-                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                        {/*                totalScore >= 21 ? '#ffff00' :*/}
-                                        {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
-                                        {/*        position: 'absolute',*/}
-                                        {/*        left: 34,*/}
-                                        {/*    }}*/}
-                                        {/*/>*/}
-                                        <Box
-                                            sx={{
-                                                position: 'absolute',
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'center',
-                                            }}
-                                        >
-                                            <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                                {totalScore}
-                                            </Typography>
-                                            <Typography variant="h5" sx={{color: '#4A5568'}}>
-                                                out of 80
-                                            </Typography>
-                                        </Box>
-                                    </Box>
-
-                                    <Typography
-                                        variant="h5"
-                                        sx={{
-                                            color: '#F5811E',
-                                            fontWeight: 600,
-                                            mb: 2,
-                                            textAlign: 'center',
-                                        }}
-                                    >
-                                        {result.level}
-                                    </Typography>
-                                </Box>
-                                <Typography
-                                    variant="body1"
-                                    sx={{
-                                        p: 2.5,
-                                        borderRadius: 2,
-                                        bgcolor: 'rgb(227,234,246)',
-                                        border: '1px solid rgba(245, 129, 30, 0.1)',
-                                        transition: 'transform 0.2s',
-                                        textAlign: "justify",
-                                        '&:hover': {
-                                            transform: 'translateY(-2px)',
-                                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                        }
-                                    }}
-                                >
-                                    {result.interpretation}
-                                </Typography>
-                            </Card>
-                        </Grid>
-
-                        {/* Recommendations Section */
-                        }
-                        <Grid item xs={12} md={6}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4
-                            }}>
-                                <Box sx={{
+                        <Grid container spacing={4}>
+                            {/* Score Display Section */}
+                            <Grid item xs={12} md={6}>
+                                <Card sx={{
+                                    p: 4,
+                                    height: '100%',
+                                    background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                    borderRadius: 4,
                                     display: 'flex',
+                                    flexDirection: 'column',
                                     alignItems: 'center',
-                                    mb: 2
+                                    justifyContent: "space-between"
                                 }}>
-                                    <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
-                                    <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
-                                        Recommendations
-                                    </Typography>
-                                </Box>
-
-                                <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
-                                    {result.recommendations.map((rec, index) => (
-                                        <Box
-                                            key={index}
-                                            sx={{
-                                                p: 2.5,
-                                                borderRadius: 2,
-                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
-                                                border: '1px solid rgba(245, 129, 30, 0.1)',
-                                                transition: 'transform 0.2s',
-                                                '&:hover': {
-                                                    transform: 'translateY(-2px)',
-                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                                }
-                                            }}
-                                        >
-                                            <Typography
-                                                variant="h6"
+                                    <Box>
+                                        <Box sx={{
+                                            position: 'relative',
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            mb: 3
+                                        }}>
+                                            <CircularProgress
+                                                variant="determinate"
+                                                value={percentage}
+                                                size={200}
+                                                thickness={4}
                                                 sx={{
-                                                    color: '#F5811E',
-                                                    fontSize: "19px",
-                                                    fontWeight: 600,
-                                                    mb: 1,
+                                                    color: totalScore >= 61 ? '#ff4d4d' :
+                                                        totalScore >= 41 ? '#ffa500' :
+                                                            totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#47e447',
+                                                }}
+                                            />
+                                            {/*<CircularProgress*/}
+                                            {/*    variant="determinate"*/}
+                                            {/*    value={percentage}*/}
+                                            {/*    size={200}*/}
+                                            {/*    thickness={4}*/}
+                                            {/*    sx={{*/}
+                                            {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                            {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                            {/*                totalScore >= 21 ? '#ffff00' :*/}
+                                            {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
+                                            {/*        position: 'absolute',*/}
+                                            {/*        left: 34,*/}
+                                            {/*    }}*/}
+                                            {/*/>*/}
+                                            <Box
+                                                sx={{
+                                                    position: 'absolute',
                                                     display: 'flex',
+                                                    flexDirection: 'column',
                                                     alignItems: 'center',
-                                                    gap: 1
                                                 }}
                                             >
-                                                {/*<AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
-                                                {rec.title}
-                                            </Typography>
-                                            <Typography variant="body1" sx={{color: '#4A5568', textAlign: "justify",}}>
-                                                {rec.description}
-                                            </Typography>
+                                                <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
+                                                    {totalScore}
+                                                </Typography>
+                                                <Typography variant="h5" sx={{color: '#4A5568'}}>
+                                                    out of 80
+                                                </Typography>
+                                            </Box>
                                         </Box>
-                                    ))}
-                                </Box>
-                            </Card>
-                        </Grid>
-                    </Grid>
 
-                    {/* Action Buttons */
-                    }
-                    <Box sx={{
-                        display: 'flex',
-                        gap: 2,
-                        justifyContent: 'center',
-                        mt: 4
-                    }}>
-                        <Button
-                            variant="outlined"
-                            onClick={() => navigate('/assessments/emotional-awareness')}
-                            sx={{
-                                color: '#F5811E',
-                                borderColor: '#F5811E',
-                                py: 1.5,
-                                px: 4,
-                                '&:hover': {
-                                    borderColor: '#E26C0A',
-                                    bgcolor: 'rgba(245, 129, 30, 0.1)'
-                                }
-                            }}
-                        >
-                            Save Results
-                        </Button>
-                        <Button
-                            variant="contained"
-                            onClick={() => navigate('/resources?scrollTo=assessments')}
-                            sx={{
-                                bgcolor: '#F5811E',
-                                color: '#fff',
-                                py: 1.5,
-                                px: 4,
-                                '&:hover': {bgcolor: '#E26C0A'}
-                            }}
-                        >
-                            Return to Assessments
-                        </Button>
+                                        <Typography
+                                            variant="h5"
+                                            sx={{
+                                                color: '#F5811E',
+                                                fontWeight: 600,
+                                                mb: 2,
+                                                textAlign: 'center',
+                                            }}
+                                        >
+                                            {result.level}
+                                        </Typography>
+                                    </Box>
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            p: 2.5,
+                                            borderRadius: 2,
+                                            bgcolor: 'rgb(227,234,246)',
+                                            border: '1px solid rgba(245, 129, 30, 0.1)',
+                                            transition: 'transform 0.2s',
+                                            textAlign: "justify",
+                                            '&:hover': {
+                                                transform: 'translateY(-2px)',
+                                                boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                            }
+                                        }}
+                                    >
+                                        {result.interpretation}
+                                    </Typography>
+                                </Card>
+                            </Grid>
+
+                            {/* Recommendations Section */
+                            }
+                            <Grid item xs={12} md={6}>
+                                <Card sx={{
+                                    p: 4,
+                                    height: '100%',
+                                    background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                    borderRadius: 4
+                                }}>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Recommendations
+                                        </Typography>
+                                    </Box>
+
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        {result.recommendations.map((rec, index) => (
+                                            <Box
+                                                key={index}
+                                                sx={{
+                                                    p: 2.5,
+                                                    borderRadius: 2,
+                                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                    transition: 'transform 0.2s',
+                                                    '&:hover': {
+                                                        transform: 'translateY(-2px)',
+                                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                    }
+                                                }}
+                                            >
+                                                <Typography
+                                                    variant="h6"
+                                                    sx={{
+                                                        color: '#F5811E',
+                                                        fontSize: "19px",
+                                                        fontWeight: 600,
+                                                        mb: 1,
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        gap: 1
+                                                    }}
+                                                >
+                                                    {/*<AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
+                                                    {rec.title}
+                                                </Typography>
+                                                <Typography variant="body1"
+                                                            sx={{color: '#4A5568', textAlign: "justify",}}>
+                                                    {rec.description}
+                                                </Typography>
+                                            </Box>
+                                        ))}
+                                    </Box>
+                                </Card>
+                            </Grid>
+                        </Grid>
+
+                        {/* Action Buttons */
+                        }
+                        <Box sx={{
+                            display: 'flex',
+                            gap: 2,
+                            justifyContent: 'center',
+                            mt: 4
+                        }}>
+                            <Button
+                                variant="outlined"
+                                onClick={() => setView(true)}
+                                sx={{
+                                    color: '#F5811E',
+                                    borderColor: '#F5811E',
+                                    py: 1.5,
+                                    px: 4,
+                                    '&:hover': {
+                                        borderColor: '#E26C0A',
+                                        bgcolor: 'rgba(245, 129, 30, 0.1)'
+                                    }
+                                }}
+                            >
+                                Save Results
+                            </Button>
+                            <Button
+                                variant="contained"
+                                onClick={() => navigate('/resources?scrollTo=assessments')}
+                                sx={{
+                                    bgcolor: '#F5811E',
+                                    color: '#fff',
+                                    py: 1.5,
+                                    px: 4,
+                                    '&:hover': {bgcolor: '#E26C0A'}
+                                }}
+                            >
+                                Return to Assessments
+                            </Button>
+                        </Box>
                     </Box>
-                </Box>
-            </Container>
-        );
+                </Container>
+                <Dialog fullScreen open={view}>
+                    <Box sx={{height: 1, display: 'flex', flexDirection: 'column'}}>
+                        <DialogActions sx={{p: 1.5}}>
+                            <Button color="inherit" variant="contained" onClick={() => setView(false)}>
+                                Close
+                            </Button>
+                        </DialogActions>
+                        <Box sx={{flexGrow: 1, height: 1, overflow: 'hidden'}}>
+                            <PDFViewer width="100%" height="100%" style={{border: 'none'}}>
+                                <PdfView data={{
+                                    totalScore: totalScore,
+                                    level: result.level,
+                                    interpretation: result.interpretation,
+                                    recommendations: result.recommendations
+                                }}/>
+                            </PDFViewer>
+                        </Box>
+                    </Box>
+                </Dialog>
+            </>
+        )
+            ;
     }
 
     return (

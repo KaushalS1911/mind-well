@@ -12,13 +12,15 @@ import {
     LinearProgress,
     CircularProgress,
     Grid,
-    Card,
+    Card, Dialog, DialogActions,
 } from '@mui/material';
 import {styled} from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
+import {PDFViewer} from "@react-pdf/renderer";
+import PdfView from "../../global/pdf-view.jsx";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -317,6 +319,7 @@ const GeneralStressQuestions = () => {
     const [answers, setAnswers] = useState(Array(20).fill(''));
     const [showResults, setShowResults] = useState(false);
     const [totalScore, setTotalScore] = useState(0);
+    const [view, setView] = useState(false);
 
     const handleAnswerChange = (event) => {
         const newAnswers = [...answers];
@@ -351,164 +354,185 @@ const GeneralStressQuestions = () => {
         const percentage = (totalScore / 80) * 100;
 
         return (
-            <Container maxWidth="md">
-                <Box
-                    mt={12}
-                    sx={{
-                        py: 5,
-                        px: {xs: 2, md: 4},
-                        minHeight: '100vh',
-                        display: 'flex',
-                        flexDirection: 'column',
-                    }}>
-                    {/* Header Section */}
-                    <Box sx={{textAlign: 'center', mb: 4}}>
-                        <Typography
-                            className={"Montserrat"}
-                            variant="h3"
-                            sx={{
-                                color: '#0D2152',
-                                fontWeight: 700,
-                                mb: 2,
-                                fontSize: {xs: '2rem', md: '2.5rem'}
-                            }}
-                        >
-                            Your Assessment Results
-                        </Typography>
-
-                    </Box>
-
-                    <Card sx={{
-                        p: 4,
-                        height: '100%',
-                        background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                        boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                        borderRadius: 4,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: "space-between"
-                    }}>
-                        <Box>
-                            <Box sx={{
-                                position: 'relative',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                mb: 3
-                            }}>
-                                <CircularProgress
-                                    variant="determinate"
-                                    value={percentage}
-                                    size={200}
-                                    thickness={4}
-                                    sx={{
-                                        color: totalScore >= 61 ? '#ff4d4d' :
-                                            totalScore >= 41 ? '#ffa500' :
-                                                totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#00ff00',
-                                    }}
-                                />
-                                {/*<CircularProgress*/}
-                                {/*    variant="determinate"*/}
-                                {/*    value={percentage}*/}
-                                {/*    size={200}*/}
-                                {/*    thickness={4}*/}
-                                {/*    sx={{*/}
-                                {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                {/*                totalScore >= 21 ? '#ffff00' :*/}
-                                {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
-                                {/*        position: 'absolute',*/}
-                                {/*        left: 34,*/}
-                                {/*    }}*/}
-                                {/*/>*/}
-                                <Box
-                                    sx={{
-                                        position: 'absolute',
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        alignItems: 'center',
-                                    }}
-                                >
-                                    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                        {totalScore}
-                                    </Typography>
-                                    <Typography variant="h5" sx={{color: '#4A5568'}}>
-                                        out of 80
-                                    </Typography>
-                                </Box>
-                            </Box>
-
+            <>
+                <Container maxWidth="md">
+                    <Box
+                        mt={12}
+                        sx={{
+                            py: 5,
+                            px: {xs: 2, md: 4},
+                            minHeight: '100vh',
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}>
+                        {/* Header Section */}
+                        <Box sx={{textAlign: 'center', mb: 4}}>
                             <Typography
-                                variant="h5"
+                                className={"Montserrat"}
+                                variant="h3"
                                 sx={{
-                                    color: '#F5811E',
-                                    fontWeight: 600,
+                                    color: '#0D2152',
+                                    fontWeight: 700,
                                     mb: 2,
-                                    textAlign: 'center',
+                                    fontSize: {xs: '2rem', md: '2.5rem'}
                                 }}
                             >
-                                {result.level}
+                                Your Assessment Results
                             </Typography>
-                        </Box>
-                        <Typography
-                            variant="body1"
-                            sx={{
-                                p: 2.5,
-                                borderRadius: 2,
-                                bgcolor: 'rgb(227,234,246)',
-                                border: '1px solid rgba(245, 129, 30, 0.1)',
-                                transition: 'transform 0.2s',
-                                textAlign: "justify",
-                                '&:hover': {
-                                    transform: 'translateY(-2px)',
-                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                }
-                            }}
-                        >
-                            {result.interpretation}
-                        </Typography>
-                    </Card>
 
-                    {/* Action Buttons */}
-                    <Box sx={{
-                        display: 'flex',
-                        gap: 2,
-                        justifyContent: 'center',
-                        mt: 4
-                    }}>
-                        <Button
-                            variant="outlined"
-                            onClick={() => navigate('/assessments/general-stress')}
-                            sx={{
-                                color: '#F5811E',
-                                borderColor: '#F5811E',
-                                py: 1.5,
-                                px: 4,
-                                '&:hover': {
-                                    borderColor: '#E26C0A',
-                                    bgcolor: 'rgba(245, 129, 30, 0.1)'
-                                }
-                            }}
-                        >
-                            Save Results
-                        </Button>
-                        <Button
-                            variant="contained"
-                            onClick={() => navigate('/resources?scrollTo=assessments')}
-                            sx={{
-                                bgcolor: '#F5811E',
-                                color: '#fff',
-                                py: 1.5,
-                                px: 4,
-                                '&:hover': {bgcolor: '#E26C0A'}
-                            }}
-                        >
-                            Return to Assessments
-                        </Button>
+                        </Box>
+
+                        <Card sx={{
+                            p: 4,
+                            height: '100%',
+                            background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                            borderRadius: 4,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: "space-between"
+                        }}>
+                            <Box>
+                                <Box sx={{
+                                    position: 'relative',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    mb: 3
+                                }}>
+                                    <CircularProgress
+                                        variant="determinate"
+                                        value={percentage}
+                                        size={200}
+                                        thickness={4}
+                                        sx={{
+                                            color: totalScore >= 61 ? '#ff4d4d' :
+                                                totalScore >= 41 ? '#ffa500' :
+                                                    totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',
+                                        }}
+                                    />
+                                    {/*<CircularProgress*/}
+                                    {/*    variant="determinate"*/}
+                                    {/*    value={percentage}*/}
+                                    {/*    size={200}*/}
+                                    {/*    thickness={4}*/}
+                                    {/*    sx={{*/}
+                                    {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                    {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                    {/*                totalScore >= 21 ? '#ffff00' :*/}
+                                    {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
+                                    {/*        position: 'absolute',*/}
+                                    {/*        left: 34,*/}
+                                    {/*    }}*/}
+                                    {/*/>*/}
+                                    <Box
+                                        sx={{
+                                            position: 'absolute',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
+                                        }}
+                                    >
+                                        <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
+                                            {totalScore}
+                                        </Typography>
+                                        <Typography variant="h5" sx={{color: '#4A5568'}}>
+                                            out of 80
+                                        </Typography>
+                                    </Box>
+                                </Box>
+
+                                <Typography
+                                    variant="h5"
+                                    sx={{
+                                        color: '#F5811E',
+                                        fontWeight: 600,
+                                        mb: 2,
+                                        textAlign: 'center',
+                                    }}
+                                >
+                                    {result.level}
+                                </Typography>
+                            </Box>
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    p: 2.5,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgb(227,234,246)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    textAlign: "justify",
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.interpretation}
+                            </Typography>
+                        </Card>
+
+                        {/* Action Buttons */}
+                        <Box sx={{
+                            display: 'flex',
+                            gap: 2,
+                            justifyContent: 'center',
+                            mt: 4
+                        }}>
+                            <Button
+                                variant="outlined"
+                                onClick={() => setView(true)}
+                                sx={{
+                                    color: '#F5811E',
+                                    borderColor: '#F5811E',
+                                    py: 1.5,
+                                    px: 4,
+                                    '&:hover': {
+                                        borderColor: '#E26C0A',
+                                        bgcolor: 'rgba(245, 129, 30, 0.1)'
+                                    }
+                                }}
+                            >
+                                Save Results
+                            </Button>
+                            <Button
+                                variant="contained"
+                                onClick={() => navigate('/resources?scrollTo=assessments')}
+                                sx={{
+                                    bgcolor: '#F5811E',
+                                    color: '#fff',
+                                    py: 1.5,
+                                    px: 4,
+                                    '&:hover': {bgcolor: '#E26C0A'}
+                                }}
+                            >
+                                Return to Assessments
+                            </Button>
+                        </Box>
                     </Box>
-                </Box>
-            </Container>
+                </Container>
+                <Dialog fullScreen open={view}>
+                    <Box sx={{height: 1, display: 'flex', flexDirection: 'column'}}>
+                        <DialogActions sx={{p: 1.5}}>
+                            <Button color="inherit" variant="contained" onClick={() => setView(false)}>
+                                Close
+                            </Button>
+                        </DialogActions>
+                        <Box sx={{flexGrow: 1, height: 1, overflow: 'hidden'}}>
+                            <PDFViewer width="100%" height="100%" style={{border: 'none'}}>
+                                <PdfView data={{
+                                    totalScore: totalScore,
+                                    level: result.level,
+                                    interpretation: result.interpretation,
+                                    recommendations: result.recommendations
+                                }}/>
+                            </PDFViewer>
+                        </Box>
+                    </Box>
+                </Dialog>
+            </>
         )
             ;
     }
