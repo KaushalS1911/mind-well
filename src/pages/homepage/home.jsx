@@ -22,7 +22,7 @@ function Home() {
             <Mindwell/>
             <EngagementFramework/>
             <Clientsreview/>
-            {/*<Partners/>*/}
+            <Partners/>
             {/*<Offerings/>*/}
             {/*<Struggling/>*/}
             {/*<LookingFor/>*/}

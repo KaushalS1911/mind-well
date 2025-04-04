@@ -19,7 +19,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
-import {PDFViewer} from "@react-pdf/renderer";
+import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
@@ -443,7 +443,6 @@ const ShapeK12Questions = () => {
     const [answers, setAnswers] = useState(Array(20).fill(''));
     const [showResults, setShowResults] = useState(false);
     const [totalScore, setTotalScore] = useState(0);
-    const [view, setView] = useState(false);
 
     const handleAnswerChange = (event) => {
         const newAnswers = [...answers];
@@ -598,37 +597,53 @@ const ShapeK12Questions = () => {
                             </Typography>
                         </Card>
 
-                        <Box sx={{
-                            display: 'flex',
-                            gap: 2,
-                            justifyContent: 'center',
-                            mt: 4
-                        }}>
-                            <Button
-                                variant="outlined"
-                                onClick={() => setView(true)}
-                                sx={{
-                                    color: '#F5811E',
-                                    borderColor: '#F5811E',
-                                    py: 1.5,
-                                    px: 4,
-                                    '&:hover': {
-                                        borderColor: '#E26C0A',
-                                        bgcolor: 'rgba(245, 129, 30, 0.1)'
-                                    }
-                                }}
+                        <Box
+                            sx={{
+                                display: "flex",
+                                gap: 2,
+                                justifyContent: "center",
+                                mt: 4,
+                            }}
+                        >
+                            {/* Save Results Button - Downloads PDF */}
+                            <PDFDownloadLink
+                                document={<PdfView data={{
+                                    totalScore: totalScore,
+                                    level: result.level,
+                                    interpretation: result.interpretation,
+                                    recommendations: result.recommendations
+                                }}/>}
+                                fileName="Emotional_Awareness_Report.pdf"
+                                style={{textDecoration: "none"}}
                             >
-                                Save Results
-                            </Button>
+                                {({loading}) => (
+                                    <Button
+                                        variant="outlined"
+                                        sx={{
+                                            color: "#F5811E",
+                                            borderColor: "#F5811E",
+                                            py: 1.5,
+                                            px: 4,
+                                            "&:hover": {
+                                                borderColor: "#E26C0A",
+                                                bgcolor: "rgba(245, 129, 30, 0.1)",
+                                            },
+                                        }}
+                                    >
+                                        {loading ? "Preparing..." : "Download Results"}
+                                    </Button>
+                                )}
+                            </PDFDownloadLink>
+
                             <Button
                                 variant="contained"
-                                onClick={() => navigate('/resources?scrollTo=assessments')}
+                                onClick={() => navigate("/resources?scrollTo=assessments")}
                                 sx={{
-                                    bgcolor: '#F5811E',
-                                    color: '#fff',
+                                    bgcolor: "#F5811E",
+                                    color: "#fff",
                                     py: 1.5,
                                     px: 4,
-                                    '&:hover': {bgcolor: '#E26C0A'}
+                                    "&:hover": {bgcolor: "#E26C0A"},
                                 }}
                             >
                                 Return to Assessments
@@ -636,25 +651,6 @@ const ShapeK12Questions = () => {
                         </Box>
                     </Box>
                 </Container>
-                <Dialog fullScreen open={view}>
-                    <Box sx={{height: 1, display: 'flex', flexDirection: 'column'}}>
-                        <DialogActions sx={{p: 1.5}}>
-                            <Button color="inherit" variant="contained" onClick={() => setView(false)}>
-                                Close
-                            </Button>
-                        </DialogActions>
-                        <Box sx={{flexGrow: 1, height: 1, overflow: 'hidden'}}>
-                            <PDFViewer width="100%" height="100%" style={{border: 'none'}}>
-                                <PdfView data={{
-                                    totalScore: totalScore,
-                                    level: result.level,
-                                    interpretation: result.interpretation,
-                                    recommendations: result.recommendations
-                                }}/>
-                            </PDFViewer>
-                        </Box>
-                    </Box>
-                </Dialog>
             </>
         )
             ;
