@@ -55,7 +55,7 @@ function Mindwell() {
                     color: "#012765",
                     fontWeight: "700"
                 }}>
-                    Why Emotionall Yours?
+                    Why Emotionally Yours?
                 </Box>
                 <Box sx={{
                     maxWidth: 600,
@@ -140,7 +140,7 @@ function Mindwell() {
                                 Our Impact
                             </Typography>
                             <Box variant="body1" sx={{mt: 1, color: "#D1E1FF", width: "85%", mb: 2}}>
-                                At Emotionall Yours, we're committed to making a difference in how people access and experience
+                                At Emotionally Yours, we're committed to making a difference in how people access and experience
                                 mental healthcare.
                             </Box>
                         </Grid>

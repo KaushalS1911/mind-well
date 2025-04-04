@@ -172,6 +172,7 @@ function FeaturedLatestHelp() {
                                             mb: "16px",
                                             color: "#4b5563",
                                             width: "95%",
+                                            textAlign:"justify"
                                         }}>
                                             {resource.description}
                                         </Box>
@@ -275,6 +276,7 @@ function FeaturedLatestHelp() {
                                         color: "#4b5563",
                                         mb: "16px",
                                         lineHeight: "1.25rem",
+                                        textAlign: "justify"
                                     }}>
                                         {article.description}
                                     </Box>

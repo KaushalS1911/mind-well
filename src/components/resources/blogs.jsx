@@ -80,7 +80,7 @@ function Blogs() {
                                     <Box fontSize={18} fontWeight={700} sx={{color: "#012765", mb: "8px"}}>
                                         {blog.title}
                                     </Box>
-                                    <Box fontSize={14} color="#4B5563" mb="12px">
+                                    <Box fontSize={14} color="#4B5563" mb="12px" textAlign="justify">
                                         {blog.description}
                                     </Box>
                                     <Box fontSize={14} fontWeight={500} color="#FE6A00" mt={1.7} sx={{

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
     AppBar,
     Toolbar,
@@ -13,21 +13,21 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import logo from "../../assets/logo.jpg";
+import {useLocation, useNavigate} from "react-router-dom";
 
 function Navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [hoverMenu, setHoverMenu] = useState(null);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleMobileMenuToggle = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
     const handleScrollToSection = (sectionId, parentPath) => {
-        if (window.location.pathname !== parentPath) {
-            window.location.href = parentPath;
-            setTimeout(() => {
-                scrollToSection(sectionId);
-            }, 500);
+        if (location.pathname !== parentPath) {
+            navigate(`${parentPath}?scrollTo=${sectionId}`);
         } else {
             scrollToSection(sectionId);
         }
@@ -39,11 +39,18 @@ function Navigation() {
             if (section) {
                 const offset = 100;
                 const top = section.getBoundingClientRect().top + window.scrollY - offset;
-                window.scrollTo({ top, behavior: "smooth" });
+                window.scrollTo({top, behavior: "smooth"});
             }
         }, 100);
     };
 
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const scrollTo = params.get("scrollTo");
+        if (scrollTo) {
+            scrollToSection(scrollTo);
+        }
+    }, [location]);
 
     const navItems = [
         {label: "Home", path: "/"},
@@ -54,7 +61,6 @@ function Navigation() {
             submenu: [
                 {label: "Shape", sectionId: "shape"},
                 {label: "ESOP", sectionId: "esop"},
-                // {label: "ManMitra", sectionId: "manMitra"},
             ],
         },
         {label: "Partner", path: "/partner"},
@@ -105,7 +111,7 @@ function Navigation() {
                                             alignItems: "center",
                                             gap: "4px",
                                         }}
-                                        onClick={() => (window.location.href = item.path)}
+                                        onClick={() => navigate(item.path)}
                                     >
                                         {item.label}
                                         <KeyboardArrowDownIcon fontSize="small"/>
@@ -186,13 +192,22 @@ function Navigation() {
             </AppBar>
 
             {/* Mobile Menu */}
-            <Collapse in={mobileMenuOpen} timeout="auto" unmountOnExit sx={{display: {xs: "block", md: "none"}}}>
+            <Collapse
+                in={mobileMenuOpen}
+                timeout="auto"
+                unmountOnExit
+                sx={{display: {xs: "block", md: "none"}}}
+                onExited={() => setMobileMenuOpen(false)}
+            >
                 <List sx={{backgroundColor: "#fff", color: "#000", padding: "8px 16px 16px"}}>
                     {navItems.map((item, index) => (
                         <Box key={index}>
                             <ListItem
                                 sx={{p: 0, cursor: "pointer", "&:hover .MuiTypography-root": {color: "#FF6600"}}}
-                                onClick={() => (window.location.href = item.path)}
+                                onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    window.location.href = item.path;
+                                }}
                             >
                                 <ListItemText
                                     primary={item.label}
@@ -215,7 +230,10 @@ function Navigation() {
                                                 cursor: "pointer",
                                                 "&:hover .MuiTypography-root": {color: "#FF6600"}
                                             }}
-                                            onClick={() => handleScrollToSection(sub.sectionId, item.path)}
+                                            onClick={() => {
+                                                handleScrollToSection(sub.sectionId, item.path);
+                                                setMobileMenuOpen(false);
+                                            }}
                                         >
                                             <ListItemText primary={sub.label} primaryTypographyProps={{
                                                 fontSize: "14px",
@@ -226,7 +244,6 @@ function Navigation() {
                                     ))}
                                 </List>
                             )}
-
                         </Box>
                     ))}
                     <Link href="/contact" passHref style={{textDecoration: "none"}}>
@@ -244,12 +261,14 @@ function Navigation() {
                                 textDecoration: "none",
                                 "&:hover": {backgroundColor: "#da5e05"},
                             }}
+                            onClick={() => setMobileMenuOpen(false)}
                         >
                             Get Started
                         </Box>
                     </Link>
                 </List>
             </Collapse>
+
         </Box>
     );
 }

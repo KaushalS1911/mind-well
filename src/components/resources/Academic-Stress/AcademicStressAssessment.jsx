@@ -5,7 +5,7 @@ import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import img7 from "../../assets/images/Resources/Assessments/Work_Life_Balance.jpg";
+import img5 from "../../../assets/images/Resources/Assessments/Academic_Stress.jpg";
 import { useNavigate } from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
@@ -38,11 +38,11 @@ const StartButton = styled(Button)(({ theme }) => ({
     },
 }));
 
-const WorkLifeBalanceAssessment = () => {
+const AcademicStressAssessment = () => {
     const navigate = useNavigate();
 
     const handleStartAssessment = () => {
-        navigate('/assessments/work-life-balance/questions');
+        navigate('/assessments/academic-stress/academic-assessment-form');
     };
 
     return (
@@ -58,10 +58,12 @@ const WorkLifeBalanceAssessment = () => {
                 <Grid container spacing={4} justifyContent="center">
                     {/* Left Column - Main Content */}
                     <Grid item xs={12} md={8}>
-                        <StyledPaper>
+                        <StyledPaper sx={{
+                            height: '100%',
+                        }}>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                                 <img
-                                    src={img7}
+                                    src={img5}
                                     alt="General Stress and Anxiety"
                                     style={{
                                         width: '64px',
@@ -70,13 +72,13 @@ const WorkLifeBalanceAssessment = () => {
                                         marginRight: '16px',
                                     }}
                                 />
-                                <Typography variant="h4" sx={{
+                                <Typography className={"Montserrat"} variant="h4" sx={{
                                     fontWeight: 700,
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
                                     fontSize: { xs: '24px', sm: '28px', md: '32px' },
                                 }}>
-                                    Work-Life Balance (Age 21+)
+                                    Academic Stress (Age 16-25)
                                 </Typography>
                             </Box>
 
@@ -124,7 +126,7 @@ const WorkLifeBalanceAssessment = () => {
                     {/* Right Column - Additional Info */}
                     <Grid item xs={12} md={4}>
                         <StyledPaper>
-                            <Typography variant="h6" sx={{
+                            <Typography className={"Montserrat"} variant="h6" sx={{
                                 mb: 2,
                                 color: '#012765',
                                 fontWeight: 600,
@@ -203,4 +205,4 @@ const WorkLifeBalanceAssessment = () => {
     );
 };
 
-export default WorkLifeBalanceAssessment;
+export default AcademicStressAssessment;

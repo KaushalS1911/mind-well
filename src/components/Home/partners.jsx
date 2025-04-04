@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { 
-  Box, 
-  Container, 
-  Typography, 
+import {
+  Box,
+  Container,
+  Typography,
   IconButton,
   Card,
   Stack,
-  styled 
+  styled
 } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -56,9 +56,9 @@ const Partners = () => {
           <Typography variant="h3" component="h2" fontWeight="700" mb={2}>
             Trusted by School Districts
           </Typography>
-          
+
           <Typography color="text.secondary" mb={4}>
-            Leading school districts across the country trust MindWellness to 
+            Leading school districts across the country trust MindWellness to
             provide quality healthcare to their students.
           </Typography>
 
@@ -87,16 +87,16 @@ const Partners = () => {
 
           {/* Navigation */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <IconButton 
+            <IconButton
               onClick={handlePrevSlide}
               sx={{ border: '1px solid #E2E8F0' }}
             >
               <ArrowBackIosNewIcon fontSize="small" />
             </IconButton>
-            
+
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               {benefits.map((_, index) => (
-                <SliderDot 
+                <SliderDot
                   key={index}
                   active={currentSlide === index}
                   onClick={() => setCurrentSlide(index)}
@@ -104,7 +104,7 @@ const Partners = () => {
               ))}
             </Box>
 
-            <IconButton 
+            <IconButton
               onClick={handleNextSlide}
               sx={{ border: '1px solid #E2E8F0' }}
             >
@@ -134,8 +134,8 @@ const Partners = () => {
                     gap: 2
                   }}
                 >
-                  <CheckCircleOutlineIcon 
-                    sx={{ 
+                  <CheckCircleOutlineIcon
+                    sx={{
                       color: '#4169E1',
                       fontSize: '1.5rem'
                     }}

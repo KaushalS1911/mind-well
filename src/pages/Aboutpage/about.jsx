@@ -7,6 +7,7 @@ import VisionMission from "../../components/About/VisionMission.jsx";
 import Goals from "../../components/About/Goals.jsx";
 import Founders from "../../components/About/Founders.jsx";
 import AdvisoryCouncil from "../../components/About/advisoryCouncil.jsx";
+import MajorClients from "../../components/About/majorClients.jsx";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
@@ -186,6 +187,7 @@ const About = () => {
             <Founders/>
             <AdvisoryCouncil/>
             <Worker/>
+            <MajorClients/>
         </Box>
     );
 };

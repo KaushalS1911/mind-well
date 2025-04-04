@@ -77,7 +77,7 @@ function CrisisResources() {
                 {/* Note Section */}
                 <Box sx={{backgroundColor: "#ECEFF3", padding: "16px", margin: "24px 0 0", borderRadius: 1}}>
                     <Box sx={{fontSize: "14px", color: "#012765"}}>
-                        <b>Note:</b> Emotionall Yours is not a crisis service. If you are experiencing a mental health
+                        <b>Note:</b> Emotionally Yours is not a crisis service. If you are experiencing a mental health
                         emergency, please contact the resources above for immediate assistance.
                     </Box>
                 </Box>
