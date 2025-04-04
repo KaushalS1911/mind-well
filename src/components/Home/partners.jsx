@@ -1,121 +1,154 @@
-import React from "react";
-import {Box, Card, CardContent, Typography, Avatar, Grid, Button, Container} from "@mui/material";
-import StarIcon from '@mui/icons-material/Star';
-import Consultation from "../global/consultation.jsx";
-import {Description} from "@mui/icons-material";
+import React, { useState } from 'react';
+import {
+  Box,
+  Container,
+  Typography,
+  IconButton,
+  Card,
+  Stack,
+  styled
+} from '@mui/material';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-const testimonials = [
-    {
-        initials: "JT",
-        name: "Jessica Thompson",
-        role: "HR Director, TechInnovate",
-        feedback:
-            "Implementing Emotionally Yours employee mental health program has been transformative for our company culture. Our team feels supported, productivity has increased, and we've seen a significant reduction in absenteeism.",
-    },
-    {
-        initials: "MR",
-        name: "Michael Rodriguez",
-        role: "CEO, GreenEarth Solutions",
-        feedback:
-            "As a company that prioritizes employee wellbeing, partnering with Emotionally Yours was an obvious choice. The ROI has been clear – lower turnover, higher engagement, and a team that feels genuinely cared for.",
-    },
-    {
-        initials: "SP",
-        name: "Sarah Patel",
-        role: "People Operations, Fintech Forward",
-        feedback:
-            "The manager training has been invaluable. Our leadership team now feels equipped to support their reports' mental health needs, creating a more empathetic and resilient organization overall.",
-    },
-];
+const SliderDot = styled(FiberManualRecordIcon)(({ active }) => ({
+  fontSize: '8px',
+  margin: '0 4px',
+  color: active ? '#4169E1' : '#CBD5E0',
+  cursor: 'pointer'
+}));
 
-function Partners() {
-    return (
-        <Box sx={{p: "30px 0 96px 0", backgroundColor: "#F9FAFB"}}>
-            <Container maxWidth={"xl"}>
-                <Box className={"Montserrat"} sx={{
-                    fontSize: "24px",
-                    color: "#012765",
-                    margin: "0 0 32px",
-                    fontWeight: "700",
-                    lineHeight: "2rem",
-                    textAlign: "center",
-                }}>
-                    What Our Corporate Partners Say
-                </Box>
-                <Grid container spacing={3} justifyContent="center">
-                    {testimonials.map((testimonial, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
-                            <Box sx={{
-                                p: "1.5rem",
-                                borderRadius: "0.5rem",
-                                backgroundColor: "#fff",
-                                boxShadow: 2,
-                                height: "100%"
-                            }}>
-                                <Box
-                                    display="flex"
-                                    alignItems="center"
-                                    gap={2}
-                                    sx={{mb: 2, flexWrap: "wrap"}}
-                                >
-                                    <Avatar
-                                        sx={{
-                                            fontWeight: 700,
-                                            backgroundColor: "rgb(1 39 101 / var(--tw-bg-opacity, 1))",
-                                            borderRadius: "50%",
-                                            padding: "25px 25px",
-                                            fontSize: {xs: 16, sm: 18, md: 20}
-                                        }}
-                                    >
-                                        {testimonial.initials}
-                                    </Avatar>
-                                    <Box>
-                                        <Box
-                                            sx={{
-                                                fontSize: "16px",
-                                                color: "#012765",
-                                                fontWeight: 700
-                                            }}
-                                        >
-                                            {testimonial.name}
-                                        </Box>
-                                        <Box
-                                            sx={{
-                                                fontSize: "14px",
-                                                color: "#4b5563"
-                                            }}
-                                        >
-                                            {testimonial.role}
-                                        </Box>
-                                    </Box>
-                                </Box>
-                                <Box>
-                                    <Box sx={{
-                                        fontSize: "16px",
-                                        margin: "0 0 16px",
-                                        color: "#374151",
-                                        lineHeight: "1.4rem",
-                                    }}>
-                                        {testimonial.feedback}
-                                    </Box>
-                                </Box>
-                                <Box sx={{display: "flex", gap: "4px"}}>
-                                    {[...Array(5)].map((_, index) => (
-                                        <StarIcon key={index} sx={{color: "#f65a06"}}/>
-                                    ))}
-                                </Box>
-                            </Box>
-                        </Grid>
-                    ))}
-                </Grid>
-                <Consultation
-                    title={"Ready to support your team's mental health?"}
-                    Description={"Schedule a free consultation with our workplace wellness specialists to create a customized program for your organization."}
-                    Btn={"Schedule Consultation"}
+const Partners = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const benefits = [
+    {
+      items: [
+        'Improved attendance rates',
+        'Better academic performance',
+        'Reduced healthcare disparities'
+      ]
+    },
+    {
+      items: [
+        'Enhanced student wellbeing',
+        'Increased parent satisfaction',
+        'Cost-effective healthcare delivery'
+      ]
+    }
+  ];
+
+  const handlePrevSlide = () => {
+    setCurrentSlide(prev => (prev === 0 ? benefits.length - 1 : prev - 1));
+  };
+
+  const handleNextSlide = () => {
+    setCurrentSlide(prev => (prev === benefits.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Box sx={{ display: 'flex', gap: 6, flexDirection: { xs: 'column', md: 'row' } }}>
+        {/* Left Content */}
+        <Box sx={{ flex: 1 }}>
+          <Typography variant="h3" component="h2" fontWeight="700" mb={2}>
+            Trusted by School Districts
+          </Typography>
+
+          <Typography color="text.secondary" mb={4}>
+            Leading school districts across the country trust MindWellness to
+            provide quality healthcare to their students.
+          </Typography>
+
+          <Typography color="text.secondary" mb={3}>
+            Trusted by leading school districts nationwide
+          </Typography>
+
+          <Stack direction="row" spacing={4} mb={4}>
+            <Box
+              component="img"
+              src="/path-to-lausd-logo.png"
+              alt="LAUSD"
+              sx={{
+                height: 40,
+                filter: 'grayscale(100%)',
+                opacity: 0.7,
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  filter: 'grayscale(0%)',
+                  opacity: 1
+                }
+              }}
+            />
+            {/* Add more district logos here */}
+          </Stack>
+
+          {/* Navigation */}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <IconButton
+              onClick={handlePrevSlide}
+              sx={{ border: '1px solid #E2E8F0' }}
+            >
+              <ArrowBackIosNewIcon fontSize="small" />
+            </IconButton>
+
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              {benefits.map((_, index) => (
+                <SliderDot
+                  key={index}
+                  active={currentSlide === index}
+                  onClick={() => setCurrentSlide(index)}
                 />
-            </Container>
+              ))}
+            </Box>
+
+            <IconButton
+              onClick={handleNextSlide}
+              sx={{ border: '1px solid #E2E8F0' }}
+            >
+              <ArrowForwardIosIcon fontSize="small" />
+            </IconButton>
+          </Box>
         </Box>
-    );
-}
+
+        {/* Right Content */}
+        <Box sx={{ flex: 1 }}>
+          <Card
+            sx={{
+              p: 3,
+              borderRadius: 4,
+              bgcolor: '#F0FFF4',
+              border: '1px solid #98F8E1',
+              boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)'
+            }}
+          >
+            <Stack spacing={2}>
+              {benefits[currentSlide].items.map((benefit, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 2
+                  }}
+                >
+                  <CheckCircleOutlineIcon
+                    sx={{
+                      color: '#4169E1',
+                      fontSize: '1.5rem'
+                    }}
+                  />
+                  <Typography>{benefit}</Typography>
+                </Box>
+              ))}
+            </Stack>
+          </Card>
+        </Box>
+      </Box>
+    </Container>
+  );
+};
 
 export default Partners;

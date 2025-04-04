@@ -1,185 +1,140 @@
-import React from "react";
-import {Box, Grid, Container, Button} from "@mui/material";
-import {WarningAmber, MoodBad, Bolt, Favorite, Security, Visibility, Cake, Psychology} from "@mui/icons-material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import React from 'react';
+import { 
+  Box, 
+  Container, 
+  Typography, 
+  Grid, 
+  Card,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  styled 
+} from '@mui/material';
+import CircleIcon from '@mui/icons-material/Circle';
 
-const struggles = [
-    {
-        title: "Anxiety",
-        description: "Manage worry, panic, and fear",
-        icon: <WarningAmber sx={{fontSize: 30, color: "orange"}}/>
-    },
-    {
-        title: "Depression",
-        description: "Find joy and motivation again",
-        icon: <MoodBad sx={{fontSize: 30, color: "orange"}}/>
-    },
-    {
-        title: "Stress",
-        description: "Develop effective coping skills",
-        icon: <Psychology sx={{fontSize: 30, color: "orange"}}/>
-    },
-    {
-        title: "Relationships",
-        description: "Improve communication and connection",
-        icon: <Favorite sx={{fontSize: 30, color: "orange"}}/>
-    },
-    {
-        title: "Trauma",
-        description: "Heal from difficult experiences",
-        icon: <Security sx={{fontSize: 30, color: "orange"}}/>
-    },
-    {
-        title: "Addiction",
-        description: "Break free from harmful patterns",
-        icon: <Bolt sx={{fontSize: 30, color: "orange"}}/>
-    },
-    {
-        title: "Self-esteem",
-        description: "Build confidence and self-worth",
-        icon: <Visibility sx={{fontSize: 30, color: "orange"}}/>
-    },
-    {
-        title: "Grief & Loss",
-        description: "Navigate through difficult transitions",
-        icon: <Cake sx={{fontSize: 30, color: "orange"}}/>
-    },
-];
+const StyledCard = styled(Card)(({ theme }) => ({
+  height: '100%',
+  padding: theme.spacing(3),
+  borderRadius: theme.spacing(2),
+  boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+  display: 'flex',
+  flexDirection: 'column'
+}));
 
-const features = [
-    {title: "Personalized assessments", description: "Tailored to your organization's specific needs and culture"},
-    {title: "Virtual therapy sessions", description: "Confidential access to licensed therapists"},
-    {title: "Workshops and webinars", description: "Educational resources on mental health topics"},
-    {title: "Analytics and reporting", description: "Measure program effectiveness and engagement"}
-];
+const StyledListItem = styled(ListItem)({
+  padding: '4px 0',
+});
 
-function Struggling() {
-    return (
-        <Box sx={{
-            padding: "96px 0"
-        }}>
-            <Container maxWidth="xl">
-                <Box sx={{textAlign: "center",}}>
-                    <Box sx={{mb: 4}}>
-                        <Box className={"Montserrat"}
-                             sx={{fontSize: {xs: "24px", sm: "32px"}, color: "#012765", fontWeight: "700", mb: 2}}>
-                            What Are You Struggling With?
-                        </Box>
-                        <Box
-                            sx={{color: "#4B5563", fontSize: {xs: "14px", sm: "18px"}, maxWidth: "600px", mx: "auto"}}>
-                            We provide expert support for a wide range of mental health concerns. Select your challenge
-                            to
-                            learn more about how we can help.
-                        </Box>
-                    </Box>
-                    <Grid container spacing={3} justifyContent="center">
-                        {struggles.map((item, index) => (
-                            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                                <Box sx={{
-                                    p: 3,
-                                    textAlign: "center",
-                                    borderRadius: 2,
-                                    border: "1px solid #E5E7EB",
-                                    transition: "0.3s",
-                                    '&:hover': {backgroundColor: "#F9FAFB"}
-                                }}>
-                                    <Box sx={{
-                                        width: 60,
-                                        height: 60,
-                                        mx: "auto",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        borderRadius: "50%",
-                                        backgroundColor: "#FAECE1",
-                                        mb: 2
-                                    }}>
-                                        {item.icon}
-                                    </Box>
-                                    <Box sx={{fontSize: "16px", color: "#012765", fontWeight: "600"}}>{item.title}</Box>
-                                    <Box sx={{color: "#4b5563", fontSize: "14px"}}>{item.description}</Box>
-                                </Box>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
+const StyledListItemIcon = styled(ListItemIcon)({
+  minWidth: '32px',
+  '& .MuiSvgIcon-root': {
+    fontSize: '8px',
+    color: '#FF7F6A'
+  }
+});
 
-                <Box sx={{backgroundColor: "#012765", color: "white", p: {xs: 3, sm: 6}, borderRadius: "8px", mt: 9}}>
-                    <Grid container spacing={3} alignItems="center">
-                        <Grid item xs={12} lg={8}>
-                            <Box className={"Montserrat"}
-                                 sx={{fontSize: {xs: "24px", sm: "30px"}, fontWeight: "700", mb: 2}}>
-                                Invest in Your Employees and Build Thriving Teams
-                            </Box>
-                            <Box sx={{fontSize: "16px", mb: 3, opacity: "0.9", width: {md: "80%"}}}>
-                                Provide your employees with access to mental health resources that boost well-being,
-                                increase productivity, and show your commitment to their health.
-                            </Box>
-                            <Grid container spacing={2}>
-                                {["Reduce absenteeism and healthcare costs", "Improve employee retention and satisfaction", "Create a culture that prioritizes mental health", "Easy implementation with dedicated support"].map((benefit, index) => (
-                                    <Grid item xs={12} key={index}>
-                                        <Box sx={{display: "flex", alignItems: "center", gap: "8px", fontSize: "16px"}}>
-                                            <CheckCircleIcon sx={{color: "#FE6A00"}}/> {benefit}
-                                        </Box>
-                                    </Grid>
-                                ))}
-                            </Grid>
-                            <Box sx={{mt: 3}}>
-                                <Box sx={{
-                                    fontSize: "16px",
-                                    display: "inline-block",
-                                    borderRadius: "7px",
-                                    backgroundColor: "#fff",
-                                    color: "#012765",
-                                    fontWeight: "600",
-                                    padding: "12px 24px",
-                                    mb: {lg: 0, xs: 3},
-                                    cursor: "pointer",
-                                }}>
-                                    Request information
-                                </Box>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} lg={4}>
-                            <Box sx={{backgroundColor: "white", color: "#012765", p: 3, borderRadius: "8px"}}>
-                                <Box sx={{fontSize: "20px", fontWeight: "700", mb: 2}}>Our Corporate Wellness Program
-                                    Includes:</Box>
-                                <Grid container spacing={2}>
-                                    {features.map((feature, index) => (
-                                        <Grid item xs={12} key={index}>
-                                            <Box sx={{display: "flex", gap: "8px", flexDirection: "column"}}>
-                                                <Box sx={{display: "flex", alignItems: "center", gap: "8px"}}>
-                                                    <Box sx={{
-                                                        width: 24,
-                                                        height: 24,
-                                                        backgroundColor: "#FF8000",
-                                                        borderRadius: "50%",
-                                                        display: "flex",
-                                                        alignItems: "center",
-                                                        justifyContent: "center",
-                                                        color: "white",
-                                                        fontWeight: "bold"
-                                                    }}>
-                                                        {index + 1}
-                                                    </Box>
-                                                    <span style={{fontWeight: "bold"}}>{feature.title}</span>
-                                                </Box>
-                                                <Box sx={{
-                                                    fontSize: "14px",
-                                                    color: "#555",
-                                                    ml: 4
-                                                }}>{feature.description}</Box>
-                                            </Box>
-                                        </Grid>
-                                    ))}
-                                </Grid>
-                            </Box>
-                        </Grid>
-                    </Grid>
-                </Box>
-            </Container>
-        </Box>
-    );
-}
+const ChallengeCard = ({ title, image, challenges }) => (
+  <StyledCard>
+    <Box
+      component="img"
+      src={image}
+      alt={title}
+      sx={{
+        width: '100%',
+        height: '200px',
+        objectFit: 'cover',
+        borderRadius: 2,
+        mb: 2
+      }}
+    />
+    <Typography variant="h6" fontWeight="600" mb={2}>
+      {title}
+    </Typography>
+    <List>
+      {challenges.map((challenge, index) => (
+        <StyledListItem key={index}>
+          <StyledListItemIcon>
+            <CircleIcon />
+          </StyledListItemIcon>
+          <ListItemText 
+            primary={
+              <Typography variant="body2" color="text.secondary">
+                {challenge}
+              </Typography>
+            }
+          />
+        </StyledListItem>
+      ))}
+    </List>
+  </StyledCard>
+);
+
+const Struggling = () => {
+  const categories = [
+    {
+      title: 'Personal Challenges',
+      image: '/path-to-personal-image.jpg',
+      challenges: [
+        'Anxiety & Stress',
+        'Depression',
+        'Self-Esteem Issues',
+        'Trauma & PTSD',
+        'Grief & Loss'
+      ]
+    },
+    {
+      title: 'Relationship Issues',
+      image: '/path-to-relationship-image.jpg',
+      challenges: [
+        'Couples Conflict',
+        'Communication Problems',
+        'Family Issues',
+        'Parenting Challenges',
+        'Trust Issues'
+      ]
+    },
+    {
+      title: 'Professional Challenges',
+      image: '/path-to-professional-image.jpg',
+      challenges: [
+        'Workplace Stress',
+        'Career Transitions',
+        'Burnout',
+        'Work-Life Balance',
+        'Academic Pressure'
+      ]
+    }
+  ];
+
+  return (
+    <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Typography 
+        variant="h4" 
+        component="h2" 
+        fontWeight="600" 
+        textAlign="center"
+        mb={6}
+        sx={{
+          color: '#4169E1' // Royal blue color
+        }}
+      >
+        What Are You Struggling With?
+      </Typography>
+
+      <Grid container spacing={4}>
+        {categories.map((category, index) => (
+          <Grid item xs={12} md={4} key={index}>
+            <ChallengeCard
+              title={category.title}
+              image={category.image}
+              challenges={category.challenges}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  );
+};
 
 export default Struggling;
