@@ -1,136 +1,158 @@
 import React from 'react';
-import { 
-  Box, 
-  Container, 
-  Typography, 
-  Card, 
-  Button, 
-  Grid,
-  styled 
+import {
+    Box,
+    Container,
+    Typography,
+    Card,
+    Button,
+    Grid,
+    styled
 } from '@mui/material';
+import img1 from '../../assets/images/Home/case-study/school-denver.png';
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  background: '#F7F9FF',
-  padding: theme.spacing(4),
-  borderRadius: 16,
-  boxShadow: 'none'
+    background: '#012765',
+    padding: theme.spacing(4),
+    borderRadius: 16,
+    boxShadow: 'none',
 }));
 
 const StatCard = styled(Box)(({ theme }) => ({
-  background: '#FFFFFF',
-  padding: theme.spacing(2),
-  borderRadius: 8,
-  textAlign: 'center'
+    background: '#FFFFFF',
+    padding: theme.spacing(2),
+    borderRadius: 8,
+    textAlign: 'center',
+    height: '100%',
 }));
 
 const CaseStudy = () => {
-  return (
-    <Container maxWidth="lg" sx={{ py: 8 }}>
-      <StyledCard>
-        <Grid container spacing={4} alignItems="center">
-          {/* Left side - Image */}
-          <Grid item xs={12} md={6}>
-            <Box position="relative">
-              <Box
-                sx={{
-                  position: 'absolute',
-                  width: '110%',
-                  height: '110%',
-                  backgroundColor: '#98F8E1',
-                  borderRadius: '50%',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  zIndex: 0
-                }}
-              />
-              <Box
-                component="img"
-                src="/path-to-your-students-image.jpg"
-                alt="Students studying together"
-                sx={{
-                  width: '100%',
-                  borderRadius: 4,
-                  position: 'relative',
-                  zIndex: 1
-                }}
-              />
-            </Box>
-          </Grid>
+    return (
+        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 } }}>
+            <StyledCard>
+                <Grid container spacing={4} alignItems="center">
+                    <Grid item xs={12} md={6}>
+                        <Box sx={{
+                            height: { xs: 300, sm: 400, md: 540 },
+                            width: '100%',
+                        }}>
+                            <img
+                                src={img1}
+                                alt="Denver Public Schools"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'contain',
+                                    borderRadius: 12,
+                                }}
+                            />
+                        </Box>
+                    </Grid>
 
-          {/* Right side - Content */}
-          <Grid item xs={12} md={6}>
-            <Box display="flex" alignItems="center" gap={1} mb={2}>
-              <Box
-                component="img"
-                src="/path-to-dps-logo.png"
-                alt="Denver Public Schools"
-                sx={{ height: 32 }}
-              />
-              <Typography variant="h5" fontWeight="600">
-                Denver Public Schools
-              </Typography>
-            </Box>
+                    <Grid item xs={12} md={6}>
+                        <Box display="flex" alignItems="center" gap={1} mb={2}>
+                            <Typography sx={{
+                                fontSize: { xs: '20px', sm: '22px', md: '25px' },
+                                fontWeight: 700,
+                                color: "#FF7F1E"
+                            }}>
+                                Denver Public Schools
+                            </Typography>
+                        </Box>
 
-            <Typography color="text.secondary" mb={4}>
-              Denver Public Schools partnered with Hazel to address chronic 
-              absenteeism and provide equitable healthcare access to all 
-              students, particularly in underserved communities.
-            </Typography>
+                        <Typography sx={{
+                            color: '#fff',
+                            mb: 2,
+                            fontSize: { xs: '15px', sm: '16px' }
+                        }}>
+                            Denver Public Schools partnered with Emotionally Yours to address chronic
+                            absenteeism and provide equitable healthcare access to all
+                            students, particularly in underserved communities.
+                        </Typography>
 
-            {/* Stats */}
-            <Grid container spacing={2} mb={4}>
-              <Grid item xs={6}>
-                <StatCard>
-                  <Typography variant="h4" color="primary" fontWeight="bold">
-                    40%
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Reduction in health-related absences
-                  </Typography>
-                </StatCard>
-              </Grid>
-              <Grid item xs={6}>
-                <StatCard>
-                  <Typography variant="h4" color="primary" fontWeight="bold">
-                    92%
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Student satisfaction rate
-                  </Typography>
-                </StatCard>
-              </Grid>
-            </Grid>
+                        {/* Stats */}
+                        <Grid container spacing={2} mb={4}>
+                            <Grid item xs={12} sm={6}>
+                                <StatCard>
+                                    <Typography sx={{
+                                        fontSize: { xs: '24px', sm: '30px' },
+                                        fontWeight: 700,
+                                        color: "#FF7F1E",
+                                    }}>
+                                        40%
+                                    </Typography>
+                                    <Typography sx={{
+                                        fontSize: { xs: '14px', sm: '15px' },
+                                        color: "#012765",
+                                    }}>
+                                        Reduction in health-related absences
+                                    </Typography>
+                                </StatCard>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <StatCard>
+                                    <Typography sx={{
+                                        fontSize: { xs: '24px', sm: '30px' },
+                                        fontWeight: 700,
+                                        color: "#FF7F1E",
+                                    }}>
+                                        92%
+                                    </Typography>
+                                    <Typography sx={{
+                                        fontSize: { xs: '14px', sm: '15px' },
+                                        color: "#012765",
+                                    }}>
+                                        Student satisfaction rate
+                                    </Typography>
+                                </StatCard>
+                            </Grid>
+                        </Grid>
 
-            {/* Quote */}
-            <Typography 
-              color="text.secondary" 
-              mb={2} 
-              sx={{ fontStyle: 'italic' }}
-            >
-              "Hazel has been transformative for our district. We've seen 
-              improved attendance, better academic performance, and happier, 
-              healthier students."
-            </Typography>
-            
-            <Typography fontWeight="600" mb={3}>
-              Dr. Alex Martinez, Health Services Director
-            </Typography>
+                        <Typography
+                            sx={{
+                                fontStyle: 'italic',
+                                fontWeight: 300,
+                                color: "#fff",
+                                mb: 2,
+                                fontSize: { xs: '14px', sm: '15px' }
+                            }}
+                        >
+                            "Emotionally Yours has been transformative for our district. We've seen
+                            improved attendance, better academic performance, and happier,
+                            healthier students."
+                        </Typography>
 
-            {/* CTA Button */}
-            <Button 
-              variant="contained" 
-              color="primary"
-              size="large"
-              endIcon={<span>→</span>}
-            >
-              Read Full Case Study
-            </Button>
-          </Grid>
-        </Grid>
-      </StyledCard>
-    </Container>
-  );
+                        <Typography sx={{
+                            fontSize: { xs: '15px', sm: '16px' },
+                            color: "#FF7F1E",
+                            mb: 2
+                        }}>
+                            - Dr. Alex Martinez, Health Services Director
+                        </Typography>
+
+                        <Button
+                            sx={{
+                                bgcolor: '#FE6A00',
+                                color: '#fff',
+                                fontWeight: 600,
+                                fontSize: { xs: "14px", sm: "16px" },
+                                py: 1.5,
+                                px: 4,
+                                borderRadius: "0.375rem",
+                                textTransform: 'none',
+                                transition: '0.3s',
+                                mt: 2,
+                                '&:hover': { bgcolor: '#dd6006' },
+                                width: { xs: '100%', sm: 'auto' }
+                            }}
+                            endIcon={<span>→</span>}
+                        >
+                            Read Full Case Study
+                        </Button>
+                    </Grid>
+                </Grid>
+            </StyledCard>
+        </Container>
+    );
 };
 
-export default CaseStudy; 
+export default CaseStudy;

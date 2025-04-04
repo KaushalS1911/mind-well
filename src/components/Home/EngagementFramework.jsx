@@ -213,9 +213,17 @@ const EngagementFramework = () => {
     return (
         <Box sx={{py: 8, backgroundColor: 'white'}}>
             <Container maxWidth="xl">
-                <CategoryTitle>
+                <Box className={"Montserrat"} sx={{
+                    fontSize: { xs: '28px', md: '36px' },
+                    marginBottom: "16px",
+                    lineHeight: 1.2,
+                    display: "flex",
+                    justifyContent: "center",
+                    color: "#012765",
+                    fontWeight: 700
+                }}>
                     Engagement Framework
-                </CategoryTitle>
+                </Box>
                 <Box sx={{
                     color: "#4B5563",
                     mt: 1,
