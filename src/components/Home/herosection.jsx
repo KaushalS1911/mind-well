@@ -15,7 +15,6 @@ import 'swiper/css';
 import img1 from '../../assets/images/Home/Herosection/home.svg';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import HeroSection from './HeroSection';
 import {Controller, useForm} from "react-hook-form"; // Update this path as per your project structure
 
 const services = [
