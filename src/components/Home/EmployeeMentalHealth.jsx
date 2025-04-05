@@ -192,7 +192,7 @@ const EmployeeMentalHealth = () => {
                                     {feature.icon}
                                 </FeatureIcon>
 
-                                <Box>
+                                <Box sx={{p:1}}>
                                     <Box sx={{ fontSize: '17px', color: "#FF7F1E", fontWeight: 600, mb: 0.5 }}>
                                         {feature.title}
                                     </Box>

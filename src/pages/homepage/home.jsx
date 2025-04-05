@@ -28,10 +28,10 @@ function Home() {
             <EmployeeMentalHealth/>
             <Challenges/>
             <CorporateWellness/>
+            <MentalHealthResources/>
             <Mindwell/>
             <EngagementFramework/>
             <Clientsreview/>
-            {/*<MentalHealthResources/>*/}
 
             {/*<Offerings/>*/}
             {/*<LookingFor/>*/}
