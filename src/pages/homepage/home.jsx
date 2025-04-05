@@ -17,6 +17,8 @@ import MentalHealthResources from "../../components/Home/MentalHealthResources.j
 import EmployeeMentalHealth from "../../components/Home/EmployeeMentalHealth.jsx";
 import CaseStudy from "../../components/Home/CaseStudy.jsx";
 import CorporateWellness from "../../components/Home/CorporateWellness.jsx";
+import Struggling from "../../components/Home/struggling.jsx";
+import Partners from "../../components/Home/Partners.jsx";
 
 function Home() {
     return (
@@ -34,6 +36,8 @@ function Home() {
             <Clientsreview/>
 
             {/*<Offerings/>*/}
+            {/*<Struggling/>*/}
+            {/*<Partners/>*/}
             {/*<LookingFor/>*/}
             {/*<Therapists/>*/}
             {/*<Wetreat/>*/}
