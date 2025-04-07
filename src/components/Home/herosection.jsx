@@ -8,7 +8,7 @@ import {
     ListItem,
     ListItemText,
     Card,
-    Stack, AvatarGroup, Avatar, Paper, TextField, MenuItem
+    Stack, AvatarGroup, Avatar, Paper, TextField, MenuItem, IconButton, Autocomplete
 } from '@mui/material';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
@@ -16,10 +16,12 @@ import img1 from '../../assets/images/Home/Herosection/home.svg';
 import img2 from '../../assets/images/Home/Herosection/lausd.svg';
 import img3 from '../../assets/images/Home/Herosection/ocps.svg';
 import img4 from '../../assets/images/Home/Herosection/Atlanta.svg';
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {Controller, useForm} from "react-hook-form";
-import {Autoplay, Pagination} from 'swiper/modules';
+import {Navigation, Pagination} from 'swiper/modules';
 
 const services = [
     {
@@ -63,6 +65,18 @@ const benefits = [
 const Herosection = () => {
     const [serviceIndex, setServiceIndex] = useState(0);
     const [benefitIndex, setBenefitIndex] = useState(0);
+    const navigationPrevRef = React.useRef(null);
+    const navigationNextRef = React.useRef(null);
+    const [swiperInstance, setSwiperInstance] = React.useState(null);
+
+    React.useEffect(() => {
+        if (swiperInstance) {
+            swiperInstance.params.navigation.prevEl = navigationPrevRef.current;
+            swiperInstance.params.navigation.nextEl = navigationNextRef.current;
+            swiperInstance.navigation.init();
+            swiperInstance.navigation.update();
+        }
+    }, [swiperInstance]);
 
     const {
         handleSubmit,
@@ -89,11 +103,8 @@ const Herosection = () => {
             <Swiper
                 spaceBetween={50}
                 slidesPerView={1}
-                modules={[Autoplay, Pagination]}
-                autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                }}
+                modules={[Navigation, Pagination]}
+                onSwiper={(swiper) => setSwiperInstance(swiper)}
                 pagination={{clickable: true}}
                 style={{
                     height: "100%",
@@ -254,28 +265,34 @@ const Herosection = () => {
                                                 <Controller
                                                     name="concern"
                                                     control={control}
-                                                    defaultValue=""
+                                                    defaultValue={null}
                                                     rules={{required: "Please select your concern"}}
                                                     render={({field}) => (
-                                                        <TextField
+                                                        <Autocomplete
                                                             {...field}
-                                                            select
-                                                            fullWidth
-                                                            label="What are you struggling with?"
-                                                            variant="outlined"
-                                                            sx={{marginTop: "15px"}}
-                                                            error={!!errors.concern}
-                                                            helperText={errors.concern?.message}
-                                                        >
-                                                            <MenuItem value="Anxiety">Anxiety</MenuItem>
-                                                            <MenuItem value="Depression">Depression</MenuItem>
-                                                            <MenuItem value="Stress">Stress</MenuItem>
-                                                            <MenuItem value="Relationship Issues">Relationship
-                                                                Issues</MenuItem>
-                                                            <MenuItem value="Self-esteem">Self-esteem</MenuItem>
-                                                            <MenuItem value="Grief">Grief</MenuItem>
-                                                            <MenuItem value="Other">Other</MenuItem>
-                                                        </TextField>
+                                                            options={[
+                                                                "Anxiety",
+                                                                "Depression",
+                                                                "Stress",
+                                                                "Relationship Issues",
+                                                                "Self-esteem",
+                                                                "Grief",
+                                                                "Other",
+                                                            ]}
+                                                            onChange={(_, value) => field.onChange(value)}
+                                                            value={field.value || null}
+                                                            renderInput={(params) => (
+                                                                <TextField
+                                                                    {...params}
+                                                                    label="What are you struggling with?"
+                                                                    variant="outlined"
+                                                                    fullWidth
+                                                                    sx={{marginTop: "15px"}}
+                                                                    error={!!errors.concern}
+                                                                    helperText={errors.concern?.message}
+                                                                />
+                                                            )}
+                                                        />
                                                     )}
                                                 />
 
@@ -431,7 +448,7 @@ const Herosection = () => {
                 {/* Slide 2 */}
                 <SwiperSlide style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                     <Box sx={{
-                        // position: "relative",
+                        position: "relative",
                         mt: {md: 5, xs: 0},
                         color: "white",
                         py: {xs: 6, md: 10},
@@ -544,6 +561,56 @@ const Herosection = () => {
                 </SwiperSlide>
 
             </Swiper>
+
+            <IconButton
+                ref={navigationPrevRef}
+                sx={{
+                    position: "absolute",
+                    transform: "translate(50%, -550%)",
+                    zIndex: 10,
+                    color: "#666",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "#fff",
+                    width: "50px",
+                    height: "50px",
+                    opacity: 0.9,
+                    ":hover": {
+                        backgroundColor: "#fff",
+                        opacity: 1,
+                    },
+                    display: { xs: "none", lg: "flex" },
+                }}
+            >
+                <ArrowBackIosNewIcon />
+            </IconButton>
+
+
+
+            <IconButton
+                ref={navigationNextRef}
+                sx={{
+                    position: "absolute",
+                    right: 0,
+                    transform: "translate(-50%, -550%)",
+                    zIndex: 10,
+                    color: "#666",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "#fff",
+                    width: "50px",
+                    height: "50px",
+                    opacity: 0.9,
+                    ":hover": {
+                        backgroundColor: "#fff",
+                        opacity: 1,
+                    },
+                    display: { xs: "none", lg: "flex" },
+                }}
+            >
+                <ArrowForwardIosIcon />
+            </IconButton>
+
         </Box>
     );
 };

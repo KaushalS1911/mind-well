@@ -118,13 +118,11 @@ const useStyles = (score) =>
                 recommendationsContainer: {
                     marginTop: 20,
                     width: '100%',
-                    // padding: 10,
                 },
                 recommendationHeader: {
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
-                    // marginBottom: 10,
                 },
                 recommendationTitle: {
                     fontSize: 16,

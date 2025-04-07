@@ -47,7 +47,7 @@ const GeneralStressAssessment = () => {
 
     return (
         <Box sx={{
-            minHeight: 'calc(100vh - 72px)', // Full viewport height minus navbar
+            minHeight: 'calc(100vh - 72px)',
             display: 'flex',
             alignItems: 'center',
             backgroundColor: '#F3F4F6',
@@ -76,7 +76,7 @@ const GeneralStressAssessment = () => {
                                     fontWeight: 700,
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
-                                    fontSize: {xs: '24px', sm: '28px', md: '32px'}, // Responsive font size
+                                    fontSize: {xs: '24px', sm: '28px', md: '32px'},
                                 }}>
                                     General Stress and Anxiety Assessment
                                 </Typography>
