@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import img1 from "../../assets/images/Home/Herosection/home2.jpeg";
-import img2 from "../../assets/images/Home/Herosection//home1.jpeg";
+import img2 from "../../assets/images/Home/Herosection/home5.jpg";
 import img3 from "../../assets/images/Home/Herosection/home3.jpeg";
 
 const StyledCard = styled(Card)(({theme}) => ({

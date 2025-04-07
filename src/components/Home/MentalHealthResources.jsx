@@ -12,7 +12,7 @@ import {
     styled
 } from '@mui/material';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import img1 from '../../assets/images/Home/Herosection/hime5.jpg';
+import img1 from '../../assets/images/Home/Herosection/home5.jpg';
 
 const ResourceItem = styled(ListItem)(({theme}) => ({
     paddingTop: theme.spacing(1.5),
