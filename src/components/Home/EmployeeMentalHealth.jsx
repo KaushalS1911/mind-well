@@ -105,25 +105,40 @@ const EmployeeMentalHealth = () => {
                         sx={{
                             mb: 4,
                             borderRadius: 2,
-                            overflow: 'hidden',
-                            boxShadow: 3
+                            overflow: "hidden",
+                            boxShadow: 3,
+                            position: "relative",
                         }}
                     >
-                        <img
-                        src={img1}
-                        alt={img1}
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'contain',
-                        }}
-                        />
-                        <Box sx={{ p: 2, bgcolor: '#0A2472', color: 'white' }}>
-                            <Typography variant="body2">
-                                Empower your team with professional mental health support
-                            </Typography>
+                        <Box sx={{ position: "relative" }}>
+                            <img
+                                src={img1}
+                                alt="card-img"
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "contain",
+                                    display: "block",
+                                }}
+                            />
+                            <Box
+                                sx={{
+                                    position: "absolute",
+                                    bottom: 0,
+                                    left: 0,
+                                    width: "100%",
+                                    bgcolor: "rgba(25,31,66,0.85)",
+                                    color: "white",
+                                    p: 2,
+                                }}
+                            >
+                                <Typography variant="body2">
+                                    Empower your team with professional mental health support
+                                </Typography>
+                            </Box>
                         </Box>
                     </Card>
+
 
                     <Grid container spacing={2}>
                         {stats.map((stat, index) => (
