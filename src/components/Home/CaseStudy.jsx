@@ -50,13 +50,13 @@ const CaseStudy = () => {
 
                     <Grid item xs={12} md={6}>
                         <Box display="flex" alignItems="center" gap={1} mb={2}>
-                            <Typography sx={{
+                            <Box className={"Montserrat"} sx={{
                                 fontSize: { xs: '20px', sm: '22px', md: '25px' },
                                 fontWeight: 700,
                                 color: "#FF7F1E"
                             }}>
                                 Denver Public Schools
-                            </Typography>
+                            </Box>
                         </Box>
 
                         <Typography sx={{

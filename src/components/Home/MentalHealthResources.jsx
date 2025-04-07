@@ -60,14 +60,14 @@ const MentalHealthResources = () => {
                                 justifyContent: 'center'
                             }}
                         >
-                            <Typography sx={{
+                            <Box className={"Montserrat"} sx={{
                                 fontSize: {xs: '24px', sm: '26px', md: '28px'},
-                                fontWeight: 500,
+                                fontWeight: 600,
                                 color: '#FF7F1E',
-                                mb: 1
+                                mb: 2
                             }}>
                                 Free Mental Health Resources
-                            </Typography>
+                            </Box>
 
                             <Typography sx={{
                                 fontSize: {xs: '16px', sm: '17px', md: '18px'},

@@ -43,16 +43,16 @@ const CorporateWellness = () => {
                     {/* Left Content */}
                     <Grid item xs={12} lg={6}>
                         <Box sx={{ p: { xs: 4, sm: 5, lg: 6 } }}>
-                            <Typography
+                            <Box className={"Montserrat"}
                                 sx={{
                                     fontSize: { xs: "22px", sm: "24px" },
                                     color: "#FF7F1E",
                                     fontWeight: 600,
-                                    mb: 1
+                                    mb: 2
                                 }}
                             >
                                 Invest in Your Employees and Build Thriving Teams
-                            </Typography>
+                            </Box>
 
                             <Typography
                                 sx={{

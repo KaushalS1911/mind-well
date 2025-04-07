@@ -72,7 +72,8 @@ const Herosection = () => {
 
     return (
         <Box sx={{' .swiper-wrapper': {alignItems: 'center', cursor: "grab"}}}>
-            <Swiper spaceBetween={50} slidesPerView={1} modules={[Autoplay]}
+            <Swiper spaceBetween={50} slidesPerView={1}
+                    modules={[Autoplay]}
                     autoplay={{
                         delay: 3000,
                         disableOnInteraction: false,
@@ -308,10 +309,10 @@ const Herosection = () => {
                         alignItems: "center",
                     }}>
                         <Container maxWidth="xl">
-                            <Grid container spacing={6} alignItems="center">
+                            <Grid container spacing={1} alignItems="center" justifyContent="space-around">
                                 {/* Text Content */}
                                 <Grid item xs={12} md={6}>
-                                    <Typography
+                                    <Box className={"Montserrat"}
                                         sx={{
                                             fontSize: {xs: "28px", sm: "34px", md: "45px"},
                                             lineHeight: 1.2,
@@ -319,7 +320,7 @@ const Herosection = () => {
                                         }}
                                     >
                                         Comprehensive Care Services
-                                    </Typography>
+                                    </Box>
 
                                     <Typography
                                         sx={{
@@ -377,14 +378,14 @@ const Herosection = () => {
                                 </Grid>
 
                                 {/* Image */}
-                                <Grid item xs={12} md={6}>
+                                <Grid item xs={12} md={4} xl={6}>
                                     <Box
                                         sx={{
                                             bgcolor: '#F8E6FF',
                                             borderRadius: 4,
                                             p: 1,
-                                            height: {xs: '100%', sm: '80%', md: '72%'},
-                                            width: {xs: '100%', sm: '80%', md: '72%'},
+                                            height: {xs: '100%',lg:'72%'},
+                                            width: {xs: '100%',lg:'72%'},
                                             mx: 'auto',
 
                                         }}
@@ -416,10 +417,10 @@ const Herosection = () => {
                         alignItems: "center"
                     }}>
                         <Container maxWidth="xl" sx={{py: {xs: 4, md: 8}}}>
-                            <Grid container spacing={6} alignItems="center">
+                            <Grid container spacing={1} alignItems="center" justifyContent="space-around">
                                 {/* Left Column */}
                                 <Grid item xs={12} md={6}>
-                                    <Typography
+                                    <Box className={"Montserrat"}
                                         sx={{
                                             fontSize: {xs: "28px", sm: "34px", md: "45px"},
                                             fontWeight: 700,
@@ -427,7 +428,7 @@ const Herosection = () => {
                                         }}
                                     >
                                         Trusted by School Districts
-                                    </Typography>
+                                    </Box>
 
                                     <Typography
                                         sx={{
@@ -472,7 +473,7 @@ const Herosection = () => {
                                 </Grid>
 
                                 {/* Right Column */}
-                                <Grid item xs={12} md={6}>
+                                <Grid item xs={12} md={4}>
                                     <Box sx={{
                                         bgcolor: '#b3eacb',
                                         borderRadius: 4,
