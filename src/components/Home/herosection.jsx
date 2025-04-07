@@ -13,6 +13,9 @@ import {
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import img1 from '../../assets/images/Home/Herosection/home.svg';
+import img2 from '../../assets/images/Home/Herosection/lausd.svg';
+import img3 from '../../assets/images/Home/Herosection/ocps.svg';
+import img4 from '../../assets/images/Home/Herosection/Atlanta.svg';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {Controller, useForm} from "react-hook-form";
@@ -472,23 +475,27 @@ const Herosection = () => {
                                         Trusted by leading school districts nationwide
                                     </Typography>
 
-                                    {/*<Stack direction="row" spacing={4}>*/}
-                                    {/*    <Box*/}
-                                    {/*        component="img"*/}
-                                    {/*        src="/path-to-lausd-logo.png"*/}
-                                    {/*        alt="LAUSD"*/}
-                                    {/*        sx={{*/}
-                                    {/*            height: 40,*/}
-                                    {/*            filter: "grayscale(100%)",*/}
-                                    {/*            opacity: 0.7,*/}
-                                    {/*            transition: "all 0.3s ease",*/}
-                                    {/*            "&:hover": {*/}
-                                    {/*                filter: "grayscale(0%)",*/}
-                                    {/*                opacity: 1,*/}
-                                    {/*            },*/}
-                                    {/*        }}*/}
-                                    {/*    />*/}
-                                    {/*</Stack>*/}
+                                    {/*<Box sx={{*/}
+                                    {/*    display: "flex",*/}
+                                    {/*    alignItems: "center",*/}
+                                    {/*    height: "100px",*/}
+                                    {/*    width: "300px",*/}
+                                    {/*    gap: {sm:10,xs:4}*/}
+                                    {/*}}>*/}
+                                    {/*    {[img2, img3, img4].map((img, index) => (*/}
+                                    {/*        <img*/}
+                                    {/*            key={index}*/}
+                                    {/*            src={img}*/}
+                                    {/*            alt={`img${index}`}*/}
+                                    {/*            style={{*/}
+                                    {/*                height: '100%',*/}
+                                    {/*                width: '100px',*/}
+                                    {/*                objectFit: 'contain',*/}
+                                    {/*            }}*/}
+                                    {/*        />*/}
+                                    {/*    ))}*/}
+                                    {/*</Box>*/}
+
                                 </Grid>
 
                                 {/* Right Column */}
