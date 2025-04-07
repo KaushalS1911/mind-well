@@ -16,7 +16,7 @@ import img1 from '../../assets/images/Home/Herosection/home.svg';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {Controller, useForm} from "react-hook-form";
-import { Autoplay } from 'swiper/modules';
+import {Autoplay, Pagination} from 'swiper/modules';
 
 const services = [
     {
@@ -56,6 +56,7 @@ const benefits = [
     }
 ];
 
+
 const Herosection = () => {
     const [serviceIndex, setServiceIndex] = useState(0);
     const [benefitIndex, setBenefitIndex] = useState(0);
@@ -71,13 +72,31 @@ const Herosection = () => {
     };
 
     return (
-        <Box sx={{' .swiper-wrapper': {alignItems: 'center', cursor: "grab"}}}>
-            <Swiper spaceBetween={50} slidesPerView={1}
-                    modules={[Autoplay]}
-                    autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false,
-                    }} style={{height: {xs: "120vh", sm: 'unset'}, backgroundColor: "#002f6c"}}>
+        <Box sx={{
+            '.swiper-wrapper': {alignItems: 'center', cursor: 'grab'},
+            '.swiper-pagination-bullet': {
+                backgroundColor: 'white',
+                opacity: 1,
+            },
+            '.swiper-pagination-bullet-active': {
+                backgroundColor: '#FE6A00',
+                opacity: 1,
+            },
+        }}>
+            <Swiper
+                spaceBetween={50}
+                slidesPerView={1}
+                modules={[Autoplay, Pagination]}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{clickable: true}}
+                style={{
+                    height: "100%",
+                    backgroundColor: "#002f6c"
+                }}
+            >
                 {/* Slide 0: Hero Section */}
                 <SwiperSlide style={{height: "100%"}}>
                     <Box sx={{
@@ -313,11 +332,11 @@ const Herosection = () => {
                                 {/* Text Content */}
                                 <Grid item xs={12} md={6}>
                                     <Box className={"Montserrat"}
-                                        sx={{
-                                            fontSize: {xs: "28px", sm: "34px", md: "45px"},
-                                            lineHeight: 1.2,
-                                            fontWeight: 700,
-                                        }}
+                                         sx={{
+                                             fontSize: {xs: "28px", sm: "34px", md: "45px"},
+                                             lineHeight: 1.2,
+                                             fontWeight: 700,
+                                         }}
                                     >
                                         Comprehensive Care Services
                                     </Box>
@@ -384,8 +403,8 @@ const Herosection = () => {
                                             bgcolor: '#F8E6FF',
                                             borderRadius: 4,
                                             p: 1,
-                                            height: {xs: '100%',lg:'72%'},
-                                            width: {xs: '100%',lg:'72%'},
+                                            height: {xs: '100%', lg: '72%'},
+                                            width: {xs: '100%', lg: '72%'},
                                             mx: 'auto',
 
                                         }}
@@ -406,7 +425,7 @@ const Herosection = () => {
                     </Box>
                 </SwiperSlide>
 
-
+                {/* Slide 2 */}
                 <SwiperSlide style={{alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
                     <Box sx={{
                         // position: "relative",
@@ -421,11 +440,11 @@ const Herosection = () => {
                                 {/* Left Column */}
                                 <Grid item xs={12} md={6}>
                                     <Box className={"Montserrat"}
-                                        sx={{
-                                            fontSize: {xs: "28px", sm: "34px", md: "45px"},
-                                            fontWeight: 700,
-                                            lineHeight: 1.2,
-                                        }}
+                                         sx={{
+                                             fontSize: {xs: "28px", sm: "34px", md: "45px"},
+                                             fontWeight: 700,
+                                             lineHeight: 1.2,
+                                         }}
                                     >
                                         Trusted by School Districts
                                     </Box>
