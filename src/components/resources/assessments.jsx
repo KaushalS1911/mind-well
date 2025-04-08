@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Box, Grid, Container, TextField, DialogContent, DialogTitle, Dialog, Button, IconButton} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import BoltIcon from "@mui/icons-material/Bolt";
-import img1 from "../../assets/images/Resources/Assessments/Exam_Stress.jpg";
+import img1 from "../../assets/images/Resources/Assessments/Exam.jpg";
 import img2 from "../../assets/images/Resources/Assessments/Shape_K12.jpeg";
 import img3 from "../../assets/images/Resources/Assessments/General_Stress_Anxiety.jpeg";
 import img4 from "../../assets/images/Resources/Assessments/Emotional_Awareness.jpg";
@@ -160,7 +160,7 @@ function Assessments() {
                                                         />
                                                         <Box display="flex" flexDirection="column">
                                                             <Box fontWeight={600} sx={{
-                                                                fontSize: {xs: 16, md: 18},
+                                                                fontSize: {xs: 16, md: 17},
                                                                 display: "flex",
                                                                 alignItems: "center"
                                                             }}>
@@ -169,9 +169,9 @@ function Assessments() {
                                                             </Box>
                                                             {assessment.subTitle && (
                                                                 <Box sx={{
-                                                                    fontSize: {xs: 14, md: 16},
+                                                                    fontSize:14,
                                                                     color: "#fff",
-                                                                    fontWeight: 500
+                                                                    fontWeight: 400,
                                                                 }}>
                                                                     {assessment.subTitle}
                                                                 </Box>

@@ -15,7 +15,7 @@ import {styled} from '@mui/material/styles';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
-import img1 from "../../../assets/images/Resources/Assessments/Exam_Stress.jpg";
+import img1 from "../../../assets/images/Resources/Assessments/Exam.jpg";
 import {useNavigate} from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
