@@ -8,7 +8,7 @@ import {
     styled
 } from '@mui/material';
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import img1 from '../../assets/images/Home/Herosection/home2.jpeg'
+import img1 from '../../assets/images/Home/Herosection/emplyees.jpg'
 
 const benefits = [
     {

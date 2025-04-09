@@ -19,6 +19,7 @@ import CaseStudy from "../../components/Home/CaseStudy.jsx";
 import CorporateWellness from "../../components/Home/CorporateWellness.jsx";
 import Struggling from "../../components/Home/struggling.jsx";
 import Partners from "../../components/Home/Partners.jsx";
+import Assessments from "../../components/resources/assessments.jsx";
 
 function Home() {
     return (
@@ -34,12 +35,13 @@ function Home() {
             <Mindwell/>
             <EngagementFramework/>
             <Clientsreview/>
+            <Offerings/>
+            <Assessments/>
+            <Therapists/>
 
-            {/*<Offerings/>*/}
             {/*<Struggling/>*/}
             {/*<Partners/>*/}
             {/*<LookingFor/>*/}
-            {/*<Therapists/>*/}
             {/*<Wetreat/>*/}
             {/*<MentalHealth/>*/}
             {/*<Plans/>*/}

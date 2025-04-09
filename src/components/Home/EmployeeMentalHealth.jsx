@@ -13,7 +13,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined';
-import img1 from '../../assets/images/Home/Herosection/home2.jpeg';
+import img1 from '../../assets/images/Home/Herosection/emplyees.jpg';
 
 const StatCard = styled(Box)(({theme}) => ({
     padding: theme.spacing(2),
