@@ -4,39 +4,48 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const steps = [
     {
-        title: "Complete a Brief Assessment",
+        title: "Establish A Leadership Squad",
         description: "Answer a few questions about your needs, preferences, and goals for therapy. This helps us understand where you're looking for.",
         details: [
-            "Tell us about your challenges",
-            "Share your therapy preferences",
-            "Set your availability and budget"
+            "Raising awareness about the role of Emotional Quotient",
+            "Recognizing pain points and spot improvement domains",
+            "Organize an intricately curated framework"
         ]
     },
     {
-        title: "Get Matched with Therapists",
+        title: "Evaluations",
         description: "Our advanced algorithm matches you with licensed therapists who specialize in your specific needs and align with your preferences.",
         details: [
-            "View therapist profiles and credentials",
-            "Read reviews from other clients",
-            "Consider multiple matches for best fit"
+            "self for self realisation",
+            "Administer wellness studies of beneficiaries",
+            "Furnish data driven revelations to organisations"
         ]
     },
     {
-        title: "Schedule a Free Consultation",
+        title: "Awareness Creation",
         description: "Book a complimentary 15-minute video call with your potential therapist to ensure they’re the right fit for you.",
         details: [
-            "Meet face-to-face via secure video",
-            "Discuss your therapy goals",
-            "Ask questions and assess compatibility"
+            "Demography based curriculum-gender, age & geography",
+            "Interactive group sessions, educational workshops, training programs",
+            "Develop Self Help Groups as First Responders"
         ]
     },
     {
-        title: "Begin Your Therapy Journey",
+        title: "Data-driven Individualized Well-being",
         description: "Once you’ve found your match, choose a plan that works for you and start your therapy sessions through secure video, audio, or messaging.",
         details: [
-            "Select a therapy plan that fits your needs",
-            "Schedule sessions at your convenience",
-            "Connect from anywhere on any device"
+            "Data-driven Individualized Well-being",
+            "Tailored support and guidance enhancing life skills",
+            "Risk identification and organizational awareness campaigns"
+        ]
+    },
+    {
+        title: "Fortification via Quantifiable metrics",
+        description: "Once you’ve found your match, choose a plan that works for you and start your therapy sessions through secure video, audio, or messaging.",
+        details: [
+            "Evaluate effectiveness of intervention through follow-up assessments",
+            "Organize sessions for collaborative feedback & experiences gathered",
+            "Formulate a long-term plan with leadership to secure lasting outcomes"
         ]
     }
 ];
@@ -47,14 +56,14 @@ function WorksTable() {
             <Container maxWidth="xl">
                 <Typography className={"Montserrat"} variant="h4" align="center" fontWeight={700} color="#012765"
                             gutterBottom>
-                    How It Works
+                    How We Support You at Emotionally Yours
                 </Typography>
                 <Box
                     variant="body1"
                     align="center"
                     sx={{mx: {xs: 2, sm: 10, md: 20}, color: "#4B5563", lineHeight: 1.75}}
                 >
-                    Getting started with Emotionally Yours is simple. Follow these steps to begin your mental wellness journey.
+                    With Emotionally Yours, you can initiate a path to enhance your Organisational growth and Individual’s success.
                 </Box>
 
                 <Box sx={{position: "relative", mt: 6}}>

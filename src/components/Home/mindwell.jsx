@@ -8,35 +8,35 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 const features = [
     {
         icon: <SecurityIcon sx={{fontSize: 50, color: "#002F6C"}}/>,
-        title: "Licensed Professionals",
+        title: "Academic Institutions",
         description:
-            "Our network includes only licensed and vetted therapists with specialized training and years of experience.",
+            "A Program offered to Schools, Colleges & Universities where service beneficiaries span from Students, Parents and Teachers.",
         points: [
-            "Rigorous verification process",
-            "Ongoing training and development",
-            "Multiple specializations available",
+            "Emphasis on awareness, training, and implementation.",
+            "Follows NEP 2020 and Mental Health Act 2017 Guidelines.",
+            "Adopts Data-driven insights and measures impact tracking.",
         ],
     },
     {
         icon: <LockIcon sx={{fontSize: 50, color: "#002F6C"}}/>,
-        title: "Privacy & Security",
+        title: "Workplaces",
         description:
             "Your confidentiality is our priority. All sessions and communications are encrypted and strictly confidential.",
         points: [
-            "End-to-end encryption",
-            "HIPAA compliant platform",
-            "Secure medical record keeping",
+            "Promotes participation in individual & organisational growth",
+            "Research based services working on reinforcement model.",
+            "Targets better employee engagement, resilience and balance.",
         ],
     },
     {
         icon: <PieChartIcon sx={{fontSize: 50, color: "#002F6C"}}/>,
-        title: "Personalized Approach",
+        title: "Aspirants",
         description:
-            "We use advanced matching technology to connect you with the therapist who best fits your unique needs and preferences.",
+            "Emotionally Yours assists competitive exams aspirants by means of expert guidance & proven techniques.",
         points: [
-            "Smart matching algorithm",
-            "Free therapist switches",
-            "Tailored treatment plans",
+            "Skilled for Stress & Anxiety Management",
+            "Builds Emotional Resilience & Motivation",
+            "Channelises Concentration for Productivity",
         ],
     },
 ];
@@ -53,12 +53,13 @@ function Mindwell() {
                     display: "flex",
                     justifyContent: "center",
                     color: "#012765",
-                    fontWeight: "700"
+                    fontWeight: "700",
+                    textAlign: "center",
                 }}>
                     Why Emotionally Yours?
                 </Box>
                 <Box sx={{
-                    maxWidth: 600,
+                    width: {md:"70%",xs:"100%"},
                     mx: "auto",
                     mb: 8,
                     fontSize: "18px",
@@ -66,8 +67,8 @@ function Mindwell() {
                     textAlign: "center",
                     lineHeight: "25px",
                 }}>
-                    We combine professional expertise with innovative technology to make
-                    mental healthcare accessible, effective, and personalized.
+                    Emotionally Yours equip individuals with essential life skills to enhance their performance at academic
+                    institutions and Workplaces leveraging group sessions, workshops, assessments & personalized guidance
                 </Box>
 
                 <Grid container spacing={3}>
@@ -137,11 +138,10 @@ function Mindwell() {
 
                         <Grid item xs={12} md={5}>
                             <Typography className={"Montserrat"} variant="h5" fontWeight="bold">
-                                Our Impact
+                                Emotionally Yours’ Influence
                             </Typography>
                             <Box variant="body1" sx={{mt: 1, color: "#D1E1FF", width: "85%", mb: 2}}>
-                                At Emotionally Yours, we're committed to making a difference in how people access and experience
-                                mental healthcare.
+                                At Emotionally Yours, we pledge to augment accessibility and elevate the quality of emotional and psychological healthcare.
                             </Box>
                         </Grid>
 

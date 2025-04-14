@@ -119,11 +119,14 @@ const VisionMission = () => {
                                 Our Vision
                             </Box>
                             <Box sx={{
+                                mb: 1, fontSize: "16px", color: "#4B5563"
+                            }}>
+                                Aiming to be India’s premier emotional wellness platform, nurturing psychologically strong, emotionally intelligent, and high-performing individuals in educational and professional spaces.
+                            </Box>
+                            <Box sx={{
                                 mb: 2, fontSize: "16px", color: "#4B5563"
                             }}>
-                                To create a supportive educational ecosystem where emotional well-being and academic
-                                excellence go hand in hand. We envision a future where every student has access to the
-                                mental health resources they need to thrive academically and personally.
+                                We strive for a world where every student and employee has the digital resources and emotional support to reach their full potential and make a meaningful impact on society.
                             </Box>
                             <Box sx={{mt: 3}}>
                                 <Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
@@ -135,7 +138,7 @@ const VisionMission = () => {
                                         mr: 2
                                     }}/>
                                     <Description>
-                                        Foster emotional resilience in educational communities
+                                        To Improve Productivity & Professional Performance
                                     </Description>
                                 </Box>
                                 <Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
@@ -147,10 +150,10 @@ const VisionMission = () => {
                                         mr: 2
                                     }}/>
                                     <Description>
-                                        Integrate mental wellness into academic success
+                                        To Boost Emotional Strength & EQ
                                     </Description>
                                 </Box>
-                                <Box sx={{display: 'flex', alignItems: 'center'}}>
+                                <Box sx={{display: 'flex', alignItems: 'center',mb:2}}>
                                     <Box sx={{
                                         width: '8px',
                                         height: '8px',
@@ -159,7 +162,31 @@ const VisionMission = () => {
                                         mr: 2
                                     }}/>
                                     <Description>
-                                        Create lasting positive impact on student well-being
+                                        To Encourage Life Skills & Emotional Well-being
+                                    </Description>
+                                </Box>
+                                <Box sx={{display: 'flex', alignItems: 'center',mb:2}}>
+                                    <Box sx={{
+                                        width: '8px',
+                                        height: '8px',
+                                        borderRadius: '50%',
+                                        backgroundColor: '#FF7F1E',
+                                        mr: 2
+                                    }}/>
+                                    <Description>
+                                        To Promote Growth in Educational & Work spaces
+                                    </Description>
+                                </Box>
+                                <Box sx={{display: 'flex', alignItems: 'center',mb:2}}>
+                                    <Box sx={{
+                                        width: '8px',
+                                        height: '8px',
+                                        borderRadius: '50%',
+                                        backgroundColor: '#FF7F1E',
+                                        mr: 2
+                                    }}/>
+                                    <Description>
+                                        To Evaluate Measurable Impact
                                     </Description>
                                 </Box>
                             </Box>
@@ -182,9 +209,7 @@ const VisionMission = () => {
                             <Box sx={{
                                 mb: 2, fontSize: "16px", color: "#4B5563"
                             }}>
-                                To provide comprehensive emotional support and mental health services that enable
-                                students to overcome challenges, build resilience, and achieve their full academic
-                                potential while maintaining their well-being.
+                                To integrate emotional wellness into educational and workplace settings, fostering growth, efficiency, and holistic well-being.
                             </Box>
                             <Box sx={{mt: 3}}>
                                 <Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>

@@ -15,14 +15,14 @@ import PublicIcon from '@mui/icons-material/Public';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import BoltIcon from '@mui/icons-material/Bolt';
 
-const offerings = ["Individual Therapy", "Couples Therapy", "Teen Counseling", "Group Sessions"];
+const offerings = ["SHAPE", "SHAPE+", "PEP", "ESOP"];
 
 const therapyData = [
     {
-        maindescription: "One-on-one therapy sessions with a licensed professional who can help you navigate life's challenges, manage symptoms, and develop coping strategies.",
-        firsttitle: "Personalized approach", fstitle: "Treatment tailored to your specific needs and goals",
-        secondtitle: "Flexible scheduling", sstitle: "Book sessions that fit into your busy life",
-        thirdtitle: "Private and secure", tstitle: "Confidential sessions in a safe environment",
+        maindescription: "A year-long structured program prioritizing awareness, training, and implementation, offered in collaboration with academic institutions.",
+        firsttitle: " Self-Help", fstitle: "Resources and DIY tools available through a freemium app",
+        secondtitle: "Regular Participation", sstitle:"Mood tracking, self-assessments, and journaling for frequent engagement",
+        thirdtitle: "Personalized Support", tstitle: "Tailored guidance from trusted psychologists via one-on-one sessions",
         maintitle: "What type of therapy are you looking for?",
         options: [
             {
@@ -48,10 +48,10 @@ const therapyData = [
         ]
     },
     {
-        maindescription: "Strengthen your relationship with therapy that helps you and your partner communicate better, resolve conflicts, and build a healthier connection.",
-        firsttitle: "Improved communication", fstitle: "Learn to express needs and listen effectively",
-        secondtitle: "Conflict resolution", sstitle: "Develop healthy ways to resolve disagreements",
-        thirdtitle: "Rebuilding intimacy", tstitle: "Strengthen emotional and physical connection",
+        maindescription: "A 12-month organized plan designed to enhance stream-specific awareness, impart training & preparing individuals battling higher education challenges.",
+        firsttitle: "Preliminary Evaluation and Insight", fstitle: "Provides mental health reports incorporating insights from assessments",
+        secondtitle: "Training and Capability Building", sstitle: "Coping tactics for academic stress, emotional regulation, and engagement.",
+        thirdtitle: "Practical Execution & Assistance", tstitle: "Both online & offline counselling support, mixed with peer groups/classrooms",
         maintitle: "Common Relationship Challenges",
         options: [
             {
@@ -77,10 +77,10 @@ const therapyData = [
         ]
     },
     {
-        maindescription: "Specialized support for teenagers dealing with the unique challenges of adolescence, from academic pressure to identity formation and peer relationships.",
-        firsttitle: "Age-appropriate approach", fstitle: "Methods tailored specifically for teens",
-        secondtitle: "Building resilience", sstitle: "Develop coping skills for life's challenges",
-        thirdtitle: "Parent collaboration", tstitle: "Optional support for parents to help their teens",
+        maindescription: "Specialized program for exam aspirants & mentors treading with unique personal issues, life challenges that abruptly impacts cognitive performance.",
+        firsttitle: "Awareness Seminars", fstitle: "Emotional wellness awareness & assessments sessions and workshops",
+        secondtitle: "Individual Assessments", sstitle: "Psychometric tests for all aspirants to evaluate the intensity of issues",
+        thirdtitle: "Expert Guidance", tstitle: "One day visit per week to our psychologist for additional assistance.",
         maintitle: "Common Teen Challenges",
         options: [
             {
@@ -106,10 +106,10 @@ const therapyData = [
         ]
     },
     {
-        maindescription: "Join a supportive community of individuals facing similar challenges. Our therapist-led group sessions provide connection, shared insights, and collective growth.",
-        firsttitle: "Community support", fstitle: "Connect with others who understand your experience",
-        secondtitle: "Cost-effective option", sstitle: "More affordable than individual therapy",
-        thirdtitle: "Professional facilitation", tstitle: "Led by experienced group therapists",
+        maindescription: "Service targets workplace emotional wellness, employee engagement, resilience, and growth through research-based, reinforcing services.",
+        firsttitle: "Burnout Identification", fstitle: "With awareness workshops, general psychometric tests, assessments",
+        secondtitle: "Proactive Engagement", sstitle: "Creating self-help groups combined with DIY Tools through our app",
+        thirdtitle: "Retention via Motivation", tstitle: "Individual sessions with psychologists, researched reinforcement model",
         maintitle: "Available Group Topics",
         options: [
             {title: "Anxiety Management", description: "Mondays at 6:00 PM | 8 Sessions", icon: <PublicIcon/>},
@@ -138,12 +138,11 @@ const Offerings = () => {
             <Container maxWidth="xl">
                 <Typography className={"Montserrat"} variant="h4" align="center" color="#012765"
                             sx={{fontWeight: "700"}}>
-                    Our Mental Healthcare Offerings
+                    Emotionally Yours Service Offerings
                 </Typography>
                 <Box variant="body1" align="center"
                      sx={{color: "#4B5563", mt: 1, mb: 7.5}}>
-                    Comprehensive support for your mental wellbeing, tailored to your unique <br/> needs and
-                    preferences.
+                    Transformative programs designed to foster your emotions, promote personal & professional growth.
                 </Box>
 
                 <Box sx={{display: "flex", justifyContent: "center", mb: 7}}>
