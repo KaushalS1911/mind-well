@@ -4,7 +4,9 @@ import {styled} from '@mui/material/styles';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 
-const StyledPaper = styled(Paper)(({theme}) => ({
+const StyledPaper = styled(Paper, {
+    shouldForwardProp: (prop) => prop !== 'side'
+})(({ theme, side }) => ({
     padding: theme.spacing(4),
     height: '100%',
     backgroundColor: '#F9FAFB',
@@ -20,12 +22,13 @@ const StyledPaper = styled(Paper)(({theme}) => ({
         content: '""',
         position: 'absolute',
         top: 0,
-        left: 0,
+        [side === 'right' ? 'right' : 'left']: 0,
         width: '4px',
         height: '100%',
         background: '#FF7F1E',
     }
 }));
+
 
 const IconWrapper = styled(Box)(() => ({
     width: '60px',
@@ -73,6 +76,34 @@ const Description = styled(Typography)(() => ({
     fontFamily: 'Poppins, sans-serif',
 }));
 
+const sections = [
+    {
+        title: "Our Vision",
+        icon: <VisibilityIcon sx={{ fontSize: 32, color: "#012765" }} />,
+        content: [
+            "At Emotionally Yours, we envision becoming India’s leading platform for emotional wellness—dedicated to shaping emotionally intelligent, resilient, and high-achieving individuals across academic and professional landscapes.",
+            "We see a future where every student and professional are equipped with the right emotional guidance and digital tools to unlock their true potential and leave a meaningful imprint on the world. By elevating productivity, strengthening emotional depth, nurturing essential life skills, and enabling growth-centric environments, we are committed to creating lasting, measurable change that empowers people to thrive.",
+        ],
+    },
+    {
+        title: "Our Mission",
+        icon: <TrackChangesIcon sx={{ fontSize: 32, color: "#012765" }} />,
+        content: [
+            "Our mission is to empower academic institutions and workplaces with impactful emotional wellness solutions that elevate performance, enrich growth, and support holistic development.",
+            "Through structured programmes and insight-driven guidance, we cultivate resilient mindsets and enable environments where individuals and organisations thrive.",
+        ],
+    },
+    {
+        title: "Goals",
+        icon: <TrackChangesIcon sx={{ fontSize: 32, color: "#012765" }} />,
+        content: [
+            "At Emotionally Yours, our goal is to empower educational and professional spaces with transformative emotional wellness solutions. We aim to integrate emotional intelligence into everyday systems to enhance performance, support personal growth, and drive holistic development.",
+            "Through structured, outcome-focused programs, we cultivate emotionally resilient individuals and thriving environments where growth is intentional and lasting.",
+        ],
+    },
+];
+
+
 const VisionMission = () => {
     return (
         <Box sx={{
@@ -89,7 +120,7 @@ const VisionMission = () => {
                     color: "#012765",
                     fontWeight: "700"
                 }}>
-                    Our Vision & Mission
+                    Vision , Mission & Goals
                 </Box>
                 <Box sx={{
                     maxWidth: 600,
@@ -105,153 +136,35 @@ const VisionMission = () => {
                 </Box>
 
                 <Grid container spacing={4}>
-                    <Grid item xs={12} md={6}>
-                        <StyledPaper elevation={3}>
-                            <IconWrapper>
-                                <VisibilityIcon sx={{fontSize: 32, color: '#012765'}}/>
-                            </IconWrapper>
-                            <Box sx={{
-                                fontSize: "24px",
-                                fontWeight: "700",
-                                color: "#012765",
-                                mb: "12px",
-                            }}>
-                                Our Vision
-                            </Box>
-                            <Box sx={{
-                                mb: 1, fontSize: "16px", color: "#4B5563"
-                            }}>
-                                Aiming to be India’s premier emotional wellness platform, nurturing psychologically strong, emotionally intelligent, and high-performing individuals in educational and professional spaces.
-                            </Box>
-                            <Box sx={{
-                                mb: 2, fontSize: "16px", color: "#4B5563"
-                            }}>
-                                We strive for a world where every student and employee has the digital resources and emotional support to reach their full potential and make a meaningful impact on society.
-                            </Box>
-                            <Box sx={{mt: 3}}>
-                                <Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
-                                    <Box sx={{
-                                        width: '8px',
-                                        height: '8px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#FF7F1E',
-                                        mr: 2
-                                    }}/>
-                                    <Description>
-                                        To Improve Productivity & Professional Performance
-                                    </Description>
+                    {sections.map((section, index) => (
+                        <Grid item xs={12} key={index}>
+                            <StyledPaper elevation={3} side={index % 2 === 0 ? 'left' : 'right'}>
+                                <Box sx={{
+                                    fontSize: "24px",
+                                    fontWeight: "700",
+                                    color: "#012765",
+                                    mb: "12px",
+                                }}>
+                                    {section.title}
                                 </Box>
-                                <Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
-                                    <Box sx={{
-                                        width: '8px',
-                                        height: '8px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#FF7F1E',
-                                        mr: 2
-                                    }}/>
-                                    <Description>
-                                        To Boost Emotional Strength & EQ
-                                    </Description>
-                                </Box>
-                                <Box sx={{display: 'flex', alignItems: 'center',mb:2}}>
-                                    <Box sx={{
-                                        width: '8px',
-                                        height: '8px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#FF7F1E',
-                                        mr: 2
-                                    }}/>
-                                    <Description>
-                                        To Encourage Life Skills & Emotional Well-being
-                                    </Description>
-                                </Box>
-                                <Box sx={{display: 'flex', alignItems: 'center',mb:2}}>
-                                    <Box sx={{
-                                        width: '8px',
-                                        height: '8px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#FF7F1E',
-                                        mr: 2
-                                    }}/>
-                                    <Description>
-                                        To Promote Growth in Educational & Work spaces
-                                    </Description>
-                                </Box>
-                                <Box sx={{display: 'flex', alignItems: 'center',mb:2}}>
-                                    <Box sx={{
-                                        width: '8px',
-                                        height: '8px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#FF7F1E',
-                                        mr: 2
-                                    }}/>
-                                    <Description>
-                                        To Evaluate Measurable Impact
-                                    </Description>
-                                </Box>
-                            </Box>
-                        </StyledPaper>
-                    </Grid>
 
-                    <Grid item xs={12} md={6}>
-                        <StyledPaper elevation={3}>
-                            <IconWrapper>
-                                <TrackChangesIcon sx={{fontSize: 32, color: '#012765'}}/>
-                            </IconWrapper>
-                            <Box sx={{
-                                fontSize: "24px",
-                                fontWeight: "700",
-                                color: "#012765",
-                                mb: "12px",
-                            }}>
-                                Our Mission
-                            </Box>
-                            <Box sx={{
-                                mb: 2, fontSize: "16px", color: "#4B5563"
-                            }}>
-                                To integrate emotional wellness into educational and workplace settings, fostering growth, efficiency, and holistic well-being.
-                            </Box>
-                            <Box sx={{mt: 3}}>
-                                <Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
-                                    <Box sx={{
-                                        width: '8px',
-                                        height: '8px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#FF7F1E',
-                                        mr: 2
-                                    }}/>
-                                    <Description>
-                                        Deliver accessible mental health support
-                                    </Description>
-                                </Box>
-                                <Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
-                                    <Box sx={{
-                                        width: '8px',
-                                        height: '8px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#FF7F1E',
-                                        mr: 2
-                                    }}/>
-                                    <Description>
-                                        Implement evidence-based wellness programs
-                                    </Description>
-                                </Box>
-                                <Box sx={{display: 'flex', alignItems: 'center'}}>
-                                    <Box sx={{
-                                        width: '8px',
-                                        height: '8px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#FF7F1E',
-                                        mr: 2
-                                    }}/>
-                                    <Description>
-                                        Build strong support networks for sustained growth
-                                    </Description>
-                                </Box>
-                            </Box>
-                        </StyledPaper>
-                    </Grid>
+                                {section.content.map((item, i) => (
+                                    <Box
+                                        key={i}
+                                        sx={{
+                                            mb: i === section.content.length - 1 ? 2 : 1,
+                                            fontSize: "16px",
+                                            color: "#4B5563",
+                                        }}
+                                    >
+                                        {item}
+                                    </Box>
+                                ))}
+                            </StyledPaper>
+                        </Grid>
+                    ))}
                 </Grid>
+
             </Container>
         </Box>
     );

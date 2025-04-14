@@ -18,13 +18,13 @@ const socialMedia = [
 const navigationLinks = [
     {name: "Home", path: "/"},
     {name: "About Us", path: "/about"},
-    {name: "Engagement", path: "/engagement"},
-    {name: "Partner", path: "/partner"},
-    {name: "Careers", path: "/careers"},
+    {name: "Services", path: "/services"},
+    // {name: "Partner", path: "/partner"},
+    // {name: "Careers", path: "/careers"},
     {name: "Resources", path: "/resources"},
     {name: "Contact", path: "/contact"},
 ];
-const services = ["Individual Therapy", "Couples Therapy", "Student Services", "Corporate Wellness", "Therapy Types", "Mental Health Assessments"];
+const services = ["Individual Therapy", "Couples Therapy", "Student ServicesShap", "Corporate Wellness", "Therapy Types", "Mental Health Assessments"];
 const contactDetails = {
     phone: "7977135096",
     email: "devesh.tripathi@mahadevasth.com",

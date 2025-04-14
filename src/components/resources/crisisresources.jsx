@@ -16,7 +16,7 @@ const crisisResources = [
         contact: "Text HOME to 741741",
     },
     {
-        title: "Emergency Services",
+        title: "Emergency ServicesShap",
         description: "For immediate danger, call emergency services.",
         icon: <Phone sx={{color: "#FF7A00", fontSize: 20}}/>,
         contact: "911",

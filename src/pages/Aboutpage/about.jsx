@@ -14,10 +14,10 @@ const About = () => {
 
             <AboutHeader/>
             <VisionMission/>
-            <Goals/>
+            {/*<Goals/>*/}
             <Founders/>
-            <AdvisoryCouncil/>
-            <Worker/>
+            {/*<AdvisoryCouncil/>*/}
+            {/*<Worker/>*/}
             <MajorClients/>
 
         </>

@@ -24,7 +24,7 @@ function Blogs() {
 
     return (
         <Box sx={{
-            padding: "80px 0"
+            p: "96px 0", mt: {md: 5, xs: 0}
         }}>
             <Container maxWidth={"xl"}>
                 <Box>

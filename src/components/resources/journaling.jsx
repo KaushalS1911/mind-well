@@ -5,7 +5,7 @@ import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import BoltIcon from "@mui/icons-material/Bolt"
 
-function FeaturedLatestHelp() {
+function Journaling() {
 
     const resources = [
         {
@@ -333,4 +333,4 @@ function FeaturedLatestHelp() {
     );
 }
 
-export default FeaturedLatestHelp;
+export default Journaling;

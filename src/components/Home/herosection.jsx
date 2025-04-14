@@ -154,41 +154,41 @@ const Herosection = () => {
                                         health
                                         today. Professional support whenever and wherever you need it.
                                     </Box>
-                                    <Box sx={{marginTop: "30px", display: "flex"}}>
-                                        <Box sx={{
-                                            backgroundColor: "#FE6A00",
-                                            marginRight: "10px",
-                                            padding: "12px 24px",
-                                            fontSize: "16px",
-                                            display: "inline-block",
-                                            borderRadius: "0.375rem",
-                                            fontWeight: "600",
-                                            cursor: "pointer",
-                                            transition: "0.3s",
-                                            '&:hover': {
-                                                backgroundColor: "#E05D00",
-                                            }
-                                        }}>
-                                            Get Started
-                                        </Box>
-                                        <Box sx={{
-                                            borderColor: "white",
-                                            color: "white",
-                                            padding: "12px 24px",
-                                            fontSize: "16px",
-                                            backgroundColor: "transparent",
-                                            border: "1px solid #fff",
-                                            borderRadius: "0.375rem",
-                                            fontWeight: "600",
-                                            cursor: "pointer",
-                                            transition: "0.3s",
-                                            '&:hover': {
-                                                backgroundColor: "#1B3D75",
-                                            }
-                                        }}>
-                                            Learn More
-                                        </Box>
-                                    </Box>
+                                    {/*<Box sx={{marginTop: "30px", display: "flex"}}>*/}
+                                    {/*    <Box sx={{*/}
+                                    {/*        backgroundColor: "#FE6A00",*/}
+                                    {/*        marginRight: "10px",*/}
+                                    {/*        padding: "12px 24px",*/}
+                                    {/*        fontSize: "16px",*/}
+                                    {/*        display: "inline-block",*/}
+                                    {/*        borderRadius: "0.375rem",*/}
+                                    {/*        fontWeight: "600",*/}
+                                    {/*        cursor: "pointer",*/}
+                                    {/*        transition: "0.3s",*/}
+                                    {/*        '&:hover': {*/}
+                                    {/*            backgroundColor: "#E05D00",*/}
+                                    {/*        }*/}
+                                    {/*    }}>*/}
+                                    {/*        Get Started*/}
+                                    {/*    </Box>*/}
+                                    {/*    <Box sx={{*/}
+                                    {/*        borderColor: "white",*/}
+                                    {/*        color: "white",*/}
+                                    {/*        padding: "12px 24px",*/}
+                                    {/*        fontSize: "16px",*/}
+                                    {/*        backgroundColor: "transparent",*/}
+                                    {/*        border: "1px solid #fff",*/}
+                                    {/*        borderRadius: "0.375rem",*/}
+                                    {/*        fontWeight: "600",*/}
+                                    {/*        cursor: "pointer",*/}
+                                    {/*        transition: "0.3s",*/}
+                                    {/*        '&:hover': {*/}
+                                    {/*            backgroundColor: "#1B3D75",*/}
+                                    {/*        }*/}
+                                    {/*    }}>*/}
+                                    {/*        Learn More*/}
+                                    {/*    </Box>*/}
+                                    {/*</Box>*/}
                                     <Box sx={{marginTop: "40px", display: "flex", alignItems: "center",}}>
 
                                         <AvatarGroup spacing="medium" sx={{marginBottom: {xs: "30px", md: "0px"}}}>

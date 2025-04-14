@@ -7,7 +7,7 @@ import BoltIcon from "@mui/icons-material/Bolt";
 
 function SelfHelpTools() {
     return (
-        <Box>
+        <Box sx={{ p: "96px 0", mt: {md: 10, xs: 0}}}>
             <Container maxWidth={"xl"}>
                 <Box className={"Montserrat"} sx={{
                     color: "#012765",

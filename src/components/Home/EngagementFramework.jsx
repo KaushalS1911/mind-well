@@ -171,7 +171,7 @@ const frameworks = {
         }],
     },
     'PEP-UPSC': {
-        title: 'Engagement Framework',
+        title: 'ServicesShap Framework',
         sections: [
             {
                 title: 'Mentors : The First Responders',

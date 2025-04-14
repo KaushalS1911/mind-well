@@ -101,7 +101,7 @@ function Assessments() {
 
     return (
         <Container maxWidth="xl">
-            <Box sx={{padding: "50px 0"}}>
+            <Box sx={{ p: "96px 0", mt: {md: 5, xs: 0}}}>
                 <Box sx={{p: {xs: 3, md: 5}, bgcolor: "#012765", borderRadius: 3, color: "#fff"}}>
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={12}>
@@ -123,7 +123,7 @@ function Assessments() {
                                 </Box>
                                 <Box className={"Montserrat"}
                                      sx={{fontWeight: "700", fontSize: {xs: "24px", md: "30px"}}}>
-                                    Mental Health Assessments
+                                    Self Assessments
                                 </Box>
                             </Box>
                             <Box fontSize={{xs: 14, md: 18}} color="#CBD5E1" sx={{mb: "40px"}}>

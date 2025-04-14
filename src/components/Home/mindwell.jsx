@@ -10,7 +10,7 @@ const features = [
         icon: <SecurityIcon sx={{fontSize: 50, color: "#002F6C"}}/>,
         title: "Academic Institutions",
         description:
-            "A Program offered to Schools, Colleges & Universities where service beneficiaries span from Students, Parents and Teachers.",
+            "A transformative program for schools, colleges, coaching institutes and universities, empowering students, parents, and educators towards laying a stronger foundation for a thriving learning environment and building emotionally resilient families.",
         points: [
             "Emphasis on awareness, training, and implementation.",
             "Follows NEP 2020 and Mental Health Act 2017 Guidelines.",
@@ -21,22 +21,22 @@ const features = [
         icon: <LockIcon sx={{fontSize: 50, color: "#002F6C"}}/>,
         title: "Workplaces",
         description:
-            "Your confidentiality is our priority. All sessions and communications are encrypted and strictly confidential.",
+            "A strategically designed program empowering organizations to enhance productivity, cultivate emotional well-being and foster workplaces with highly engaged employees and a healthy work culture.",
         points: [
             "Promotes participation in individual & organisational growth",
-            "Research based services working on reinforcement model.",
-            "Targets better employee engagement, resilience and balance.",
+            "Insight based programs working on reinforcement model.",
+            "Enhances workplace culture, leadership outreach and strengthen cohesiveness.",
         ],
     },
     {
         icon: <PieChartIcon sx={{fontSize: 50, color: "#002F6C"}}/>,
         title: "Aspirants",
         description:
-            "Emotionally Yours assists competitive exams aspirants by means of expert guidance & proven techniques.",
+            "We empower competitive exam aspirants with expert mentorship and time-tested strategies, enhancing resilience and equipping them to excel under pressure with confidence and clarity.",
         points: [
-            "Skilled for Stress & Anxiety Management",
-            "Builds Emotional Resilience & Motivation",
-            "Channelises Concentration for Productivity",
+            "Cultivates stress and anxiety mastery",
+            "Enhances emotional resilience and drive",
+            "Sharpens focus for maximum productivity",
         ],
     },
 ];

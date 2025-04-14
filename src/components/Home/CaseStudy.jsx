@@ -55,7 +55,7 @@ const CaseStudy = () => {
                                 fontWeight: 700,
                                 color: "#FF7F1E"
                             }}>
-                                Denver Public Schools
+                                Public Schools
                             </Box>
                         </Box>
 
@@ -64,7 +64,7 @@ const CaseStudy = () => {
                             mb: 2,
                             fontSize: { xs: '15px', sm: '16px' }
                         }}>
-                            Denver Public Schools partnered with Emotionally Yours to address chronic
+                            Public Schools partnered with Emotionally Yours to address chronic
                             absenteeism and provide equitable healthcare access to all
                             students, particularly in underserved communities.
                         </Typography>

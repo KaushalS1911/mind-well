@@ -25,20 +25,20 @@ function Home() {
     return (
         <>
             <Herosection/>
-            <WorksTable/>
-            <HowSchoolWorks/>
-            <CaseStudy/>
-            <EmployeeMentalHealth/>
-            <Challenges/>
-            <CorporateWellness/>
-            <MentalHealthResources/>
             <Mindwell/>
-            <EngagementFramework/>
-            <Clientsreview/>
-            <Offerings/>
+            <WorksTable/>
             <Assessments/>
-            <Therapists/>
+            <CaseStudy/>
+            <HowSchoolWorks/>
+            <EmployeeMentalHealth/>
 
+            {/*<Challenges/>*/}
+            {/*<CorporateWellness/>*/}
+            {/*<MentalHealthResources/>*/}
+            {/*<EngagementFramework/>*/}
+            {/*<Clientsreview/>*/}
+            {/*<Offerings/>*/}
+            {/*<Therapists/>*/}
             {/*<Struggling/>*/}
             {/*<Partners/>*/}
             {/*<LookingFor/>*/}

@@ -108,7 +108,7 @@ const therapyData = [
     {
         maindescription: "Service targets workplace emotional wellness, employee engagement, resilience, and growth through research-based, reinforcing services.",
         firsttitle: "Burnout Identification", fstitle: "With awareness workshops, general psychometric tests, assessments",
-        secondtitle: "Proactive Engagement", sstitle: "Creating self-help groups combined with DIY Tools through our app",
+        secondtitle: "Proactive ServicesShap", sstitle: "Creating self-help groups combined with DIY Tools through our app",
         thirdtitle: "Retention via Motivation", tstitle: "Individual sessions with psychologists, researched reinforcement model",
         maintitle: "Available Group Topics",
         options: [

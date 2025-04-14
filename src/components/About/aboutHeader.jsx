@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Container, Grid, Paper} from "@mui/material";
+import {Box, Container, Divider, Grid, Paper} from "@mui/material";
 import {styled} from "@mui/material/styles";
 import {BusinessCenter, Groups2, Handshake} from "@mui/icons-material";
 
@@ -52,121 +52,68 @@ function AboutHeader() {
     return (
         <Box>
             <Box sx={{
-                pt: { xs: 4, sm: 5 },
-                pb: { xs: 2, md: 3 },
-                mt: { xs: "70px", md: "120px" },
-                bgcolor: 'white',
-                position: 'relative',
-                '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    bottom: '-5%',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '200px',
-                    height: '4px',
-                    backgroundColor: '#FF7F1E',
-                    borderRadius: '2px'
-                }
+                padding:"150px 0 100px 0",
+                bgcolor: '#012765',
             }}>
                 <Container maxWidth="xl">
                     {/* Header */}
                     <Box className="Montserrat" sx={{
                         fontSize: { xs: "32px", sm: "36px", md: "42px" },
-                        marginBottom: { xs: "12px", sm: "16px" },
+                        marginBottom: { xs: "25px", sm: "10px" },
                         lineHeight: "1.2",
                         textAlign: "center",
-                        color: "#012765",
-                        fontWeight: "700"
+                        color: "#fff",
+                        fontWeight: "700",
                     }}>
                         About Us
                     </Box>
-                    <Box sx={{
-                        maxWidth: 800,
-                        mx: "auto",
-                        mb: { xs: 3, sm: 4 },
-                        fontSize: { xs: "16px", sm: "18px" },
-                        color: "#4B5563",
-                        textAlign: "center",
-                        lineHeight: "1.6",
-                        fontFamily: "Poppins"
-                    }}>
-                        Empowering organizations and individuals through structured programs that enhance emotional intelligence and foster sustainable growth.
-                    </Box>
+                    <Divider sx={{
+                        backgroundColor:"#FE6A00",
+                        height: 4,
+                        width: 100,
+                        mx: 'auto',
+                        my: 4
+                    }}/>
 
                     {/* Info Cards */}
                     <Grid container spacing={{ xs: 2, md: 3 }}>
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} md={6}>
                             <StyledPaper elevation={3}>
-                                <IconWrapper>
-                                    <BusinessCenter sx={{ fontSize: 28, color: '#012765' }} />
-                                </IconWrapper>
-                                <Box sx={{
-                                    fontSize: "20px",
-                                    fontWeight: "700",
-                                    color: "#012765",
-                                    mb: 1.5,
-                                    fontFamily: "Montserrat"
-                                }}>
-                                    Start-Up Certified
-                                </Box>
                                 <Box sx={{
                                     fontSize: "15px",
                                     color: "#4B5563",
                                     lineHeight: "1.6",
                                     fontFamily: "Poppins"
                                 }}>
-                                    MTPL is a Private Limited Company with Start Up India Certification, established and registered in 2022 to drive innovation in emotional wellness.
+                                    Emotionally Yours is an initiative by MTPL, a private limited company established in 2022 and recognised under the Start-Up India programme. We design structured, process-orientated programmes that enhance emotional intelligence and cultivate transformative mindsets.
                                 </Box>
+                                {/*<Box sx={{*/}
+                                {/*    fontSize: "15px",*/}
+                                {/*    color: "#4B5563",*/}
+                                {/*    lineHeight: "1.6",*/}
+                                {/*    fontFamily: "Poppins"*/}
+                                {/*}}>*/}
+                                {/*    Our mission is to empower individuals and organisations to build resilience, navigate challenges with clarity, and nurture meaningful relationships. Through insightful guidance and impactful tools, we unlock potential and inspire sustainable growth—one mindset at a time.*/}
+                                {/*</Box>*/}
                             </StyledPaper>
                         </Grid>
-
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} md={6}>
                             <StyledPaper elevation={3}>
-                                <IconWrapper>
-                                    <Groups2 sx={{ fontSize: 28, color: '#012765' }} />
-                                </IconWrapper>
-                                <Box sx={{
-                                    fontSize: "20px",
-                                    fontWeight: "700",
-                                    color: "#012765",
-                                    mb: 1.5,
-                                    fontFamily: "Montserrat"
-                                }}>
-                                    Holistic Growth
-                                </Box>
+                                {/*<Box sx={{*/}
+                                {/*    fontSize: "15px",*/}
+                                {/*    color: "#4B5563",*/}
+                                {/*    lineHeight: "1.6",*/}
+                                {/*    fontFamily: "Poppins"*/}
+                                {/*}}>*/}
+                                {/*    Emotionally Yours is an initiative by MTPL, a private limited company established in 2022 and recognised under the Start-Up India programme. We design structured, process-orientated programmes that enhance emotional intelligence and cultivate transformative mindsets.*/}
+                                {/*</Box>*/}
                                 <Box sx={{
                                     fontSize: "15px",
                                     color: "#4B5563",
                                     lineHeight: "1.6",
                                     fontFamily: "Poppins"
                                 }}>
-                                    We facilitate organizational success and individual development through structured programs designed to enhance emotional intelligence and transform mindsets.
-                                </Box>
-                            </StyledPaper>
-                        </Grid>
-
-                        <Grid item xs={12} md={4}>
-                            <StyledPaper elevation={3}>
-                                <IconWrapper>
-                                    <Handshake sx={{ fontSize: 28, color: '#012765' }} />
-                                </IconWrapper>
-                                <Box sx={{
-                                    fontSize: "20px",
-                                    fontWeight: "700",
-                                    color: "#012765",
-                                    mb: 1.5,
-                                    fontFamily: "Montserrat"
-                                }}>
-                                    Guidance & Support
-                                </Box>
-                                <Box sx={{
-                                    fontSize: "15px",
-                                    color: "#4B5563",
-                                    lineHeight: "1.6",
-                                    fontFamily: "Poppins"
-                                }}>
-                                    We provide comprehensive guidance to help individuals build resilience, effectively manage stress, and develop meaningful relationships.
+                                    Our mission is to empower individuals and organisations to build resilience, navigate challenges with clarity, and nurture meaningful relationships. Through insightful guidance and impactful tools, we unlock potential and inspire sustainable growth—one mindset at a time.
                                 </Box>
                             </StyledPaper>
                         </Grid>

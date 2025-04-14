@@ -56,24 +56,26 @@ function Navigation() {
         {label: "Home", path: "/"},
         {label: "About Us", path: "/about"},
         {
-            label: "Engagement",
-            path: "/engagement",
+            label: "Services",
+            path: "/services",
             submenu: [
-                {label: "Shape", sectionId: "shape"},
-                {label: "ESOP", sectionId: "esop"},
+                {label: "Shape", path: "/services/shape"},
+                {label: "Shape+", path: "/services/shape-Designe"},
+                {label: "Esop", path: "/services/esop"},
+                {label: "Pep", path: "/services/pep"},
             ],
         },
-        {label: "Partner", path: "/partner"},
-        {label: "Careers", path: "/careers"},
+        // {label: "Partner", path: "/partner"},
+        // {label: "Careers", path: "/careers"},
         {
             label: "Resources",
             path: "/resources",
             submenu: [
-                {label: "Journaling", sectionId: "featured-latest-help"},
-                {label: "Assessments", sectionId: "assessments"},
-                {label: "Self Help Tools", sectionId: "self-help-tools"},
-                {label: "Forms", sectionId: "forms"},
-                {label: "Blogs", sectionId: "blogs"},
+                {label: "Journaling", path: "/resources/journaling"},
+                {label: "Assessments", path: "/resources/assessments"},
+                {label: "Self Help Tools", path: "/resources/selfHelpTools"},
+                // {label: "Forms", path: "/resources/forms"},
+                {label: "Blogs", path: "/resources/blogs"},
             ],
         },
         {label: "Contact Us", path: "/contact"},
@@ -132,7 +134,11 @@ function Navigation() {
                                             {item.submenu.map((sub) => (
                                                 <Box
                                                     key={sub.label}
-                                                    onClick={() => handleScrollToSection(sub.sectionId, item.path)}
+                                                    onClick={() => {
+                                                        // handleScrollToSection(sub.sectionId, item.path)
+                                                        navigate(sub.path)
+                                                    }}
+
                                                     sx={{
                                                         padding: "10px",
                                                         color: "#012765",
@@ -231,8 +237,9 @@ function Navigation() {
                                                 "&:hover .MuiTypography-root": {color: "#FF6600"}
                                             }}
                                             onClick={() => {
-                                                handleScrollToSection(sub.sectionId, item.path);
+                                                // handleScrollToSection(sub.sectionId, item.path);
                                                 setMobileMenuOpen(false);
+                                                navigate(sub.path)
                                             }}
                                         >
                                             <ListItemText primary={sub.label} primaryTypographyProps={{

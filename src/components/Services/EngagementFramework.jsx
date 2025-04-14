@@ -171,7 +171,7 @@ const frameworks = {
         }],
     },
     'PEP-UPSC': {
-        title: 'Engagement Framework',
+        title: 'ServicesShap Framework',
         sections: [
             {
                 title: 'Mentors : The First Responders',
@@ -229,27 +229,27 @@ const EngagementFramework = () => {
                     Comprehensive year-round support for emotional well-being and academic excellence
                 </Box>
 
-                <StyledTabs
-                    value={currentTab}
-                    onChange={handleTabChange}
-                    variant="scrollable"
-                    scrollButtons="auto"
-                    TabIndicatorProps={{style: {display: "none"}}}
-                    sx={{width: "100%", maxWidth: "100vw", overflowX: "auto"}}
-                >
-                    {Object.keys(frameworks).map((category) => (
-                        <StyledTab
-                            key={category}
-                            label={category}
-                            value={category}
-                            sx={{
-                                fontSize: {xs: "12px", sm: "14px", md: "16px"},
-                                minWidth: "80px",
-                                padding: {xs: "6px", sm: "15px", md: "16px"},
-                            }}
-                        />
-                    ))}
-                </StyledTabs>
+                {/*<StyledTabs*/}
+                {/*    value={currentTab}*/}
+                {/*    onChange={handleTabChange}*/}
+                {/*    variant="scrollable"*/}
+                {/*    scrollButtons="auto"*/}
+                {/*    TabIndicatorProps={{style: {display: "none"}}}*/}
+                {/*    sx={{width: "100%", maxWidth: "100vw", overflowX: "auto"}}*/}
+                {/*>*/}
+                {/*    {Object.keys(frameworks).map((category) => (*/}
+                {/*        <StyledTab*/}
+                {/*            key={category}*/}
+                {/*            label={category}*/}
+                {/*            value={category}*/}
+                {/*            sx={{*/}
+                {/*                fontSize: {xs: "12px", sm: "14px", md: "16px"},*/}
+                {/*                minWidth: "80px",*/}
+                {/*                padding: {xs: "6px", sm: "15px", md: "16px"},*/}
+                {/*            }}*/}
+                {/*        />*/}
+                {/*    ))}*/}
+                {/*</StyledTabs>*/}
 
                 <Box sx={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 3}}>
                     {framework.sections.map((section, sectionIndex) => (

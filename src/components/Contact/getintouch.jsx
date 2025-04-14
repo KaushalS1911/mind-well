@@ -238,7 +238,7 @@ const GetInTouch = () => {
                                             </MenuItem>
                                             {[
                                                 "Individual Therapy",
-                                                "Student Services",
+                                                "Student ServicesShap",
                                                 "Corporate Wellness",
                                                 "Technical Support",
                                                 "Billing & Payment",

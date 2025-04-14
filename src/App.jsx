@@ -4,10 +4,10 @@ import Home from "./pages/homepage/home.jsx";
 import Footer from "./components/global/footer.jsx";
 import {Route, Routes, useLocation} from "react-router-dom";
 import About from "./pages/Aboutpage/about.jsx";
-import Engagement from "./pages/Engagement/Engagement.jsx";
+import Services from "./pages/ServicesShap/Services.jsx";
 import Resource from "./pages/resource/resource.jsx";
 import Contact from "./pages/Contact/contact.jsx";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 
 import AcademicStressAssessment from "./components/resources/Academic-Stress/AcademicStressAssessment.jsx";
 import AcademicStressQuestions from "./components/resources/Academic-Stress/AcademicStressQuestions.jsx";
@@ -37,6 +37,16 @@ import WorkLifeBalanceQuestions from "./components/resources/Work-Life-Balance/W
 import WorkLifeBalanceAssessmentForm from "./components/resources/Work-Life-Balance/WorkLifeBalanceAssessmentForm.jsx";
 import GeneralStressAssessment from "./components/resources/General-Stress_Anxiety/GeneralStressAssessment.jsx";
 import GeneralStressQuestions from "./components/resources/General-Stress_Anxiety/GeneralStressQuestions.jsx";
+import Journaling from "./components/resources/journaling.jsx";
+import Assessments from "./components/resources/assessments.jsx";
+import SelfHelpTools from "./components/resources/selfHelpTools.jsx";
+import Podcastsndblog from "./components/resources/podcastsndblog.jsx";
+import CrisisResources from "./components/resources/crisisresources.jsx";
+import Blogs from "./components/resources/blogs.jsx";
+import Shape from "./components/Services/shape.jsx";
+import Esop from "./components/Services/esop.jsx";
+import ShapeDesigne from "./components/Services/shapeDesigne.jsx";
+import Pep from "./components/Services/pep.jsx";
 
 function App() {
 
@@ -56,9 +66,19 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>
-                <Route path="/engagement" element={<Engagement/>}/>
+                <Route path="/Services" element={<Services/>}/>
+                <Route path="/services/shape" element={<Shape/>}/>
+                <Route path="/services/shape-Designe" element={<ShapeDesigne/>}/>
+                <Route path="/services/esop" element={<Esop/>}/>
+                <Route path="/services/pep" element={<Pep/>}/>
                 {/*<Route path="/partner" element={ <Partner/> }/>*/}
                 {/*<Route path="/careers" element={ <Careers/> }/>*/}
+                <Route path={"/resources/journaling"} element={<Journaling/>}/>
+                <Route path={"/resources/assessments"} element={<Assessments/>}/>
+                <Route path={"/resources/selfHelpTools"} element={<SelfHelpTools/>}/>
+                <Route path={"/resources/podCastsndblog"} element={<Podcastsndblog/>}/>
+                <Route path={"/resources/crisisResources"} element={<CrisisResources/>}/>
+                <Route path={"/resources/blogs"} element={<Blogs/>}/>
                 <Route path="/resources" element={<Resource/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/assessments/exam-stress" element={<ExamStressGaugeAssessments/>}/>

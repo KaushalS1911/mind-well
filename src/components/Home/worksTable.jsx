@@ -4,48 +4,48 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const steps = [
     {
-        title: "Establish A Leadership Squad",
-        description: "Answer a few questions about your needs, preferences, and goals for therapy. This helps us understand where you're looking for.",
+        title: " Establish a Leadership Taskforce",
+        // description: "Answer a few questions about your needs, preferences, and goals for therapy. This helps us understand where you're looking for.",
         details: [
-            "Raising awareness about the role of Emotional Quotient",
-            "Recognizing pain points and spot improvement domains",
-            "Organize an intricately curated framework"
+            "Amplify awareness of emotional intelligence as a leadership cornerstone.",
+            "Pinpoint challenges and uncover pathways for growth.",
+            "Develop a precision-driven strategy for lasting impact."
         ]
     },
     {
-        title: "Evaluations",
-        description: "Our advanced algorithm matches you with licensed therapists who specialize in your specific needs and align with your preferences.",
+        title: "Initial Evaluations – Laying the Groundwork",
+        // description: "Our advanced algorithm matches you with licensed therapists who specialize in your specific needs and align with your preferences.",
         details: [
-            "self for self realisation",
-            "Administer wellness studies of beneficiaries",
-            "Furnish data driven revelations to organisations"
+            "Facilitate introspective self-assessments to foster personal growth.",
+            "Conduct comprehensive wellness evaluations for participants.",
+            "Deliver data-driven insights to empower organisational strategies."
         ]
     },
     {
-        title: "Awareness Creation",
-        description: "Book a complimentary 15-minute video call with your potential therapist to ensure they’re the right fit for you.",
+        title: "Awareness Creation for Meaningful Impact",
+        // description: "Book a complimentary 15-minute video call with your potential therapist to ensure they’re the right fit for you.",
         details: [
-            "Demography based curriculum-gender, age & geography",
-            "Interactive group sessions, educational workshops, training programs",
-            "Develop Self Help Groups as First Responders"
+            "Develop demographic-specific curricula tailored by gender, age, and region.",
+            "Foster engagement through interactive workshops and training.",
+            "Empower self-help groups as first responders and feedback hubs."
         ]
     },
     {
-        title: "Data-driven Individualized Well-being",
-        description: "Once you’ve found your match, choose a plan that works for you and start your therapy sessions through secure video, audio, or messaging.",
+        title: "Insight-Driven Personalised Enrichment",
+        // description: "Once you’ve found your match, choose a plan that works for you and start your therapy sessions through secure video, audio, or messaging.",
         details: [
-            "Data-driven Individualized Well-being",
-            "Tailored support and guidance enhancing life skills",
-            "Risk identification and organizational awareness campaigns"
+            "Curate meticulously designed sessions for profound growth.",
+            "Provide customised guidance to cultivate essential life skills.",
+            "Detect underlying risks and elevate organisational consciousness."
         ]
     },
     {
-        title: "Fortification via Quantifiable metrics",
-        description: "Once you’ve found your match, choose a plan that works for you and start your therapy sessions through secure video, audio, or messaging.",
+        title: "Strengthening Impact Through Measurable Metrices",
+        // description: "Once you’ve found your match, choose a plan that works for you and start your therapy sessions through secure video, audio, or messaging.",
         details: [
-            "Evaluate effectiveness of intervention through follow-up assessments",
-            "Organize sessions for collaborative feedback & experiences gathered",
-            "Formulate a long-term plan with leadership to secure lasting outcomes"
+            "Assess intervention effectiveness with follow-up evaluations.",
+            "Facilitate collaborative feedback sessions for shared learning.",
+            "Develop a strategic roadmap with leadership for sustained success."
         ]
     }
 ];
@@ -105,16 +105,15 @@ function WorksTable() {
                                     <Box sx={{p: 0, zIndex: 1}}>
                                         <Box sx={{
                                             fontWeight: '700',
-                                            fontSize: {lg: "24px", xs: "20px"},
-                                            margin: "0 0 12px",
+                                            fontSize: {lg: "22px", xs: "20px"},
                                             color: '#012765',
                                             lineHeight: '2rem',
                                         }}>
                                             {step.title}
                                         </Box>
-                                        <Box sx={{color: '#4B5563', fontSize: "16px"}}>
-                                            {step.description}
-                                        </Box>
+                                        {/*<Box sx={{color: '#4B5563', fontSize: "16px"}}>*/}
+                                        {/*    {step.description}*/}
+                                        {/*</Box>*/}
                                     </Box>
                                 </Box>
                             </Grid>
