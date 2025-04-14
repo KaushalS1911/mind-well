@@ -637,7 +637,7 @@ const ShapeK12Questions = () => {
 
                             <Button
                                 variant="contained"
-                                onClick={() => navigate("/resources?scrollTo=assessments")}
+                                onClick={() => navigate("/resources/assessments")}
                                 sx={{
                                     bgcolor: "#F5811E",
                                     color: "#fff",
