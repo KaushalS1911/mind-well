@@ -129,39 +129,39 @@ export default function ShapePlusMUI() {
 
     const pillars = [
         {
-            title: 'Establishing Emotional Mastery',
+            title: 'Emotional Wellness Insights & Awareness Building',
             icon: <MenuBook fontSize="large" />,
             points: [
-                'Facilitate experiential learning sessions on emotional intelligence, mindful awareness, and effective stress navigation',
-                'Generate in-depth emotional wellness profiles using data-driven assessments',
-                'Initiate reflective dialogue and guided activities to spark self-awareness',
+                'Administer Comprehensive Emotional Wellness Surveys for students, educators, and parents to gather valuable insights into emotional well-being across the school community.',
+                'Facilitate Engaging Awareness Workshops focused on emotional intelligence, mindfulness practices, and stress management techniques to build foundational life skills.',
+                'Deliver In-Depth Emotional Well-Being Reports featuring actionable data, analysis, and tailored recommendations to support emotional health at the school level.',
             ],
         },
         {
-            title: 'Empowering Growth Through Training',
+            title: 'Training & Capacity Building',
             icon: <People fontSize="large" />,
             points: [
-                'Student enrichment sessions focus on building emotional regulation and academic resilience',
-                'Educator Development Workshops equip faculty with mindfulness-based strategies',
-                'Cultivate intrinsic motivation for sustained academic and personal success',
+                'Student group classroom sessions focus on strengthening emotional regulation, enhancing stress adaptability, and developing coping mechanism',
+                'Educator’s training integrating mindful teaching practices, build emotional resilience, and elevate student engagement.',
+                'Parent’s workshops empowering families to support child’s emotional well-being, manage expectations mindfully, and reduce academic pressure.',
             ],
         },
         {
-            title: 'Integrated Emotional Wellness Support',
+            title: 'Integrated Well-Being Support for Enduring Growth',
             icon: <Favorite fontSize="large" />,
             points: [
-                'Deliver customised individual counselling, accessible both online and on campus',
-                'Facilitate supportive peer networks that encourage open dialogue and empathy',
-                'Nurture the mental health of students and educators through sustainable support systems',
+                'Offer personalised counselling, both online and in person, to support individual issues.',
+                'Create peer support networks that promote open communication, empathy, and collective resilience within the school community.',
+                'Embed emotional intelligence in classrooms through mindfulness, gratitude exercises and journaling.',
             ],
         },
         {
-            title: 'Evaluating Outcomes & Future Pathways',
+            title: 'Measuring Impact, Shaping Future',
             icon: <TrendingUp fontSize="large" />,
             points: [
-                'Administer post-program diagnostic evaluations to assess growth in emotional well-being',
-                'Facilitate collaborative review forums with students, educators, and parents',
-                'Co-develop a long-term emotional wellness strategy with institutional leadership',
+                'Implement post-program evaluations to assess measurable improvements and personal growth across all participants.',
+                'Facilitate collaborative feedback and experience-sharing sessions with students, educators, and parents to capture insights and reflections.',
+                'Co-create a long-term sustainability roadmap with school leadership, ensuring continued integration of emotional wellness practices into the institutional framework.',
             ],
         },
     ];
@@ -183,7 +183,7 @@ export default function ShapePlusMUI() {
                         mb: 2,
                         mt: 8
                     }}>
-                        SHAPE+
+                        SHAPE
                     </Box>
                     <Divider sx={{
                         backgroundColor: colors.secondary,
@@ -192,7 +192,7 @@ export default function ShapePlusMUI() {
                         mx: 'auto',
                         my: 3
                     }}/>
-                    <Typography variant="h5" gutterBottom sx={{color: 'rgba(255,255,255,0.9)'}}>
+                    <Typography variant="h5" gutterBottom sx={{color: 'rgba(255,255,255,0.9)',fontWeight:"600"}}>
                         Emotional Wellness Program for Higher Education
                     </Typography>
                     <Typography variant="body1" paragraph
@@ -210,17 +210,11 @@ export default function ShapePlusMUI() {
                     <Grid container spacing={4} mb={8}>
                         <Grid item xs={12} lg={8}>
                             <Typography className={"Montserrat"} fontWeight="bold" gutterBottom sx={{color: colors.primary,fontSize:"30px",mb:3}}>
-                                Comprehensive Emotional Wellness for Higher Education
+                                Comprehensive Emotional Wellness for K12 Education
                             </Typography>
                             <Typography variant="body1" paragraph color="text.secondary">
-                                Through real-world exposure and leadership development, SHAPE+ empowers students to
-                                thrive
-                                holistically and grow into socially responsible global citizens.
-                            </Typography>
-                            <Typography variant="body1" color="text.secondary">
-                                Our program integrates emotional intelligence with academic excellence, preparing
-                                students
-                                not just for career success but for life-long resilience and personal fulfillment.
+                                Our annual Emotional Wellness Program, tailored for K12 learners in partnership with esteemed academic institutions, builds emotional awareness, regulation, and the ability to recognize and manage emotions.
+                                Through expert-led training and interactive workshops, students enhance academic performance and emotional intelligence—laying the foundation for lifelong success.
                             </Typography>
                         </Grid>
                         <Grid item xs={12} lg={4}>
@@ -238,11 +232,11 @@ export default function ShapePlusMUI() {
                                 </Typography>
                                 <List disablePadding>
                                     {[
-                                        'NEP-aligned emotional wellness',
-                                        'Leadership development focus',
-                                        'Academic resilience building',
-                                        'Real-world exposure integration',
-                                        'Future readiness preparation'
+                                        'Expert-facilitated workshops',
+                                        'Personalized counseling support',
+                                        'Comprehensive assessment tools',
+                                        'Community engagement strategies',
+                                        'Measurable outcome reporting'
                                     ].map((item, index) => (
                                         <ListItem key={index} disablePadding sx={{py: 0.5}}>
                                             <ListItemIcon sx={{minWidth: 24}}>
@@ -271,7 +265,7 @@ export default function ShapePlusMUI() {
                             my: 3
                         }}/>
                         <Typography variant="body1" color="text.secondary" sx={{maxWidth: 'md', mx: 'auto'}}>
-                            SHAPE+ delivers emotional wellness through four integrated components that work together to
+                            SHAPE delivers emotional wellness through four integrated components that work together to
                             create lasting positive impact for higher education students.
                         </Typography>
                     </Box>
