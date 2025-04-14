@@ -193,12 +193,11 @@ export default function ShapePlusMUI() {
                         my: 3
                     }}/>
                     <Typography variant="h5" gutterBottom sx={{color: 'rgba(255,255,255,0.9)',fontWeight:"600"}}>
-                        Emotional Wellness Program for Higher Education
+                        Emotional Wellness Program for K12 learners
                     </Typography>
                     <Typography variant="body1" paragraph
                                 sx={{color: 'rgba(255,255,255,0.7)', mb: 4, maxWidth: "lg", mx: "auto"}}>
-                        Designed for higher education students, this emotional wellness program aligns with NEP to
-                        cultivate academic excellence, emotional resilience, and future readiness.
+                        Designed for K12 students, this emotional wellness program aligns with students to builds emotional awareness, regulation, and the ability to recognize and manage emotions.
                     </Typography>
 
                 </Box>
