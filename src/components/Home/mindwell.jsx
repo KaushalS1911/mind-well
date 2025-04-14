@@ -56,7 +56,7 @@ function Mindwell() {
                     fontWeight: "700",
                     textAlign: "center",
                 }}>
-                    Why Emotionally Yours?
+                    Empowering Diverse Sectors
                 </Box>
                 <Box sx={{
                     width: {md:"70%",xs:"100%"},

@@ -56,7 +56,7 @@ function WorksTable() {
             <Container maxWidth="xl">
                 <Typography className={"Montserrat"} variant="h4" align="center" fontWeight={700} color="#012765"
                             gutterBottom>
-                    How It Works
+                    How we Make a Difference
                 </Typography>
                 <Box
                     variant="body1"
