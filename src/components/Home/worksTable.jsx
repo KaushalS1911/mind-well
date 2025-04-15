@@ -61,9 +61,9 @@ function WorksTable() {
                 <Box
                     variant="body1"
                     align="center"
-                    sx={{mx: {xs: 2, sm: 10, md: 20}, color: "#4B5563", lineHeight: 1.75}}
+                    sx={{mx: {xs: 2, sm: 10, md: 18}, color: "#4B5563", lineHeight: 1.75}}
                 >
-                    With Emotionally Yours, you can initiate a path to enhance your Organisational growth and Individual’s success.
+                    With Emotionally Yours, you can embark on a transformative journey to enhance your emotional well-being through a few simple and effective steps.
                 </Box>
 
                 <Box sx={{position: "relative", mt: 6}}>
