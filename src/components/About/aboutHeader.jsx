@@ -8,7 +8,7 @@ import {
     Typography,
     styled,
 } from "@mui/material";
-import img1 from '../../assets/images/about/aboutHeader/overviewvector.webp'
+import img1 from '../../assets/images/about/aboutHeader/vector.jpg'
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -98,7 +98,7 @@ function AboutHeader() {
             </Box>
 
             {/* Overview Section */}
-            <Box sx={{py: 7, backgroundColor: "#F8FAFC"}}>
+            <Box sx={{py: 7, }}>
                 <Container maxWidth="xl">
                     <Grid container spacing={6} alignItems="center">
                         <Grid item xs={12} md={6}>
@@ -133,7 +133,7 @@ function AboutHeader() {
                         </Grid>
                         <Grid item xs={12} md={6}>
                             <Box sx={{
-                                height: "400px",
+                                height: "500px",
                                 width: "100%",
                             }}>
                                 <img
