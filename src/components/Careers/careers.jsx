@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
     Box,
     Container,
@@ -27,7 +27,7 @@ import {
     Upload
 } from '@mui/icons-material';
 
-const StyledPaper = styled(Paper)(({ theme }) => ({
+const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
     borderRadius: '16px',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
@@ -38,7 +38,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
     }
 }));
 
-const JobCard = styled(Card)(({ theme }) => ({
+const JobCard = styled(Card)(({theme}) => ({
     height: '100%',
     borderRadius: '12px',
     overflow: 'hidden',
@@ -49,7 +49,7 @@ const JobCard = styled(Card)(({ theme }) => ({
     },
 }));
 
-const UploadButton = styled(Button)(({ theme }) => ({
+const UploadButton = styled(Button)(({theme}) => ({
     backgroundColor: '#E6EAF3',
     color: '#012765',
     '&:hover': {
@@ -77,7 +77,7 @@ function Careers() {
     };
 
     const handleInputChange = (event) => {
-        const { name, value } = event.target;
+        const {name, value} = event.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -87,7 +87,7 @@ function Careers() {
     const handleSubmit = (event) => {
         event.preventDefault();
         // Handle form submission here
-        console.log('Form submitted:', { ...formData, resume: selectedFile });
+        console.log('Form submitted:', {...formData, resume: selectedFile});
     };
 
     const jobs = [
@@ -130,10 +130,10 @@ function Careers() {
                     zIndex: 1,
                 }
             }}>
-                <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
+                <Container maxWidth="xl" sx={{position: 'relative', zIndex: 2}}>
                     <Box className="Montserrat" sx={{
-                        fontSize: { xs: "32px", sm: "36px", md: "42px" },
-                        marginBottom: { xs: "25px", sm: "10px" },
+                        fontSize: {xs: "32px", sm: "36px", md: "42px"},
+                        marginBottom: {xs: "25px", sm: "10px"},
                         lineHeight: "1.2",
                         textAlign: "center",
                         color: "#fff",
@@ -153,9 +153,10 @@ function Careers() {
                         textAlign: 'center',
                         maxWidth: '800px',
                         mx: 'auto',
-                    
+
                     }}>
-                        Be part of our mission to transform emotional wellness and make a lasting impact on individuals and organizations.
+                        Be part of our mission to transform emotional wellness and make a lasting impact on individuals
+                        and organizations.
                     </Typography>
                 </Container>
             </Box>
@@ -216,10 +217,10 @@ function Careers() {
             </Box> */}
 
             {/* Application Form */}
-            <Box sx={{ py: 10 }}>
+            <Box sx={{py: 10}}>
                 <Container maxWidth="md">
                     <StyledPaper elevation={3}>
-                        <Typography variant="h5" fontWeight="bold" gutterBottom sx={{ color: '#012765', mb: 4 }}>
+                        <Typography variant="h5" fontWeight="bold" gutterBottom sx={{color: '#012765', mb: 4}}>
                             Apply for Position
                         </Typography>
                         <form onSubmit={handleSubmit}>
@@ -232,6 +233,14 @@ function Careers() {
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         required
+                                        sx={{
+                                            "& label.Mui-focused": {color: "#FF7F1E"},
+                                            "& .MuiOutlinedInput-root": {
+                                                "& fieldset": {borderColor: "#FF7F1E"},
+                                                "&:hover fieldset": {borderColor: "#FF7F1E"},
+                                                "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
+                                            },
+                                        }}
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
@@ -243,6 +252,14 @@ function Careers() {
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         required
+                                        sx={{
+                                            "& label.Mui-focused": {color: "#FF7F1E"},
+                                            "& .MuiOutlinedInput-root": {
+                                                "& fieldset": {borderColor: "#FF7F1E"},
+                                                "&:hover fieldset": {borderColor: "#FF7F1E"},
+                                                "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
+                                            },
+                                        }}
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
@@ -253,10 +270,27 @@ function Careers() {
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         required
+                                        sx={{
+                                            "& label.Mui-focused": {color: "#FF7F1E"},
+                                            "& .MuiOutlinedInput-root": {
+                                                "& fieldset": {borderColor: "#FF7F1E"},
+                                                "&:hover fieldset": {borderColor: "#FF7F1E"},
+                                                "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
+                                            },
+                                        }}
                                     />
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
-                                    <FormControl fullWidth required>
+                                    <FormControl fullWidth required
+                                                 sx={{
+                                                     "& label.Mui-focused": {color: "#FF7F1E"},
+                                                     "& .MuiOutlinedInput-root": {
+                                                         "& fieldset": {borderColor: "#FF7F1E"},
+                                                         "&:hover fieldset": {borderColor: "#FF7F1E"},
+                                                         "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
+                                                     },
+                                                 }}
+                                    >
                                         <InputLabel>Position</InputLabel>
                                         <Select
                                             name="position"
@@ -280,6 +314,14 @@ function Careers() {
                                         value={formData.experience}
                                         onChange={handleInputChange}
                                         required
+                                        sx={{
+                                            "& label.Mui-focused": {color: "#FF7F1E"},
+                                            "& .MuiOutlinedInput-root": {
+                                                "& fieldset": {borderColor: "#FF7F1E"},
+                                                "&:hover fieldset": {borderColor: "#FF7F1E"},
+                                                "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
+                                            },
+                                        }}
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
@@ -292,13 +334,21 @@ function Careers() {
                                         multiline
                                         rows={4}
                                         required
+                                        sx={{
+                                            "& label.Mui-focused": {color: "#FF7F1E"},
+                                            "& .MuiOutlinedInput-root": {
+                                                "& fieldset": {borderColor: "#FF7F1E"},
+                                                "&:hover fieldset": {borderColor: "#FF7F1E"},
+                                                "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
+                                            },
+                                        }}
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
                                     <UploadButton
                                         component="label"
                                         variant="contained"
-                                        startIcon={<AttachFile />}
+                                        startIcon={<AttachFile/>}
                                     >
                                         Upload Resume
                                         <input
@@ -309,7 +359,7 @@ function Careers() {
                                         />
                                     </UploadButton>
                                     {selectedFile && (
-                                        <Box sx={{ mt: 2, display: 'flex', alignItems: 'center', gap: 1 }}>
+                                        <Box sx={{mt: 2, display: 'flex', alignItems: 'center', gap: 1}}>
                                             <Typography variant="body2">
                                                 {selectedFile.name}
                                             </Typography>
@@ -317,7 +367,7 @@ function Careers() {
                                                 size="small"
                                                 onClick={() => setSelectedFile(null)}
                                             >
-                                                <Close fontSize="small" />
+                                                <Close fontSize="small"/>
                                             </IconButton>
                                         </Box>
                                     )}
