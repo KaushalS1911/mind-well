@@ -147,12 +147,10 @@ const Herosection = () => {
                                             fontWeight: "700",
                                         }}
                                     >
-                                        Your Mental Wellbeing Matters
+                                        Building Mindsets
                                     </Box>
                                     <Box sx={{marginTop: "20px", fontSize: "20px", lineHeight: "28px", width: "80%"}}>
-                                        Connect with licensed therapists online and start your journey to better mental
-                                        health
-                                        today. Professional support whenever and wherever you need it.
+                                        Emotional wellness programs tailored by Qualified and Experienced Psychologists for Students, Competitive Exam Aspirants & Corporate Employees.
                                     </Box>
                                     {/*<Box sx={{marginTop: "30px", display: "flex"}}>*/}
                                     {/*    <Box sx={{*/}
@@ -257,6 +255,26 @@ const Herosection = () => {
                                                             sx={{marginTop: "15px"}}
                                                             error={!!errors.email}
                                                             helperText={errors.email?.message}
+                                                        />
+                                                    )}
+                                                />
+
+                                                <Controller
+                                                    name="contact"
+                                                    control={control}
+                                                    defaultValue=""
+                                                    rules={{
+                                                        required: "Contact is required",
+                                                    }}
+                                                    render={({field}) => (
+                                                        <TextField
+                                                            {...field}
+                                                            fullWidth
+                                                            label="Your contact"
+                                                            variant="outlined"
+                                                            sx={{marginTop: "15px"}}
+                                                            error={!!errors.contact}
+                                                            helperText={errors.contact?.message}
                                                         />
                                                     )}
                                                 />
@@ -566,7 +584,7 @@ const Herosection = () => {
                 ref={navigationPrevRef}
                 sx={{
                     position: "absolute",
-                    transform: "translate(50%, -550%)",
+                    transform: "translate(50%, -625%)",
                     zIndex: 10,
                     color: "#666",
                     justifyContent: "center",
@@ -592,7 +610,7 @@ const Herosection = () => {
                 sx={{
                     position: "absolute",
                     right: 0,
-                    transform: "translate(-50%, -550%)",
+                    transform: "translate(-50%, -625%)",
                     zIndex: 10,
                     color: "#666",
                     justifyContent: "center",
