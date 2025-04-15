@@ -584,7 +584,7 @@ const Herosection = () => {
                 ref={navigationPrevRef}
                 sx={{
                     position: "absolute",
-                    transform: "translate(50%, -550%)",
+                    transform: "translate(50%, -625%)",
                     zIndex: 10,
                     color: "#666",
                     justifyContent: "center",
@@ -610,7 +610,7 @@ const Herosection = () => {
                 sx={{
                     position: "absolute",
                     right: 0,
-                    transform: "translate(-50%, -550%)",
+                    transform: "translate(-50%, -625%)",
                     zIndex: 10,
                     color: "#666",
                     justifyContent: "center",
