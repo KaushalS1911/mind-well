@@ -187,24 +187,24 @@ const Herosection = () => {
                                     {/*        Learn More*/}
                                     {/*    </Box>*/}
                                     {/*</Box>*/}
-                                    <Box sx={{marginTop: "40px", display: "flex", alignItems: "center",}}>
+                                    {/*<Box sx={{marginTop: "40px", display: "flex", alignItems: "center",}}>*/}
 
-                                        <AvatarGroup spacing="medium" sx={{marginBottom: {xs: "30px", md: "0px"}}}>
-                                            <Avatar sx={{bgcolor: "#D9D9D9", color: "black"}}>J</Avatar>
-                                            <Avatar sx={{bgcolor: "#D9D9D9", color: "black"}}>S</Avatar>
-                                            <Avatar sx={{bgcolor: "#D9D9D9", color: "black"}}>M</Avatar>
-                                        </AvatarGroup>
+                                    {/*    <AvatarGroup spacing="medium" sx={{marginBottom: {xs: "30px", md: "0px"}}}>*/}
+                                    {/*        <Avatar sx={{bgcolor: "#D9D9D9", color: "black"}}>J</Avatar>*/}
+                                    {/*        <Avatar sx={{bgcolor: "#D9D9D9", color: "black"}}>S</Avatar>*/}
+                                    {/*        <Avatar sx={{bgcolor: "#D9D9D9", color: "black"}}>M</Avatar>*/}
+                                    {/*    </AvatarGroup>*/}
 
 
-                                        <Box sx={{
-                                            fontSize: "14px",
-                                            marginLeft: "10px",
-                                            color: "white",
-                                            marginBottom: {xs: "30px", md: "0px"}
-                                        }}>
-                                            Trusted by <b>10,000+</b> students and professionals
-                                        </Box>
-                                    </Box>
+                                    {/*    <Box sx={{*/}
+                                    {/*        fontSize: "14px",*/}
+                                    {/*        marginLeft: "10px",*/}
+                                    {/*        color: "white",*/}
+                                    {/*        marginBottom: {xs: "30px", md: "0px"}*/}
+                                    {/*    }}>*/}
+                                    {/*        Trusted by <b>10,000+</b> students and professionals*/}
+                                    {/*    </Box>*/}
+                                    {/*</Box>*/}
                                 </Grid>
 
 
