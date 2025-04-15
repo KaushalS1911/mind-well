@@ -147,7 +147,7 @@ const Herosection = () => {
                                             fontWeight: "700",
                                         }}
                                     >
-                                        Building Mindsets, Transforming Emotional Wellness
+                                        Building Mindsets
                                     </Box>
                                     <Box sx={{marginTop: "20px", fontSize: "20px", lineHeight: "28px", width: "80%"}}>
                                         Emotional wellness programs tailored by Qualified and Experienced Psychologists for Students, Competitive Exam Aspirants & Corporate Employees.
