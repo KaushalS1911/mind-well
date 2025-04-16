@@ -334,6 +334,28 @@ const Herosection = () => {
                                     >
                                         Trusted by leading school districts nationwide
                                     </Typography>
+
+                                    {/*<Box sx={{*/}
+                                    {/*    display: "flex",*/}
+                                    {/*    alignItems: "center",*/}
+                                    {/*    height: "100px",*/}
+                                    {/*    width: "300px",*/}
+                                    {/*    gap: {sm:10,xs:4}*/}
+                                    {/*}}>*/}
+                                    {/*    {[img2, img3, img4].map((img, index) => (*/}
+                                    {/*        <img*/}
+                                    {/*            key={index}*/}
+                                    {/*            src={img}*/}
+                                    {/*            alt={`img${index}`}*/}
+                                    {/*            style={{*/}
+                                    {/*                height: '100%',*/}
+                                    {/*                width: '100px',*/}
+                                    {/*                objectFit: 'contain',*/}
+                                    {/*            }}*/}
+                                    {/*        />*/}
+                                    {/*    ))}*/}
+                                    {/*</Box>*/}
+
                                 </Grid>
 
                                 {/* Right Column */}
