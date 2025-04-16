@@ -25,9 +25,9 @@ import {
     BusinessCenter,
 } from "@mui/icons-material";
 import img1 from '../../assets/images/Home/works/worksschool.png'
-import img2 from '../../assets/images/Home/works/Individual.png'
-import img3 from '../../assets/images/Home/works/organization.png'
-import img4 from '../../assets/images/Home/works/Corporate-Philanthropy-Feature.webp'
+import img2 from '../../assets/images/Home/works/COACHING.png'
+import img3 from '../../assets/images/Home/works/company-employees.jpg'
+import img4 from '../../assets/images/Home/works/higer-education.jpg'
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(4),
@@ -97,77 +97,80 @@ const tabData = [
         ],
     },
     {
-        label: "Corporates",
+        label: "Higher Education",
         icon: <BusinessCenter sx={{ color: "#FF7A00" }} />,
         image: img4,
-        title: "Corporate Emotional Wellness",
-        description: "Boost productivity and employee satisfaction through emotional intelligence.",
+        title: "Emotional Wellness in Higher Education",
+        description: "Support students' mental health and success through emotional intelligence.",
         features: [
             {
                 icon: <Work sx={{ color: "#012765" }} />,
-                title: "Employee Well-being",
-                description: "Create a supportive work environment that values emotional health.",
+                title: "Academic Stress Management",
+                description: "Help students navigate pressure, deadlines, and workload with emotional balance.",
             },
             {
                 icon: <TrendingUp sx={{ color: "#012765" }} />,
-                title: "Leadership Development",
-                description: "Develop emotionally intelligent leaders who inspire and motivate.",
+                title: "Life Skills Development",
+                description: "Equip students with emotional and social skills for real-world readiness.",
             },
             {
                 icon: <Group sx={{ color: "#012765" }} />,
-                title: "Team Building",
-                description: "Foster strong team dynamics through emotional connection.",
+                title: "Campus Community Building",
+                description: "Foster a connected and inclusive environment for holistic growth.",
             },
         ],
     },
+
     {
-        label: "Individuals",
+        label: "Coaching Institutes",
         icon: <Person sx={{ color: "#FF7A00" }} />,
         image: img2,
-        title: "Personal Growth Journey",
-        description: "Embark on a transformative journey of emotional self-discovery.",
+        title: "Empowering Aspirants for Success",
+        description: "Guiding learners through structured academic and personal development coaching.",
         features: [
             {
                 icon: <Psychology sx={{ color: "#012765" }} />,
-                title: "Self-Awareness",
-                description: "Develop deeper understanding of your emotions and reactions.",
+                title: "Focused Learning",
+                description: "Offer subject-specific coaching to strengthen core academic foundations.",
             },
             {
                 icon: <TrendingUp sx={{ color: "#012765" }} />,
-                title: "Personal Development",
-                description: "Build resilience and emotional strength for life's challenges.",
+                title: "Performance Tracking",
+                description: "Monitor student progress and adjust teaching methods for better outcomes.",
             },
             {
                 icon: <People sx={{ color: "#012765" }} />,
-                title: "Relationship Skills",
-                description: "Enhance your ability to connect and communicate effectively.",
+                title: "Mentorship & Guidance",
+                description: "Provide career counseling and emotional support for holistic growth.",
             },
         ],
     },
+
     {
-        label: "Organizations",
+        label: "Workplaces",
         icon: <Groups sx={{ color: "#FF7A00" }} />,
         image: img3,
-        title: "Organizational Transformation",
-        description: "Drive cultural change through emotional intelligence initiatives.",
+        title: "Emotionally Intelligent Workplaces",
+        description: "Transform your organization by building emotionally intelligent teams and leaders.",
         features: [
             {
                 icon: <Business sx={{ color: "#012765" }} />,
-                title: "Cultural Development",
-                description: "Build an emotionally intelligent organizational culture.",
+                title: "Emotionally Intelligent Culture",
+                description: "Cultivate a workplace culture grounded in empathy, self-awareness, and collaboration.",
             },
             {
                 icon: <TrendingUp sx={{ color: "#012765" }} />,
-                title: "Change Management",
-                description: "Navigate organizational changes with emotional intelligence.",
+                title: "Leadership & Change Readiness",
+                description: "Empower leaders to manage transitions and inspire teams through emotional intelligence.",
             },
             {
                 icon: <EmojiObjects sx={{ color: "#012765" }} />,
-                title: "Strategic Growth",
-                description: "Align emotional wellness with organizational goals.",
+                title: "Performance & Wellbeing",
+                description: "Boost productivity and employee wellbeing through emotional wellness strategies.",
             },
         ],
-    },
+    }
+
 ];
 function HowSchoolWorks() {
     const [selectedTab, setSelectedTab] = useState(0);
@@ -177,7 +180,7 @@ function HowSchoolWorks() {
     };
     const currentTabData = tabData[selectedTab];
     return (
-        <Box sx={{ py: 10, backgroundColor: "#F8FAFC" }}>
+        <Box sx={{padding:"96px 0 0 0" }}>
             <Container maxWidth="xl">
                 <Box
                     className="Montserrat"
@@ -190,7 +193,7 @@ function HowSchoolWorks() {
                         textAlign: "center",
                     }}
                 >
-                    How Emotionally Yours Works
+                    How Emotionally Yours Works In
                 </Box>
                 <Typography
                     variant="h6"
@@ -235,6 +238,20 @@ function HowSchoolWorks() {
                 </StyledTabs>
 
                 <Grid container spacing={6} alignItems="center">
+                    <Grid item xs={12} md={6}>
+                        <Box
+                            component="img"
+                            src={currentTabData.image}
+                            alt={currentTabData.label}
+                            sx={{
+                                width: "100%",
+                                maxWidth: "500px",
+                                height: "auto",
+                                display: "block",
+                                margin: "0 auto",
+                            }}
+                        />
+                    </Grid>
                     <Grid item xs={12} md={6}>
                         <StyledPaper elevation={3}>
                             <Typography
@@ -298,20 +315,6 @@ function HowSchoolWorks() {
                                 ))}
                             </Grid>
                         </StyledPaper>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Box
-                            component="img"
-                            src={currentTabData.image}
-                            alt={currentTabData.label}
-                            sx={{
-                                width: "100%",
-                                maxWidth: "500px",
-                                height: "auto",
-                                display: "block",
-                                margin: "0 auto",
-                            }}
-                        />
                     </Grid>
                 </Grid>
             </Container>

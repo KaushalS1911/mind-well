@@ -14,7 +14,7 @@ import {
     ListItemIcon,
     ListItemText,
     Paper,
-    useTheme
+    useTheme, AccordionSummary, Accordion, AccordionDetails
 } from '@mui/material';
 import {
     MenuBook,
@@ -24,6 +24,7 @@ import {
     ArrowForward,
     FiberManualRecord
 } from '@mui/icons-material';
+import img1 from '../../assets/images/Services/Shape.png';
 
 export default function ShapePlusMUI() {
     const theme = useTheme();
@@ -130,7 +131,7 @@ export default function ShapePlusMUI() {
     const pillars = [
         {
             title: 'Emotional Wellness Insights & Awareness Building',
-            icon: <MenuBook fontSize="large" />,
+            icon: <MenuBook fontSize="large"/>,
             points: [
                 'Administer Comprehensive Emotional Wellness Surveys for students, educators, and parents to gather valuable insights into emotional well-being across the school community.',
                 'Facilitate Engaging Awareness Workshops focused on emotional intelligence, mindfulness practices, and stress management techniques to build foundational life skills.',
@@ -139,7 +140,7 @@ export default function ShapePlusMUI() {
         },
         {
             title: 'Training & Capacity Building',
-            icon: <People fontSize="large" />,
+            icon: <People fontSize="large"/>,
             points: [
                 'Student group classroom sessions focus on strengthening emotional regulation, enhancing stress adaptability, and developing coping mechanism',
                 'Educator’s training integrating mindful teaching practices, build emotional resilience, and elevate student engagement.',
@@ -148,7 +149,7 @@ export default function ShapePlusMUI() {
         },
         {
             title: 'Integrated Well-Being Support for Enduring Growth',
-            icon: <Favorite fontSize="large" />,
+            icon: <Favorite fontSize="large"/>,
             points: [
                 'Offer personalised counselling, both online and in person, to support individual issues.',
                 'Create peer support networks that promote open communication, empathy, and collective resilience within the school community.',
@@ -157,7 +158,7 @@ export default function ShapePlusMUI() {
         },
         {
             title: 'Measuring Impact, Shaping Future',
-            icon: <TrendingUp fontSize="large" />,
+            icon: <TrendingUp fontSize="large"/>,
             points: [
                 'Implement post-program evaluations to assess measurable improvements and personal growth across all participants.',
                 'Facilitate collaborative feedback and experience-sharing sessions with students, educators, and parents to capture insights and reflections.',
@@ -173,34 +174,74 @@ export default function ShapePlusMUI() {
                 backgroundColor: "#022662",
                 padding: "120px 0 60px 0"
             }}>
-                <Box textAlign="center" maxWidth="md" mx="auto" sx={{mb: 0}}>
 
-                    <Box className={"Montserrat"} sx={{
-                        fontSize: "48px",
-                        lineHeight: 1,
-                        fontWeight: "700",
-                        color: "#fff",
-                        mb: 2,
-                        mt: 8
-                    }}>
-                        SHAPE
-                    </Box>
-                    <Divider sx={{
-                        backgroundColor: colors.secondary,
-                        height: 4,
-                        width: 100,
-                        mx: 'auto',
-                        my: 3
-                    }}/>
-                    <Typography variant="h5" gutterBottom sx={{color: 'rgba(255,255,255,0.9)',fontWeight:"600"}}>
-                        Emotional Wellness Program for K12 learners
-                    </Typography>
-                    <Typography variant="body1" paragraph
-                                sx={{color: 'rgba(255,255,255,0.7)', mb: 4, maxWidth: "lg", mx: "auto"}}>
-                        Designed for K12 students, this emotional wellness program aligns with students to builds emotional awareness, regulation, and the ability to recognize and manage emotions.
-                    </Typography>
+                <Grid container spacing={4} sx={{ mt: 8, px: { xs: 4, md: 10 } }}>
+                    {/* Text Section */}
+                    <Grid item xs={12} md={6}>
+                        <Typography
+                            className="Montserrat"
+                            sx={{
+                                fontSize: { lg: '38px', sm: '30px', xs: '26px' },
+                                lineHeight: 1.2,
+                                fontWeight: 700,
+                                color: '#FE6A00',
+                                mb: 2,
+                            }}
+                        >
+                            Student's Health Assessment And Performance Evaluation
+                        </Typography>
 
-                </Box>
+                        <Divider
+                            sx={{
+                                backgroundColor: '#fff',
+                                height: 4,
+                                width: 100,
+                                my: 3,
+                            }}
+                        />
+
+                        <Typography
+                            variant="h5"
+                            gutterBottom
+                            sx={{
+                                color: 'rgba(255,255,255,0.9)',
+                                fontWeight: 600,
+                            }}
+                        >
+                            Emotional Wellness Program for K12 learners
+                        </Typography>
+
+                        <Typography
+                            variant="body1"
+                            paragraph
+                            sx={{
+                                color: 'rgba(255,255,255,0.7)',
+                                mb: 4,
+                                maxWidth: { xs: '100%', sm: '90%', md: '85%' },
+                            }}
+                        >
+                            Designed for K12 students, this emotional wellness program aligns with students to build emotional awareness,
+                            regulation, and the ability to recognize and manage emotions.
+                        </Typography>
+                    </Grid>
+
+                    {/* Image Section */}
+                    <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
+                        <Box sx={{
+                            height: "300px",
+                            width: "100%",
+                        }}>
+                            <img src={img1} alt="img1"
+                                 style={{
+                                     width: '100%',
+                                     height: '100%',
+                                     objectFit: 'cover',
+                                 }}/>
+                        </Box>
+                    </Grid>
+                </Grid>
+
+
             </Box>
 
             {/* Program Overview */}
@@ -208,12 +249,16 @@ export default function ShapePlusMUI() {
                 <Box sx={{padding: "96px 0 0 0"}}>
                     <Grid container spacing={4} mb={8}>
                         <Grid item xs={12} lg={8}>
-                            <Typography className={"Montserrat"} fontWeight="bold" gutterBottom sx={{color: colors.primary,fontSize:"30px",mb:3}}>
+                            <Typography className={"Montserrat"} fontWeight="bold" gutterBottom
+                                        sx={{color: colors.primary, fontSize: "30px", mb: 3}}>
                                 Comprehensive Emotional Wellness for K12 Education
                             </Typography>
                             <Typography variant="body1" paragraph color="text.secondary">
-                                Our annual Emotional Wellness Program, tailored for K12 learners in partnership with esteemed academic institutions, builds emotional awareness, regulation, and the ability to recognize and manage emotions.
-                                Through expert-led training and interactive workshops, students enhance academic performance and emotional intelligence—laying the foundation for lifelong success.
+                                Our annual Emotional Wellness Program, tailored for K12 learners in partnership with
+                                esteemed academic institutions, builds emotional awareness, regulation, and the ability
+                                to recognize and manage emotions.
+                                Through expert-led training and interactive workshops, students enhance academic
+                                performance and emotional intelligence—laying the foundation for lifelong success.
                             </Typography>
                         </Grid>
                         <Grid item xs={12} lg={4}>
@@ -251,9 +296,10 @@ export default function ShapePlusMUI() {
                 </Box>
 
                 {/* Four-Pillar Approach */}
-                <Box sx={{padding:"96px 0"}}>
+                <Box sx={{padding: "96px 0"}}>
                     <Box textAlign="center" mb={6}>
-                        <Typography className={"Montserrat"} variant="h4" fontWeight="bold" gutterBottom sx={{color: colors.primary}}>
+                        <Typography className={"Montserrat"} variant="h4" fontWeight="bold" gutterBottom
+                                    sx={{color: colors.primary}}>
                             Our Four-Pillar Approach
                         </Typography>
                         <Divider sx={{
@@ -273,11 +319,11 @@ export default function ShapePlusMUI() {
                         {pillars.map((pillar, idx) => (
                             <Grid item xs={12} md={6} key={idx}>
                                 <Card elevation={3} sx={styles.featureCard}>
-                                    <Box sx={styles.cardHeader} />
-                                    <CardContent sx={{ p: 4 }}>
+                                    <Box sx={styles.cardHeader}/>
+                                    <CardContent sx={{p: 4}}>
                                         <Box sx={styles.iconContainer}>
                                             <Box sx={styles.icon}>{pillar.icon}</Box>
-                                            <Typography variant="h6" fontWeight="bold" sx={{ color: colors.primary }}>
+                                            <Typography variant="h6" fontWeight="bold" sx={{color: colors.primary}}>
                                                 {pillar.title}
                                             </Typography>
                                         </Box>
@@ -293,7 +339,7 @@ export default function ShapePlusMUI() {
                                                         mb: 1.5,
                                                     }}
                                                 >
-                                                    <ListItemText primary={item} sx={{ color: 'text.secondary', m: 0 }} />
+                                                    <ListItemText primary={item} sx={{color: 'text.secondary', m: 0}}/>
                                                 </ListItem>
                                             ))}
                                         </List>
@@ -303,129 +349,100 @@ export default function ShapePlusMUI() {
                         ))}
                     </Grid>
                 </Box>
+                {/* FAQs Section */}
+                <Box sx={{p: "20px 0 96px 0"}}>
+                    <Typography
+                        className={"Montserrat"}
+                        variant="h4"
+                        textAlign="center"
+                        fontWeight="bold"
+                        sx={{color: colors.primary, mb: 3}}
+                    >
+                        Frequently Asked Questions
+                    </Typography>
+                    <Divider
+                        sx={{
+                            backgroundColor: colors.secondary,
+                            height: 4,
+                            width: 100,
+                            mx: 'auto',
+                            mb: 6
+                        }}
+                    />
 
-                {/* Impact Section */}
-                {/*<Box sx={{py: 10, backgroundColor: `${colors.primary}05`}}>*/}
-                {/*    <Grid container spacing={4}>*/}
-                {/*        <Grid item xs={12} md={4}>*/}
-                {/*            <Typography variant="h4" fontWeight="bold" gutterBottom sx={{color: colors.primary}}>*/}
-                {/*                Our Impact*/}
-                {/*            </Typography>*/}
-                {/*            <Divider*/}
-                {/*                sx={{*/}
-                {/*                    backgroundColor: colors.secondary,*/}
-                {/*                    height: 4,*/}
-                {/*                    width: 60,*/}
-                {/*                    mb: 3*/}
-                {/*                }}*/}
-                {/*            />*/}
-                {/*            <Typography variant="body1" color="text.secondary" paragraph>*/}
-                {/*                See how our SHAPE+ program is transforming emotional wellness in higher education*/}
-                {/*                institutions across India.*/}
-                {/*            </Typography>*/}
-                {/*            <Box display={{xs: 'none', md: 'block'}}>*/}
-                {/*                <Button*/}
-                {/*                    variant="contained"*/}
-                {/*                    sx={styles.primaryButton}*/}
-                {/*                    endIcon={<ArrowForward/>}*/}
-                {/*                >*/}
-                {/*                    View Case Studies*/}
-                {/*                </Button>*/}
-                {/*            </Box>*/}
-                {/*        </Grid>*/}
+                    <Box>
+                        {[
+                            {
+                                question: "What is the SHAPE Wellness Program?",
+                                answer: "The SHAPE Wellness Program is a year-long, structured emotional wellness initiative for students, teachers, and parents to build emotional intelligence, reduce stress, and improve academic performance."
+                            },
+                            {
+                                question: "Who benefits from this program?",
+                                answer: "Students, teachers, parents, and non-academic staff benefit through awareness workshops, training sessions, personalized counseling, and self-help tools."
+                            },
+                            {
+                                question: "What makes this program different?",
+                                answer: "It is aligned with NEP 2020 and Mental Health Act 2017, offers measurable outcomes, and uses both expert-led sessions and app-based self-help tools."
+                            },
+                            {
+                                question: "How is the program delivered?",
+                                answer: "Through classroom group sessions, digital workshops, personalized counseling (online/offline), psychometric assessments, and a Freemium wellness app."
+                            },
+                            {
+                                question: "What emotional challenges does it address?",
+                                answer: "The program tackles academic stress, anxiety, emotional regulation, bullying, and lack of motivation in students, while supporting teachers and parents in managing related challenges."
+                            },
+                            {
+                                question: "Is the program measurable?",
+                                answer: "Yes. It tracks emotional, behavioral, academic, nutritional, physical, digital, and social parameters before and after implementation."
+                            },
+                            {
+                                question: "How is the program delivered?",
+                                answer: "Through classroom group sessions, digital workshops, personalized counseling (online/offline), psychometric assessments, and a Freemium wellness app."
+                            },
+                            {
+                                question: "What emotional challenges does it address?",
+                                answer: "The program tackles academic stress, anxiety, emotional regulation, bullying, and lack of motivation in students, while supporting teachers and parents in managing related challenges."
+                            },
+                            {
+                                question: "Is the program measurable?",
+                                answer: "Yes. It tracks emotional, behavioral, academic, nutritional, physical, digital, and social parameters before and after implementation."
+                            },
+                            {
+                                question: "Is it suitable for all age groups?",
+                                answer: "Yes, it is designed for K-12 students with age-appropriate content and separate modules for teachers and parents."
+                            },
+                            {
+                                question: "What tools are included in the app?",
+                                answer: "Mood trackers, daily journals, self-assessments, recorded sessions, and emotional wellness quizzes are part of the app."
+                            },
+                            {
+                                question: "How can a school enroll?",
+                                answer: "Schools can reach out to the MTPL team through the contact information provided to schedule an initial assessment and program walkthrough."
+                            },
+                            {
+                                question: "What impact has the program shown so far?",
+                                answer: "Over 150,000 beneficiaries, 5,000+ workshops, and 3,500+ individual sessions have led to better attendance, reduced stress, improved academic and emotional outcomes, and early identification of critical cases."
+                            }
+                        ].map((faq, idx) => (
+                            <Accordion key={idx} sx={{mb: 2}}>
+                                <AccordionSummary
+                                    expandIcon={<ArrowForward sx={{color: colors.secondary}}/>}
+                                    aria-controls={`faq-content-${idx}`}
+                                    id={`faq-header-${idx}`}
+                                >
+                                    <Typography fontWeight="bold" sx={{color: colors.primary}}>
+                                        {faq.question}
+                                    </Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <Typography color="text.secondary">{faq.answer}</Typography>
+                                </AccordionDetails>
+                            </Accordion>
+                        ))}
+                    </Box>
+                </Box>
 
-                {/*        <Grid item xs={12} md={8}>*/}
-                {/*            <Grid container spacing={3}>*/}
-                {/*                {[*/}
-                {/*                    {value: '92%', text: 'of students report improved leadership capabilities'},*/}
-                {/*                    {value: '89%', text: 'increase in academic resilience measures'},*/}
-                {/*                    {value: '78%', text: 'reduction in academic burnout incidents'},*/}
-                {/*                    {value: '95%', text: 'of institutions report improved campus climate'}*/}
-                {/*                ].map((stat, index) => (*/}
-                {/*                    <Grid item xs={12} sm={6} key={index}>*/}
-                {/*                        <Card elevation={2} sx={styles.statCard}>*/}
-                {/*                            <CardContent>*/}
-                {/*                                <Typography variant="h3" sx={styles.statValue} gutterBottom>*/}
-                {/*                                    {stat.value}*/}
-                {/*                                </Typography>*/}
-                {/*                                <Typography variant="body1" color="text.secondary">*/}
-                {/*                                    {stat.text}*/}
-                {/*                                </Typography>*/}
-                {/*                            </CardContent>*/}
-                {/*                        </Card>*/}
-                {/*                    </Grid>*/}
-                {/*                ))}*/}
-                {/*            </Grid>*/}
-                {/*        </Grid>*/}
-
-                {/*        <Grid item xs={12} textAlign="center" display={{xs: 'block', md: 'none'}} mt={2}>*/}
-                {/*            <Button*/}
-                {/*                variant="contained"*/}
-                {/*                sx={styles.primaryButton}*/}
-                {/*                endIcon={<ArrowForward/>}*/}
-                {/*            >*/}
-                {/*                View Case Studies*/}
-                {/*            </Button>*/}
-                {/*        </Grid>*/}
-                {/*    </Grid>*/}
-                {/*</Box>*/}
-
-                {/* CTA Section */}
-                {/*<Box sx={{py: 10}}>*/}
-                {/*    <Box textAlign="center" mb={6}>*/}
-                {/*        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{color: colors.primary}}>*/}
-                {/*            Ready to Transform Your Institution's Emotional Wellness?*/}
-                {/*        </Typography>*/}
-                {/*        <Typography variant="body1" color="text.secondary" sx={{maxWidth: 'md', mx: 'auto', mb: 5}}>*/}
-                {/*            Join the growing community of forward-thinking higher education institutions that are*/}
-                {/*            prioritizing emotional wellness alongside academic excellence.*/}
-                {/*        </Typography>*/}
-
-                {/*        <Card sx={styles.ctaCard} elevation={4}>*/}
-                {/*            <Box sx={styles.ctaCardHeader}/>*/}
-                {/*            <CardContent sx={{p: {xs: 3, md: 6}}}>*/}
-                {/*                <Grid container spacing={4}>*/}
-                {/*                    <Grid item xs={12} md={6}>*/}
-                {/*                        <Typography variant="h6" fontWeight="bold" gutterBottom*/}
-                {/*                                    sx={{color: colors.primary}}>*/}
-                {/*                            Schedule a Consultation*/}
-                {/*                        </Typography>*/}
-                {/*                        <Typography variant="body1" color="text.secondary" paragraph>*/}
-                {/*                            Let's discuss how SHAPE+ can be customized for your institution's unique*/}
-                {/*                            needs.*/}
-                {/*                        </Typography>*/}
-                {/*                        <Button*/}
-                {/*                            fullWidth*/}
-                {/*                            variant="contained"*/}
-                {/*                            sx={styles.primaryButton}*/}
-                {/*                            endIcon={<ArrowForward/>}*/}
-                {/*                        >*/}
-                {/*                            Book a Call*/}
-                {/*                        </Button>*/}
-                {/*                    </Grid>*/}
-
-                {/*                    <Grid item xs={12} md={6}>*/}
-                {/*                        <Typography variant="h6" fontWeight="bold" gutterBottom*/}
-                {/*                                    sx={{color: colors.primary}}>*/}
-                {/*                            Download Program Guide*/}
-                {/*                        </Typography>*/}
-                {/*                        <Typography variant="body1" color="text.secondary" paragraph>*/}
-                {/*                            Get detailed information about implementation and NEP alignment.*/}
-                {/*                        </Typography>*/}
-                {/*                        <Button*/}
-                {/*                            fullWidth*/}
-                {/*                            variant="outlined"*/}
-                {/*                            endIcon={<ArrowForward/>}*/}
-                {/*                            sx={{color: 'text.secondary', borderColor: 'grey.300'}}*/}
-                {/*                        >*/}
-                {/*                            Download PDF*/}
-                {/*                        </Button>*/}
-                {/*                    </Grid>*/}
-                {/*                </Grid>*/}
-                {/*            </CardContent>*/}
-                {/*        </Card>*/}
-                {/*    </Box>*/}
-                {/*</Box>*/}
             </Container>
         </Box>
     );

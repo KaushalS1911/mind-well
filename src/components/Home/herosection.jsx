@@ -13,12 +13,9 @@ import {
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import img1 from '../../assets/images/Home/Herosection/home.svg';
-import img2 from '../../assets/images/Home/Herosection/lausd.svg';
-import img3 from '../../assets/images/Home/Herosection/ocps.svg';
-import img4 from '../../assets/images/Home/Herosection/Atlanta.svg';
+import img2 from '../../assets/images/Home/Herosection/flat-creativity.jpg';
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {Controller, useForm} from "react-hook-form";
 import {Navigation, Pagination} from 'swiper/modules';
@@ -142,211 +139,37 @@ const Herosection = () => {
                                     <Box
                                         className={"Montserrat"}
                                         sx={{
-                                            fontSize: "48px",
-                                            lineHeight: 1,
+                                            fontSize: {lg: '48px', sm: '40px', xs: '32px'},
+                                            lineHeight: {xs: '1.4', sm: '1.6', md: '1.75'},
                                             fontWeight: "700",
+                                            color: "#FE6A00",
+                                            opacity: "0.9"
                                         }}
                                     >
                                         Building Mindsets
                                     </Box>
-                                    <Box sx={{marginTop: "20px", fontSize: "20px", lineHeight: "28px", width: "80%"}}>
-                                        Emotional wellness programs tailored by Qualified and Experienced Psychologists for Students, Competitive Exam Aspirants & Corporate Employees.
-                                    </Box>
-                                    {/*<Box sx={{marginTop: "30px", display: "flex"}}>*/}
-                                    {/*    <Box sx={{*/}
-                                    {/*        backgroundColor: "#FE6A00",*/}
-                                    {/*        marginRight: "10px",*/}
-                                    {/*        padding: "12px 24px",*/}
-                                    {/*        fontSize: "16px",*/}
-                                    {/*        display: "inline-block",*/}
-                                    {/*        borderRadius: "0.375rem",*/}
-                                    {/*        fontWeight: "600",*/}
-                                    {/*        cursor: "pointer",*/}
-                                    {/*        transition: "0.3s",*/}
-                                    {/*        '&:hover': {*/}
-                                    {/*            backgroundColor: "#E05D00",*/}
-                                    {/*        }*/}
-                                    {/*    }}>*/}
-                                    {/*        Get Started*/}
-                                    {/*    </Box>*/}
-                                    {/*    <Box sx={{*/}
-                                    {/*        borderColor: "white",*/}
-                                    {/*        color: "white",*/}
-                                    {/*        padding: "12px 24px",*/}
-                                    {/*        fontSize: "16px",*/}
-                                    {/*        backgroundColor: "transparent",*/}
-                                    {/*        border: "1px solid #fff",*/}
-                                    {/*        borderRadius: "0.375rem",*/}
-                                    {/*        fontWeight: "600",*/}
-                                    {/*        cursor: "pointer",*/}
-                                    {/*        transition: "0.3s",*/}
-                                    {/*        '&:hover': {*/}
-                                    {/*            backgroundColor: "#1B3D75",*/}
-                                    {/*        }*/}
-                                    {/*    }}>*/}
-                                    {/*        Learn More*/}
-                                    {/*    </Box>*/}
-                                    {/*</Box>*/}
-                                    <Box sx={{marginTop: "40px", display: "flex", alignItems: "center",}}>
-
-                                        <AvatarGroup spacing="medium" sx={{marginBottom: {xs: "30px", md: "0px"}}}>
-                                            <Avatar sx={{bgcolor: "#D9D9D9", color: "black"}}>J</Avatar>
-                                            <Avatar sx={{bgcolor: "#D9D9D9", color: "black"}}>S</Avatar>
-                                            <Avatar sx={{bgcolor: "#D9D9D9", color: "black"}}>M</Avatar>
-                                        </AvatarGroup>
-
-
-                                        <Box sx={{
-                                            fontSize: "14px",
-                                            marginLeft: "10px",
-                                            color: "white",
-                                            marginBottom: {xs: "30px", md: "0px"}
-                                        }}>
-                                            Trusted by <b>10,000+</b> students and professionals
-                                        </Box>
+                                    <Box sx={{
+                                        marginTop: "20px", fontSize: {xs: '16px', sm: '18px', md: '20px'},
+                                        lineHeight: {xs: '24px', sm: '26px', md: '28px'}, width: "80%"
+                                    }}>
+                                        Emotional wellness programs tailored by Qualified and Experienced Psychologists
+                                        for Students, Competitive Exam Aspirants & Corporate Employees.
                                     </Box>
                                 </Grid>
 
 
                                 <Grid item xs={12} md={4}>
                                     <Box sx={{textAlign: "left"}}>
-                                        <Paper sx={{padding: "30px", borderRadius: "12px"}}>
-                                            <Box variant="h6" fontWeight="bold" sx={{color: "#002F6C"}}>
-                                                Take the first step
-                                            </Box>
-                                            <form onSubmit={handleSubmit(onSubmit)}>
-
-                                                <Controller
-                                                    name="name"
-                                                    control={control}
-                                                    defaultValue=""
-                                                    rules={{required: "Name is required"}}
-                                                    render={({field}) => (
-                                                        <TextField
-                                                            {...field}
-                                                            fullWidth
-                                                            label="Your name"
-                                                            variant="outlined"
-                                                            sx={{marginTop: "15px"}}
-                                                            error={!!errors.name}
-                                                            helperText={errors.name?.message}
-                                                        />
-                                                    )}
-                                                />
-
-
-                                                <Controller
-                                                    name="email"
-                                                    control={control}
-                                                    defaultValue=""
-                                                    rules={{
-                                                        required: "Email is required",
-                                                        pattern: {
-                                                            value: /^\S+@\S+\.\S+$/,
-                                                            message: "Invalid email format"
-                                                        },
-                                                    }}
-                                                    render={({field}) => (
-                                                        <TextField
-                                                            {...field}
-                                                            fullWidth
-                                                            label="Your email"
-                                                            variant="outlined"
-                                                            sx={{marginTop: "15px"}}
-                                                            error={!!errors.email}
-                                                            helperText={errors.email?.message}
-                                                        />
-                                                    )}
-                                                />
-
-                                                <Controller
-                                                    name="contact"
-                                                    control={control}
-                                                    defaultValue=""
-                                                    rules={{
-                                                        required: "Contact is required",
-                                                    }}
-                                                    render={({field}) => (
-                                                        <TextField
-                                                            {...field}
-                                                            fullWidth
-                                                            label="Your contact"
-                                                            variant="outlined"
-                                                            sx={{marginTop: "15px"}}
-                                                            error={!!errors.contact}
-                                                            helperText={errors.contact?.message}
-                                                        />
-                                                    )}
-                                                />
-
-
-                                                <Controller
-                                                    name="concern"
-                                                    control={control}
-                                                    defaultValue={null}
-                                                    rules={{required: "Please select your concern"}}
-                                                    render={({field}) => (
-                                                        <Autocomplete
-                                                            {...field}
-                                                            options={[
-                                                                "Anxiety",
-                                                                "Depression",
-                                                                "Stress",
-                                                                "Relationship Issues",
-                                                                "Self-esteem",
-                                                                "Grief",
-                                                                "Other",
-                                                            ]}
-                                                            onChange={(_, value) => field.onChange(value)}
-                                                            value={field.value || null}
-                                                            renderInput={(params) => (
-                                                                <TextField
-                                                                    {...params}
-                                                                    label="What are you struggling with?"
-                                                                    variant="outlined"
-                                                                    fullWidth
-                                                                    sx={{marginTop: "15px"}}
-                                                                    error={!!errors.concern}
-                                                                    helperText={errors.concern?.message}
-                                                                />
-                                                            )}
-                                                        />
-                                                    )}
-                                                />
-
-
-                                                <Box sx={{
-                                                    backgroundColor: "#FE6A00",
-                                                    margin: "16px 0 0",
-                                                    padding: "12px 24px",
-                                                    fontSize: "16px",
-                                                    color: "#fff",
-                                                    fontWeight: "600",
-                                                    borderRadius: "0.375rem",
-                                                    textAlign: "center",
-                                                    cursor: "pointer",
-                                                }}>
-                                                    Submit
-                                                </Box>
-                                            </form>
-
-                                            <Box
-                                                sx={{
-                                                    display: "block",
-                                                    marginTop: "10px",
-                                                    textAlign: "center",
-                                                    fontSize: "12px"
-                                                }}>
-                                                By continuing, you agree to our{" "}
-                                                <a href="#" style={{color: "#002F6C", fontWeight: "bold"}}>
-                                                    Terms of Service
-                                                </a>{" "}
-                                                and{" "}
-                                                <a href="#" style={{color: "#002F6C", fontWeight: "bold"}}>
-                                                    Privacy Policy
-                                                </a>
-                                            </Box>
-                                        </Paper>
+                                        <Box sx={{
+                                            height: {xs: '100%', lg: '72%'},
+                                            width: {xs: '100%', lg: '72%'},
+                                            mt: {xs: 5,md:0}
+                                        }}>
+                                            <img src={img2} alt="mindset image" style={{
+                                                width: '100%',
+                                                height: '100%', borderRadius: 15, objectFit: "contain"
+                                            }}/>
+                                        </Box>
                                     </Box>
                                 </Grid>
                             </Grid>
@@ -374,6 +197,7 @@ const Herosection = () => {
                                              fontSize: {xs: "28px", sm: "34px", md: "45px"},
                                              lineHeight: 1.2,
                                              fontWeight: 700,
+                                             color: "#FE6A00"
                                          }}
                                     >
                                         Comprehensive Care Services
@@ -438,11 +262,11 @@ const Herosection = () => {
                                 <Grid item xs={12} md={4} xl={6}>
                                     <Box
                                         sx={{
-                                            bgcolor: '#F8E6FF',
+                                            bgcolor: '#FFFFFF',
                                             borderRadius: 4,
                                             p: 1,
-                                            height: {xs: '100%', lg: '72%'},
-                                            width: {xs: '100%', lg: '72%'},
+                                            height: {xs: '100%', lg: '65%'},
+                                            width: {xs: '100%', lg: '65%'},
                                             mx: 'auto',
 
                                         }}
@@ -482,6 +306,7 @@ const Herosection = () => {
                                              fontSize: {xs: "28px", sm: "34px", md: "45px"},
                                              fontWeight: 700,
                                              lineHeight: 1.2,
+                                             color: "#FE6A00"
                                          }}
                                     >
                                         Trusted by School Districts
@@ -509,28 +334,6 @@ const Herosection = () => {
                                     >
                                         Trusted by leading school districts nationwide
                                     </Typography>
-
-                                    {/*<Box sx={{*/}
-                                    {/*    display: "flex",*/}
-                                    {/*    alignItems: "center",*/}
-                                    {/*    height: "100px",*/}
-                                    {/*    width: "300px",*/}
-                                    {/*    gap: {sm:10,xs:4}*/}
-                                    {/*}}>*/}
-                                    {/*    {[img2, img3, img4].map((img, index) => (*/}
-                                    {/*        <img*/}
-                                    {/*            key={index}*/}
-                                    {/*            src={img}*/}
-                                    {/*            alt={`img${index}`}*/}
-                                    {/*            style={{*/}
-                                    {/*                height: '100%',*/}
-                                    {/*                width: '100px',*/}
-                                    {/*                objectFit: 'contain',*/}
-                                    {/*            }}*/}
-                                    {/*        />*/}
-                                    {/*    ))}*/}
-                                    {/*</Box>*/}
-
                                 </Grid>
 
                                 {/* Right Column */}
@@ -597,12 +400,11 @@ const Herosection = () => {
                         backgroundColor: "#fff",
                         opacity: 1,
                     },
-                    display: { xs: "none", lg: "flex" },
+                    display: {xs: "none", lg: "flex"},
                 }}
             >
-                <ArrowBackIosNewIcon />
+                <ArrowBackIosNewIcon/>
             </IconButton>
-
 
 
             <IconButton
@@ -623,10 +425,10 @@ const Herosection = () => {
                         backgroundColor: "#fff",
                         opacity: 1,
                     },
-                    display: { xs: "none", lg: "flex" },
+                    display: {xs: "none", lg: "flex"},
                 }}
             >
-                <ArrowForwardIosIcon />
+                <ArrowForwardIosIcon/>
             </IconButton>
 
         </Box>

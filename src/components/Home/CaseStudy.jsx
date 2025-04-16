@@ -27,7 +27,7 @@ const StatCard = styled(Box)(({ theme }) => ({
 
 const CaseStudy = () => {
     return (
-        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 } }}>
+        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 3 } }}>
             <StyledCard>
                 <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={6}>

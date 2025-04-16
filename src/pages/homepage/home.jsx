@@ -20,6 +20,7 @@ import CorporateWellness from "../../components/Home/CorporateWellness.jsx";
 import Struggling from "../../components/Home/struggling.jsx";
 import Partners from "../../components/Home/Partners.jsx";
 import Assessments from "../../components/resources/assessments.jsx";
+import HowEmotionallyYoursinSchools from "../../components/Home/howEmotionallyYoursinSchools.jsx";
 
 function Home() {
     return (
@@ -27,9 +28,11 @@ function Home() {
             <Herosection/>
             <Mindwell/>
             <WorksTable/>
-            <Assessments/>
-            <CaseStudy/>
             <HowSchoolWorks/>
+            <Assessments/>
+            <Struggling/>
+            <CaseStudy/>
+            <HowEmotionallyYoursinSchools/>
             <EmployeeMentalHealth/>
 
             {/*<Challenges/>*/}
@@ -39,7 +42,6 @@ function Home() {
             {/*<Clientsreview/>*/}
             {/*<Offerings/>*/}
             {/*<Therapists/>*/}
-            {/*<Struggling/>*/}
             {/*<Partners/>*/}
             {/*<LookingFor/>*/}
             {/*<Wetreat/>*/}

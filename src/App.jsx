@@ -67,10 +67,10 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/Services" element={<Services/>}/>
-                <Route path="/services/shape" element={<Shape/>}/>
-                <Route path="/services/shape-Designe" element={<ShapeDesigne/>}/>
-                <Route path="/services/esop" element={<Esop/>}/>
-                <Route path="/services/pep" element={<Pep/>}/>
+                <Route path="/services/SHAPE" element={<Shape/>}/>
+                <Route path="/services/SHAPE-Designe" element={<ShapeDesigne/>}/>
+                <Route path="/services/ESOP" element={<Esop/>}/>
+                <Route path="/services/PEP" element={<Pep/>}/>
                 {/*<Route path="/partner" element={ <Partner/> }/>*/}
                 <Route path="/careers" element={<Careers/>}/>
                 <Route path={"/resources/journaling"} element={<Journaling/>}/>

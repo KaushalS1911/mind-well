@@ -170,8 +170,8 @@ const frameworks = {
             items: ['Content will be available soon.'],
         }],
     },
-    'PEP-UPSC': {
-        title: 'ServicesShap Framework',
+    'PEP': {
+        title: 'Services-SHAPE Framework',
         sections: [
             {
                 title: 'Mentors : The First Responders',

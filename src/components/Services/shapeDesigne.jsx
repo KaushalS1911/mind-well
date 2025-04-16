@@ -14,7 +14,7 @@ import {
     ListItemIcon,
     ListItemText,
     Paper,
-    useTheme
+    useTheme, Accordion, AccordionSummary, AccordionDetails
 } from '@mui/material';
 import {
     MenuBook,
@@ -24,6 +24,7 @@ import {
     ArrowForward,
     FiberManualRecord
 } from '@mui/icons-material';
+import img1 from "../../assets/images/Services/shape-design.png";
 
 export default function ShapeDesigne() {
     const theme = useTheme();
@@ -130,7 +131,7 @@ export default function ShapeDesigne() {
     const pillars = [
         {
             title: 'Establishing the Groundwork for Emotional Mastery',
-            icon: <MenuBook fontSize="large" />,
+            icon: <MenuBook fontSize="large"/>,
             points: [
                 'Facilitate experiential learning sessions that introduce key principles of emotional intelligence, mindful awareness, and effective stress navigation.',
                 'Generate in-depth emotional wellness profiles using data-driven assessments to uncover core strengths and areas for growth.',
@@ -139,7 +140,7 @@ export default function ShapeDesigne() {
         },
         {
             title: 'Empowering Growth Through Targeted Training',
-            icon: <People fontSize="large" />,
+            icon: <People fontSize="large"/>,
             points: [
                 'Student enrichment sessions focus on building emotional regulation, enhancing academic resilience, and cultivating intrinsic motivation for sustained success.',
                 'Educator Development Workshops equip teachers with mindfulness-based strategies, classroom engagement techniques, and effective stress management tools.',
@@ -147,7 +148,7 @@ export default function ShapeDesigne() {
         },
         {
             title: 'Integrated Emotional Wellness & Sustainable Support',
-            icon: <Favorite fontSize="large" />,
+            icon: <Favorite fontSize="large"/>,
             points: [
                 'Deliver customised individual counselling, accessible both online and on campus, to nurture the mental health of students and educators.',
                 'Facilitate supportive peer networks that encourage open dialogue, empathy, and the development of emotional strength and connection.',
@@ -155,7 +156,7 @@ export default function ShapeDesigne() {
         },
         {
             title: 'Evaluating Outcomes & Shaping Sustainable Pathways',
-            icon: <TrendingUp fontSize="large" />,
+            icon: <TrendingUp fontSize="large"/>,
             points: [
                 'Administer post-program diagnostic evaluations to assess growth in emotional well-being and behavioural transformation.',
                 'Facilitate collaborative review forums with students, educators, and parents to gather qualitative feedback and shared insights.',
@@ -171,34 +172,74 @@ export default function ShapeDesigne() {
                 backgroundColor: "#022662",
                 padding: "120px 0 60px 0"
             }}>
-                <Box textAlign="center" maxWidth="md" mx="auto" sx={{mb: 0}}>
+                <Grid container spacing={4} sx={{mt: 8, px: {xs: 4, md: 10}}}>
+                    <Grid item xs={12} md={6}>
+                        <Typography
+                            className="Montserrat"
+                            sx={{
+                                fontSize: {lg: '37px', sm: '30px', xs: '26px'},
+                                lineHeight: 1.2,
+                                fontWeight: '700',
+                                color: '#FE6A00',
+                                mb: 2,
+                            }}
+                        >
+                            Student's Health Assessment And Performance Evaluation +
+                        </Typography>
 
-                    <Box className={"Montserrat"} sx={{
-                        fontSize: "48px",
-                        lineHeight: 1,
-                        fontWeight: "700",
-                        color: "#fff",
-                        mb: 2,
-                        mt: 8
-                    }}>
-                        SHAPE+
-                    </Box>
-                    <Divider sx={{
-                        backgroundColor: colors.secondary,
-                        height: 4,
-                        width: 100,
-                        mx: 'auto',
-                        my: 3
-                    }}/>
-                    <Typography variant="h5" gutterBottom sx={{color: 'rgba(255,255,255,0.9)',fontWeight:"600"}}>
-                        Emotional Wellness Program for Higher Education
-                    </Typography>
-                    <Typography variant="body1" paragraph
-                                sx={{color: 'rgba(255,255,255,0.7)', mb: 4, maxWidth: "lg", mx: "auto"}}>
-                        Designed for higher education students, this emotional wellness program aligns with NEP to cultivate academic excellence, emotional resilience, and future readiness. Through real-world exposure and leadership development, it empowers students to thrive holistically and grow into socially responsible global citizens.
-                    </Typography>
+                        <Divider
+                            sx={{
+                                backgroundColor: '#fff',
+                                height: 4,
+                                width: 100,
+                                my: 3,
+                            }}
+                        />
 
-                </Box>
+                        <Typography
+                            variant="h5"
+                            gutterBottom
+                            sx={{
+                                color: 'rgba(255,255,255,0.9)',
+                                fontWeight: 600,
+                            }}
+                        >
+                            Emotional Wellness Program for Higher Education
+                        </Typography>
+
+                        <Typography
+                            variant="body1"
+                            paragraph
+                            sx={{
+                                color: 'rgba(255,255,255,0.7)',
+                                mb: 4,
+                                maxWidth: {xs: '100%', sm: '90%', md: '80%'},
+                            }}
+                        >
+                            Designed for higher education students, this emotional wellness program aligns with NEP to
+                            cultivate academic excellence, emotional resilience, and future readiness.
+                        </Typography>
+                    </Grid>
+
+                    <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
+                        <Box
+                            sx={{
+                                height: { xs: '300px', md: '370px' },
+                                width: '100%',
+                            }}
+                        >
+                            <img
+                                src={img1}
+                                alt="img1"
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'contain',
+                                }}
+                            />
+                        </Box>
+                    </Grid>
+                </Grid>
             </Box>
 
             {/* Program Overview */}
@@ -206,7 +247,8 @@ export default function ShapeDesigne() {
                 <Box sx={{padding: "96px 0 0 0"}}>
                     <Grid container spacing={4} mb={8}>
                         <Grid item xs={12} lg={8}>
-                            <Typography className={"Montserrat"} fontWeight="bold" gutterBottom sx={{color: colors.primary,fontSize:"30px",mb:3}}>
+                            <Typography className={"Montserrat"} fontWeight="bold" gutterBottom
+                                        sx={{color: colors.primary, fontSize: "30px", mb: 3}}>
                                 Comprehensive Emotional Wellness for Higher Education
                             </Typography>
                             <Typography variant="body1" paragraph color="text.secondary">
@@ -255,9 +297,10 @@ export default function ShapeDesigne() {
                 </Box>
 
                 {/* Four-Pillar Approach */}
-                <Box sx={{padding:"96px 0"}}>
+                <Box sx={{padding: "96px 0"}}>
                     <Box textAlign="center" mb={6}>
-                        <Typography className={"Montserrat"} variant="h4" fontWeight="bold" gutterBottom sx={{color: colors.primary}}>
+                        <Typography className={"Montserrat"} variant="h4" fontWeight="bold" gutterBottom
+                                    sx={{color: colors.primary}}>
                             Our Four-Pillar Approach
                         </Typography>
                         <Divider sx={{
@@ -277,11 +320,11 @@ export default function ShapeDesigne() {
                         {pillars.map((pillar, idx) => (
                             <Grid item xs={12} md={6} key={idx}>
                                 <Card elevation={3} sx={styles.featureCard}>
-                                    <Box sx={styles.cardHeader} />
-                                    <CardContent sx={{ p: 4 }}>
+                                    <Box sx={styles.cardHeader}/>
+                                    <CardContent sx={{p: 4}}>
                                         <Box sx={styles.iconContainer}>
                                             <Box sx={styles.icon}>{pillar.icon}</Box>
-                                            <Typography variant="h6" fontWeight="bold" sx={{ color: colors.primary }}>
+                                            <Typography variant="h6" fontWeight="bold" sx={{color: colors.primary}}>
                                                 {pillar.title}
                                             </Typography>
                                         </Box>
@@ -297,7 +340,7 @@ export default function ShapeDesigne() {
                                                         mb: 1.5,
                                                     }}
                                                 >
-                                                    <ListItemText primary={item} sx={{ color: 'text.secondary', m: 0 }} />
+                                                    <ListItemText primary={item} sx={{color: 'text.secondary', m: 0}}/>
                                                 </ListItem>
                                             ))}
                                         </List>
@@ -430,6 +473,86 @@ export default function ShapeDesigne() {
                 {/*        </Card>*/}
                 {/*    </Box>*/}
                 {/*</Box>*/}
+                <Box sx={{p: "20px 0 96px 0"}}>
+                    <Typography
+                        className={"Montserrat"}
+                        variant="h4"
+                        textAlign="center"
+                        fontWeight="bold"
+                        sx={{color: colors.primary, mb: 3}}
+                    >
+                        Frequently Asked Questions
+                    </Typography>
+                    <Divider
+                        sx={{
+                            backgroundColor: colors.secondary,
+                            height: 4,
+                            width: 100,
+                            mx: 'auto',
+                            mb: 6
+                        }}
+                    />
+
+                    <Box>
+                        {[
+                            {
+                                question: "What is the SHAPE Wellness Program?",
+                                answer: "A year-long emotional wellness initiative focused on making college students “Future Ready” through awareness, training, counseling, and measurable impact."
+                            },
+                            {
+                                question: "Who is this program meant for?",
+                                answer: "It is designed for college students, faculty, and academic institutions seeking to address emotional, academic, and career-related challenges."
+                            },
+                            {
+                                question: "What key challenges does it address?",
+                                answer: "It tackles academic stress, emotional health issues, lack of career guidance, skill gaps, and limited industry exposure."
+                            },
+                            {
+                                question: "Is this program aligned with NEP?",
+                                answer: "Yes, it follows NEP 2020 and Mental Health Act 2017 guidelines, supporting holistic student development."
+                            },
+                            {
+                                question: "What activities are included?",
+                                answer: "Workshops, counseling, peer support groups, self-assessments, classroom sessions, and psychologist-led guidance."
+                            },
+                            {
+                                question: "How is emotional well-being measured?",
+                                answer: "Through pre- and post-assessments focusing on academic performance, stress, resilience, attendance, and placement progress."
+                            },
+                            {
+                                question: "Is individual counseling available?",
+                                answer: "Yes, students can book personalized 15-minute sessions post-group activities."
+                            },
+                            {
+                                question: "Does this program help with employability?",
+                                answer: "Yes, it enhances soft skills, emotional intelligence, and industry readiness through hands-on sessions and mentorship."
+                            },
+                            {
+                                question: "How does it benefit the institution?",
+                                answer: "It boosts student engagement, reduces behavioral issues, improves academic health, and contributes to the institute’s reputation."
+                            },
+                            {
+                                question: "How can a college get started?",
+                                answer: "Institutions can contact the MTPL team to schedule an introductory session and baseline assessment."
+                            }
+                        ].map((faq, idx) => (
+                            <Accordion key={idx} sx={{mb: 2}}>
+                                <AccordionSummary
+                                    expandIcon={<ArrowForward sx={{color: colors.secondary}}/>}
+                                    aria-controls={`faq-content-${idx}`}
+                                    id={`faq-header-${idx}`}
+                                >
+                                    <Typography fontWeight="bold" sx={{color: colors.primary}}>
+                                        {faq.question}
+                                    </Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <Typography color="text.secondary">{faq.answer}</Typography>
+                                </AccordionDetails>
+                            </Accordion>
+                        ))}
+                    </Box>
+                </Box>
             </Container>
         </Box>
     );
