@@ -25,6 +25,7 @@ import {
     FiberManualRecord,
 } from "@mui/icons-material";
 import img1 from "../../assets/images/Services/pep.png";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function PEPMUI() {
     const theme = useTheme();
@@ -216,7 +217,7 @@ export default function PEPMUI() {
                     <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
                         <Box
                             sx={{
-                                height: { xs: '300px', md: '400px' },
+                                height: {xs: '300px', md: '400px'},
                                 width: '100%',
                             }}
                         >
@@ -450,20 +451,20 @@ export default function PEPMUI() {
                 {/*                answer: "Over 150,000 beneficiaries, 5,000+ workshops, and 3,500+ individual sessions have led to better attendance, reduced stress, improved academic and emotional outcomes, and early identification of critical cases."*/}
                 {/*            }*/}
                 {/*        ].map((faq, idx) => (*/}
-                {/*            <Accordion key={idx} sx={{ mb: 2 }}>*/}
-                {/*                <AccordionSummary*/}
-                {/*                    expandIcon={<ArrowForward sx={{ color: colors.secondary }} />}*/}
-                {/*                    aria-controls={`faq-content-${idx}`}*/}
-                {/*                    id={`faq-header-${idx}`}*/}
-                {/*                >*/}
-                {/*                    <Typography fontWeight="bold" sx={{ color: colors.primary }}>*/}
-                {/*                        {faq.question}*/}
-                {/*                    </Typography>*/}
-                {/*                </AccordionSummary>*/}
-                {/*                <AccordionDetails>*/}
-                {/*                    <Typography color="text.secondary">{faq.answer}</Typography>*/}
-                {/*                </AccordionDetails>*/}
-                {/*            </Accordion>*/}
+                {/*<Accordion key={idx} sx={{mb: 2}}>*/}
+                {/*    <AccordionSummary*/}
+                {/*        expandIcon={<ExpandMoreIcon sx={{color: colors.secondary}}/>}*/}
+                {/*        aria-controls={`faq-content-${idx}`}*/}
+                {/*        id={`faq-header-${idx}`}*/}
+                {/*    >*/}
+                {/*        <Typography fontWeight="bold" sx={{color: colors.primary}}>*/}
+                {/*            {faq.question}*/}
+                {/*        </Typography>*/}
+                {/*    </AccordionSummary>*/}
+                {/*    <AccordionDetails>*/}
+                {/*        <Typography color="text.secondary">{faq.answer}</Typography>*/}
+                {/*    </AccordionDetails>*/}
+                {/*</Accordion>*/}
                 {/*        ))}*/}
                 {/*    </Box>*/}
                 {/*</Box>*/}

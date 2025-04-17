@@ -25,6 +25,7 @@ import {
     FiberManualRecord
 } from '@mui/icons-material';
 import img1 from "../../assets/images/Services/shape-design.png";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function ShapeDesigne() {
     const theme = useTheme();
@@ -536,13 +537,13 @@ export default function ShapeDesigne() {
                                 answer: "Institutions can contact the MTPL team to schedule an introductory session and baseline assessment."
                             }
                         ].map((faq, idx) => (
-                            <Accordion key={idx} sx={{mb: 2}}>
+                            <Accordion key={idx} sx={{ mb: 2 }}>
                                 <AccordionSummary
-                                    expandIcon={<ArrowForward sx={{color: colors.secondary}}/>}
+                                    expandIcon={<ExpandMoreIcon sx={{ color: colors.secondary }} />}
                                     aria-controls={`faq-content-${idx}`}
                                     id={`faq-header-${idx}`}
                                 >
-                                    <Typography fontWeight="bold" sx={{color: colors.primary}}>
+                                    <Typography fontWeight="bold" sx={{ color: colors.primary }}>
                                         {faq.question}
                                     </Typography>
                                 </AccordionSummary>

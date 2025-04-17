@@ -25,6 +25,7 @@ import {
     FiberManualRecord
 } from '@mui/icons-material';
 import img1 from '../../assets/images/Services/Shape.png';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function ShapePlusMUI() {
     const theme = useTheme();
@@ -425,13 +426,14 @@ export default function ShapePlusMUI() {
                                 answer: "Over 150,000 beneficiaries, 5,000+ workshops, and 3,500+ individual sessions have led to better attendance, reduced stress, improved academic and emotional outcomes, and early identification of critical cases."
                             }
                         ].map((faq, idx) => (
-                            <Accordion key={idx} sx={{mb: 2}}>
+
+                            <Accordion key={idx} sx={{ mb: 2 }}>
                                 <AccordionSummary
-                                    expandIcon={<ArrowForward sx={{color: colors.secondary}}/>}
+                                    expandIcon={<ExpandMoreIcon sx={{ color: colors.secondary }} />}
                                     aria-controls={`faq-content-${idx}`}
                                     id={`faq-header-${idx}`}
                                 >
-                                    <Typography fontWeight="bold" sx={{color: colors.primary}}>
+                                    <Typography fontWeight="bold" sx={{ color: colors.primary }}>
                                         {faq.question}
                                     </Typography>
                                 </AccordionSummary>
