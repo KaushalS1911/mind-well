@@ -92,51 +92,39 @@ const founders = [
     {
         role: "Wellness Consultant",
         name: "Pratibha Sanganeria",
-        skill1: "Client centered therapy",
-        skill2: "DBT, movement therapy (currently upskilling)",
-        skill3: "Workshop facilitation",
+        skills: "Client centered therapy, DBT, movement therapy (currently upskilling), Workshop facilitation",
     },
     {
         role: "Psychologist",
         name: "Anshita Raghav",
-        skill1: "Workplace Psychology\n",
-        skill2: "Training\n",
-        skill3: "Counselling\n",
+        skills: "Workplace Psychology, Training, Counselling",
+
     },
     {
         role: "Consultant Psychologist",
         name: "Vedanshi Gupta",
-        skill1: "Person Centred Therapy\n",
-        skill2: "CBT, ACT and Gestalt\n",
-        skill3: "School Counselor\n",
+        skills: "Person Centred Therapy, CBT, ACT and Gestalt, School Counselor",
     },
     {
         role: "Wellness Consultant",
         name: "Anjali Sinha",
-        skill1: "Eclectic approach\n",
-        skill2: "CBT\n",
-        skill3: "Special Educator & Speec\n",
+        skills: "Eclectic approach, CBT, Special Educator & Speec",
     },
     {
         role: "Wellness Consultant",
         name: "Aishwarya Saxena",
-        skill1: "CBT and Behaviour Modif\n",
-        skill2: "Mindfulness\n",
-        skill3: "School Counselor\n",
+        skills: "CBT and Behaviour Modif, Mindfulness, School Counselor",
+
     },
     {
         role: "Wellness Consultant",
         name: "Fatima Lobo",
-        skill1: "NLP Therapist\n",
-        skill2: "CBT, REBT\n",
-        skill3: "Counsellor\n",
+        skills: "NLP Therapist, CBT, REBT, Counselor",
     },
     {
         role: "Counselling Psychologist",
         name: "Pratibha Kotak",
-        skill1: "Couple Counselling\n",
-        skill2: "Rehabilitation\n",
-        skill3: "REBT\n",
+        skills: "Couple Counselling, Rehabilitation, REBT",
     },
 ];
 
@@ -186,20 +174,7 @@ const Psychologist = () => {
                                 <Name>{founder.name}</Name>
 
                                 <Box sx={{textAlign:"center"}}>
-                                    {[founder.skill1, founder.skill2, founder.skill3].map(
-                                        (skill, idx) =>
-                                            skill && (
-                                                <span
-                                                    key={idx}
-                                                    sx={{
-                                                        fontSize: '14px',
-                                                        color: '#333',
-                                                    }}
-                                                >
-                                                    {skill},
-                                                </span>
-                                            )
-                                    )}
+                                    {founder.skills}
                                 </Box>
                             </StyledPaper>
                         </Grid>
