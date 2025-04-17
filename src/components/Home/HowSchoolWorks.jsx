@@ -193,7 +193,7 @@ function HowSchoolWorks() {
                         textAlign: "center",
                     }}
                 >
-                    How Emotionally Yours Works In
+                    How EmotionallYours Works
                 </Box>
                 <Typography
                     variant="h6"
@@ -203,7 +203,7 @@ function HowSchoolWorks() {
                         textAlign: "center",
                     }}
                 >
-                    Discover how we can help transform emotional wellness in your context
+                    Discover how Emotional Health transforms your Growth and Success
                 </Typography>
                 <StyledTabs
                     value={selectedTab}
