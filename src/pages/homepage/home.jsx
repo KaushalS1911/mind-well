@@ -45,11 +45,11 @@ function Home() {
 
                         <Grid item xs={12} md={5}>
                             <Typography className={"Montserrat"} variant="h5" fontWeight="bold">
-                                Emotionally Yours’ Influence
+                                Our Impact
                             </Typography>
-                            <Box variant="body1" sx={{mt: 1, color: "#D1E1FF", width: "85%", mb: 2}}>
-                                At Emotionally Yours, we pledge to augment accessibility and elevate the quality of emotional and psychological healthcare.
-                            </Box>
+                            {/*<Box variant="body1" sx={{mt: 1, color: "#D1E1FF", width: "85%", mb: 2}}>*/}
+                            {/*    At Emotionally Yours, we pledge to augment accessibility and elevate the quality of emotional and psychological healthcare.*/}
+                            {/*</Box>*/}
                         </Grid>
 
 
