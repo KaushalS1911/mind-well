@@ -8,16 +8,14 @@ import {
     styled,
     useTheme
 } from '@mui/material';
-import img1 from '../../assets/images/Home/works/emotionallyYours-School.png';
+import img1 from '../../assets/images/Home/works/higher-education.jpg';
 
 const ProcessStep = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: theme.spacing(2),
     alignItems: 'flex-start',
     marginBottom: theme.spacing(3),
-    // Removed mobile override — keeps layout same on xs and sm
 }));
-
 
 const StepNumber = styled(Box)(({ theme }) => ({
     background: '#E8F1FF',
@@ -32,33 +30,33 @@ const StepNumber = styled(Box)(({ theme }) => ({
     flexShrink: 0,
 }));
 
-const HowEmotionallyYoursinSchools = () => {
+const HowEmotionallyYoursWorksInHigherEducation = () => {
     const theme = useTheme();
 
     const steps = [
         {
             number: '1',
-            title: 'Student Needs Healthcare',
+            title: 'Student Requests Support',
             description:
-                "When a student doesn't feel well or needs mental health support, they can visit the school nurse or counselor.",
+                'College students experiencing physical or mental health concerns can request care through their campus health center or online portal.',
         },
         {
             number: '2',
-            title: 'Connect with Emotionally Yours',
+            title: 'Campus Staff Connects Student',
             description:
-                'School staff connect the student with a Emotionally Yours provider through our secure telehealth platform.',
+                'Health center staff or student services connect the student with an Emotionally Yours provider using our secure telehealth system.',
         },
         {
             number: '3',
-            title: 'Virtual Visit',
+            title: 'Private Virtual Consultation',
             description:
-                'The student has a video visit with a pediatrician or therapist who can diagnose, treat, and provide follow-up care.',
+                'The student attends a confidential video session with a licensed physician or mental health professional who provides personalized care.',
         },
         {
             number: '4',
-            title: 'Coordinated Care',
+            title: 'Ongoing Support & Coordination',
             description:
-                "We communicate with families, prescribe medications if needed, and coordinate with the student's primary care provider.",
+                'We follow up with students, provide prescriptions if needed, and collaborate with university services for ongoing well-being and academic support.',
         },
     ];
 
@@ -76,11 +74,11 @@ const HowEmotionallyYoursinSchools = () => {
                          fontWeight: 700
                      }}
                 >
-                    How Emotionally Yours Works in Schools
+                    How Emotionally Yours Works in Higher Education
                 </Box>
                 <Typography
                     sx={{
-                        maxWidth: 600,
+                        maxWidth: 700,
                         mx: "auto",
                         mb: { xs: 4, md: 8 },
                         fontSize: { xs: "16px", md: "18px" },
@@ -89,11 +87,35 @@ const HowEmotionallyYoursinSchools = () => {
                         textAlign: "center",
                     }}
                 >
-                    Our simple process makes it easy for schools to provide high-quality healthcare to all students.
+                    Our seamless process empowers universities to provide accessible, high-quality healthcare for college students.
                 </Typography>
             </Box>
 
             <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
+                <Grid item xs={12} md={6}>
+                    <Card
+                        sx={{
+                            borderRadius: 4,
+                            overflow: 'hidden',
+                            boxShadow: 3,
+                        }}
+                    >
+                        <Box sx={{
+                            width: '100%',
+                            height: { xs: 250, sm: 350, md: 500 }
+                        }}>
+                            <img
+                                src={img1}
+                                alt="How Emotionally Yours Works"
+                                style={{
+                                    height: '100%',
+                                    width: '100%',
+                                    objectFit: 'contain',
+                                }}
+                            />
+                        </Box>
+                    </Card>
+                </Grid>
                 <Grid item xs={12} md={6}>
                     {steps.map((step) => (
                         <ProcessStep key={step.number}>
@@ -123,33 +145,9 @@ const HowEmotionallyYoursinSchools = () => {
                         </ProcessStep>
                     ))}
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <Card
-                        sx={{
-                            borderRadius: 4,
-                            overflow: 'hidden',
-                            boxShadow: 3,
-                        }}
-                    >
-                        <Box sx={{
-                            width: '100%',
-                            height: { xs: 250, sm: 350, md: 500 }
-                        }}>
-                            <img
-                                src={img1}
-                                alt="How Emotionally Yours Works"
-                                style={{
-                                    height: '100%',
-                                    width: '100%',
-                                    objectFit: 'contain',
-                                }}
-                            />
-                        </Box>
-                    </Card>
-                </Grid>
             </Grid>
         </Container>
     );
 };
 
-export default HowEmotionallyYoursinSchools;
+export default HowEmotionallyYoursWorksInHigherEducation;

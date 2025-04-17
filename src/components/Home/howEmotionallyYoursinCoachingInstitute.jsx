@@ -8,16 +8,14 @@ import {
     styled,
     useTheme
 } from '@mui/material';
-import img1 from '../../assets/images/Home/works/emotionallyYours-School.png';
+import img1 from '../../assets/images/Home/works/COACHING-INSTITUTE.png';
 
 const ProcessStep = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: theme.spacing(2),
     alignItems: 'flex-start',
     marginBottom: theme.spacing(3),
-    // Removed mobile override — keeps layout same on xs and sm
 }));
-
 
 const StepNumber = styled(Box)(({ theme }) => ({
     background: '#E8F1FF',
@@ -32,33 +30,33 @@ const StepNumber = styled(Box)(({ theme }) => ({
     flexShrink: 0,
 }));
 
-const HowEmotionallyYoursinSchools = () => {
+const HowEmotionallyYoursinCoachingInstitute = () => {
     const theme = useTheme();
 
     const steps = [
         {
             number: '1',
-            title: 'Student Needs Healthcare',
+            title: 'Student Seeks Help',
             description:
-                "When a student doesn't feel well or needs mental health support, they can visit the school nurse or counselor.",
+                'A student preparing for competitive exams feels stressed, anxious, or unwell and reaches out to coaching staff for help.',
         },
         {
             number: '2',
-            title: 'Connect with Emotionally Yours',
+            title: 'Staff Initiates Support',
             description:
-                'School staff connect the student with a Emotionally Yours provider through our secure telehealth platform.',
+                'The institute’s counselor or staff member connects the student with Emotionally Yours through our secure telehealth system.',
         },
         {
             number: '3',
-            title: 'Virtual Visit',
+            title: 'Online Session Begins',
             description:
-                'The student has a video visit with a pediatrician or therapist who can diagnose, treat, and provide follow-up care.',
+                'The student attends a private online consultation with a licensed therapist or doctor for immediate care and emotional support.',
         },
         {
             number: '4',
-            title: 'Coordinated Care',
+            title: 'Ongoing Care & Follow-up',
             description:
-                "We communicate with families, prescribe medications if needed, and coordinate with the student's primary care provider.",
+                'We monitor the student’s progress, offer follow-up sessions, and provide guidance to help them stay mentally and physically well during preparation.',
         },
     ];
 
@@ -76,11 +74,11 @@ const HowEmotionallyYoursinSchools = () => {
                          fontWeight: 700
                      }}
                 >
-                    How Emotionally Yours Works in Schools
+                    How Emotionally Yours Works in Coaching Institutes
                 </Box>
                 <Typography
                     sx={{
-                        maxWidth: 600,
+                        maxWidth: 800,
                         mx: "auto",
                         mb: { xs: 4, md: 8 },
                         fontSize: { xs: "16px", md: "18px" },
@@ -89,7 +87,7 @@ const HowEmotionallyYoursinSchools = () => {
                         textAlign: "center",
                     }}
                 >
-                    Our simple process makes it easy for schools to provide high-quality healthcare to all students.
+                    Our process helps coaching institutes support students’ mental and physical well-being while they prepare for high-pressure exams.
                 </Typography>
             </Box>
 
@@ -152,4 +150,4 @@ const HowEmotionallyYoursinSchools = () => {
     );
 };
 
-export default HowEmotionallyYoursinSchools;
+export default HowEmotionallyYoursinCoachingInstitute;

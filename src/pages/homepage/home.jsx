@@ -21,6 +21,10 @@ import Struggling from "../../components/Home/struggling.jsx";
 import Partners from "../../components/Home/Partners.jsx";
 import Assessments from "../../components/resources/assessments.jsx";
 import HowEmotionallyYoursinSchools from "../../components/Home/howEmotionallyYoursinSchools.jsx";
+import HowEmotionallyYoursWorksInHigherEducation
+    from "../../components/Home/howEmotionallyYoursWorksInHigherEducation.jsx";
+import HowEmotionallyYoursinCoachingInstitute from "../../components/Home/howEmotionallyYoursinCoachingInstitute.jsx";
+import HowEmotionallyYoursinWorkplaces from "../../components/Home/HowEmotionallyYoursinWorkplaces.jsx";
 
 function Home() {
     return (
@@ -33,6 +37,9 @@ function Home() {
             <Struggling/>
             <CaseStudy/>
             <HowEmotionallyYoursinSchools/>
+            <HowEmotionallyYoursWorksInHigherEducation/>
+            <HowEmotionallyYoursinCoachingInstitute/>
+            <HowEmotionallyYoursinWorkplaces/>
             <EmployeeMentalHealth/>
 
             {/*<Challenges/>*/}

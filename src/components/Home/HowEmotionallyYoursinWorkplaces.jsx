@@ -8,16 +8,14 @@ import {
     styled,
     useTheme
 } from '@mui/material';
-import img1 from '../../assets/images/Home/works/emotionallyYours-School.png';
+import img1 from '../../assets/images/Home/works/workplaces.png';
 
 const ProcessStep = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: theme.spacing(2),
     alignItems: 'flex-start',
     marginBottom: theme.spacing(3),
-    // Removed mobile override — keeps layout same on xs and sm
 }));
-
 
 const StepNumber = styled(Box)(({ theme }) => ({
     background: '#E8F1FF',
@@ -32,33 +30,33 @@ const StepNumber = styled(Box)(({ theme }) => ({
     flexShrink: 0,
 }));
 
-const HowEmotionallyYoursinSchools = () => {
+const HowEmotionallyYoursinWorkplaces = () => {
     const theme = useTheme();
 
     const steps = [
         {
             number: '1',
-            title: 'Student Needs Healthcare',
+            title: 'Employee Requests Support',
             description:
-                "When a student doesn't feel well or needs mental health support, they can visit the school nurse or counselor.",
+                'Employees facing stress, anxiety, or health concerns can request support via the company portal or directly through HR.',
         },
         {
             number: '2',
-            title: 'Connect with Emotionally Yours',
+            title: 'HR or Manager Connects Employee',
             description:
-                'School staff connect the student with a Emotionally Yours provider through our secure telehealth platform.',
+                'HR personnel or designated mental health champions link the employee with Emotionally Yours through a secure virtual platform.',
         },
         {
             number: '3',
-            title: 'Virtual Visit',
+            title: 'Confidential Online Consultation',
             description:
-                'The student has a video visit with a pediatrician or therapist who can diagnose, treat, and provide follow-up care.',
+                'Employees meet privately with licensed professionals for mental wellness or medical support, tailored to workplace needs.',
         },
         {
             number: '4',
-            title: 'Coordinated Care',
+            title: 'Follow-Up and Wellness Plans',
             description:
-                "We communicate with families, prescribe medications if needed, and coordinate with the student's primary care provider.",
+                'We provide continuous care, periodic check-ins, and collaborate with HR to ensure a supportive, productive work environment.',
         },
     ];
 
@@ -76,11 +74,11 @@ const HowEmotionallyYoursinSchools = () => {
                          fontWeight: 700
                      }}
                 >
-                    How Emotionally Yours Works in Schools
+                    How Emotionally Yours Works in Workplaces
                 </Box>
                 <Typography
                     sx={{
-                        maxWidth: 600,
+                        maxWidth: 800,
                         mx: "auto",
                         mb: { xs: 4, md: 8 },
                         fontSize: { xs: "16px", md: "18px" },
@@ -89,11 +87,35 @@ const HowEmotionallyYoursinSchools = () => {
                         textAlign: "center",
                     }}
                 >
-                    Our simple process makes it easy for schools to provide high-quality healthcare to all students.
+                    Our program empowers organizations to support employee well-being through accessible, personalized mental and physical healthcare.
                 </Typography>
             </Box>
 
             <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
+                <Grid item xs={12} md={6}>
+                    <Card
+                        sx={{
+                            borderRadius: 4,
+                            overflow: 'hidden',
+                            boxShadow: 3,
+                        }}
+                    >
+                        <Box sx={{
+                            width: '100%',
+                            height: { xs: 250, sm: 350, md: 500 }
+                        }}>
+                            <img
+                                src={img1}
+                                alt="How Emotionally Yours Works"
+                                style={{
+                                    height: '100%',
+                                    width: '100%',
+                                    objectFit: 'contain',
+                                }}
+                            />
+                        </Box>
+                    </Card>
+                </Grid>
                 <Grid item xs={12} md={6}>
                     {steps.map((step) => (
                         <ProcessStep key={step.number}>
@@ -123,33 +145,9 @@ const HowEmotionallyYoursinSchools = () => {
                         </ProcessStep>
                     ))}
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <Card
-                        sx={{
-                            borderRadius: 4,
-                            overflow: 'hidden',
-                            boxShadow: 3,
-                        }}
-                    >
-                        <Box sx={{
-                            width: '100%',
-                            height: { xs: 250, sm: 350, md: 500 }
-                        }}>
-                            <img
-                                src={img1}
-                                alt="How Emotionally Yours Works"
-                                style={{
-                                    height: '100%',
-                                    width: '100%',
-                                    objectFit: 'contain',
-                                }}
-                            />
-                        </Box>
-                    </Card>
-                </Grid>
             </Grid>
         </Container>
     );
 };
 
-export default HowEmotionallyYoursinSchools;
+export default HowEmotionallyYoursinWorkplaces;
