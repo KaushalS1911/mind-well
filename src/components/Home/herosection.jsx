@@ -94,7 +94,7 @@ const Herosection = () => {
                         position: "relative",
                         mt: { md: 9, xs: 0 },
                         color: "white",
-                        padding: "150px 0",
+                        padding: "180px 0",
                         height: "100%",
                         display: "flex",
                         alignItems: "center",
@@ -157,6 +157,9 @@ const Herosection = () => {
                                 </Box>
                             </Grid>
 
+                            <Grid item xs={12} md={4}>
+                                {/* You can remove this image if not needed anymore */}
+                            </Grid>
                         </Grid>
                     </Container>
                 </Box>
