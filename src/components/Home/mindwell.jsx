@@ -43,7 +43,7 @@ const features = [
 
 function Mindwell() {
     return (
-        <Box sx={{backgroundColor: "white", padding: "96px 0"}}>
+        <Box sx={{backgroundColor: "white", padding: "96px 0 0 0 "}}>
             <Container maxWidth="xl">
 
                 <Box className={"Montserrat"} sx={{

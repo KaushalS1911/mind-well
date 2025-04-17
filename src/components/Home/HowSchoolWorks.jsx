@@ -180,7 +180,7 @@ function HowSchoolWorks() {
     };
     const currentTabData = tabData[selectedTab];
     return (
-        <Box sx={{padding:"96px 0 0 0" }}>
+        <Box sx={{padding:"96px 0" }}>
             <Container maxWidth="xl">
                 <Box
                     className="Montserrat"

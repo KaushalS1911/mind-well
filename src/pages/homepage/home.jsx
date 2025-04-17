@@ -30,9 +30,9 @@ function Home() {
     return (
         <>
             <Herosection/>
-            <Mindwell/>
-            <WorksTable/>
             <HowSchoolWorks/>
+            <WorksTable/>
+            <Mindwell/>
             <Assessments/>
             <Struggling/>
             <CaseStudy/>

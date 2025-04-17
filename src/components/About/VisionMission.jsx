@@ -89,7 +89,7 @@ const VisionMission = () => {
                     Empowering minds, nurturing well-being, and fostering academic excellence through comprehensive emotional support
                 </Box>
 
-                <Grid container spacing={6}>
+                <Grid container spacing={2}>
                     {sections.map((section, index) => {
                         const isEven = index % 2 === 0;
                         return (
