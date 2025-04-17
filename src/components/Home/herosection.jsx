@@ -94,7 +94,7 @@ const Herosection = () => {
                         position: "relative",
                         mt: { md: 9, xs: 0 },
                         color: "white",
-                        padding: "260px 0",
+                        padding: "100px 0",
                         height: "100%",
                         display: "flex",
                         alignItems: "center",
@@ -131,29 +131,27 @@ const Herosection = () => {
 
                     {/* Content */}
                     <Container maxWidth={"xl"} sx={{ position: "relative", zIndex: 3 }}>
-                        <Grid container spacing={1} alignItems="center" justifyContent="space-around">
+                        <Grid container spacing={1} alignItems="center" justifyContent="space-around" >
                             <Grid item xs={12} md={6} sx={{ textAlign: "left" }}>
                                 <Box
                                     className={"Montserrat"}
                                     sx={{
-                                        fontSize: { lg: '48px', sm: '40px', xs: '32px' },
-                                        lineHeight: { xs: '1.4', sm: '1.6', md: '1.75' },
+                                        fontSize: { lg: '76px', sm: '64px', xs: '54px' },
+                                        lineHeight: { xs: '1.5', sm: '1.7', md: '1.9' },
                                         fontWeight: "700",
                                         color: "#FE6A00",
-                                        opacity: "0.9"
                                     }}
                                 >
                                     Building Mindsets
                                 </Box>
                                 <Box
                                     sx={{
-                                        marginTop: "20px",
-                                        fontSize: { xs: '16px', sm: '18px', md: '20px' },
+                                        fontSize: { xs: '22px', sm: '26px', md: '30px' },
                                         lineHeight: { xs: '24px', sm: '26px', md: '28px' },
-                                        width: "80%"
+                                        width: "100%"
                                     }}
                                 >
-                                   Well People feel Well, They Perform Well
+                                   When People feel Well, They Perform Well
                                 </Box>
                             </Grid>
 
