@@ -6,6 +6,7 @@ import Founders from "../../components/About/Founders.jsx";
 import AdvisoryCouncil from "../../components/About/advisoryCouncil.jsx";
 import MajorClients from "../../components/About/majorClients.jsx";
 import AboutHeader from "../../components/About/aboutHeader.jsx";
+import Psychologist from "../../components/About/psychologist.jsx";
 
 
 const About = () => {
@@ -16,6 +17,7 @@ const About = () => {
             <VisionMission/>
             {/*<Goals/>*/}
             <Founders/>
+            <Psychologist/>
             {/*<AdvisoryCouncil/>*/}
             {/*<Worker/>*/}
             <MajorClients/>
