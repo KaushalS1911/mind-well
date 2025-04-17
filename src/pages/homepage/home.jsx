@@ -41,13 +41,14 @@ function Home() {
                         mt: 7,
                         py: 6,
                         px: 4,
+                        textAlign: "center",
                     }}
                 >
                     <Typography
                         className="Montserrat"
-                        variant="h5"
+                        variant="h4"
                         fontWeight="bold"
-                        sx={{ mb: 5 }}
+                        sx={{ mb: 5 ,textAlign: "start",ml:5 }}
                     >
                         Our Impact
                     </Typography>
@@ -55,16 +56,15 @@ function Home() {
                     <Grid container spacing={4} justifyContent="center">
                         <Grid item xs={6} sm={3}>
                             <Typography
-                                variant="h4"
-                                sx={{ color: "#FF7F1E", fontWeight: "700",ml:7 }}
+                                variant="h3"
+                                sx={{ color: "#FF7F1E", fontWeight: "700" }}
                             >
                                 150K+
                             </Typography>
                             <Box
                                 sx={{
-                                    fontSize: "14px",
+                                    fontSize: "18px",
                                     color: "#D1E1FF",
-                                   ml:7
                                 }}
                             >
                                 Lives Impacted
@@ -73,16 +73,15 @@ function Home() {
 
                         <Grid item xs={6} sm={3}>
                             <Typography
-                                variant="h4"
-                                sx={{ color: "#FF7F1E", fontWeight: "700",ml:7 }}
+                                variant="h3"
+                                sx={{ color: "#FF7F1E", fontWeight: "700" }}
                             >
                                 5000+
                             </Typography>
                             <Box
                                 sx={{
-                                    fontSize: "14px",
+                                    fontSize: "18px",
                                     color: "#D1E1FF",
-                                   ml:7
                                 }}
                             >
                                 Sessions
@@ -91,16 +90,15 @@ function Home() {
 
                         <Grid item xs={6} sm={3}>
                             <Typography
-                                variant="h4"
-                                sx={{ color: "#FF7F1E", fontWeight: "700",ml:7 }}
+                                variant="h3"
+                                sx={{ color: "#FF7F1E", fontWeight: "700" }}
                             >
                                 100+
                             </Typography>
                             <Box
                                 sx={{
-                                    fontSize: "14px",
+                                    fontSize: "18px",
                                     color: "#D1E1FF",
-                                   ml:7
                                 }}
                             >
                                 Suicides Prevented
@@ -109,16 +107,15 @@ function Home() {
 
                         <Grid item xs={6} sm={3}>
                             <Typography
-                                variant="h4"
-                                sx={{ color: "#FF7F1E", fontWeight: "700",ml:7 }}
+                                variant="h3"
+                                sx={{ color: "#FF7F1E", fontWeight: "700" }}
                             >
                                 86%
                             </Typography>
                             <Box
                                 sx={{
-                                    fontSize: "14px",
+                                    fontSize: "18px",
                                     color: "#D1E1FF",
-                                   ml:7
                                 }}
                             >
                                 Improved Behavior Reported
@@ -127,6 +124,7 @@ function Home() {
                     </Grid>
                 </Box>
             </Container>
+
 
             <WorksTable/>
 
