@@ -94,7 +94,7 @@ const Herosection = () => {
                         position: "relative",
                         mt: { md: 9, xs: 0 },
                         color: "white",
-                        padding: "100px 0",
+                        padding: "120px 0",
                         height: "100%",
                         display: "flex",
                         alignItems: "center",
@@ -124,7 +124,7 @@ const Herosection = () => {
                             left: 0,
                             width: "100%",
                             height: "100%",
-                            backgroundColor: "rgba(0, 0, 0, 0.75)",
+                            backgroundColor: "rgba(0, 0, 0, 0.6)",
                             zIndex: 2,
                         }}
                     />
@@ -132,12 +132,12 @@ const Herosection = () => {
                     {/* Content */}
                     <Container maxWidth={"xl"} sx={{ position: "relative", zIndex: 3 }}>
                         <Grid container spacing={1} alignItems="center" justifyContent="space-around" >
-                            <Grid item xs={12} md={6} sx={{ textAlign: "left" }}>
+                            <Grid item xs={12} md={12} sx={{ textAlign: "left" }}>
                                 <Box
                                     className={"Montserrat"}
                                     sx={{
-                                        fontSize: { lg: '76px', sm: '64px', xs: '54px' },
-                                        lineHeight: { xs: '1.5', sm: '1.7', md: '1.9' },
+                                        fontSize: { lg: '72px', sm: '64px', xs: '54px' },
+                                        lineHeight: { xs: '1.2', sm: '1.3', md: '1.5' },
                                         fontWeight: "700",
                                         color: "#FE6A00",
                                     }}
@@ -146,9 +146,8 @@ const Herosection = () => {
                                 </Box>
                                 <Box
                                     sx={{
-                                        fontSize: { xs: '22px', sm: '26px', md: '30px' },
+                                        fontSize: { xs: '18px', sm: '22px', md: '26px' },
                                         lineHeight: { xs: '24px', sm: '26px', md: '28px' },
-                                        width: "100%"
                                     }}
                                 >
                                    When People feel Well, They Perform Well
