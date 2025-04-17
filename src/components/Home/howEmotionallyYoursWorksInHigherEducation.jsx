@@ -8,7 +8,7 @@ import {
     styled,
     useTheme
 } from '@mui/material';
-import img1 from '../../assets/images/Home/works/higher-education.jpg';
+import img1 from '../../assets/images/Home/works/higher-education.jpeg';
 
 const ProcessStep = styled(Box)(({ theme }) => ({
     display: 'flex',
