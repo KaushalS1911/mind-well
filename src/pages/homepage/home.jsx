@@ -33,60 +33,101 @@ function Home() {
             <Herosection/>
             <HowSchoolWorks/>
             <Container maxWidth="xl">
-                <Box sx={{
-                    backgroundColor: "#002F6C",
-                    borderRadius: "16px",
-                    color: "white",
-                    mt: 7,
-                    py: 6,
-                    px: 4
-                }}>
-                    <Grid container spacing={0} alignItems="center">
+                <Box
+                    sx={{
+                        backgroundColor: "#002F6C",
+                        borderRadius: "16px",
+                        color: "white",
+                        mt: 7,
+                        py: 6,
+                        px: 4,
+                    }}
+                >
+                    <Typography
+                        className="Montserrat"
+                        variant="h5"
+                        fontWeight="bold"
+                        sx={{ mb: 5 }}
+                    >
+                        Our Impact
+                    </Typography>
 
-                        <Grid item xs={12} md={5}>
-                            <Typography className={"Montserrat"} variant="h5" fontWeight="bold">
-                                Our Impact
+                    <Grid container spacing={4} justifyContent="center">
+                        <Grid item xs={6} sm={3}>
+                            <Typography
+                                variant="h4"
+                                sx={{ color: "#FF7F1E", fontWeight: "700",ml:7 }}
+                            >
+                                150K+
                             </Typography>
-                            {/*<Box variant="body1" sx={{mt: 1, color: "#D1E1FF", width: "85%", mb: 2}}>*/}
-                            {/*    At Emotionally Yours, we pledge to augment accessibility and elevate the quality of emotional and psychological healthcare.*/}
-                            {/*</Box>*/}
+                            <Box
+                                sx={{
+                                    fontSize: "14px",
+                                    color: "#D1E1FF",
+                                   ml:7
+                                }}
+                            >
+                                Lives Impacted
+                            </Box>
                         </Grid>
 
+                        <Grid item xs={6} sm={3}>
+                            <Typography
+                                variant="h4"
+                                sx={{ color: "#FF7F1E", fontWeight: "700",ml:7 }}
+                            >
+                                5000+
+                            </Typography>
+                            <Box
+                                sx={{
+                                    fontSize: "14px",
+                                    color: "#D1E1FF",
+                                   ml:7
+                                }}
+                            >
+                                Sessions
+                            </Box>
+                        </Grid>
 
-                        <Grid item xs={12} md={7}>
-                            <Grid container spacing={4}>
-                                <Grid item sm={4} xs={6}>
-                                    <Typography variant="h4"
-                                                sx={{color: "#FF7F1E", fontWeight: "700", textAlign: "center"}}>
-                                        93%
-                                    </Typography>
-                                    <Box variant="body2" sx={{fontSize: "14px", color: "#D1E1FF", textAlign: "center"}}>
-                                        Report significant improvement
-                                    </Box>
-                                </Grid>
-                                <Grid item sm={4} xs={6}>
-                                    <Typography variant="h4"
-                                                sx={{color: "#FF7F1E", fontWeight: "700", textAlign: "center"}}>
-                                        25K+
-                                    </Typography>
-                                    <Box variant="body2" sx={{fontSize: "14px", color: "#D1E1FF", textAlign: "center"}}>
-                                        Sessions completed
-                                    </Box>
-                                </Grid>
-                                <Grid item sm={4} xs={6}>
-                                    <Typography variant="h4"
-                                                sx={{color: "#FF7F1E", fontWeight: "700", textAlign: "center"}}>
-                                        4.9
-                                    </Typography>
-                                    <Box sx={{fontSize: "14px", color: "#D1E1FF", textAlign: "center"}}>
-                                        Average therapist rating
-                                    </Box>
-                                </Grid>
-                            </Grid>
+                        <Grid item xs={6} sm={3}>
+                            <Typography
+                                variant="h4"
+                                sx={{ color: "#FF7F1E", fontWeight: "700",ml:7 }}
+                            >
+                                100+
+                            </Typography>
+                            <Box
+                                sx={{
+                                    fontSize: "14px",
+                                    color: "#D1E1FF",
+                                   ml:7
+                                }}
+                            >
+                                Suicides Prevented
+                            </Box>
+                        </Grid>
+
+                        <Grid item xs={6} sm={3}>
+                            <Typography
+                                variant="h4"
+                                sx={{ color: "#FF7F1E", fontWeight: "700",ml:7 }}
+                            >
+                                86%
+                            </Typography>
+                            <Box
+                                sx={{
+                                    fontSize: "14px",
+                                    color: "#D1E1FF",
+                                   ml:7
+                                }}
+                            >
+                                Improved Behavior Reported
+                            </Box>
                         </Grid>
                     </Grid>
                 </Box>
             </Container>
+
             <WorksTable/>
 
             <Mindwell/>
