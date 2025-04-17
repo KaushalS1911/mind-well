@@ -152,8 +152,7 @@ const Herosection = () => {
                                         marginTop: "20px", fontSize: {xs: '16px', sm: '18px', md: '20px'},
                                         lineHeight: {xs: '24px', sm: '26px', md: '28px'}, width: "80%"
                                     }}>
-                                        Emotional wellness programs tailored by Qualified and Experienced Psychologists
-                                        for Students, Competitive Exam Aspirants & Corporate Employees.
+                                        When people feel well, They perform well
                                     </Box>
                                 </Grid>
 
