@@ -26,12 +26,20 @@ import HowEmotionallyYoursWorksInHigherEducation
 import HowEmotionallyYoursinCoachingInstitute from "../../components/Home/howEmotionallyYoursinCoachingInstitute.jsx";
 import HowEmotionallyYoursinWorkplaces from "../../components/Home/HowEmotionallyYoursinWorkplaces.jsx";
 import {Box, Container, Grid, Typography} from "@mui/material";
+import WhyChooseUs from "../../components/Home/whyChooseUs.jsx";
+import Challenging from "../../components/Home/challenging.jsx";
 
 function Home() {
     return (
         <>
             <Herosection/>
-            <HowSchoolWorks/>
+            <HowEmotionallyYoursinSchools/>
+            <HowEmotionallyYoursWorksInHigherEducation/>
+            <HowEmotionallyYoursinCoachingInstitute/>
+            <HowEmotionallyYoursinWorkplaces/>
+            <Challenging/>
+            <WhyChooseUs/>
+            {/*<HowSchoolWorks/>*/}
             <Container maxWidth="xl">
                 <Box
                     sx={{

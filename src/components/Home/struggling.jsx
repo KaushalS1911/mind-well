@@ -27,18 +27,18 @@ const struggling = [
         icon: <WarningAmber sx={{ fontSize: 30, color: "orange" }} />,
         image: img1
     },
-    {
-        title: "Depression",
-        description: "Find joy and motivation again",
-        icon: <MoodBad sx={{ fontSize: 30, color: "orange" }} />,
-        image: img2
-    },
-    {
-        title: "Stress",
-        description: "Develop effective coping skills",
-        icon: <Psychology sx={{ fontSize: 30, color: "orange" }} />,
-        image: img3
-    },
+    // {
+    //     title: "Depression",
+    //     description: "Find joy and motivation again",
+    //     icon: <MoodBad sx={{ fontSize: 30, color: "orange" }} />,
+    //     image: img2
+    // },
+    // {
+    //     title: "Stress",
+    //     description: "Develop effective coping skills",
+    //     icon: <Psychology sx={{ fontSize: 30, color: "orange" }} />,
+    //     image: img3
+    // },
     {
         title: "Relationships",
         description: "Improve communication and connection",
@@ -105,7 +105,7 @@ function Struggling() {
                                 mb: 2
                             }}
                         >
-                            What Are You Struggling With?
+                            What area would you like to focus on?
                         </Box>
                         <Box
                             sx={{
@@ -123,7 +123,7 @@ function Struggling() {
 
                     <Grid container spacing={3} justifyContent="center">
                         {struggling.map((item, index) => (
-                            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                            <Grid item xs={12} sm={6} md={4} lg={2} key={index}>
                                 <Box
                                     sx={{
                                         p: 3,
