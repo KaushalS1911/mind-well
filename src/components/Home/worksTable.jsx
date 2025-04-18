@@ -82,7 +82,7 @@ function WorksTable() {
                         lineHeight: 1.75,
                     }}
                 >
-                    With Emotionally Yours, you can embark on a transformative journey to enhance your emotional
+                    With EmotionallYours, you can embark on a transformative journey to enhance your emotional
                     well-being through a few simple and effective steps.
                 </Box>
 
