@@ -57,7 +57,7 @@ const steps = [
 
 function WorksTable() {
     return (
-        <Box sx={{py: {xs: 6, sm: 8, md: 10}}}>
+        <Box sx={{padding:"96px 0 0 0"}}>
             <Container maxWidth="xl">
                 <Typography
                     className="Montserrat"
