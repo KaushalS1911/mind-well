@@ -131,11 +131,8 @@ function Home() {
             <Mindwell/>
             <Assessments/>
             <Struggling/>
-            <CaseStudy/>
-            <HowEmotionallyYoursinSchools/>
-            <HowEmotionallyYoursWorksInHigherEducation/>
-            <HowEmotionallyYoursinCoachingInstitute/>
-            <HowEmotionallyYoursinWorkplaces/>
+            {/*<CaseStudy/>*/}
+
             <EmployeeMentalHealth/>
 
             {/*<Challenges/>*/}
