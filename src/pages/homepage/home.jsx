@@ -27,7 +27,7 @@ import HowEmotionallyYoursinCoachingInstitute from "../../components/Home/howEmo
 import HowEmotionallyYoursinWorkplaces from "../../components/Home/HowEmotionallyYoursinWorkplaces.jsx";
 import {Box, Container, Grid, Typography} from "@mui/material";
 import WhyChooseUs from "../../components/Home/whyChooseUs.jsx";
-import Challenging from "../../components/Home/challenging.jsx";
+import WellbeingJourney from "../../components/Home/wellbeingJourney.jsx";
 import MileStones from "../../components/Home/MileStones.jsx";
 
 function Home() {
@@ -38,7 +38,7 @@ function Home() {
             <HowEmotionallyYoursWorksInHigherEducation/>
             <HowEmotionallyYoursinCoachingInstitute/>
             <HowEmotionallyYoursinWorkplaces/>
-            <Challenging/>
+            <WellbeingJourney/>
             <WhyChooseUs/>
             {/*<HowSchoolWorks/>*/}
             <MileStones/>

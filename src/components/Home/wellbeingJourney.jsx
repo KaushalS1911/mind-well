@@ -21,9 +21,9 @@ import AlarmIcon from '@mui/icons-material/Alarm';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import img from '../../assets/images/Home/why-choose-us/why-choose-us.jpg';
+import img from '../../assets/images/Home/wellbeing journey/journey.jpg';
 
-const Challenging = () => {
+const WellbeingJourney = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     const categories = [
@@ -97,13 +97,13 @@ const Challenging = () => {
 
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <Card sx={{ borderRadius: 3, overflow: 'hidden' }}>
+                        <Box>
                             <img
                                 src={img}
                                 alt="Why choose us"
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                style={{ width: '100%', height: '100%', objectFit: 'cover',borderRadius:"10px" }}
                             />
-                        </Card>
+                        </Box>
                     </Grid>
 
                     <Grid item xs={12} md={6}>
@@ -135,7 +135,7 @@ const Challenging = () => {
                                             </ListItemIcon>
                                             <ListItemText
                                                 primary={
-                                                    <Typography fontWeight={600} fontSize={20} ml={1} color="#333">
+                                                    <Typography fontWeight={600} fontSize={20} color="#333">
                                                         {category.name}
                                                     </Typography>
                                                 }
@@ -146,7 +146,7 @@ const Challenging = () => {
                                         </Box>
 
                                         <Collapse in={isSelected} timeout="auto" unmountOnExit>
-                                            <Box sx={{ mt: 2.5, pl: 1 }}>
+                                            <Box sx={{ mt: 2, pl: 2 }}>
                                                 <Typography fontSize={16} color="text.secondary">
                                                     {category.content}
                                                 </Typography>
@@ -158,9 +158,10 @@ const Challenging = () => {
                         </List>
                     </Grid>
                 </Grid>
+
             </Container>
         </Box>
     );
 };
 
-export default Challenging;
+export default WellbeingJourney;
