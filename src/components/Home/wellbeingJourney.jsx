@@ -21,7 +21,7 @@ import AlarmIcon from '@mui/icons-material/Alarm';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import img from '../../assets/images/Home/wellbeing journey/journey.jpg';
+import img from '../../assets/images/Home/wellbeing-journey/journey.jpg';
 
 const WellbeingJourney = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);

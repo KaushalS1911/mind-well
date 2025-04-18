@@ -5,7 +5,7 @@ import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import img7 from "../../../assets/images/Resources/Assessments/Work_Life_Balance.jpg";
+import img7 from "../../../assets/images/Resources/Assessments/worklife-Balance.jpg";
 import {useNavigate} from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
