@@ -1,11 +1,16 @@
 import React from 'react';
-import {Box, Container, Grid, Typography, Button} from "@mui/material";
+import {Box, Container, Grid, Typography} from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import img1 from '../../assets/images/Home/workstable/Establish-Leadership.jpeg';
+import img2 from '../../assets/images/Home/workstable/Initial-Evaluations – Laying-the-Groundwork.jpg';
+import img3 from '../../assets/images/Home/workstable/Awareness-Creation-for-Meaningful-Impact.jpg';
+import img4 from '../../assets/images/Home/workstable/Insight-Driven-Personalised-Enrichment.jpg';
+import img5 from '../../assets/images/Home/workstable/Strengthening-Impact-Through-Measurable-Metrices.jpg';
 
 const steps = [
     {
-        title: " Establish a Leadership Taskforce",
-        // description: "Answer a few questions about your needs, preferences, and goals for therapy. This helps us understand where you're looking for.",
+        image: img1,
+        title: "Establish a Leadership Taskforce",
         details: [
             "Amplify awareness of emotional intelligence as a leadership cornerstone.",
             "Pinpoint challenges and uncover pathways for growth.",
@@ -13,8 +18,8 @@ const steps = [
         ]
     },
     {
+        image: img2,
         title: "Initial Evaluations – Laying the Groundwork",
-        // description: "Our advanced algorithm matches you with licensed therapists who specialize in your specific needs and align with your preferences.",
         details: [
             "Facilitate introspective self-assessments to foster personal growth.",
             "Conduct comprehensive wellness evaluations for participants.",
@@ -22,8 +27,8 @@ const steps = [
         ]
     },
     {
+        image: img3,
         title: "Awareness Creation for Meaningful Impact",
-        // description: "Book a complimentary 15-minute video call with your potential therapist to ensure they’re the right fit for you.",
         details: [
             "Develop demographic-specific curricula tailored by gender, age, and region.",
             "Foster engagement through interactive workshops and training.",
@@ -31,8 +36,8 @@ const steps = [
         ]
     },
     {
+        image: img4,
         title: "Insight-Driven Personalised Enrichment",
-        // description: "Once you’ve found your match, choose a plan that works for you and start your therapy sessions through secure video, audio, or messaging.",
         details: [
             "Curate meticulously designed sessions for profound growth.",
             "Provide customised guidance to cultivate essential life skills.",
@@ -40,8 +45,8 @@ const steps = [
         ]
     },
     {
+        image: img5,
         title: "Strengthening Impact Through Measurable Metrices",
-        // description: "Once you’ve found your match, choose a plan that works for you and start your therapy sessions through secure video, audio, or messaging.",
         details: [
             "Assess intervention effectiveness with follow-up evaluations.",
             "Facilitate collaborative feedback sessions for shared learning.",
@@ -52,141 +57,176 @@ const steps = [
 
 function WorksTable() {
     return (
-        <Box sx={{padding: "96px 0", bgcolor: "#f9f9f9"}}>
+        <Box sx={{py: {xs: 6, sm: 8, md: 12}}}>
             <Container maxWidth="xl">
-                <Typography className={"Montserrat"} variant="h4" align="center" fontWeight={700} color="#012765"
-                            gutterBottom>
+                <Typography
+                    className="Montserrat"
+                    variant="h4"
+                    align="center"
+                    fontWeight={700}
+                    color="#012765"
+                    gutterBottom
+                >
                     How we Make a Difference
                 </Typography>
+
                 <Box
-                    variant="body1"
                     align="center"
-                    sx={{mx: {xs: 2, sm: 10, md: 18}, color: "#4B5563", lineHeight: 1.75}}
+                    sx={{
+                        mx: {xs: 2, sm: 6, md: 12},
+                        color: "#4B5563",
+                        fontSize: {xs: 14, sm: 16},
+                        lineHeight: 1.75,
+                    }}
                 >
                     With Emotionally Yours, you can embark on a transformative journey to enhance your emotional
                     well-being through a few simple and effective steps.
                 </Box>
 
-                <Box sx={{position: "relative", mt: 6}}>
+                <Box sx={{position: "relative", mt: {xs: 4, sm: 6}}}>
+
                     <Box
                         sx={{
                             position: 'absolute',
-                            left: '50%',
+                            left: 0,
                             top: 0,
                             bottom: 0,
-                            width: {md: '4px', xs: "0"},
+                            width: {md: '4px', xs: 0},
                             bgcolor: '#f3e2d3',
                             transform: 'translateX(-50%)',
                             zIndex: 0
                         }}
                     />
+
                     {steps.map((step, index) => (
-                        <Grid
-                            container
-                            spacing={0}
+                        <Box
                             key={index}
-                            alignItems="center"
                             sx={{
-                                flexDirection: {xs: 'column', sm: index % 2 === 0 ? 'row' : 'row-reverse'},
-                                mt: index === 0 ? 0 : {xs: 4, sm: 8},
                                 position: 'relative',
-                                minHeight: '150px',
-                                marginBottom: "1rem"
+                                mt: index === 0 ? 0 : {xs: 4, sm: 6, md: 8},
                             }}
                         >
-                            <Grid item xs={12} md={6}
-                                  textAlign={{xs: 'center', sm: index % 2 === 0 ? 'right' : 'left'}}>
-                                <Box sx={{
-                                    p: {lg: 5, md: 3, xs: 2},
-                                    bgcolor: '#fff',
-                                    boxShadow: 1,
-                                    borderRadius: 2,
-                                    mr: {md: 5, xs: 0},
-                                }}>
-                                    <Box sx={{p: 0, zIndex: 1}}>
-                                        <Box sx={{
-                                            fontWeight: '700',
-                                            fontSize: {lg: "22px", xs: "20px"},
-                                            color: '#012765',
-                                            lineHeight: '2rem',
-                                        }}>
-                                            {step.title}
-                                        </Box>
-                                        {/*<Box sx={{color: '#4B5563', fontSize: "16px"}}>*/}
-                                        {/*    {step.description}*/}
-                                        {/*</Box>*/}
-                                    </Box>
-                                </Box>
-                            </Grid>
 
                             <Box
                                 sx={{
                                     position: "absolute",
-                                    top: {xs: "60%", sm: "60%", md: "50%", lg: "50%"},
-                                    right: {xs: "17%", sm: "5%", md: "47.3%", lg: "48.3%"},
-                                    display: {sm: 'inline-flex', xs: "none"},
+                                    top: "50%",
+                                    left: "-1.7%",
+                                    display: {xs: "none", sm: "inline-flex"},
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    width: {xs: 35, sm: 45, md: 50},
-                                    height: {xs: 35, sm: 45, md: 50},
+                                    width: 50,
+                                    height: 50,
                                     borderRadius: '50%',
                                     bgcolor: '#FE6A00',
                                     color: '#fff',
                                     fontWeight: 'bold',
-                                    fontSize: {xs: '14px', sm: '16px', md: '18px'},
-                                    zIndex: "1"
+                                    fontSize: 18,
+                                    transform: 'translateY(-50%)',
+                                    zIndex: 1
                                 }}
                             >
                                 {index + 1}
                             </Box>
 
 
-                            <Grid item xs={12} md={6}>
-                                <Box sx={{
-                                    bgcolor: "#003366",
-                                    color: "#fff",
-                                    p: 3,
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: {xs: 'column', md: 'row'},
+                                    bgcolor: "#fff",
+                                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
                                     borderRadius: 2,
+                                    p: {xs: 3, sm: 3, md: 4},
+                                    gap: 4,
                                     ml: {md: 5, xs: 0},
-                                    mt: 7,
                                     position: "relative",
-                                }}>
-                                    {step.details.map((detail, i) => (
-                                        <Box key={i} display="flex" alignItems="center" mb={1}>
-                                            <CheckCircleIcon sx={{color: "#FE6A00", mr: 1}}/>
-                                            <Box>{detail}</Box>
-                                        </Box>
-                                    ))}
-                                    <Box sx={{
+                                    transition: "0.3s",
+                                }}
+                            >
+                                <Box
+                                    sx={{
                                         position: "absolute",
-                                        top: {xs: "7%",},
-                                        right: {xs: "2%",},
+                                        top: "10px",
+                                        right: "12px",
                                         display: {xs: 'inline-flex', sm: "none"},
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        width: {xs: 35, sm: 45, md: 50},
-                                        height: {xs: 35, sm: 45, md: 50},
+                                        width: 35,
+                                        height: 35,
                                         borderRadius: '50%',
                                         bgcolor: '#FE6A00',
                                         color: '#fff',
                                         fontWeight: 'bold',
-                                        fontSize: {xs: '14px', sm: '16px', md: '18px'}
-                                    }}>{index + 1}</Box>
+                                        fontSize: 14
+                                    }}
+                                >
+                                    {index + 1}
                                 </Box>
-                            </Grid>
-                        </Grid>
+                                <Grid container spacing={4}>
+
+                                    <Grid item xs={12} sm={7} display="flex" flexDirection="column"
+                                          justifyContent="center">
+                                        <Typography
+                                            sx={{
+                                                fontWeight: 700,
+                                                fontSize: {xs: 23, sm: 25, md: 28},
+                                                mb: 2,
+                                                color: "#002F6C"
+                                            }}
+                                        >
+                                            {step.title}
+                                        </Typography>
+
+                                        {step.details.map((detail, i) => (
+                                            <Box key={i} display="flex" alignItems="center" mb={1}>
+                                                <CheckCircleIcon sx={{color: "#FE6A00", mr: 1, fontSize: 20}}/>
+                                                <Typography sx={{fontSize: {xs: 14, sm: 18}, lineHeight: 1.5}}>
+                                                    {detail}
+                                                </Typography>
+                                            </Box>
+                                        ))}
+                                    </Grid>
+
+
+                                    <Grid item xs={12} sm={5} display="flex" alignItems="center"
+                                          justifyContent="center">
+                                        <Box sx={{
+                                            height: "220px",
+                                            width: "400px",
+                                        }}>
+                                            <img
+                                                src={step.image}
+                                                alt={step.title}
+                                                style={{
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: 'contain',
+                                                    borderRadius: 8,
+                                                    transition: "transform 0.3s ease-in-out"
+                                                }}
+                                                className="hover-scale-image"
+                                            />
+                                        </Box>
+                                    </Grid>
+                                </Grid>
+
+                            </Box>
+                        </Box>
                     ))}
                 </Box>
 
-                <Grid container justifyContent="center" sx={{mt: 6}}>
+
+                <Grid container justifyContent="center" sx={{mt: {xs: 4, sm: 6}}}>
                     <Box
                         sx={{
                             bgcolor: '#FE6A00',
                             color: '#fff',
                             fontWeight: 600,
-                            fontSize: "16px",
-                            padding: "12px 32px",
-                            borderRadius: "0.375rem",
+                            fontSize: 16,
+                            px: 4,
+                            py: 1.5,
+                            borderRadius: "6px",
                             display: 'inline-block',
                             cursor: "pointer",
                             textTransform: 'none',
@@ -197,7 +237,8 @@ function WorksTable() {
                         Start Your Journey Today
                     </Box>
                 </Grid>
-                <Box sx={{textAlign: "center", fontSize: "16px", mt: 2, color: '#4B5563'}}>
+
+                <Box sx={{textAlign: "center", fontSize: 14, mt: 2, color: '#4B5563'}}>
                     No commitment required. Free consultation available.
                 </Box>
             </Container>

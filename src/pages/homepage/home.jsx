@@ -47,8 +47,8 @@ function Home() {
                         borderRadius: "16px",
                         color: "white",
                         mt: 7,
-                        py: 6,
-                        px: 4,
+                        py: { xs: 4, sm: 6 }, // Adjusted padding for mobile screens
+                        px: { xs: 3, sm: 4 }, // Adjusted padding for mobile screens
                         textAlign: "center",
                     }}
                 >
@@ -56,7 +56,11 @@ function Home() {
                         className="Montserrat"
                         variant="h4"
                         fontWeight="bold"
-                        sx={{ mb: 5 ,textAlign: "start",ml:5 }}
+                        sx={{
+                            mb: 5,
+                            textAlign: { xs: "center", sm: "start" }, // Center text on small screens
+                            ml: { sm: 5 }, // Margin left only on medium screens and above
+                        }}
                     >
                         Our Impact
                     </Typography>
@@ -71,7 +75,7 @@ function Home() {
                             </Typography>
                             <Box
                                 sx={{
-                                    fontSize: "18px",
+                                    fontSize: { xs: "16px", sm: "18px" }, // Font size adjustment for small screens
                                     color: "#D1E1FF",
                                 }}
                             >
@@ -88,7 +92,7 @@ function Home() {
                             </Typography>
                             <Box
                                 sx={{
-                                    fontSize: "18px",
+                                    fontSize: { xs: "16px", sm: "18px" }, // Font size adjustment for small screens
                                     color: "#D1E1FF",
                                 }}
                             >
@@ -105,7 +109,7 @@ function Home() {
                             </Typography>
                             <Box
                                 sx={{
-                                    fontSize: "18px",
+                                    fontSize: { xs: "16px", sm: "18px" }, // Font size adjustment for small screens
                                     color: "#D1E1FF",
                                 }}
                             >
@@ -122,7 +126,7 @@ function Home() {
                             </Typography>
                             <Box
                                 sx={{
-                                    fontSize: "18px",
+                                    fontSize: { xs: "16px", sm: "18px" }, // Font size adjustment for small screens
                                     color: "#D1E1FF",
                                 }}
                             >
@@ -132,6 +136,7 @@ function Home() {
                     </Grid>
                 </Box>
             </Container>
+
 
 
             <WorksTable/>
