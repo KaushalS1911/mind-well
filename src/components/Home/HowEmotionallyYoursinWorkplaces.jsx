@@ -44,7 +44,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
             number: '2',
             title: 'HR or Manager Connects Employee',
             description:
-                'HR personnel or designated mental health champions link the employee with Emotionally Yours through a secure virtual platform.',
+                'HR personnel or designated mental health champions link the employee with EmotionallYours through a secure virtual platform.',
         },
         {
             number: '3',
@@ -105,7 +105,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
                         }}>
                             <img
                                 src={img1}
-                                alt="How Emotionally Yours Works"
+                                alt="How EmotionallYours Works"
                                 style={{
                                     height: '100%',
                                     width: '100%',

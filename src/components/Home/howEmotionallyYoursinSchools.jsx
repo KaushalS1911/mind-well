@@ -44,9 +44,9 @@ const HowEmotionallyYoursinSchools = () => {
         },
         {
             number: '2',
-            title: 'Connect with Emotionally Yours',
+            title: 'Connect with EmotionallYours',
             description:
-                'School staff connect the student with a Emotionally Yours provider through our secure telehealth platform.',
+                'School staff connect the student with a EmotionallYours provider through our secure telehealth platform.',
         },
         {
             number: '3',
@@ -136,7 +136,7 @@ const HowEmotionallyYoursinSchools = () => {
                         }}>
                             <img
                                 src={img1}
-                                alt="How Emotionally Yours Works"
+                                alt="How EmotionallYours Works"
                                 style={{
                                     height: '100%',
                                     width: '100%',
