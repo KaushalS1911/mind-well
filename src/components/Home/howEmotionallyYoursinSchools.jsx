@@ -67,7 +67,7 @@ const HowEmotionallyYoursinSchools = () => {
             <Box textAlign="center" mb={{ xs: 4, md: 6 }}>
                 <Box className={"Montserrat"}
                      sx={{
-                         fontSize: { xs: '28px', md: '36px' },
+                         fontSize: { xs: '32px', md: '40px' },
                          marginBottom: "16px",
                          lineHeight: 1.2,
                          display: "flex",
@@ -76,14 +76,13 @@ const HowEmotionallyYoursinSchools = () => {
                          fontWeight: 700
                      }}
                 >
-                    How Emotionally Yours Works in Schools
+                    How EmotionallYours Works in Schools
                 </Box>
                 <Typography
                     sx={{
-                        maxWidth: 600,
                         mx: "auto",
                         mb: { xs: 4, md: 8 },
-                        fontSize: { xs: "16px", md: "18px" },
+                        fontSize: { xs: "18px", md: "20px" },
                         color: "#4B5563",
                         lineHeight: "25px",
                         textAlign: "center",
@@ -101,7 +100,7 @@ const HowEmotionallyYoursinSchools = () => {
                             <Box>
                                 <Typography
                                     sx={{
-                                        fontSize: { xs: '18px', md: '20px' },
+                                        fontSize: { xs: '20px', md: '22px' },
                                         fontWeight: 600,
                                         color: "#012765",
                                         mb: 0.5
@@ -111,7 +110,7 @@ const HowEmotionallyYoursinSchools = () => {
                                 </Typography>
                                 <Typography
                                     sx={{
-                                        fontSize: { xs: '14px', md: '16px' },
+                                        fontSize: { xs: '16px', md: '18px' },
                                         fontWeight: 400,
                                         color: "#012765",
                                         mb: 1
