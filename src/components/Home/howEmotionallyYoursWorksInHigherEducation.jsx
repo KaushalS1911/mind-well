@@ -62,7 +62,7 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
 
     return (
         <Container maxWidth="xl" >
-            <Box textAlign="center" mb={{ xs: 4, md: 6 }}>
+            <Box textAlign="center" mb={{ xs: 4, md: 8 }}>
                 <Box className={"Montserrat"}
                      sx={{
                          fontSize: { xs: '32px', md: '40px' },

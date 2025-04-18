@@ -3,30 +3,25 @@ import {
     Box,
     Typography,
     Container,
-    Paper,
     Grid,
     Card,
-    CardContent,
     Avatar,
-    Chip,
-    CardMedia,
-    IconButton,
     List,
-    ListItem,
     ListItemIcon,
     ListItemText,
-    Collapse
+    Collapse,
+    IconButton,
+    Paper
 } from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import SpaIcon from '@mui/icons-material/Spa';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import AlarmIcon from '@mui/icons-material/Alarm';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import img from '../../assets/images/Home/why-choose-us/why-choose-us.jpg'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import img from '../../assets/images/Home/why-choose-us/why-choose-us.jpg';
 
 const Challenging = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -71,25 +66,19 @@ const Challenging = () => {
     ];
 
     return (
-        <Box sx={{ padding:"96px 0" }}>
-            <Container maxWidth="xl" >
-                <Box textAlign="center" mb={2}>
-                    <Typography className={'Montserrat'} variant="h4" gutterBottom  sx={{
+        <Box sx={{ py: 12 }}>
+            <Container maxWidth="xl">
+                <Box textAlign="center" mb={3}>
+                    <Typography variant="h4" className="Montserrat" sx={{
                         fontSize: { xs: '32px', md: '40px' },
-                        marginBottom: "16px",
-                        lineHeight: 0.6,
-                        display: "flex",
-                        justifyContent: "center",
                         color: "#012765",
-                        fontWeight: 700
+                        fontWeight: 700,
+                        mb: 1
                     }}>
                         The wellbeing journey can be challenging,
                     </Typography>
-                    <Typography variant="h3" className={'Montserrat'} sx={{
+                    <Typography variant="h3" className="Montserrat" sx={{
                         fontSize: { xs: '32px', md: '40px' },
-                        marginBottom: "16px",
-                        display: "flex",
-                        justifyContent: "center",
                         color: "#012765",
                         fontWeight: 700
                     }}>
@@ -98,87 +87,72 @@ const Challenging = () => {
                 </Box>
 
                 <Box textAlign="center" mb={6} px={2}>
-                    <Typography variant="h6" component="p" sx={{ color: '#555', fontWeight: 400 }}>
+                    <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
                         Choose from a variety of wellness plans tailored to your needs.
                     </Typography>
-                    <Typography variant="h6" component="p" sx={{ color: '#555', fontWeight: 400 }}>
+                    <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
                         Each plan includes personalised goals and expert guidance to help you achieve optimal well-being.
                     </Typography>
                 </Box>
 
                 <Grid container spacing={4}>
-                    {/* Left side - Featured content card */}
                     <Grid item xs={12} md={6}>
-                        <Card elevation={1} sx={{ borderRadius: 3, overflow: 'hidden', position: 'relative' }}>
-                            <Box>
-                                <img src={img} alt="" />
-                            </Box>
+                        <Card sx={{ borderRadius: 3, overflow: 'hidden' }}>
+                            <img
+                                src={img}
+                                alt="Why choose us"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
                         </Card>
                     </Grid>
 
-                    {/* Right side - Category list */}
                     <Grid item xs={12} md={6}>
                         <List>
                             {categories.map((category) => {
-                                const isSelected = category.name === selectedCategory;
+                                const isSelected = selectedCategory === category.name;
 
                                 return (
-                                    <Box key={category.name} sx={{ mb: 2 }}>
-                                        {/* Title */}
-                                        <ListItem disablePadding>
-                                            <Paper
-                                                elevation={0}
-                                                onClick={() =>
-                                                    setSelectedCategory(prev =>
-                                                        prev === category.name ? null : category.name
-                                                    )
+                                    <Paper
+                                        key={category.name}
+                                        onClick={() =>
+                                            setSelectedCategory(prev => prev === category.name ? null : category.name)
+                                        }
+                                        sx={{
+                                            mb: 2,
+                                            p: 2,
+                                            bgcolor: isSelected ? '#f0f7ff' : '#fff',
+                                            cursor: 'pointer',
+                                            borderRadius: "10px",
+                                            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                                            transition: '0.3s',
+                                        }}
+                                    >
+                                        <Box display="flex" alignItems="center">
+                                            <ListItemIcon sx={{ minWidth: 48 }}>
+                                                <Avatar sx={{ bgcolor: category.color }}>
+                                                    {category.icon}
+                                                </Avatar>
+                                            </ListItemIcon>
+                                            <ListItemText
+                                                primary={
+                                                    <Typography fontWeight={600} fontSize={20} ml={1} color="#333">
+                                                        {category.name}
+                                                    </Typography>
                                                 }
-                                                sx={{
-                                                    width: '100%',
-                                                    p: 1,
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    bgcolor: isSelected ? '#f0f7ff' : 'white',
-                                                    boxShadow: '0 2px 8px -1px rgba(0, 0, 0, 0.15)',
-                                                    cursor: 'pointer',
-                                                    transition: 'background 0.2s',
-                                                    '&:hover': {
-                                                        bgcolor: isSelected ? '#f0f7ff' : '#f9f9f9',
-                                                    },
-                                                }}
-                                            >
-                                                <ListItemIcon>
-                                                    <Avatar sx={{ bgcolor: category.color }}>
-                                                        {category.icon}
-                                                    </Avatar>
-                                                </ListItemIcon>
-                                                <ListItemText
-                                                    primary={
-                                                        <Typography fontWeight={500} fontSize={22} color="#333">
-                                                            {category.name}
-                                                        </Typography>
-                                                    }
-                                                />
-                                            </Paper>
-                                        </ListItem>
+                                            />
+                                            <IconButton edge="end" disableRipple>
+                                                {isSelected ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                                            </IconButton>
+                                        </Box>
 
-                                        {/* Expanding content */}
                                         <Collapse in={isSelected} timeout="auto" unmountOnExit>
-                                            <Paper
-                                                elevation={0}
-                                                sx={{
-                                                    width: '100%',
-                                                    padding: '0 20px 14px 20px',
-                                                    bgcolor: '#f0f7ff',
-                                                    transition: 'all 0.3s ease-in-out'
-                                                }}
-                                            >
-                                                <Typography fontSize={18}>
+                                            <Box sx={{ mt: 2.5, pl: 1 }}>
+                                                <Typography fontSize={16} color="text.secondary">
                                                     {category.content}
                                                 </Typography>
-                                            </Paper>
+                                            </Box>
                                         </Collapse>
-                                    </Box>
+                                    </Paper>
                                 );
                             })}
                         </List>

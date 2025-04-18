@@ -57,7 +57,7 @@ const steps = [
 
 function WorksTable() {
     return (
-        <Box sx={{py: {xs: 6, sm: 8, md: 12}}}>
+        <Box sx={{py: {xs: 6, sm: 8, md: 10}}}>
             <Container maxWidth="xl">
                 <Typography
                     className="Montserrat"
@@ -66,6 +66,9 @@ function WorksTable() {
                     fontWeight={700}
                     color="#012765"
                     gutterBottom
+                    sx={{
+                        fontSize: { xs: '32px', md: '40px' },
+                    }}
                 >
                     How we Make a Difference
                 </Typography>
@@ -217,30 +220,30 @@ function WorksTable() {
                 </Box>
 
 
-                <Grid container justifyContent="center" sx={{mt: {xs: 4, sm: 6}}}>
-                    <Box
-                        sx={{
-                            bgcolor: '#FE6A00',
-                            color: '#fff',
-                            fontWeight: 600,
-                            fontSize: 16,
-                            px: 4,
-                            py: 1.5,
-                            borderRadius: "6px",
-                            display: 'inline-block',
-                            cursor: "pointer",
-                            textTransform: 'none',
-                            transition: '0.3s',
-                            '&:hover': {bgcolor: '#dd6006'}
-                        }}
-                    >
-                        Start Your Journey Today
-                    </Box>
-                </Grid>
+                {/*<Grid container justifyContent="center" sx={{mt: {xs: 4, sm: 6}}}>*/}
+                {/*    <Box*/}
+                {/*        sx={{*/}
+                {/*            bgcolor: '#FE6A00',*/}
+                {/*            color: '#fff',*/}
+                {/*            fontWeight: 600,*/}
+                {/*            fontSize: 16,*/}
+                {/*            px: 4,*/}
+                {/*            py: 1.5,*/}
+                {/*            borderRadius: "6px",*/}
+                {/*            display: 'inline-block',*/}
+                {/*            cursor: "pointer",*/}
+                {/*            textTransform: 'none',*/}
+                {/*            transition: '0.3s',*/}
+                {/*            '&:hover': {bgcolor: '#dd6006'}*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        Start Your Journey Today*/}
+                {/*    </Box>*/}
+                {/*</Grid>*/}
 
-                <Box sx={{textAlign: "center", fontSize: 14, mt: 2, color: '#4B5563'}}>
-                    No commitment required. Free consultation available.
-                </Box>
+                {/*<Box sx={{textAlign: "center", fontSize: 14, mt: 2, color: '#4B5563'}}>*/}
+                {/*    No commitment required. Free consultation available.*/}
+                {/*</Box>*/}
             </Container>
         </Box>
     );

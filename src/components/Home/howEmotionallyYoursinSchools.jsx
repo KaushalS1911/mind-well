@@ -63,7 +63,7 @@ const HowEmotionallyYoursinSchools = () => {
     ];
 
     return (
-        <Container maxWidth="xl" sx={{ py: { xs: 8, md: 10 } }}>
+        <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 } }}>
             <Box textAlign="center" mb={{ xs: 4, md: 6 }}>
                 <Box className={"Montserrat"}
                      sx={{

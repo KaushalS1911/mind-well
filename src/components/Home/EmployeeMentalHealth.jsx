@@ -76,7 +76,7 @@ const EmployeeMentalHealth = () => {
                 <Box className={"Montserrat"}
                     variant="h4"
                     sx={{
-                        fontSize: { xs: '26px', sm: '32px', md: '36px' },
+                        fontSize: { xs: '32px', md: '40px' },
                         fontWeight: 700,
                         color: "#012765",
                         mb: 2
@@ -87,7 +87,7 @@ const EmployeeMentalHealth = () => {
                 <Typography
                     sx={{
                         mx: "auto",
-                        fontSize: { xs: '16px', sm: '18px' },
+                        fontSize: { xs: '16px', sm: '20px' },
                         color: "#4B5563",
                         lineHeight: 1.6,
                         px: 2

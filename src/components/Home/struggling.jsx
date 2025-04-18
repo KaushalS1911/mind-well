@@ -99,7 +99,7 @@ function Struggling() {
                         <Box
                             className={"Montserrat"}
                             sx={{
-                                fontSize: { xs: "24px", sm: "32px" },
+                                fontSize: { xs: '32px', md: '40px' },
                                 color: "#012765",
                                 fontWeight: "700",
                                 mb: 2
@@ -110,7 +110,7 @@ function Struggling() {
                         <Box
                             sx={{
                                 color: "#4B5563",
-                                fontSize: { xs: "14px", sm: "18px" },
+                                fontSize: { xs: "15px", sm: "20px" },
                                 mx: "auto"
                             }}
                         >
