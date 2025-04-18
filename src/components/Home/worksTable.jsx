@@ -2,10 +2,10 @@ import React from 'react';
 import {Box, Container, Grid, Typography} from "@mui/material";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import img1 from '../../assets/images/Home/workstable/Establish-Leadership.jpeg';
-import img2 from '../../assets/images/Home/workstable/Initial-Evaluations – Laying-the-Groundwork.jpg';
+import img2 from '../../assets/images/Home/workstable/Initial-Evaluations – Laying-the-Groundwork1.jpg';
 import img3 from '../../assets/images/Home/workstable/Awareness-Creation-for-Meaningful-Impact.jpg';
 import img4 from '../../assets/images/Home/workstable/Insight-Driven-Personalised-Enrichment.jpg';
-import img5 from '../../assets/images/Home/workstable/Strengthening-Impact-Through-Measurable-Metrices.jpg';
+import img5 from '../../assets/images/Home/workstable/Strengthening-Impact-Through-Measurable-Metrices1.jpg';
 
 const steps = [
     {
