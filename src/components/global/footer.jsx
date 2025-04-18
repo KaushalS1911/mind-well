@@ -1,19 +1,19 @@
 import React from "react";
 import {Box, Typography, Grid, IconButton, Link, Button, TextField, Container} from "@mui/material";
-import {Facebook, Twitter, Instagram, LinkedIn} from "@mui/icons-material";
+import {Facebook, Twitter, Instagram, LinkedIn, YouTube} from "@mui/icons-material";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CallIcon from '@mui/icons-material/Call';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/Y Logo.jpg";
 import {Link as RouterLink} from "react-router-dom";
 
 const socialMedia = [
-    {icon: <Facebook/>, link: "https://www.facebook.com"},
-    {icon: <Twitter/>, link: "https://www.twitter.com"},
-    {icon: <Instagram/>, link: "https://www.instagram.com"},
-    {icon: <LinkedIn/>, link: "https://www.linkedin.com"},
+    {icon: <LinkedIn/>, link: "https://www.linkedin.com/company/emotionallyours/"},
+    {icon: <Facebook/>, link: "https://www.facebook.com/share/1AmSYda79K/"},
+    {icon: <Instagram/>, link: "https://www.instagram.com/mann_miitr?igsh=cWp1aWNiNm1vNzNx"},
+    {icon: <YouTube/>, link: "https://youtube.com/@emotionallyours?si=6h0Su7ZsmTpj0QbL"},
 ];
 const navigationLinks = [
     {name: "Home", path: "/"},
@@ -38,14 +38,15 @@ const Footer = () => {
         <Box sx={{backgroundColor: "#002b5c", color: "white", padding: "64px 20px 32px"}}>
             <Container maxWidth="xl">
                 <Grid container spacing={4} justifyContent="center">
-                    <Grid item xs={12} lg={5}>
+                    <Grid item xs={12} lg={5} >
                         <Box sx={{
                             height: "80px",
                             width: "80px",
-                            mb: 2
+                            mb: 2,
                         }}>
                             <Link href="/">
                                 <img src={logo} alt="logo" style={{
+                                    borderRadius: "12px",
                                     height: "100%",
                                     cursor: "pointer"
                                 }}/>
@@ -229,151 +230,151 @@ const Footer = () => {
                             ))}
                         </Box>
 
-                        <Box sx={{margin: "32px 0px 16px", fontSize: "18px", fontWeight: "bold"}}>
-                            We Accept
-                        </Box>
-                        <Box sx={{display: "flex", gap: 1, mt: 1}}>
-                            {paymentMethods.map((method, index) => (
-                                <Box key={index} variant="contained" sx={{
-                                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                                    color: "#FFFFFFCC",
-                                    fontWeight: "500",
-                                    fontSize: "12px",
-                                    lineHeight: "16px",
-                                    width: "48px",
-                                    display: "flex",
-                                    height: "32px",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    borderRadius: "4px",
-                                }}>
-                                    {method}
-                                </Box>
-                            ))}
-                        </Box>
+                        {/*<Box sx={{margin: "32px 0px 16px", fontSize: "18px", fontWeight: "bold"}}>*/}
+                        {/*    We Accept*/}
+                        {/*</Box>*/}
+                        {/*<Box sx={{display: "flex", gap: 1, mt: 1}}>*/}
+                        {/*    {paymentMethods.map((method, index) => (*/}
+                        {/*        <Box key={index} variant="contained" sx={{*/}
+                        {/*            backgroundColor: "rgba(255, 255, 255, 0.1)",*/}
+                        {/*            color: "#FFFFFFCC",*/}
+                        {/*            fontWeight: "500",*/}
+                        {/*            fontSize: "12px",*/}
+                        {/*            lineHeight: "16px",*/}
+                        {/*            width: "48px",*/}
+                        {/*            display: "flex",*/}
+                        {/*            height: "32px",*/}
+                        {/*            justifyContent: "center",*/}
+                        {/*            alignItems: "center",*/}
+                        {/*            borderRadius: "4px",*/}
+                        {/*        }}>*/}
+                        {/*            {method}*/}
+                        {/*        </Box>*/}
+                        {/*    ))}*/}
+                        {/*</Box>*/}
                     </Grid>
                 </Grid>
 
 
-                <Box sx={{textAlign: "center", mt: 5, borderTop: "1px solid #345284", padding: "48px 0 40px"}}>
-                    <Box sx={{
-                        fontSize: "20px",
-                        margin: "0px 0px 8px",
-                    }}>
-                        Subscribe to Our Newsletter
-                    </Box>
-                    <Box sx={{fontSize: "16px", color: "#FFFFFFB3"}}>
-                        Get the latest mental health tips and resources delivered straight to your inbox.
-                    </Box>
-                    <Box sx={{mt: 2}}>
-                        <Grid container spacing={1} justifyContent="center">
+                {/*<Box sx={{textAlign: "center", mt: 5, borderTop: "1px solid #345284", padding: "48px 0 40px"}}>*/}
+                {/*    <Box sx={{*/}
+                {/*        fontSize: "20px",*/}
+                {/*        margin: "0px 0px 8px",*/}
+                {/*    }}>*/}
+                {/*        Subscribe to Our Newsletter*/}
+                {/*    </Box>*/}
+                {/*    <Box sx={{fontSize: "16px", color: "#FFFFFFB3"}}>*/}
+                {/*        Get the latest mental health tips and resources delivered straight to your inbox.*/}
+                {/*    </Box>*/}
+                {/*    <Box sx={{mt: 2}}>*/}
+                {/*        <Grid container spacing={1} justifyContent="center">*/}
 
-                            <Grid item xs={12} sm={6} md={4} lg={5}>
-                                <TextField
-                                    fullWidth
-                                    size="small"
-                                    variant="outlined"
-                                    placeholder="Your email address"
-                                    sx={{
-                                        backgroundColor: "white",
-                                        borderRadius: 1,
-                                    }}
-                                />
-                            </Grid>
-
-
-                            <Grid item xs={12} sm="auto">
-                                <Button
-                                    variant="contained"
-                                    color="warning"
-                                    sx={{width: {xs: "100%", sm: "auto", padding: "8px 24px"}}}
-                                >
-                                    Subscribe
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </Box>
-                </Box>
+                {/*            <Grid item xs={12} sm={6} md={4} lg={5}>*/}
+                {/*                <TextField*/}
+                {/*                    fullWidth*/}
+                {/*                    size="small"*/}
+                {/*                    variant="outlined"*/}
+                {/*                    placeholder="Your email address"*/}
+                {/*                    sx={{*/}
+                {/*                        backgroundColor: "white",*/}
+                {/*                        borderRadius: 1,*/}
+                {/*                    }}*/}
+                {/*                />*/}
+                {/*            </Grid>*/}
 
 
-                <Box
-                    sx={{
-                        borderTop: "1px solid #345284",
-                        borderBottom: "1px solid #345284",
-                        color: "white",
-                        padding: "32px 16px 32px ",
-                    }}
-                >
-                    <Grid container spacing={2} alignItems="center" color={"#FFFFFFCC"}>
-                        {/* Copyright Section */}
-                        <Grid item xs={12} md={4}>
-                            <Box
-                                sx={{fontSize: "14px", textAlign: "center"}}
-                            >
-                                © 2023 Emotionally Yours. All rights reserved.
-                            </Box>
-                        </Grid>
+                {/*            <Grid item xs={12} sm="auto">*/}
+                {/*                <Button*/}
+                {/*                    variant="contained"*/}
+                {/*                    color="warning"*/}
+                {/*                    sx={{width: {xs: "100%", sm: "auto", padding: "8px 24px"}}}*/}
+                {/*                >*/}
+                {/*                    Subscribe*/}
+                {/*                </Button>*/}
+                {/*            </Grid>*/}
+                {/*        </Grid>*/}
+                {/*    </Box>*/}
+                {/*</Box>*/}
 
-                        {/* Links Section */}
-                        <Grid item xs={12} md={8}>
-                            <Box textAlign={{xs: "center", sm: "center"}}>
-                                {["Privacy Policy", "Terms of Service", "Cookie Policy", "Accessibility", "Sitemap"].map(
-                                    (item, index) => (
-                                        <Link
-                                            key={index}
-                                            href="#"
-                                            underline="none"
-                                            sx={{
-                                                marginX: {xs: "8px", sm: "16px"},
-                                                fontSize: "14px",
-                                                color: "#FFFFFFCC",
-                                                display: "inline-block",
-                                            }}
-                                        >
-                                            {item}
-                                        </Link>
-                                    )
-                                )}
-                            </Box>
-                        </Grid>
-                    </Grid>
-                </Box>
 
-                <Box
-                    sx={{
-                        textAlign: "center",
-                        marginTop: "32px",
-                        paddingTop: "24px",
-                        width: {xs: "90%", sm: "80%", md: "60%"},
-                        mx: "auto",
-                    }}
-                >
-                    <Box
-                        sx={{
-                            fontSize: "12px",
-                            marginBottom: 2,
-                            color: "#FFFFFFCC",
-                            textAlign: "center",
-                        }}
-                    >
-                        Disclaimer: The content provided on this website is for informational purposes only and is not
-                        intended to be a
-                        substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of
-                        your physician
-                        or other qualified health provider with any questions you may have regarding a medical
-                        condition.
-                    </Box>
-                    <Box
-                        sx={{
-                            fontSize: "12px",
-                            color: "#FFFFFFCC",
-                        }}
-                    >
-                        If you are in crisis or think you may have an emergency, call your doctor or emergency services
-                        immediately.
-                        Emotionally Yours does not offer crisis counseling or emergency services.
-                    </Box>
-                </Box>
+                {/*<Box*/}
+                {/*    sx={{*/}
+                {/*        borderTop: "1px solid #345284",*/}
+                {/*        borderBottom: "1px solid #345284",*/}
+                {/*        color: "white",*/}
+                {/*        padding: "32px 16px 32px ",*/}
+                {/*    }}*/}
+                {/*>*/}
+                {/*    <Grid container spacing={2} alignItems="center" color={"#FFFFFFCC"}>*/}
+                {/*        /!* Copyright Section *!/*/}
+                {/*        <Grid item xs={12} md={4}>*/}
+                {/*            <Box*/}
+                {/*                sx={{fontSize: "14px", textAlign: "center"}}*/}
+                {/*            >*/}
+                {/*                © 2023 Emotionally Yours. All rights reserved.*/}
+                {/*            </Box>*/}
+                {/*        </Grid>*/}
+
+                {/*        /!* Links Section *!/*/}
+                {/*        <Grid item xs={12} md={8}>*/}
+                {/*            <Box textAlign={{xs: "center", sm: "center"}}>*/}
+                {/*                {["Privacy Policy", "Terms of Service", "Cookie Policy", "Accessibility", "Sitemap"].map(*/}
+                {/*                    (item, index) => (*/}
+                {/*                        <Link*/}
+                {/*                            key={index}*/}
+                {/*                            href="#"*/}
+                {/*                            underline="none"*/}
+                {/*                            sx={{*/}
+                {/*                                marginX: {xs: "8px", sm: "16px"},*/}
+                {/*                                fontSize: "14px",*/}
+                {/*                                color: "#FFFFFFCC",*/}
+                {/*                                display: "inline-block",*/}
+                {/*                            }}*/}
+                {/*                        >*/}
+                {/*                            {item}*/}
+                {/*                        </Link>*/}
+                {/*                    )*/}
+                {/*                )}*/}
+                {/*            </Box>*/}
+                {/*        </Grid>*/}
+                {/*    </Grid>*/}
+                {/*</Box>*/}
+
+                {/*<Box*/}
+                {/*    sx={{*/}
+                {/*        textAlign: "center",*/}
+                {/*        marginTop: "32px",*/}
+                {/*        paddingTop: "24px",*/}
+                {/*        width: {xs: "90%", sm: "80%", md: "60%"},*/}
+                {/*        mx: "auto",*/}
+                {/*    }}*/}
+                {/*>*/}
+                {/*    <Box*/}
+                {/*        sx={{*/}
+                {/*            fontSize: "12px",*/}
+                {/*            marginBottom: 2,*/}
+                {/*            color: "#FFFFFFCC",*/}
+                {/*            textAlign: "center",*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        Disclaimer: The content provided on this website is for informational purposes only and is not*/}
+                {/*        intended to be a*/}
+                {/*        substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of*/}
+                {/*        your physician*/}
+                {/*        or other qualified health provider with any questions you may have regarding a medical*/}
+                {/*        condition.*/}
+                {/*    </Box>*/}
+                {/*    <Box*/}
+                {/*        sx={{*/}
+                {/*            fontSize: "12px",*/}
+                {/*            color: "#FFFFFFCC",*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        If you are in crisis or think you may have an emergency, call your doctor or emergency services*/}
+                {/*        immediately.*/}
+                {/*        Emotionally Yours does not offer crisis counseling or emergency services.*/}
+                {/*    </Box>*/}
+                {/*</Box>*/}
 
             </Container>
         </Box>
