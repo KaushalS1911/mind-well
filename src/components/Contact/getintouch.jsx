@@ -86,7 +86,7 @@ const GetInTouch = () => {
                      sx={{
                          color: "#002D62",
                          margin: "0 0 16px",
-                         fontSize: {xs: "28px", sm: "36px"},
+                         fontSize: { xs: '32px', md: '40px' },
                          lineHeight: {xs: "32px", sm: "40px"},
                          fontWeight: "700"
                      }}
@@ -97,7 +97,7 @@ const GetInTouch = () => {
                     sx={{
                         color: "#4F4F4F",
                         maxWidth: "600px",
-                        fontSize: {xs: "16px", sm: "18px"},
+                        fontSize: { xs: "16px", md: "20px" },
                         textAlign: "center"
                     }}
                 >

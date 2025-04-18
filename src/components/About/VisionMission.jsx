@@ -3,9 +3,9 @@ import { Box, Container, Grid, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
-import img1 from '../../assets/images/about/mission-vission-goals/vission.jpg';
+import img1 from '../../assets/images/about/mission-vission-goals/vision.jpg';
 import img2 from '../../assets/images/about/mission-vission-goals/mission.jpg';
-import img3 from '../../assets/images/about/mission-vission-goals/goals1.jpg';
+import img3 from '../../assets/images/about/mission-vission-goals/goals.jpg';
 
 const StyledPaper = styled(Paper, {
     shouldForwardProp: (prop) => prop !== 'side'
@@ -67,7 +67,7 @@ const VisionMission = () => {
         <Box sx={{ backgroundColor: 'white', py: { xs: 6, md: 12 } }}>
             <Container maxWidth="xl">
                 <Box className="Montserrat" sx={{
-                    fontSize: { xs: '26px', sm: '30px', md: '36px' },
+                    fontSize: { xs: '32px', md: '40px' },
                     mb: 2,
                     lineHeight: { xs: '32px', sm: '36px', md: '40px' },
                     textAlign: 'center',
@@ -80,7 +80,7 @@ const VisionMission = () => {
                     maxWidth: 700,
                     mx: "auto",
                     mb: 8,
-                    fontSize: { xs: "16px", md: "18px" },
+                    fontSize: { xs: "16px", md: "20px" },
                     color: "#4B5563",
                     textAlign: "center",
                     lineHeight: { xs: "24px", md: "28px" },

@@ -162,7 +162,7 @@ const Founders = () => {
         }}>
             <Container maxWidth="xl" sx={{px: {xs: 2, sm: 3, md: 4, lg: 6}}}>
                 <Box className={"Montserrat"} sx={{
-                    fontSize: "36px",
+                    fontSize: { xs: '32px', md: '40px' },
                     marginBottom: "16px",
                     lineHeight: "40px",
                     display: "flex",
@@ -176,7 +176,7 @@ const Founders = () => {
                     maxWidth: 600,
                     mx: "auto",
                     mb: 8,
-                    fontSize: "18px",
+                    fontSize: { xs: "16px", md: "20px" },
                     color: "#4B5563",
                     textAlign: "center",
                     lineHeight: "25px",

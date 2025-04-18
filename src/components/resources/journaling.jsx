@@ -65,7 +65,7 @@ function Journaling() {
                 {/* Header */}
                 <Box className={"Montserrat"} sx={{
                     color: "#012765",
-                    fontSize: "36px",
+                    fontSize: { xs: '32px', md: '40px' },
                     margin: "0 0 16px",
                     fontWeight: "700",
                     textAlign: "center"
@@ -73,7 +73,7 @@ function Journaling() {
                     Mental Health Resources
                 </Box>
                 <Box sx={{
-                    fontSize: "18px",
+                    fontSize: { xs: "16px", md: "20px" },
                     color: "#4b5563",
                     textAlign: "center",
                     lineHeight: "1.75rem",

@@ -311,23 +311,14 @@ export default function PEPMUI() {
                             variant="h4"
                             fontWeight="bold"
                             gutterBottom
-                            sx={{color: colors.primary}}
+                            sx={{color: colors.primary,fontSize: { xs: '32px', md: '40px' },}}
                         >
                             Our Two-Pillar Approach
                         </Typography>
-                        <Divider
-                            sx={{
-                                backgroundColor: colors.secondary,
-                                height: 4,
-                                width: 100,
-                                mx: "auto",
-                                my: 3,
-                            }}
-                        />
                         <Typography
                             variant="body1"
                             color="text.secondary"
-                            sx={{maxWidth: "md", mx: "auto"}}
+                            sx={{maxWidth: "md", mx: "auto",fontSize: { xs: "16px", md: "20px" },}}
                         >
                             PEP delivers comprehensive support through two integrated
                             components that work together to create lasting positive impact

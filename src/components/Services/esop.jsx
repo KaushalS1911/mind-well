@@ -313,23 +313,14 @@ export default function ESOPMUI() {
                             variant="h4"
                             fontWeight="bold"
                             gutterBottom
-                            sx={{color: colors.primary}}
+                            sx={{color: colors.primary,fontSize: { xs: '32px', md: '40px' },}}
                         >
                             Our Three-Pillar Approach
                         </Typography>
-                        <Divider
-                            sx={{
-                                backgroundColor: colors.secondary,
-                                height: 4,
-                                width: 100,
-                                mx: "auto",
-                                my: 3,
-                            }}
-                        />
                         <Typography
                             variant="body1"
                             color="text.secondary"
-                            sx={{maxWidth: "md", mx: "auto"}}
+                            sx={{maxWidth: "md", mx: "auto",fontSize: { xs: "16px", md: "20px" },}}
                         >
                             ESOP delivers workplace emotional wellness through three
                             integrated components that work together to create lasting
@@ -384,7 +375,7 @@ export default function ESOPMUI() {
                         variant="h4"
                         textAlign="center"
                         fontWeight="bold"
-                        sx={{color: colors.primary, mb: 3}}
+                        sx={{color: colors.primary, mb: 3,fontSize: { xs: '32px', md: '40px' },}}
                     >
                         Frequently Asked Questions
                     </Typography>

@@ -130,13 +130,13 @@ const founders = [
 
 const Psychologist = () => {
     return (
-        <Box sx={{ padding: '96px 0', backgroundColor: '#F3F4F6' }}>
+        <Box sx={{ padding: '0 0 96px 0', backgroundColor: '#F3F4F6' }}>
             <Container maxWidth="xl">
                 <Typography
                     variant="h4"
                     sx={{
                         fontFamily: 'Montserrat',
-                        fontSize: '36px',
+                        fontSize: { xs: '32px', md: '40px' },
                         color: '#012765',
                         textAlign: 'center',
                         fontWeight: 700,
@@ -150,7 +150,7 @@ const Psychologist = () => {
                         maxWidth: 700,
                         mx: 'auto',
                         mb: 8,
-                        fontSize: '18px',
+                        fontSize: { xs: "16px", md: "20px" },
                         color: '#4B5563',
                         textAlign: 'center',
                         lineHeight: '25px',

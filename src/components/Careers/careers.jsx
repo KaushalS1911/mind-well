@@ -132,7 +132,7 @@ function Careers() {
             }}>
                 <Container maxWidth="xl" sx={{position: 'relative', zIndex: 2}}>
                     <Box className="Montserrat" sx={{
-                        fontSize: {xs: "32px", sm: "36px", md: "42px"},
+                        fontSize: { xs: '32px', md: '40px' },
                         marginBottom: {xs: "25px", sm: "10px"},
                         lineHeight: "1.2",
                         textAlign: "center",
@@ -153,7 +153,7 @@ function Careers() {
                         textAlign: 'center',
                         maxWidth: '800px',
                         mx: 'auto',
-
+                        fontSize: { xs: "16px", md: "20px" },
                     }}>
                         Be part of our mission to transform emotional wellness and make a lasting impact on individuals
                         and organizations.

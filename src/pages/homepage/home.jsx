@@ -45,7 +45,7 @@ function Home() {
 
             <WorksTable/>
 
-            {/*<Mindwell/>*/}
+
             <Assessments/>
             <Struggling/>
             {/*<CaseStudy/>*/}

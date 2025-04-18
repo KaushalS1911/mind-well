@@ -301,17 +301,10 @@ export default function ShapeDesigne() {
                 <Box sx={{padding: "96px 0"}}>
                     <Box textAlign="center" mb={6}>
                         <Typography className={"Montserrat"} variant="h4" fontWeight="bold" gutterBottom
-                                    sx={{color: colors.primary}}>
+                                    sx={{color: colors.primary,fontSize: { xs: '32px', md: '40px' },}}>
                             Our Four-Pillar Approach
                         </Typography>
-                        <Divider sx={{
-                            backgroundColor: colors.secondary,
-                            height: 4,
-                            width: 100,
-                            mx: 'auto',
-                            my: 3
-                        }}/>
-                        <Typography variant="body1" color="text.secondary" sx={{maxWidth: 'md', mx: 'auto'}}>
+                        <Typography variant="body1" color="text.secondary" sx={{maxWidth: 'md', mx: 'auto',fontSize: { xs: "16px", md: "20px" },}}>
                             SHAPE+ delivers emotional wellness through four integrated components that work together to
                             create lasting positive impact for higher education students.
                         </Typography>
@@ -480,7 +473,7 @@ export default function ShapeDesigne() {
                         variant="h4"
                         textAlign="center"
                         fontWeight="bold"
-                        sx={{color: colors.primary, mb: 3}}
+                        sx={{color: colors.primary, mb: 3,fontSize: { xs: '32px', md: '40px' }}}
                     >
                         Frequently Asked Questions
                     </Typography>

@@ -45,7 +45,7 @@ function MajorClients() {
                 <Box
                     className="Montserrat"
                     sx={{
-                        fontSize: { xs: "28px", sm: "32px", md: "36px" },
+                        fontSize: { xs: '32px', md: '40px' },
                         lineHeight: "40px",
                         color: "#012765",
                         fontWeight: "700",
