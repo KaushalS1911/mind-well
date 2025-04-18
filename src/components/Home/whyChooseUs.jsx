@@ -35,7 +35,7 @@ const rightCards = [
 
 function WhyChooseUs() {
     return (
-        <Box sx={{padding: "32px 0"}}>
+        <Box>
             <Container maxWidth="xl" >
                 <Box className={'Montserrat'} sx={{
                     fontSize: "40px",
