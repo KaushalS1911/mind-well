@@ -35,10 +35,10 @@ const rightCards = [
 
 function WhyChooseUs() {
     return (
-        <Box sx={{padding: "96px 0"}}>
-            <Container maxWidth="xl">
-                <Box sx={{
-                    fontSize: "36px",
+        <Box sx={{padding: "32px 0"}}>
+            <Container maxWidth="xl" >
+                <Box className={'Montserrat'} sx={{
+                    fontSize: "40px",
                     marginBottom: "16px",
                     lineHeight: "40px",
                     display: "flex",
@@ -49,13 +49,7 @@ function WhyChooseUs() {
                 }}>
                     Why Choose Us ?
                 </Box>
-                <Divider sx={{
-                    backgroundColor: "#FE6A00",
-                    height: 4,
-                    width: 100,
-                    mx: 'auto',
-                    my: 3
-                }}/>
+
 
                 <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={6}>
@@ -86,20 +80,18 @@ function WhyChooseUs() {
                                                     color: '#002F6C',
                                                     '&:hover': {
                                                         transform: 'translateY(-8px)',
-                                                        background: 'linear-gradient(135deg, rgba(0,47,108,0.8), rgba(0,20,60,0.9))',
+                                                        background: 'linear-gradient(147deg,rgba(1, 39, 101, 1) 0%, rgba(83, 132, 207, 1) 100%)',
                                                         color: 'white',
                                                     },
                                                 }}
                                             >
-
-
-                                            <Box mb={2} sx={{color: 'inherit'}}>
+                                            <Box mb={1} sx={{color: 'inherit'}}>
                                                     {item.icon()}
                                                 </Box>
-                                                <Typography variant="h6" fontWeight="bold" gutterBottom>
+                                                <Typography fontSize={22} fontWeight="bold" mb={1}>
                                                     {item.title}
                                                 </Typography>
-                                                <Typography variant="body2">
+                                                <Typography fontSize={17} lineHeight={1.3}>
                                                     {item.description}
                                                 </Typography>
                                             </Box>
@@ -121,18 +113,18 @@ function WhyChooseUs() {
                                                 color: '#002F6C',
                                                 '&:hover': {
                                                     transform: 'translateY(-8px)',
-                                                    background: 'linear-gradient(135deg, rgba(0,47,108,0.8), rgba(0,20,60,0.9))',
+                                                    background: 'linear-gradient(147deg,rgba(1, 39, 101, 1) 0%, rgba(83, 132, 207, 1) 100%)',
                                                     color: 'white',
                                                 },
                                             }}
                                         >
-                                            <Box mb={2} sx={{color: 'inherit'}}>
+                                            <Box mb={1} sx={{color: 'inherit'}}>
                                                 {item.icon}
                                             </Box>
-                                            <Typography variant="h6" fontWeight="bold">
+                                            <Typography fontSize={22} fontWeight="bold" mb={1}>
                                                 {item.title}
                                             </Typography>
-                                            <Typography variant="body2">
+                                            <Typography fontSize={17} lineHeight={1.3}>
                                                 {item.description}
                                             </Typography>
                                         </Box>
