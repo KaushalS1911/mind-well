@@ -73,18 +73,25 @@ const Challenging = () => {
     return (
         <Box sx={{ padding:"96px 0" }}>
             <Container maxWidth="xl" >
-                <Box textAlign="center" mb={4}>
-                    <Typography variant="h3" component="h1" gutterBottom sx={{
-                        fontWeight: 700,
-                        color: '#1a1a2e',
-                        fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' }
+                <Box textAlign="center" mb={2}>
+                    <Typography className={'Montserrat'} variant="h4" gutterBottom  sx={{
+                        fontSize: { xs: '32px', md: '40px' },
+                        marginBottom: "16px",
+                        lineHeight: 0.6,
+                        display: "flex",
+                        justifyContent: "center",
+                        color: "#012765",
+                        fontWeight: 700
                     }}>
                         The wellbeing journey can be challenging,
                     </Typography>
-                    <Typography variant="h3" component="h1" sx={{
-                        fontWeight: 700,
-                        color: '#1a1a2e',
-                        fontSize: { xs: '1.8rem', sm: '2.2rem', md: '2.5rem' }
+                    <Typography variant="h3" className={'Montserrat'} sx={{
+                        fontSize: { xs: '32px', md: '40px' },
+                        marginBottom: "16px",
+                        display: "flex",
+                        justifyContent: "center",
+                        color: "#012765",
+                        fontWeight: 700
                     }}>
                         but here's how we can make it easier.
                     </Typography>
@@ -128,10 +135,11 @@ const Challenging = () => {
                                                 }
                                                 sx={{
                                                     width: '100%',
-                                                    p: 1.5,
+                                                    p: 1,
                                                     display: 'flex',
                                                     alignItems: 'center',
                                                     bgcolor: isSelected ? '#f0f7ff' : 'white',
+                                                    boxShadow: '0 2px 8px -1px rgba(0, 0, 0, 0.15)',
                                                     cursor: 'pointer',
                                                     transition: 'background 0.2s',
                                                     '&:hover': {
@@ -146,7 +154,7 @@ const Challenging = () => {
                                                 </ListItemIcon>
                                                 <ListItemText
                                                     primary={
-                                                        <Typography fontWeight={600} color="#333">
+                                                        <Typography fontWeight={500} fontSize={22} color="#333">
                                                             {category.name}
                                                         </Typography>
                                                     }
@@ -160,12 +168,12 @@ const Challenging = () => {
                                                 elevation={0}
                                                 sx={{
                                                     width: '100%',
-                                                    p: 3,
+                                                    padding: '0 20px 14px 20px',
                                                     bgcolor: '#f0f7ff',
                                                     transition: 'all 0.3s ease-in-out'
                                                 }}
                                             >
-                                                <Typography variant="body1">
+                                                <Typography fontSize={18}>
                                                     {category.content}
                                                 </Typography>
                                             </Paper>

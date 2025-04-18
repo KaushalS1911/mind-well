@@ -61,11 +61,11 @@ const HowEmotionallyYoursinWorkplaces = () => {
     ];
 
     return (
-        <Container maxWidth="xl" sx={{ py: { xs: 8, md: 10 } }}>
+        <Container maxWidth="xl" >
             <Box textAlign="center" mb={{ xs: 4, md: 6 }}>
                 <Box className={"Montserrat"}
                      sx={{
-                         fontSize: { xs: '28px', md: '36px' },
+                         fontSize: { xs: '32px', md: '40px' },
                          marginBottom: "16px",
                          lineHeight: 1.2,
                          display: "flex",
@@ -74,14 +74,13 @@ const HowEmotionallyYoursinWorkplaces = () => {
                          fontWeight: 700
                      }}
                 >
-                    How Emotionally Yours Works in Workplaces
+                    How EmotionallYours Works in Workplaces
                 </Box>
                 <Typography
                     sx={{
-                        maxWidth: 800,
                         mx: "auto",
                         mb: { xs: 4, md: 8 },
-                        fontSize: { xs: "16px", md: "18px" },
+                        fontSize: { xs: "18px", md: "20px" },
                         color: "#4B5563",
                         lineHeight: "25px",
                         textAlign: "center",
@@ -123,7 +122,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
                             <Box>
                                 <Typography
                                     sx={{
-                                        fontSize: { xs: '18px', md: '20px' },
+                                        fontSize: { xs: '20px', md: '22px' },
                                         fontWeight: 600,
                                         color: "#012765",
                                         mb: 0.5
@@ -133,7 +132,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
                                 </Typography>
                                 <Typography
                                     sx={{
-                                        fontSize: { xs: '14px', md: '16px' },
+                                        fontSize: { xs: '16px', md: '18px' },
                                         fontWeight: 400,
                                         color: "#012765",
                                         mb: 1

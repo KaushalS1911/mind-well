@@ -71,7 +71,7 @@ const EmployeeMentalHealth = () => {
     ];
 
     return (
-        <Container maxWidth="xl" sx={{ py: 8 }}>
+        <Container maxWidth="xl" sx={{ pb: 8 }}>
             <Box textAlign="center" mb={6}>
                 <Box className={"Montserrat"}
                     variant="h4"
@@ -82,11 +82,10 @@ const EmployeeMentalHealth = () => {
                         mb: 2
                     }}
                 >
-                    Employee Mental Health Program
+                    Employee Emotional Wellbeing Program
                 </Box>
                 <Typography
                     sx={{
-                        maxWidth: 700,
                         mx: "auto",
                         fontSize: { xs: '16px', sm: '18px' },
                         color: "#4B5563",

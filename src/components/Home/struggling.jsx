@@ -111,7 +111,6 @@ function Struggling() {
                             sx={{
                                 color: "#4B5563",
                                 fontSize: { xs: "14px", sm: "18px" },
-                                maxWidth: "600px",
                                 mx: "auto"
                             }}
                         >
@@ -179,132 +178,7 @@ function Struggling() {
                         ))}
                     </Grid>
                 </Box>
-
-                <Box
-                    sx={{
-                        backgroundColor: "#012765",
-                        color: "white",
-                        p: { xs: 3, sm: 6 },
-                        borderRadius: "8px",
-                        mt: 9
-                    }}
-                >
-                    <Grid container spacing={3} alignItems="center">
-                        <Grid item xs={12} lg={8}>
-                            <Box
-                                className={"Montserrat"}
-                                sx={{
-                                    fontSize: { xs: "24px", sm: "30px" },
-                                    fontWeight: "700",
-                                    mb: 2
-                                }}
-                            >
-                                Invest in Your Employees and Build Thriving Teams
-                            </Box>
-                            <Box
-                                sx={{
-                                    fontSize: "16px",
-                                    mb: 3,
-                                    opacity: "0.9",
-                                    width: { md: "80%" }
-                                }}
-                            >
-                                Provide your employees with access to mental health resources
-                                that boost well-being, increase productivity, and show your
-                                commitment to their health.
-                            </Box>
-                            <Grid container spacing={2}>
-                                {[
-                                    "Reduce absenteeism and healthcare costs",
-                                    "Improve employee retention and satisfaction",
-                                    "Create a culture that prioritizes mental health",
-                                    "Easy implementation with dedicated support"
-                                ].map((benefit, index) => (
-                                    <Grid item xs={12} key={index}>
-                                        <Box
-                                            sx={{
-                                                display: "flex",
-                                                alignItems: "center",
-                                                gap: "8px",
-                                                fontSize: "16px"
-                                            }}
-                                        >
-                                            <CheckCircleIcon sx={{ color: "#FE6A00" }} /> {benefit}
-                                        </Box>
-                                    </Grid>
-                                ))}
-                            </Grid>
-                            <Box sx={{ mt: 3 }}>
-                                <Box
-                                    sx={{
-                                        fontSize: "16px",
-                                        display: "inline-block",
-                                        borderRadius: "7px",
-                                        backgroundColor: "#fff",
-                                        color: "#012765",
-                                        fontWeight: "600",
-                                        padding: "12px 24px",
-                                        mb: { lg: 0, xs: 3 },
-                                        cursor: "pointer"
-                                    }}
-                                >
-                                    Request information
-                                </Box>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} lg={4}>
-                            <Box
-                                sx={{
-                                    backgroundColor: "white",
-                                    color: "#012765",
-                                    p: 3,
-                                    borderRadius: "8px"
-                                }}
-                            >
-                                <Box sx={{ fontSize: "20px", fontWeight: "700", mb: 2 }}>
-                                    Our Corporate Wellness Program Includes:
-                                </Box>
-                                <Grid container spacing={2}>
-                                    {features.map((feature, index) => (
-                                        <Grid item xs={12} key={index}>
-                                            <Box sx={{ display: "flex", gap: "8px", flexDirection: "column" }}>
-                                                <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                                                    <Box
-                                                        sx={{
-                                                            width: 24,
-                                                            height: 24,
-                                                            backgroundColor: "#FF8000",
-                                                            borderRadius: "50%",
-                                                            display: "flex",
-                                                            alignItems: "center",
-                                                            justifyContent: "center",
-                                                            color: "white",
-                                                            fontWeight: "bold"
-                                                        }}
-                                                    >
-                                                        {index + 1}
-                                                    </Box>
-                                                    <span style={{ fontWeight: "bold" }}>{feature.title}</span>
-                                                </Box>
-                                                <Box sx={{ fontSize: "14px", color: "#555", ml: 4 }}>
-                                                    {feature.description}
-                                                </Box>
-                                            </Box>
-                                        </Grid>
-                                    ))}
-                                </Grid>
-                            </Box>
-                        </Grid>
-                    </Grid>
-                </Box>
             </Container>
-
-            {/* Add CSS for hover scale effect */}
-            <style jsx global>{`
-                .hover-scale-image:hover {
-                    transform: scale(1.1);
-                }
-            `}</style>
         </Box>
     );
 }
