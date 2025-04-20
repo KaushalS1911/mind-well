@@ -36,27 +36,27 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
     const steps = [
         {
             number: '1',
-            title: 'Student Requests Support',
+            title: 'Setting Groundwork',
             description:
-                'College students experiencing physical or mental health concerns can request care through their campus health center or online portal.',
+                'Identify stream specific Psycholgy based Emotional Wellness and Mental Health program as per NEP Guidelines.',
         },
         {
             number: '2',
-            title: 'Campus Staff Connects Student',
+            title: 'Targeted Training',
             description:
-                'Health center staff or student services connect the student with an EmotionallYours provider using our secure telehealth system.',
+                'Building emotional strength, enhancing academic focus, and cultivating intrinsic motivation through Psychologist and Corporate interaction.',
         },
         {
             number: '3',
-            title: 'Private Virtual Consultation',
+            title: 'Personalised and Curated Counselling',
             description:
-                'The student attends a confidential video session with a licensed physician or mental health professional who provides personalized care.',
+                'Self-Care with reinforced skill development through individual counselling of students.',
         },
         {
             number: '4',
-            title: 'Ongoing Support & Coordination',
+            title: 'Self-Help Groups',
             description:
-                'We follow up with students, provide prescriptions if needed, and collaborate with university services for ongoing well-being and academic support.',
+                'Creating first responders’ structure in form of Self-Help groups withing the institute.',
         },
     ];
 
@@ -86,7 +86,7 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
                         textAlign: "center",
                     }}
                 >
-                    Our seamless process empowers universities to provide accessible, high-quality healthcare for college students.
+                    Emotional wellness program aligned with NEP to cultivate academic excellence, emotional resilience, and future readiness
                 </Typography>
             </Box>
 

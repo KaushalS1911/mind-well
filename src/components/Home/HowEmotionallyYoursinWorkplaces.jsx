@@ -36,27 +36,27 @@ const HowEmotionallyYoursinWorkplaces = () => {
     const steps = [
         {
             number: '1',
-            title: 'Employee Requests Support',
+            title: 'Leadership Taskforce',
             description:
-                'Employees facing stress, anxiety, or health concerns can request support via the company portal or directly through HR.',
+                'Enlighten Business and HR leadership towards the role of Mental Health and reinforcement of emotional wellness.',
         },
         {
             number: '2',
-            title: 'HR or Manager Connects Employee',
+            title: 'Proactive Resilience Building',
             description:
-                'HR personnel or designated mental health champions link the employee with EmotionallYours through a secure virtual platform.',
+                'Curated target-based Employee workshops and individual and family wellness counselling.',
         },
         {
             number: '3',
-            title: 'Confidential Online Consultation',
+            title: 'Holistic Employee Engagement',
             description:
-                'Employees meet privately with licensed professionals for mental wellness or medical support, tailored to workplace needs.',
+                'Foster peer-support communities that encourage open dialogue and collective growth.',
         },
         {
             number: '4',
-            title: 'Follow-Up and Wellness Plans',
+            title: 'Ownership Building',
             description:
-                'We provide continuous care, periodic check-ins, and collaborate with HR to ensure a supportive, productive work environment.',
+                'Recognise and celebrate emotional intelligence, fostering a culture where well-being and performance go hand in hand.',
         },
     ];
 
@@ -86,8 +86,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
                         textAlign: "center",
                     }}
                 >
-                    Our program empowers organizations to support employee well-being through accessible, personalized mental and physical healthcare.
-                </Typography>
+                    Tailored for business teams and HR leaders, this initiative integrates evidence-based practices that enhance team dynamics, and drive sustainable growth within organizational culture.                </Typography>
             </Box>
 
             <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">

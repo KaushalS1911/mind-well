@@ -36,27 +36,27 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
     const steps = [
         {
             number: '1',
-            title: 'Student Seeks Help',
+            title: 'Strengthen Mentorship',
             description:
-                'A student preparing for competitive exams feels stressed, anxious, or unwell and reaches out to coaching staff for help.',
+                'Conduct emotional wellness sessions to boost mentor self-awareness in high-pressure academic settings.',
         },
         {
             number: '2',
-            title: 'Staff Initiates Support',
+            title: 'Aspirant Empowerment',
             description:
-                'The institute’s counselor or staff member connects the student with EmotionallYours through our secure telehealth system.',
+                'Monthly therapist-guided group workshops offer tools for emotional regulation, resilience-building, and sustainable self-care practices.',
         },
         {
             number: '3',
-            title: 'Online Session Begins',
+            title: 'Promote Diagnostics',
             description:
-                'The student attends a private online consultation with a licensed therapist or doctor for immediate care and emotional support.',
+                'Self-realisation and preparing towards individual counselling session backed by Psychometric Tests and Self Assessments.',
         },
         {
             number: '4',
-            title: 'Ongoing Care & Follow-up',
+            title: 'Self-Help Groups',
             description:
-                'We monitor the student’s progress, offer follow-up sessions, and provide guidance to help them stay mentally and physically well during preparation.',
+                'Creating first responders’ structure in form of Self-Help groups withing the institute.',
         },
     ];
 
@@ -86,7 +86,7 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
                         textAlign: "center",
                     }}
                 >
-                    Our process helps coaching institutes support students’ mental and physical well-being while they prepare for high-pressure exams.
+                    A focused and intensive program designed specifically for aspirants preparing for high-stakes entrance exams (like NEET, JEE, UPSC, CLAT) and their mentors.
                 </Typography>
             </Box>
 
