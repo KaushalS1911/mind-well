@@ -40,7 +40,7 @@ const HowEmotionallyYoursinSchools = () => {
             number: '1',
             title: 'Initial Wellness Assessment',
             description:
-                "7 factor self-assessment of students towards need analysis at individual and School level/",
+                "7 factor self-assessment of students towards need analysis at individual and School level.",
         },
         {
             number: '2',
