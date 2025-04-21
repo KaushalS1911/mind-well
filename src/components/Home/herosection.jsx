@@ -20,7 +20,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {Controller, useForm} from "react-hook-form";
 import {Navigation, Pagination} from 'swiper/modules';
 // import img1 from '../../assets/images/Home/Herosection/hero.jpg'
-import img1 from '../../assets/images/Photos/Top Banner.jpg'
+import img1 from '../../assets/images/Vectors/Top Banner.jpg'
 
 const services = [
     {
@@ -95,7 +95,7 @@ const Herosection = () => {
                         position: "relative",
                         mt: {md: 9, xs: 0},
                         color: "white",
-                        padding: "120px 0",
+                        padding: "140px 0",
                         height: "100%",
                         display: "flex",
                         alignItems: "center",
@@ -125,7 +125,7 @@ const Herosection = () => {
                             left: 0,
                             width: "100%",
                             height: "100%",
-                            backgroundColor: "rgba(0, 0, 0, 0.6)",
+                            backgroundColor: "rgba(0, 0, 0, 0.5)",
                             zIndex: 2,
                         }}
                     />
