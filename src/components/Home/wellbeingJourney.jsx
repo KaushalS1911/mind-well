@@ -75,23 +75,23 @@ const WellbeingJourney = () => {
                         fontWeight: 700,
                         mb: 1
                     }}>
-                        The wellbeing journey can be challenging,
+                        The path to emotional well-being can be tough
                     </Typography>
                     <Typography data-aos="zoom-in" variant="h3" className="Montserrat" sx={{
                         fontSize: { xs: '32px', md: '40px' },
                         color: "#012765",
                         fontWeight: 700
                     }}>
-                        but here's how we can make it easier
+                        here’s how we simplify it
                     </Typography>
                 </Box>
 
                 <Box textAlign="center" mb={6} px={2}>
                     <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
-                        Choose from a variety of wellness plans tailored to your needs
+                        Select from a range of psychology-backed wellness plans tailored to your needs
                     </Typography>
                     <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
-                        Each plan includes personalised goals and expert guidance to help you achieve optimal well-being
+                        Each plan offers personalized goals and expert-guided interventions to support your journey toward emotional and mental well-being
                     </Typography>
                 </Box>
 
