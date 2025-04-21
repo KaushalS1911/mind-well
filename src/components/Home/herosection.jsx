@@ -112,6 +112,7 @@ const Herosection = () => {
                             height: "100%",
                             backgroundImage: `url(${img1})`,
                             backgroundSize: "contain",
+                            backgroundRepeat: "no-repeat",
                             backgroundPosition: "center",
                             zIndex: 1,
                         }}
