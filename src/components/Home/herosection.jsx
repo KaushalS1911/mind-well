@@ -135,7 +135,7 @@ const Herosection = () => {
                         <Grid container spacing={1} alignItems="center" justifyContent="space-around" >
                             <Grid item xs={12} md={12} sx={{ textAlign: "left" }}>
                                 <Box
-                                    data-aos="zoom-in"
+                                    data-aos="fade-down"
                                     className={"Montserrat"}
                                     sx={{
                                         fontSize: { lg: '72px', sm: '64px', xs: '54px' },
