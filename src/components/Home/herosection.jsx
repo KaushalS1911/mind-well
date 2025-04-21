@@ -93,9 +93,9 @@ const Herosection = () => {
                 <Box
                     sx={{
                         position: "relative",
-                        mt: {md: 9, xs: 0},
+                        mt: {md: 12, xs: 0},
                         color: "white",
-                        padding: "300px 0",
+                        padding: "290px 0",
                         height: "100%",
                         display: "flex",
                         alignItems: "center",
@@ -111,7 +111,7 @@ const Herosection = () => {
                             width: "100%",
                             height: "100%",
                             backgroundImage: `url(${img1})`,
-                            backgroundSize: "cover",
+                            backgroundSize: "contain",
                             backgroundPosition: "center",
                             zIndex: 1,
                         }}
