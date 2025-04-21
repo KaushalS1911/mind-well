@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import img1 from '../../assets/images/Home/worksplace-hero/demo2.png';
 
 const TITLES = ["Be proud to work", "Create a better future", "Thrive"];
-const TITLE_CHANGE_DELAY = 2000;
+const TITLE_CHANGE_DELAY = 2500;
 
 
 const fadeInUp = {
@@ -59,6 +59,7 @@ function WorkPlaceHeroSection() {
     return (
         <Box
             sx={{
+                mt: {md: 8},
                 py: { xs: 8, md: 10 },
                 overflow: 'hidden',
                 backgroundColor:"#F3F4F6"
@@ -69,7 +70,7 @@ function WorkPlaceHeroSection() {
                     variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, margin: "-200px" }}
                 >
                     <Box
                         sx={{
@@ -91,8 +92,9 @@ function WorkPlaceHeroSection() {
                                 <Typography
                                     className="Montserrat"
                                     fontWeight="700"
-                                    lineHeight={1.2}
+                                    lineHeight={1.1}
                                     sx={{
+                                        letterSpacing: "-1px",
                                         fontSize: { lg: '52px', md: '42px', sm: '46px', xs: '38px' },
                                         minHeight: { md: '160px', xs: '120px' },
                                         color: "#062957",
@@ -134,7 +136,6 @@ function WorkPlaceHeroSection() {
                                         fontSize: { md: '18px', xs: '16px' },
                                         color: 'text.secondary',
                                         maxWidth: '550px',
-                                        mt:3
                                     }}
                                 >
                                     Empower your organization with emotional intelligence tools that enhance performance and nurture meaningful workplace connections.
@@ -147,7 +148,7 @@ function WorkPlaceHeroSection() {
                                     sx={{
                                         backgroundColor: '#002F6C',
                                         color: 'white',
-                                        borderRadius: 10,
+                                        borderRadius: 2,
                                         textTransform: 'none',
                                         px: 4,
                                         py: 1.8,
