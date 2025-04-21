@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Button, Typography, Stack, useTheme, Container } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import img1 from '../../assets/images/Home/worksplace-hero/demo2.png';
+import img1 from '../../assets/images/Vectors/Workplaces.jpg';
 
 const TITLES = ["Be proud to work", "Create a better future", "Thrive"];
 const TITLE_CHANGE_DELAY = 2500;
@@ -60,7 +60,7 @@ function WorkPlaceHeroSection() {
         <Box
             sx={{
                 mt: {md: 8},
-                py: { xs: 8, md: 10 },
+                py: { xs: 12, md: 20 },
                 overflow: 'hidden',
                 backgroundColor:"#F3F4F6"
             }}
@@ -211,7 +211,7 @@ function WorkPlaceHeroSection() {
                                             style={{
                                                 width: '100%',
                                                 height: '100%',
-                                                objectFit: 'contain',
+                                                objectFit: 'conver',
                                             }}
                                         />
                                     </Box>
