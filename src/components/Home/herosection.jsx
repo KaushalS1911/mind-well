@@ -20,13 +20,13 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {Controller, useForm} from "react-hook-form";
 import {Navigation, Pagination} from 'swiper/modules';
 // import img1 from '../../assets/images/Home/Herosection/hero.jpg'
-import img1 from '../../assets/images/Vectors/top banner png.png'
+import img1 from '../../assets/images/Vectors/top banner2.png'
 
 const services = [
     {
         title: 'Physical Health',
         items: [
-            'Preventive care',
+            'Preventive care',x
             'Acute illness treatment',
             'Chronic condition management'
         ],
