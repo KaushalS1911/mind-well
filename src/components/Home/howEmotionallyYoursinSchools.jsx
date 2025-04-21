@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
     Box,
     Container,
@@ -10,6 +10,8 @@ import {
 } from '@mui/material';
 // import img1 from '../../assets/images/Home/works/emotionallyYours-School.jpeg';
 import img1 from '../../assets/images/Photos/School.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ProcessStep = styled(Box)(({theme}) => ({
     display: 'flex',
@@ -33,8 +35,23 @@ const StepNumber = styled(Box)(({theme}) => ({
     flexShrink: 0,
 }));
 
+
+
 const HowEmotionallyYoursinSchools = () => {
     const theme = useTheme();
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            mirror: false,
+        });
+
+        setTimeout(() => {
+            AOS.refresh();
+        }, 500);
+    }, []);
+
 
     const steps = [
         {
@@ -67,6 +84,7 @@ const HowEmotionallyYoursinSchools = () => {
         <Container maxWidth="xl" sx={{py: {xs: 8, md: 12}}}>
             <Box textAlign="center" mb={{xs: 4, md: 6}}>
                 <Box className={"Montserrat"}
+                     data-aos="zoom-in"
                      sx={{
                          fontSize: {xs: '32px', md: '40px'},
                          marginBottom: "16px",

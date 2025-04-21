@@ -65,6 +65,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
         <Container maxWidth="xl" >
             <Box textAlign="center" mb={{ xs: 6, md: 8 }}>
                 <Box className={"Montserrat"}
+                     data-aos="zoom-in"
                      sx={{
                          fontSize: { xs: '32px', md: '40px' },
                          marginBottom: "16px",

@@ -97,6 +97,7 @@ function Struggling() {
                 <Box sx={{ textAlign: "center" }}>
                     <Box sx={{ mb: 4 }}>
                         <Box
+                            data-aos="zoom-in"
                             className={"Montserrat"}
                             sx={{
                                 fontSize: { xs: '32px', md: '40px' },

@@ -29,11 +29,13 @@ import {Box, Container, Grid, Typography} from "@mui/material";
 import WhyChooseUs from "../../components/Home/whyChooseUs.jsx";
 import WellbeingJourney from "../../components/Home/wellbeingJourney.jsx";
 import MileStones from "../../components/Home/MileStones.jsx";
+import WorkPlaceHeroSection from "../../components/Home/workPlaceHeroSection.jsx";
 
 function Home() {
     return (
         <>
             <Herosection/>
+            {/*<WorkPlaceHeroSection/>*/}
             <HowEmotionallyYoursinSchools/>
             <HowEmotionallyYoursWorksInHigherEducation/>
             <HowEmotionallyYoursinCoachingInstitute/>
@@ -42,15 +44,12 @@ function Home() {
             <WhyChooseUs/>
             {/*<HowSchoolWorks/>*/}
             <MileStones/>
-
             <WorksTable/>
-
-
             <Assessments/>
             <Struggling/>
             {/*<CaseStudy/>*/}
-
             <EmployeeMentalHealth/>
+
 
             {/*<Challenges/>*/}
             {/*<CorporateWellness/>*/}

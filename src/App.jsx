@@ -48,7 +48,8 @@ import Esop from "./components/Services/esop.jsx";
 import ShapeDesigne from "./components/Services/shapeDesigne.jsx";
 import Pep from "./components/Services/pep.jsx";
 import Careers from "./components/Careers/careers.jsx";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function App() {
     function ScrollToTop() {
         const {pathname} = useLocation();
@@ -57,6 +58,16 @@ function App() {
         }, [pathname]);
         return null;
     }
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            mirror: false,
+        });
+
+        AOS.refresh();
+    }, []);
 
     return (
         <>

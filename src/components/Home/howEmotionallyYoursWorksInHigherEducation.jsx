@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
     Box,
     Container,
@@ -10,6 +10,8 @@ import {
 } from '@mui/material';
 // import img1 from '../../assets/images/Home/works/higher-education.jpeg';
 import img1 from '../../assets/images/Photos/College.jpeg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ProcessStep = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -33,6 +35,8 @@ const StepNumber = styled(Box)(({ theme }) => ({
 
 const HowEmotionallyYoursWorksInHigherEducation = () => {
     const theme = useTheme();
+
+
 
     const steps = [
         {
@@ -64,16 +68,18 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
     return (
         <Container maxWidth="xl" >
             <Box textAlign="center" mb={{ xs: 4, md: 8 }}>
-                <Box className={"Montserrat"}
-                     sx={{
-                         fontSize: { xs: '32px', md: '40px' },
-                         marginBottom: "16px",
-                         lineHeight: 1.2,
-                         display: "flex",
-                         justifyContent: "center",
-                         color: "#012765",
-                         fontWeight: 700
-                     }}
+                <Box
+                    className="Montserrat"
+                    data-aos="zoom-in"
+                    sx={{
+                        fontSize: { xs: '32px', md: '40px' },
+                        marginBottom: '16px',
+                        lineHeight: 1.2,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        color: '#012765',
+                        fontWeight: 700,
+                    }}
                 >
                     How EmotionallYours Works in Higher Education
                 </Box>

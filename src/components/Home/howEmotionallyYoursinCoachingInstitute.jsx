@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
     Box,
     Container,
@@ -10,6 +10,8 @@ import {
 } from '@mui/material';
 // import img1 from '../../assets/images/Home/works/COACHING-INSTITUTE.png';
 import img1 from '../../assets/images/Photos/Coaching.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ProcessStep = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -33,6 +35,15 @@ const StepNumber = styled(Box)(({ theme }) => ({
 
 const HowEmotionallyYoursinCoachingInstitute = () => {
     const theme = useTheme();
+
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: false,     // Animate every time it enters
+            mirror: true,    // Animate on scrolling up too
+        });
+    }, []);
 
     const steps = [
         {
@@ -65,6 +76,7 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
         <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
             <Box textAlign="center" mb={{ xs: 4, md: 6 }}>
                 <Box className={"Montserrat"}
+                     data-aos="zoom-in"
                      sx={{
                          fontSize: { xs: '32px', md: '40px' },
                          marginBottom: "16px",

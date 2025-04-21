@@ -61,6 +61,7 @@ function WorksTable() {
     <Container fixed>
       <Box sx={{ padding: "96px 0 0 0" }}>
         <Typography
+            data-aos="zoom-in"
           className="Montserrat"
           variant="h4"
           align="center"

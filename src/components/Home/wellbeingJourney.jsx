@@ -69,7 +69,7 @@ const WellbeingJourney = () => {
         <Box sx={{ py: 12 }}>
             <Container maxWidth="xl">
                 <Box textAlign="center" mb={3}>
-                    <Typography variant="h4" className="Montserrat" sx={{
+                    <Typography data-aos="zoom-in" variant="h4" className="Montserrat" sx={{
                         fontSize: { xs: '32px', md: '40px' },
                         color: "#012765",
                         fontWeight: 700,
@@ -77,7 +77,7 @@ const WellbeingJourney = () => {
                     }}>
                         The wellbeing journey can be challenging,
                     </Typography>
-                    <Typography variant="h3" className="Montserrat" sx={{
+                    <Typography data-aos="zoom-in" variant="h3" className="Montserrat" sx={{
                         fontSize: { xs: '32px', md: '40px' },
                         color: "#012765",
                         fontWeight: 700
