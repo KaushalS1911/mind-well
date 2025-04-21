@@ -66,7 +66,7 @@ const WellbeingJourney = () => {
     ];
 
     return (
-        <Box sx={{ py: 12 }}>
+        <Box sx={{ py: 8 }}>
             <Container maxWidth="xl">
                 <Box textAlign="center" mb={3}>
                     <Typography data-aos="zoom-in" variant="h4" className="Montserrat" sx={{

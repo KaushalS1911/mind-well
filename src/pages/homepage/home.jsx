@@ -34,17 +34,17 @@ import WorkPlaceHeroSection from "../../components/Home/workPlaceHeroSection.jsx
 function Home() {
     return (
         <>
-            <Herosection/>
             {/*<WorkPlaceHeroSection/>*/}
+            <Herosection/>
+            <WellbeingJourney/>
+            <WhyChooseUs/>
+            <WorksTable/>
+            <MileStones/>
             <HowEmotionallyYoursinSchools/>
             <HowEmotionallyYoursWorksInHigherEducation/>
             <HowEmotionallyYoursinCoachingInstitute/>
             <HowEmotionallyYoursinWorkplaces/>
-            <WellbeingJourney/>
-            <WhyChooseUs/>
             {/*<HowSchoolWorks/>*/}
-            <MileStones/>
-            <WorksTable/>
             <Assessments/>
             <Struggling/>
             {/*<CaseStudy/>*/}
