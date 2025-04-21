@@ -82,16 +82,16 @@ const WellbeingJourney = () => {
                         color: "#012765",
                         fontWeight: 700
                     }}>
-                        but here's how we can make it easier.
+                        but here's how we can make it easier
                     </Typography>
                 </Box>
 
                 <Box textAlign="center" mb={6} px={2}>
                     <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
-                        Choose from a variety of wellness plans tailored to your needs.
+                        Choose from a variety of wellness plans tailored to your needs
                     </Typography>
                     <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
-                        Each plan includes personalised goals and expert guidance to help you achieve optimal well-being.
+                        Each plan includes personalised goals and expert guidance to help you achieve optimal well-being
                     </Typography>
                 </Box>
 
