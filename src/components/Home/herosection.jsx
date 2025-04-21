@@ -26,7 +26,7 @@ const services = [
     {
         title: 'Physical Health',
         items: [
-            'Preventive care',x
+            'Preventive care',
             'Acute illness treatment',
             'Chronic condition management'
         ],
