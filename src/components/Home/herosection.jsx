@@ -95,7 +95,7 @@ const Herosection = () => {
                         position: "relative",
                         mt: {md: 9, xs: 0},
                         color: "white",
-                        padding: "140px 0",
+                        padding: "200px 0",
                         height: "100%",
                         display: "flex",
                         alignItems: "center",
