@@ -113,8 +113,8 @@ function WorksTable() {
               <Box
                 sx={{
                   position: "absolute",
-                  top: "50%",
-                  left: "-1.7%",
+                  top: {lg:"50%",md:"50%",sm:"50%"},
+                  left: {lg:"-2.1%",md:"-2.8%",sm:"-4.8%"},
                   display: { xs: "none", sm: "inline-flex" },
                   alignItems: "center",
                   justifyContent: "center",
@@ -164,7 +164,8 @@ function WorksTable() {
                     fontSize: 14,
                   }}
                 >
-                  {index + 1}
+                  {/*{index + 1}*/}
+                  <CircleIcon/>
                 </Box>
                 <Grid container spacing={4}>
                   <Grid
