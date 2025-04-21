@@ -155,6 +155,7 @@ const HowEmotionallyYoursinSchools = () => {
                         }}>
                             <img
                                 src={img1}
+                                loading={'lazy'}
                                 alt="How EmotionallYours Works"
                                 style={{
                                     height: '100%',
