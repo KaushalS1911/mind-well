@@ -8,7 +8,8 @@ import {
     styled,
     useTheme
 } from '@mui/material';
-import img1 from '../../assets/images/Home/works/higher-education.jpeg';
+// import img1 from '../../assets/images/Home/works/higher-education.jpeg';
+import img1 from '../../assets/images/Photos/College.jpeg';
 
 const ProcessStep = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -109,7 +110,7 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
                                 style={{
                                     height: '100%',
                                     width: '100%',
-                                    objectFit: 'contain',
+                                    objectFit: 'cover',
                                 }}
                             />
                         </Box>

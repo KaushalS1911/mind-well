@@ -3,9 +3,13 @@ import { Box, Container, Grid, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
-import img1 from '../../assets/images/about/mission-vission-goals/vision.jpg';
-import img2 from '../../assets/images/about/mission-vission-goals/mission.jpg';
-import img3 from '../../assets/images/about/mission-vission-goals/goals.jpg';
+// import img1 from '../../assets/images/about/mission-vission-goals/vision.jpg';
+// import img2 from '../../assets/images/about/mission-vission-goals/mission.jpg';
+// import img3 from '../../assets/images/about/mission-vission-goals/goals.jpg';
+
+import img2 from '../../assets/images/Vectors/Mission.jpg';
+import img1 from '../../assets/images/Vectors/Vision.png';
+import img3 from '../../assets/images/Vectors/Goals.png';
 
 const StyledPaper = styled(Paper, {
     shouldForwardProp: (prop) => prop !== 'side'

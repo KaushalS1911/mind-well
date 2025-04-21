@@ -19,7 +19,8 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import {Controller, useForm} from "react-hook-form";
 import {Navigation, Pagination} from 'swiper/modules';
-import img1 from '../../assets/images/Home/Herosection/hero.jpg'
+// import img1 from '../../assets/images/Home/Herosection/hero.jpg'
+import img1 from '../../assets/images/Photos/Top Banner.jpg'
 
 const services = [
     {
