@@ -50,6 +50,7 @@ import Pep from "./components/Services/pep.jsx";
 import Careers from "./components/Careers/careers.jsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import WorkPlaceHeroSection from "./components/Home/workPlaceHeroSection.jsx";
 function App() {
     function ScrollToTop() {
         const {pathname} = useLocation();
@@ -76,6 +77,7 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home/>}/>
+                <Route path="/home1" element={<WorkPlaceHeroSection/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/Services" element={<Services/>}/>
                 <Route path="/services/SHAPE" element={<Shape/>}/>
