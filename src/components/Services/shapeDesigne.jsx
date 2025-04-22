@@ -249,7 +249,7 @@ export default function ShapeDesigne() {
                     <Grid container spacing={4} mb={8}>
                         <Grid item xs={12} lg={8}>
                             <Typography className={"Montserrat"} fontWeight="bold" gutterBottom
-                                        sx={{color: colors.primary, fontSize: "30px", mb: 3}}>
+                                        sx={{color: colors.primary, fontSize: "30px", mb: 3,letterSpacing: "-1px",}}>
                                 Comprehensive Emotional Wellness for Higher Education
                             </Typography>
                             <Typography variant="body1" paragraph color="text.secondary">

@@ -70,6 +70,7 @@ function WorksTable() {
                     gutterBottom
                     sx={{
                         fontSize: {xs: "32px", md: "40px"},
+                        letterSpacing: "-1px",
                     }}
                 >
                     How we Make a Difference
@@ -192,9 +193,9 @@ function WorksTable() {
                                         </Typography>
 
                                         {step.details.map((detail, i) => (
-                                            <Box key={i} display="flex" alignItems="center" mb={1}>
+                                            <Box key={i} display="flex" mb={1}>
                                                 <CheckCircleIcon
-                                                    sx={{color: "#FE6A00", mr: 1, fontSize: 20}}
+                                                    sx={{color: "#FE6A00", mr: 1,mt:0.5, fontSize: 20}}
                                                 />
                                                 <Typography
                                                     sx={{fontSize: {xs: 14, sm: 18}, lineHeight: 1.5}}

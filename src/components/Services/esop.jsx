@@ -245,7 +245,7 @@ export default function ESOPMUI() {
                                 className={"Montserrat"}
                                 fontWeight="bold"
                                 gutterBottom
-                                sx={{color: colors.primary, fontSize: "30px", mb: 3}}
+                                sx={{color: colors.primary, fontSize: "30px", mb: 3,letterSpacing: "-1px",}}
                             >
                                 Comprehensive Emotional Wellness for Workplace
                             </Typography>

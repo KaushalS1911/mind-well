@@ -109,13 +109,13 @@ function Mindwell() {
                                     {feature.title}
                                 </Box>
 
-                                <Box sx={{mb: 2, fontSize: "16px", color: "#4B5563",}}>
+                                <Box sx={{mb: 2, fontSize: "16px", color: "#4B5563",textAlign: "justify"}}>
                                     {feature.description}
                                 </Box>
 
                                 {feature.points.map((point, idx) => (
-                                    <Box key={idx} sx={{display: "flex", alignItems: "center", mb: 1}}>
-                                        <CheckCircleIcon sx={{color: "#FF7F1E", fontSize: 20, mr: 1}}/>
+                                    <Box key={idx} sx={{display: "flex",  mb: 1}}>
+                                        <CheckCircleIcon sx={{color: "#FF7F1E", fontSize: 20, mr: 1,mt:0.5}}/>
                                         <Box sx={{
                                             color: "#4B5563"
                                         }}>{point}</Box>

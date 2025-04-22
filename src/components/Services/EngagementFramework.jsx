@@ -269,7 +269,7 @@ const EngagementFramework = () => {
                                         <Box sx={{
                                             color: '#4B5563',
                                             fontSize: '16px',
-                                            fontFamily: 'Poppins, sans-serif'
+                                            fontFamily: 'Poppins, sans-serif',
                                         }}>
                                             {item}
                                         </Box>

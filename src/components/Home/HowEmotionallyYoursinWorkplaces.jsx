@@ -74,7 +74,8 @@ const HowEmotionallyYoursinWorkplaces = () => {
                          display: "flex",
                          justifyContent: "center",
                          color: "#012765",
-                         fontWeight: 700
+                         fontWeight: 700,
+                         letterSpacing: "-1px",
                      }}
                 >
                     How EmotionallYours Works in Workplaces
@@ -138,7 +139,8 @@ const HowEmotionallyYoursinWorkplaces = () => {
                                         fontSize: { xs: '16px', md: '18px' },
                                         fontWeight: 400,
                                         color: "#012765",
-                                        mb: 1
+                                        mb: 1,
+                                        textAlign:"justify",
                                     }}
                                 >
                                     {step.description}

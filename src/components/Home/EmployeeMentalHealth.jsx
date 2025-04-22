@@ -80,7 +80,8 @@ const EmployeeMentalHealth = () => {
                         fontSize: { xs: '32px', md: '40px' },
                         fontWeight: 700,
                         color: "#012765",
-                        mb: 2
+                        mb: 2,
+                        letterSpacing: "-1px",
                     }}
                 >
                     Employee Emotional Wellbeing Program
@@ -156,7 +157,7 @@ const EmployeeMentalHealth = () => {
                                     <Typography
                                         sx={{
                                             fontSize: { xs: '14px', sm: '15px' },
-                                            color: "#012765"
+                                            color: "#012765",
                                         }}
                                     >
                                         {stat.description}
@@ -184,7 +185,8 @@ const EmployeeMentalHealth = () => {
                             fontSize: { xs: '15px', sm: '17px' },
                             color: "#012765",
                             fontWeight: 400,
-                            mb: 3
+                            mb: 3,
+                            textAlign: "justify"
                         }}
                     >
                         Support your employees' mental health with our comprehensive workplace program designed for
@@ -211,7 +213,7 @@ const EmployeeMentalHealth = () => {
                                     <Box sx={{ fontSize: '17px', color: "#FF7F1E", fontWeight: 600, mb: 0.5 }}>
                                         {feature.title}
                                     </Box>
-                                    <Box sx={{ fontSize: '16px', color: "#012765", fontWeight: 500, letterSpacing: "-0.01rem" }}>
+                                    <Box sx={{ fontSize: '16px', color: "#012765", fontWeight: 500, letterSpacing: "-0.01rem",textAlign:"justify" }}>
                                         {feature.description}
                                     </Box>
                                 </Box>

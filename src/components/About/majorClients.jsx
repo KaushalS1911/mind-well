@@ -50,6 +50,7 @@ function MajorClients() {
                         lineHeight: "40px",
                         color: "#012765",
                         fontWeight: "700",
+                        letterSpacing: "-1px",
                     }}
                 >
                     Major Clients

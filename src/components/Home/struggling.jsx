@@ -103,7 +103,8 @@ function Struggling() {
                                 fontSize: { xs: '32px', md: '40px' },
                                 color: "#012765",
                                 fontWeight: "700",
-                                mb: 2
+                                mb: 2,
+                                letterSpacing: "-1px",
                             }}
                         >
                             What area would you like to focus on?

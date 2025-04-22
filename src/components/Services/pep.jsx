@@ -244,7 +244,7 @@ export default function PEPMUI() {
                                 className={"Montserrat"}
                                 fontWeight="bold"
                                 gutterBottom
-                                sx={{color: colors.primary, fontSize: "30px", mb: 3}}
+                                sx={{color: colors.primary, fontSize: "30px", mb: 3,letterSpacing: "-1px",}}
                             >
                                 Comprehensive Performance Enhancement Program
                             </Typography>

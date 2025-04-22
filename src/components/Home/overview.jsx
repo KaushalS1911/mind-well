@@ -17,6 +17,7 @@ function Overview() {
                     <Grid item xs={12} md={6}>
                         <Box>
                             <Typography
+                                className={"Montserrat"}
                                 variant="h3"
                                 fontWeight="700"
                                 lineHeight={1.2}
@@ -57,6 +58,7 @@ function Overview() {
                                         color: "text.secondary",
                                         lineHeight: 1.7,
                                         fontFamily: "Poppins",
+                                        textAlign:"justify",
                                     }}
                                 >
                                     EmotionallyYours is an initiative by MTPL, a private limited
@@ -74,6 +76,7 @@ function Overview() {
                                     color: "text.secondary",
                                     lineHeight: 1.7,
                                     fontFamily: "Poppins",
+                                    textAlign:"justify",
                                 }}
                             >
                                 Our mission is to empower individuals and organisations to build

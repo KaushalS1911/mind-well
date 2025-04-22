@@ -1,20 +1,20 @@
 import React from 'react';
 import {Box, Grid, Typography, Paper, Container, Divider} from '@mui/material';
 import {styled} from '@mui/system';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
-import Diversity1Icon from '@mui/icons-material/Diversity1';
 import img from '../../assets/images/Home/why-choose-us/why-choose-us.jpg';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import BarChartIcon from '@mui/icons-material/BarChart';
+import BuildIcon from '@mui/icons-material/Build';
 
 const leftCards = [
     {
-        icon: () => <Diversity1Icon fontSize="large" sx={{color: 'inherit'}}/>,
+        icon: () => <AssignmentIcon fontSize="large" sx={{color: 'inherit'}}/>,
         title: 'Policy Reference',
         description: 'Annual Curriculum designed basis NEP 2020 and National Suicide Prevention Strategy',
     },
     {
-        icon: () => <RocketLaunchIcon fontSize="large" sx={{color: 'inherit'}}/>,
+        icon: () => <BarChartIcon fontSize="large" sx={{color: 'inherit'}}/>,
         title: 'Measurable Metrices',
         description: 'Annual performance and growth are Data-Driven',
     },
@@ -22,12 +22,12 @@ const leftCards = [
 
 const rightCards = [
     {
-        icon: <EmojiObjectsIcon fontSize="large" sx={{color: 'inherit'}}/>,
+        icon: <LocalShippingIcon fontSize="large" sx={{color: 'inherit'}}/>,
         title: 'Delivery Structure',
         description: 'Programs are delivered by Qualified and Experienced Psychologist',
     },
     {
-        icon: <SupportAgentIcon fontSize="large" sx={{color: 'inherit'}}/>,
+        icon: <BuildIcon fontSize="large" sx={{color: 'inherit'}}/>,
         title: 'DIY Tools',
         description: 'Benefciaries get Self-Help tools through Freemium Mobile App',
     },
@@ -42,6 +42,7 @@ function WhyChooseUs() {
                     className={'Montserrat'} sx={{
                     fontSize: "40px",
                     marginBottom: "16px",
+                    letterSpacing: "-1px",
                     lineHeight: "40px",
                     display: "flex",
                     justifyContent: "center",

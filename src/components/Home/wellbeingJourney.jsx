@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Box,
     Typography,
@@ -29,100 +29,116 @@ import img4 from '../../assets/images/Home/wellbeing-journey/increase productivi
 import img5 from '../../assets/images/Home/wellbeing-journey/Improve Sleep.png';
 
 const WellbeingJourney = () => {
+    const [openCategory, setOpenCategory] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState(null);
+
+    useEffect(() => {
+        const savedCategory = localStorage.getItem('selectedCategory');
+        if (savedCategory) {
+            setSelectedCategory(savedCategory);
+        }
+    }, []);
 
     const categories = [
         {
             name: 'Feel Happier',
-            icon: <EmojiEmotionsIcon/>,
+            icon: <EmojiEmotionsIcon />,
             color: '#a98bf5',
             content: 'Discover techniques and practices to boost your mood, increase positive emotions, and find more joy in everyday experiences.',
             image: img,
         },
         {
             name: 'Be Mindful',
-            icon: <SpaIcon/>,
+            icon: <SpaIcon />,
             color: '#84c77a',
             content: 'Learn mindfulness techniques to stay present, appreciate each moment, and develop a deeper awareness of yourself and your surroundings.',
             image: img1,
         },
         {
             name: 'Reduce Worry',
-            icon: <PsychologyIcon/>,
+            icon: <PsychologyIcon />,
             color: '#e8a87c',
             content: 'Find effective strategies to manage excessive worry, overcome anxious thoughts, and develop a more peaceful mindset.',
             image: img2,
         },
         {
             name: 'Manage Stress',
-            icon: <SelfImprovementIcon/>,
+            icon: <SelfImprovementIcon />,
             color: '#66c7d4',
             content: 'Explore friendly approaches to handling stress, finding ways to navigate life\'s challenges with resilience and a calm, balanced mindset.',
             image: img3,
         },
         {
             name: 'Increase Productivity',
-            icon: <AlarmIcon/>,
+            icon: <AlarmIcon />,
             color: '#2dc692',
             content: 'Discover methods to enhance your focus, organize your tasks effectively, and accomplish your goals with greater efficiency and satisfaction.',
             image: img4,
         },
         {
             name: 'Improve Sleep',
-            icon: <NightsStayIcon/>,
+            icon: <NightsStayIcon />,
             color: '#4a77c5',
             content: 'Learn techniques for better sleep quality, establish healthy bedtime routines, and wake up feeling refreshed and energized.',
             image: img5,
         },
     ];
 
-    const selectedImage = categories.find(cat => cat.name === selectedCategory)?.image || img;
+    const selectedImage = selectedCategory
+        ? categories.find(cat => cat.name === selectedCategory)?.image
+        : categories[0].image; // Default to first category's image if none is selected
 
     return (
-        <Box sx={{py: 8}}>
+        <Box sx={{ py: 8 }}>
             <Container maxWidth="xl">
                 <Box textAlign="center" mb={3}>
                     <Typography
-                        // data-aos="zoom-in"
-                        variant="h4" className="Montserrat" sx={{
-                        fontSize: {xs: '28px', md: '40px'},
-                        color: "#012765",
-                        fontWeight: 700,
-                        mb: 1
-                    }}>
+                        variant="h4"
+                        className="Montserrat"
+                        sx={{
+                            fontSize: { xs: '28px', md: '40px' },
+                            letterSpacing: "-1px",
+                            color: "#012765",
+                            fontWeight: 700,
+                            mb: 1
+                        }}
+                    >
                         The path to emotional well-being can be tough
                     </Typography>
                     <Typography
-                        // data-aos="zoom-in"
-                        variant="h3" className="Montserrat" sx={{
-                        fontSize: {xs: '28px', md: '40px'},
-                        color: "#012765",
-                        fontWeight: 700
-                    }}>
+                        variant="h3"
+                        className="Montserrat"
+                        sx={{
+                            fontSize: { xs: '28px', md: '40px' },
+                            color: "#012765",
+                            fontWeight: 700
+                        }}
+                    >
                         here’s how we simplify it
                     </Typography>
                 </Box>
 
                 <Box textAlign="center" mb={6} px={2}>
-                    <Typography variant="h6" sx={{color: '#555', fontWeight: 400}}>
+                    <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
                         Select from a range of psychology-backed wellness plans tailored to your needs
                     </Typography>
-                    <Typography variant="h6" sx={{color: '#555', fontWeight: 400}}>
-                        Each plan offers personalized goals and expert-guided interventions to support your journey
-                        toward emotional and mental well-being
+                    <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
+                        Each plan offers personalized goals and expert-guided interventions to support your journey toward emotional and mental well-being
                     </Typography>
                 </Box>
 
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <Box sx={{
-                            height: '520px',
-                            width: '100%',
-                        }}>
+                        <Box sx={{ height: '520px', width: '100%' }}>
                             <img
                                 src={selectedImage}
                                 alt="Selected category"
-                                style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px"}}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                    borderRadius: "10px"
+                                }}
                             />
                         </Box>
                     </Grid>
@@ -130,20 +146,21 @@ const WellbeingJourney = () => {
                     <Grid item xs={12} md={6}>
                         <List>
                             {categories.map((category) => {
-                                const isSelected = selectedCategory === category.name;
+                                const isOpen = openCategory === category.name;
 
                                 return (
                                     <Paper
                                         key={category.name}
                                         onClick={() => {
-                                            if (!isSelected) {
-                                                setSelectedCategory(category.name);
-                                            }
+                                            const newIsOpen = openCategory === category.name ? null : category.name;
+                                            setOpenCategory(newIsOpen);
+                                            setSelectedCategory(category.name);
+                                            localStorage.setItem('selectedCategory', category.name);
                                         }}
                                         sx={{
                                             mb: 2,
                                             p: 2,
-                                            bgcolor: isSelected ? '#f0f7ff' : '#fff',
+                                            bgcolor: isOpen ? '#f0f7ff' : '#fff',
                                             cursor: 'pointer',
                                             borderRadius: "10px",
                                             boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
@@ -151,8 +168,8 @@ const WellbeingJourney = () => {
                                         }}
                                     >
                                         <Box display="flex" alignItems="center">
-                                            <ListItemIcon sx={{minWidth: 48}}>
-                                                <Avatar sx={{bgcolor: category.color}}>
+                                            <ListItemIcon sx={{ minWidth: 48 }}>
+                                                <Avatar sx={{ bgcolor: category.color }}>
                                                     {category.icon}
                                                 </Avatar>
                                             </ListItemIcon>
@@ -164,12 +181,12 @@ const WellbeingJourney = () => {
                                                 }
                                             />
                                             <IconButton edge="end" disableRipple>
-                                                {isSelected ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
+                                                {isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                                             </IconButton>
                                         </Box>
 
-                                        <Collapse in={isSelected} timeout="auto" unmountOnExit>
-                                            <Box sx={{mt: 2, pl: 2}}>
+                                        <Collapse in={isOpen} timeout="auto" unmountOnExit>
+                                            <Box sx={{ mt: 2, pl: 2 }}>
                                                 <Typography fontSize={16} color="text.secondary">
                                                     {category.content}
                                                 </Typography>
