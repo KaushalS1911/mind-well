@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
     Box,
     Typography,
     Container,
     Grid,
-    Card,
-    Avatar,
     List,
     ListItemIcon,
     ListItemText,
     Collapse,
     IconButton,
+    Avatar,
     Paper
 } from '@mui/material';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
@@ -21,7 +20,13 @@ import AlarmIcon from '@mui/icons-material/Alarm';
 import NightsStayIcon from '@mui/icons-material/NightsStay';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+
 import img from '../../assets/images/Home/wellbeing-journey/journey.jpg';
+import img1 from '../../assets/images/Home/wellbeing-journey/be mindfull.jpg';
+import img2 from '../../assets/images/Home/wellbeing-journey/reduce worry.png';
+import img3 from '../../assets/images/Home/wellbeing-journey/manage sterss.jpg';
+import img4 from '../../assets/images/Home/wellbeing-journey/increase productivity.png';
+import img5 from '../../assets/images/Home/wellbeing-journey/Improve Sleep.png';
 
 const WellbeingJourney = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -29,56 +34,68 @@ const WellbeingJourney = () => {
     const categories = [
         {
             name: 'Feel Happier',
-            icon: <EmojiEmotionsIcon />,
+            icon: <EmojiEmotionsIcon/>,
             color: '#a98bf5',
-            content: 'Discover techniques and practices to boost your mood, increase positive emotions, and find more joy in everyday experiences.'
+            content: 'Discover techniques and practices to boost your mood, increase positive emotions, and find more joy in everyday experiences.',
+            image: img,
         },
         {
             name: 'Be Mindful',
-            icon: <SpaIcon />,
+            icon: <SpaIcon/>,
             color: '#84c77a',
-            content: 'Learn mindfulness techniques to stay present, appreciate each moment, and develop a deeper awareness of yourself and your surroundings.'
+            content: 'Learn mindfulness techniques to stay present, appreciate each moment, and develop a deeper awareness of yourself and your surroundings.',
+            image: img1,
         },
         {
             name: 'Reduce Worry',
-            icon: <PsychologyIcon />,
+            icon: <PsychologyIcon/>,
             color: '#e8a87c',
-            content: 'Find effective strategies to manage excessive worry, overcome anxious thoughts, and develop a more peaceful mindset.'
+            content: 'Find effective strategies to manage excessive worry, overcome anxious thoughts, and develop a more peaceful mindset.',
+            image: img2,
         },
         {
             name: 'Manage Stress',
-            icon: <SelfImprovementIcon />,
+            icon: <SelfImprovementIcon/>,
             color: '#66c7d4',
-            content: 'Explore friendly approaches to handling stress, finding ways to navigate life\'s challenges with resilience and a calm, balanced mindset.'
+            content: 'Explore friendly approaches to handling stress, finding ways to navigate life\'s challenges with resilience and a calm, balanced mindset.',
+            image: img3,
         },
         {
             name: 'Increase Productivity',
-            icon: <AlarmIcon />,
+            icon: <AlarmIcon/>,
             color: '#2dc692',
-            content: 'Discover methods to enhance your focus, organize your tasks effectively, and accomplish your goals with greater efficiency and satisfaction.'
+            content: 'Discover methods to enhance your focus, organize your tasks effectively, and accomplish your goals with greater efficiency and satisfaction.',
+            image: img4,
         },
         {
             name: 'Improve Sleep',
-            icon: <NightsStayIcon />,
+            icon: <NightsStayIcon/>,
             color: '#4a77c5',
-            content: 'Learn techniques for better sleep quality, establish healthy bedtime routines, and wake up feeling refreshed and energized.'
+            content: 'Learn techniques for better sleep quality, establish healthy bedtime routines, and wake up feeling refreshed and energized.',
+            image: img5,
         },
     ];
 
+    const selectedImage = categories.find(cat => cat.name === selectedCategory)?.image || img;
+
     return (
-        <Box sx={{ py: 8 }}>
+        <Box sx={{py: 8}}>
             <Container maxWidth="xl">
                 <Box textAlign="center" mb={3}>
-                    <Typography data-aos="zoom-in" variant="h4" className="Montserrat" sx={{
-                        fontSize: { xs: '32px', md: '40px' },
+                    <Typography
+                        // data-aos="zoom-in"
+                        variant="h4" className="Montserrat" sx={{
+                        fontSize: {xs: '28px', md: '40px'},
                         color: "#012765",
                         fontWeight: 700,
                         mb: 1
                     }}>
                         The path to emotional well-being can be tough
                     </Typography>
-                    <Typography data-aos="zoom-in" variant="h3" className="Montserrat" sx={{
-                        fontSize: { xs: '32px', md: '40px' },
+                    <Typography
+                        // data-aos="zoom-in"
+                        variant="h3" className="Montserrat" sx={{
+                        fontSize: {xs: '28px', md: '40px'},
                         color: "#012765",
                         fontWeight: 700
                     }}>
@@ -87,21 +104,25 @@ const WellbeingJourney = () => {
                 </Box>
 
                 <Box textAlign="center" mb={6} px={2}>
-                    <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
+                    <Typography variant="h6" sx={{color: '#555', fontWeight: 400}}>
                         Select from a range of psychology-backed wellness plans tailored to your needs
                     </Typography>
-                    <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
-                        Each plan offers personalized goals and expert-guided interventions to support your journey toward emotional and mental well-being
+                    <Typography variant="h6" sx={{color: '#555', fontWeight: 400}}>
+                        Each plan offers personalized goals and expert-guided interventions to support your journey
+                        toward emotional and mental well-being
                     </Typography>
                 </Box>
 
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <Box>
+                        <Box sx={{
+                            height: '520px',
+                            width: '100%',
+                        }}>
                             <img
-                                src={img}
-                                alt="Why choose us"
-                                style={{ width: '100%', height: '100%', objectFit: 'cover',borderRadius:"10px" }}
+                                src={selectedImage}
+                                alt="Selected category"
+                                style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: "10px"}}
                             />
                         </Box>
                     </Grid>
@@ -114,9 +135,11 @@ const WellbeingJourney = () => {
                                 return (
                                     <Paper
                                         key={category.name}
-                                        onClick={() =>
-                                            setSelectedCategory(prev => prev === category.name ? null : category.name)
-                                        }
+                                        onClick={() => {
+                                            if (!isSelected) {
+                                                setSelectedCategory(category.name);
+                                            }
+                                        }}
                                         sx={{
                                             mb: 2,
                                             p: 2,
@@ -128,8 +151,8 @@ const WellbeingJourney = () => {
                                         }}
                                     >
                                         <Box display="flex" alignItems="center">
-                                            <ListItemIcon sx={{ minWidth: 48 }}>
-                                                <Avatar sx={{ bgcolor: category.color }}>
+                                            <ListItemIcon sx={{minWidth: 48}}>
+                                                <Avatar sx={{bgcolor: category.color}}>
                                                     {category.icon}
                                                 </Avatar>
                                             </ListItemIcon>
@@ -141,12 +164,12 @@ const WellbeingJourney = () => {
                                                 }
                                             />
                                             <IconButton edge="end" disableRipple>
-                                                {isSelected ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                                                {isSelected ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
                                             </IconButton>
                                         </Box>
 
                                         <Collapse in={isSelected} timeout="auto" unmountOnExit>
-                                            <Box sx={{ mt: 2, pl: 2 }}>
+                                            <Box sx={{mt: 2, pl: 2}}>
                                                 <Typography fontSize={16} color="text.secondary">
                                                     {category.content}
                                                 </Typography>
@@ -158,7 +181,6 @@ const WellbeingJourney = () => {
                         </List>
                     </Grid>
                 </Grid>
-
             </Container>
         </Box>
     );

@@ -1,98 +1,78 @@
 import React from 'react';
-import {Box, Container, Grid, Typography} from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
+import img1 from '../../assets/images/Home/our-impact/our-impact.jpg';
 
 function MileStones() {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.3
+    });
+
     return (
         <Container maxWidth="xl">
             <Box
+                ref={ref}
                 sx={{
-                    backgroundColor: "#002F6C",
+                    position: "relative",
                     borderRadius: "16px",
-                    color: "white",
+                    overflow: "hidden",
                     mt: 7,
+                    color: "white",
                     py: 6,
                     px: 4,
                     textAlign: "center",
+                    backgroundImage: `url(${img1})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "bottom",
+                    backgroundRepeat: "no-repeat",
                 }}
             >
-                <Typography
-                    className="Montserrat"
-                    variant="h4"
-                    fontWeight="bold"
-                    sx={{ mb: 5 ,textAlign: "start",ml:5 }}
-                >
-                    Our Impact
-                </Typography>
+                <Box
+                    sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        backgroundColor: "rgba(0, 0, 0, 0.8)",
+                        zIndex: 1,
+                    }}
+                />
 
-                <Grid container spacing={4} justifyContent="center">
-                    <Grid item xs={6} sm={3}>
-                        <Typography
-                            variant="h3"
-                            sx={{ color: "#FF7F1E", fontWeight: "700" }}
-                        >
-                            150K+
-                        </Typography>
-                        <Box
-                            sx={{
-                                fontSize: "18px",
-                                color: "#D1E1FF",
-                            }}
-                        >
-                            Lives Impacted
-                        </Box>
-                    </Grid>
+                <Box sx={{ position: "relative", zIndex: 2 }}>
+                    <Typography
+                        className="Montserrat"
+                        variant="h4"
+                        fontWeight="bold"
+                        sx={{ mb: 5, textAlign: "start", ml: 5 }}
+                    >
+                        Our Impact
+                    </Typography>
 
-                    <Grid item xs={6} sm={3}>
-                        <Typography
-                            variant="h3"
-                            sx={{ color: "#FF7F1E", fontWeight: "700" }}
-                        >
-                            5000+
-                        </Typography>
-                        <Box
-                            sx={{
-                                fontSize: "18px",
-                                color: "#D1E1FF",
-                            }}
-                        >
-                            Sessions
-                        </Box>
+                    <Grid container spacing={4} justifyContent="center">
+                        {[
+                            { end: 150, suffix: "K+", label: "Lives Impacted" },
+                            { end: 5000, suffix: "+", label: "Sessions" },
+                            { end: 100, suffix: "+", label: "Suicides Prevented" },
+                            { end: 86, suffix: "%", label: "Improved Behavior Reported" },
+                        ].map((item, index) => (
+                            <Grid item xs={6} sm={3} key={index}>
+                                <Typography variant="h3" sx={{ color: "#FF7F1E", fontWeight: 700 }}>
+                                    {inView ? (
+                                        <CountUp end={item.end} duration={2} separator="," suffix={item.suffix} />
+                                    ) : (
+                                        `0${item.suffix}`
+                                    )}
+                                </Typography>
+                                <Box sx={{ fontSize: "18px", color: "#D1E1FF" }}>
+                                    {item.label}
+                                </Box>
+                            </Grid>
+                        ))}
                     </Grid>
-
-                    <Grid item xs={6} sm={3}>
-                        <Typography
-                            variant="h3"
-                            sx={{ color: "#FF7F1E", fontWeight: "700" }}
-                        >
-                            100+
-                        </Typography>
-                        <Box
-                            sx={{
-                                fontSize: "18px",
-                                color: "#D1E1FF",
-                            }}
-                        >
-                            Suicides Prevented
-                        </Box>
-                    </Grid>
-
-                    <Grid item xs={6} sm={3}>
-                        <Typography
-                            variant="h3"
-                            sx={{ color: "#FF7F1E", fontWeight: "700" }}
-                        >
-                            86%
-                        </Typography>
-                        <Box
-                            sx={{
-                                fontSize: "18px",
-                                color: "#D1E1FF",
-                            }}
-                        >
-                            Improved Behavior Reported
-                        </Box>
-                    </Grid>
-                </Grid>
+                </Box>
             </Box>
         </Container>
     );

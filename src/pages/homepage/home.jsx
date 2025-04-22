@@ -31,12 +31,14 @@ import WellbeingJourney from "../../components/Home/wellbeingJourney.jsx";
 import MileStones from "../../components/Home/MileStones.jsx";
 import WorkPlaceHeroSection from "../../components/Home/workPlaceHeroSection.jsx";
 import MajorClients from "../../components/About/majorClients.jsx";
+import Overview from "../../components/Home/overview.jsx";
 
 function Home() {
     return (
         <>
             {/*<WorkPlaceHeroSection/>*/}
             <Herosection/>
+            <Overview/>
             <WellbeingJourney/>
             <WhyChooseUs/>
             <WorksTable/>

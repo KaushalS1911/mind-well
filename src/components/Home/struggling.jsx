@@ -14,11 +14,11 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import img1 from "../../assets/images/Home/Struggling/Anxiety.webp";
 import img2 from "../../assets/images/Home/Struggling/Depression.webp";
 import img3 from "../../assets/images/Home/Struggling/stres.jpg";
-import img4 from "../../assets/images/Home/Struggling/Relationships.png";
-import img5 from "../../assets/images/Home/Struggling/Trauma.jpg";
+import img4 from "../../assets/images/Home/Struggling/Relationships1.jpg";
+import img5 from "../../assets/images/Home/Struggling/Trauma1.jpg";
 import img6 from "../../assets/images/Home/Struggling/Addiction1.jpg";
-import img7 from "../../assets/images/Home/Struggling/Self-esteem.webp";
-import img8 from "../../assets/images/Home/Struggling/Grief & Loss.png";
+import img7 from "../../assets/images/Home/Struggling/Self-esteem1.jpg";
+import img8 from "../../assets/images/Home/Struggling/Grief & Loss1.jpg";
 
 const struggling = [
     {
@@ -97,7 +97,7 @@ function Struggling() {
                 <Box sx={{ textAlign: "center" }}>
                     <Box sx={{ mb: 4 }}>
                         <Box
-                            data-aos="zoom-in"
+                            // data-aos="zoom-in"
                             className={"Montserrat"}
                             sx={{
                                 fontSize: { xs: '32px', md: '40px' },
@@ -134,7 +134,7 @@ function Struggling() {
                                         height: "100%",
                                         cursor: "pointer",
                                         "&:hover": {
-                                            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+                                            boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
                                         },
                                         display: "flex",
                                         flexDirection: "column",

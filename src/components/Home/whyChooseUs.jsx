@@ -36,8 +36,10 @@ const rightCards = [
 function WhyChooseUs() {
     return (
         <Box>
-            <Container maxWidth="xl" >
-                <Box data-aos="zoom-in" className={'Montserrat'} sx={{
+            <Container maxWidth="xl">
+                <Box
+                    // data-aos="zoom-in"
+                    className={'Montserrat'} sx={{
                     fontSize: "40px",
                     marginBottom: "16px",
                     lineHeight: "40px",
@@ -85,7 +87,7 @@ function WhyChooseUs() {
                                                     },
                                                 }}
                                             >
-                                            <Box mb={1} sx={{color: 'inherit'}}>
+                                                <Box mb={1} sx={{color: 'inherit'}}>
                                                     {item.icon()}
                                                 </Box>
                                                 <Typography fontSize={22} fontWeight="bold" mb={1}>

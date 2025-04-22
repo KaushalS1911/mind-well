@@ -3,9 +3,6 @@ import { Box, Container, Grid, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
-// import img1 from '../../assets/images/about/mission-vission-goals/vision.jpg';
-// import img2 from '../../assets/images/about/mission-vission-goals/mission.jpg';
-// import img3 from '../../assets/images/about/mission-vission-goals/goals.jpg';
 
 import img2 from '../../assets/images/Vectors/Mission.jpg';
 import img1 from '../../assets/images/Vectors/Vision.png';
@@ -42,7 +39,7 @@ const sections = [
         icon: <VisibilityIcon sx={{ fontSize: 32, color: "#012765" }} />,
         content: [
             "At EmotionallYours, we envision becoming India’s leading platform for emotional wellness—dedicated to shaping emotionally intelligent, resilient, and high-achieving individuals across academic and professional landscapes.",
-            "We see a future where every student and professional are equipped with the right emotional guidance and digital tools to unlock their true potential and leave a meaningful imprint on the world. By elevating productivity, strengthening emotional depth, nurturing essential life skills, and enabling growth-centric environments, we are committed to creating lasting, measurable change that empowers people to thrive.",
+            "We see a future where every student and professional is equipped with the right emotional guidance and digital tools to unlock their true potential and leave a meaningful imprint on the world. By elevating productivity, strengthening emotional depth, nurturing essential life skills, and enabling growth-centric environments, we are committed to creating lasting, measurable change that empowers people to thrive.",
         ],
         image: img1,
     },
@@ -73,10 +70,9 @@ const VisionMission = () => {
                 <Box className="Montserrat" sx={{
                     fontSize: { xs: '32px', md: '40px' },
                     mb: 2,
-                    lineHeight: { xs: '32px', sm: '36px', md: '40px' },
                     textAlign: 'center',
                     color: '#012765',
-                    fontWeight: 700
+                    fontWeight: 700,
                 }}>
                     Vision, Mission & Goals
                 </Box>
@@ -88,17 +84,23 @@ const VisionMission = () => {
                     color: "#4B5563",
                     textAlign: "center",
                     lineHeight: { xs: "24px", md: "28px" },
-                    px: { xs: 2, sm: 0 }
+                    px: { xs: 2, sm: 0 },
                 }}>
                     Empowering minds, nurturing well-being, and fostering academic excellence through comprehensive emotional support
                 </Box>
 
-                <Grid container spacing={2}>
+                <Grid container spacing={6}>
                     {sections.map((section, index) => {
                         const isEven = index % 2 === 0;
                         return (
                             <Grid item xs={12} key={index}>
-                                <Grid container spacing={4} alignItems="center" direction={{ xs: 'column', md: 'row' }}>
+                                <Grid
+                                    container
+                                    spacing={4}
+                                    alignItems="center"
+                                    direction={{ xs: 'column', md: 'row' }}
+                                >
+                                    {/* Text Block */}
                                     <Grid
                                         item
                                         xs={12}
@@ -107,12 +109,19 @@ const VisionMission = () => {
                                     >
                                         <StyledPaper elevation={3} side={isEven ? 'left' : 'right'}>
                                             <Box sx={{
-                                                fontSize: { xs: "20px", md: "24px" },
-                                                fontWeight: 700,
-                                                color: "#012765",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: 1,
                                                 mb: 2,
                                             }}>
-                                                {section.title}
+                                                {section.icon}
+                                                <Box sx={{
+                                                    fontSize: { xs: "21px", md: "25px" },
+                                                    fontWeight: 700,
+                                                    color: "#012765",
+                                                }}>
+                                                    {section.title}
+                                                </Box>
                                             </Box>
 
                                             {section.content.map((item, i) => (
@@ -120,8 +129,9 @@ const VisionMission = () => {
                                                     key={i}
                                                     sx={{
                                                         mb: i === section.content.length - 1 ? 2 : 1,
-                                                        fontSize: { xs: "14px", md: "16px" },
+                                                        fontSize: { xs: "15px", md: "17px" },
                                                         color: "#4B5563",
+                                                        textAlign:"justify",
                                                     }}
                                                 >
                                                     {item}
@@ -129,6 +139,8 @@ const VisionMission = () => {
                                             ))}
                                         </StyledPaper>
                                     </Grid>
+
+                                    {/* Image Block */}
                                     <Grid
                                         item
                                         xs={12}
@@ -136,14 +148,14 @@ const VisionMission = () => {
                                         order={{ xs: 1, md: isEven ? 2 : 1 }}
                                         sx={{
                                             display: 'flex',
-                                            justifyContent: { xs: 'center', md: isEven ? 'flex-end' : 'flex-start' },
-                                            alignItems: 'center'
+                                            justifyContent: { xs: 'center', md: isEven ? 'flex-center' : 'flex-center' },
+                                            alignItems: 'center',
                                         }}
                                     >
                                         <Box
                                             sx={{
                                                 width: '100%',
-                                                maxWidth: { xs: 300, sm: 400 },
+                                                maxWidth: 250,
                                                 borderRadius: '12px',
                                                 overflow: 'hidden',
                                             }}

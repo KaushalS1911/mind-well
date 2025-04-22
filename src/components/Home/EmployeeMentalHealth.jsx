@@ -74,7 +74,7 @@ const EmployeeMentalHealth = () => {
         <Container maxWidth="xl" sx={{ pb: 8 }}>
             <Box textAlign="center" mb={6}>
                 <Box className={"Montserrat"}
-                     data-aos="zoom-in"
+                     // data-aos="zoom-in"
                     variant="h4"
                     sx={{
                         fontSize: { xs: '32px', md: '40px' },

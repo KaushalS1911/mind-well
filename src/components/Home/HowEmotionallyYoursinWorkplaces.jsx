@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 // import img1 from '../../assets/images/Home/works/workplaces.png';
 import img1 from '../../assets/images/Photos/Workplace.jpeg';
+import CircleIcon from "@mui/icons-material/Circle";
 
 const ProcessStep = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -65,7 +66,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
         <Container maxWidth="xl" >
             <Box textAlign="center" mb={{ xs: 6, md: 8 }}>
                 <Box className={"Montserrat"}
-                     data-aos="zoom-in"
+                     // data-aos="zoom-in"
                      sx={{
                          fontSize: { xs: '32px', md: '40px' },
                          marginBottom: "16px",
@@ -120,7 +121,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
                 <Grid item xs={12} md={6}>
                     {steps.map((step) => (
                         <ProcessStep key={step.number}>
-                            <StepNumber sx={{ mt: 0.5 }}>{step.number}</StepNumber>
+                            <StepNumber><CircleIcon/></StepNumber>
                             <Box>
                                 <Typography
                                     sx={{
