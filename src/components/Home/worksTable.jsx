@@ -38,7 +38,7 @@ const steps = [
     },
     {
         image: img4,
-        title: "Inight-Driven Personalised Enrichment",
+        title: "Insight-Driven Personalised Enrichment",
         details: [
             "Curate meticulously designed sessions for profound growth.",
             "Provide customised guidance to cultivate essential life skills.",

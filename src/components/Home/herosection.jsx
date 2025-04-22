@@ -30,7 +30,6 @@ const Herosection = () => {
                     mt: { md: 12, xs: 0 },
                     padding: { xs: '180px 0', md: '290px 0' },
                     height: "100%",
-                    width: "100%",
                     display: "flex",
                     alignItems: "center",
                     overflow: "hidden",
@@ -44,9 +43,9 @@ const Herosection = () => {
                         width: "100%",
                         height: "100%",
                         backgroundImage: `url(${img1})`,
-                        backgroundSize: "contain",
-                        // backgroundRepeat: "no-repeat",
-                        backgroundPosition: "ended",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
                         zIndex: 1,
                     }}
                 />
