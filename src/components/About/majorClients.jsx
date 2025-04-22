@@ -41,7 +41,7 @@ function MajorClients() {
     return (
         <Box sx={{ py: 10 }}>
             {/* Section Heading */}
-            <Box sx={{ mb: 10, textAlign: "center" }}>
+            <Box sx={{ mb: 5, textAlign: "center" }}>
                 <Box
                     // data-aos="zoom-in"
                     className="Montserrat"
@@ -50,19 +50,10 @@ function MajorClients() {
                         lineHeight: "40px",
                         color: "#012765",
                         fontWeight: "700",
-                        mb: 3,
                     }}
                 >
                     Major Clients
                 </Box>
-                <Box
-                    sx={{
-                        border: "2px solid #012765",
-                        width: { xs: "20%", sm: "10%", md: "7%", lg: "5%" },
-                        height: "1px",
-                        margin: "0 auto",
-                    }}
-                />
             </Box>
 
             <Container maxWidth="lg">
