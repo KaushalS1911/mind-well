@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import img1 from '../../assets/images/Vectors/hero.png';
 
 // Title words
-const TITLES = ["Students", "Aspirants", "Employees"];
+const TITLES = ["Students.", "Aspirants.", "Employees."];
 const TITLE_CHANGE_DELAY = 3500;
 
 const Herosection = () => {
