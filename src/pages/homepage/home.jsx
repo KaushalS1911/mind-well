@@ -30,6 +30,7 @@ import WhyChooseUs from "../../components/Home/whyChooseUs.jsx";
 import WellbeingJourney from "../../components/Home/wellbeingJourney.jsx";
 import MileStones from "../../components/Home/MileStones.jsx";
 import WorkPlaceHeroSection from "../../components/Home/workPlaceHeroSection.jsx";
+import MajorClients from "../../components/About/majorClients.jsx";
 
 function Home() {
     return (
@@ -49,6 +50,7 @@ function Home() {
             <Struggling/>
             {/*<CaseStudy/>*/}
             <EmployeeMentalHealth/>
+            <MajorClients/>
 
 
             {/*<Challenges/>*/}
