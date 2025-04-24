@@ -8,9 +8,7 @@ import {
     styled,
     useTheme
 } from '@mui/material';
-// import img1 from '../../assets/images/Home/works/higher-education.jpeg';
 import img1 from '../../assets/images/Photos/higher-education.jpg';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CircleIcon from "@mui/icons-material/Circle";
 
