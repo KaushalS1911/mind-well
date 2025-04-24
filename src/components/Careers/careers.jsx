@@ -217,7 +217,7 @@ function Careers() {
             </Box> */}
 
             {/* Application Form */}
-            <Box sx={{py: 10}}>
+            <Box sx={{pt: 10}}>
                 <Container maxWidth="md">
                     <StyledPaper elevation={3}>
                         <Typography variant="h5" fontWeight="bold" gutterBottom sx={{color: '#012765', mb: 4}}>

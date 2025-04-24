@@ -35,7 +35,7 @@ const paymentMethods = ["VISA", "MC", "AMEX", "HSA"];
 
 const Footer = () => {
     return (
-        <Box sx={{backgroundColor: "#002b5c", color: "white", padding: "64px 20px 32px"}}>
+        <Box sx={{backgroundColor: "#002b5c", color: "white", padding: "64px 20px 32px",mt:10}}>
             <Container maxWidth="xl">
                 <Grid container spacing={4} justifyContent="center">
                     <Grid item xs={12} lg={5} >

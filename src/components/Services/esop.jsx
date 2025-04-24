@@ -369,7 +369,7 @@ export default function ESOPMUI() {
                         ))}
                     </Grid>
                 </Box>
-                <Box sx={{p: "20px 0 96px 0"}}>
+                <Box sx={{p: "20px 0 0 0"}}>
                     <Typography
                         className={"Montserrat"}
                         variant="h4"

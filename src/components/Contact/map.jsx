@@ -5,7 +5,7 @@ import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 
 function Map() {
     return (
-        <Container maxWidth="xl" sx={{p: "0 0 96px 0"}}>
+        <Container maxWidth="xl">
             <Box
                 sx={{
                     backgroundColor: "#f2f2f5",

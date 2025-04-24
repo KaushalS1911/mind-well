@@ -344,7 +344,7 @@ export default function ShapePlusMUI() {
                     </Grid>
                 </Box>
                 {/* FAQs Section */}
-                <Box sx={{p: "20px 0 96px 0"}}>
+                <Box sx={{p: "20px 0 0 0"}}>
                     <Typography
                         className={"Montserrat"}
                         variant="h4"

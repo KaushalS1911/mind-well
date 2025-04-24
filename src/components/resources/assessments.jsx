@@ -101,7 +101,7 @@ function Assessments() {
 
     return (
         <Container maxWidth="xl">
-            <Box sx={{ p: "96px 0", mt: {md: 5, xs: 0}}}>
+            <Box sx={{ p: "96px 0 0 0", mt: {md: 5, xs: 0}}}>
                 <Box sx={{p: {xs: 3, md: 5}, bgcolor: "#012765", borderRadius: 3, color: "#fff"}}>
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={12}>

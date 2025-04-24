@@ -51,6 +51,7 @@ import Careers from "./components/Careers/careers.jsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import WorkPlaceHeroSection from "./components/Home/workPlaceHeroSection.jsx";
+
 function App() {
     function ScrollToTop() {
         const {pathname} = useLocation();

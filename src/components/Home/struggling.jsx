@@ -92,7 +92,7 @@ const features = [
 
 function Struggling() {
     return (
-        <Box sx={{ padding: "0 0 96px 0" }}>
+        <Box sx={{ padding: "96px 0" }}>
             <Container maxWidth="xl">
                 <Box sx={{ textAlign: "center" }}>
                     <Box sx={{ mb: 4 }}>
