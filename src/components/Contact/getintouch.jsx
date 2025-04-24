@@ -19,7 +19,7 @@ import {
     MenuItem,
     FormHelperText
 } from "@mui/material";
-import {Facebook, Twitter, Instagram, LinkedIn, ExpandMore} from "@mui/icons-material";
+import {Facebook, Twitter, Instagram, LinkedIn, ExpandMore, YouTube} from "@mui/icons-material";
 import {Phone, Email, LocationOn} from "@mui/icons-material";
 
 const GetInTouch = () => {
@@ -62,10 +62,10 @@ const GetInTouch = () => {
     ];
 
     const socialMediaLinks = [
-        {name: "Facebook", icon: <Facebook fontSize="medium"/>, url: "https://www.facebook.com"},
-        {name: "Twitter", icon: <Twitter fontSize="medium"/>, url: "https://www.twitter.com"},
-        {name: "Instagram", icon: <Instagram fontSize="medium"/>, url: "https://www.instagram.com"},
-        {name: "LinkedIn", icon: <LinkedIn fontSize="medium"/>, url: "https://www.linkedin.com"}
+        {icon: <LinkedIn/>, link: "https://www.linkedin.com/company/emotionallyours/"},
+        {icon: <Facebook/>, link: "https://www.facebook.com/share/1AmSYda79K/"},
+        {icon: <Instagram/>, link: "https://www.instagram.com/mann_miitr?igsh=cWp1aWNiNm1vNzNx"},
+        {icon: <YouTube/>, link: "https://youtube.com/@emotionallyours?si=6h0Su7ZsmTpj0QbL"},
     ];
 
     return (
@@ -86,7 +86,7 @@ const GetInTouch = () => {
                      sx={{
                          color: "#002D62",
                          margin: "0 0 16px",
-                         fontSize: { xs: '32px', md: '40px' },
+                         fontSize: {xs: '32px', md: '40px'},
                          lineHeight: {xs: "32px", sm: "40px"},
                          fontWeight: "700"
                      }}
@@ -97,7 +97,7 @@ const GetInTouch = () => {
                     sx={{
                         color: "#4F4F4F",
                         maxWidth: "600px",
-                        fontSize: { xs: "16px", md: "20px" },
+                        fontSize: {xs: "16px", md: "20px"},
                         textAlign: "center"
                     }}
                 >
@@ -444,24 +444,23 @@ const GetInTouch = () => {
                                     </Box>
 
                                     {/* Social Media Icons - Dynamically Rendered */}
-                                    <Box sx={{display: "flex", gap: 2}}>
-                                        {socialMediaLinks.map((social, index) => (
+                                    <Box sx={{display: "flex", gap: 2, mt: 2}}>
+                                        {socialMediaLinks.map((item, index) => (
                                             <IconButton
                                                 key={index}
+                                                component={Link}
+                                                href={item.link}
                                                 sx={{
+                                                    padding: "10px 10px",
                                                     backgroundColor: "#002D62",
+                                                    borderRadius: "50%",
                                                     color: "white",
-                                                    width: 40,
-                                                    height: 40,
-                                                    "&:hover": {backgroundColor: "#001B44"}
+                                                    '&:hover': {
+                                                        backgroundColor: "#002D62",
+                                                    }
                                                 }}
-                                                component="a"
-                                                href={social.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label={social.name}
                                             >
-                                                {social.icon}
+                                                {item.icon}
                                             </IconButton>
                                         ))}
                                     </Box>
@@ -545,7 +544,7 @@ const GetInTouch = () => {
                                             "&:hover": {color: "#012765"}
                                         }}
                                         component="a"
-                                        href="/faqs"
+                                        // href="/faqs"
                                     >
                                         View all FAQs →
                                     </Box>

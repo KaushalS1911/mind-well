@@ -3,11 +3,10 @@ import {
     Box,
     Container
 } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import { AnimatePresence, motion } from "framer-motion";
-import img1 from '../../assets/images/Vectors/hero.png';
+import img1 from '../../assets/images/Vectors/herosection12.png';
 
-// Title words
+
 const TITLES = ["Students.", "Aspirants.", "Employees."];
 const TITLE_CHANGE_DELAY = 3500;
 
@@ -28,7 +27,7 @@ const Herosection = () => {
                 sx={{
                     position: "relative",
                     mt: { md: 12, xs: 0 },
-                    padding: { xs: '180px 0', md: '290px 0' },
+                    padding: { xs: '180px 0', md: '230px 0' },
                     height: "100%",
                     display: "flex",
                     alignItems: "center",
@@ -45,10 +44,14 @@ const Herosection = () => {
                         backgroundImage: `url(${img1})`,
                         backgroundSize: "cover",
                         backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
+                        backgroundPosition: {
+                            xs: "right",
+                            sm: "center",
+                        },
                         zIndex: 1,
                     }}
                 />
+
 
                 <Box
                     sx={{
