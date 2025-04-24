@@ -4,7 +4,7 @@ import {
     Container
 } from '@mui/material';
 import { AnimatePresence, motion } from "framer-motion";
-import img1 from '../../assets/images/Vectors/herosection12.png';
+import img1 from '../../assets/images/Vectors/hero.png';
 
 
 const TITLES = ["Students.", "Aspirants.", "Employees."];

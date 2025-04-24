@@ -24,8 +24,7 @@ import {
     ArrowForward,
     FiberManualRecord,
 } from "@mui/icons-material";
-import img1 from "../../assets/images/Services/pep.png";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import img1 from "../../assets/images/Services/pep1.png";
 
 export default function PEPMUI() {
     const theme = useTheme();

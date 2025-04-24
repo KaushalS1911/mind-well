@@ -24,7 +24,7 @@ import {
     ArrowForward,
     FiberManualRecord
 } from '@mui/icons-material';
-import img1 from "../../assets/images/Services/shape-design.png";
+import img1 from "../../assets/images/Services/shape1.png";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function ShapeDesigne() {
