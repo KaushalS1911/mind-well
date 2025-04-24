@@ -59,7 +59,7 @@ const steps = [
 function WorksTable() {
     return (
         <Container fixed>
-            <Box sx={{padding: "96px 0 0 0"}}>
+            <Box sx={{padding: "0"}}>
                 <Typography
                     // data-aos="zoom-in"
                     className="Montserrat"
