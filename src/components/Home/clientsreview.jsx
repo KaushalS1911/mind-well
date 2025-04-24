@@ -62,12 +62,12 @@ const reviews = [
 
 function ClientsReview() {
     return (
-        <Box sx={{p: "96px 0", pt: 10, bgcolor: "#F8F9FC"}}>
+        <Box sx={{p: "96px 0 0 0"}}>
             <Container maxWidth={"xl"}>
                 {/* Header */}
                 <Typography className={"Montserrat"}
                             variant="h4"
-                            sx={{fontWeight: 700, textAlign: "center", color: "#012765", mb: "16px"}}
+                            sx={{fontWeight: 700, textAlign: "center", color: "#012765", mb: "16px",letterSpacing:"-1px"}}
                 >
                     What Our Clients Say
                 </Typography>
@@ -194,129 +194,129 @@ function ClientsReview() {
                 </Grid>
 
                 {/* Client Reviews */}
-                <Grid container spacing={3} sx={{mt: 4}}>
-                    {reviews.map((review, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
-                            <Card
-                                sx={{
-                                    p: 3,
-                                    borderRadius: 2,
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    height: "100%",
-                                }}
-                            >
-                                {/* User Info */}
-                                <Box sx={{display: "flex", alignItems: "center", mb: 1}}>
-                                    <Avatar
-                                        sx={{
-                                            bgcolor: "#012765",
-                                            color: "#fff",
-                                            mr: 2,
-                                            fontWeight: "700",
-                                            width: 50,
-                                            height: 50,
-                                            fontSize: 15,
-                                        }}
-                                    >
-                                        {review.name[0] + [1]}
-                                    </Avatar>
-                                    <Box>
-                                        <Box sx={{fontWeight: 700, fontSize: "16px", color: "#012765"}}>
-                                            {review.name}
-                                        </Box>
-                                        <Box sx={{fontSize: 14, opacity: 0.9}}>{review.role}</Box>
-                                    </Box>
-                                </Box>
+                {/*<Grid container spacing={3} sx={{mt: 4}}>*/}
+                {/*    {reviews.map((review, index) => (*/}
+                {/*        <Grid item xs={12} sm={6} md={4} key={index}>*/}
+                {/*            <Card*/}
+                {/*                sx={{*/}
+                {/*                    p: 3,*/}
+                {/*                    borderRadius: 2,*/}
+                {/*                    display: "flex",*/}
+                {/*                    flexDirection: "column",*/}
+                {/*                    height: "100%",*/}
+                {/*                }}*/}
+                {/*            >*/}
+                {/*                /!* User Info *!/*/}
+                {/*                <Box sx={{display: "flex", alignItems: "center", mb: 1}}>*/}
+                {/*                    <Avatar*/}
+                {/*                        sx={{*/}
+                {/*                            bgcolor: "#012765",*/}
+                {/*                            color: "#fff",*/}
+                {/*                            mr: 2,*/}
+                {/*                            fontWeight: "700",*/}
+                {/*                            width: 50,*/}
+                {/*                            height: 50,*/}
+                {/*                            fontSize: 15,*/}
+                {/*                        }}*/}
+                {/*                    >*/}
+                {/*                        {review.name[0] + [1]}*/}
+                {/*                    </Avatar>*/}
+                {/*                    <Box>*/}
+                {/*                        <Box sx={{fontWeight: 700, fontSize: "16px", color: "#012765"}}>*/}
+                {/*                            {review.name}*/}
+                {/*                        </Box>*/}
+                {/*                        <Box sx={{fontSize: 14, opacity: 0.9}}>{review.role}</Box>*/}
+                {/*                    </Box>*/}
+                {/*                </Box>*/}
 
-                                {/* Star Rating */}
-                                <Box sx={{display: "flex", color: "#FF7F1E", mt: 2, mb: 2}}>
-                                    {[...Array(5)].map((_, i) => (
-                                        <StarIcon key={i} fontSize="small"/>
-                                    ))}
-                                </Box>
+                {/*                /!* Star Rating *!/*/}
+                {/*                <Box sx={{display: "flex", color: "#FF7F1E", mt: 2, mb: 2}}>*/}
+                {/*                    {[...Array(5)].map((_, i) => (*/}
+                {/*                        <StarIcon key={i} fontSize="small"/>*/}
+                {/*                    ))}*/}
+                {/*                </Box>*/}
 
-                                {/* Review Text (Flexible Height) */}
-                                <Box sx={{mb: 2, flexGrow: 1}}>{review.review}</Box>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-                <Box className={"Montserrat"} sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    mt: 8,
-                    fontSize: 24,
-                    mb: "32px",
-                    fontWeight: 800,
-                    color: "#012765"
-                }}>
-                    Hear from Our Clients
-                </Box>
+                {/*                /!* Review Text (Flexible Height) *!/*/}
+                {/*                <Box sx={{mb: 2, flexGrow: 1}}>{review.review}</Box>*/}
+                {/*            </Card>*/}
+                {/*        </Grid>*/}
+                {/*    ))}*/}
+                {/*</Grid>*/}
+                {/*<Box className={"Montserrat"} sx={{*/}
+                {/*    display: "flex",*/}
+                {/*    alignItems: "center",*/}
+                {/*    justifyContent: "center",*/}
+                {/*    mt: 8,*/}
+                {/*    fontSize: 24,*/}
+                {/*    mb: "32px",*/}
+                {/*    fontWeight: 800,*/}
+                {/*    color: "#012765"*/}
+                {/*}}>*/}
+                {/*    Hear from Our Clients*/}
+                {/*</Box>*/}
 
-                {/* Video Testimonial */}
-                <Box
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        mt: 6,
-                        p: 3,
-                        bgcolor: "#fff",
-                        borderRadius: 3,
-                        boxShadow: 2,
-                        maxWidth: 800,
-                        mx: "auto",
-                    }}
-                >
-                    {/* Video Placeholder with Play Button */}
-                    <Box
-                        sx={{
-                            width: "100%",
-                            bgcolor: "#E8EAF0",
-                            borderRadius: 2,
-                            height: 120,
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            mb: 1,
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                padding: "10px 10px",
-                                borderRadius: "50%",
-                                backgroundColor: "#FF7F1E",
-                                mb: 1
-                            }}
-                        >
-                            <PlayArrowIcon sx={{fontSize: "36px", color: "#fff"}}/>
-                        </Box>
+                {/*/!* Video Testimonial *!/*/}
+                {/*<Box*/}
+                {/*    sx={{*/}
+                {/*        display: "flex",*/}
+                {/*        flexDirection: "column",*/}
+                {/*        alignItems: "center",*/}
+                {/*        mt: 6,*/}
+                {/*        p: 3,*/}
+                {/*        bgcolor: "#fff",*/}
+                {/*        borderRadius: 3,*/}
+                {/*        boxShadow: 2,*/}
+                {/*        maxWidth: 800,*/}
+                {/*        mx: "auto",*/}
+                {/*    }}*/}
+                {/*>*/}
+                {/*    /!* Video Placeholder with Play Button *!/*/}
+                {/*    <Box*/}
+                {/*        sx={{*/}
+                {/*            width: "100%",*/}
+                {/*            bgcolor: "#E8EAF0",*/}
+                {/*            borderRadius: 2,*/}
+                {/*            height: 120,*/}
+                {/*            display: "flex",*/}
+                {/*            flexDirection: "column",*/}
+                {/*            alignItems: "center",*/}
+                {/*            justifyContent: "center",*/}
+                {/*            mb: 1,*/}
+                {/*        }}*/}
+                {/*    >*/}
+                {/*        <Box*/}
+                {/*            sx={{*/}
+                {/*                display: "flex",*/}
+                {/*                alignItems: "center",*/}
+                {/*                justifyContent: "center",*/}
+                {/*                padding: "10px 10px",*/}
+                {/*                borderRadius: "50%",*/}
+                {/*                backgroundColor: "#FF7F1E",*/}
+                {/*                mb: 1*/}
+                {/*            }}*/}
+                {/*        >*/}
+                {/*            <PlayArrowIcon sx={{fontSize: "36px", color: "#fff"}}/>*/}
+                {/*        </Box>*/}
 
-                        <Box sx={{color: "#012765", pt: 2.4, fontSize: "16px"}}>
-                            Video Testimonials
-                        </Box>
-                    </Box>
+                {/*        <Box sx={{color: "#012765", pt: 2.4, fontSize: "16px"}}>*/}
+                {/*            Video Testimonials*/}
+                {/*        </Box>*/}
+                {/*    </Box>*/}
 
-                    {/* Quote Text */}
-                    <Box sx={{
-                        fontSize: "16px",
-                        color: "#374151",
-                        textAlign: "center",
-                        opacity: 0.7,
-                        fontStyle: "italic",
-                        mt: 1
-                    }}>
-                        "EmotionallYours has been life-changing for me. Watch these client stories to see the real
-                        impact
-                        of our therapeutic approach."
-                    </Box>
-                </Box>
+                {/*    /!* Quote Text *!/*/}
+                {/*    <Box sx={{*/}
+                {/*        fontSize: "16px",*/}
+                {/*        color: "#374151",*/}
+                {/*        textAlign: "center",*/}
+                {/*        opacity: 0.7,*/}
+                {/*        fontStyle: "italic",*/}
+                {/*        mt: 1*/}
+                {/*    }}>*/}
+                {/*        "EmotionallYours has been life-changing for me. Watch these client stories to see the real*/}
+                {/*        impact*/}
+                {/*        of our therapeutic approach."*/}
+                {/*    </Box>*/}
+                {/*</Box>*/}
 
                 {/*<Consultation title={"Ready to start your mental wellness journey?"}*/}
                 {/*              Description={"Join thousands of students and professionals who have improved their mental wellbeing with EmotionallYours."}*/}

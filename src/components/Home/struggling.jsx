@@ -19,10 +19,12 @@ import img5 from "../../assets/images/Home/Struggling/Trauma1.jpg";
 import img6 from "../../assets/images/Home/Struggling/Addiction1.jpg";
 import img7 from "../../assets/images/Home/Struggling/Self-esteem1.jpg";
 import img8 from "../../assets/images/Home/Struggling/Grief & Loss1.jpg";
+import img9 from "../../assets/images/Home/Struggling/little-boy-bullying.jpg";
+import img10 from "../../assets/images/Home/Struggling/Overthinking.jpg";
 
 const struggling = [
     {
-        title: "Anxiety",
+        title: "Stress-Anxiety",
         description: "Manage worry, panic, and fear",
         icon: <WarningAmber sx={{ fontSize: 30, color: "orange" }} />,
         image: img1
@@ -40,19 +42,19 @@ const struggling = [
     //     image: img3
     // },
     {
-        title: "Relationships",
+        title: "Relationship",
         description: "Improve communication and connection",
         icon: <Favorite sx={{ fontSize: 30, color: "orange" }} />,
         image: img4
     },
     {
-        title: "Trauma",
+        title: "Grief/Trauma",
         description: "Heal from difficult experiences",
         icon: <Security sx={{ fontSize: 30, color: "orange" }} />,
         image: img5
     },
     {
-        title: "Addiction",
+        title: "ADDICTION",
         description: "Break free from harmful patterns",
         icon: <Bolt sx={{ fontSize: 30, color: "orange" }} />,
         image: img6
@@ -63,12 +65,24 @@ const struggling = [
         icon: <Visibility sx={{ fontSize: 30, color: "orange" }} />,
         image: img7
     },
+    // {
+    //     title: "Grief & Loss",
+    //     description: "Navigate through difficult transitions",
+    //     icon: <Cake sx={{ fontSize: 30, color: "orange" }} />,
+    //     image: img8
+    // },
     {
-        title: "Grief & Loss",
+        title: "Bullying",
         description: "Navigate through difficult transitions",
         icon: <Cake sx={{ fontSize: 30, color: "orange" }} />,
-        image: img8
-    }
+        image: img9
+    },
+    {
+        title: "Overthinking",
+        description: "Navigate through difficult transitions",
+        icon: <Cake sx={{ fontSize: 30, color: "orange" }} />,
+        image: img10
+    },
 ];
 
 const features = [
@@ -124,7 +138,7 @@ function Struggling() {
 
                     <Grid container spacing={3} justifyContent="center">
                         {struggling.map((item, index) => (
-                            <Grid item xs={12} sm={6} md={4} lg={2} key={index}>
+                            <Grid item xs={12} sm={6} md={3}  key={index}>
                                 <Box
                                     sx={{
                                         p: 3,

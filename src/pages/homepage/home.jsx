@@ -59,7 +59,7 @@ function Home() {
             {/*<CorporateWellness/>*/}
             {/*<MentalHealthResources/>*/}
             {/*<EngagementFramework/>*/}
-            {/*<Clientsreview/>*/}
+            <Clientsreview/>
             {/*<Offerings/>*/}
             {/*<Therapists/>*/}
             {/*<Partners/>*/}
