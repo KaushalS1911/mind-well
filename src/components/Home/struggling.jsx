@@ -22,7 +22,7 @@ import img8 from "../../assets/images/Home/Struggling/Grief & Loss1.jpg";
 
 const struggling = [
     {
-        title: "Anxiety",
+        title: "Anxiety - Stress",
         description: "Manage worry, panic, and fear",
         icon: <WarningAmber sx={{ fontSize: 30, color: "orange" }} />,
         image: img1
@@ -46,7 +46,7 @@ const struggling = [
         image: img4
     },
     {
-        title: "Trauma",
+        title: "Trauma, Grief & Loss",
         description: "Heal from difficult experiences",
         icon: <Security sx={{ fontSize: 30, color: "orange" }} />,
         image: img5
@@ -63,12 +63,12 @@ const struggling = [
         icon: <Visibility sx={{ fontSize: 30, color: "orange" }} />,
         image: img7
     },
-    {
-        title: "Grief & Loss",
-        description: "Navigate through difficult transitions",
-        icon: <Cake sx={{ fontSize: 30, color: "orange" }} />,
-        image: img8
-    }
+    // {
+    //     title: "",
+    //     description: "Navigate through difficult transitions",
+    //     icon: <Cake sx={{ fontSize: 30, color: "orange" }} />,
+    //     image: img8
+    // }
 ];
 
 const features = [
@@ -144,7 +144,7 @@ function Struggling() {
                                 >
                                     <Box
                                         sx={{
-                                            fontSize: "25px",
+                                            fontSize: "20px",
                                             color: "#012765",
                                             fontWeight: "bold",
                                             mb: 1
