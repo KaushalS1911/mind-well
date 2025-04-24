@@ -6,7 +6,6 @@ import {
     Card,
     Grid,
     styled,
-    useTheme
 } from '@mui/material';
 import img1 from '../../assets/images/Photos/works-places.jpg';
 import CircleIcon from "@mui/icons-material/Circle";
@@ -32,7 +31,6 @@ const StepNumber = styled(Box)(({ theme }) => ({
 }));
 
 const HowEmotionallyYoursinWorkplaces = () => {
-    const theme = useTheme();
 
     const steps = [
         {

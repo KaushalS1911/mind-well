@@ -40,8 +40,8 @@ function Home() {
             <Herosection/>
             <Overview/>
             <WellbeingJourney/>
-            <WhyChooseUs/>
             <WorksTable/>
+            <WhyChooseUs/>
             <MileStones/>
             <HowEmotionallyYoursinSchools/>
             <HowEmotionallyYoursWorksInHigherEducation/>

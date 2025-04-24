@@ -48,22 +48,22 @@ const Herosection = () => {
                             xs: "right",
                             sm: "center",
                         },
-                        zIndex: 1,
+                        // zIndex: 1,
                     }}
                 />
 
 
-                <Box
-                    sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        backgroundColor: "rgba(0, 0, 0, 0.6)",
-                        zIndex: 2,
-                    }}
-                />
+                {/*<Box*/}
+                {/*    sx={{*/}
+                {/*        position: "absolute",*/}
+                {/*        top: 0,*/}
+                {/*        left: 0,*/}
+                {/*        width: "100%",*/}
+                {/*        height: "100%",*/}
+                {/*        backgroundColor: "rgba(0, 0, 0, 0.6)",*/}
+                {/*        zIndex: 2,*/}
+                {/*    }}*/}
+                {/*/>*/}
 
                 <Container maxWidth="xl" sx={{ zIndex: 3 }}>
                     <Box
@@ -71,7 +71,7 @@ const Herosection = () => {
                             fontSize: { lg: '72px', sm: '64px', xs: '40px' },
                             lineHeight: { xs: '1.2', sm: '1.3', md: '1.4' },
                             fontWeight: 700,
-                            color: "#FE6A00",
+                            color: "#012765",
                         }}
                     >
                         Building Mindsets
@@ -90,9 +90,10 @@ const Herosection = () => {
                                     stiffness: 100
                                 }}
                                 style={{
-                                    color: "#fff",
+                                    color: "#FE6A00",
                                     display: 'inline-block',
                                     fontSize: '36px',
+                                    fontWeight:"500"
                                 }}
                             >
                                 {TITLES[currentTitleIndex]}

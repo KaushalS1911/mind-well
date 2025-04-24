@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {
     Box,
     Container,
@@ -6,7 +6,6 @@ import {
     Card,
     Grid,
     styled,
-    useTheme
 } from '@mui/material';
 import img1 from '../../assets/images/Photos/higher-education.jpg';
 import 'aos/dist/aos.css';
@@ -33,9 +32,6 @@ const StepNumber = styled(Box)(({ theme }) => ({
 }));
 
 const HowEmotionallyYoursWorksInHigherEducation = () => {
-    const theme = useTheme();
-
-
 
     const steps = [
         {

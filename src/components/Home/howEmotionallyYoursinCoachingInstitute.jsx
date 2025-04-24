@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {
     Box,
     Container,
@@ -6,10 +6,8 @@ import {
     Card,
     Grid,
     styled,
-    useTheme
 } from '@mui/material';
 import img1 from '../../assets/images/Photos/Coaching.jpg';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CircleIcon from "@mui/icons-material/Circle";
 
@@ -34,16 +32,6 @@ const StepNumber = styled(Box)(({ theme }) => ({
 }));
 
 const HowEmotionallyYoursinCoachingInstitute = () => {
-    const theme = useTheme();
-
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: false,     // Animate every time it enters
-            mirror: true,    // Animate on scrolling up too
-        });
-    }, []);
 
     const steps = [
         {
