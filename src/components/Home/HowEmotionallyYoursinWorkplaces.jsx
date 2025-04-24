@@ -9,7 +9,7 @@ import {
     useTheme
 } from '@mui/material';
 // import img1 from '../../assets/images/Home/works/workplaces.png';
-import img1 from '../../assets/images/Photos/Workplace.jpeg';
+import img1 from '../../assets/images/Photos/works-places.jpg';
 import CircleIcon from "@mui/icons-material/Circle";
 
 const ProcessStep = styled(Box)(({ theme }) => ({
