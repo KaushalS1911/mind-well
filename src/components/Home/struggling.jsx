@@ -158,7 +158,7 @@ function Struggling() {
                                 >
                                     <Box
                                         sx={{
-                                            fontSize: "20px",
+                                            fontSize: "23px",
                                             color: "#012765",
                                             fontWeight: "bold",
                                             mb: 1
