@@ -96,7 +96,7 @@ const HowEmotionallyYoursinSchools = () => {
                          letterSpacing: "-1px",
                      }}
                 >
-                    How EmotionallYours Works in Schools
+                    Shaping up K-12 segment
                 </Box>
                 <Typography
                     sx={{

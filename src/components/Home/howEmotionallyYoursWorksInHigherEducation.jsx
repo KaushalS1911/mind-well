@@ -77,7 +77,7 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
                         fontWeight: 700,
                     }}
                 >
-                    How EmotionallYours Works in Higher Education
+                    Making graduates future ready
                 </Box>
                 <Typography
                     sx={{

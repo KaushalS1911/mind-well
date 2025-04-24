@@ -54,7 +54,7 @@ const struggling = [
         image: img5
     },
     {
-        title: "ADDICTION",
+        title: "Addiction",
         description: "Break free from harmful patterns",
         icon: <Bolt sx={{ fontSize: 30, color: "orange" }} />,
         image: img6
@@ -138,7 +138,7 @@ function Struggling() {
 
                     <Grid container spacing={3} justifyContent="center">
                         {struggling.map((item, index) => (
-                            <Grid item xs={12} sm={6} md={3}  key={index}>
+                            <Grid item xs={12} sm={6} md={2.3}  key={index}>
                                 <Box
                                     sx={{
                                         p: 3,

@@ -75,7 +75,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
                          letterSpacing: "-1px",
                      }}
                 >
-                    How EmotionallYours Works in Workplaces
+                    Creating ownership at workplaces
                 </Box>
                 <Typography
                     sx={{

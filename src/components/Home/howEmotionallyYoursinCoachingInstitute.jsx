@@ -76,7 +76,7 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
                          letterSpacing: "-1px",
                      }}
                 >
-                    How EmotionallYours Works in Coaching Institutes
+                    Emotionally resilient aspirants
                 </Box>
                 <Typography
                     sx={{
