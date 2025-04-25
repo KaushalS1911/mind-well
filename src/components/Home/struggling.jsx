@@ -2,15 +2,12 @@ import React from "react";
 import { Box, Grid, Container } from "@mui/material";
 import {
     WarningAmber,
-    MoodBad,
-    Bolt,
     Favorite,
     Security,
+    Bolt,
     Visibility,
-    Cake,
-    Psychology
+    Cake
 } from "@mui/icons-material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import img1 from "../../assets/images/Home/Struggling/Anxiety.webp";
 import img2 from "../../assets/images/Home/Struggling/Depression.webp";
 import img3 from "../../assets/images/Home/Struggling/stres.jpg";
@@ -22,6 +19,7 @@ import img8 from "../../assets/images/Home/Struggling/Grief & Loss1.jpg";
 import img9 from "../../assets/images/Home/Struggling/little-boy-bullying.jpg";
 import img10 from "../../assets/images/Home/Struggling/Overthinking.jpg";
 
+// Mapping of struggling areas with title, description, icon, and image
 const struggling = [
     {
         title: "Stress-Anxiety",
@@ -29,18 +27,6 @@ const struggling = [
         icon: <WarningAmber sx={{ fontSize: 30, color: "orange" }} />,
         image: img1
     },
-    // {
-    //     title: "Depression",
-    //     description: "Find joy and motivation again",
-    //     icon: <MoodBad sx={{ fontSize: 30, color: "orange" }} />,
-    //     image: img2
-    // },
-    // {
-    //     title: "Stress",
-    //     description: "Develop effective coping skills",
-    //     icon: <Psychology sx={{ fontSize: 30, color: "orange" }} />,
-    //     image: img3
-    // },
     {
         title: "Relationship",
         description: "Improve communication and connection",
@@ -65,12 +51,6 @@ const struggling = [
         icon: <Visibility sx={{ fontSize: 30, color: "orange" }} />,
         image: img7
     },
-    // {
-    //     title: "Grief & Loss",
-    //     description: "Navigate through difficult transitions",
-    //     icon: <Cake sx={{ fontSize: 30, color: "orange" }} />,
-    //     image: img8
-    // },
     {
         title: "Bullying",
         description: "Navigate through difficult transitions",
@@ -82,63 +62,35 @@ const struggling = [
         description: "Navigate through difficult transitions",
         icon: <Cake sx={{ fontSize: 30, color: "orange" }} />,
         image: img10
-    },
-];
-
-const features = [
-    {
-        title: "Personalized assessments",
-        description: "Tailored to your organization's specific needs and culture"
-    },
-    {
-        title: "Virtual therapy sessions",
-        description: "Confidential access to licensed therapists"
-    },
-    {
-        title: "Workshops and webinars",
-        description: "Educational resources on mental health topics"
-    },
-    {
-        title: "Analytics and reporting",
-        description: "Measure program effectiveness and engagement"
     }
 ];
 
-function Struggling() {
+const Struggling = () => {
     return (
         <Box sx={{ padding: "96px 0" }}>
             <Container maxWidth="xl">
                 <Box sx={{ textAlign: "center" }}>
                     <Box sx={{ mb: 4 }}>
                         <Box
-                            // data-aos="zoom-in"
-                            className={"Montserrat"}
+                            className="Montserrat"
                             sx={{
                                 fontSize: { xs: '32px', md: '40px' },
                                 color: "#012765",
-                                fontWeight: "700",
+                                fontWeight: 700,
                                 mb: 2,
                                 letterSpacing: "-1px",
                             }}
                         >
                             What area would you like to focus on?
                         </Box>
-                        <Box
-                            sx={{
-                                color: "#4B5563",
-                                fontSize: { xs: "15px", sm: "20px" },
-                                mx: "auto"
-                            }}
-                        >
-                            We provide expert support for a wide range of mental health
-                            concerns. Select your challenge to learn more about how we can
-                            help.
+                        <Box sx={{ color: "#4B5563", fontSize: { xs: "15px", sm: "20px" }, mx: "auto" }}>
+                            We provide expert support for a wide range of mental health concerns. Select your challenge to learn more about how we can help.
                         </Box>
                     </Box>
 
                     <Grid container spacing={3} justifyContent="center">
                         {struggling.map((item, index) => (
-                            <Grid item xs={12} sm={6} md={2.3}  key={index}>
+                            <Grid item xs={12} sm={6} md={2.3} key={index}>
                                 <Box
                                     sx={{
                                         p: 3,
@@ -166,29 +118,18 @@ function Struggling() {
                                     >
                                         {item.title}
                                     </Box>
-                                    {item.image && (
-                                        <Box
-                                            sx={{
-                                                my: 2,
-                                                display: "flex",
-                                                justifyContent: "center",
-                                                alignItems: "center",
-                                                overflow: "hidden",
-                                                borderRadius: "8px"
+                                    <Box sx={{ my: 2, display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden", borderRadius: 1 }}>
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            style={{
+                                                width: "100%",
+                                                borderRadius: "8px",
+                                                transition: "transform 0.3s ease-in-out"
                                             }}
-                                        >
-                                            <img
-                                                src={item.image}
-                                                alt={item.title}
-                                                style={{
-                                                    width: "100%",
-                                                    borderRadius: "8px",
-                                                    transition: "transform 0.3s ease-in-out"
-                                                }}
-                                                className="hover-scale-image"
-                                            />
-                                        </Box>
-                                    )}
+                                            className="hover-scale-image"
+                                        />
+                                    </Box>
                                 </Box>
                             </Grid>
                         ))}
@@ -197,6 +138,6 @@ function Struggling() {
             </Container>
         </Box>
     );
-}
+};
 
 export default Struggling;

@@ -13,8 +13,10 @@ import img4 from "../../assets/images/about/majorClients/IES-removebg-preview.pn
 import img5 from "../../assets/images/about/majorClients/msme__1_-removebg-preview.png";
 import img6 from "../../assets/images/about/majorClients/startup-india-hub-logo-vector-removebg-preview.png";
 
+// Image Array
 const images = [img1, img2, img3, img4, img5, img6];
 
+// Reusable Styles
 const imageBoxStyle = {
     width: "120px",
     height: "120px",
@@ -23,7 +25,7 @@ const imageBoxStyle = {
     alignItems: "center",
     borderRadius: "50%",
     padding: "15px",
-    transition: "all 0.4s ease-in-out",
+    transition: "transform 0.4s ease-in-out, background-color 0.4s ease-in-out",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
     "&:hover": {
         transform: "scale(1.1)",
@@ -37,19 +39,18 @@ const imageStyle = {
     objectFit: "contain",
 };
 
-function MajorClients() {
+const MajorClients = () => {
     return (
         <Box>
             {/* Section Heading */}
             <Box sx={{ mb: 5, textAlign: "center" }}>
                 <Box
-                    // data-aos="zoom-in"
                     className="Montserrat"
                     sx={{
-                        fontSize: { xs: '32px', md: '40px' },
+                        fontSize: { xs: "32px", md: "40px" },
                         lineHeight: "40px",
                         color: "#012765",
-                        fontWeight: "700",
+                        fontWeight: 700,
                         letterSpacing: "-1px",
                     }}
                 >
@@ -57,8 +58,8 @@ function MajorClients() {
                 </Box>
             </Box>
 
+            {/* Swiper Container */}
             <Container maxWidth="lg">
-                {/* Swiper visible on all screen sizes */}
                 <Swiper
                     slidesPerView={2}
                     spaceBetween={10}
@@ -76,12 +77,7 @@ function MajorClients() {
                         <SwiperSlide key={index}>
                             <Box sx={{ py: 2, display: "flex", justifyContent: "center" }}>
                                 <Box sx={imageBoxStyle}>
-                                    <Box
-                                        component="img"
-                                        src={img}
-                                        alt={`Client ${index + 1}`}
-                                        sx={imageStyle}
-                                    />
+                                    <Box component="img" src={img} alt={`Client ${index + 1}`} sx={imageStyle} />
                                 </Box>
                             </Box>
                         </SwiperSlide>
@@ -90,6 +86,6 @@ function MajorClients() {
             </Container>
         </Box>
     );
-}
+};
 
 export default MajorClients;

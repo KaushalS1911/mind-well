@@ -3,31 +3,31 @@ import {
     Box,
     Container,
     Typography,
-    Button,
     Grid,
     Card,
     CardContent,
-    CardHeader,
-    Divider,
     List,
     ListItem,
     ListItemIcon,
     ListItemText,
     Paper,
-    useTheme, Accordion, AccordionSummary, AccordionDetails,
+    Divider,
+    Accordion,
+    AccordionSummary,
+    AccordionDetails,
+    useTheme,
 } from "@mui/material";
 import {
-    Work,
     Psychology,
     Group,
-    TrendingUp,
-    ArrowForward,
+    Work,
     FiberManualRecord,
+    ExpandMore as ExpandMoreIcon,
 } from "@mui/icons-material";
 import img1 from "../../assets/images/Services/ESOP.png";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function ESOPMUI() {
+// Styles
+const useStyles = () => {
     const theme = useTheme();
 
     const colors = {
@@ -38,33 +38,37 @@ export default function ESOPMUI() {
         background: "#F8FAFC",
     };
 
-    const styles = {
+    return {
+        colors,
         heroSection: {
-            background: "#022662",
-            position: "relative",
-            overflow: "hidden",
-            padding: theme.spacing(12, 0),
-            color: "white",
+            backgroundColor: "#022662",
+            padding: "120px 0 60px 0",
         },
-        heroPattern: {
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            opacity: 0.1,
-            backgroundSize: "24px 24px",
+        heroContent: {
+            mt: 8,
+            px: { xs: 4, md: 10 },
         },
-        logoCircle: {
-            backgroundColor: colors.secondary,
-            borderRadius: "50%",
-            width: 64,
-            height: 64,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            margin: "0 auto",
-            marginBottom: theme.spacing(3),
+        heroTitle: {
+            fontSize: { lg: '38px', sm: '30px', xs: '26px' },
+            lineHeight: 1.2,
+            fontWeight: '700',
+            color: '#FE6A00',
+            mb: 2,
+        },
+        heroDivider: {
+            backgroundColor: '#fff',
+            height: 4,
+            width: 100,
+            my: 3,
+        },
+        heroSubtitle: {
+            color: 'rgba(255,255,255,0.9)',
+            fontWeight: 600,
+        },
+        heroDescription: {
+            color: 'rgba(255,255,255,0.7)',
+            mb: 4,
+            maxWidth: { xs: '100%', sm: '90%', md: '80%' },
         },
         section: {
             padding: theme.spacing(10, 0),
@@ -92,49 +96,137 @@ export default function ESOPMUI() {
             borderRadius: theme.shape.borderRadius,
             color: colors.primary,
         },
-        listItemDot: {
-            color: colors.secondary,
-            fontSize: "small",
+        listItem: {
+            py: 1.5,
+            pl: 2,
+            borderLeft: `2px solid ${colors.secondary}`,
+            mb: 1.5,
         },
-        statCard: {
-            height: "100%",
+        highlightPaper: {
+            p: 3,
+            borderRadius: 2,
+            backgroundColor: "grey.50",
+            borderTop: `4px solid ${colors.secondary}`,
         },
-        statValue: {
-            color: colors.secondary,
-            fontWeight: "bold",
+        sectionTitle: {
+            color: colors.primary,
+            fontSize: { xs: '32px', md: '40px' },
+            fontWeight: 'bold',
+            mb: 3,
+            letterSpacing: '-1px',
+        },
+        sectionDescription: {
+            maxWidth: "md",
+            mx: "auto",
+            fontSize: { xs: "16px", md: "20px" },
         },
         divider: {
             backgroundColor: colors.secondary,
             height: 4,
             width: 100,
-            margin: theme.spacing(3, "auto"),
-        },
-        ctaCard: {
-            borderRadius: theme.shape.borderRadius * 2,
-            overflow: "hidden",
-        },
-        ctaCardHeader: {
-            backgroundColor: colors.secondary,
-            height: 8,
-        },
-        primaryButton: {
-            backgroundColor: colors.secondary,
-            color: "white",
-            "&:hover": {
-                backgroundColor: theme.palette.augmentColor({
-                    color: {main: colors.secondary},
-                }).dark,
-            },
-        },
-        lightBg: {
-            backgroundColor: `${colors.primary}05`,
+            mx: 'auto',
+            mb: 6
         },
     };
+};
+
+// Reusable components
+const HeroSection = () => {
+    const styles = useStyles();
+
+    return (
+        <Box sx={styles.heroSection}>
+            <Grid container spacing={4} sx={styles.heroContent}>
+                <Grid item xs={12} md={6}>
+                    <Typography className="Montserrat" sx={styles.heroTitle}>
+                        Employee Self Ownership Program
+                    </Typography>
+
+                    <Divider sx={styles.heroDivider} />
+
+                    <Typography variant="h5" gutterBottom sx={styles.heroSubtitle}>
+                        Emotional Wellness Program for Workplace
+                    </Typography>
+
+                    <Typography variant="body1" paragraph sx={styles.heroDescription}>
+                        A strategic, research-driven emotional wellness program designed to
+                        elevate workplace well-being, boost employee engagement, and
+                        cultivate resilience.
+                    </Typography>
+                </Grid>
+
+                <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
+                    <Box sx={{ height: "300px", width: "100%" }}>
+                        <img
+                            src={img1}
+                            alt="Employee Self Ownership Program"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        />
+                    </Box>
+                </Grid>
+            </Grid>
+        </Box>
+    );
+};
+
+const ProgramOverview = () => {
+    const styles = useStyles();
+    const highlights = [
+        "Proactive burnout prevention",
+        "Holistic emotional well-being",
+        "Enhanced team dynamics",
+        "Sustainable motivation strategies",
+        "Data-driven insights",
+    ];
+
+    return (
+        <Box sx={{ padding: "96px 0 0 0" }}>
+            <Grid container spacing={4} mb={8}>
+                <Grid item xs={12} lg={8}>
+                    <Typography className="Montserrat" fontWeight="bold" gutterBottom sx={styles.sectionTitle}>
+                        Comprehensive Emotional Wellness for Workplace
+                    </Typography>
+                    <Typography variant="body1" paragraph color="text.secondary">
+                        Tailored for business teams and HR leaders, this initiative
+                        integrates evidence-based practices that strengthen emotional
+                        intelligence, enhance team dynamics, and drive sustainable
+                        growth within organizational culture.
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary">
+                        Our program focuses on creating a resilient workforce through
+                        proactive burnout prevention, holistic engagement, and
+                        sustainable motivation strategies.
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} lg={4}>
+                    <Paper elevation={1} sx={styles.highlightPaper}>
+                        <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: styles.colors.primary }}>
+                            Program Highlights
+                        </Typography>
+                        <List disablePadding>
+                            {highlights.map((item, index) => (
+                                <ListItem key={index} disablePadding sx={{ py: 0.5 }}>
+                                    <ListItemIcon sx={{ minWidth: 24 }}>
+                                        <FiberManualRecord sx={{ color: styles.colors.secondary, fontSize: 10 }} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={item} sx={{ color: "text.secondary" }} />
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Paper>
+                </Grid>
+            </Grid>
+        </Box>
+    );
+};
+
+const ThreePillarApproach = () => {
+    const styles = useStyles();
 
     const pillars = [
         {
             title: "Proactive Burnout Prevention",
-            icon: <Psychology fontSize="large"/>,
+            icon: <Psychology fontSize="large" />,
             points: [
                 "Conduct expert-led sessions on stress management, emotional resilience, and sustainable work-life balance",
                 "Utilise self-assessment tools and advanced psychometric tests to assess early burnout risks and cognitive fatigue",
@@ -143,7 +235,7 @@ export default function ESOPMUI() {
         },
         {
             title: "Holistic Engagement for Emotional Well-Being",
-            icon: <Group fontSize="large"/>,
+            icon: <Group fontSize="large" />,
             points: [
                 "Foster peer-support communities that encourage open dialogue and collective growth",
                 "Provide time tested self-care techniques and guided mindfulness practices through an interactive wellness session",
@@ -152,7 +244,7 @@ export default function ESOPMUI() {
         },
         {
             title: "Sustaining Motivation and Enhancing Retention",
-            icon: <Work fontSize="large"/>,
+            icon: <Work fontSize="large" />,
             points: [
                 "Offer confidential one-on-one coaching with experienced psychologists to boost emotional resilience and professional fulfilment",
                 "Implement reinforcement strategies with measurable metrics to enhance organisational sustainability growth and individual's long-term commitment",
@@ -162,294 +254,132 @@ export default function ESOPMUI() {
     ];
 
     return (
-        <Box>
-            {/* Hero Section */}
-            <Box
-                sx={{
-                    backgroundColor: "#022662",
-                    padding: "120px 0 60px 0",
-                }}
-            >
-                <Grid container spacing={4} sx={{mt: 8, px: {xs: 4, md: 10}}}>
-                    <Grid item xs={12} md={6}>
-                        <Typography
-                            className="Montserrat"
-                            sx={{
-                                fontSize: {lg: '38px', sm: '30px', xs: '26px'},
-                                lineHeight: 1.2,
-                                fontWeight: '700',
-                                color: '#FE6A00',
-                                mb: 2,
-                            }}
-                        >
-                            Employee Self Ownership Program
-                        </Typography>
-
-                        <Divider
-                            sx={{
-                                backgroundColor: '#fff',
-                                height: 4,
-                                width: 100,
-                                my: 3,
-                            }}
-                        />
-
-                        <Typography
-                            variant="h5"
-                            gutterBottom
-                            sx={{
-                                color: 'rgba(255,255,255,0.9)',
-                                fontWeight: 600,
-                            }}
-                        >
-                            Emotional Wellness Program for Workplace
-                        </Typography>
-
-                        <Typography
-                            variant="body1"
-                            paragraph
-                            sx={{
-                                color: 'rgba(255,255,255,0.7)',
-                                mb: 4,
-                                maxWidth: {xs: '100%', sm: '90%', md: '80%'},
-                            }}
-                        >
-                            A strategic, research-driven emotional wellness program designed to
-                            elevate workplace well-being, boost employee engagement, and
-                            cultivate resilience.
-                        </Typography>
-                    </Grid>
-
-                    <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
-                        <Box sx={{
-                            height: "300px",
-                            width: "100%",
-                        }}>
-                            <img src={img1} alt="img1"
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                            }}/>
-                        </Box>
-                    </Grid>
-                </Grid>
+        <Box sx={{ padding: "96px 0" }}>
+            <Box textAlign="center" mb={6}>
+                <Typography className="Montserrat" variant="h4" fontWeight="bold" gutterBottom sx={styles.sectionTitle}>
+                    Our Three-Pillar Approach
+                </Typography>
+                <Typography variant="body1" color="text.secondary" sx={styles.sectionDescription}>
+                    ESOP delivers workplace emotional wellness through three
+                    integrated components that work together to create lasting
+                    positive impact for organizations and their employees.
+                </Typography>
             </Box>
 
-            {/* Program Overview */}
-            <Container maxWidth={"xl"}>
-                <Box sx={{padding: "96px 0 0 0"}}>
-                    <Grid container spacing={4} mb={8}>
-                        <Grid item xs={12} lg={8}>
-                            <Typography
-                                className={"Montserrat"}
-                                fontWeight="bold"
-                                gutterBottom
-                                sx={{color: colors.primary, fontSize: "30px", mb: 3,letterSpacing: "-1px",}}
-                            >
-                                Comprehensive Emotional Wellness for Workplace
-                            </Typography>
-                            <Typography variant="body1" paragraph color="text.secondary">
-                                Tailored for business teams and HR leaders, this initiative
-                                integrates evidence-based practices that strengthen emotional
-                                intelligence, enhance team dynamics, and drive sustainable
-                                growth within organizational culture.
-                            </Typography>
-                            <Typography variant="body1" color="text.secondary">
-                                Our program focuses on creating a resilient workforce through
-                                proactive burnout prevention, holistic engagement, and
-                                sustainable motivation strategies.
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={12} lg={4}>
-                            <Paper
-                                elevation={1}
-                                sx={{
-                                    p: 3,
-                                    borderRadius: 2,
-                                    backgroundColor: "grey.50",
-                                    borderTop: `4px solid ${colors.secondary}`,
-                                }}
-                            >
-                                <Typography
-                                    variant="h6"
-                                    fontWeight="bold"
-                                    gutterBottom
-                                    sx={{color: colors.primary}}
-                                >
-                                    Program Highlights
-                                </Typography>
+            <Grid container spacing={4}>
+                {pillars.map((pillar, idx) => (
+                    <Grid item xs={12} md={6} lg={4} key={idx}>
+                        <Card elevation={3} sx={styles.featureCard}>
+                            <Box sx={styles.cardHeader} />
+                            <CardContent sx={{ p: 4 }}>
+                                <Box sx={styles.iconContainer}>
+                                    <Box sx={styles.icon}>{pillar.icon}</Box>
+                                    <Typography variant="h6" fontWeight="bold" sx={{ color: styles.colors.primary }}>
+                                        {pillar.title}
+                                    </Typography>
+                                </Box>
                                 <List disablePadding>
-                                    {[
-                                        "Proactive burnout prevention",
-                                        "Holistic emotional well-being",
-                                        "Enhanced team dynamics",
-                                        "Sustainable motivation strategies",
-                                        "Data-driven insights",
-                                    ].map((item, index) => (
-                                        <ListItem key={index} disablePadding sx={{py: 0.5}}>
-                                            <ListItemIcon sx={{minWidth: 24}}>
-                                                <FiberManualRecord
-                                                    sx={{color: colors.secondary, fontSize: 10}}
-                                                />
-                                            </ListItemIcon>
-                                            <ListItemText
-                                                primary={item}
-                                                sx={{color: "text.secondary"}}
-                                            />
+                                    {pillar.points.map((item, index) => (
+                                        <ListItem key={index} disablePadding sx={styles.listItem}>
+                                            <ListItemText primary={item} sx={{ color: "text.secondary", m: 0 }} />
                                         </ListItem>
                                     ))}
                                 </List>
-                            </Paper>
-                        </Grid>
+                            </CardContent>
+                        </Card>
                     </Grid>
-                </Box>
+                ))}
+            </Grid>
+        </Box>
+    );
+};
 
-                {/* Three-Pillar Approach */}
-                <Box sx={{padding: "96px 0"}}>
-                    <Box textAlign="center" mb={6}>
-                        <Typography
-                            className={"Montserrat"}
-                            variant="h4"
-                            fontWeight="bold"
-                            gutterBottom
-                            sx={{color: colors.primary,fontSize: { xs: '32px', md: '40px' },}}
+const FAQSection = () => {
+    const styles = useStyles();
+
+    const faqs = [
+        {
+            question: "What is the ESOP Program?",
+            answer: "ESOP (Employee Self Ownership Program) is a structured emotional wellness initiative designed to move employees from disengagement to high motivation and performance."
+        },
+        {
+            question: "Who is it for?",
+            answer: "It's for organizations aiming to improve employee engagement, mental wellness, performance, and retention through proactive support."
+        },
+        {
+            question: "What key challenges does ESOP address?",
+            answer: "Burnout, disengagement, performance stagnation, stress, lack of motivation, and poor work-life balance."
+        },
+        {
+            question: "What's unique about this program?",
+            answer: "It categorizes employees into 3 motivation zones and provides personalized interventions, workshops, counseling, and follow-up support accordingly."
+        },
+        {
+            question: "What services are included?",
+            answer: "Psychometric tests, individual sessions, group workshops, DIY tools, stationed psychologists, and curated assessments."
+        },
+        {
+            question: "How does it help businesses?",
+            answer: "It boosts employee retention, productivity, morale, customer satisfaction, and reduces absenteeism and burnout."
+        },
+        {
+            question: "Can results be measured?",
+            answer: "Yes, through ROI-linked metrics such as productivity scores, retention rates, absenteeism, and mental health indicators."
+        },
+        {
+            question: "What is the process of implementation?",
+            answer: "Starts with wellness assessment, forms a taskforce, conducts workshops, activates wellness modules, and tracks progress with data."
+        },
+        {
+            question: "Is pricing fixed?",
+            answer: "No, pricing is customized based on organization size, workshop count, assessments, and session requirements."
+        },
+        {
+            question: "How do we get started?",
+            answer: "Reach out to the MTPL team to schedule an initial assessment and explore tailored offerings for your workplace."
+        }
+    ];
+
+    return (
+        <Box sx={{ p: "20px 0 0 0" }}>
+            <Typography className="Montserrat" variant="h4" textAlign="center" fontWeight="bold" sx={styles.sectionTitle}>
+                Frequently Asked Questions
+            </Typography>
+            <Divider sx={styles.divider} />
+
+            <Box>
+                {faqs.map((faq, idx) => (
+                    <Accordion key={idx} sx={{ mb: 2 }}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon sx={{ color: styles.colors.secondary }} />}
+                            aria-controls={`faq-content-${idx}`}
+                            id={`faq-header-${idx}`}
                         >
-                            Our Three-Pillar Approach
-                        </Typography>
-                        <Typography
-                            variant="body1"
-                            color="text.secondary"
-                            sx={{maxWidth: "md", mx: "auto",fontSize: { xs: "16px", md: "20px" },}}
-                        >
-                            ESOP delivers workplace emotional wellness through three
-                            integrated components that work together to create lasting
-                            positive impact for organizations and their employees.
-                        </Typography>
-                    </Box>
+                            <Typography fontWeight="bold" sx={{ color: styles.colors.primary }}>
+                                {faq.question}
+                            </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography color="text.secondary">{faq.answer}</Typography>
+                        </AccordionDetails>
+                    </Accordion>
+                ))}
+            </Box>
+        </Box>
+    );
+};
 
-                    <Grid container spacing={4}>
-                        {pillars.map((pillar, idx) => (
-                            <Grid item xs={12} md={6} lg={4} key={idx}>
-                                <Card elevation={3} sx={styles.featureCard}>
-                                    <Box sx={styles.cardHeader}/>
-                                    <CardContent sx={{p: 4}}>
-                                        <Box sx={styles.iconContainer}>
-                                            <Box sx={styles.icon}>{pillar.icon}</Box>
-                                            <Typography
-                                                variant="h6"
-                                                fontWeight="bold"
-                                                sx={{color: colors.primary}}
-                                            >
-                                                {pillar.title}
-                                            </Typography>
-                                        </Box>
-                                        <List disablePadding>
-                                            {pillar.points.map((item, index) => (
-                                                <ListItem
-                                                    key={index}
-                                                    disablePadding
-                                                    sx={{
-                                                        py: 1.5,
-                                                        pl: 2,
-                                                        borderLeft: `2px solid ${colors.secondary}`,
-                                                        mb: 1.5,
-                                                    }}
-                                                >
-                                                    <ListItemText
-                                                        primary={item}
-                                                        sx={{color: "text.secondary", m: 0}}
-                                                    />
-                                                </ListItem>
-                                            ))}
-                                        </List>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
-                <Box sx={{p: "20px 0 0 0"}}>
-                    <Typography
-                        className={"Montserrat"}
-                        variant="h4"
-                        textAlign="center"
-                        fontWeight="bold"
-                        sx={{color: colors.primary, mb: 3,fontSize: { xs: '32px', md: '40px' },}}
-                    >
-                        Frequently Asked Questions
-                    </Typography>
-                    <Divider
-                        sx={{
-                            backgroundColor: colors.secondary,
-                            height: 4,
-                            width: 100,
-                            mx: 'auto',
-                            mb: 6
-                        }}
-                    />
-
-                    <Box>
-                        {[
-                            {
-                                question: "What is the ESOP Program?",
-                                answer: "ESOP (Employee Self Ownership Program) is a structured emotional wellness initiative designed to move employees from disengagement to high motivation and performance."
-                            },
-                            {
-                                question: "Who is it for?",
-                                answer: "It’s for organizations aiming to improve employee engagement, mental wellness, performance, and retention through proactive support."
-                            },
-                            {
-                                question: "What key challenges does ESOP address?",
-                                answer: "Burnout, disengagement, performance stagnation, stress, lack of motivation, and poor work-life balance."
-                            },
-                            {
-                                question: "What’s unique about this program?",
-                                answer: "It categorizes employees into 3 motivation zones and provides personalized interventions, workshops, counseling, and follow-up support accordingly."
-                            },
-                            {
-                                question: "What services are included?",
-                                answer: "Psychometric tests, individual sessions, group workshops, DIY tools, stationed psychologists, and curated assessments."
-                            },
-                            {
-                                question: "How does it help businesses?",
-                                answer: "It boosts employee retention, productivity, morale, customer satisfaction, and reduces absenteeism and burnout."
-                            },
-                            {
-                                question: "Can results be measured?",
-                                answer: "Yes, through ROI-linked metrics such as productivity scores, retention rates, absenteeism, and mental health indicators."
-                            },
-                            {
-                                question: "What is the process of implementation?",
-                                answer: "Starts with wellness assessment, forms a taskforce, conducts workshops, activates wellness modules, and tracks progress with data."
-                            },
-                            {
-                                question: "Is pricing fixed?",
-                                answer: "No, pricing is customized based on organization size, workshop count, assessments, and session requirements."
-                            },
-                            {
-                                question: "How do we get started?",
-                                answer: "Reach out to the MTPL team to schedule an initial assessment and explore tailored offerings for your workplace."
-                            }
-                        ].map((faq, idx) => (
-                            <Accordion key={idx} sx={{ mb: 2 }}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon sx={{ color: colors.secondary }} />}
-                                    aria-controls={`faq-content-${idx}`}
-                                    id={`faq-header-${idx}`}
-                                >
-                                    <Typography fontWeight="bold" sx={{ color: colors.primary }}>
-                                        {faq.question}
-                                    </Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography color="text.secondary">{faq.answer}</Typography>
-                                </AccordionDetails>
-                            </Accordion>
-                        ))}
-                    </Box>
-                </Box>
+const ESOPMUI = () => {
+    return (
+        <Box>
+            <HeroSection />
+            <Container maxWidth="xl">
+                <ProgramOverview />
+                <ThreePillarApproach />
+                <FAQSection />
             </Container>
         </Box>
     );
-}
+};
+
+export default ESOPMUI;

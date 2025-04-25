@@ -11,6 +11,7 @@ import img1 from '../../assets/images/Photos/Coaching.jpg';
 import 'aos/dist/aos.css';
 import CircleIcon from "@mui/icons-material/Circle";
 
+// Styling for components
 const ProcessStep = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: theme.spacing(2),
@@ -31,63 +32,62 @@ const StepNumber = styled(Box)(({ theme }) => ({
     flexShrink: 0,
 }));
 
+const sectionTitleStyles = {
+    fontSize: { xs: '32px', md: '40px' },
+    marginBottom: "16px",
+    lineHeight: 1.2,
+    display: "flex",
+    justifyContent: "center",
+    color: "#012765",
+    fontWeight: 700,
+    letterSpacing: "-1px",
+};
+
+const descriptionStyles = {
+    mx: "auto",
+    mb: { xs: 4, md: 8 },
+    fontSize: { xs: "18px", md: "20px" },
+    color: "#4B5563",
+    lineHeight: "25px",
+    textAlign: "center",
+};
+
+// Steps data (could also be extracted to a separate file)
+const steps = [
+    {
+        number: '1',
+        title: 'Strengthen Mentorship',
+        description:
+            'Conduct emotional wellness sessions to boost mentor self-awareness in high-pressure academic settings.',
+    },
+    {
+        number: '2',
+        title: 'Aspirant Empowerment',
+        description:
+            'Monthly therapist-guided group workshops offer tools for emotional regulation, resilience-building, and sustainable self-care practices.',
+    },
+    {
+        number: '3',
+        title: 'Promote Diagnostics',
+        description:
+            'Self-realisation and preparing towards individual counselling session backed by Psychometric Tests and Self Assessments.',
+    },
+    {
+        number: '4',
+        title: 'Self-Help Groups',
+        description:
+            'Creating first responders’ structure in form of Self-Help groups withing the institute.',
+    },
+];
+
 const HowEmotionallyYoursinCoachingInstitute = () => {
-
-    const steps = [
-        {
-            number: '1',
-            title: 'Strengthen Mentorship',
-            description:
-                'Conduct emotional wellness sessions to boost mentor self-awareness in high-pressure academic settings.',
-        },
-        {
-            number: '2',
-            title: 'Aspirant Empowerment',
-            description:
-                'Monthly therapist-guided group workshops offer tools for emotional regulation, resilience-building, and sustainable self-care practices.',
-        },
-        {
-            number: '3',
-            title: 'Promote Diagnostics',
-            description:
-                'Self-realisation and preparing towards individual counselling session backed by Psychometric Tests and Self Assessments.',
-        },
-        {
-            number: '4',
-            title: 'Self-Help Groups',
-            description:
-                'Creating first responders’ structure in form of Self-Help groups withing the institute.',
-        },
-    ];
-
     return (
         <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
             <Box textAlign="center" mb={{ xs: 4, md: 6 }}>
-                <Box className={"Montserrat"}
-                     // data-aos="zoom-in"
-                     sx={{
-                         fontSize: { xs: '32px', md: '40px' },
-                         marginBottom: "16px",
-                         lineHeight: 1.2,
-                         display: "flex",
-                         justifyContent: "center",
-                         color: "#012765",
-                         fontWeight: 700,
-                         letterSpacing: "-1px",
-                     }}
-                >
+                <Typography className={"Montserrat"} sx={sectionTitleStyles}>
                     Emotionally resilient aspirants
-                </Box>
-                <Typography
-                    sx={{
-                        mx: "auto",
-                        mb: { xs: 4, md: 8 },
-                        fontSize: { xs: "18px", md: "20px" },
-                        color: "#4B5563",
-                        lineHeight: "25px",
-                        textAlign: "center",
-                    }}
-                >
+                </Typography>
+                <Typography sx={descriptionStyles}>
                     A focused and intensive program designed specifically for aspirants preparing for high-stakes entrance exams (like NEET, JEE, UPSC, CLAT) and their mentors.
                 </Typography>
             </Box>
@@ -96,7 +96,9 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
                 <Grid item xs={12} md={6}>
                     {steps.map((step) => (
                         <ProcessStep key={step.number}>
-                            <StepNumber><CircleIcon/></StepNumber>
+                            <StepNumber>
+                                <CircleIcon />
+                            </StepNumber>
                             <Box>
                                 <Typography
                                     sx={{
@@ -114,7 +116,7 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
                                         fontWeight: 400,
                                         color: "#012765",
                                         mb: 1,
-                                        textAlign:"justify",
+                                        textAlign: "justify",
                                     }}
                                 >
                                     {step.description}
@@ -124,21 +126,12 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
                     ))}
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Card
-                        sx={{
-                            borderRadius: 4,
-                            overflow: 'hidden',
-                            boxShadow: 3,
-                        }}
-                    >
-                        <Box sx={{
-                            width: '100%',
-                            height: { xs: 250, sm: 350, md: 500 }
-                        }}>
+                    <Card sx={{ borderRadius: 4, overflow: 'hidden', boxShadow: 3 }}>
+                        <Box sx={{ width: '100%', height: { xs: 250, sm: 350, md: 500 } }}>
                             <img
                                 src={img1}
-                                loading={'lazy'}
-                                alt="How EmotionallYours Works"
+                                loading="lazy"
+                                alt="How EmotionallyYours Works"
                                 style={{
                                     height: '100%',
                                     width: '100%',
@@ -153,4 +146,4 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
     );
 };
 
-export default HowEmotionallyYoursinCoachingInstitute;
+export default React.memo(HowEmotionallyYoursinCoachingInstitute);

@@ -130,7 +130,7 @@ const founders = [
 
 const Psychologist = () => {
     return (
-        <Box sx={{ padding: '0 0 96px 0', backgroundColor: '#F3F4F6' }}>
+        <Box sx={{ padding: '0 0 96px 0', }}>
             <Container maxWidth="xl">
                 <Typography
                     variant="h4"

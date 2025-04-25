@@ -13,6 +13,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
     backgroundColor: '#FFFFFF',
     borderRadius: '16px',
     boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+    height: '100%',
 }));
 
 const IconBox = styled(Box)(({ theme }) => ({
@@ -38,6 +39,26 @@ const StartButton = styled(Button)(({ theme }) => ({
     },
 }));
 
+const CommonTypography = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Poppins',
+    color: '#4B5563',
+    fontSize: '14px',
+    lineHeight: 1.6,
+}));
+
+const HeaderTypography = styled(Typography)(({ theme }) => ({
+    fontFamily: 'Montserrat',
+    color: '#012765',
+    fontWeight: 700,
+    fontSize: '32px',
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '28px',
+    },
+    [theme.breakpoints.down('xs')]: {
+        fontSize: '24px',
+    },
+}));
+
 const AcademicStressAssessment = () => {
     const navigate = useNavigate();
 
@@ -58,9 +79,7 @@ const AcademicStressAssessment = () => {
                 <Grid container spacing={4} justifyContent="center">
                     {/* Left Column - Main Content */}
                     <Grid item xs={12} md={8}>
-                        <StyledPaper sx={{
-                            height: '100%',
-                        }}>
+                        <StyledPaper>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                                 <img
                                     src={img5}
@@ -72,44 +91,33 @@ const AcademicStressAssessment = () => {
                                         marginRight: '16px',
                                     }}
                                 />
-                                <Typography className={"Montserrat"} variant="h4" sx={{
-                                    fontWeight: 700,
-                                    color: '#012765',
-                                    fontFamily: 'Montserrat',
-                                    fontSize: { xs: '24px', sm: '28px', md: '32px' },
-                                }}>
+                                <HeaderTypography>
                                     Academic Stress (Age 16-25)
-                                </Typography>
+                                </HeaderTypography>
                             </Box>
 
-                            <Typography sx={{
-                                mb: 4,
-                                color: '#4B5563',
-                                fontSize: '16px',
-                                lineHeight: 1.6,
-                                fontFamily: 'Poppins'
-                            }}>
+                            <CommonTypography sx={{ mb: 4 }}>
                                 This assessment helps measure your current stress and anxiety levels, identifying potential areas of concern and providing insights into your mental well-being. Your responses will help us understand your situation better and offer appropriate guidance.
-                            </Typography>
+                            </CommonTypography>
 
                             <Box sx={{ mb: 4 }}>
                                 <IconBox>
                                     <TimerOutlinedIcon />
-                                    <Typography sx={{ color: '#012765', fontFamily: 'Poppins' }}>
+                                    <CommonTypography>
                                         Time to complete: ~5 minutes
-                                    </Typography>
+                                    </CommonTypography>
                                 </IconBox>
                                 <IconBox>
                                     <HelpOutlineIcon />
-                                    <Typography sx={{ color: '#012765', fontFamily: 'Poppins' }}>
+                                    <CommonTypography>
                                         5 questions to answer
-                                    </Typography>
+                                    </CommonTypography>
                                 </IconBox>
                                 <IconBox>
                                     <DescriptionOutlinedIcon />
-                                    <Typography sx={{ color: '#012765', fontFamily: 'Poppins' }}>
+                                    <CommonTypography>
                                         Receive immediate results and recommendations
-                                    </Typography>
+                                    </CommonTypography>
                                 </IconBox>
                             </Box>
 
@@ -126,51 +134,21 @@ const AcademicStressAssessment = () => {
                     {/* Right Column - Additional Info */}
                     <Grid item xs={12} md={4}>
                         <StyledPaper>
-                            <Typography className={"Montserrat"} variant="h6" sx={{
-                                mb: 2,
-                                color: '#012765',
-                                fontWeight: 600,
-                                fontFamily: 'Montserrat'
-                            }}>
+                            <HeaderTypography variant="h6" sx={{ mb: 2 }}>
                                 Before you begin
-                            </Typography>
+                            </HeaderTypography>
 
                             <Box sx={{ mb: 3 }}>
-                                <Typography sx={{
-                                    mb: 2,
-                                    color: '#4B5563',
-                                    fontSize: '14px',
-                                    lineHeight: 1.6,
-                                    fontFamily: 'Poppins'
-                                }}>
-                                    • Find a quiet, comfortable space where you won't be interrupted
-                                </Typography>
-                                <Typography sx={{
-                                    mb: 2,
-                                    color: '#4B5563',
-                                    fontSize: '14px',
-                                    lineHeight: 1.6,
-                                    fontFamily: 'Poppins'
-                                }}>
-                                    • Answer honestly - there are no right or wrong answers
-                                </Typography>
-                                <Typography sx={{
-                                    mb: 2,
-                                    color: '#4B5563',
-                                    fontSize: '14px',
-                                    lineHeight: 1.6,
-                                    fontFamily: 'Poppins'
-                                }}>
-                                    • Consider how you've been feeling over the past two weeks
-                                </Typography>
-                                <Typography sx={{
-                                    color: '#4B5563',
-                                    fontSize: '14px',
-                                    lineHeight: 1.6,
-                                    fontFamily: 'Poppins'
-                                }}>
-                                    • Your responses are confidential and secure
-                                </Typography>
+                                {[
+                                    '• Find a quiet, comfortable space where you won’t be interrupted',
+                                    '• Answer honestly - there are no right or wrong answers',
+                                    '• Consider how you’ve been feeling over the past two weeks',
+                                    '• Your responses are confidential and secure',
+                                ].map((text, index) => (
+                                    <CommonTypography key={index} sx={{ mb: 2 }}>
+                                        {text}
+                                    </CommonTypography>
+                                ))}
                             </Box>
 
                             <Box sx={{
@@ -184,18 +162,12 @@ const AcademicStressAssessment = () => {
                                     fontSize: '14px',
                                     fontWeight: 600,
                                     mb: 1,
-                                    fontFamily: 'Poppins'
                                 }}>
                                     Note:
                                 </Typography>
-                                <Typography sx={{
-                                    color: '#4B5563',
-                                    fontSize: '14px',
-                                    lineHeight: 1.6,
-                                    fontFamily: 'Poppins'
-                                }}>
+                                <CommonTypography>
                                     This assessment is not a diagnostic tool. If you're experiencing severe distress, please seek professional help immediately.
-                                </Typography>
+                                </CommonTypography>
                             </Box>
                         </StyledPaper>
                     </Grid>

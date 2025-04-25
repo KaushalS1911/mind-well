@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Container, Grid, Typography} from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CircleIcon from '@mui/icons-material/Circle';
 import img1 from "../../assets/images/Home/workstable/Establish-Leadership.jpeg";
@@ -59,9 +59,8 @@ const steps = [
 function WorksTable() {
     return (
         <Container fixed>
-            <Box sx={{padding: "0"}}>
+            <Box sx={{ padding: "0" }}>
                 <Typography
-                    // data-aos="zoom-in"
                     className="Montserrat"
                     variant="h4"
                     align="center"
@@ -69,7 +68,7 @@ function WorksTable() {
                     color="#012765"
                     gutterBottom
                     sx={{
-                        fontSize: {xs: "32px", md: "40px"},
+                        fontSize: { xs: "32px", md: "40px" },
                         letterSpacing: "-1px",
                     }}
                 >
@@ -79,9 +78,9 @@ function WorksTable() {
                 <Box
                     align="center"
                     sx={{
-                        mx: {xs: 2, sm: 6, md: 12},
+                        mx: { xs: 2, sm: 6, md: 12 },
                         color: "#4B5563",
-                        fontSize: {xs: 18, sm: 20},
+                        fontSize: { xs: 18, sm: 20 },
                         lineHeight: 1.75,
                     }}
                 >
@@ -90,14 +89,14 @@ function WorksTable() {
                     steps.
                 </Box>
 
-                <Box sx={{position: "relative", mt: {xs: 4, sm: 6}}}>
+                <Box sx={{ position: "relative", mt: { xs: 4, sm: 6 } }}>
                     <Box
                         sx={{
                             position: "absolute",
                             left: 0,
                             top: 0,
                             bottom: 0,
-                            width: {md: "4px", xs: 0},
+                            width: { md: "4px", xs: 0 },
                             bgcolor: "#f3e2d3",
                             transform: "translateX(-50%)",
                             zIndex: 0,
@@ -109,15 +108,15 @@ function WorksTable() {
                             key={index}
                             sx={{
                                 position: "relative",
-                                mt: index === 0 ? 0 : {xs: 4},
+                                mt: index === 0 ? 0 : { xs: 4 },
                             }}
                         >
                             <Box
                                 sx={{
                                     position: "absolute",
-                                    top: {lg: "50%", md: "50%", sm: "50%"},
-                                    left: {lg: "-2.1%", md: "-2.8%", sm: "-4.8%"},
-                                    display: {xs: "none", sm: "inline-flex"},
+                                    top: { lg: "50%", md: "50%", sm: "50%" },
+                                    left: { lg: "-2.1%", md: "-2.8%", sm: "-4.8%" },
+                                    display: { xs: "none", sm: "inline-flex" },
                                     alignItems: "center",
                                     justifyContent: "center",
                                     width: 50,
@@ -131,20 +130,19 @@ function WorksTable() {
                                     zIndex: 1,
                                 }}
                             >
-                                <CircleIcon/>
-                                {/*{index + 1}*/}
+                                <CircleIcon />
                             </Box>
 
                             <Box
                                 sx={{
                                     display: "flex",
-                                    flexDirection: {xs: "column", md: "row"},
+                                    flexDirection: { xs: "column", md: "row" },
                                     bgcolor: "#fff",
                                     borderRadius: 2,
-                                    p: {xs: 3, sm: 3, md: 4},
+                                    p: { xs: 3, sm: 3, md: 4 },
                                     border: "1px solid #E5E7EB",
                                     gap: 4,
-                                    ml: {md: 5, xs: 0},
+                                    ml: { md: 5, xs: 0 },
                                     position: "relative",
                                     transition: "0.3s",
                                     "&:hover": {
@@ -157,7 +155,7 @@ function WorksTable() {
                                         position: "absolute",
                                         top: "10px",
                                         right: "12px",
-                                        display: {xs: "inline-flex", sm: "none"},
+                                        display: { xs: "inline-flex", sm: "none" },
                                         alignItems: "center",
                                         justifyContent: "center",
                                         width: 35,
@@ -169,9 +167,9 @@ function WorksTable() {
                                         fontSize: 14,
                                     }}
                                 >
-                                    {/*{index + 1}*/}
-                                    <CircleIcon/>
+                                    <CircleIcon />
                                 </Box>
+
                                 <Grid container spacing={4}>
                                     <Grid
                                         item
@@ -184,7 +182,7 @@ function WorksTable() {
                                         <Typography
                                             sx={{
                                                 fontWeight: 700,
-                                                fontSize: {xs: 23, sm: 25, md: 28},
+                                                fontSize: { xs: 23, sm: 25, md: 28 },
                                                 mb: 2,
                                                 color: "#002F6C",
                                             }}
@@ -195,10 +193,10 @@ function WorksTable() {
                                         {step.details.map((detail, i) => (
                                             <Box key={i} display="flex" mb={1}>
                                                 <CheckCircleIcon
-                                                    sx={{color: "#FE6A00", mr: 1,mt:0.5, fontSize: 20}}
+                                                    sx={{ color: "#FE6A00", mr: 1, mt: 0.5, fontSize: 20 }}
                                                 />
                                                 <Typography
-                                                    sx={{fontSize: {xs: 14, sm: 18}, lineHeight: 1.5}}
+                                                    sx={{ fontSize: { xs: 14, sm: 18 }, lineHeight: 1.5 }}
                                                 >
                                                     {detail}
                                                 </Typography>
@@ -239,31 +237,6 @@ function WorksTable() {
                         </Box>
                     ))}
                 </Box>
-
-                {/*<Grid container justifyContent="center" sx={{mt: {xs: 4, sm: 6}}}>*/}
-                {/*    <Box*/}
-                {/*        sx={{*/}
-                {/*            bgcolor: '#FE6A00',*/}
-                {/*            color: '#fff',*/}
-                {/*            fontWeight: 600,*/}
-                {/*            fontSize: 16,*/}
-                {/*            px: 4,*/}
-                {/*            py: 1.5,*/}
-                {/*            borderRadius: "6px",*/}
-                {/*            display: 'inline-block',*/}
-                {/*            cursor: "pointer",*/}
-                {/*            textTransform: 'none',*/}
-                {/*            transition: '0.3s',*/}
-                {/*            '&:hover': {bgcolor: '#dd6006'}*/}
-                {/*        }}*/}
-                {/*    >*/}
-                {/*        Start Your Journey Today*/}
-                {/*    </Box>*/}
-                {/*</Grid>*/}
-
-                {/*<Box sx={{textAlign: "center", fontSize: 14, mt: 2, color: '#4B5563'}}>*/}
-                {/*    No commitment required. Free consultation available.*/}
-                {/*</Box>*/}
             </Box>
         </Container>
     );

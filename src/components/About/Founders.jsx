@@ -1,10 +1,10 @@
 import React from 'react';
-import {Box, Container, Grid, Paper, Typography, Avatar} from '@mui/material';
-import {styled} from '@mui/material/styles';
+import { Box, Container, Grid, Paper, Typography, Avatar } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
-import img1 from '../../assets/images/about/Founder/Pandey Nidhi .png'
-import img2 from '../../assets/images/about/Founder/Devesh Kumar.png'
-import img3 from '../../assets/images/about/Founder/Ashutosh_Mishra.png'
+import img1 from '../../assets/images/about/Founder/Pandey Nidhi .png';
+import img2 from '../../assets/images/about/Founder/Devesh Kumar.png';
+import img3 from '../../assets/images/about/Founder/Ashutosh_Mishra.png';
 
 const Title = styled(Typography)(() => ({
     color: '#012765',
@@ -26,7 +26,7 @@ const SubTitle = styled(Typography)(() => ({
     fontFamily: 'Poppins, sans-serif',
 }));
 
-const StyledPaper = styled(Paper)(({theme}) => ({
+const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
     height: '100%',
     backgroundColor: '#FFFFFF',
@@ -67,7 +67,7 @@ const AvatarWrapper = styled(Box)(() => ({
     },
 }));
 
-const StyledAvatar = styled(Avatar)(({theme}) => ({
+const StyledAvatar = styled(Avatar)(({ theme }) => ({
     width: 120,
     height: 120,
     backgroundColor: '#E6EAF3',
@@ -154,87 +154,41 @@ const founders = [
     }
 ];
 
-const Founders = () => {
-    return (
-        <Box sx={{
-            padding: "96px 0",
-            backgroundColor: '#F3F4F6',
-        }}>
-            <Container maxWidth="xl" sx={{px: {xs: 2, sm: 3, md: 4, lg: 6}}}>
-                <Box className={"Montserrat"} sx={{
-                    fontSize: { xs: '32px', md: '40px' },
-                    marginBottom: "16px",
-                    lineHeight: "40px",
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#012765",
-                    fontWeight: "700"
-                }}>
-                    Founding members
-                </Box>
-                <Box sx={{
-                    maxWidth: 600,
-                    mx: "auto",
-                    mb: 8,
-                    fontSize: { xs: "16px", md: "20px" },
-                    color: "#4B5563",
-                    textAlign: "center",
-                    lineHeight: "25px",
-                }}>
-                    Meet our experienced team of professionals dedicated to revolutionizing mental health care
-                </Box>
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 3,
-                    maxWidth: 1200,
-                    margin: '0 auto'
-                }}>
-                    {/* First row - 3 cards */}
-                    <Grid container spacing={3} justifyContent="center">
-                        {founders.slice(0, 3).map((founder, index) => (
-                            <Grid item xs={12} sm={6} md={4} key={index}>
-                                <StyledPaper elevation={3}>
-                                    <AvatarWrapper className="avatar-wrapper">
-                                        <StyledAvatar>
-                                            <img src={founder.img} alt={founder.name} style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
-                                        </StyledAvatar>
-                                    </AvatarWrapper>
-                                    <Role>{founder.role}</Role>
-                                    <Box sx={{
-                                        fontSize: "18px",
-                                        fontWeight: "700",
-                                        color: "#012765",
-                                        mb: "12px",
-                                    }}>{founder.name}</Box>
-                                    <Description>{founder.description}</Description>
-                                    <QRCode>QR Code</QRCode>
-                                </StyledPaper>
-                            </Grid>
-                        ))}
-                    </Grid>
-                    {/* Second row - 2 cards */}
-                    <Grid container spacing={3} justifyContent="center">
-                        {founders.slice(3, 5).map((founder, index) => (
-                            <Grid item xs={12} sm={6} md={4} key={index + 3}>
-                                <StyledPaper elevation={3}>
-                                    <AvatarWrapper className="avatar-wrapper">
-                                        <StyledAvatar>
-                                            <PersonIcon/>
-                                        </StyledAvatar>
-                                    </AvatarWrapper>
-                                    <Role>{founder.role}</Role>
-                                    <Name>{founder.name}</Name>
-                                    <Description>{founder.description}</Description>
-                                    <QRCode>QR Code</QRCode>
-                                </StyledPaper>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
-            </Container>
-        </Box>
-    );
-};
+const FounderCard = React.memo(({ founder, icon = <PersonIcon /> }) => (
+    <Grid item xs={12} sm={6} md={4}>
+        <StyledPaper elevation={3}>
+            <AvatarWrapper className="avatar-wrapper">
+                <StyledAvatar>{founder.img ? <img src={founder.img} alt={founder.name} style={{ width: '100%', height: '100%', borderRadius: '50%' }} /> : icon}</StyledAvatar>
+            </AvatarWrapper>
+            <Role>{founder.role}</Role>
+            <Name>{founder.name}</Name>
+            <Description>{founder.description}</Description>
+            <QRCode>QR Code</QRCode>
+        </StyledPaper>
+    </Grid>
+));
 
-export default Founders; 
+const Founders = () => (
+    <Box sx={{ padding: "96px 0",  }}>
+        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4, lg: 6 } }}>
+            <Title>Founding members</Title>
+            <SubTitle>
+                Meet our experienced team of professionals dedicated to revolutionizing mental health care
+            </SubTitle>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, maxWidth: 1200, margin: '0 auto' }}>
+                <Grid container spacing={3} justifyContent="center">
+                    {founders.slice(0, 3).map((founder, index) => (
+                        <FounderCard key={index} founder={founder} />
+                    ))}
+                </Grid>
+                <Grid container spacing={3} justifyContent="center">
+                    {founders.slice(3, 5).map((founder, index) => (
+                        <FounderCard key={index + 3} founder={founder} />
+                    ))}
+                </Grid>
+            </Box>
+        </Container>
+    </Box>
+);
+
+export default Founders;

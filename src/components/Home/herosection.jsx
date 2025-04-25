@@ -1,100 +1,77 @@
 import React, { useEffect, useState } from 'react';
-import {
-    Box,
-    Container
-} from '@mui/material';
-import { AnimatePresence, motion } from "framer-motion";
+import { Box, Container } from '@mui/material';
+import { AnimatePresence, motion } from 'framer-motion';
 import img1 from '../../assets/images/Vectors/hero.png';
 
 
 const TITLES = ["Students.", "Aspirants.", "Employees."];
 const TITLE_CHANGE_DELAY = 3500;
 
+const useInterval = (callback, delay) => {
+    useEffect(() => {
+        if (delay === null) return;
+        const interval = setInterval(callback, delay);
+        return () => clearInterval(interval);
+    }, [callback, delay]);
+};
+
 const Herosection = () => {
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentTitleIndex((prev) => (prev < TITLES.length - 1 ? prev + 1 : 0));
-        }, TITLE_CHANGE_DELAY);
+    useInterval(() => {
+        setCurrentTitleIndex((prev) => (prev + 1) % TITLES.length);
+    }, TITLE_CHANGE_DELAY);
 
-        return () => clearInterval(interval);
-    }, []);
+    const titleStyle = {
+        fontSize: { lg: '72px', sm: '64px', xs: '40px' },
+        lineHeight: { xs: '1.2', sm: '1.3', md: '1.4' },
+        fontWeight: 700,
+        color: '#012765',
+    };
+
+    const animatedTitleStyle = {
+        color: '#FE6A00',
+        display: 'inline-block',
+        fontSize: '36px',
+        fontWeight: 500,
+    };
 
     return (
-        <Box>
+        <Box sx={{ position: 'relative', height: '100%' }}>
             <Box
                 sx={{
-                    position: "relative",
                     mt: { md: 12, xs: 0 },
                     padding: { xs: '180px 0', md: '230px 0' },
-                    height: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                    overflow: "hidden",
+                    display: 'flex',
+                    alignItems: 'center',
+                    overflow: 'hidden',
                 }}
             >
                 <Box
                     sx={{
-                        position: "absolute",
+                        position: 'absolute',
                         top: 0,
                         left: 0,
-                        width: "100%",
-                        height: "100%",
+                        width: '100%',
+                        height: '100%',
                         backgroundImage: `url(${img1})`,
-                        backgroundSize: "cover",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: {
-                            xs: "right",
-                            sm: "center",
-                        },
-                        // zIndex: 1,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: { xs: 'right', sm: 'center' },
                     }}
                 />
-
-
-                {/*<Box*/}
-                {/*    sx={{*/}
-                {/*        position: "absolute",*/}
-                {/*        top: 0,*/}
-                {/*        left: 0,*/}
-                {/*        width: "100%",*/}
-                {/*        height: "100%",*/}
-                {/*        backgroundColor: "rgba(0, 0, 0, 0.6)",*/}
-                {/*        zIndex: 2,*/}
-                {/*    }}*/}
-                {/*/>*/}
-
                 <Container maxWidth="xl" sx={{ zIndex: 3 }}>
-                    <Box
-                        sx={{
-                            fontSize: { lg: '72px', sm: '64px', xs: '40px' },
-                            lineHeight: { xs: '1.2', sm: '1.3', md: '1.4' },
-                            fontWeight: 700,
-                            color: "#012765",
-                        }}
-                    >
-                        Building Mindsets
-                    </Box>
+                    <Box sx={titleStyle}>Building Mindsets</Box>
 
-                    <Box>
+                    <Box aria-live="polite">
                         <AnimatePresence mode="wait">
                             <motion.span
                                 key={currentTitleIndex}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
-                                transition={{
-                                    type: "spring",
-                                    damping: 15,
-                                    stiffness: 100
-                                }}
-                                style={{
-                                    color: "#FE6A00",
-                                    display: 'inline-block',
-                                    fontSize: '36px',
-                                    fontWeight:"500"
-                                }}
+                                transition={{ type: 'spring', damping: 15, stiffness: 100 }}
+                                style={animatedTitleStyle}
                             >
                                 {TITLES[currentTitleIndex]}
                             </motion.span>
