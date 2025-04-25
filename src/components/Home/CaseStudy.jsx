@@ -69,7 +69,6 @@ const CaseStudy = () => {
                             students, particularly in underserved communities.
                         </Typography>
 
-                        {/* Stats */}
                         <Grid container spacing={2} mb={4}>
                             <Grid item xs={12} sm={6}>
                                 <StatCard>

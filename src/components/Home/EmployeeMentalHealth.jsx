@@ -100,7 +100,6 @@ const EmployeeMentalHealth = () => {
             </Box>
 
             <Grid container spacing={4}>
-                {/* Left Side - Image and Stats */}
                 <Grid item xs={12} md={6}>
                     <Card
                         sx={{
@@ -168,7 +167,6 @@ const EmployeeMentalHealth = () => {
                     </Grid>
                 </Grid>
 
-                {/* Right Side - Features */}
                 <Grid item xs={12} md={6}>
                     <Typography
                         sx={{

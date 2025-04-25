@@ -39,7 +39,7 @@ const imageStyle = {
 
 function MajorClients() {
     return (
-        <Box sx={{ pt: 10 }}>
+        <Box>
             {/* Section Heading */}
             <Box sx={{ mb: 5, textAlign: "center" }}>
                 <Box

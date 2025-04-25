@@ -47,7 +47,6 @@ const MentalHealthResources = () => {
         <Container maxWidth="xl" sx={{py: {xs: 6, md: 8}}}>
             <Box sx={{borderRadius: "10px"}}>
                 <Grid container spacing={0} alignItems="stretch">
-                    {/* Left Content */}
                     <Grid item xs={12} md={6}>
                         <Box
                             sx={{
@@ -132,7 +131,6 @@ const MentalHealthResources = () => {
                         </Box>
                     </Grid>
 
-                    {/* Right Image */}
                     <Grid item xs={12} md={6}>
                         <Box
                             sx={{

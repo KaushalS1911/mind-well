@@ -40,7 +40,6 @@ const CorporateWellness = () => {
                 }}
             >
                 <Grid container>
-                    {/* Left Content */}
                     <Grid item xs={12} lg={6}>
                         <Box sx={{ p: { xs: 4, sm: 5, lg: 6 } }}>
                             <Box className={"Montserrat"}
@@ -125,7 +124,6 @@ const CorporateWellness = () => {
                         </Box>
                     </Grid>
 
-                    {/* Right Image */}
                     <Grid item xs={12} lg={6}>
                         <Box
                             sx={{
