@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, Container, Grid, Typography } from '@mui/material';
-import img1 from '../../assets/images/about/aboutHeader/overview.jpg';
+import img1 from '../../assets/images/about/aboutHeader/overview1.jpg';
 
 function Overview() {
     return (
         <Box
             sx={{
-                py: { xs: 6, md: 12,lg:5,xl:0 },
+                py: { xs: 4, md: 5,lg:3,xl:0 },
                 px: { xs: 2, md: 4 },
                 overflow: 'hidden',
             }}
