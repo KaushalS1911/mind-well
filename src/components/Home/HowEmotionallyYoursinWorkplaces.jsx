@@ -83,7 +83,7 @@ const HowEmotionallyYoursinWorkplaces = () => {
     return (
         <Container maxWidth="xl" sx={{ padding:"0" }}>
             <Box textAlign="center" mb={{ xs: 6, md: 8 }}>
-                <Typography sx={sectionTitleStyles}>
+                <Typography className={"Montserrat"} sx={sectionTitleStyles}>
                     Creating ownership at workplaces
                 </Typography>
                 <Typography sx={descriptionStyles}>
