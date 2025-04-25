@@ -12,7 +12,7 @@ function Overview() {
             }}
         >
             <Container maxWidth="xl">
-                <Grid container spacing={8} alignItems="center">
+                <Grid container spacing={3} alignItems="center">
                     {/* Text Content */}
                     <Grid item xs={12} md={6}>
                         <Box>
@@ -97,7 +97,7 @@ function Overview() {
                                 sx={{
                                     width: "100%",
                                     height: "100%",
-                                    objectFit: "cover",
+                                    objectFit: "contain",
                                     display: "block",
                                 }}
                             />
