@@ -21,7 +21,7 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
-import img from '../../assets/images/Home/wellbeing-journey/journey.jpg';
+import img from '../../assets/images/Home/wellbeing-journey/satisfied-young-woman.jpg';
 import img1 from '../../assets/images/Home/wellbeing-journey/be mindfull.jpg';
 import img2 from '../../assets/images/Home/wellbeing-journey/reduce worry.png';
 import img3 from '../../assets/images/Home/wellbeing-journey/manage sterss.jpg';
