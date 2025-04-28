@@ -276,7 +276,7 @@ function WorkPlaceHeroSection() {
                                             style={{
                                                 width: '100%',
                                                 height: '100%',
-                                                objectFit: 'conver',
+                                                objectFit: 'contain',
                                             }}
                                         />
                                     </Box>
