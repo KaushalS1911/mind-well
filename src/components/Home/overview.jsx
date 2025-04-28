@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Grid, Typography } from '@mui/material';
-import img1 from '../../assets/images/about/aboutHeader/overview1.jpg';
+import img1 from '../../assets/images/about/aboutHeader//overview12.png';
 
 function Overview() {
     return (
@@ -9,6 +9,7 @@ function Overview() {
                 py: { xs: 4, md: 5, lg: 3, xl: 0 },
                 px: { xs: 2, md: 4 },
                 overflow: 'hidden',
+                backgroundColor:"#F3F4F6"
             }}
         >
             <Container maxWidth="xl">

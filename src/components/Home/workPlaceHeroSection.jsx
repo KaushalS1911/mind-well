@@ -60,9 +60,9 @@ function WorkPlaceHeroSection() {
         <Box
             sx={{
                 mt: {md: 8},
-                py: {xs: 12, md: 20},
+                py: {xs: 12, md: 15},
                 overflow: 'hidden',
-                backgroundColor: "#F3F4F6",
+                backgroundColor: "#fff",
             }}
         >
             <Container maxWidth="xl">
@@ -145,7 +145,7 @@ function WorkPlaceHeroSection() {
                                         mb: { xs: 2, md: 3 },
                                     }}
                                 >
-                                    Transforming individuals and workplaces to&nbsp;
+                                    Transforming individuals & workplaces to&nbsp;
 
                                     <Box
                                         component="span"
@@ -199,7 +199,7 @@ function WorkPlaceHeroSection() {
                                             mt:2
                                         }}
                                     >
-                                        Empower individuals and organizations with emotional intelligence tools that drive
+                                        Empowering individuals and organizations with emotional intelligence tools that drive
                                         personal growth, enhance performance, and foster meaningful workplace connections.
                                     </Typography>
                                 </motion.div>
