@@ -12,8 +12,10 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import logo from "../../assets/logo.jpg";
+import logo from "../../assets/Emotionally Yours Logo-01.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+
 
 function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -98,17 +100,18 @@ function Navigation() {
             padding: "12px 16px",
           }}
         >
-          <Box sx={{ height: "70px", width: "70px" }}>
-            <Link href="/">
-              <img
-                src={logo}
-                alt="logo"
-                style={{ height: "100%", cursor: "pointer" }}
-              />
-            </Link>
-          </Box>
+            <Box sx={{ height: "70px", width: "270px" }}>
+                <RouterLink to="/" style={{ display: "inline-block", height: "100%" }}>
+                    <img
+                        src={logo}
+                        alt="Emotionally Yours Logo"
+                        style={{ height: "100%", width: "auto", objectFit: "contain", cursor: "pointer" }}
+                    />
+                </RouterLink>
+            </Box>
 
-          {/* Desktop Menu */}
+
+            {/* Desktop Menu */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
             {navItems.map((item) =>
               item.submenu ? (

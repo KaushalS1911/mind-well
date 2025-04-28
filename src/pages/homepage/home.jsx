@@ -36,8 +36,8 @@ import WorkPlaceHeroSection from "../../components/Home/workPlaceHeroSection.jsx
 function Home() {
     return (
         <>
-            {/*<WorkPlaceHeroSection/>*/}
-            <Herosection/>
+            <WorkPlaceHeroSection/>
+            {/*<Herosection/>*/}
             <Overview/>
             <WellbeingJourney/>
             <WorksTable/>

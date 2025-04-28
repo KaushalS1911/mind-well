@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Button, Typography, Stack, useTheme, Container } from '@mui/material';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, {useEffect, useState} from 'react';
+import {Box, Button, Typography, Stack, useTheme, Container} from '@mui/material';
+import {motion, AnimatePresence} from 'framer-motion';
 import img1 from '../../assets/images/Vectors/Workplaces.jpg';
 
-const TITLES = ["Be proud to work", "Create a better future", "Thrive"];
+const TITLES = ["Thrive", "Flourish", "Achieve", "Grow"];
 const TITLE_CHANGE_DELAY = 2500;
 
 
 const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: {opacity: 0, y: 30},
     visible: {
         opacity: 1,
         y: 0,
@@ -21,7 +21,7 @@ const fadeInUp = {
 };
 
 const scaleIn = {
-    hidden: { opacity: 0, scale: 0.9 },
+    hidden: {opacity: 0, scale: 0.9},
     visible: {
         opacity: 1,
         scale: 1,
@@ -34,7 +34,7 @@ const scaleIn = {
 };
 
 const staggerContainer = {
-    hidden: { opacity: 0 },
+    hidden: {opacity: 0},
     visible: {
         opacity: 1,
         transition: {
@@ -60,9 +60,9 @@ function WorkPlaceHeroSection() {
         <Box
             sx={{
                 mt: {md: 8},
-                py: { xs: 12, md: 20 },
+                py: {xs: 12, md: 20},
                 overflow: 'hidden',
-                backgroundColor:"#F3F4F6"
+                backgroundColor: "#F3F4F6",
             }}
         >
             <Container maxWidth="xl">
@@ -70,43 +70,95 @@ function WorkPlaceHeroSection() {
                     variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-200px" }}
+                    viewport={{once: true, margin: "-200px"}}
                 >
                     <Box
                         sx={{
                             display: 'flex',
-                            flexDirection: { xs: 'column', md: 'row' },
+                            flexDirection: {xs: 'column', md: 'row'},
                             alignItems: 'center',
                             justifyContent: 'space-between',
-                            gap: { xs: 6, md: 10 },
+                            gap: {xs: 6, md: 10},
                         }}
                     >
                         <Stack
                             spacing={4}
                             sx={{
-                                maxWidth: { md: '50%' },
+                                maxWidth: {md: '50%'},
                                 width: '100%'
                             }}
                         >
-                            <motion.div variants={fadeInUp}>
-                                <Typography
-                                    className="Montserrat"
-                                    fontWeight="700"
-                                    lineHeight={1.1}
+                            {/*<motion.div variants={fadeInUp}>*/}
+                            {/*    <Typography*/}
+                            {/*        className="Montserrat"*/}
+                            {/*        fontWeight="700"*/}
+                            {/*        lineHeight={1.1}*/}
+                            {/*        sx={{*/}
+                            {/*            letterSpacing: "-1px",*/}
+                            {/*            fontSize: { lg: '52px', md: '42px', sm: '46px', xs: '38px' },*/}
+                            {/*            minHeight: { md: '160px', xs: '120px' },*/}
+                            {/*            color: "#062957",*/}
+                            {/*        }}*/}
+                            {/*    >*/}
+                            {/*        Build a workplace*/}
+                            {/*        <br />*/}
+                            {/*        where you can*/}
+                            {/*        <br />*/}
+                            {/*        <Box sx={{ height: { md: '60px', xs: '50px' }, position: 'relative', mt: 1 }}>*/}
+                            {/*            <AnimatePresence mode="wait">*/}
+                            {/*                <motion.span*/}
+                            {/*                    key={currentTitleIndex}*/}
+                            {/*                    initial={{ opacity: 0, y: 20 }}*/}
+                            {/*                    animate={{ opacity: 1, y: 0 }}*/}
+                            {/*                    exit={{ opacity: 0, y: -20 }}*/}
+                            {/*                    transition={{*/}
+                            {/*                        type: "spring",*/}
+                            {/*                        damping: 15,*/}
+                            {/*                        stiffness: 100*/}
+                            {/*                    }}*/}
+                            {/*                    style={{*/}
+                            {/*                        color: theme.palette.primary.main,*/}
+                            {/*                        display: 'inline-block',*/}
+                            {/*                        position: 'absolute'*/}
+                            {/*                    }}*/}
+                            {/*                >*/}
+                            {/*                    {TITLES[currentTitleIndex]}*/}
+                            {/*                </motion.span>*/}
+                            {/*            </AnimatePresence>*/}
+                            {/*        </Box>*/}
+                            {/*    </Typography>*/}
+                            {/*</motion.div>*/}
+
+
+                            <Box>
+                                {/* Main Heading */}
+                                <Box
+                                    className={"Montserrat"}
                                     sx={{
+                                        position: 'relative',
+                                        display: 'inline-block',
                                         letterSpacing: "-1px",
-                                        fontSize: { lg: '52px', md: '42px', sm: '46px', xs: '38px' },
-                                        minHeight: { md: '160px', xs: '120px' },
+                                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                                         color: "#062957",
+                                        fontWeight: 700,
+                                        lineHeight: 1.2,
+                                        mb: { xs: 2, md: 3 },
                                     }}
                                 >
-                                    Build a workplace
-                                    <br />
-                                    where you can
-                                    <br />
-                                    <Box sx={{ height: { md: '60px', xs: '50px' }, position: 'relative', mt: 1 }}>
+                                    Transforming individuals and workplaces to&nbsp;
+
+                                    <Box
+                                        component="span"
+                                        sx={{
+                                            display: 'inline-block',
+                                            position: 'relative',
+                                            minWidth: { xs: '100px', md: '120px' },
+                                            height: { xs: '40px', md: '50px' },
+                                        }}
+                                    >
                                         <AnimatePresence mode="wait">
                                             <motion.span
+                                                className={"Montserrat"}
                                                 key={currentTitleIndex}
                                                 initial={{ opacity: 0, y: 20 }}
                                                 animate={{ opacity: 1, y: 0 }}
@@ -114,58 +166,71 @@ function WorkPlaceHeroSection() {
                                                 transition={{
                                                     type: "spring",
                                                     damping: 15,
-                                                    stiffness: 100
+                                                    stiffness: 100,
                                                 }}
                                                 style={{
                                                     color: theme.palette.primary.main,
-                                                    display: 'inline-block',
-                                                    position: 'absolute'
+                                                    fontWeight: 700,
+                                                    fontSize: 'inherit',
+                                                    position: 'absolute',
+                                                    top: 8,
+                                                    left: 0,
                                                 }}
                                             >
                                                 {TITLES[currentTitleIndex]}
                                             </motion.span>
                                         </AnimatePresence>
                                     </Box>
-                                </Typography>
-                            </motion.div>
+                                </Box>
 
-                            <motion.div variants={fadeInUp}>
-                                <Typography
-                                    variant="body1"
-                                    sx={{
-                                        fontSize: { md: '18px', xs: '16px' },
-                                        color: 'text.secondary',
-                                        maxWidth: '550px',
-                                    }}
+                                {/* Paragraph Section */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, ease: "easeOut" }}
                                 >
-                                    Empower your organization with emotional intelligence tools that enhance performance and nurture meaningful workplace connections.
-                                </Typography>
-                            </motion.div>
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            fontSize: { xs: '16px', md: '20px', lg: '24px' },
+                                            color: '#000',
+                                            maxWidth: '600px',
+                                            fontWeight: 500,
+                                            lineHeight: 1.6,
+                                        }}
+                                    >
+                                        Empower individuals and organizations with emotional intelligence tools that drive
+                                        personal growth, enhance performance, and foster meaningful workplace connections.
+                                    </Typography>
+                                </motion.div>
+                            </Box>
 
-                            <motion.div variants={fadeInUp}>
-                                <Button
-                                    variant="contained"
-                                    sx={{
-                                        backgroundColor: '#002F6C',
-                                        color: 'white',
-                                        borderRadius: 2,
-                                        textTransform: 'none',
-                                        px: 4,
-                                        py: 1.8,
-                                        fontSize: '16px',
-                                        fontWeight: 500,
-                                        width: 'fit-content',
-                                        mx: { xs: 'auto', md: 'unset' },
-                                        display: { xs: 'block', md: 'inline-flex' },
-                                        '&:hover': {
-                                            transform: 'translateY(-3px)',
-                                        },
-                                        transition: 'all 0.3s ease-in-out',
-                                    }}
-                                >
-                                    Request Demo
-                                </Button>
-                            </motion.div>
+
+
+                            {/*<motion.div variants={fadeInUp}>*/}
+                            {/*    <Button*/}
+                            {/*        variant="contained"*/}
+                            {/*        sx={{*/}
+                            {/*            backgroundColor: '#002F6C',*/}
+                            {/*            color: 'white',*/}
+                            {/*            borderRadius: 2,*/}
+                            {/*            textTransform: 'none',*/}
+                            {/*            px: 4,*/}
+                            {/*            py: 1.8,*/}
+                            {/*            fontSize: '16px',*/}
+                            {/*            fontWeight: 500,*/}
+                            {/*            width: 'fit-content',*/}
+                            {/*            mx: { xs: 'auto', md: 'unset' },*/}
+                            {/*            display: { xs: 'block', md: 'inline-flex' },*/}
+                            {/*            '&:hover': {*/}
+                            {/*                transform: 'translateY(-3px)',*/}
+                            {/*            },*/}
+                            {/*            transition: 'all 0.3s ease-in-out',*/}
+                            {/*        }}*/}
+                            {/*    >*/}
+                            {/*        Request Demo*/}
+                            {/*    </Button>*/}
+                            {/*</motion.div>*/}
                         </Stack>
 
                         <motion.div
