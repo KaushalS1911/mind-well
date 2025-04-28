@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Button, Typography, Stack, useTheme, Container} from '@mui/material';
 import {motion, AnimatePresence} from 'framer-motion';
-import img1 from '../../assets/images/Vectors/Workplaces.jpg';
+import img1 from '../../assets/images/Vectors/mental-health-concept.jpg';
 
 const TITLES = ["Thrive", "Flourish", "Achieve", "Grow"];
 const TITLE_CHANGE_DELAY = 2500;
@@ -139,7 +139,7 @@ function WorkPlaceHeroSection() {
                                         display: 'inline-block',
                                         letterSpacing: "-1px",
                                         fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                                        color: "#062957",
+                                        color: "#012765",
                                         fontWeight: 700,
                                         lineHeight: 1.2,
                                         mb: { xs: 2, md: 3 },
@@ -169,7 +169,7 @@ function WorkPlaceHeroSection() {
                                                     stiffness: 100,
                                                 }}
                                                 style={{
-                                                    color: theme.palette.primary.main,
+                                                    color: "#FE6A00",
                                                     fontWeight: 700,
                                                     fontSize: 'inherit',
                                                     position: 'absolute',
@@ -192,11 +192,11 @@ function WorkPlaceHeroSection() {
                                     <Typography
                                         variant="body1"
                                         sx={{
-                                            fontSize: { xs: '16px', md: '20px', lg: '24px' },
-                                            color: '#000',
+                                            fontSize: { xs: '16px', md: '20px', lg: '18px' },
+                                            color: '#676666',
                                             maxWidth: '600px',
                                             fontWeight: 500,
-                                            lineHeight: 1.6,
+                                            mt:2
                                         }}
                                     >
                                         Empower individuals and organizations with emotional intelligence tools that drive
