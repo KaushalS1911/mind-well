@@ -41,7 +41,9 @@ const imageStyle = {
 
 const MajorClients = () => {
     return (
-        <Box>
+        <Box sx={{
+            px: {sm:"30px ",xs:"0",xl:"0"}
+        }}>
             {/* Section Heading */}
             <Box sx={{ mb: 5, textAlign: "center" }}>
                 <Box

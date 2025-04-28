@@ -373,7 +373,7 @@ const ESOPMUI = () => {
     return (
         <Box>
             <HeroSection />
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" sx={{ px: {sm:"30px ",xs:"0",xl:"0"}}}>
                 <ProgramOverview />
                 <ThreePillarApproach />
                 <FAQSection />

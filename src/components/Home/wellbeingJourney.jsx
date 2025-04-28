@@ -89,7 +89,7 @@ const WellbeingJourney = () => {
         : categories[0].image;
 
     return (
-        <Box sx={{ py: 8 }}>
+        <Box sx={{ py: 8 ,px: {sm:"30px ",xs:"0",lg:"0"},}}>
             <Container maxWidth="xl">
                 <Box textAlign="center" mb={3}>
                     <Typography

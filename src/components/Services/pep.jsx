@@ -79,7 +79,7 @@ export default function PEPMUI() {
     return (
         <Box>
             {/* Hero Section */}
-            <Box sx={{ backgroundColor: "#022662", padding: "120px 0 60px 0" }}>
+            <Box sx={{ backgroundColor: "#022662", padding: "120px 0 60px 0", px: {sm:"30px ",xs:"0",xl:"0"} }}>
                 <Grid container spacing={4} sx={{ mt: 8, px: { xs: 4, md: 10 } }}>
                     <Grid item xs={12} md={6}>
                         <Typography className="Montserrat" sx={{ fontSize: { lg: '38px', sm: '30px', xs: '26px' }, lineHeight: 1.2, fontWeight: '700', color: '#FE6A00', mb: 2 }}>
@@ -102,7 +102,7 @@ export default function PEPMUI() {
             </Box>
 
             {/* Program Overview */}
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" sx={{ px: {sm:"30px ",xs:"0",xl:"0"}}}>
                 <Box sx={{ padding: "96px 0 0 0" }}>
                     <Grid container spacing={4} mb={8}>
                         <Grid item xs={12} lg={8}>

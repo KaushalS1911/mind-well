@@ -43,7 +43,7 @@ const rightCards = [
 
 function WhyChooseUs() {
     return (
-        <Box sx={{padding:"96px 0 0 0"}}>
+        <Box sx={{padding:"96px 0 0 0",px: {sm:"30px ",xs:"0",lg:"0"},}}>
             <Container maxWidth="xl">
                 <Box
                     className="Montserrat"
@@ -63,7 +63,7 @@ function WhyChooseUs() {
                 </Box>
 
                 <Grid container spacing={4} alignItems="center">
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} lg={6}>
                         <Box
                             component="img"
                             src={img}
@@ -75,7 +75,7 @@ function WhyChooseUs() {
                         />
                     </Grid>
 
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} lg={6}>
                         <Grid container spacing={3}>
                             <Grid item xs={12} sm={6}>
                                 <Box sx={{ mt: 5 }}>

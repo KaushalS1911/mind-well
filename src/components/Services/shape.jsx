@@ -38,7 +38,7 @@ const COLORS = {
 };
 
 // Component for section headings
-const SectionHeading = ({ title, subtitle, centered = false, divider = false }) => (
+const SectionHeading = ({title, subtitle, centered = false, divider = false}) => (
     <Box textAlign={centered ? "center" : "left"} mb={6}>
         <Typography
             className="Montserrat"
@@ -47,7 +47,7 @@ const SectionHeading = ({ title, subtitle, centered = false, divider = false }) 
             gutterBottom
             sx={{
                 color: COLORS.primary,
-                fontSize: { xs: '32px', md: '40px' },
+                fontSize: {xs: '32px', md: '40px'},
                 letterSpacing: "-1px",
             }}
         >
@@ -73,7 +73,7 @@ const SectionHeading = ({ title, subtitle, centered = false, divider = false }) 
                 sx={{
                     maxWidth: centered ? 'md' : '100%',
                     mx: centered ? 'auto' : 0,
-                    fontSize: { xs: "16px", md: "20px" },
+                    fontSize: {xs: "16px", md: "20px"},
                 }}
             >
                 {subtitle}
@@ -83,13 +83,13 @@ const SectionHeading = ({ title, subtitle, centered = false, divider = false }) 
 );
 
 // FAQ Item Component
-const FaqItem = ({ question, answer }) => {
+const FaqItem = ({question, answer}) => {
     return (
-        <Accordion sx={{ mb: 2 }}>
+        <Accordion sx={{mb: 2}}>
             <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: COLORS.secondary }} />}
+                expandIcon={<ExpandMoreIcon sx={{color: COLORS.secondary}}/>}
             >
-                <Typography fontWeight="bold" sx={{ color: COLORS.primary }}>
+                <Typography fontWeight="bold" sx={{color: COLORS.primary}}>
                     {question}
                 </Typography>
             </AccordionSummary>
@@ -101,7 +101,7 @@ const FaqItem = ({ question, answer }) => {
 };
 
 // Pillar Card Component
-const PillarCard = ({ title, icon, points }) => {
+const PillarCard = ({title, icon, points}) => {
     const theme = useTheme();
 
     return (
@@ -112,8 +112,8 @@ const PillarCard = ({ title, icon, points }) => {
                 boxShadow: theme.shadows[10],
             },
         }}>
-            <Box sx={{ borderTop: `3px solid ${COLORS.secondary}` }} />
-            <CardContent sx={{ p: 4 }}>
+            <Box sx={{borderTop: `3px solid ${COLORS.secondary}`}}/>
+            <CardContent sx={{p: 4}}>
                 <Box sx={{
                     display: 'flex',
                     alignItems: 'center',
@@ -128,7 +128,7 @@ const PillarCard = ({ title, icon, points }) => {
                     }}>
                         {icon}
                     </Box>
-                    <Typography variant="h6" fontWeight="bold" sx={{ color: COLORS.primary }}>
+                    <Typography variant="h6" fontWeight="bold" sx={{color: COLORS.primary}}>
                         {title}
                     </Typography>
                 </Box>
@@ -146,7 +146,7 @@ const PillarCard = ({ title, icon, points }) => {
                         >
                             <ListItemText
                                 primary={item}
-                                sx={{ color: 'text.secondary', m: 0 }}
+                                sx={{color: 'text.secondary', m: 0}}
                             />
                         </ListItem>
                     ))}
@@ -158,13 +158,13 @@ const PillarCard = ({ title, icon, points }) => {
 
 // Hero Section Component
 const HeroSection = () => (
-    <Box sx={{ backgroundColor: COLORS.heroBackground, padding: "120px 0 60px 0" }}>
-        <Grid container spacing={4} sx={{ mt: 8, px: { xs: 4, md: 10 } }}>
+    <Box sx={{backgroundColor: COLORS.heroBackground, padding: "120px 0 60px 0"}}>
+        <Grid container spacing={4} sx={{mt: 8, px: {xs: 4, md: 10}}}>
             <Grid item xs={12} md={6}>
                 <Typography
                     className="Montserrat"
                     sx={{
-                        fontSize: { lg: '38px', sm: '30px', xs: '26px' },
+                        fontSize: {lg: '38px', sm: '30px', xs: '26px'},
                         lineHeight: 1.2,
                         fontWeight: 700,
                         color: '#FE6A00',
@@ -200,16 +200,17 @@ const HeroSection = () => (
                     sx={{
                         color: 'rgba(255,255,255,0.7)',
                         mb: 4,
-                        maxWidth: { xs: '100%', sm: '90%', md: '85%' },
+                        maxWidth: {xs: '100%', sm: '90%', md: '85%'},
                     }}
                 >
-                    Designed for K12 students, this emotional wellness program aligns with students to build emotional awareness,
+                    Designed for K12 students, this emotional wellness program aligns with students to build emotional
+                    awareness,
                     regulation, and the ability to recognize and manage emotions.
                 </Typography>
             </Grid>
 
             <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
-                <Box sx={{ height: "300px", width: "100%" }}>
+                <Box sx={{height: "300px", width: "100%"}}>
                     <img
                         src={img1}
                         alt="SHAPE Program"
@@ -236,7 +237,7 @@ const ProgramOverview = () => {
     ];
 
     return (
-        <Box sx={{ padding: "96px 0 0 0" }}>
+        <Box sx={{padding: "96px 0 0 0"}}>
             <Grid container spacing={4} mb={8}>
                 <Grid item xs={12} lg={8}>
                     <Typography
@@ -270,16 +271,16 @@ const ProgramOverview = () => {
                             borderTop: `4px solid ${COLORS.secondary}`
                         }}
                     >
-                        <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: COLORS.primary }}>
+                        <Typography variant="h6" fontWeight="bold" gutterBottom sx={{color: COLORS.primary}}>
                             Program Highlights
                         </Typography>
                         <List disablePadding>
                             {programHighlights.map((item, index) => (
-                                <ListItem key={index} disablePadding sx={{ py: 0.5 }}>
-                                    <ListItemIcon sx={{ minWidth: 24 }}>
-                                        <FiberManualRecord sx={{ color: COLORS.secondary, fontSize: 10 }} />
+                                <ListItem key={index} disablePadding sx={{py: 0.5}}>
+                                    <ListItemIcon sx={{minWidth: 24}}>
+                                        <FiberManualRecord sx={{color: COLORS.secondary, fontSize: 10}}/>
                                     </ListItemIcon>
-                                    <ListItemText primary={item} sx={{ color: 'text.secondary' }} />
+                                    <ListItemText primary={item} sx={{color: 'text.secondary'}}/>
                                 </ListItem>
                             ))}
                         </List>
@@ -296,7 +297,7 @@ export default function ShapePlusMUI() {
     const pillars = [
         {
             title: 'Emotional Wellness Insights & Awareness Building',
-            icon: <MenuBook fontSize="large" />,
+            icon: <MenuBook fontSize="large"/>,
             points: [
                 'Administer Comprehensive Emotional Wellness Surveys for students, educators, and parents to gather valuable insights into emotional well-being across the school community.',
                 'Facilitate Engaging Awareness Workshops focused on emotional intelligence, mindfulness practices, and stress management techniques to build foundational life skills.',
@@ -305,7 +306,7 @@ export default function ShapePlusMUI() {
         },
         {
             title: 'Training & Capacity Building',
-            icon: <People fontSize="large" />,
+            icon: <People fontSize="large"/>,
             points: [
                 'Student group classroom sessions focus on strengthening emotional regulation, enhancing stress adaptability, and developing coping mechanism',
                 'Educators training integrating mindful teaching practices, build emotional resilience, and elevate student engagement.',
@@ -314,7 +315,7 @@ export default function ShapePlusMUI() {
         },
         {
             title: 'Integrated Well-Being Support for Enduring Growth',
-            icon: <Favorite fontSize="large" />,
+            icon: <Favorite fontSize="large"/>,
             points: [
                 'Offer personalised counselling, both online and in person, to support individual issues.',
                 'Create peer support networks that promote open communication, empathy, and collective resilience within the school community.',
@@ -323,7 +324,7 @@ export default function ShapePlusMUI() {
         },
         {
             title: 'Measuring Impact, Shaping Future',
-            icon: <TrendingUp fontSize="large" />,
+            icon: <TrendingUp fontSize="large"/>,
             points: [
                 'Implement post-program evaluations to assess measurable improvements and personal growth across all participants.',
                 'Facilitate collaborative feedback and experience-sharing sessions with students, educators, and parents to capture insights and reflections.',
@@ -377,54 +378,58 @@ export default function ShapePlusMUI() {
     ];
 
     return (
-        <Box>
-            {/* Hero Section */}
-            <HeroSection />
+        <>
+            <HeroSection/>
+            <Box sx={{
+                px: {sm: "30px ", xs: "0", xl: "0"}
+            }}>
+                {/* Hero Section */}
 
-            <Container maxWidth="xl">
-                {/* Program Overview Section */}
-                <ProgramOverview />
+                <Container maxWidth="xl">
+                    {/* Program Overview Section */}
+                    <ProgramOverview/>
 
-                {/* Four-Pillar Approach Section */}
-                <Box sx={{ padding: "96px 0" }}>
-                    <SectionHeading
-                        title="Our Four-Pillar Approach"
-                        subtitle="SHAPE delivers emotional wellness through four integrated components that work together to create lasting positive impact for higher education students."
-                        centered={true}
-                    />
+                    {/* Four-Pillar Approach Section */}
+                    <Box sx={{padding: "96px 0"}}>
+                        <SectionHeading
+                            title="Our Four-Pillar Approach"
+                            subtitle="SHAPE delivers emotional wellness through four integrated components that work together to create lasting positive impact for higher education students."
+                            centered={true}
+                        />
 
-                    <Grid container spacing={4}>
-                        {pillars.map((pillar, idx) => (
-                            <Grid item xs={12} md={6} key={idx}>
-                                <PillarCard
-                                    title={pillar.title}
-                                    icon={pillar.icon}
-                                    points={pillar.points}
-                                />
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Box>
-
-                {/* FAQs Section */}
-                <Box sx={{ p: "20px 0 96px 0" }}>
-                    <SectionHeading
-                        title="Frequently Asked Questions"
-                        centered={true}
-                        divider={true}
-                    />
-
-                    <Box>
-                        {faqs.map((faq, idx) => (
-                            <FaqItem
-                                key={idx}
-                                question={faq.question}
-                                answer={faq.answer}
-                            />
-                        ))}
+                        <Grid container spacing={4}>
+                            {pillars.map((pillar, idx) => (
+                                <Grid item xs={12} md={6} key={idx}>
+                                    <PillarCard
+                                        title={pillar.title}
+                                        icon={pillar.icon}
+                                        points={pillar.points}
+                                    />
+                                </Grid>
+                            ))}
+                        </Grid>
                     </Box>
-                </Box>
-            </Container>
-        </Box>
+
+                    {/* FAQs Section */}
+                    <Box sx={{p: "20px 0 96px 0"}}>
+                        <SectionHeading
+                            title="Frequently Asked Questions"
+                            centered={true}
+                            divider={true}
+                        />
+
+                        <Box>
+                            {faqs.map((faq, idx) => (
+                                <FaqItem
+                                    key={idx}
+                                    question={faq.question}
+                                    answer={faq.answer}
+                                />
+                            ))}
+                        </Box>
+                    </Box>
+                </Container>
+            </Box>
+        </>
     );
 }

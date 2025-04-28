@@ -67,7 +67,7 @@ const struggling = [
 
 const Struggling = () => {
     return (
-        <Box sx={{ padding: "96px 0" }}>
+        <Box sx={{ padding: "96px 0", px: {sm:"30px ",xs:"0",xl:"0"} }}>
             <Container maxWidth="xl">
                 <Box sx={{ textAlign: "center" }}>
                     <Box sx={{ mb: 4 }}>

@@ -32,6 +32,9 @@ function MileStones() {
     ];
 
     return (
+        <Box sx={{
+            px: {sm:"30px ",xs:"0",lg:"0"},
+        }}>
         <Container maxWidth="xl">
             <Box
                 ref={ref}
@@ -80,6 +83,7 @@ function MileStones() {
                 </Box>
             </Box>
         </Container>
+        </Box>
     );
 }
 

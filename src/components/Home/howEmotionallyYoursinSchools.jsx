@@ -97,7 +97,7 @@ const HowEmotionallyYoursinSchools = () => {
     ];
 
     return (
-        <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 } }}>
+        <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 }, px: {sm:"30px ",xs:"0",xl:"0"},}}>
             <Box textAlign="center" mb={{ xs: 4, md: 6 }}>
                 <Typography
                     className="Montserrat"
