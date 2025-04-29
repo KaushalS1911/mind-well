@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { Box, Container, Typography, Card, Grid, styled, useTheme } from '@mui/material';
+import React, {useEffect} from 'react';
+import {Box, Container, Typography, Card, Grid, styled, useTheme} from '@mui/material';
 import img1 from '../../assets/images/Photos/School.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CircleIcon from '@mui/icons-material/Circle';
 
 // Styled Components for Process Steps and Step Numbers
-const ProcessStep = styled(Box)(({ theme }) => ({
+const ProcessStep = styled(Box)(({theme}) => ({
     display: 'flex',
     gap: theme.spacing(2),
     alignItems: 'flex-start',
     marginBottom: theme.spacing(3),
 }));
 
-const StepNumber = styled(Box)(({ theme }) => ({
+const StepNumber = styled(Box)(({theme}) => ({
     background: '#E8F1FF',
     borderRadius: '50%',
     width: '32px',
@@ -27,15 +27,15 @@ const StepNumber = styled(Box)(({ theme }) => ({
 }));
 
 // Reusable StepCard Component
-const StepCard = ({ number, title, description }) => (
+const StepCard = ({number, title, description}) => (
     <ProcessStep>
         <StepNumber>
-            <CircleIcon />
+            <CircleIcon/>
         </StepNumber>
         <Box>
             <Typography
                 sx={{
-                    fontSize: { xs: '20px', md: '22px' },
+                    fontSize: {xs: '20px', md: '22px'},
                     fontWeight: 600,
                     color: "#012765",
                     mb: 0.5
@@ -45,7 +45,7 @@ const StepCard = ({ number, title, description }) => (
             </Typography>
             <Typography
                 sx={{
-                    fontSize: { xs: '16px', md: '18px' },
+                    fontSize: {xs: '16px', md: '18px'},
                     fontWeight: 400,
                     color: "#012765",
                     mb: 1,
@@ -97,66 +97,68 @@ const HowEmotionallyYoursinSchools = () => {
     ];
 
     return (
-        <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 }, px: {sm:"30px ",xs:"0",xl:"0"},}}>
-            <Box textAlign="center" mb={{ xs: 4, md: 6 }}>
-                <Typography
-                    className="Montserrat"
-                    sx={{
-                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                        mb: 2,
-                        lineHeight: 1.2,
-                        color: "#012765",
-                        fontWeight: 700,
-                        letterSpacing: "-1px",
-                    }}
-                >
-                    Shaping up K-12 segment
-                </Typography>
-                <Typography
-                    sx={{
-                        mx: "auto",
-                        mb: { xs: 4, md: 8 },
-                        fontSize: { xs: "18px", md: "20px" },
-                        color: "#4B5563",
-                        lineHeight: "25px",
-                        textAlign: "center",
-                    }}
-                >
-                    Our annual Emotional Wellness Program, tailored for K12 learners
-                </Typography>
-            </Box>
-
-            <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
-                <Grid item xs={12} lg={6}>
-                    {steps.map((step) => (
-                        <StepCard key={step.number} {...step} />
-                    ))}
-                </Grid>
-
-                <Grid item xs={12} lg={6}>
-                    <Card
+        <Box sx={{px: {sm: "30px ", xs: "0", xl: "0"},}}>
+            <Container maxWidth="xl" sx={{py: {xs: 8, md: 12}, }}>
+                <Box textAlign="center" mb={{xs: 4, md: 6}}>
+                    <Typography
+                        className="Montserrat"
                         sx={{
-                            borderRadius: 4,
-                            overflow: 'hidden',
-                            boxShadow: 3,
+                            fontSize: {xs: '28px', sm: '34px', md: '42px', lg: '46px'},
+                            mb: 2,
+                            lineHeight: 1.2,
+                            color: "#012765",
+                            fontWeight: 700,
+                            letterSpacing: "-1px",
                         }}
                     >
-                        <Box sx={{ width: '100%', height: { xs: 250, sm: 350, md: 500 } }}>
-                            <img
-                                src={img1}
-                                loading="lazy"
-                                alt="How Emotionally Yours Works"
-                                style={{
-                                    height: '100%',
-                                    width: '100%',
-                                    objectFit: 'cover',
-                                }}
-                            />
-                        </Box>
-                    </Card>
+                        Shaping up K-12 segment
+                    </Typography>
+                    <Typography
+                        sx={{
+                            mx: "auto",
+                            mb: {xs: 4, md: 8},
+                            fontSize: {xs: "18px", md: "20px"},
+                            color: "#4B5563",
+                            lineHeight: "25px",
+                            textAlign: "center",
+                        }}
+                    >
+                        Our annual Emotional Wellness Program, tailored for K12 learners
+                    </Typography>
+                </Box>
+
+                <Grid container spacing={{xs: 4, md: 6}} alignItems="center">
+                    <Grid item xs={12} lg={6}>
+                        {steps.map((step) => (
+                            <StepCard key={step.number} {...step} />
+                        ))}
+                    </Grid>
+
+                    <Grid item xs={12} lg={6}>
+                        <Card
+                            sx={{
+                                borderRadius: 4,
+                                overflow: 'hidden',
+                                boxShadow: 3,
+                            }}
+                        >
+                            <Box sx={{width: '100%', height: {xs: 250, sm: 350, md: 500}}}>
+                                <img
+                                    src={img1}
+                                    loading="lazy"
+                                    alt="How Emotionally Yours Works"
+                                    style={{
+                                        height: '100%',
+                                        width: '100%',
+                                        objectFit: 'cover',
+                                    }}
+                                />
+                            </Box>
+                        </Card>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Container>
+            </Container>
+        </Box>
     );
 };
 
