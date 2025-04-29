@@ -23,6 +23,8 @@ function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
 
+    const [openSubmenu, setOpenSubmenu] = useState(null);
+
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -232,96 +234,126 @@ function Navigation() {
       </AppBar>
 
       {/* Mobile Menu */}
-      <Collapse
-        in={mobileMenuOpen}
-        timeout="auto"
-        unmountOnExit
-        sx={{ display: { xs: "block", md: "none" } }}
-        onExited={() => setMobileMenuOpen(false)}
-      >
-        <List
-          sx={{
-            backgroundColor: "#fff",
-            color: "#000",
-            padding: "8px 16px 16px",
-          }}
+        <Collapse
+            in={mobileMenuOpen}
+            timeout="auto"
+            unmountOnExit
+            sx={{ display: { xs: "block", md: "none" } }}
+            onExited={() => setMobileMenuOpen(false)}
         >
-          {navItems.map((item, index) => (
-            <Box key={index}>
-              <ListItem
+            <List
                 sx={{
-                  p: 0,
-                  cursor: "pointer",
-                  "&:hover .MuiTypography-root": { color: "#FF6600" },
+                    backgroundColor: "#fff",
+                    color: "#000",
+                    padding: "8px 16px 16px",
                 }}
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  window.location.href = item.path;
-                }}
-              >
-                <ListItemText
-                  primary={item.label}
-                  primaryTypographyProps={{
-                    fontSize: "16px",
-                    letterSpacing: "1px",
-                    color: "#012765",
-                    padding: "8px 0",
-                  }}
-                />
-              </ListItem>
-
-              {item.submenu && (
-                <List sx={{ paddingLeft: "20px" }}>
-                  {item.submenu.map((sub, subIndex) => (
-                    <ListItem
-                      key={subIndex}
-                      sx={{
-                        p: 0,
-                        cursor: "pointer",
-                        "&:hover .MuiTypography-root": { color: "#FF6600" },
-                      }}
-                      onClick={() => {
-                        // handleScrollToSection(sub.sectionId, item.path);
-                        setMobileMenuOpen(false);
-                        navigate(sub.path);
-                      }}
-                    >
-                      <ListItemText
-                        primary={sub.label}
-                        primaryTypographyProps={{
-                          fontSize: "14px",
-                          color: "#012765",
-                          padding: "4px 0",
-                        }}
-                      />
-                    </ListItem>
-                  ))}
-                </List>
-              )}
-            </Box>
-          ))}
-          <Link href="/contact" passHref style={{ textDecoration: "none" }}>
-            <Box
-              component="a"
-              sx={{
-                backgroundColor: "#FE6A00",
-                color: "#fff",
-                cursor: "pointer",
-                textAlign: "center",
-                borderRadius: "0.375rem",
-                padding: "8px 20px",
-                width: "100%",
-                marginTop: "26px",
-                textDecoration: "none",
-                "&:hover": { backgroundColor: "#da5e05" },
-              }}
-              onClick={() => setMobileMenuOpen(false)}
             >
-              Get Started
-            </Box>
-          </Link>
-        </List>
-      </Collapse>
+                {navItems.map((item, index) => (
+                    <Box key={index}>
+                        <ListItem
+                            sx={{
+                                p: 0,
+                                cursor: "pointer",
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                            }}
+                        >
+                            {/* Title Click → navigate to main path */}
+                            <Box
+                                onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    navigate(item.path);
+                                }}
+                                style={{ flexGrow: 1 }}
+                            >
+                                <ListItemText
+                                    primary={item.label}
+                                    primaryTypographyProps={{
+                                        fontSize: "16px",
+                                        letterSpacing: "1px",
+                                        color: "#012765",
+                                        padding: "8px 0",
+                                    }}
+                                />
+                            </Box>
+
+                            {/* Arrow Click → expand/collapse submenu */}
+                            {item.submenu && (
+                                <IconButton
+                                    size="small"
+                                    onClick={(e) => {
+                                        e.stopPropagation(); // stop bubbling to parent
+                                        setOpenSubmenu(openSubmenu === index ? null : index);
+                                    }}
+                                >
+                                    <KeyboardArrowDownIcon
+                                        sx={{
+                                            transition: "0.3s",
+                                            transform: openSubmenu === index ? "rotate(180deg)" : "rotate(0deg)",
+                                            color: "#012765",
+                                        }}
+                                    />
+                                </IconButton>
+                            )}
+                        </ListItem>
+
+                        {/* Submenu Items */}
+                        {item.submenu && (
+                            <Collapse in={openSubmenu === index} timeout="auto" unmountOnExit>
+                                <List sx={{ paddingLeft: "20px" }}>
+                                    {item.submenu.map((sub, subIndex) => (
+                                        <ListItem
+                                            key={subIndex}
+                                            sx={{
+                                                p: 0,
+                                                cursor: "pointer",
+                                                "&:hover .MuiTypography-root": { color: "#FF6600" },
+                                            }}
+                                            onClick={() => {
+                                                setMobileMenuOpen(false);
+                                                navigate(sub.path);
+                                            }}
+                                        >
+                                            <ListItemText
+                                                primary={sub.label}
+                                                primaryTypographyProps={{
+                                                    fontSize: "14px",
+                                                    color: "#012765",
+                                                    padding: "4px 0",
+                                                }}
+                                            />
+                                        </ListItem>
+                                    ))}
+                                </List>
+                            </Collapse>
+                        )}
+                    </Box>
+                ))}
+
+                {/* Mobile Get Started Button */}
+                <Link href="/contact" passHref style={{ textDecoration: "none" }}>
+                    <Box
+                        component="a"
+                        sx={{
+                            backgroundColor: "#FE6A00",
+                            color: "#fff",
+                            cursor: "pointer",
+                            textAlign: "center",
+                            borderRadius: "0.375rem",
+                            padding: "8px 20px",
+                            width: "100%",
+                            marginTop: "26px",
+                            textDecoration: "none",
+                            "&:hover": { backgroundColor: "#da5e05" },
+                        }}
+                        onClick={() => setMobileMenuOpen(false)}
+                    >
+                        Get Started
+                    </Box>
+                </Link>
+            </List>
+        </Collapse>
     </Box>
   );
 }

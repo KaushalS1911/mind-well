@@ -43,7 +43,7 @@ const rightCards = [
 
 function WhyChooseUs() {
     return (
-        <Box sx={{padding:"96px 0 0 0",px: {sm:"30px ",xs:"0",lg:"0"},}}>
+        <Box sx={{padding:"96px 0 0 0",px: {sm:"30px ",xs:"0",xl:"0"},}}>
             <Container maxWidth="xl">
                 <Box
                     className="Montserrat"
@@ -83,7 +83,7 @@ function WhyChooseUs() {
                                         <Box key={index} mb={3}>
                                             <Box
                                                 sx={{
-                                                    padding: '30px',
+                                                    padding: {xl:'30px',xs:'30px',lg:'20px'},
                                                     height: '230px',
                                                     borderRadius: 2,
                                                     transition: '0.5s',
@@ -127,7 +127,7 @@ function WhyChooseUs() {
                                     <Box key={index} mb={3}>
                                         <Box
                                             sx={{
-                                                padding: '30px',
+                                                padding: {xl:'30px',xs:'30px',lg:'20px'},
                                                 height: '230px',
                                                 borderRadius: 2,
                                                 transition: '0.5s',
