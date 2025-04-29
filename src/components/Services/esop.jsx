@@ -46,10 +46,10 @@ const useStyles = () => {
         },
         heroContent: {
             mt: 8,
-            px: { xs: 4, md: 10 },
+            px: {xs: 4, md: 10},
         },
         heroTitle: {
-            fontSize: { lg: '38px', sm: '30px', xs: '26px' },
+            fontSize: {lg: '38px', sm: '30px', xs: '26px'},
             lineHeight: 1.2,
             fontWeight: '700',
             color: '#FE6A00',
@@ -68,7 +68,7 @@ const useStyles = () => {
         heroDescription: {
             color: 'rgba(255,255,255,0.7)',
             mb: 4,
-            maxWidth: { xs: '100%', sm: '90%', md: '80%' },
+            maxWidth: {xs: '100%', sm: '90%', md: '80%'},
         },
         section: {
             padding: theme.spacing(10, 0),
@@ -110,7 +110,7 @@ const useStyles = () => {
         },
         sectionTitle: {
             color: colors.primary,
-            fontSize: { xs: '32px', md: '40px' },
+            fontSize: {xs: '32px', md: '40px'},
             fontWeight: 'bold',
             mb: 3,
             letterSpacing: '-1px',
@@ -118,7 +118,7 @@ const useStyles = () => {
         sectionDescription: {
             maxWidth: "md",
             mx: "auto",
-            fontSize: { xs: "16px", md: "20px" },
+            fontSize: {xs: "16px", md: "20px"},
         },
         divider: {
             backgroundColor: colors.secondary,
@@ -142,7 +142,7 @@ const HeroSection = () => {
                         Employee Self Ownership Program
                     </Typography>
 
-                    <Divider sx={styles.heroDivider} />
+                    <Divider sx={styles.heroDivider}/>
 
                     <Typography variant="h5" gutterBottom sx={styles.heroSubtitle}>
                         Emotional Wellness Program for Workplace
@@ -156,11 +156,11 @@ const HeroSection = () => {
                 </Grid>
 
                 <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
-                    <Box sx={{ height: "300px", width: "100%" }}>
+                    <Box sx={{height: "300px", width: "100%"}}>
                         <img
                             src={img1}
                             alt="Employee Self Ownership Program"
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            style={{width: '100%', height: '100%', objectFit: 'cover'}}
                         />
                     </Box>
                 </Grid>
@@ -180,7 +180,7 @@ const ProgramOverview = () => {
     ];
 
     return (
-        <Box sx={{ padding: "96px 0 0 0" }}>
+        <Box sx={{padding: "96px 0 0 0"}}>
             <Grid container spacing={4} mb={8}>
                 <Grid item xs={12} lg={8}>
                     <Typography className="Montserrat" fontWeight="bold" gutterBottom sx={styles.sectionTitle}>
@@ -200,16 +200,16 @@ const ProgramOverview = () => {
                 </Grid>
                 <Grid item xs={12} lg={4}>
                     <Paper elevation={1} sx={styles.highlightPaper}>
-                        <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: styles.colors.primary }}>
+                        <Typography variant="h6" fontWeight="bold" gutterBottom sx={{color: styles.colors.primary}}>
                             Program Highlights
                         </Typography>
                         <List disablePadding>
                             {highlights.map((item, index) => (
-                                <ListItem key={index} disablePadding sx={{ py: 0.5 }}>
-                                    <ListItemIcon sx={{ minWidth: 24 }}>
-                                        <FiberManualRecord sx={{ color: styles.colors.secondary, fontSize: 10 }} />
+                                <ListItem key={index} disablePadding sx={{py: 0.5}}>
+                                    <ListItemIcon sx={{minWidth: 24}}>
+                                        <FiberManualRecord sx={{color: styles.colors.secondary, fontSize: 10}}/>
                                     </ListItemIcon>
-                                    <ListItemText primary={item} sx={{ color: "text.secondary" }} />
+                                    <ListItemText primary={item} sx={{color: "text.secondary"}}/>
                                 </ListItem>
                             ))}
                         </List>
@@ -226,7 +226,7 @@ const ThreePillarApproach = () => {
     const pillars = [
         {
             title: "Proactive Burnout Prevention",
-            icon: <Psychology fontSize="large" />,
+            icon: <Psychology fontSize="large"/>,
             points: [
                 "Conduct expert-led sessions on stress management, emotional resilience, and sustainable work-life balance",
                 "Utilise self-assessment tools and advanced psychometric tests to assess early burnout risks and cognitive fatigue",
@@ -235,7 +235,7 @@ const ThreePillarApproach = () => {
         },
         {
             title: "Holistic Engagement for Emotional Well-Being",
-            icon: <Group fontSize="large" />,
+            icon: <Group fontSize="large"/>,
             points: [
                 "Foster peer-support communities that encourage open dialogue and collective growth",
                 "Provide time tested self-care techniques and guided mindfulness practices through an interactive wellness session",
@@ -244,7 +244,7 @@ const ThreePillarApproach = () => {
         },
         {
             title: "Sustaining Motivation and Enhancing Retention",
-            icon: <Work fontSize="large" />,
+            icon: <Work fontSize="large"/>,
             points: [
                 "Offer confidential one-on-one coaching with experienced psychologists to boost emotional resilience and professional fulfilment",
                 "Implement reinforcement strategies with measurable metrics to enhance organisational sustainability growth and individual's long-term commitment",
@@ -254,7 +254,7 @@ const ThreePillarApproach = () => {
     ];
 
     return (
-        <Box sx={{ padding: "96px 0" }}>
+        <Box sx={{padding: "96px 0"}}>
             <Box textAlign="center" mb={6}>
                 <Typography className="Montserrat" variant="h4" fontWeight="bold" gutterBottom sx={styles.sectionTitle}>
                     Our Three-Pillar Approach
@@ -270,18 +270,18 @@ const ThreePillarApproach = () => {
                 {pillars.map((pillar, idx) => (
                     <Grid item xs={12} md={6} lg={4} key={idx}>
                         <Card elevation={3} sx={styles.featureCard}>
-                            <Box sx={styles.cardHeader} />
-                            <CardContent sx={{ p: 4 }}>
+                            <Box sx={styles.cardHeader}/>
+                            <CardContent sx={{p: 4}}>
                                 <Box sx={styles.iconContainer}>
                                     <Box sx={styles.icon}>{pillar.icon}</Box>
-                                    <Typography variant="h6" fontWeight="bold" sx={{ color: styles.colors.primary }}>
+                                    <Typography variant="h6" fontWeight="bold" sx={{color: styles.colors.primary}}>
                                         {pillar.title}
                                     </Typography>
                                 </Box>
                                 <List disablePadding>
                                     {pillar.points.map((item, index) => (
                                         <ListItem key={index} disablePadding sx={styles.listItem}>
-                                            <ListItemText primary={item} sx={{ color: "text.secondary", m: 0 }} />
+                                            <ListItemText primary={item} sx={{color: "text.secondary", m: 0}}/>
                                         </ListItem>
                                     ))}
                                 </List>
@@ -341,21 +341,22 @@ const FAQSection = () => {
     ];
 
     return (
-        <Box sx={{ p: "20px 0 0 0" }}>
-            <Typography className="Montserrat" variant="h4" textAlign="center" fontWeight="bold" sx={styles.sectionTitle}>
+        <Box sx={{p: "20px 0 0 0"}}>
+            <Typography className="Montserrat" variant="h4" textAlign="center" fontWeight="bold"
+                        sx={styles.sectionTitle}>
                 Frequently Asked Questions
             </Typography>
-            <Divider sx={styles.divider} />
+            <Divider sx={styles.divider}/>
 
             <Box>
                 {faqs.map((faq, idx) => (
-                    <Accordion key={idx} sx={{ mb: 2 }}>
+                    <Accordion key={idx} sx={{mb: 2}}>
                         <AccordionSummary
-                            expandIcon={<ExpandMoreIcon sx={{ color: styles.colors.secondary }} />}
+                            expandIcon={<ExpandMoreIcon sx={{color: styles.colors.secondary}}/>}
                             aria-controls={`faq-content-${idx}`}
                             id={`faq-header-${idx}`}
                         >
-                            <Typography fontWeight="bold" sx={{ color: styles.colors.primary }}>
+                            <Typography fontWeight="bold" sx={{color: styles.colors.primary}}>
                                 {faq.question}
                             </Typography>
                         </AccordionSummary>
@@ -372,12 +373,14 @@ const FAQSection = () => {
 const ESOPMUI = () => {
     return (
         <Box>
-            <HeroSection />
-            <Container maxWidth="xl" sx={{ px: {sm:"30px ",xs:"0",xl:"0"}}}>
-                <ProgramOverview />
-                <ThreePillarApproach />
-                <FAQSection />
-            </Container>
+            <HeroSection/>
+            <Box sx={{ px: {sm:"30px ",xs:"0",xl:"0"}}}>
+                <Container maxWidth="xl">
+                    <ProgramOverview/>
+                    <ThreePillarApproach/>
+                    <FAQSection/>
+                </Container>
+            </Box>
         </Box>
     );
 };
