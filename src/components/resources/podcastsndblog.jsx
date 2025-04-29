@@ -122,7 +122,7 @@ const PodcastsAndBlog = () => {
 
     return (
         <Box sx={{
-            px: {sm:"30px ",xs:"0",xl:"0"}
+            px: {sm:"30px ",xs:"0",xl:"0"},
         }}>
             <Container maxWidth="xl" >
                 <Box mb={5}>

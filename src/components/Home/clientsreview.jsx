@@ -39,7 +39,7 @@ const testimonials = [
 
 function ClientsReview() {
     return (
-        <Box sx={{ padding:"96px 0 0 0" }}>
+        <Box sx={{ padding:"96px 0 0 0" ,px: {sm:"30px ",xs:"0",xl:"0"},}}>
             <Container maxWidth="xl">
                 <Typography
                     className={"Montserrat"}

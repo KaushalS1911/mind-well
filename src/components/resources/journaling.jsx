@@ -61,7 +61,7 @@ function Journaling() {
 
     return (
         <Container maxWidth={"xl"}>
-            <Box sx={{px: 4, p: "96px 0 0 0", mt: {md: 10, xs: 0}}}>
+            <Box sx={{px: {sm:"30px ",xs:"0",xl:"0"}, p: "96px 0 0 0", mt: {md: 10, xs: 0}}}>
                 {/* Header */}
                 <Box className={"Montserrat"} sx={{
                     color: "#012765",

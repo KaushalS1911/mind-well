@@ -7,7 +7,7 @@ function Overview() {
         <Box
             sx={{
                 py: { xs: 4, md: 5, lg: 3, xl: 0 },
-                px: { xs: 2, md: 4 },
+                px: {sm:"30px ",xs:"0",xl:"0"},
                 overflow: 'hidden',
                 backgroundColor:"#F3F4F6"
             }}
