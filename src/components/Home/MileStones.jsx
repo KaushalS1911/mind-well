@@ -6,7 +6,7 @@ import img1 from '../../assets/images/Home/our-impact/our-impact.jpg';
 
 // Reusable StatisticCard Component
 const StatisticCard = ({ end, suffix, label, inView }) => (
-    <Grid item xs={6} md={3}>
+    <Grid item xs={12} sm={6} md={3}>
         <Typography variant="h3" sx={{ color: '#FF7F1E', fontWeight: 700 }}>
             {inView ? (
                 <CountUp end={end} duration={2} separator="," suffix={suffix} />
@@ -70,7 +70,7 @@ function MileStones() {
                         className="Montserrat"
                         variant="h4"
                         fontWeight="bold"
-                        sx={{ mb: 5, textAlign: 'start', ml: 5 }}
+                        sx={{ mb: 5, textAlign: {sm:'start',xs:"center"}, ml: {sm:5,xs:0} }}
                     >
                         Our Impact
                     </Typography>
