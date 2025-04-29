@@ -49,7 +49,7 @@ const useStyles = () => {
             px: {xs: 4, md: 10},
         },
         heroTitle: {
-            fontSize: {lg: '38px', sm: '30px', xs: '26px'},
+            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
             lineHeight: 1.2,
             fontWeight: '700',
             color: '#FE6A00',
@@ -110,7 +110,14 @@ const useStyles = () => {
         },
         sectionTitle: {
             color: colors.primary,
-            fontSize: {xs: '32px', md: '40px'},
+            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+            fontWeight: 'bold',
+            mb: 3,
+            letterSpacing: '-1px',
+        },
+        sectionTitle1: {
+            color: colors.primary,
+            fontSize: "30px",
             fontWeight: 'bold',
             mb: 3,
             letterSpacing: '-1px',
@@ -183,7 +190,7 @@ const ProgramOverview = () => {
         <Box sx={{padding: "96px 0 0 0"}}>
             <Grid container spacing={4} mb={8}>
                 <Grid item xs={12} lg={8}>
-                    <Typography className="Montserrat" fontWeight="bold" gutterBottom sx={styles.sectionTitle}>
+                    <Typography className="Montserrat" fontWeight="bold" gutterBottom sx={styles.sectionTitle1}>
                         Comprehensive Emotional Wellness for Workplace
                     </Typography>
                     <Typography variant="body1" paragraph color="text.secondary">

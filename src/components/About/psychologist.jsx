@@ -136,7 +136,7 @@ const Psychologist = () => {
                     variant="h4"
                     sx={{
                         fontFamily: 'Montserrat',
-                        fontSize: { xs: '32px', md: '40px' },
+                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                         color: '#012765',
                         textAlign: 'center',
                         fontWeight: 700,

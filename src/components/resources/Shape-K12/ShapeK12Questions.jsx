@@ -497,7 +497,7 @@ const ShapeK12Questions = () => {
                                     color: '#0D2152',
                                     fontWeight: 700,
                                     mb: 2,
-                                    fontSize: {xs: '2rem', md: '2.5rem'}
+                                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                                 }}
                             >
                                 Your Assessment Results

@@ -102,7 +102,7 @@ const HowEmotionallyYoursinSchools = () => {
                 <Typography
                     className="Montserrat"
                     sx={{
-                        fontSize: { xs: '32px', md: '40px' },
+                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                         mb: 2,
                         lineHeight: 1.2,
                         color: "#012765",

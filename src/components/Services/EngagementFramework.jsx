@@ -126,7 +126,7 @@ const EngagementFramework = () => {
     return (
         <Box sx={{ pt: 8, mt: { md: 10, sm: 0 }, backgroundColor: 'white', px: {sm:"30px ",xs:"0",xl:"0"} }}>
             <Container maxWidth="xl">
-                <CategoryTitle>Engagement Framework</CategoryTitle>
+                <CategoryTitle sx={{fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },}}>Engagement Framework</CategoryTitle>
                 <SubTitle>
                     Comprehensive year-round support for emotional well-being and academic excellence
                 </SubTitle>

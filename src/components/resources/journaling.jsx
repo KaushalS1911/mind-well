@@ -65,7 +65,7 @@ function Journaling() {
                 {/* Header */}
                 <Box className={"Montserrat"} sx={{
                     color: "#012765",
-                    fontSize: { xs: '32px', md: '40px' },
+                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                     margin: "0 0 16px",
                     fontWeight: "700",
                     textAlign: "center"

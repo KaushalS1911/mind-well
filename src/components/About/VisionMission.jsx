@@ -66,7 +66,7 @@ const VisionMission = () => {
         <Box sx={{backgroundColor: 'white', py: {xs: 6, md: 12}}}>
             <Container maxWidth="xl">
                 <Box className="Montserrat" sx={{
-                    fontSize: {xs: '32px', md: '40px'},
+                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                     mb: 2,
                     textAlign: 'center',
                     color: '#012765',

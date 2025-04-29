@@ -48,7 +48,7 @@ function WhyChooseUs() {
                 <Box
                     className="Montserrat"
                     sx={{
-                        fontSize: "40px",
+                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                         marginBottom: "16px",
                         letterSpacing: "-1px",
                         lineHeight: "40px",

@@ -105,7 +105,7 @@ const GeneralStressAssessmentForm = () => {
                 fontWeight: 700,
                 color: '#012765',
                 textAlign: 'center',
-                fontSize: '32px',
+                fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
             }}>
                 Assessment Form
             </Box>

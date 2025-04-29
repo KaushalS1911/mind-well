@@ -49,7 +49,7 @@ const MajorClients = () => {
                 <Box
                     className="Montserrat"
                     sx={{
-                        fontSize: { xs: "32px", md: "40px" },
+                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                         lineHeight: "40px",
                         color: "#012765",
                         fontWeight: 700,

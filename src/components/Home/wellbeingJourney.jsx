@@ -96,7 +96,7 @@ const WellbeingJourney = () => {
                         variant="h4"
                         className="Montserrat"
                         sx={{
-                            fontSize: { xs: '28px', md: '40px' },
+                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                             letterSpacing: '-1px',
                             color: '#012765',
                             fontWeight: 700,
@@ -109,7 +109,7 @@ const WellbeingJourney = () => {
                         variant="h3"
                         className="Montserrat"
                         sx={{
-                            fontSize: { xs: '28px', md: '40px' },
+                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                             color: '#012765',
                             fontWeight: 700
                         }}

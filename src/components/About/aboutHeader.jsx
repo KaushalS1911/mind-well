@@ -43,7 +43,7 @@ const headerStyles = {
 };
 
 const headerTextStyles = {
-    fontSize: "48px",
+    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
     lineHeight: 1,
     fontWeight: "700",
     color: "#fff",

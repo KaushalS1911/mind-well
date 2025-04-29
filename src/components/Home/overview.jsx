@@ -24,7 +24,7 @@ function Overview() {
                                 lineHeight={1.2}
                                 sx={{
                                     letterSpacing: '-1px',
-                                    fontSize: { lg: '44px', md: '36px', sm: '32px', xs: '26px' },
+                                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                                     color: '#062957',
                                     mb: 3,
                                     fontFamily: 'Montserrat',

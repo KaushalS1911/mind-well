@@ -478,7 +478,7 @@ const GetInTouch = () => {
                     sx={{
                         color: "#002D62",
                         mb: 2,
-                        fontSize: { xs: '32px', md: '40px' },
+                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                         lineHeight: { xs: "32px", sm: "40px" },
                         fontWeight: "700"
                     }}

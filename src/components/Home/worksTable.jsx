@@ -68,7 +68,7 @@ function WorksTable() {
                     color="#012765"
                     gutterBottom
                     sx={{
-                        fontSize: { xs: "32px", md: "40px" },
+                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                         letterSpacing: "-1px",
                     }}
                 >

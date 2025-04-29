@@ -51,6 +51,7 @@ function ClientsReview() {
                         mb: 2,
                         fontFamily: "Montserrat",
                         letterSpacing: "-1px",
+                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                     }}
                 >
                     What Our Clients Say
