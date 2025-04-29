@@ -60,7 +60,7 @@ function WorkPlaceHeroSection() {
         <Box
             sx={{
                 mt: {md: 8},
-                py: {xs: 12, md: 15},
+                py: {xs: 8, md: 15},
                 overflow: 'hidden',
                 backgroundColor: "#fff",
                 px: {sm:"30px ",xs:"0",xl:"0"},

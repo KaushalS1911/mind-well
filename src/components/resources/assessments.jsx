@@ -133,7 +133,7 @@ function Assessments() {
                             <Grid container spacing={2}>
                                 <Grid container spacing={2}>
                                     {assessments.map((assessment, index) => (
-                                        <Grid item xs={12} sm={6} md={4} key={index}>
+                                        <Grid item xs={12} sm={6} lg={4} key={index}>
                                             <Box
                                                 sx={{
                                                     p: 2,

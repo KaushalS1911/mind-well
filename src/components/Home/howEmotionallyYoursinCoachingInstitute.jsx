@@ -97,7 +97,7 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
                 </Box>
 
                 <Grid container spacing={{xs: 4, md: 6}} alignItems="center">
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} lg={6}>
                         {steps.map((step) => (
                             <ProcessStep key={step.number}>
                                 <StepNumber>
@@ -129,7 +129,7 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
                             </ProcessStep>
                         ))}
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} lg={6}>
                         <Card sx={{borderRadius: 4, overflow: 'hidden', boxShadow: 3}}>
                             <Box sx={{width: '100%', height: {xs: 250, sm: 350, md: 500}}}>
                                 <img

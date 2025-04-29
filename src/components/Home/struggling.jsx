@@ -90,7 +90,7 @@ const Struggling = () => {
 
                     <Grid container spacing={3} justifyContent="center">
                         {struggling.map((item, index) => (
-                            <Grid item xs={12} sm={6} md={2.3} key={index}>
+                            <Grid item xs={12} sm={6} md={4} lg={2.3} key={index}>
                                 <Box
                                     sx={{
                                         p: 3,

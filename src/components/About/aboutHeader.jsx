@@ -91,7 +91,8 @@ const AboutHeader = () => {
 
             {/* Overview Section */}
             <Box sx={{
-                px: {sm:"30px ",xs:"0",xl:"0"}
+                px: {sm:"30px ",xs:"0",xl:"0"},
+                py:2
             }}>
                 <Container maxWidth="xl">
                     <Grid container spacing={6} alignItems="center">

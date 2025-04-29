@@ -120,7 +120,7 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
                 </Box>
 
                 <Grid container spacing={{xs: 4, md: 6}} alignItems="center">
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} lg={6}>
                         <Card
                             sx={{
                                 borderRadius: 4,
@@ -142,7 +142,7 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
                             </Box>
                         </Card>
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} lg={6}>
                         {steps.map((step) => (
                             <StepCard key={step.number} {...step} />
                         ))}

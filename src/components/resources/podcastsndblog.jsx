@@ -10,7 +10,7 @@ import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 
 // Define a reusable Card component for articles
 const ArticleCard = ({article}) => (
-    <Grid item xs={12} md={4}>
+    <Grid item xs={12} lg={4}>
         <Box sx={{borderRadius: 3, boxShadow: 1, height: "100%"}}>
             {/* Top Gray Section */}
             <Box sx={{bgcolor: "#0127650D", p: 2, fontWeight: 500}}>

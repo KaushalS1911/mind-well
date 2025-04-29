@@ -45,7 +45,7 @@ function SelfHelpTools() {
                             link: "Try Tool →"
                         }
                     ].map((tool, index) => (
-                        <Grid item xs={12} md={3} key={index}>
+                        <Grid item xs={12} md={6} lg={3} key={index}>
                             <Card sx={{
                                 p: "24px",
                                 borderRadius: 3,

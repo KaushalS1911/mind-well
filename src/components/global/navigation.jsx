@@ -212,7 +212,7 @@ function Navigation() {
                 cursor: "pointer",
                 backgroundColor: "#FE6A00",
                 padding: "8px 20px",
-                display: { md: "flex", xs: "none" },
+                display: { lg: "flex", xs: "none" },
                 transition: "0.5s",
                 "&:hover": { backgroundColor: "#da5e05" },
               }}

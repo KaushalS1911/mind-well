@@ -82,7 +82,7 @@ export default function PEPMUI() {
             {/* Hero Section */}
             <Box sx={{backgroundColor: "#022662", padding: "120px 0 60px 0", px: {sm: "30px ", xs: "0", xl: "0"}}}>
                 <Grid container spacing={4} sx={{mt: 8, px: {xs: 4, md: 10}}}>
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} lg={6}>
                         <Typography className="Montserrat" sx={{
                             fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
                             lineHeight: 1.2,
@@ -105,7 +105,7 @@ export default function PEPMUI() {
                             addressing personal challenges that impact mental clarity and emotional stability.
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
+                    <Grid item xs={12} lg={6} display="flex" justifyContent="center" alignItems="center">
                         <Box sx={{height: {xs: '300px', md: '400px'}, width: '100%'}}>
                             <img src={img1} alt="PEP" style={{width: '100%', height: '100%', objectFit: 'contain'}}/>
                         </Box>

@@ -144,7 +144,7 @@ const HeroSection = () => {
     return (
         <Box sx={styles.heroSection}>
             <Grid container spacing={4} sx={styles.heroContent}>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} lg={6}>
                     <Typography className="Montserrat" sx={styles.heroTitle}>
                         Employee Self Ownership Program
                     </Typography>
@@ -162,7 +162,7 @@ const HeroSection = () => {
                     </Typography>
                 </Grid>
 
-                <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
+                <Grid item xs={12} lg={6} display="flex" justifyContent="center" alignItems="center">
                     <Box sx={{height: "300px", width: "100%"}}>
                         <img
                             src={img1}

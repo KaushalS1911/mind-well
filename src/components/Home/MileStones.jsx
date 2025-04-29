@@ -6,7 +6,7 @@ import img1 from '../../assets/images/Home/our-impact/our-impact.jpg';
 
 // Reusable StatisticCard Component
 const StatisticCard = ({ end, suffix, label, inView }) => (
-    <Grid item xs={6} sm={3}>
+    <Grid item xs={6} md={3}>
         <Typography variant="h3" sx={{ color: '#FF7F1E', fontWeight: 700 }}>
             {inView ? (
                 <CountUp end={end} duration={2} separator="," suffix={suffix} />

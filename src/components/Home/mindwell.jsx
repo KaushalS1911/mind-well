@@ -122,7 +122,7 @@ const Mindwell = () => {
 
                 <Grid container spacing={3}>
                     {features.map((feature, index) => (
-                        <Grid item xs={12} md={4} key={index}>
+                        <Grid item xs={12} lg={4} key={index}>
                             <Paper elevation={3} sx={paperStyle}>
                                 <Box sx={iconBoxStyle}>{feature.icon}</Box>
                                 <Box sx={titleStyle}>{feature.title}</Box>

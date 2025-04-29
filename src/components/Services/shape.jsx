@@ -160,7 +160,7 @@ const PillarCard = ({title, icon, points}) => {
 const HeroSection = () => (
     <Box sx={{backgroundColor: COLORS.heroBackground, padding: "120px 0 60px 0"}}>
         <Grid container spacing={4} sx={{mt: 8, px: {xs: 4, md: 10}}}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} lg={6}>
                 <Typography
                     className="Montserrat"
                     sx={{
@@ -209,7 +209,7 @@ const HeroSection = () => (
                 </Typography>
             </Grid>
 
-            <Grid item xs={12} md={6} display="flex" justifyContent="center" alignItems="center">
+            <Grid item xs={12} lg={6} display="flex" justifyContent="center" alignItems="center">
                 <Box sx={{height: "300px", width: "100%"}}>
                     <img
                         src={img1}
