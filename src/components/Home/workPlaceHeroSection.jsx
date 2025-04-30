@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Box, Button, Typography, Stack, useTheme, Container, IconButton} from '@mui/material';
-import {motion, AnimatePresence} from 'framer-motion';
+import { AnimatePresence} from 'framer-motion';
 import img1 from '../../assets/images/Vectors/mental-health-concept.jpg';
 import img2 from '../../assets/images/Vectors/online-internet.jpg';
 import img3 from '../../assets/images/Vectors/vector-collection.jpg';
@@ -8,13 +8,13 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {Navigation, Pagination, Autoplay, EffectFade} from 'swiper/modules';
+import {Navigation, Pagination, Autoplay} from 'swiper/modules';
 
-// Import Swiper styles
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
+
 
 const SLIDE_DATA = [
     {
@@ -290,30 +290,15 @@ function WorkPlaceHeroSection() {
         >
             <Container maxWidth="xl">
                 <Swiper
-                    modules={[Navigation, Pagination, Autoplay, EffectFade]}
+                    modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={30}
                     slidesPerView={1}
                     pagination={{clickable: true}}
                     autoplay={{
                         delay: 5000,
                         disableOnInteraction: false,
-                        waitForTransition: true
                     }}
-                    effect="fade"
-                    speed={800}
-                    touchRatio={1.5}
-                    resistance={true}
-                    resistanceRatio={0.85}
-                    preventInteractionOnTransition={true}
                     onSwiper={setSwiperInstance}
-                    onInit={(swiper) => {
-                        // Force update on iOS devices
-                        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-                            setTimeout(() => {
-                                swiper.update();
-                            }, 100);
-                        }
-                    }}
                 >
                     {SLIDE_DATA.map((slideData, index) => (
                         <SwiperSlide key={index}>
@@ -321,6 +306,7 @@ function WorkPlaceHeroSection() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+
 
                 <IconButton
                     ref={navigationPrevRef}
@@ -335,6 +321,7 @@ function WorkPlaceHeroSection() {
                 >
                     <ArrowForwardIosIcon/>
                 </IconButton>
+
             </Container>
         </Box>
     );
