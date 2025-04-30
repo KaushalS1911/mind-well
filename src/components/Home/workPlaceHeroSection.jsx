@@ -1,11 +1,44 @@
-import React, {useEffect, useState} from 'react';
-import {Box, Button, Typography, Stack, useTheme, Container} from '@mui/material';
+import React, {useEffect, useRef, useState} from 'react';
+import {Box, Button, Typography, Stack, useTheme, Container, IconButton} from '@mui/material';
 import {motion, AnimatePresence} from 'framer-motion';
 import img1 from '../../assets/images/Vectors/mental-health-concept.jpg';
+import img2 from '../../assets/images/Vectors/online-internet.jpg';
+import img3 from '../../assets/images/Vectors/vector-collection.jpg';
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-const TITLES = ["Thrive", "Flourish", "Achieve", "Grow"];
-const TITLE_CHANGE_DELAY = 2500;
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Navigation, Pagination, Autoplay} from 'swiper/modules';
 
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
+const SLIDE_DATA = [
+    {
+        titles: ["Thrive", "Flourish", "Achieve", "Grow"],
+        titleChangeDelay: 2500,
+        mainHeading: "Transforming individuals & workplaces to",
+        description: "Empowering individuals and organizations with emotional intelligence tools that drive personal growth, enhance performance, and foster meaningful workplace connections.",
+        image: img1
+    },
+    {
+        titles: ["Connect", "Collaborate", "Innovate", "Lead"],
+        titleChangeDelay: 2500,
+        mainHeading: "Building stronger teams that",
+        description: "Create a culture of trust and psychological safety where team members feel valued, heard, and empowered to contribute their best work and ideas.",
+        image: img2
+    },
+    {
+        titles: ["Inspire", "Empower", "Transform", "Excel"],
+        titleChangeDelay: 2500,
+        mainHeading: "Developing leaders who",
+        description: "Equip leaders with the emotional intelligence skills needed to navigate challenges, inspire teams, and drive sustainable organizational success in today's complex world.",
+        image: img3
+    }
+];
 
 const fadeInUp = {
     hidden: {opacity: 0, y: 30},
@@ -44,272 +77,251 @@ const staggerContainer = {
     }
 };
 
-function WorkPlaceHeroSection() {
-    const theme = useTheme();
+const navButtonSx = {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%,-50%)",
+    zIndex: 10,
+    color: "#062957",
+    backgroundColor: "#e8e5e5",
+    width: "50px",
+    height: "50px",
+    opacity: 0.9,
+    ":hover": {
+        backgroundColor: "#bababa",
+        opacity: 1,
+    },
+    display: {xs: "none", lg: "flex"},
+};
+
+
+const HeroSlide = ({slideData, index}) => {
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentTitleIndex((prev) => (prev < TITLES.length - 1 ? prev + 1 : 0));
-        }, TITLE_CHANGE_DELAY);
+            setCurrentTitleIndex((prev) => (prev < slideData.titles.length - 1 ? prev + 1 : 0));
+        }, slideData.titleChangeDelay);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [slideData.titles.length, slideData.titleChangeDelay]);
+
+
+    return (
+        <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{once: true, margin: "-200px"}}
+            key={`slide-${index}`}
+        >
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: {xs: 'column', md: 'row'},
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: {xs: 6, md: 10},
+                    height: '100%',
+                }}
+            >
+                <Stack
+                    spacing={4}
+                    sx={{
+                        maxWidth: {md: '50%'},
+                        width: '100%'
+                    }}
+                >
+                    <Box>
+
+                        <Box
+                            className={"Montserrat"}
+                            sx={{
+                                position: 'relative',
+                                display: 'inline-block',
+                                letterSpacing: "-1px",
+                                fontSize: {xs: '28px', sm: '34px', md: '42px', lg: '46px'},
+                                color: "#012765",
+                                fontWeight: 700,
+                                lineHeight: 1.2,
+                                mb: {xs: 2, md: 3},
+                            }}
+                        >
+                            {slideData.mainHeading}&nbsp;
+
+                            <Box
+                                component="span"
+                                sx={{
+                                    display: 'inline-block',
+                                    position: 'relative',
+                                    minWidth: {xs: '100px', md: '120px'},
+                                    height: {xs: '40px', md: '50px'},
+                                }}
+                            >
+                                <AnimatePresence mode="wait">
+                                    <motion.span
+                                        className={"Montserrat"}
+                                        key={currentTitleIndex}
+                                        initial={{opacity: 0, y: 20}}
+                                        animate={{opacity: 1, y: 0}}
+                                        exit={{opacity: 0, y: -20}}
+                                        transition={{
+                                            type: "spring",
+                                            damping: 15,
+                                            stiffness: 100,
+                                        }}
+                                        style={{
+                                            color: "#FE6A00",
+                                            fontWeight: 700,
+                                            fontSize: 'inherit',
+                                            position: 'absolute',
+                                            top: 8,
+                                            left: 0,
+                                        }}
+                                    >
+                                        {slideData.titles[currentTitleIndex]}
+                                    </motion.span>
+                                </AnimatePresence>
+                            </Box>
+                        </Box>
+
+
+                        <motion.div
+                            initial={{opacity: 0, y: 20}}
+                            animate={{opacity: 1, y: 0}}
+                            transition={{duration: 0.8, ease: "easeOut"}}
+                        >
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    fontSize: {xs: '16px', md: '20px', lg: '18px'},
+                                    color: '#676666',
+                                    maxWidth: '600px',
+                                    fontWeight: 500,
+                                    mt: 2
+                                }}
+                            >
+                                {slideData.description}
+                            </Typography>
+                        </motion.div>
+                    </Box>
+                </Stack>
+
+                <motion.div
+                    variants={scaleIn}
+                    sx={{
+                        width: '100%',
+                        position: 'relative',
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Box
+                        sx={{
+                            width: '100%',
+                            height: {xs: 'auto', md: '500px'},
+                            position: 'relative',
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <motion.div
+                            animate={{
+                                y: [0, -10, 0],
+                            }}
+                            transition={{
+                                duration: 4,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                            style={{width: '100%'}}
+                        >
+                            <Box
+                                sx={{
+                                    height: {md: "500px", xs: "350px"},
+                                    width: '100%',
+                                }}
+                            >
+                                <img
+                                    src={slideData.image}
+                                    alt={`Slide ${index + 1}`}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'contain',
+                                    }}
+                                />
+                            </Box>
+                        </motion.div>
+                    </Box>
+                </motion.div>
+            </Box>
+        </motion.div>
+    );
+};
+
+function WorkPlaceHeroSection() {
+    const theme = useTheme();
+    const navigationPrevRef = useRef(null);
+    const navigationNextRef = useRef(null);
+    const [swiperInstance, setSwiperInstance] = useState(null);
+
+    useEffect(() => {
+        if (swiperInstance && navigationPrevRef.current && navigationNextRef.current) {
+            swiperInstance.params.navigation.prevEl = navigationPrevRef.current;
+            swiperInstance.params.navigation.nextEl = navigationNextRef.current;
+            swiperInstance.navigation.destroy();
+            swiperInstance.navigation.init();
+            swiperInstance.navigation.update();
+        }
+    }, [swiperInstance]);
 
     return (
         <Box
             sx={{
                 mt: {md: 8},
-                py: {xs: 8, md: 15},
+                py: {xs: 8, md: 10},
                 overflow: 'hidden',
                 backgroundColor: "#fff",
-                px: {sm:"30px ",xs:"0",xl:"0"},
+                px: {sm: "30px", xs: "0", xl: "0"},
+                position: 'relative',
             }}
         >
             <Container maxWidth="xl">
-                <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{once: true, margin: "-200px"}}
+                <Swiper
+                    modules={[Navigation, Pagination, Autoplay]}
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    pagination={{clickable: true}}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    }}
+                    onSwiper={setSwiperInstance}
                 >
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            flexDirection: {xs: 'column', md: 'row'},
-                            alignItems: 'center',
-                            justifyContent: 'space-between',
-                            gap: {xs: 6, md: 10},
-                        }}
-                    >
-                        <Stack
-                            spacing={4}
-                            sx={{
-                                maxWidth: {md: '50%'},
-                                width: '100%'
-                            }}
-                        >
-                            {/*<motion.div variants={fadeInUp}>*/}
-                            {/*    <Typography*/}
-                            {/*        className="Montserrat"*/}
-                            {/*        fontWeight="700"*/}
-                            {/*        lineHeight={1.1}*/}
-                            {/*        sx={{*/}
-                            {/*            letterSpacing: "-1px",*/}
-                            {/*            fontSize: { lg: '52px', md: '42px', sm: '46px', xs: '38px' },*/}
-                            {/*            minHeight: { md: '160px', xs: '120px' },*/}
-                            {/*            color: "#062957",*/}
-                            {/*        }}*/}
-                            {/*    >*/}
-                            {/*        Build a workplace*/}
-                            {/*        <br />*/}
-                            {/*        where you can*/}
-                            {/*        <br />*/}
-                            {/*        <Box sx={{ height: { md: '60px', xs: '50px' }, position: 'relative', mt: 1 }}>*/}
-                            {/*            <AnimatePresence mode="wait">*/}
-                            {/*                <motion.span*/}
-                            {/*                    key={currentTitleIndex}*/}
-                            {/*                    initial={{ opacity: 0, y: 20 }}*/}
-                            {/*                    animate={{ opacity: 1, y: 0 }}*/}
-                            {/*                    exit={{ opacity: 0, y: -20 }}*/}
-                            {/*                    transition={{*/}
-                            {/*                        type: "spring",*/}
-                            {/*                        damping: 15,*/}
-                            {/*                        stiffness: 100*/}
-                            {/*                    }}*/}
-                            {/*                    style={{*/}
-                            {/*                        color: theme.palette.primary.main,*/}
-                            {/*                        display: 'inline-block',*/}
-                            {/*                        position: 'absolute'*/}
-                            {/*                    }}*/}
-                            {/*                >*/}
-                            {/*                    {TITLES[currentTitleIndex]}*/}
-                            {/*                </motion.span>*/}
-                            {/*            </AnimatePresence>*/}
-                            {/*        </Box>*/}
-                            {/*    </Typography>*/}
-                            {/*</motion.div>*/}
+                    {SLIDE_DATA.map((slideData, index) => (
+                        <SwiperSlide key={index}>
+                            <HeroSlide slideData={slideData} index={index}/>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
 
 
-                            <Box>
-                                {/* Main Heading */}
-                                <Box
-                                    className={"Montserrat"}
-                                    sx={{
-                                        position: 'relative',
-                                        display: 'inline-block',
-                                        letterSpacing: "-1px",
-                                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                                        color: "#012765",
-                                        fontWeight: 700,
-                                        lineHeight: 1.2,
-                                        mb: { xs: 2, md: 3 },
-                                    }}
-                                >
-                                    Transforming individuals & workplaces to&nbsp;
+                <IconButton
+                    ref={navigationPrevRef}
+                    sx={{...navButtonSx, left: "2%"}}
+                >
+                    <ArrowBackIosNewIcon/>
+                </IconButton>
 
-                                    <Box
-                                        component="span"
-                                        sx={{
-                                            display: 'inline-block',
-                                            position: 'relative',
-                                            minWidth: { xs: '100px', md: '120px' },
-                                            height: { xs: '40px', md: '50px' },
-                                        }}
-                                    >
-                                        <AnimatePresence mode="wait">
-                                            <motion.span
-                                                className={"Montserrat"}
-                                                key={currentTitleIndex}
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: -20 }}
-                                                transition={{
-                                                    type: "spring",
-                                                    damping: 15,
-                                                    stiffness: 100,
-                                                }}
-                                                style={{
-                                                    color: "#FE6A00",
-                                                    fontWeight: 700,
-                                                    fontSize: 'inherit',
-                                                    position: 'absolute',
-                                                    top: 8,
-                                                    left: 0,
-                                                }}
-                                            >
-                                                {TITLES[currentTitleIndex]}
-                                            </motion.span>
-                                        </AnimatePresence>
-                                    </Box>
-                                </Box>
+                <IconButton
+                    ref={navigationNextRef}
+                    sx={{...navButtonSx, right: "2%"}}
+                >
+                    <ArrowForwardIosIcon/>
+                </IconButton>
 
-                                {/* Paragraph Section */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, ease: "easeOut" }}
-                                >
-                                    <Typography
-                                        variant="body1"
-                                        sx={{
-                                            fontSize: { xs: '16px', md: '20px', lg: '18px' },
-                                            color: '#676666',
-                                            maxWidth: '600px',
-                                            fontWeight: 500,
-                                            mt:2
-                                        }}
-                                    >
-                                        Empowering individuals and organizations with emotional intelligence tools that drive
-                                        personal growth, enhance performance, and foster meaningful workplace connections.
-                                    </Typography>
-                                </motion.div>
-                            </Box>
-
-
-
-                            {/*<motion.div variants={fadeInUp}>*/}
-                            {/*    <Button*/}
-                            {/*        variant="contained"*/}
-                            {/*        sx={{*/}
-                            {/*            backgroundColor: '#002F6C',*/}
-                            {/*            color: 'white',*/}
-                            {/*            borderRadius: 2,*/}
-                            {/*            textTransform: 'none',*/}
-                            {/*            px: 4,*/}
-                            {/*            py: 1.8,*/}
-                            {/*            fontSize: '16px',*/}
-                            {/*            fontWeight: 500,*/}
-                            {/*            width: 'fit-content',*/}
-                            {/*            mx: { xs: 'auto', md: 'unset' },*/}
-                            {/*            display: { xs: 'block', md: 'inline-flex' },*/}
-                            {/*            '&:hover': {*/}
-                            {/*                transform: 'translateY(-3px)',*/}
-                            {/*            },*/}
-                            {/*            transition: 'all 0.3s ease-in-out',*/}
-                            {/*        }}*/}
-                            {/*    >*/}
-                            {/*        Request Demo*/}
-                            {/*    </Button>*/}
-                            {/*</motion.div>*/}
-                        </Stack>
-
-                        <motion.div
-                            variants={scaleIn}
-                            sx={{
-                                // maxWidth: { md: '50%' },
-                                width: '100%',
-                                position: 'relative',
-                                display: 'flex',
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <Box
-                                sx={{
-                                    // maxWidth: {xs: '100%', md: '550px'},
-                                    width: '100%',
-                                    height: {xs: 'auto', md: '400px'},
-                                    position: 'relative',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <motion.div
-                                    animate={{
-                                        y: [0, -10, 0],
-                                    }}
-                                    transition={{
-                                        duration: 4,
-                                        repeat: Infinity,
-                                        ease: "easeInOut",
-                                    }}
-                                    style={{width: '100%'}}
-                                >
-                                    <Box
-                                        sx={{
-                                            height: "500px",
-                                            width: '100%',
-                                        }}
-                                    >
-                                        <img
-                                            src={img1}
-                                            alt="img1"
-                                            style={{
-                                                width: '100%',
-                                                height: '100%',
-                                                objectFit: 'contain',
-                                            }}
-                                        />
-                                    </Box>
-                                </motion.div>
-
-                                {/* Decorative elements */}
-                                {/*<Box*/}
-                                {/*    component={motion.div}*/}
-                                {/*    animate={{*/}
-                                {/*        rotate: [0, 360],*/}
-                                {/*    }}*/}
-                                {/*    transition={{*/}
-                                {/*        duration: 20,*/}
-                                {/*        repeat: Infinity,*/}
-                                {/*        ease: "linear"*/}
-                                {/*    }}*/}
-                                {/*    sx={{*/}
-                                {/*        position: 'absolute',*/}
-                                {/*        width: '120px',*/}
-                                {/*        height: '120px',*/}
-                                {/*        borderRadius: '50%',*/}
-                                {/*        border: '5px dashed gre',*/}
-                                {/*        top: '-30px',*/}
-                                {/*        right: '-30px',*/}
-                                {/*        zIndex: 0,*/}
-                                {/*        display: { xs: 'none', md: 'block' }*/}
-                                {/*    }}*/}
-                                {/*/>*/}
-                            </Box>
-                        </motion.div>
-                    </Box>
-                </motion.div>
             </Container>
         </Box>
     );

@@ -25,7 +25,8 @@ import {
     FiberManualRecord,
     ExpandMore as ExpandMoreIcon
 } from '@mui/icons-material';
-import img1 from '../../assets/images/Services/Shape.png';
+// import img1 from '../../assets/images/Services/Shape.png';
+import img1 from '../../assets/images/Services/iStock12.jpg';
 
 // Constants
 const COLORS = {
@@ -47,7 +48,7 @@ const SectionHeading = ({title, subtitle, centered = false, divider = false}) =>
             gutterBottom
             sx={{
                 color: COLORS.primary,
-                fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                fontSize: {xs: '28px', sm: '34px', md: '42px', lg: '46px'},
                 letterSpacing: "-1px",
             }}
         >
@@ -158,17 +159,52 @@ const PillarCard = ({title, icon, points}) => {
 
 // Hero Section Component
 const HeroSection = () => (
-    <Box sx={{backgroundColor: COLORS.heroBackground, padding: "120px 0 60px 0"}}>
-        <Grid container spacing={4} sx={{mt: 8, px: {xs: 4, md: 10}}}>
-            <Grid item xs={12} lg={6}>
+    <Box
+        sx={{
+            position: 'relative',
+            backgroundImage: `url(${img1})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            py: {xs: 8, sm: 10, md: 12}, px: {sm: "30px ", xs: "0", xl: "0"},
+        }}
+    >
+        {/* Overlay */}
+        <Box
+            sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                zIndex: 1,
+            }}
+        />
+        <Container maxWidth={"xl"}>
+
+            {/* Content */}
+            <Box
+                sx={{
+                    position: 'relative',
+                    zIndex: 2,
+                    mt: {md: 13, xs: 6},
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                }}
+            >
                 <Typography
                     className="Montserrat"
                     sx={{
-                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                        lineHeight: 1.2,
+                        fontSize: {xs: '24px', sm: '32px', md: '40px', lg: '46px'},
+                        lineHeight: 1.3,
                         fontWeight: 700,
                         color: '#FE6A00',
                         mb: 2,
+                        maxWidth: {xs: '100%', sm: '90%', md: '80%', lg: "70%"},
+                        textAlign: 'center',
                     }}
                 >
                     Student's Health Assessment And Performance Evaluation
@@ -185,10 +221,11 @@ const HeroSection = () => (
 
                 <Typography
                     variant="h5"
-                    gutterBottom
                     sx={{
                         color: 'rgba(255,255,255,0.9)',
                         fontWeight: 600,
+                        mb: 2,
+                        textAlign: 'center',
                     }}
                 >
                     Emotional Wellness Program for K12 learners
@@ -196,33 +233,18 @@ const HeroSection = () => (
 
                 <Typography
                     variant="body1"
-                    paragraph
                     sx={{
                         color: 'rgba(255,255,255,0.7)',
                         mb: 4,
-                        maxWidth: {xs: '100%', sm: '90%', md: '85%'},
+                        maxWidth: {xs: '100%', sm: '95%', md: '70%'},
+                        textAlign: 'center',
                     }}
                 >
                     Designed for K12 students, this emotional wellness program aligns with students to build emotional
-                    awareness,
-                    regulation, and the ability to recognize and manage emotions.
+                    awareness, regulation, and the ability to recognize and manage emotions.
                 </Typography>
-            </Grid>
-
-            <Grid item xs={12} lg={6} display="flex" justifyContent="center" alignItems="center">
-                <Box sx={{height: "300px", width: "100%"}}>
-                    <img
-                        src={img1}
-                        alt="SHAPE Program"
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                        }}
-                    />
-                </Box>
-            </Grid>
-        </Grid>
+            </Box>
+        </Container>
     </Box>
 );
 

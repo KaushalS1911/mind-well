@@ -1,93 +1,45 @@
 import React from 'react';
 import { Box, Container, Grid, Typography } from '@mui/material';
-import img1 from '../../assets/images/about/aboutHeader//overview12.png';
+import img1 from '../../assets/images/about/aboutHeader/overview12.png';
+
+const headingStyles = {
+    letterSpacing: '-1px',
+    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+    color: '#012765',
+    fontWeight: 700,
+    lineHeight: 1.2,
+    fontFamily: 'Montserrat',
+    mb: 3,
+};
+
+const paragraphStyles = {
+    fontSize: { md: '18px', xs: '16px' },
+    color: 'text.secondary',
+    lineHeight: 1.7,
+    fontFamily: 'Poppins',
+    textAlign: 'justify',
+};
 
 function Overview() {
     return (
         <Box
             sx={{
                 py: { xs: 4, md: 5, lg: 3, xl: 0 },
-                px: {sm:"30px ",xs:"0",xl:"0"},
+                px: { sm: '30px', xs: '0', xl: '0' },
                 overflow: 'hidden',
-                backgroundColor:"#F3F4F6"
+                backgroundColor: '#F3F4F6',
             }}
         >
             <Container maxWidth="xl">
                 <Grid container spacing={3} alignItems="center">
-                    {/* Text Content */}
-                    <Grid item xs={12} md={6}>
-                        <Box>
-                            <Typography
-                                className="Montserrat"
-                                variant="h3"
-                                fontWeight={700}
-                                lineHeight={1.2}
-                                sx={{
-                                    letterSpacing: '-1px',
-                                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                                    color: '#062957',
-                                    mb: 3,
-                                    fontFamily: 'Montserrat',
-                                }}
-                            >
-                                Transforming Mindsets,
-                                <br />
-                                Building Resilience
-                            </Typography>
-
-                            <Box
-                                sx={{
-                                    position: 'relative',
-                                    pl: 3,
-                                    mb: 4,
-                                    '&::before': {
-                                        content: '""',
-                                        position: 'absolute',
-                                        left: 0,
-                                        top: 0,
-                                        bottom: 0,
-                                        width: '4px',
-                                        backgroundColor: '#002F6C',
-                                        borderRadius: '4px',
-                                    },
-                                }}
-                            >
-                                <Typography
-                                    variant="body1"
-                                    sx={{
-                                        fontSize: { md: '18px', xs: '16px' },
-                                        color: 'text.secondary',
-                                        lineHeight: 1.7,
-                                        fontFamily: 'Poppins',
-                                        textAlign: 'justify',
-                                    }}
-                                >
-                                    EmotionallyYours is an initiative by MTPL, a private limited company
-                                    established in 2022 and recognised under the Start-Up India programme.
-                                    We design structured, process-orientated programmes that enhance emotional
-                                    intelligence and cultivate transformative mindsets.
-                                </Typography>
-                            </Box>
-
-                            <Typography
-                                variant="body1"
-                                sx={{
-                                    fontSize: { md: '18px', xs: '16px' },
-                                    color: 'text.secondary',
-                                    lineHeight: 1.7,
-                                    fontFamily: 'Poppins',
-                                    textAlign: 'justify',
-                                }}
-                            >
-                                Our mission is to empower individuals and organisations to build resilience,
-                                navigate challenges with clarity, and nurture meaningful relationships.
-                            </Typography>
-                        </Box>
-                    </Grid>
-
-                    {/* Image */}
-                    <Grid item xs={12} md={6}>
-                        <Box>
+                    {/* Image Section */}
+                    <Grid item xs={12} lg={6}>
+                        <Box
+                            sx={{
+                                height: { md: '600px', sm: '500px', xs: '300px' },
+                                width: '100%',
+                            }}
+                        >
                             <Box
                                 component="img"
                                 src={img1}
@@ -100,6 +52,45 @@ function Overview() {
                                 }}
                             />
                         </Box>
+                    </Grid>
+
+                    {/* Text Section */}
+                    <Grid item xs={12} lg={6}>
+                        <Typography className={"Montserrat"} variant="h3" sx={headingStyles}>
+                            Transforming Mindsets,
+                            <br />
+                            Building Resilience
+                        </Typography>
+
+                        <Box
+                            sx={{
+                                position: 'relative',
+                                pl: 3,
+                                mb: 4,
+                                '&::before': {
+                                    content: '""',
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 0,
+                                    bottom: 0,
+                                    width: '4px',
+                                    backgroundColor: '#002F6C',
+                                    borderRadius: '4px',
+                                },
+                            }}
+                        >
+                            <Typography variant="body1" sx={paragraphStyles}>
+                                EmotionallyYours is an initiative by MTPL, a private limited company
+                                established in 2022 and recognised under the Start-Up India programme.
+                                We design structured, process-orientated programmes that enhance emotional
+                                intelligence and cultivate transformative mindsets.
+                            </Typography>
+                        </Box>
+
+                        <Typography variant="body1" sx={paragraphStyles}>
+                            Our mission is to empower individuals and organisations to build resilience,
+                            navigate challenges with clarity, and nurture meaningful relationships.
+                        </Typography>
                     </Grid>
                 </Grid>
             </Container>

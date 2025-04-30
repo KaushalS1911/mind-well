@@ -130,7 +130,7 @@ const WellbeingJourney = () => {
 
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <Box sx={{ height: '520px', width: '100%', boxShadow: 3, borderRadius: 2 }}>
+                        <Box sx={{ height: '512px', width: '100%', boxShadow: 3, borderRadius: 2 }}>
                             <img
                                 src={selectedImage}
                                 alt="Selected category"
@@ -145,7 +145,7 @@ const WellbeingJourney = () => {
                     </Grid>
 
                     <Grid item xs={12} md={6}>
-                        <List>
+                        <Box>
                             {categories.map((category) => {
                                 const isOpen = openCategory === category.name;
 
@@ -196,7 +196,7 @@ const WellbeingJourney = () => {
                                     </Paper>
                                 );
                             })}
-                        </List>
+                        </Box>
                     </Grid>
                 </Grid>
             </Container>

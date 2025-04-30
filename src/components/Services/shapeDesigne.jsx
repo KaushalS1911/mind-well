@@ -25,7 +25,8 @@ import {
     FiberManualRecord,
     ExpandMore as ExpandMoreIcon
 } from '@mui/icons-material';
-import img1 from "../../assets/images/Services/shape1.png";
+// import img1 from "../../assets/images/Services/shape1.png";
+import img1 from "../../assets/images/Services/shapedesign.jpg";
 
 // Constants
 const COLORS = {
@@ -47,7 +48,7 @@ const SectionHeading = ({title, subtitle, centered = false, divider = false}) =>
             gutterBottom
             sx={{
                 color: COLORS.primary,
-                fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                fontSize: {xs: '28px', sm: '34px', md: '42px', lg: '46px'},
                 letterSpacing: "-1px",
             }}
         >
@@ -183,17 +184,53 @@ const ProgramHighlights = ({items}) => (
 
 // Hero Section Component
 const HeroSection = () => (
-    <Box sx={{backgroundColor: COLORS.heroBackground, padding: "120px 0 60px 0"}}>
-        <Grid container spacing={4} sx={{mt: 8, px: {xs: 4, md: 10}}}>
-            <Grid item xs={12} lg={6}>
+    <Box
+        sx={{
+            position: 'relative',
+            backgroundImage: `url(${img1})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            py: {xs: 8, sm: 10, md: 12},
+            px: {sm:"30px ",xs:"0",xl:"0"},
+        }}
+    >
+        {/* Overlay */}
+        <Box
+            sx={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                zIndex: 1,
+            }}
+        />
+        <Container maxWidth={"xl"}>
+
+            {/* Content */}
+            <Box
+                sx={{
+                    position: 'relative',
+                    zIndex: 2,
+                    mt: {md:13,xs:6},
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                }}
+            >
                 <Typography
                     className="Montserrat"
                     sx={{
-                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                        lineHeight: 1.2,
-                        fontWeight: '700',
+                        fontSize: {xs: '24px', sm: '32px', md: '40px', lg: '46px'},
+                        lineHeight: 1.3,
+                        fontWeight: 700,
                         color: '#FE6A00',
                         mb: 2,
+                        maxWidth: {xs: '100%', sm: '90%', md: '80%',lg:"70%"},
+                        textAlign: 'center',
                     }}
                 >
                     Student's Health Assessment And Performance Evaluation +
@@ -210,10 +247,11 @@ const HeroSection = () => (
 
                 <Typography
                     variant="h5"
-                    gutterBottom
                     sx={{
                         color: 'rgba(255,255,255,0.9)',
                         fontWeight: 600,
+                        mb: 2,
+                        textAlign: 'center',
                     }}
                 >
                     Emotional Wellness Program for Higher Education
@@ -221,37 +259,18 @@ const HeroSection = () => (
 
                 <Typography
                     variant="body1"
-                    paragraph
                     sx={{
                         color: 'rgba(255,255,255,0.7)',
                         mb: 4,
-                        maxWidth: {xs: '100%', sm: '90%', md: '80%'},
+                        maxWidth: {xs: '100%', sm: '95%', md: '70%'},
+                        textAlign: 'center',
                     }}
                 >
                     Designed for higher education students, this emotional wellness program aligns with NEP to
                     cultivate academic excellence, emotional resilience, and future readiness.
                 </Typography>
-            </Grid>
-
-            <Grid item xs={12} lg={6} display="flex" justifyContent="center" alignItems="center">
-                <Box
-                    sx={{
-                        height: {xs: '300px', md: '370px'},
-                        width: '100%',
-                    }}
-                >
-                    <img
-                        src={img1}
-                        alt="SHAPE+ Program"
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'contain',
-                        }}
-                    />
-                </Box>
-            </Grid>
-        </Grid>
+            </Box>
+        </Container>
     </Box>
 );
 

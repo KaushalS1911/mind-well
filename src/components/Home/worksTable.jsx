@@ -118,7 +118,7 @@ function WorksTable() {
                                     sx={{
                                         position: "absolute",
                                         top: {lg: "50%", md: "50%", sm: "50%"},
-                                        left: {lg: "-2.1%", md: "-2.8%", sm: "-4.8%"},
+                                        left: {lg: "-1.6%", md: "-3%", sm: "-4.8%"},
                                         display: {xs: "none", sm: "inline-flex"},
                                         alignItems: "center",
                                         justifyContent: "center",

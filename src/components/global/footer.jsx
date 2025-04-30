@@ -24,7 +24,12 @@ const navigationLinks = [
     {name: "Resources", path: "/resources"},
     {name: "Contact", path: "/contact"},
 ];
-const services = ["Individual Therapy", "Couples Therapy", "Student ServicesShap", "Corporate Wellness", "Therapy Types", "Mental Health Assessments"];
+const services = [
+    {name: "SHAPE", path: "/services/SHAPE"},
+    {name: "SHAPE+", path: "/services/SHAPE-Designe"},
+    {name: "ESOP", path: "/services/ESOP"},
+    {name: "PEP", path: "/services/PEP"},
+]
 const contactDetails = {
     phone: "7977135096",
     email: "devesh.tripathi@mahadevasth.com",
@@ -178,7 +183,7 @@ const Footer = () => {
                         </Box>
                         {services.map((service, index) => (
                             <Box key={index} sx={{
-                                fontSize: "16px",
+                                mt: 1, fontSize: "16px",
                                 margin: "15px 0px 0px ",
                                 color: "#FFFFFFCC",
                                 transition: "0.3s",
@@ -187,8 +192,10 @@ const Footer = () => {
                                     textDecoration: "underline",
                                 }
                             }}>
-                                <Link href="#" color="inherit" underline="none">
-                                    {service}
+                                <Link href={service.path} passHref color="inherit" underline="none">
+                                    <Box component="a">
+                                        {service.name}
+                                    </Box>
                                 </Link>
                             </Box>
                         ))}

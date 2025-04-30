@@ -24,7 +24,7 @@ import {
     FiberManualRecord,
     ExpandMore as ExpandMoreIcon,
 } from "@mui/icons-material";
-import img1 from "../../assets/images/Services/ESOP.png";
+import img1 from "../../assets/images/Services/implementing.webp";
 
 // Styles
 const useStyles = () => {
@@ -142,36 +142,94 @@ const HeroSection = () => {
     const styles = useStyles();
 
     return (
-        <Box sx={styles.heroSection}>
-            <Grid container spacing={4} sx={styles.heroContent}>
-                <Grid item xs={12} lg={6}>
-                    <Typography className="Montserrat" sx={styles.heroTitle}>
+        <Box
+            sx={{
+                position: 'relative',
+                backgroundImage: `url(${img1})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'top',
+                backgroundRepeat: 'no-repeat',
+                py: {xs: 8, sm: 10, md: 12},
+                px: {sm:"30px ",xs:"0",xl:"0"},
+            }}
+        >
+            {/* Overlay */}
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    zIndex: 1,
+                }}
+            />
+            <Container maxWidth={"xl"}>
+
+                {/* Content */}
+                <Box
+                    sx={{
+                        position: 'relative',
+                        zIndex: 2,
+                        mt: {md:18,xs:5},
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        flexDirection: 'column',
+                    }}
+                >
+                    <Typography
+                        className="Montserrat"
+                        sx={{
+                            fontSize: {xs: '24px', sm: '32px', md: '40px', lg: '46px'},
+                            lineHeight: 1.3,
+                            fontWeight: 700,
+                            color: '#FE6A00',
+                            mb: 2,
+                            maxWidth: {xs: '100%', sm: '90%', md: '80%',lg:"70%"},
+                            textAlign: 'center',
+                        }}
+                    >
                         Employee Self Ownership Program
                     </Typography>
 
-                    <Divider sx={styles.heroDivider}/>
+                    <Divider
+                        sx={{
+                            backgroundColor: '#fff',
+                            height: 4,
+                            width: 100,
+                            my: 3,
+                        }}
+                    />
 
-                    <Typography variant="h5" gutterBottom sx={styles.heroSubtitle}>
+                    <Typography
+                        variant="h5"
+                        sx={{
+                            color: 'rgba(255,255,255,0.9)',
+                            fontWeight: 600,
+                            mb: 2,
+                            textAlign: 'center',
+                        }}
+                    >
                         Emotional Wellness Program for Workplace
                     </Typography>
 
-                    <Typography variant="body1" paragraph sx={styles.heroDescription}>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            color: 'rgba(255,255,255,0.7)',
+                            mb: 4,
+                            maxWidth: {xs: '100%', sm: '95%', md: '70%'},
+                            textAlign: 'center',
+                        }}
+                    >
                         A strategic, research-driven emotional wellness program designed to
                         elevate workplace well-being, boost employee engagement, and
                         cultivate resilience.
                     </Typography>
-                </Grid>
-
-                <Grid item xs={12} lg={6} display="flex" justifyContent="center" alignItems="center">
-                    <Box sx={{height: "300px", width: "100%"}}>
-                        <img
-                            src={img1}
-                            alt="Employee Self Ownership Program"
-                            style={{width: '100%', height: '100%', objectFit: 'cover'}}
-                        />
-                    </Box>
-                </Grid>
-            </Grid>
+                </Box>
+            </Container>
         </Box>
     );
 };

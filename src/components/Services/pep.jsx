@@ -15,7 +15,8 @@ import {
     useTheme,
 } from "@mui/material";
 import {School, Group, FiberManualRecord} from "@mui/icons-material";
-import img1 from "../../assets/images/Services/pep1.png";
+// import img1 from "../../assets/images/Services/pep1.png";
+import img1 from "../../assets/images/Services/close-up-of-friend.jpg";
 
 const colors = {
     primary: "#0E3D7B",
@@ -80,37 +81,93 @@ export default function PEPMUI() {
     return (
         <Box>
             {/* Hero Section */}
-            <Box sx={{backgroundColor: "#022662", padding: "120px 0 60px 0", px: {sm: "30px ", xs: "0", xl: "0"}}}>
-                <Grid container spacing={4} sx={{mt: 8, px: {xs: 4, md: 10}}}>
-                    <Grid item xs={12} lg={6}>
-                        <Typography className="Montserrat" sx={{
-                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                            lineHeight: 1.2,
-                            fontWeight: '700',
-                            color: '#FE6A00',
-                            mb: 2
-                        }}>
+            <Box
+                sx={{
+                    position: 'relative',
+                    backgroundImage: `url(${img1})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'top',
+                    backgroundRepeat: 'no-repeat',
+                    py: {xs: 8, sm: 10, md: 12},
+                    px: {sm:"30px ",xs:"0",xl:"0"},
+                }}
+            >
+                {/* Overlay */}
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        zIndex: 1,
+                    }}
+                />
+                <Container maxWidth={"xl"}>
+
+                    {/* Content */}
+                    <Box
+                        sx={{
+                            position: 'relative',
+                            zIndex: 2,
+                            mt: {md:18,xs:5},
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            flexDirection: 'column',
+                        }}
+                    >
+                        <Typography
+                            className="Montserrat"
+                            sx={{
+                                fontSize: {xs: '24px', sm: '32px', md: '40px', lg: '46px'},
+                                lineHeight: 1.3,
+                                fontWeight: 700,
+                                color: '#FE6A00',
+                                mb: 2,
+                                maxWidth: {xs: '100%', sm: '90%', md: '80%',lg:"70%"},
+                                textAlign:"center"
+                            }}
+                        >
                             Performance Empowerment Program
                         </Typography>
-                        <Divider sx={{backgroundColor: '#fff', height: 4, width: 100, my: 3}}/>
-                        <Typography variant="h5" gutterBottom sx={{color: 'rgba(255,255,255,0.9)', fontWeight: 600}}>
+
+                        <Divider
+                            sx={{
+                                backgroundColor: '#fff',
+                                height: 4,
+                                width: 100,
+                                my: 3,
+                            }}
+                        />
+
+                        <Typography
+                            variant="h5"
+                            sx={{
+                                color: 'rgba(255,255,255,0.9)',
+                                fontWeight: 600,
+                                mb: 2,
+                                textAlign:"center"
+                            }}
+                        >
                             Performance Enhancement Program for Exam Aspirants
                         </Typography>
-                        <Typography variant="body1" paragraph sx={{
-                            color: 'rgba(255,255,255,0.7)',
-                            mb: 4,
-                            maxWidth: {xs: '100%', sm: '90%', md: '80%'}
-                        }}>
+
+                        <Typography
+                            variant="body1"
+                            sx={{
+                                color: 'rgba(255,255,255,0.7)',
+                                mb: 4,
+                                maxWidth: {xs: '100%', sm: '95%', md: '70%'},
+                                textAlign:"center"
+                            }}
+                        >
                             A focused programme crafted for aspirants of rigorous entrance exams and their mentors,
                             addressing personal challenges that impact mental clarity and emotional stability.
                         </Typography>
-                    </Grid>
-                    <Grid item xs={12} lg={6} display="flex" justifyContent="center" alignItems="center">
-                        <Box sx={{height: {xs: '300px', md: '400px'}, width: '100%'}}>
-                            <img src={img1} alt="PEP" style={{width: '100%', height: '100%', objectFit: 'contain'}}/>
-                        </Box>
-                    </Grid>
-                </Grid>
+                    </Box>
+                </Container>
             </Box>
 
             {/* Program Overview */}
