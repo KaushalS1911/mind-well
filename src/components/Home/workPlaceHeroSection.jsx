@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Box, Button, Typography, Stack, useTheme, Container, IconButton} from '@mui/material';
-import { AnimatePresence} from 'framer-motion';
+import { motion, AnimatePresence} from 'framer-motion';
 import img1 from '../../assets/images/Vectors/mental-health-concept.jpg';
 import img2 from '../../assets/images/Vectors/online-internet.jpg';
 import img3 from '../../assets/images/Vectors/vector-collection.jpg';
