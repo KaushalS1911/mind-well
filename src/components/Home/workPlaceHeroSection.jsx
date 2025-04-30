@@ -7,14 +7,15 @@ import img3 from '../../assets/images/Vectors/vector-collection.jpg';
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
+// Import Swiper and its modules properly
 import {Swiper, SwiperSlide} from 'swiper/react';
+// Import required modules
 import {Navigation, Pagination, Autoplay} from 'swiper/modules';
 
-
+// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
 
 const SLIDE_DATA = [
     {
@@ -80,7 +81,7 @@ const staggerContainer = {
 const navButtonSx = {
     position: "absolute",
     top: "50%",
-    transform: "translateY(-50%,-50%)",
+    transform: "translateY(-50%)",
     zIndex: 10,
     color: "#062957",
     backgroundColor: "#e8e5e5",
@@ -94,10 +95,8 @@ const navButtonSx = {
     display: {xs: "none", lg: "flex"},
 };
 
-
 const HeroSlide = ({slideData, index}) => {
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -107,7 +106,6 @@ const HeroSlide = ({slideData, index}) => {
         return () => clearInterval(interval);
     }, [slideData.titles.length, slideData.titleChangeDelay]);
 
-
     return (
         <motion.div
             variants={staggerContainer}
@@ -115,6 +113,7 @@ const HeroSlide = ({slideData, index}) => {
             whileInView="visible"
             viewport={{once: true, margin: "-200px"}}
             key={`slide-${index}`}
+            style={{width: '100%'}}
         >
             <Box
                 sx={{
@@ -124,6 +123,7 @@ const HeroSlide = ({slideData, index}) => {
                     justifyContent: 'space-between',
                     gap: {xs: 6, md: 10},
                     height: '100%',
+                    width: '100%',
                 }}
             >
                 <Stack
@@ -134,7 +134,6 @@ const HeroSlide = ({slideData, index}) => {
                     }}
                 >
                     <Box>
-
                         <Box
                             className={"Montserrat"}
                             sx={{
@@ -186,7 +185,6 @@ const HeroSlide = ({slideData, index}) => {
                             </Box>
                         </Box>
 
-
                         <motion.div
                             initial={{opacity: 0, y: 20}}
                             animate={{opacity: 1, y: 0}}
@@ -210,7 +208,7 @@ const HeroSlide = ({slideData, index}) => {
 
                 <motion.div
                     variants={scaleIn}
-                    sx={{
+                    style={{
                         width: '100%',
                         position: 'relative',
                         display: 'flex',
@@ -266,16 +264,26 @@ function WorkPlaceHeroSection() {
     const navigationPrevRef = useRef(null);
     const navigationNextRef = useRef(null);
     const [swiperInstance, setSwiperInstance] = useState(null);
+    const [isMounted, setIsMounted] = useState(false);
+
+    // Ensure component is mounted before initializing Swiper
+    useEffect(() => {
+        setIsMounted(true);
+        return () => setIsMounted(false);
+    }, []);
 
     useEffect(() => {
         if (swiperInstance && navigationPrevRef.current && navigationNextRef.current) {
-            swiperInstance.params.navigation.prevEl = navigationPrevRef.current;
-            swiperInstance.params.navigation.nextEl = navigationNextRef.current;
-            swiperInstance.navigation.destroy();
-            swiperInstance.navigation.init();
-            swiperInstance.navigation.update();
+            // Fix for iOS by ensuring proper initialization timing
+            setTimeout(() => {
+                swiperInstance.params.navigation.prevEl = navigationPrevRef.current;
+                swiperInstance.params.navigation.nextEl = navigationNextRef.current;
+                swiperInstance.navigation.destroy();
+                swiperInstance.navigation.init();
+                swiperInstance.navigation.update();
+            }, 100);
         }
-    }, [swiperInstance]);
+    }, [swiperInstance, isMounted]);
 
     return (
         <Box
@@ -286,28 +294,54 @@ function WorkPlaceHeroSection() {
                 backgroundColor: "#fff",
                 px: {sm: "30px", xs: "0", xl: "0"},
                 position: 'relative',
+                width: '100%',
             }}
         >
-            <Container maxWidth="xl">
-                <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
-                    spaceBetween={30}
-                    slidesPerView={1}
-                    pagination={{clickable: true}}
-                    autoplay={{
-                        delay: 5000,
-                        disableOnInteraction: false,
-                    }}
-                    onSwiper={setSwiperInstance}
-                >
-                    {SLIDE_DATA.map((slideData, index) => (
-                        <SwiperSlide key={index}>
-                            <HeroSlide slideData={slideData} index={index}/>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+            <Container
+                maxWidth="xl"
+                sx={{
+                    position: 'relative',
+                    width: '100%',
+                    // Explicitly set height for iOS
+                    // height: {xs: 'auto', md: '650px'},
+                }}
+            >
+                {isMounted && (
+                    <Swiper
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={30}
+                        slidesPerView={1}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        autoplay={{
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        }}
+                        onSwiper={setSwiperInstance}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                        }}
+                        watchOverflow={true}
+                        observer={true}
+                        preloadImages={true}
+                    >
+                        {SLIDE_DATA.map((slideData, index) => (
+                            <SwiperSlide
+                                key={index}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                }}
+                            >
+                                <HeroSlide slideData={slideData} index={index}/>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                )}
 
-
+            </Container>
                 <IconButton
                     ref={navigationPrevRef}
                     sx={{...navButtonSx, left: "2%"}}
@@ -322,7 +356,37 @@ function WorkPlaceHeroSection() {
                     <ArrowForwardIosIcon/>
                 </IconButton>
 
-            </Container>
+            {/* Additional CSS to ensure iOS compatibility */}
+            <style jsx global>{`
+                .swiper-container {
+                    width: 100%;
+                    height: 100%;
+                    overflow: visible;
+                }
+                
+                .swiper-wrapper {
+                    width: 100%;
+                    height: 100%;
+                }
+                
+                .swiper-slide {
+                    width: 100% !important;
+                    height: auto !important;
+                    display: flex;
+                    justify-content: center;
+                }
+                
+                /* iOS Safari specific fixes */
+                @supports (-webkit-touch-callout: none) {
+                    .swiper-container {
+                        overflow: hidden;
+                    }
+                    
+                    .swiper-slide {
+                        flex-shrink: 0;
+                    }
+                }
+            `}</style>
         </Box>
     );
 }
