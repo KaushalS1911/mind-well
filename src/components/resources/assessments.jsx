@@ -143,6 +143,7 @@ function Assessments() {
                                                     height: "100%",
                                                     display: "flex",
                                                     flexDirection: "column",
+                                                    ml: {xs:2,md:0}
                                                 }}
                                             >
                                                 <Box display="flex" alignItems="center"
