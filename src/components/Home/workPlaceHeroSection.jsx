@@ -8,13 +8,13 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {Navigation, Pagination, Autoplay} from 'swiper/modules';
+import {Navigation, Pagination, Autoplay, EffectFade} from 'swiper/modules';
 
-
+// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import 'swiper/css/effect-fade';
 
 const SLIDE_DATA = [
     {
@@ -290,15 +290,30 @@ function WorkPlaceHeroSection() {
         >
             <Container maxWidth="xl">
                 <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
+                    modules={[Navigation, Pagination, Autoplay, EffectFade]}
                     spaceBetween={30}
                     slidesPerView={1}
                     pagination={{clickable: true}}
                     autoplay={{
                         delay: 5000,
                         disableOnInteraction: false,
+                        waitForTransition: true
                     }}
+                    effect="fade"
+                    speed={800}
+                    touchRatio={1.5}
+                    resistance={true}
+                    resistanceRatio={0.85}
+                    preventInteractionOnTransition={true}
                     onSwiper={setSwiperInstance}
+                    onInit={(swiper) => {
+                        // Force update on iOS devices
+                        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                            setTimeout(() => {
+                                swiper.update();
+                            }, 100);
+                        }
+                    }}
                 >
                     {SLIDE_DATA.map((slideData, index) => (
                         <SwiperSlide key={index}>
@@ -306,7 +321,6 @@ function WorkPlaceHeroSection() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-
 
                 <IconButton
                     ref={navigationPrevRef}
@@ -321,7 +335,6 @@ function WorkPlaceHeroSection() {
                 >
                     <ArrowForwardIosIcon/>
                 </IconButton>
-
             </Container>
         </Box>
     );
