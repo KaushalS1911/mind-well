@@ -8,13 +8,13 @@ import {Navigation, Autoplay} from "swiper/modules";
 // Images
 import img1 from "../../assets/images/about/majorClients/logo_agribid-removebg-preview.png";
 import img2 from "../../assets/images/about/majorClients/Drishti_IAS-removebg-preview.png";
-import img3 from "../../assets/images/about/majorClients/wingsss.jpeg";
+import img3 from "../../assets/images/about/majorClients/wingsss.png";
 import img4 from "../../assets/images/about/majorClients/IES-removebg-preview.png";
-import img5 from "../../assets/images/about/majorClients/TathaGat.jpeg";
-import img6 from "../../assets/images/about/majorClients/Delhi.jpeg";
-import img7 from "../../assets/images/about/majorClients/Aimt.jpeg";
-import img8 from "../../assets/images/about/majorClients/AwEs.jpeg";
-import img9 from "../../assets/images/about/majorClients/Army.jpeg";
+import img5 from "../../assets/images/about/majorClients/TathaGat.png";
+import img6 from "../../assets/images/about/majorClients/Delhi.png";
+import img7 from "../../assets/images/about/majorClients/Aimt.png";
+import img8 from "../../assets/images/about/majorClients/AwEs.png";
+import img9 from "../../assets/images/about/majorClients/Army.png";
 
 // Image Array
 const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
