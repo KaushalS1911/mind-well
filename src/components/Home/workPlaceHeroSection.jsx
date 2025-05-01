@@ -22,9 +22,9 @@ import 'swiper/css/pagination';
 
 const SLIDE_DATA = [
     {
-        titles: ["Thrive", "Flourish", "Achieve", "Grow"],
+        titles: ["Student", "Aspirants", "Employee"],
         titleChangeDelay: 2500,
-        mainHeading: "Transforming individuals & workplaces to",
+        mainHeading: "Building Mindsets",
         description:
             "Empowering individuals and organizations with emotional intelligence tools that drive personal growth, enhance performance, and foster meaningful workplace connections",
         image: img1,
@@ -34,7 +34,7 @@ const SLIDE_DATA = [
         titleChangeDelay: 2500,
         mainHeading: "Transforming individuals & workplaces to enable",
         description:
-            "Emotionally Yours is engaged in designing ad delivering structured, process-orientated psychology backed programmes with data driven measurable insights that enhance emotional intelligence and cultivate transformative mindsets",
+            "Create a culture of trust and psychological safety where team members feel valued, heard, and empowered to contribute their best work and ideas",
         image: img2,
     },
     {
