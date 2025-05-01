@@ -119,14 +119,14 @@ const AboutHeader = () => {
                             </StyledPaper>
                         </Grid>
                         <Grid item xs={12} md={6}>
-                            <Box sx={{ height: "500px", width: "100%" }}>
+                            <Box sx={{ height: {md:"500px",xs:"300px",sm:"400px"}, width: "100%" }}>
                                 <img
                                     src={img1}
                                     alt="Emotional Wellness Overview"
                                     style={{
                                         height: "100%",
                                         width: "100%",
-                                        objectFit: "cover",
+                                        objectFit: "contain",
                                     }}
                                 />
                             </Box>

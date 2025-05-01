@@ -245,7 +245,7 @@ const ProgramOverview = () => {
     ];
 
     return (
-        <Box sx={{padding: "96px 0 0 0"}}>
+        <Box sx={{padding: {sm:"96px 0 0 0",xs:"66px 0 0 0"}}}>
             <Grid container spacing={4} mb={8}>
                 <Grid item xs={12} lg={8}>
                     <Typography className="Montserrat" fontWeight="bold" gutterBottom sx={styles.sectionTitle1}>
@@ -319,7 +319,7 @@ const ThreePillarApproach = () => {
     ];
 
     return (
-        <Box sx={{padding: "96px 0"}}>
+        <Box>
             <Box textAlign="center" mb={6}>
                 <Typography className="Montserrat" variant="h4" fontWeight="bold" gutterBottom sx={styles.sectionTitle}>
                     Our Three-Pillar Approach
@@ -406,7 +406,7 @@ const FAQSection = () => {
     ];
 
     return (
-        <Box sx={{p: "20px 0 0 0"}}>
+        <Box sx={{padding: {sm:"96px 0 0 0",xs:"66px 0 0 0"}}}>
             <Typography className="Montserrat" variant="h4" textAlign="center" fontWeight="bold"
                         sx={styles.sectionTitle}>
                 Frequently Asked Questions

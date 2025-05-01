@@ -173,7 +173,7 @@ export default function PEPMUI() {
             {/* Program Overview */}
             <Box sx={{ px: {sm:"30px ",xs:"0",xl:"0"}}}>
                 <Container maxWidth="xl">
-                    <Box sx={{padding: "96px 0 0 0"}}>
+                    <Box sx={{padding: {sm:"96px 0 0 0",xs:"66px 0 0 0"}}}>
                         <Grid container spacing={4} mb={8}>
                             <Grid item xs={12} lg={8}>
                                 <Typography className="Montserrat" fontWeight="bold" gutterBottom sx={{
@@ -227,7 +227,7 @@ export default function PEPMUI() {
                     </Box>
 
                     {/* Two-Pillar Approach */}
-                    <Box sx={{padding: "96px 0"}}>
+                    <Box>
                         <Box textAlign="center" mb={6}>
                             <Typography className="Montserrat" variant="h4" fontWeight="bold" gutterBottom
                                         sx={{color: colors.primary, fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },}}>

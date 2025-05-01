@@ -210,7 +210,7 @@ const JobListings = () => (
 
 // Application form component
 const ApplicationForm = ({ formData, handleInputChange, handleSubmit, selectedFile, handleFileChange, setSelectedFile }) => (
-    <Box sx={{ pt: 10, pb: 10 }}>
+    <Box sx={{ padding: {sm:"96px 0 0 0",xs:"66px 0 0 0"} }}>
         <Container maxWidth="md">
             <StyledPaper elevation={3}>
                 <Typography variant="h5" fontWeight="bold" gutterBottom sx={{ color: '#012765', mb: 4 }}>

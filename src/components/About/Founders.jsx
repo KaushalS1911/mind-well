@@ -169,7 +169,7 @@ const FounderCard = React.memo(({ founder, icon = <PersonIcon /> }) => (
 ));
 
 const Founders = () => (
-    <Box sx={{ padding: "96px 0",  }}>
+    <Box sx={{ padding: {sm:"96px 0",xs:"66px 0"}  }}>
         <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4, lg: 6 } }}>
             <Title sx={{fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },}}>Founding members</Title>
             <SubTitle>

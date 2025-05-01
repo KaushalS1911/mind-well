@@ -63,7 +63,7 @@ const sections = [
 
 const VisionMission = () => {
     return (
-        <Box sx={{backgroundColor: 'white', py: {xs: 6, md: 12}}}>
+        <Box sx={{backgroundColor: 'white'}}>
             <Container maxWidth="xl">
                 <Box className="Montserrat" sx={{
                     fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },

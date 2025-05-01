@@ -285,7 +285,7 @@ const ProgramOverview = () => {
     ];
 
     return (
-        <Box sx={{padding: "96px 0 0 0"}}>
+        <Box sx={{padding: {sm:"96px 0 0 0",xs:"66px 0 0 0"}}}>
             <Grid container spacing={4} mb={8}>
                 <Grid item xs={12} lg={8}>
                     <Typography
@@ -413,7 +413,7 @@ export default function ShapeDesigne() {
                     <ProgramOverview/>
 
                     {/* Four-Pillar Approach Section */}
-                    <Box sx={{padding: "96px 0"}}>
+                    <Box>
                         <SectionHeading
                             title="Our Four-Pillar Approach"
                             subtitle="SHAPE+ delivers emotional wellness through four integrated components that work together to create lasting positive impact for higher education students."
@@ -434,7 +434,7 @@ export default function ShapeDesigne() {
                     </Box>
 
                     {/* FAQs Section */}
-                    <Box sx={{p: "20px 0 96px 0"}}>
+                    <Box sx={{padding: {sm:"96px 0 0 0",xs:"66px 0 0 0"}}}>
                         <SectionHeading
                             title="Frequently Asked Questions"
                             centered={true}

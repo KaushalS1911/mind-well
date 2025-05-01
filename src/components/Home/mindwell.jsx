@@ -87,7 +87,7 @@ const Mindwell = () => {
     };
 
     return (
-        <Box sx={{ backgroundColor: "white", padding: "0 0 96px 0" }}>
+        <Box sx={{ backgroundColor: "white", padding: {sm:"96px 0 0 0",xs:"66px 0 0 0"} }}>
             <Container maxWidth="xl">
                 <Box
                     className="Montserrat"
