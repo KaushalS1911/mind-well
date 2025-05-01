@@ -75,7 +75,7 @@ function WorksTable() {
                             letterSpacing: "-1px",
                         }}
                     >
-                        How we Make a Difference
+                        The way we drive change
                     </Typography>
 
                     <Box

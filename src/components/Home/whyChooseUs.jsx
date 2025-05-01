@@ -14,7 +14,7 @@ import img4 from '../../assets/images/Home/why-choose-us/repair-tools-design.jpg
 const leftCards = [
     {
         icon: () => <AssignmentIcon fontSize="large" sx={{ color: 'inherit' }} />,
-        title: 'Policy Reference',
+        title: 'Policy Backed',
         description: 'Annual Curriculum designed basis NEP 2020 and National Suicide Prevention Strategy',
         image: img1,
     },
@@ -29,7 +29,7 @@ const leftCards = [
 const rightCards = [
     {
         icon: <LocalShippingIcon fontSize="large" sx={{ color: 'inherit' }} />,
-        title: 'Delivery Structure',
+        title: 'Structured Delivery',
         description: 'Programs are delivered by Qualified and Experienced Psychologist',
         image: img3,
     },

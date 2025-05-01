@@ -132,7 +132,7 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
                                 <img
                                     src={img1}
                                     loading="lazy"
-                                    alt="How EmotionallyYours Works"
+                                    alt="How Emotionally Yours Works"
                                     style={{
                                         height: '100%',
                                         width: '100%',
