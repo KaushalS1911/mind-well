@@ -75,7 +75,7 @@ function WorksTable() {
                             letterSpacing: "-1px",
                         }}
                     >
-                        The way we drive change
+                        The way WE drive change
                     </Typography>
 
                     <Box

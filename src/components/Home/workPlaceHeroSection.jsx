@@ -26,15 +26,15 @@ const SLIDE_DATA = [
         titleChangeDelay: 2500,
         mainHeading: "Transforming individuals & workplaces to",
         description:
-            "Empowering individuals and organizations with emotional intelligence tools that drive personal growth, enhance performance, and foster meaningful workplace connections.",
+            "Empowering individuals and organizations with emotional intelligence tools that drive personal growth, enhance performance, and foster meaningful workplace connections",
         image: img1,
     },
     {
-        titles: ["Connect", "Collaborate", "Innovate", "Lead"],
+        titles: ["Growth", "Performance", "Success"],
         titleChangeDelay: 2500,
-        mainHeading: "Building stronger teams that",
+        mainHeading: "Transforming individuals & workplaces to enable",
         description:
-            "Create a culture of trust and psychological safety where team members feel valued, heard, and empowered to contribute their best work and ideas.",
+            "Emotionally Yours is engaged in designing ad delivering structured, process-orientated psychology backed programmes with data driven measurable insights that enhance emotional intelligence and cultivate transformative mindsets",
         image: img2,
     },
     {
@@ -42,7 +42,7 @@ const SLIDE_DATA = [
         titleChangeDelay: 2500,
         mainHeading: "Developing leaders who",
         description:
-            "Equip leaders with the emotional intelligence skills needed to navigate challenges, inspire teams, and drive sustainable organizational success in today's complex world.",
+            "Equip leaders with the emotional intelligence skills needed to navigate challenges, inspire teams, and drive sustainable organizational success in today's complex world",
         image: img3,
     },
 ];
