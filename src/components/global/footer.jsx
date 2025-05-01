@@ -61,7 +61,7 @@ const Footer = () => {
                                 color: "#FFFFFFCC"
                             }}
                         >
-                            EmotionallYours provides accessible, professional mental health services for students and
+                            Emotionally Yours provides accessible, professional mental health services for students and
                             professionals. Our mission is to make quality therapy and mental wellness resources
                             available to everyone who needs them.
                         </Box>
@@ -314,7 +314,7 @@ const Footer = () => {
                 {/*            <Box*/}
                 {/*                sx={{fontSize: "14px", textAlign: "center"}}*/}
                 {/*            >*/}
-                {/*                © 2023 EmotionallYours. All rights reserved.*/}
+                {/*                © 2023 Emotionally Yours. All rights reserved.*/}
                 {/*            </Box>*/}
                 {/*        </Grid>*/}
 
@@ -375,7 +375,7 @@ const Footer = () => {
                 {/*    >*/}
                 {/*        If you are in crisis or think you may have an emergency, call your doctor or emergency services*/}
                 {/*        immediately.*/}
-                {/*        EmotionallYours does not offer crisis counseling or emergency services.*/}
+                {/*        Emotionally Yours does not offer crisis counseling or emergency services.*/}
                 {/*    </Box>*/}
                 {/*</Box>*/}
 

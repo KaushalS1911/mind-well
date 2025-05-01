@@ -116,7 +116,7 @@ const Mindwell = () => {
                         lineHeight: "25px",
                     }}
                 >
-                    EmotionallYours equips individuals with essential life skills to enhance their performance at academic
+                    Emotionally Yours equips individuals with essential life skills to enhance their performance at academic
                     institutions and workplaces, leveraging group sessions, workshops, assessments & personalized guidance.
                 </Box>
 

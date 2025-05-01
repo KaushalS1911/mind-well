@@ -10,14 +10,14 @@ const testimonials = [
         name: "Jessica Thompson",
         role: "HR Director, TechInnovate",
         feedback:
-            "Implementing EmotionallYours employee mental health program has been transformative for our company culture. Our team feels supported, productivity has increased, and we've seen a significant reduction in absenteeism.",
+            "Implementing Emotionally Yours employee mental health program has been transformative for our company culture. Our team feels supported, productivity has increased, and we've seen a significant reduction in absenteeism.",
     },
     {
         initials: "MR",
         name: "Michael Rodriguez",
         role: "CEO, GreenEarth Solutions",
         feedback:
-            "As a company that prioritizes employee wellbeing, partnering with EmotionallYours was an obvious choice. The ROI has been clear – lower turnover, higher engagement, and a team that feels genuinely cared for.",
+            "As a company that prioritizes employee wellbeing, partnering with Emotionally Yours was an obvious choice. The ROI has been clear – lower turnover, higher engagement, and a team that feels genuinely cared for.",
     },
     {
         initials: "SP",

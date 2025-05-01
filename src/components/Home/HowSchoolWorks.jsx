@@ -193,7 +193,7 @@ function HowSchoolWorks() {
                         textAlign: "center",
                     }}
                 >
-                    How EmotionallYours Works
+                    How Emotionally Yours Works
                 </Box>
                 <Typography
                     variant="h6"

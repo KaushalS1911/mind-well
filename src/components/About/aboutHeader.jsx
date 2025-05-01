@@ -111,7 +111,7 @@ const AboutHeader = () => {
                                         textAlign: "justify",
                                     }}
                                 >
-                                    EmotionallYours is an initiative by MTPL, a private limited company established in 2022 and
+                                    Emotionally Yours is an initiative by MTPL, a private limited company established in 2022 and
                                     recognised under the Start-Up India programme. We design structured, process-oriented programmes
                                     that enhance emotional intelligence and cultivate transformative mindsets. Our mission is to empower
                                     individuals and organisations to build resilience, navigate challenges with clarity, and nurture meaningful relationships.

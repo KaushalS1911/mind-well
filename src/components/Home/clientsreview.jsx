@@ -12,8 +12,8 @@ const testimonials = [
         name: "Jason Davis",
         role: "Marketing Professional • Anxiety & Stress",
         review:
-            "\"As a high-pressure marketing executive, I was constantly struggling with anxiety and burnout. EmotionallYours matched me with Dr. Chen, who completely transformed my approach to work stress. The CBT techniques she taught me have been invaluable, and I can now manage my workload without sacrificing my mental health.\"",
-        duration: "6 months with EmotionallYours",
+            "\"As a high-pressure marketing executive, I was constantly struggling with anxiety and burnout. Emotionally Yours matched me with Dr. Chen, who completely transformed my approach to work stress. The CBT techniques she taught me have been invaluable, and I can now manage my workload without sacrificing my mental health.\"",
+        duration: "6 months with Emotionally Yours",
         sessions: "12 sessions completed",
         color: "#012765",
     },
@@ -21,8 +21,8 @@ const testimonials = [
         name: "Sarah Rodriguez",
         role: "Graduate Student • Depression & Academic Stress",
         review:
-            "\"Balancing PhD research with teaching duties sent me into a deep depression. EmotionallYours student program was affordable and life-changing. My therapist Robert understood academic pressure perfectly. He helped me develop practical strategies for academic success without sacrificing my mental wellbeing. I wouldn't have completed my degree without this support.\"",
-        duration: "1 year with EmotionallYours",
+            "\"Balancing PhD research with teaching duties sent me into a deep depression. Emotionally Yours student program was affordable and life-changing. My therapist Robert understood academic pressure perfectly. He helped me develop practical strategies for academic success without sacrificing my mental wellbeing. I wouldn't have completed my degree without this support.\"",
+        duration: "1 year with Emotionally Yours",
         sessions: "18 sessions completed",
         color: "#FF7F1E",
     },
@@ -30,8 +30,8 @@ const testimonials = [
         name: "Sarah Rodriguez",
         role: "Graduate Student • Depression & Academic Stress",
         review:
-            "\"Balancing PhD research with teaching duties sent me into a deep depression. EmotionallYours student program was affordable and life-changing. My therapist Robert understood academic pressure perfectly. He helped me develop practical strategies for academic success without sacrificing my mental wellbeing. I wouldn't have completed my degree without this support.\"",
-        duration: "1 year with EmotionallYours",
+            "\"Balancing PhD research with teaching duties sent me into a deep depression. Emotionally Yours student program was affordable and life-changing. My therapist Robert understood academic pressure perfectly. He helped me develop practical strategies for academic success without sacrificing my mental wellbeing. I wouldn't have completed my degree without this support.\"",
+        duration: "1 year with Emotionally Yours",
         sessions: "18 sessions completed",
         color: "#012765",
     },
@@ -58,7 +58,7 @@ function ClientsReview() {
                 </Typography>
                 <Box sx={{ textAlign: "center", opacity: 0.7, mb: 4, fontSize: "20px" }}>
                     Read what our community of students and professionals have to say <br />
-                    about their mental wellness journey with EmotionallYours.
+                    about their mental wellness journey with Emotionally Yours.
                 </Box>
 
                 <Swiper

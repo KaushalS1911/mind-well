@@ -119,7 +119,7 @@ const EmergencyNotice = () => (
                 lineHeight: "1.25rem",
             }}
         >
-            EmotionallYours is not an emergency service. If you are experiencing a mental
+            Emotionally Yours is not an emergency service. If you are experiencing a mental
             health crisis or having thoughts of harming yourself or others,
             please call the Suicide Prevention Lifeline at <strong>988</strong> or
             go to your nearest emergency room.
