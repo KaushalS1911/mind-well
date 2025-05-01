@@ -111,6 +111,7 @@ const HeroSlide = ({ slideData, index }) => {
                     >
                         {slideData.mainHeading}&nbsp;
                         <Box
+                            key={slideData.titles[currentTitleIndex]} // Ensures animation runs on each change
                             component="span"
                             sx={{
                                 display: 'inline-block',
@@ -120,6 +121,17 @@ const HeroSlide = ({ slideData, index }) => {
                                 color: "#FE6A00",
                                 fontWeight: 700,
                                 fontSize: 'inherit',
+                                animation: 'slideUpFade 1s ease',
+                                '@keyframes slideUpFade': {
+                                    '0%': {
+                                        opacity: 0,
+                                        transform: 'translateY(40%)',
+                                    },
+                                    '100%': {
+                                        opacity: 1,
+                                        transform: 'translateY(0)',
+                                    },
+                                },
                             }}
                         >
                             {slideData.titles[currentTitleIndex]}
@@ -127,6 +139,7 @@ const HeroSlide = ({ slideData, index }) => {
                     </Box>
 
                     <Typography
+                        data-aos="fade-up"
                         variant="body1"
                         sx={{
                             fontSize: { xs: '16px', md: '20px', lg: '18px' },
@@ -165,6 +178,7 @@ const HeroSlide = ({ slideData, index }) => {
                         }}
                     >
                         <img
+                            data-aos="zoom-in"
                             src={slideData.image}
                             alt={`Slide ${index + 1}`}
                             style={{
