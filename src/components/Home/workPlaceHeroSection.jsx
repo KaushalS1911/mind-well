@@ -96,48 +96,87 @@ const HeroSlide = ({ slideData, index }) => {
                 }}
             >
                 <Box>
-                    <Box
-                        className="Montserrat"
-                        sx={{
-                            position: 'relative',
-                            display: 'inline-block',
-                            letterSpacing: "-1px",
-                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                            color: "#012765",
-                            fontWeight: 700,
-                            lineHeight: 1.2,
-                            mb: { xs: 2, md: 3 },
-                        }}
-                    >
-                        {slideData.mainHeading}&nbsp;
-                        <Box
-                            key={slideData.titles[currentTitleIndex]} // Ensures animation runs on each change
-                            component="span"
+                    {/* First slide: mainHeading then title below */}
+                    {index === 0 ? (
+                        <>
+                            <Typography
+                                component="div"
+                                sx={{
+                                    letterSpacing: "-1px",
+                                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                                    color: "#012765",
+                                    fontWeight: 700,
+                                    lineHeight: 1.2,
+                                    // mb: { xs: 1, md: 2 },
+                                }}
+                            >
+                                {slideData.mainHeading}
+                            </Typography>
+                            <Box
+                                key={slideData.titles[currentTitleIndex]}
+                                component="div"
+                                sx={{
+                                    display: 'inline-block',
+                                    color: "#FE6A00",
+                                    fontWeight: 700,
+                                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                                    animation: 'slideUpFade 1s ease',
+                                    '@keyframes slideUpFade': {
+                                        '0%': {
+                                            opacity: 0,
+                                            transform: 'translateY(40%)',
+                                        },
+                                        '100%': {
+                                            opacity: 1,
+                                            transform: 'translateY(0)',
+                                        },
+                                    },
+                                }}
+                            >
+                                {slideData.titles[currentTitleIndex]}
+                            </Box>
+                        </>
+                    ) : (
+                        // Other slides: title inline in main heading
+                        <Typography
+                            component="div"
                             sx={{
-                                display: 'inline-block',
-                                position: 'relative',
-                                minWidth: { xs: '100px', md: '120px' },
-                                height: { xs: '40px', md: '50px' },
-                                color: "#FE6A00",
+                                letterSpacing: "-1px",
+                                fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                                color: "#012765",
                                 fontWeight: 700,
-                                fontSize: 'inherit',
-                                animation: 'slideUpFade 1s ease',
-                                '@keyframes slideUpFade': {
-                                    '0%': {
-                                        opacity: 0,
-                                        transform: 'translateY(40%)',
-                                    },
-                                    '100%': {
-                                        opacity: 1,
-                                        transform: 'translateY(0)',
-                                    },
-                                },
+                                lineHeight: 1.2,
+                                mb: { xs: 2, md: 3 },
                             }}
                         >
-                            {slideData.titles[currentTitleIndex]}
-                        </Box>
-                    </Box>
+                            {slideData.mainHeading}&nbsp;
+                            <Box
+                                key={slideData.titles[currentTitleIndex]}
+                                component="span"
+                                sx={{
+                                    display: 'inline-block',
+                                    color: "#FE6A00",
+                                    fontWeight: 700,
+                                    fontSize: 'inherit',
+                                    animation: 'slideUpFade 1s ease',
+                                    '@keyframes slideUpFade': {
+                                        '0%': {
+                                            opacity: 0,
+                                            transform: 'translateY(40%)',
+                                        },
+                                        '100%': {
+                                            opacity: 1,
+                                            transform: 'translateY(0)',
+                                        },
+                                    },
+                                }}
+                            >
+                                {slideData.titles[currentTitleIndex]}
+                            </Box>
+                        </Typography>
+                    )}
 
+                    {/* Description */}
                     <Typography
                         data-aos="fade-up"
                         variant="body1"
