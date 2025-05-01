@@ -6,7 +6,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CallIcon from '@mui/icons-material/Call';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import logo from "../../assets/Y Logo.jpg";
+import logo from "../../assets/Emotionally Yours Logo-01.jpg";
 import {Link as RouterLink} from "react-router-dom";
 
 const socialMedia = [
@@ -44,18 +44,14 @@ const Footer = () => {
             <Container maxWidth="xl">
                 <Grid container spacing={4} justifyContent="center">
                     <Grid item xs={12} lg={5} >
-                        <Box sx={{
-                            height: "80px",
-                            width: "80px",
-                            mb: 2,
-                        }}>
-                            <Link href="/">
-                                <img src={logo} alt="logo" style={{
-                                    borderRadius: "12px",
-                                    height: "100%",
-                                    cursor: "pointer"
-                                }}/>
-                            </Link>
+                        <Box sx={{ height: "70px", width: "270px" ,mb:2}}>
+                            <RouterLink to="/" style={{ display: "inline-block", height: "100%" }}>
+                                <img
+                                    src={logo}
+                                    alt="Emotionally Yours Logo"
+                                    style={{ height: "100%", width: "auto", objectFit: "contain",borderRadius:10, cursor: "pointer" }}
+                                />
+                            </RouterLink>
                         </Box>
                         <Box
                             sx={{
