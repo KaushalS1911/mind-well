@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {Box, Container, Typography, Card, Grid, styled, useTheme} from '@mui/material';
-import img1 from '../../assets/images/Photos/School.jpg';
+import img1 from '../../assets/images/Photos/medium-shot-kids.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import CircleIcon from '@mui/icons-material/Circle';

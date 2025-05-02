@@ -21,12 +21,12 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
-import img from '../../assets/images/Home/wellbeing-journey/satisfied-young-woman.jpg';
-import img1 from '../../assets/images/Home/wellbeing-journey/be mindfull.jpg';
-import img2 from '../../assets/images/Home/wellbeing-journey/reduce worry.png';
-import img3 from '../../assets/images/Home/wellbeing-journey/manage sterss.jpg';
-import img4 from '../../assets/images/Home/wellbeing-journey/increase productivity.png';
-import img5 from '../../assets/images/Home/wellbeing-journey/Improve Sleep.png';
+import img from '../../assets/images/Home/wellbeing-journey/Feel Happier.jpg';
+import img1 from '../../assets/images/Home/wellbeing-journey/Be Mindful.jpg';
+import img2 from '../../assets/images/Home/wellbeing-journey/Reduce Worry.jpg';
+import img3 from '../../assets/images/Home/wellbeing-journey/Manage Stress.jpg';
+import img4 from '../../assets/images/Home/wellbeing-journey/Increase Productivity.jpg';
+import img5 from '../../assets/images/Home/wellbeing-journey/Improve Sleep.jpg';
 
 const WellbeingJourney = () => {
     const [openCategory, setOpenCategory] = useState(null);
