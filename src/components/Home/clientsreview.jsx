@@ -96,7 +96,7 @@ function ClientsReview() {
                                         borderRadius: 3,
                                         display: "flex",
                                         flexDirection: "column",
-                                        height: {xs:"600px",sm:"470px",md:"550px",lg:"450px"},
+                                        height: {xs:"750px",sm:"470px",md:"550px",lg:"450px"},
                                         width: "100%",
                                         // minHeight: 00,
                                     }}

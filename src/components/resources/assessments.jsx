@@ -100,6 +100,9 @@ function Assessments() {
     ];
 
     return (
+        <Box sx={{
+            mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
+        }}>
         <Container maxWidth="xl">
             <Box sx={{ p: {sm:"96px 0 0 0",xs:"50px 0 0 0"}, mt: {md: 5, xs: 0}}}>
                 <Box sx={{p: {xs: 3, md: 5}, bgcolor: "#012765", borderRadius: 3, color: "#fff"}}>
@@ -266,6 +269,7 @@ function Assessments() {
                 </DialogContent>
             </Dialog>
         </Container>
+        </Box>
     );
 }
 

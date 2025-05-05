@@ -24,7 +24,7 @@ const SingleBlog = () => {
     }
 
     return (
-        <Box sx={{ pt: { xs: 6, md: 8 }, }}>
+        <Box sx={{ pt: { xs: 6, md: 8 },mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' } }}>
             <Container maxWidth="lg">
                 {/* Breadcrumbs */}
                 <Breadcrumbs sx={{ mb: 4 }}>

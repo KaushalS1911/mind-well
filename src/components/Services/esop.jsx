@@ -444,7 +444,7 @@ const ESOPMUI = () => {
     return (
         <Box>
             <HeroSection/>
-            <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+            <Box component="section" sx={{mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}>
                 <Container maxWidth="xl">
                     <ProgramOverview/>
                     <ThreePillarApproach/>

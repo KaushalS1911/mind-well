@@ -19,7 +19,7 @@ function Blogs() {
     const hasMoreBlogs = visibleBlogs < blogsData.length;
 
     return (
-        <Box sx={{ pt: { xs: 6, md: 20 }, }}>
+        <Box sx={{ pt: { xs: 6, md: 20 },mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' } }}>
             <Container maxWidth="xl">
                 {/* Header Section */}
                 <Box sx={{ textAlign: 'center', mb: 6 }}>

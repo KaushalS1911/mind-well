@@ -10,14 +10,14 @@ import Assessments from "../../components/resources/assessments.jsx";
 
 function Resource() {
     return (
-        <>
+        <Box >
             <Journaling/>
             <Assessments/>
             <SelfHelpTools/>
             <Podcastsndblog/>
             <CrisisResources/>
             <Blogs/>
-        </>
+        </Box>
     );
 }
 

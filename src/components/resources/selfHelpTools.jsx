@@ -8,7 +8,7 @@ import BoltIcon from "@mui/icons-material/Bolt";
 function SelfHelpTools() {
     return (
 
-        <Box component="section" sx={{ padding: {sm:"96px 0 0 0",xs:"66px 0 30px 0"}, mt: {md: 10, xs: 0},mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+        <Box component="section" sx={{ padding: {sm:"96px 0 0 0",xs:"66px 0 30px 0"}, mt: {md: 10, xs: 0},mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}>
             <Container maxWidth={"xl"}>
                 <Box className={"Montserrat"} sx={{
                     color: "#012765",

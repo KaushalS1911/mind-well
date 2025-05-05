@@ -409,7 +409,7 @@ export default function ShapePlusMUI() {
     return (
         <>
             <HeroSection/>
-            <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+            <Box component="section" sx={{mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}>
                 {/* Hero Section */}
 
                 <Container maxWidth="xl">

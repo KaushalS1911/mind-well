@@ -171,7 +171,7 @@ export default function PEPMUI() {
             </Box>
 
             {/* Program Overview */}
-            <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+            <Box component="section" sx={{mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}>
                 <Container maxWidth="xl">
                     <Box sx={{padding: {sm:"96px 0 0 0",xs:"66px 0 0 0"}}}>
                         <Grid container spacing={4} mb={8}>

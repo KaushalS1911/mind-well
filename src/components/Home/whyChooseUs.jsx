@@ -115,10 +115,10 @@ function WhyChooseUs() {
                                                         }}
                                                     />
                                                 </Box>
-                                                <Typography fontSize={22} fontWeight="bold" mb={1}>
+                                                <Typography fontSize={20} fontWeight="bold" mb={1}>
                                                     {item.title}
                                                 </Typography>
-                                                <Typography fontSize={17} lineHeight={1.3}>
+                                                <Typography fontSize={15} lineHeight={1.3}>
                                                     {item.description}
                                                 </Typography>
                                             </Box>
@@ -159,10 +159,10 @@ function WhyChooseUs() {
                                                     }}
                                                 />
                                             </Box>
-                                            <Typography fontSize={22} fontWeight="bold" mb={1}>
+                                            <Typography fontSize={20} fontWeight="bold" mb={1}>
                                                 {item.title}
                                             </Typography>
-                                            <Typography fontSize={17} lineHeight={1.3}>
+                                            <Typography fontSize={15} lineHeight={1.3}>
                                                 {item.description}
                                             </Typography>
                                         </Box>

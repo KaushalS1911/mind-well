@@ -60,7 +60,7 @@ function Journaling() {
     ];
 
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+        <Box component="section" sx={{mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}>
             <Container maxWidth={"xl"}>
                 <Box sx={{ p: "96px 0 0 0", mt: {md: 10, xs: 0}}}>
                     {/* Header */}

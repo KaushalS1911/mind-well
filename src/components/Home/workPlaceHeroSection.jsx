@@ -103,7 +103,12 @@ const HeroSlide = ({ slideData, index }) => {
                                 component="div"
                                 sx={{
                                     letterSpacing: "-1px",
-                                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                                    fontSize: {
+                                        xs: '1.7rem',
+                                        sm: '1.85rem',
+                                        md: '2rem',
+                                        lg: '2.125rem'
+                                    },
                                     color: "#012765",
                                     fontWeight: 700,
                                     lineHeight: 1.2,
@@ -119,7 +124,12 @@ const HeroSlide = ({ slideData, index }) => {
                                     display: 'inline-block',
                                     color: "#FE6A00",
                                     fontWeight: 700,
-                                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                                    fontSize: {
+                                        xs: '1.7rem',
+                                        sm: '1.85rem',
+                                        md: '2rem',
+                                        lg: '2.125rem'
+                                    },
                                     animation: 'slideUpFade 1s ease',
                                     '@keyframes slideUpFade': {
                                         '0%': {
@@ -142,7 +152,12 @@ const HeroSlide = ({ slideData, index }) => {
                             component="div"
                             sx={{
                                 letterSpacing: "-1px",
-                                fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                                fontSize: {
+                                    xs: '1.7rem',
+                                    sm: '1.85rem',
+                                    md: '2rem',
+                                    lg: '2.125rem'
+                                },
                                 color: "#012765",
                                 fontWeight: 700,
                                 lineHeight: 1.2,

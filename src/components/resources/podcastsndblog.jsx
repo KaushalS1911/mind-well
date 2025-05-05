@@ -121,7 +121,7 @@ const PodcastsAndBlog = () => {
     ];
 
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+        <Box component="section" sx={{mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}>
             <Container maxWidth="xl" >
                 <Box mb={5}>
                     <Box display="flex" justifyContent="space-between" alignItems="center" sx={{mb: 4, mt: 4}}>

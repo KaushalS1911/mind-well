@@ -7,6 +7,7 @@ function Contact() {
     return (
         <Box sx={{
             px: {sm:"30px ",xs:"0",xl:"0"},
+            mx: 10
         }}>
             <Getintouch/>
             <Map/>
