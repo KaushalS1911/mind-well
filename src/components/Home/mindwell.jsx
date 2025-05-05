@@ -92,7 +92,12 @@ const Mindwell = () => {
                 <Box
                     className="Montserrat"
                     sx={{
-                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                        fontSize: {
+                            xs: '1.7rem',
+                            sm: '1.85rem',
+                            md: '2rem',
+                            lg: '2.125rem'
+                        },
                         marginBottom: "16px",
                         lineHeight: "40px",
                         display: "flex",
@@ -110,13 +115,13 @@ const Mindwell = () => {
                         width: { md: "70%", xs: "100%" },
                         mx: "auto",
                         mb: 8,
-                        fontSize: { xs: "16px", md: "20px" },
+                        fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
                         color: "#4B5563",
                         textAlign: "center",
                         lineHeight: "25px",
                     }}
                 >
-                    Emotionally Yours equips individuals with essential life skills to enhance their performance at academic
+                    "Emotionally Yours" equips individuals with essential life skills to enhance their performance at academic
                     institutions and workplaces, leveraging group sessions, workshops, assessments & personalized guidance.
                 </Box>
 

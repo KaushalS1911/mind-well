@@ -2,6 +2,12 @@ import React from 'react';
 import { Box, Container, Grid, Paper, Typography, Avatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
+import img1 from '../../assets/images/about/Psychologists/Pratibha Sanganeria.png'
+import img2 from '../../assets/images/about/Psychologists/Anshita Raghav.png'
+import img3 from '../../assets/images/about/Psychologists/Vedanshi Gupta.png'
+import img4 from '../../assets/images/about/Psychologists/Anjali Sinha.png'
+import img5 from '../../assets/images/about/Psychologists/Aishwarya Saxena.png'
+import img6 from '../../assets/images/about/Psychologists/Pratibha Kotak.png'
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(3),
@@ -90,45 +96,51 @@ const Description = styled(Typography)(() => ({
 
 const founders = [
     {
+        img: img1,
         role: "Wellness Consultant",
         name: "Pratibha Sanganeria",
         skills: "Client centered therapy, DBT, movement therapy (currently upskilling), Workshop facilitation",
     },
     {
+        img: img2,
         role: "Psychologist",
         name: "Anshita Raghav",
         skills: "Workplace Psychology, Training, Counselling",
 
     },
     {
+        img: img3,
         role: "Consultant Psychologist",
         name: "Vedanshi Gupta",
         skills: "Person Centred Therapy, CBT, ACT and Gestalt, School Counselor",
     },
     {
+        img: img4,
         role: "Wellness Consultant",
         name: "Anjali Sinha",
         skills: "Eclectic approach, CBT, Special Educator & Speec",
     },
     {
+        img: img5,
         role: "Wellness Consultant",
         name: "Aishwarya Saxena",
         skills: "CBT and Behaviour Modif, Mindfulness, School Counselor",
 
     },
+    // {
+    //     role: "Wellness Consultant",
+    //     name: "Fatima Lobo",
+    //     skills: "NLP Therapist, CBT, REBT, Counselor",
+    // },
     {
-        role: "Wellness Consultant",
-        name: "Fatima Lobo",
-        skills: "NLP Therapist, CBT, REBT, Counselor",
-    },
-    {
+        img: img6,
         role: "Counselling Psychologist",
         name: "Pratibha Kotak",
         skills: "Couple Counselling, Rehabilitation, REBT",
     },
 ];
 
-const Psychologist = () => {
+const Psychologist = ({ icon = <PersonIcon /> }) => {
     return (
         <Box sx={{ padding: '0 0 96px 0', }}>
             <Container maxWidth="xl">
@@ -136,7 +148,12 @@ const Psychologist = () => {
                     variant="h4"
                     sx={{
                         fontFamily: 'Montserrat',
-                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                        fontSize: {
+                            xs: '1.7rem',
+                            sm: '1.85rem',
+                            md: '2rem',
+                            lg: '2.125rem'
+                        },
                         color: '#012765',
                         textAlign: 'center',
                         fontWeight: 700,
@@ -150,7 +167,7 @@ const Psychologist = () => {
                         maxWidth: 700,
                         mx: 'auto',
                         mb: 8,
-                        fontSize: { xs: "16px", md: "20px" },
+                        fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
                         color: '#4B5563',
                         textAlign: 'center',
                         lineHeight: '25px',
@@ -165,9 +182,7 @@ const Psychologist = () => {
                         <Grid item xs={12} sm={6} md={4} key={index}>
                             <StyledPaper>
                                 <AvatarWrapper className="avatar-wrapper">
-                                    <StyledAvatar>
-                                        <PersonIcon/>
-                                    </StyledAvatar>
+                                    <StyledAvatar>{founder.img ? <img src={founder.img} alt={founder.name} style={{ width: '100%', height: '100%', borderRadius: '50%' }} /> : icon}</StyledAvatar>
                                 </AvatarWrapper>
 
                                 <Role>{founder.role}</Role>

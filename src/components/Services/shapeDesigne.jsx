@@ -48,7 +48,12 @@ const SectionHeading = ({title, subtitle, centered = false, divider = false}) =>
             gutterBottom
             sx={{
                 color: COLORS.primary,
-                fontSize: {xs: '28px', sm: '34px', md: '42px', lg: '46px'},
+                fontSize: {
+                    xs: '1.7rem',
+                    sm: '1.85rem',
+                    md: '2rem',
+                    lg: '2.125rem'
+                },
                 letterSpacing: "-1px",
             }}
         >
@@ -74,7 +79,7 @@ const SectionHeading = ({title, subtitle, centered = false, divider = false}) =>
                 sx={{
                     maxWidth: centered ? 'md' : '100%',
                     mx: centered ? 'auto' : 0,
-                    fontSize: {xs: "16px", md: "20px"},
+                    fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
                 }}
             >
                 {subtitle}
@@ -405,7 +410,7 @@ export default function ShapeDesigne() {
     return (
         <>
             <HeroSection/>
-            <Box sx={{px: {sm: "30px ", xs: "0", xl: "0"}}}>
+            <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
                 {/* Hero Section */}
 
                 <Container maxWidth="xl">

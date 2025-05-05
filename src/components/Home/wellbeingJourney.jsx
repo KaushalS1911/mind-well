@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {
     Box,
     Typography,
     Container,
     Grid,
-    List,
     ListItemIcon,
     ListItemText,
     Collapse,
@@ -21,12 +20,12 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
-import img from '../../assets/images/Home/wellbeing-journey/Feel Happier.jpg';
-import img1 from '../../assets/images/Home/wellbeing-journey/Be Mindful.jpg';
-import img2 from '../../assets/images/Home/wellbeing-journey/Reduce Worry.jpg';
+import img from '../../assets/images/Home/wellbeing-journey/man-is-smiling.jpg';
+import img1 from '../../assets/images/Home/wellbeing-journey/man-is-doing.jpg';
+import img2 from '../../assets/images/Home/wellbeing-journey/indian-young-man-asking-why-what.jpg';
 import img3 from '../../assets/images/Home/wellbeing-journey/Manage Stress.jpg';
 import img4 from '../../assets/images/Home/wellbeing-journey/Increase Productivity.jpg';
-import img5 from '../../assets/images/Home/wellbeing-journey/Improve Sleep.jpg';
+import img5 from '../../assets/images/Home/wellbeing-journey/tired-indian-man-lying-down.jpg';
 
 const WellbeingJourney = () => {
     const [openCategory, setOpenCategory] = useState(null);
@@ -42,42 +41,42 @@ const WellbeingJourney = () => {
     const categories = [
         {
             name: 'Feel Happier',
-            icon: <EmojiEmotionsIcon />,
+            icon: <EmojiEmotionsIcon/>,
             color: '#a98bf5',
             content: 'Discover techniques and practices to boost your mood, increase positive emotions, and find more joy in everyday experiences.',
             image: img,
         },
         {
             name: 'Be Mindful',
-            icon: <SpaIcon />,
+            icon: <SpaIcon/>,
             color: '#84c77a',
             content: 'Learn mindfulness techniques to stay present, appreciate each moment, and develop a deeper awareness of yourself and your surroundings.',
             image: img1,
         },
         {
             name: 'Reduce Worry',
-            icon: <PsychologyIcon />,
+            icon: <PsychologyIcon/>,
             color: '#e8a87c',
             content: 'Find effective strategies to manage excessive worry, overcome anxious thoughts, and develop a more peaceful mindset.',
             image: img2,
         },
         {
             name: 'Manage Stress',
-            icon: <SelfImprovementIcon />,
+            icon: <SelfImprovementIcon/>,
             color: '#66c7d4',
             content: 'Explore friendly approaches to handling stress, finding ways to navigate life\'s challenges with resilience and a calm, balanced mindset.',
             image: img3,
         },
         {
             name: 'Increase Productivity',
-            icon: <AlarmIcon />,
+            icon: <AlarmIcon/>,
             color: '#2dc692',
             content: 'Discover methods to enhance your focus, organize your tasks effectively, and accomplish your goals with greater efficiency and satisfaction.',
             image: img4,
         },
         {
             name: 'Improve Sleep',
-            icon: <NightsStayIcon />,
+            icon: <NightsStayIcon/>,
             color: '#4a77c5',
             content: 'Learn techniques for better sleep quality, establish healthy bedtime routines, and wake up feeling refreshed and energized.',
             image: img5,
@@ -89,48 +88,55 @@ const WellbeingJourney = () => {
         : categories[0].image;
 
     return (
-        <Box sx={{ py: 8 ,px: {sm:"30px ",xs:"0",xl:"0"},}}>
+        <Box component="section" sx={{py: 8, mx: {xs: '20px', sm: '30px', md: '50px', xl: 'auto'},}}>
             <Container maxWidth="xl">
                 <Box textAlign="center" mb={3}>
                     <Typography
                         variant="h4"
                         className="Montserrat"
                         sx={{
-                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                            fontSize: {
+                                xs: '1.7rem',
+                                sm: '1.85rem',
+                                md: '2rem',
+                                lg: '2.125rem'
+                            },
                             letterSpacing: '-1px',
                             color: '#012765',
                             fontWeight: 700,
                             mb: 1
                         }}
-                    >
-                        The path to emotional well-being can be tough
+                    >Simplifying Emotional Wellbeing
                     </Typography>
-                    <Typography
-                        variant="h3"
-                        className="Montserrat"
-                        sx={{
-                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                            color: '#012765',
-                            fontWeight: 700
-                        }}
-                    >
-                        here’s how we simplify it
-                    </Typography>
+                    {/*<Typography*/}
+                    {/*    variant="h3"*/}
+                    {/*    className="Montserrat"*/}
+                    {/*    sx={{*/}
+                    {/*        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },*/}
+                    {/*        color: '#012765',*/}
+                    {/*        fontWeight: 700*/}
+                    {/*    }}*/}
+                    {/*>*/}
+                    {/*    here’s how we simplify it*/}
+                    {/*</Typography>*/}
                 </Box>
 
                 <Box textAlign="center" mb={6} px={2}>
-                    <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
-                        Select from a range of psychology-backed wellness plans tailored to your needs
-                    </Typography>
-                    <Typography variant="h6" sx={{ color: '#555', fontWeight: 400 }}>
-                        Each plan offers personalized goals and expert-guided interventions to support your journey
-                        toward emotional and mental well-being
+                    <Typography
+                        sx={{
+                            color: '#555',
+                            fontWeight: 400,
+                            fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
+                            lineHeight: '1.5',
+                        }}
+                    >
+                        Select from a range of psychology-backed wellness plans tailored to your needs. Each plan offers personalized goals and expert-guided interventions to support your journey toward emotional and mental well-being.
                     </Typography>
                 </Box>
 
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
-                        <Box sx={{ height: '512px', width: '100%', boxShadow: 3, borderRadius: 2 }}>
+                        <Box sx={{height: '512px', width: '100%', boxShadow: 3, borderRadius: 2}}>
                             <img
                                 src={selectedImage}
                                 alt="Selected category"
@@ -169,8 +175,8 @@ const WellbeingJourney = () => {
                                         }}
                                     >
                                         <Box display="flex" alignItems="center">
-                                            <ListItemIcon sx={{ minWidth: 48 }}>
-                                                <Avatar sx={{ bgcolor: category.color }}>
+                                            <ListItemIcon sx={{minWidth: 48}}>
+                                                <Avatar sx={{bgcolor: category.color}}>
                                                     {category.icon}
                                                 </Avatar>
                                             </ListItemIcon>
@@ -182,12 +188,12 @@ const WellbeingJourney = () => {
                                                 }
                                             />
                                             <IconButton edge="end" disableRipple>
-                                                {isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                                                {isOpen ? <ExpandLessIcon/> : <ExpandMoreIcon/>}
                                             </IconButton>
                                         </Box>
 
                                         <Collapse in={isOpen} timeout="auto" unmountOnExit>
-                                            <Box sx={{ mt: 2, pl: 2 }}>
+                                            <Box sx={{mt: 2, pl: 2}}>
                                                 <Typography fontSize={16} color="text.secondary">
                                                     {category.content}
                                                 </Typography>

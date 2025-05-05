@@ -1,20 +1,22 @@
 import React from "react";
-import {Box, Typography, Grid, IconButton, Link, Button, TextField, Container} from "@mui/material";
+import {Box, Typography, Grid, IconButton, Link, Button, TextField, Container, Divider} from "@mui/material";
 import {Facebook, Twitter, Instagram, LinkedIn, YouTube} from "@mui/icons-material";
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CallIcon from '@mui/icons-material/Call';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import logo from "../../assets/Emotionally Yours Logo-01.jpg";
+import logo from "../../assets/Emotionally Yours Logo1.jpg";
 import {Link as RouterLink} from "react-router-dom";
 
-const socialMedia = [
+
+const SOCIAL_MEDIA_LINKS = [
     {icon: <LinkedIn/>, link: "https://www.linkedin.com/company/emotionallyours/"},
     {icon: <Facebook/>, link: "https://www.facebook.com/share/1AmSYda79K/"},
     {icon: <Instagram/>, link: "https://www.instagram.com/mann_miitr?igsh=cWp1aWNiNm1vNzNx"},
-    {icon: <YouTube/>, link: "https://youtube.com/@emotionallyours?si=6h0Su7ZsmTpj0QbL"},
+    {icon: <YouTube/>, link: "https://youtube.com/@emotionallyours?si=6h0Su7ZsmTpj0QbL"}
 ];
+
 const navigationLinks = [
     {name: "Home", path: "/"},
     {name: "About Us", path: "/about"},
@@ -31,25 +33,31 @@ const services = [
     {name: "PEP", path: "/services/PEP"},
 ]
 const contactDetails = {
-    phone: "7977135096",
-    email: "devesh.tripathi@mahadevasth.com",
-    address: "MTPL, B- 204, Kanakia Wall Street Chakala,Andheri East, Mumbai, 400093",
+    phone: "+91 7977135096",
+    email: "connect@mahadevasth.com",
+    address: "B-204, Kanakia Wall Street, Andheri - Kurla Rd, Chakala, Andheri East, Mumbai, Maharashtra 400093",
 };
 
 const paymentMethods = ["VISA", "MC", "AMEX", "HSA"];
 
 const Footer = () => {
     return (
-        <Box sx={{backgroundColor: "#002b5c", color: "white", padding: "64px 20px 32px",mt:10}}>
+        <Box sx={{backgroundColor: "#002b5c", color: "white", padding: "70px 20px 45px", mt: 10}}>
             <Container maxWidth="xl">
                 <Grid container spacing={4} justifyContent="center">
-                    <Grid item xs={12} lg={5} >
-                        <Box sx={{ height: "70px", width: "270px" ,mb:2}}>
-                            <RouterLink to="/" style={{ display: "inline-block", height: "100%" }}>
+                    <Grid item xs={12} lg={5}>
+                        <Box sx={{height: "70px", width: "270px", mb: 2}}>
+                            <RouterLink to="/" style={{display: "inline-block", height: "100%"}}>
                                 <img
                                     src={logo}
                                     alt="Emotionally Yours Logo"
-                                    style={{ height: "100%", width: "auto", objectFit: "contain",borderRadius:10, cursor: "pointer" }}
+                                    style={{
+                                        height: "100%",
+                                        width: "auto",
+                                        objectFit: "contain",
+                                        borderRadius: 10,
+                                        cursor: "pointer"
+                                    }}
                                 />
                             </RouterLink>
                         </Box>
@@ -61,18 +69,21 @@ const Footer = () => {
                                 color: "#FFFFFFCC"
                             }}
                         >
-                            Emotionally Yours provides accessible, professional mental health services for students and
+                            "Emotionally Yours" provides accessible, professional mental health services for students
+                            and
                             professionals. Our mission is to make quality therapy and mental wellness resources
                             available to everyone who needs them.
                         </Box>
 
 
                         <Box sx={{display: "flex", gap: 2, mt: 2}}>
-                            {socialMedia.map((item, index) => (
+                            {SOCIAL_MEDIA_LINKS.map((item, index) => (
                                 <IconButton
                                     key={index}
                                     component={Link}
                                     href={item.link}
+                                    target="_blank"
+                                    rel="noopener"
                                     sx={{
                                         padding: "10px 10px",
                                         backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -91,53 +102,54 @@ const Footer = () => {
                         </Box>
 
 
-                        <Box sx={{display: "flex", mt: 3, gap: 2}}>
 
-                            <Box sx={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                backgroundColor: "#000",
-                                padding: "8px 16px",
-                                borderRadius: 2,
-                                cursor: "pointer",
-                                "&:hover": {
-                                    backgroundColor: "#1F2937",
-                                }
-                            }}>
-                                <Typography component={"span"}><NotificationsIcon sx={{fontSize: 20}}/></Typography>
-                                <Box sx={{ml: 1}}>
-                                    <Typography sx={{fontSize: "12px", fontWeight: "400", lineHeight: "16px"}}>
-                                        Download on the
-                                    </Typography>
-                                    <Typography sx={{fontSize: "14px", fontWeight: "600", lineHeight: "18px"}}>
-                                        App Store
-                                    </Typography>
-                                </Box>
-                            </Box>
-                            <Box sx={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                backgroundColor: "#000",
-                                padding: "8px 16px",
-                                borderRadius: 2,
-                                cursor: "pointer",
-                                "&:hover": {
-                                    backgroundColor: "#1F2937",
-                                }
-                            }}>
-                                <Typography component={"span"}><PlayArrowIcon sx={{fontSize: 20}}/></Typography>
-                                <Box sx={{ml: 1}}>
-                                    <Typography sx={{fontSize: "12px", fontWeight: "400", lineHeight: "16px"}}>
-                                        Get it on
-                                    </Typography>
-                                    <Typography sx={{fontSize: "14px", fontWeight: "600", lineHeight: "18px"}}>
-                                        Google Play
-                                    </Typography>
-                                </Box>
-                            </Box>
-                        </Box>
+                        {/*<Box sx={{display: "flex", mt: 3, gap: 2}}>*/}
+
+                        {/*    <Box sx={{*/}
+                        {/*        display: "flex",*/}
+                        {/*        justifyContent: "center",*/}
+                        {/*        alignItems: "center",*/}
+                        {/*        backgroundColor: "#000",*/}
+                        {/*        padding: "8px 16px",*/}
+                        {/*        borderRadius: 2,*/}
+                        {/*        cursor: "pointer",*/}
+                        {/*        "&:hover": {*/}
+                        {/*            backgroundColor: "#1F2937",*/}
+                        {/*        }*/}
+                        {/*    }}>*/}
+                        {/*        <Typography component={"span"}><NotificationsIcon sx={{fontSize: 20}}/></Typography>*/}
+                        {/*        <Box sx={{ml: 1}}>*/}
+                        {/*            <Typography sx={{fontSize: "12px", fontWeight: "400", lineHeight: "16px"}}>*/}
+                        {/*                Download on the*/}
+                        {/*            </Typography>*/}
+                        {/*            <Typography sx={{fontSize: "14px", fontWeight: "600", lineHeight: "18px"}}>*/}
+                        {/*                App Store*/}
+                        {/*            </Typography>*/}
+                        {/*        </Box>*/}
+                        {/*    </Box>*/}
+                        {/*    <Box sx={{*/}
+                        {/*        display: "flex",*/}
+                        {/*        justifyContent: "center",*/}
+                        {/*        alignItems: "center",*/}
+                        {/*        backgroundColor: "#000",*/}
+                        {/*        padding: "8px 16px",*/}
+                        {/*        borderRadius: 2,*/}
+                        {/*        cursor: "pointer",*/}
+                        {/*        "&:hover": {*/}
+                        {/*            backgroundColor: "#1F2937",*/}
+                        {/*        }*/}
+                        {/*    }}>*/}
+                        {/*        <Typography component={"span"}><PlayArrowIcon sx={{fontSize: 20}}/></Typography>*/}
+                        {/*        <Box sx={{ml: 1}}>*/}
+                        {/*            <Typography sx={{fontSize: "12px", fontWeight: "400", lineHeight: "16px"}}>*/}
+                        {/*                Get it on*/}
+                        {/*            </Typography>*/}
+                        {/*            <Typography sx={{fontSize: "14px", fontWeight: "600", lineHeight: "18px"}}>*/}
+                        {/*                Google Play*/}
+                        {/*            </Typography>*/}
+                        {/*        </Box>*/}
+                        {/*    </Box>*/}
+                        {/*</Box>*/}
                     </Grid>
 
 
@@ -215,9 +227,9 @@ const Footer = () => {
                             }}
                         >
                             {[
-                                { icon: <CallIcon />, text: contactDetails.phone },
-                                { icon: <MailOutlineIcon />, text: contactDetails.email },
-                                { icon: <LocationOnIcon />, text: contactDetails.address }
+                                {icon: <CallIcon/>, text: contactDetails.phone},
+                                {icon: <MailOutlineIcon/>, text: contactDetails.email},
+                                {icon: <LocationOnIcon/>, text: contactDetails.address}
                             ].map((item, index) => (
                                 <Box
                                     key={index}
@@ -228,7 +240,7 @@ const Footer = () => {
                                         alignItems: "center"
                                     }}
                                 >
-                                    <Box sx={{ color: "#FE6A00", mr: 1 }}>{item.icon}</Box> {item.text}
+                                    <Box sx={{color: "#FE6A00", mr: 1}}>{item.icon}</Box> {item.text}
                                 </Box>
                             ))}
                         </Box>
@@ -378,6 +390,36 @@ const Footer = () => {
                 {/*        Emotionally Yours does not offer crisis counseling or emergency services.*/}
                 {/*    </Box>*/}
                 {/*</Box>*/}
+                {/* --- Disclaimer & Attribution Section Fixed --- */}
+                <Box>
+                    <Divider sx={{ my: 4, borderColor: "#ffffff33", width: "100%" }} />
+                    <Box sx={{
+                        maxWidth: "900px",
+                        mx: "auto",
+                        textAlign: 'center',
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center"
+                    }}>
+                        {/* Legal Info */}
+                        <Typography variant="subtitle2" gutterBottom>
+                            Disclaimer
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: "#FFFFFFCC", mb: 2 }}>
+                            We are not a medical service or suicide prevention helpline. If you are feeling
+                            suicidal, we suggest you immediately call a suicide prevention helpline like KIRAN:
+                            18005990019 (24 hours, 7 days a week).
+                        </Typography>
+
+                        <Typography variant="subtitle2" gutterBottom>
+                            Attribution
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: "#FFFFFFCC" }}>
+                            Mahadevasth Technologies provides attribution to Freepik for images.
+                        </Typography>
+                    </Box>
+                </Box>
+
 
             </Container>
         </Box>

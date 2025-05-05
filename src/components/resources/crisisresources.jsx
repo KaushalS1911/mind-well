@@ -11,7 +11,7 @@ import {Phone} from "@mui/icons-material";
 
 // Reusable Card component for Crisis Resources
 const CrisisResourceCard = ({title, description, icon, contact}) => (
-    <Grid item xs={12} sm={4}>
+    <Grid item xs={12} md={4}>
         <Box sx={{boxShadow: 1, borderRadius: 2, padding: 3, height: "100%"}}>
             <Typography variant="h6" sx={{color: "#012765", mb: 1}}>
                 {title}
@@ -48,104 +48,105 @@ function CrisisResources() {
     ];
 
     return (
-        <Box sx={{
-            px: {sm:"30px ",xs:"0",xl:"0"},
-        }}>
-            <Container maxWidth="xl" sx={{mt: 4, padding: "30px 0"}}>
-                {/* Crisis Resources Section */}
-                <Box sx={{backgroundColor: "#F8FAFC", p: 3, borderRadius: 2, padding: "40px", marginBottom: "60px"}}>
-                    <Typography variant="h5" sx={{color: "#012765", fontWeight: "700", mb: 4}}>
-                        Crisis Resources
-                    </Typography>
-                    <Typography sx={{color: "#4B5563", mb: 4, fontSize: "16px"}}>
-                        If you or someone you know is experiencing a mental health emergency, please contact these
-                        resources
-                        for immediate support.
-                    </Typography>
-
-                    {/* Crisis Resource Cards */}
-                    <Grid container spacing={2}>
-                        {crisisResources.map((resource, index) => (
-                            <CrisisResourceCard key={index} {...resource} />
-                        ))}
-                    </Grid>
-
-                    {/* Note Section */}
-                    <Box sx={{backgroundColor: "#ECEFF3", padding: 2, marginTop: 3, borderRadius: 1}}>
-                        <Typography sx={{fontSize: "14px", color: "#012765"}}>
-                            <b>Note:</b> Emotionally Yours is not a crisis service. If you are experiencing a mental
-                            health
-                            emergency, please contact the resources above for immediate assistance.
+        <Box sx={{backgroundColor: "#F8FAFC",}}>
+            <Box component="section" sx={{mx: {xs: '20px', sm: '30px', md: '50px', xl: 'auto'}}}>
+                <Container maxWidth="xl" sx={{mt: 4, padding: "30px 0"}}>
+                    {/* Crisis Resources Section */}
+                    <Box sx={{ borderRadius: 2, padding: "40px", marginBottom: "60px"}}>
+                        <Typography variant="h5" sx={{color: "#012765", fontWeight: "700", mb: 4}}>
+                            Crisis Resources
                         </Typography>
-                    </Box>
-                </Box>
+                        <Typography sx={{color: "#4B5563", mb: 4, fontSize: "16px"}}>
+                            If you or someone you know is experiencing a mental health emergency, please contact these
+                            resources
+                            for immediate support.
+                        </Typography>
 
-                {/* Newsletter Subscription Section */}
-                <Box
-                    sx={{
-                        backgroundColor: "#FE6A00",
-                        padding: "40px",
-                        borderRadius: "12px",
-                        display: "flex",
-                        flexDirection: {xs: "column", md: "row"},
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        gap: "20px",
-                    }}
-                >
-                    {/* Left Section - 50% Width */}
-                    <Box sx={{flex: 1, minWidth: "50%"}}>
-                        <Typography sx={{color: "#FFFFFF", fontSize: "24px", fontWeight: "700", mb: 2}}>
-                            Subscribe to Our Mental Wellness Newsletter
-                        </Typography>
-                        <Typography sx={{color: "#FFFFFF", fontSize: "16px"}}>
-                            Get the latest mental health tips, resources, and insights delivered to your inbox
-                            bi-weekly.
-                        </Typography>
+                        {/* Crisis Resource Cards */}
+                        <Grid container spacing={2}>
+                            {crisisResources.map((resource, index) => (
+                                <CrisisResourceCard key={index} {...resource} />
+                            ))}
+                        </Grid>
+
+                        {/* Note Section */}
+                        <Box sx={{backgroundColor: "#ECEFF3", padding: 2, marginTop: 3, borderRadius: 1}}>
+                            <Typography sx={{fontSize: "14px", color: "#012765"}}>
+                                <b>Note:</b> "Emotionally Yours" is not a crisis service. If you are experiencing a
+                                mental
+                                health
+                                emergency, please contact the resources above for immediate assistance.
+                            </Typography>
+                        </Box>
                     </Box>
 
-                    {/* Right Section - 50% Width (Input, Button & Privacy Text) */}
-                    <Box sx={{width: "100%"}}>
-                        {/* Input & Button Section */}
-                        <Box sx={{display: "flex", flexDirection: {xs: "column", sm: "row"}, gap: 2}}>
-                            <TextField
-                                fullWidth
-                                size="small"
-                                placeholder="Your email address"
-                                variant="outlined"
-                                sx={{
-                                    borderRadius: 2,
-                                    "& .MuiOutlinedInput-root": {
-                                        borderRadius: 2,
-                                        backgroundColor: "#FFFFFF",
-                                    },
-                                    "& .MuiInputBase-input": {
-                                        padding: "12px 16px",
-                                    },
-                                }}
-                            />
-                            <Button
-                                variant="contained"
-                                sx={{
-                                    backgroundColor: "#012765",
-                                    color: "#FFFFFF",
-                                    padding: "12px 24px",
-                                    borderRadius: "0.375rem",
-                                    transition: ".3s",
-                                    "&:hover": {backgroundColor: "#011B40"},
-                                }}
-                            >
-                                Subscribe
-                            </Button>
+                    {/* Newsletter Subscription Section */}
+                    <Box
+                        sx={{
+                            backgroundColor: "#FE6A00",
+                            padding: "40px",
+                            borderRadius: "12px",
+                            display: "flex",
+                            flexDirection: {xs: "column", md: "row"},
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            gap: "20px",
+                        }}
+                    >
+                        {/* Left Section - 50% Width */}
+                        <Box sx={{flex: 1, minWidth: "50%"}}>
+                            <Typography sx={{color: "#FFFFFF", fontSize: "24px", fontWeight: "700", mb: 2}}>
+                                Subscribe to Our Mental Wellness Newsletter
+                            </Typography>
+                            <Typography sx={{color: "#FFFFFF", fontSize: "16px"}}>
+                                Get the latest mental health tips, resources, and insights delivered to your inbox
+                                bi-weekly.
+                            </Typography>
                         </Box>
 
-                        {/* Privacy Text Below */}
-                        <Typography sx={{color: "#FFFFFF", fontSize: "12px", mt: 1}}>
-                            We respect your privacy. Unsubscribe at any time.
-                        </Typography>
+                        {/* Right Section - 50% Width (Input, Button & Privacy Text) */}
+                        <Box sx={{width: "100%"}}>
+                            {/* Input & Button Section */}
+                            <Box sx={{display: "flex", flexDirection: {xs: "column", sm: "row"}, gap: 2}}>
+                                <TextField
+                                    fullWidth
+                                    size="small"
+                                    placeholder="Your email address"
+                                    variant="outlined"
+                                    sx={{
+                                        borderRadius: 2,
+                                        "& .MuiOutlinedInput-root": {
+                                            borderRadius: 2,
+                                            backgroundColor: "#FFFFFF",
+                                        },
+                                        "& .MuiInputBase-input": {
+                                            padding: "12px 16px",
+                                        },
+                                    }}
+                                />
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        backgroundColor: "#012765",
+                                        color: "#FFFFFF",
+                                        padding: "12px 24px",
+                                        borderRadius: "0.375rem",
+                                        transition: ".3s",
+                                        "&:hover": {backgroundColor: "#011B40"},
+                                    }}
+                                >
+                                    Subscribe
+                                </Button>
+                            </Box>
+
+                            {/* Privacy Text Below */}
+                            <Typography sx={{color: "#FFFFFF", fontSize: "12px", mt: 1}}>
+                                We respect your privacy. Unsubscribe at any time.
+                            </Typography>
+                        </Box>
                     </Box>
-                </Box>
-            </Container>
+                </Container>
+            </Box>
         </Box>
     );
 }

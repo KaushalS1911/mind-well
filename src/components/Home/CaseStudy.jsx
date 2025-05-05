@@ -64,7 +64,7 @@ const CaseStudy = () => {
                             mb: 2,
                             fontSize: { xs: '15px', sm: '16px' }
                         }}>
-                            Public Schools partnered with Emotionally Yours to address chronic
+                            Public Schools partnered with "Emotionally Yours" to address chronic
                             absenteeism and provide equitable healthcare access to all
                             students, particularly in underserved communities.
                         </Typography>
@@ -115,7 +115,7 @@ const CaseStudy = () => {
                                 fontSize: { xs: '14px', sm: '15px' }
                             }}
                         >
-                            "Emotionally Yours has been transformative for our district. We've seen
+                            ""Emotionally Yours" has been transformative for our district. We've seen
                             improved attendance, better academic performance, and happier,
                             healthier students."
                         </Typography>

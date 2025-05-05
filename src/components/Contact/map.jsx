@@ -26,6 +26,7 @@ const MapLocation = () => (
             justifyContent: "center",
             textAlign: "center",
             padding: { xs: 2, md: 4 },
+            mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
         }}
     >
         <Box
@@ -95,7 +96,8 @@ const EmergencyNotice = () => (
             padding: "16px",
             '& .MuiAlert-icon': {
                 color: COLORS.warningBorder
-            }
+            },
+            mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
         }}
     >
         <Typography
@@ -119,7 +121,7 @@ const EmergencyNotice = () => (
                 lineHeight: "1.25rem",
             }}
         >
-            Emotionally Yours is not an emergency service. If you are experiencing a mental
+            "Emotionally Yours" is not an emergency service. If you are experiencing a mental
             health crisis or having thoughts of harming yourself or others,
             please call the Suicide Prevention Lifeline at <strong>988</strong> or
             go to your nearest emergency room.

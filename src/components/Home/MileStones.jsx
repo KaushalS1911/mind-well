@@ -32,8 +32,8 @@ function MileStones() {
     ];
 
     return (
-        <Box sx={{
-            px: {sm:"30px ",xs:"0",xl:"0"},
+        <Box component="section" sx={{
+            mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
         }}>
         <Container maxWidth="xl">
             <Box

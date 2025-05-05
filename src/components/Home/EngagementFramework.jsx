@@ -232,7 +232,7 @@ const EngagementFramework = () => {
                     justifyContent: "center",
                     alignItems: "center",
                     textAlign: "center",
-                    fontSize: 18
+                    fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
                 }}>
                     Comprehensive year-round support for emotional well-being and academic excellence
                 </Box>

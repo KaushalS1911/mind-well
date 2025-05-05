@@ -9,6 +9,7 @@ import {
     styled,
 } from "@mui/material";
 import img1 from '../../assets/images/about/aboutHeader/overview.jpg';
+import img2 from '../../assets/images/about/aboutHeader/aboutheader.jpg'
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(4),
@@ -34,21 +35,18 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
     },
 }));
 
-const headerStyles = {
-    padding: "130px 0 80px 0",
-    bgcolor: "#012765",
-    position: "relative",
-    overflow: "hidden",
-    textAlign: "center",
-};
-
 const headerTextStyles = {
-    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+    fontSize: {
+        xs: '1.7rem',
+        sm: '1.85rem',
+        md: '2rem',
+        lg: '2.225rem'
+    },
     lineHeight: 1,
     fontWeight: "700",
-    color: "#fff",
+    color: "#FE6A00",
     marginBottom: 2,
-    marginTop: 8,
+    marginTop: 12,
 };
 
 const dividerStyles = {
@@ -67,10 +65,34 @@ const colors = {
     background: '#F8FAFC',
 };
 
+const headerStyles = {
+    py: {xs: 8, sm: 10, md: 18},
+    bgcolor: "#012765",
+    position: "relative",
+    overflow: "hidden",
+    textAlign: "center",
+    backgroundImage: `url(${img2})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+};
+
+
 const AboutHeader = () => {
     return (
         <Box>
             <Box sx={headerStyles}>
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                        zIndex: 1,
+                    }}
+                />
                 <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2 }}>
                     <Box sx={headerTextStyles} className="Montserrat">
                         About Us
@@ -90,10 +112,7 @@ const AboutHeader = () => {
             </Box>
 
             {/* Overview Section */}
-            <Box sx={{
-                px: {sm:"30px ",xs:"0",xl:"0"},
-                py:2
-            }}>
+            <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' },py:2}}>
                 <Container maxWidth="xl">
                     <Grid container spacing={6} alignItems="center">
                         <Grid item xs={12} md={6}>
@@ -111,7 +130,7 @@ const AboutHeader = () => {
                                         textAlign: "justify",
                                     }}
                                 >
-                                    Emotionally Yours is an initiative by MTPL, a private limited company established in 2022 and
+                                    "Emotionally Yours" is an initiative by MTPL, a private limited company established in 2022 and
                                     recognised under the Start-Up India programme. We design structured, process-oriented programmes
                                     that enhance emotional intelligence and cultivate transformative mindsets. Our mission is to empower
                                     individuals and organisations to build resilience, navigate challenges with clarity, and nurture meaningful relationships.

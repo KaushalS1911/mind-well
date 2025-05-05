@@ -33,7 +33,12 @@ const StepNumber = styled(Box)(({theme}) => ({
 }));
 
 const sectionTitleStyles = {
-    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+    fontSize: {
+        xs: '1.7rem',
+        sm: '1.85rem',
+        md: '2rem',
+        lg: '2.125rem'
+    },
     marginBottom: "16px",
     lineHeight: 1.2,
     display: "flex",
@@ -46,7 +51,7 @@ const sectionTitleStyles = {
 const descriptionStyles = {
     mx: "auto",
     mb: {xs: 4, md: 8},
-    fontSize: {xs: "18px", md: "20px"},
+    fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
     color: "#4B5563",
     lineHeight: "25px",
     textAlign: "center",
@@ -82,9 +87,7 @@ const steps = [
 
 const HowEmotionallyYoursinCoachingInstitute = () => {
     return (
-        <Box sx={{
-            px: {sm: "30px ", xs: "0", xl: "0"}
-        }}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
             <Container maxWidth="xl" sx={{py: {xs: 6, md: 10}}}>
                 <Box textAlign="center" mb={{xs: 4, md: 6}}>
                     <Typography className={"Montserrat"} sx={sectionTitleStyles}>

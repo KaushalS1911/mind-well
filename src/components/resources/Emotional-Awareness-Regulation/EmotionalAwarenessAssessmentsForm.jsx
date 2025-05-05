@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { useNavigate } from "react-router-dom";
 
 // Generate age options dynamically (10 to 59)
-const ageOptions = Array.from({ length: 50 }, (_, i) => i + 10);
+const ageOptions = Array.from({ length: 7 }, (_, i) => i + 4);
 
 // Reusable function for input styles
 const inputStyles = {
@@ -38,7 +38,12 @@ function EmotionalAwarenessAssessmentsForm() {
 
     return (
         <Box sx={{ backgroundColor: '#F3F4F6', padding: { sm: "120px 0", xs: "80px 0" }, mt: { md: 5, xs: 0 } }}>
-            <Box className={"Montserrat"} sx={{ fontWeight: 700, color: '#012765', textAlign: 'center',fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' }, }}>
+            <Box className={"Montserrat"} sx={{ fontWeight: 700, color: '#012765', textAlign: 'center',fontSize: {
+                    xs: '1.7rem',
+                    sm: '1.85rem',
+                    md: '2rem',
+                    lg: '2.125rem'
+                }, }}>
                 Assessment Form
             </Box>
 

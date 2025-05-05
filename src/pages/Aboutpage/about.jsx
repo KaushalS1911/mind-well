@@ -9,23 +9,25 @@ import AboutHeader from "../../components/About/aboutHeader.jsx";
 import Psychologist from "../../components/About/psychologist.jsx";
 import Mindwell from "../../components/Home/mindwell.jsx";
 import {Box} from "@mui/material";
+import OurTeam from "../../components/About/ourTeam.jsx";
 
 
 const About = () => {
     return (
         <>
             <AboutHeader/>
-            <Box sx={{px: {sm: "30px ", xs: "0", xl: "0"}}}>
+            <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
                 <VisionMission/>
                 <Mindwell/>
                 {/*<Goals/>*/}
                 <Founders/>
+                <OurTeam/>
                 <Psychologist/>
                 {/*<AdvisoryCouncil/>*/}
                 {/*<Worker/>*/}
-                <MajorClients/>
 
             </Box>
+                <MajorClients/>
         </>
     );
 };

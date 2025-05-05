@@ -110,7 +110,12 @@ const useStyles = () => {
         },
         sectionTitle: {
             color: colors.primary,
-            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+            fontSize: {
+                xs: '1.7rem',
+                sm: '1.85rem',
+                md: '2rem',
+                lg: '2.125rem'
+            },
             fontWeight: 'bold',
             mb: 3,
             letterSpacing: '-1px',
@@ -125,7 +130,7 @@ const useStyles = () => {
         sectionDescription: {
             maxWidth: "md",
             mx: "auto",
-            fontSize: {xs: "16px", md: "20px"},
+            fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
         },
         divider: {
             backgroundColor: colors.secondary,
@@ -439,7 +444,7 @@ const ESOPMUI = () => {
     return (
         <Box>
             <HeroSection/>
-            <Box sx={{ px: {sm:"30px ",xs:"0",xl:"0"}}}>
+            <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
                 <Container maxWidth="xl">
                     <ProgramOverview/>
                     <ThreePillarApproach/>

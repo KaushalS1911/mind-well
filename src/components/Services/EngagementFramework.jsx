@@ -124,9 +124,22 @@ const EngagementFramework = () => {
     };
 
     return (
-        <Box sx={{ pt: 8, mt: { md: 10, sm: 0 }, backgroundColor: 'white', px: {sm:"30px ",xs:"0",xl:"0"} }}>
+        <Box component="section" sx={{ pt: 8, mt: { md: 10, sm: 0 },mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' } }}>
             <Container maxWidth="xl">
-                <CategoryTitle sx={{fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },}}>Engagement Framework</CategoryTitle>
+                <Box className="Montserrat" sx={{
+                    fontSize: {
+                        xs: '1.7rem',
+                        sm: '1.85rem',
+                        md: '2rem',
+                        lg: '2.125rem'
+                    },
+                    mb: 2,
+                    textAlign: 'center',
+                    color: '#012765',
+                    fontWeight: 700
+                }}>
+                    Engagement Framework
+                </Box>
                 <SubTitle>
                     Comprehensive year-round support for emotional well-being and academic excellence
                 </SubTitle>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Container } from "@mui/material";
+import {Box, Grid, Container} from "@mui/material";
 import {
     WarningAmber,
     Favorite,
@@ -19,62 +19,67 @@ import img8 from "../../assets/images/Home/Struggling/Grief & Loss1.jpg";
 import img9 from "../../assets/images/Home/Struggling/little-boy-bullying.jpg";
 import img10 from "../../assets/images/Home/Struggling/Overthinking.jpg";
 
-// Mapping of struggling areas with title, description, icon, and image
+
 const struggling = [
     {
         title: "Stress-Anxiety",
         description: "Manage worry, panic, and fear",
-        icon: <WarningAmber sx={{ fontSize: 30, color: "orange" }} />,
+        icon: <WarningAmber sx={{fontSize: 30, color: "orange"}}/>,
         image: img1
     },
     {
         title: "Relationship",
         description: "Improve communication and connection",
-        icon: <Favorite sx={{ fontSize: 30, color: "orange" }} />,
+        icon: <Favorite sx={{fontSize: 30, color: "orange"}}/>,
         image: img4
     },
     {
         title: "Grief/Trauma",
         description: "Heal from difficult experiences",
-        icon: <Security sx={{ fontSize: 30, color: "orange" }} />,
+        icon: <Security sx={{fontSize: 30, color: "orange"}}/>,
         image: img5
     },
     {
         title: "Addiction",
         description: "Break free from harmful patterns",
-        icon: <Bolt sx={{ fontSize: 30, color: "orange" }} />,
+        icon: <Bolt sx={{fontSize: 30, color: "orange"}}/>,
         image: img6
     },
     {
         title: "Self-esteem",
         description: "Build confidence and self-worth",
-        icon: <Visibility sx={{ fontSize: 30, color: "orange" }} />,
+        icon: <Visibility sx={{fontSize: 30, color: "orange"}}/>,
         image: img7
     },
     {
         title: "Bullying",
         description: "Navigate through difficult transitions",
-        icon: <Cake sx={{ fontSize: 30, color: "orange" }} />,
+        icon: <Cake sx={{fontSize: 30, color: "orange"}}/>,
         image: img9
     },
     {
         title: "Overthinking",
         description: "Navigate through difficult transitions",
-        icon: <Cake sx={{ fontSize: 30, color: "orange" }} />,
+        icon: <Cake sx={{fontSize: 30, color: "orange"}}/>,
         image: img10
     }
 ];
 
 const Struggling = () => {
     return (
-        <Box sx={{ padding: "96px 0", px: {sm:"30px ",xs:"0",xl:"0"} }}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' },padding:"96px 0"}}>
             <Container maxWidth="xl">
-                <Box sx={{ textAlign: "center" }}>
-                    <Box sx={{ mb: 4 }}>
+                <Box sx={{textAlign: "center"}}>
+                    <Box sx={{mb: 4}}>
                         <Box
                             className="Montserrat"
                             sx={{
-                                fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                                fontSize: {
+                                    xs: '1.7rem',
+                                    sm: '1.85rem',
+                                    md: '2rem',
+                                    lg: '2.125rem'
+                                },
                                 color: "#012765",
                                 fontWeight: 700,
                                 mb: 2,
@@ -83,8 +88,9 @@ const Struggling = () => {
                         >
                             What area would you like to focus on?
                         </Box>
-                        <Box sx={{ color: "#4B5563", fontSize: { xs: "15px", sm: "20px" }, mx: "auto" }}>
-                            We provide expert support for a wide range of mental health concerns. Select your challenge to learn more about how we can help.
+                        <Box sx={{color: "#4B5563", fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' }, mx: "auto"}}>
+                            We provide expert support for a wide range of mental health concerns. Select your challenge
+                            to learn more about how we can help.
                         </Box>
                     </Box>
 
@@ -110,7 +116,7 @@ const Struggling = () => {
                                 >
                                     <Box
                                         sx={{
-                                            fontSize: "23px",
+                                            fontSize: {xl: "23px", md: "20px", lg: "18px", xs: "20px"},
                                             color: "#012765",
                                             fontWeight: "bold",
                                             mb: 1
@@ -118,18 +124,30 @@ const Struggling = () => {
                                     >
                                         {item.title}
                                     </Box>
-                                    <Box sx={{ my: 2, display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden", borderRadius: 1 }}>
+                                    <Box
+                                        sx={{
+                                            my: 2,
+                                            mx: "auto",
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                            overflow: "hidden",
+                                            borderRadius: 1,
+                                            width: { lg: "100%", sm: "70%", xs: "50%" },
+                                        }}
+                                    >
                                         <img
                                             src={item.image}
                                             alt={item.title}
                                             style={{
                                                 width: "100%",
                                                 borderRadius: "8px",
-                                                transition: "transform 0.3s ease-in-out"
+                                                transition: "transform 0.3s ease-in-out",
                                             }}
                                             className="hover-scale-image"
                                         />
                                     </Box>
+
                                 </Box>
                             </Grid>
                         ))}

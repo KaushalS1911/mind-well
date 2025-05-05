@@ -22,7 +22,7 @@ import 'swiper/css/pagination';
 
 const SLIDE_DATA = [
     {
-        titles: ["Student", "Aspirants", "Employee"],
+        titles: ["Students", "Aspirantss", "Employees"],
         titleChangeDelay: 2500,
         mainHeading: "Building Mindsets",
         description:
@@ -30,7 +30,7 @@ const SLIDE_DATA = [
         image: img1,
     },
     {
-        titles: ["Growth", "Performance", "Success"],
+        titles: ["Growths", "Performances", "Success"],
         titleChangeDelay: 2500,
         mainHeading: "Transforming individuals & workplaces to enable",
         description:
@@ -38,7 +38,7 @@ const SLIDE_DATA = [
         image: img2,
     },
     {
-        titles: ["Inspire", "Empower", "Transform", "Excel"],
+        titles: ["Inspires", "Empowers", "Transforms", "Excels"],
         titleChangeDelay: 2500,
         mainHeading: "Developing leaders who",
         description:

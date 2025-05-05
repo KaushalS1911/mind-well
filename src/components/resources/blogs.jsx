@@ -23,9 +23,8 @@ function Blogs() {
     ];
 
     return (
-        <Box sx={{
-            p: "96px 0 0 0", mt: {md: 5, xs: 0},px: {sm:"30px ",xs:"0",xl:"0"},
-        }}>
+        <Box component="section" sx={{
+            p: "96px 0 0 0", mt: {md: 5, xs: 0},mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
             <Container maxWidth={"xl"}>
                 <Box>
                     {/* Header Section */}

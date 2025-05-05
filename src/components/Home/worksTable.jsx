@@ -3,7 +3,7 @@ import {Box, Container, Grid, Typography} from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CircleIcon from '@mui/icons-material/Circle';
 import img1 from "../../assets/images/Home/workstable/Establish-Leadership.jpeg";
-import img2 from "../../assets/images/Home/workstable/Initial-Evaluations – Laying-the-Groundwork1.jpg";
+import img2 from "../../assets/images/Home/workstable/Initial-Evaluations - Laying-the-Groundwork1.jpg";
 import img3 from "../../assets/images/Home/workstable/Awareness-Creation-for-Meaningful-Impact.jpg";
 import img4 from "../../assets/images/Home/workstable/Insight-Driven-Personalised-Enrichment.jpg";
 import img5 from "../../assets/images/Home/workstable/Strengthening-Impact-Through-Measurable-Metrices1.jpg";
@@ -58,8 +58,8 @@ const steps = [
 
 function WorksTable() {
     return (
-        <Box sx={{
-            px: {sm:"50px ",xs:"0",xl:"0"},
+        <Box component="section" sx={{
+            mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
         }}>
             <Container maxWidth={"xl"}>
                 <Box sx={{padding: "0"}}>
@@ -71,7 +71,12 @@ function WorksTable() {
                         color="#012765"
                         gutterBottom
                         sx={{
-                            fontSize: {xs: '28px', sm: '34px', md: '42px', lg: '46px'},
+                            fontSize: {
+                                xs: '1.7rem',
+                                sm: '1.85rem',
+                                md: '2rem',
+                                lg: '2.125rem'
+                            },
                             letterSpacing: "-1px",
                         }}
                     >
@@ -83,11 +88,11 @@ function WorksTable() {
                         sx={{
                             mx: {xs: 2, sm: 6, md: 12},
                             color: "#4B5563",
-                            fontSize: {xs: 18, sm: 20},
+                            fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
                             lineHeight: 1.75,
                         }}
                     >
-                        With Emotionally Yours, you can embark on a transformative journey to
+                        With "Emotionally Yours", you can embark on a transformative journey to
                         enhance your emotional well-being through a few simple and effective
                         steps.
                     </Box>

@@ -121,13 +121,11 @@ const PodcastsAndBlog = () => {
     ];
 
     return (
-        <Box sx={{
-            px: {sm:"30px ",xs:"0",xl:"0"},
-        }}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
             <Container maxWidth="xl" >
                 <Box mb={5}>
                     <Box display="flex" justifyContent="space-between" alignItems="center" sx={{mb: 4, mt: 4}}>
-                        <Box sx={{color: "#012765", fontSize: 24, fontWeight: 700, lineHeight: "2rem"}}>
+                        <Box sx={{color: "#012765", fontSize: {sm:24,xs:20}, fontWeight: 700, lineHeight: "2rem"}}>
                             Podcasts & Videos
                         </Box>
                         <Box sx={{

@@ -6,40 +6,48 @@ import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import img1 from '../../assets/images/Home/ClientsReview/SHailesh Sutaria.png'
+import img2 from '../../assets/images/Home/ClientsReview/Manoj_Suvarna.png'
+import img3 from '../../assets/images/Home/ClientsReview/Rajat_Kumar.png'
 
 const testimonials = [
     {
-        name: "Jason Davis",
-        role: "Marketing Professional • Anxiety & Stress",
+        image: img1,
+        name: "Sh. S Sutaria",
+        role: "Principal,RKHK Academy, Surat",
         review:
-            "\"As a high-pressure marketing executive, I was constantly struggling with anxiety and burnout. Emotionally Yours matched me with Dr. Chen, who completely transformed my approach to work stress. The CBT techniques she taught me have been invaluable, and I can now manage my workload without sacrificing my mental health.\"",
-        duration: "6 months with Emotionally Yours",
+            "I saw a huge difference in attaining timely deliveries of our product with the new rejuvenated students, parents and teachers. In just 8 months, the premise is livelier than before. Way to go Team Mahadevasth",
+        duration: "6 months with \"Emotionally Yours\"",
         sessions: "12 sessions completed",
         color: "#012765",
     },
     {
-        name: "Sarah Rodriguez",
-        role: "Graduate Student • Depression & Academic Stress",
+        image: img2,
+        name: "Sh. Manoj Suvarna",
+        role: "Director, Agribid",
         review:
-            "\"Balancing PhD research with teaching duties sent me into a deep depression. Emotionally Yours student program was affordable and life-changing. My therapist Robert understood academic pressure perfectly. He helped me develop practical strategies for academic success without sacrificing my mental wellbeing. I wouldn't have completed my degree without this support.\"",
-        duration: "1 year with Emotionally Yours",
+            "\"We are happy to tie up with Mahadevasth Technologies. They are a digital platform for Emotional Wellness that brings Healing through Awareness, Diagnosis and Evaluation. This tie-up is contributing towards Agribid’s initiatives in bringing growth and positive developments in the lives of the Farmers. Good mental and emotional health is essential; we must prioritize it.\"",
+        duration: "1 year with \"Emotionally Yours\"",
         sessions: "18 sessions completed",
         color: "#FF7F1E",
     },
     {
-        name: "Sarah Rodriguez",
-        role: "Graduate Student • Depression & Academic Stress",
+        image: img3,
+        name: "Sh. Rajat Kumar",
+        role: "Founder, Tathagat Tutorials",
         review:
-            "\"Balancing PhD research with teaching duties sent me into a deep depression. Emotionally Yours student program was affordable and life-changing. My therapist Robert understood academic pressure perfectly. He helped me develop practical strategies for academic success without sacrificing my mental wellbeing. I wouldn't have completed my degree without this support.\"",
-        duration: "1 year with Emotionally Yours",
+            "\"A healthy mind is imperative for a healthy life . Team Mahadev is successfully delivering this important element of human development that focuses on Emotional and Mental well being.I congratulate and thank them for this great initiative . I highly recommend thi to all growing kids and even grown ups.\"",
+        duration: "1 year with \"Emotionally Yours\"",
         sessions: "18 sessions completed",
         color: "#012765",
     },
 ];
 
+
+
 function ClientsReview() {
     return (
-        <Box sx={{ padding:"96px 0 0 0" ,px: {sm:"30px ",xs:"0",xl:"0"},}}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' },padding:"96px 0 0 0"}}>
             <Container maxWidth="xl">
                 <Typography
                     className={"Montserrat"}
@@ -51,18 +59,23 @@ function ClientsReview() {
                         mb: 2,
                         fontFamily: "Montserrat",
                         letterSpacing: "-1px",
-                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                        fontSize: {
+                            xs: '1.7rem',
+                            sm: '1.85rem',
+                            md: '2rem',
+                            lg: '2.125rem'
+                        },
                     }}
                 >
                     What Our Clients Say
                 </Typography>
-                <Box sx={{ textAlign: "center", opacity: 0.7, mb: 4, fontSize: "20px" }}>
-                    Read what our community of students and professionals have to say <br />
-                    about their mental wellness journey with Emotionally Yours.
+                <Box sx={{ textAlign: "center", opacity: 0.7, mb: 4, fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' }, }}>
+                    Read what our community of students and professionals have to say
+                    about their mental wellness journey with "Emotionally Yours".
                 </Box>
 
                 <Swiper
-                    modules={[A11y, Autoplay]}
+                    modules={[A11y , Autoplay]}
                     spaceBetween={24}
                     slidesPerView={1}
                     autoplay={{ delay: 2000, disableOnInteraction: false }}
@@ -74,7 +87,7 @@ function ClientsReview() {
                 >
                     {testimonials.map((testimonial, index) => (
                         <SwiperSlide key={index}>
-                            <Box sx={{ height: "100%", display: "flex" }}>
+                            <Box sx={{  display: "flex" }}>
                                 <Card
                                     sx={{
                                         p: 3,
@@ -83,28 +96,23 @@ function ClientsReview() {
                                         borderRadius: 3,
                                         display: "flex",
                                         flexDirection: "column",
-                                        height: "100%",
+                                        height: {xs:"600px",sm:"470px",md:"550px",lg:"450px"},
                                         width: "100%",
-                                        minHeight: 400, // optional fixed height for uniformity
+                                        // minHeight: 00,
                                     }}
                                 >
                                     <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                                         <Avatar
+                                            src={testimonial.image}
+                                            alt={testimonial.name}
                                             sx={{
-                                                bgcolor: index % 2 === 0 ? "#FF7F1E" : "#012765",
-                                                color: "#fff",
-                                                fontWeight: "bold",
                                                 mr: 2,
                                                 width: 65,
                                                 height: 65,
-                                                fontSize: 20,
+                                                backgroundColor:"#fff"
                                             }}
-                                        >
-                                            {testimonial.name
-                                                .split(" ")
-                                                .map((n) => n[0])
-                                                .join("")}
-                                        </Avatar>
+                                        />
+
 
                                         <Box>
                                             <Box sx={{ fontWeight: 700, fontSize: 20, lineHeight: "28px" }}>
@@ -123,7 +131,7 @@ function ClientsReview() {
                                         ))}
                                     </Box>
 
-                                    <Box sx={{ mb: 3, fontSize: "18px", lineHeight: "28px", flexGrow: 1 }}>
+                                    <Box sx={{ mb: 3, fontSize: "18px", lineHeight: "28px", flexGrow: 1 ,textAlign: "justify" }}>
                                         {testimonial.review}
                                     </Box>
 

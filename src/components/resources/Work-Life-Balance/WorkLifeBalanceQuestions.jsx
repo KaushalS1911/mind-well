@@ -417,7 +417,12 @@ const WorkLifeBalanceQuestions = () => {
                                     color: '#0D2152',
                                     fontWeight: 700,
                                     mb: 2,
-                                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                                    fontSize: {
+                                        xs: '1.7rem',
+                                        sm: '1.85rem',
+                                        md: '2rem',
+                                        lg: '2.125rem'
+                                    },
                                 }}
                             >
                                 Your Assessment Results

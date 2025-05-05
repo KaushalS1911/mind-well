@@ -111,7 +111,7 @@ function App() {
                 />
                 <Route
                     path="/assessments/exam-stress/exam-assessment-form"
-                    element={<ExamStressAssessmentForm/>}
+                    element={<ExamStressAssessmentForm />}
                 />
                 <Route path="/assessments/shape-k12" element={<ShapeK12Assessment/>}/>
                 <Route

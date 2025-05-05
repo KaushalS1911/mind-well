@@ -43,12 +43,17 @@ const rightCards = [
 
 function WhyChooseUs() {
     return (
-        <Box sx={{padding:"96px 0 0 0",px: {sm:"30px ",xs:"0",xl:"0"},}}>
+        <Box component="section" sx={{padding:"96px 0 0 0",mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
             <Container maxWidth="xl">
                 <Box
                     className="Montserrat"
                     sx={{
-                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                        fontSize: {
+                            xs: '1.7rem',
+                            sm: '1.85rem',
+                            md: '2rem',
+                            lg: '2.125rem'
+                        },
                         marginBottom: "16px",
                         letterSpacing: "-1px",
                         lineHeight: "40px",

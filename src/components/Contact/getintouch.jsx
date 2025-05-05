@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm, Controller } from "react-hook-form";
+import {useForm, Controller} from "react-hook-form";
 import {
     TextField,
     Button,
@@ -48,37 +48,36 @@ const INQUIRY_TYPES = [
 const CONTACT_INFO = [
     {
         title: "Phone",
-        icon: <Phone sx={{ color: "#FF6600", mr: 1 }} />,
-        details: ["General Inquiries: 7977135096", "Support: 9717666339"]
+        icon: <Phone sx={{color: "#FF6600", mr: 1}}/>,
+        details: ["+91 7977135096"]
     },
     {
         title: "Email",
-        icon: <Email sx={{ color: "#FF6600", mr: 1 }} />,
+        icon: <Email sx={{color: "#FF6600", mr: 1}}/>,
         details: [
-            "Info: devesh.tripathi@mahadevasth.com",
-            "Support: kumar@mahadevasth.com"
+            "connect@mahadevasth.com"
         ]
     },
     {
         title: "Office Locations",
-        icon: <LocationOn sx={{ color: "#FF6600", mr: 1 }} />,
+        icon: <LocationOn sx={{color: "#FF6600", mr: 1}}/>,
         details: [
-            "MTPL, B- 204, Kanakia Wall Street Chakala, Andheri East, Mumbai, 400093"
+            "B-204, Kanakia Wall Street, Andheri - Kurla Rd, Chakala, Andheri East, Mumbai, Maharashtra 400093"
         ]
     }
 ];
 
 const BUSINESS_HOURS = [
-    { day: "Monday - Friday", time: "8:00 AM - 8:00 PM" },
-    { day: "Saturday", time: "9:00 AM - 5:00 PM" },
-    { day: "Sunday", time: "Closed" }
+    {day: "Monday - Friday", time: "8:00 AM - 8:00 PM"},
+    {day: "Saturday", time: "9:00 AM - 5:00 PM"},
+    {day: "Sunday", time: "Closed"}
 ];
 
 const SOCIAL_MEDIA_LINKS = [
-    { icon: <LinkedIn />, link: "https://www.linkedin.com/company/emotionallyours/" },
-    { icon: <Facebook />, link: "https://www.facebook.com/share/1AmSYda79K/" },
-    { icon: <Instagram />, link: "https://www.instagram.com/mann_miitr?igsh=cWp1aWNiNm1vNzNx" },
-    { icon: <YouTube />, link: "https://youtube.com/@emotionallyours?si=6h0Su7ZsmTpj0QbL" }
+    {icon: <LinkedIn/>, link: "https://www.linkedin.com/company/emotionallyours/"},
+    {icon: <Facebook/>, link: "https://www.facebook.com/share/1AmSYda79K/"},
+    {icon: <Instagram/>, link: "https://www.instagram.com/mann_miitr?igsh=cWp1aWNiNm1vNzNx"},
+    {icon: <YouTube/>, link: "https://youtube.com/@emotionallyours?si=6h0Su7ZsmTpj0QbL"}
 ];
 
 const FAQS = [
@@ -120,8 +119,8 @@ const styles = {
 };
 
 // Component for contact form
-const ContactForm = ({ onSubmit }) => {
-    const { register, handleSubmit, control, formState: { errors } } = useForm();
+const ContactForm = ({onSubmit}) => {
+    const {register, handleSubmit, control, formState: {errors}} = useForm();
 
     return (
         <Card sx={{
@@ -129,11 +128,11 @@ const ContactForm = ({ onSubmit }) => {
             borderRadius: "10px",
             height: "100%"
         }}>
-            <CardContent sx={{ p: 4 }}>
+            <CardContent sx={{p: 4}}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <Typography variant="h5" sx={{ mb: 3, fontWeight: "700" }}>
+                            <Typography variant="h5" sx={{mb: 3, fontWeight: "700"}}>
                                 Send Us a Message
                             </Typography>
                         </Grid>
@@ -144,8 +143,8 @@ const ContactForm = ({ onSubmit }) => {
                                 fullWidth
                                 placeholder="Your first name"
                                 variant="outlined"
-                                InputProps={{ sx: styles.inputField }}
-                                {...register("firstName", { required: "First name is required" })}
+                                InputProps={{sx: styles.inputField}}
+                                {...register("firstName", {required: "First name is required"})}
                                 error={!!errors.firstName}
                                 helperText={errors.firstName?.message}
                             />
@@ -157,8 +156,8 @@ const ContactForm = ({ onSubmit }) => {
                                 fullWidth
                                 placeholder="Your last name"
                                 variant="outlined"
-                                InputProps={{ sx: styles.inputField }}
-                                {...register("lastName", { required: "Last name is required" })}
+                                InputProps={{sx: styles.inputField}}
+                                {...register("lastName", {required: "Last name is required"})}
                                 error={!!errors.lastName}
                                 helperText={errors.lastName?.message}
                             />
@@ -170,7 +169,7 @@ const ContactForm = ({ onSubmit }) => {
                                 fullWidth
                                 placeholder="your.email@example.com"
                                 variant="outlined"
-                                InputProps={{ sx: styles.inputField }}
+                                InputProps={{sx: styles.inputField}}
                                 {...register("email", {
                                     required: "Email is required",
                                     pattern: {
@@ -189,7 +188,7 @@ const ContactForm = ({ onSubmit }) => {
                                 fullWidth
                                 placeholder="(123) 456-7890"
                                 variant="outlined"
-                                InputProps={{ sx: styles.inputField }}
+                                InputProps={{sx: styles.inputField}}
                                 {...register("phone", {
                                     pattern: {
                                         value: /^[0-9+\-\s()]{10,15}$/,
@@ -211,12 +210,12 @@ const ContactForm = ({ onSubmit }) => {
                                         borderRadius: "8px",
                                         height: "48px",
                                         fontSize: "16px",
-                                        '& .MuiSelect-icon': { display: 'none' }
+                                        '& .MuiSelect-icon': {display: 'none'}
                                     }}
                                     defaultValue=""
-                                    {...register("inquiryType", { required: "Inquiry type is required" })}
+                                    {...register("inquiryType", {required: "Inquiry type is required"})}
                                 >
-                                    <MenuItem value="" sx={{ color: "#a0a0a0" }} disabled>
+                                    <MenuItem value="" sx={{color: "#a0a0a0"}} disabled>
                                         Select an inquiry type
                                     </MenuItem>
                                     {INQUIRY_TYPES.map((option) => (
@@ -252,8 +251,8 @@ const ContactForm = ({ onSubmit }) => {
                                 multiline
                                 rows={4}
                                 variant="outlined"
-                                InputProps={{ sx: { borderRadius: "8px", fontSize: "16px" } }}
-                                {...register("message", { required: "Message is required" })}
+                                InputProps={{sx: {borderRadius: "8px", fontSize: "16px"}}}
+                                {...register("message", {required: "Message is required"})}
                                 error={!!errors.message}
                                 helperText={errors.message?.message}
                             />
@@ -265,8 +264,8 @@ const ContactForm = ({ onSubmit }) => {
                                     <Controller
                                         name="privacyPolicy"
                                         control={control}
-                                        rules={{ required: "You must agree to the privacy policy" }}
-                                        render={({ field }) => (
+                                        rules={{required: "You must agree to the privacy policy"}}
+                                        render={({field}) => (
                                             <Checkbox
                                                 id="privacy-policy-checkbox"
                                                 {...field}
@@ -276,7 +275,7 @@ const ContactForm = ({ onSubmit }) => {
                                     />
                                 }
                                 label={
-                                    <Typography sx={{ color: "#4F5866" }}>
+                                    <Typography sx={{color: "#4F5866"}}>
                                         I agree to the{" "}
                                         <Link href="#" sx={{
                                             color: "#012765",
@@ -330,20 +329,20 @@ const ContactInfo = () => (
         marginBottom: 4,
         borderRadius: 2
     }}>
-        <Typography variant="h5" sx={{ mb: 3, fontWeight: "700" }}>
+        <Typography variant="h5" sx={{mb: 3, fontWeight: "700"}}>
             Contact Information
         </Typography>
 
         <List>
             {CONTACT_INFO.map((info, index) => (
-                <ListItem key={index} sx={{ mt: 2, display: "block" }}>
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                <ListItem key={index} sx={{mt: 2, display: "block"}}>
+                    <Box sx={{display: "flex", alignItems: "center", mb: 1}}>
                         {info.icon}
-                        <Typography variant="subtitle1" sx={{ fontWeight: "500" }}>
+                        <Typography variant="subtitle1" sx={{fontWeight: "500"}}>
                             {info.title}
                         </Typography>
                     </Box>
-                    <Box sx={{ ml: 4, color: "#CCD4E0" }}>
+                    <Box sx={{ml: 4, color: "#CCD4E0"}}>
                         {info.details.map((line, i) => (
                             <Typography key={i} variant="body2">
                                 {line}
@@ -363,12 +362,12 @@ const BusinessHours = () => (
             Business Hours
         </Typography>
         {BUSINESS_HOURS.map((entry, index) => (
-            <Box key={index} sx={{ display: "flex", justifyContent: "space-between", mt: 1 }}>
+            <Box key={index} sx={{display: "flex", justifyContent: "space-between", mt: 1}}>
                 <Typography>{entry.day}:</Typography>
                 <Typography>{entry.time}</Typography>
             </Box>
         ))}
-        <Typography sx={{ mt: 2, fontSize: "14px", color: "#6B7280" }}>
+        <Typography sx={{mt: 2, fontSize: "14px", color: "#6B7280"}}>
             Customer support is available 24/7 through our app and online portal.
         </Typography>
     </Box>
@@ -380,7 +379,7 @@ const SocialMedia = () => (
         <Typography sx={styles.sectionTitle}>
             Connect With Us
         </Typography>
-        <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+        <Box sx={{display: "flex", gap: 2, mt: 2}}>
             {SOCIAL_MEDIA_LINKS.map((item, index) => (
                 <IconButton
                     key={index}
@@ -402,7 +401,7 @@ const SocialMedia = () => (
                 </IconButton>
             ))}
         </Box>
-        <Typography sx={{ mt: 2, fontSize: "14px", color: "#6B7280" }}>
+        <Typography sx={{mt: 2, fontSize: "14px", color: "#6B7280"}}>
             Follow us on social media for the latest updates, mental health tips, and
             special offers.
         </Typography>
@@ -416,12 +415,12 @@ const FAQSection = () => (
         borderRadius: "10px",
         mt: 4
     }}>
-        <CardContent sx={{ p: 3 }}>
+        <CardContent sx={{p: 3}}>
             <Typography sx={styles.sectionTitle}>
                 Frequently Asked Questions
             </Typography>
             {FAQS.map((faq, index) => (
-                <Box key={index} sx={{ borderBottom: "1px solid #E5E7EB", py: 2 }}>
+                <Box key={index} sx={{borderBottom: "1px solid #E5E7EB", py: 2}}>
                     <Box sx={{
                         color: "#002D62",
                         display: "flex",
@@ -430,9 +429,9 @@ const FAQSection = () => (
                         mb: 1
                     }}>
                         <Typography>{faq.question}</Typography>
-                        <ExpandMore sx={{ color: "#FF7A00" }} />
+                        <ExpandMore sx={{color: "#FF7A00"}}/>
                     </Box>
-                    <Typography sx={{ color: "#6B7280" }}>{faq.answer}</Typography>
+                    <Typography sx={{color: "#6B7280"}}>{faq.answer}</Typography>
                 </Box>
             ))}
             <Link
@@ -443,7 +442,7 @@ const FAQSection = () => (
                     textDecoration: "none",
                     display: "inline-block",
                     transition: "color 0.3s ease-in-out",
-                    "&:hover": { color: "#012765" }
+                    "&:hover": {color: "#012765"}
                 }}
                 href="/faqs"
             >
@@ -460,68 +459,75 @@ const GetInTouch = () => {
     };
 
     return (
-        <Container maxWidth="xl" sx={{ py: 12, mt: { md: 10, sm: 0 } }}>
-            {/* Header Section */}
-            <Box
-                sx={{
-                    textAlign: "center",
-                    mb: 8,
-                    px: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center"
-                }}
-            >
-                <Typography
-                    className="Montserrat"
-                    variant="h3"
+        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+            <Container maxWidth="xl" sx={{py: 12, mt: {md: 10, sm: 0}}}>
+                {/* Header Section */}
+                <Box
                     sx={{
-                        color: "#002D62",
-                        mb: 2,
-                        fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                        lineHeight: { xs: "32px", sm: "40px" },
-                        fontWeight: "700"
+                        textAlign: "center",
+                        mb: 8,
+                        px: 2,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center"
                     }}
                 >
-                    Get in Touch
-                </Typography>
-                <Typography
-                    sx={{
-                        color: "#4F4F4F",
-                        maxWidth: "600px",
-                        fontSize: { xs: "16px", md: "20px" },
-                        textAlign: "center"
-                    }}
-                >
-                    Have questions about our services? Reach out to our team for personalized support on your mental
-                    wellness journey.
-                </Typography>
-            </Box>
+                    <Typography
+                        className="Montserrat"
+                        variant="h3"
+                        sx={{
+                            color: "#002D62",
+                            mb: 2,
+                            fontSize: {
+                                xs: '1.7rem',
+                                sm: '1.85rem',
+                                md: '2rem',
+                                lg: '2.125rem'
+                            },
+                            lineHeight: {xs: "32px", sm: "40px"},
+                            fontWeight: "700"
+                        }}
+                    >
+                        Get in Touch
+                    </Typography>
+                    <Typography
+                        sx={{
+                            color: "#4F4F4F",
+                            maxWidth: "600px",
+                            fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
+                            textAlign: "center"
+                        }}
+                    >
+                        Have questions about our services? Reach out to our team for personalized support on your mental
+                        wellness journey.
+                    </Typography>
+                </Box>
 
-            {/* Main Content */}
-            <Grid container spacing={4}>
-                {/* Left Side - Form */}
-                <Grid item xs={12} lg={6}>
-                    <ContactForm onSubmit={handleSubmit} />
-                </Grid>
-
-                {/* Right Side - Contact Information, Business Hours & Social Media */}
-                <Grid item xs={12} lg={6}>
-                    <ContactInfo />
-
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
-                            <BusinessHours />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <SocialMedia />
-                        </Grid>
+                {/* Main Content */}
+                <Grid container spacing={4}>
+                    {/* Left Side - Form */}
+                    <Grid item xs={12} lg={6}>
+                        <ContactForm onSubmit={handleSubmit}/>
                     </Grid>
 
-                    <FAQSection />
+                    {/* Right Side - Contact Information, Business Hours & Social Media */}
+                    <Grid item xs={12} lg={6}>
+                        <ContactInfo/>
+
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} sm={6}>
+                                <BusinessHours/>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <SocialMedia/>
+                            </Grid>
+                        </Grid>
+
+                        <FAQSection/>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Container>
+            </Container>
+        </Box>
     );
 };
 

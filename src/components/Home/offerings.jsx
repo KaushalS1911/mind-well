@@ -138,7 +138,7 @@ const Offerings = () => {
             <Container maxWidth="xl">
                 <Typography className={"Montserrat"} variant="h4" align="center" color="#012765"
                             sx={{fontWeight: "700"}}>
-                    Emotionally Yours Service Offerings
+                    "Emotionally Yours" Service Offerings
                 </Typography>
                 <Box variant="body1" align="center"
                      sx={{color: "#4B5563", mt: 1, mb: 7.5}}>

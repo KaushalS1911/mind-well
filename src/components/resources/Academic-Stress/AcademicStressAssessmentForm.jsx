@@ -15,7 +15,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from "react-router-dom";
 
-const age = Array.from({ length: 50 }, (_, i) => i + 10);
+const age = Array.from({ length: 10 }, (_, i) => i + 16);
 
 const InputStyle = {
     "& label.Mui-focused": { color: "#FF7F1E" },
@@ -55,7 +55,12 @@ function AcademicStressAssessmentForm() {
                 fontWeight: 700,
                 color: '#012765',
                 textAlign: 'center',
-                fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                fontSize: {
+                    xs: '1.7rem',
+                    sm: '1.85rem',
+                    md: '2rem',
+                    lg: '2.125rem'
+                },
             }}>
                 Assessment Form
             </Box>

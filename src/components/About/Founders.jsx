@@ -5,6 +5,16 @@ import PersonIcon from '@mui/icons-material/Person';
 import img1 from '../../assets/images/about/Founder/Pandey Nidhi .png';
 import img2 from '../../assets/images/about/Founder/Devesh Kumar.png';
 import img3 from '../../assets/images/about/Founder/Ashutosh_Mishra.png';
+import img4 from '../../assets/images/about/Founder/Fatima Lobo.png';
+import img5 from '../../assets/images/about/Founder/Chaman Kumar.png';
+
+import img6 from '../../assets/images/about/Founder/nidhi.png';
+import img7 from '../../assets/images/about/Founder/devesh.png';
+import img8 from '../../assets/images/about/Founder/ashutosh.png';
+import img9 from '../../assets/images/about/Founder/fatima.png';
+import img10 from '../../assets/images/about/Founder/chaman1.png';
+import {LinkedIn} from "@mui/icons-material";
+
 
 const Title = styled(Typography)(() => ({
     color: '#012765',
@@ -18,7 +28,7 @@ const Title = styled(Typography)(() => ({
 
 const SubTitle = styled(Typography)(() => ({
     color: '#4B5563',
-    fontSize: '16px',
+    fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
     textAlign: 'center',
     maxWidth: '700px',
     margin: '0 auto 40px',
@@ -126,53 +136,112 @@ const QRCode = styled(Box)(() => ({
 const founders = [
     {
         img: img1,
+        qr:img6,
         role: "Founder & Director",
         name: "Pandey Nidhi",
         description: "Mass-com Graduate with experience in Media and Entertainment transitioned herself to a Therapeutic Counsellor.",
+        link: "https://www.linkedin.com/in/pandey-nidhii-2902ba219/",
     },
     {
         img: img2,
+        qr:img7,
         role: "Founder & CBO",
         name: "Devesh Tripathi",
         description: "MBA from IIT(Dhanbad) with over 24 years of experience in Corporate World. A Mental Health Advocate and Life Coach.",
+        link: "https://www.linkedin.com/in/devesh-tripathi-22b75a14/",
     },
     {
         img: img3,
+        qr:img8,
         role: "Founder & Director",
         name: "Ashutosh Mishra",
         description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid.",
+        link: "https://www.linkedin.com/in/ashutosh-mishra-3240b68/",
     },
-    {
-        role: "Product Head",
-        name: "Fatima Lobo",
-        description: "Masters in Psychology, PGD In Therapeutic Counselling and a Certified NLP Practitioner with over 15 Years of experience.",
-    },
-    {
-        role: "Director- Sales",
-        name: "Chaman Kumar",
-        description: "A visionary with a successful 25-year corporate career. Worked in Banks and NBFC institutions in sales & Business Development.",
-    }
+    // {
+    //     img: img4,
+    //     qr:img9,
+    //     role: "Product Head",
+    //     name: "Fatima Lobo",
+    //     description: "Masters in Psychology, PGD In Therapeutic Counselling and a Certified NLP Practitioner with over 15 Years of experience.",
+    //     link: "https://www.linkedin.com/in/fatima-lobo-89a442332/",
+    // },
+    // {
+    //     img: img5,
+    //     qr:img10,
+    //     role: "Director- Sales",
+    //     name: "Chaman Kumar",
+    //     description: "A visionary with a successful 25-year corporate career. Worked in Banks and NBFC institutions in sales & Business Development.",
+    //     link: "https://www.linkedin.com/in/chaman-kumar-b3aa8528/",
+    //
+    // }
 ];
 
 const FounderCard = React.memo(({ founder, icon = <PersonIcon /> }) => (
     <Grid item xs={12} sm={6} md={4}>
         <StyledPaper elevation={3}>
             <AvatarWrapper className="avatar-wrapper">
-                <StyledAvatar>{founder.img ? <img src={founder.img} alt={founder.name} style={{ width: '100%', height: '100%', borderRadius: '50%' }} /> : icon}</StyledAvatar>
+                <StyledAvatar>
+                    {founder.img ? (
+                        <img
+                            src={founder.img}
+                            alt={founder.name}
+                            style={{ width: '100%', height: '100%', borderRadius: '50%' }}
+                        />
+                    ) : (
+                        icon
+                    )}
+                </StyledAvatar>
             </AvatarWrapper>
             <Role>{founder.role}</Role>
             <Name>{founder.name}</Name>
             <Description>{founder.description}</Description>
-            <QRCode>QR Code</QRCode>
+
+            {/* ✅ Proper LinkedIn Icon Link */}
+            {founder.link && (
+                <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+                    <Box
+                        component="a"
+                        href={founder.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                            width: 48,
+                            height: 48,
+                            borderRadius: '50%',
+                            backgroundColor: '#002D62',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: '0.3s',
+                            color: 'white',
+                            '&:hover': {
+                                backgroundColor: '#001f44',
+                            },
+                        }}
+                    >
+                        <LinkedIn sx={{ fontSize: 28 }} />
+                    </Box>
+                </Box>
+            )}
+
         </StyledPaper>
     </Grid>
 ));
 
+
 const Founders = () => (
     <Box sx={{ padding: {sm:"96px 0",xs:"66px 0"}  }}>
         <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4, lg: 6 } }}>
-            <Title sx={{fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },}}>Founding members</Title>
-            <SubTitle>
+            <Title sx={{fontSize: {
+                    xs: '1.7rem',
+                    sm: '1.85rem',
+                    md: '2rem',
+                    lg: '2.125rem'
+                },}}>Founding members</Title>
+            <SubTitle sx={{
+                fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
+            }}>
                 Meet our experienced team of professionals dedicated to revolutionizing mental health care
             </SubTitle>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, maxWidth: 1200, margin: '0 auto' }}>

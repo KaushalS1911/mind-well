@@ -171,7 +171,7 @@ export default function PEPMUI() {
             </Box>
 
             {/* Program Overview */}
-            <Box sx={{ px: {sm:"30px ",xs:"0",xl:"0"}}}>
+            <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
                 <Container maxWidth="xl">
                     <Box sx={{padding: {sm:"96px 0 0 0",xs:"66px 0 0 0"}}}>
                         <Grid container spacing={4} mb={8}>
@@ -230,11 +230,16 @@ export default function PEPMUI() {
                     <Box>
                         <Box textAlign="center" mb={6}>
                             <Typography className="Montserrat" variant="h4" fontWeight="bold" gutterBottom
-                                        sx={{color: colors.primary, fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },}}>
+                                        sx={{color: colors.primary,fontSize: {
+                                                xs: '1.7rem',
+                                                sm: '1.85rem',
+                                                md: '2rem',
+                                                lg: '2.125rem'
+                                            },}}>
                                 Our Two-Pillar Approach
                             </Typography>
                             <Typography variant="body1" color="text.secondary"
-                                        sx={{maxWidth: "md", mx: "auto", fontSize: {xs: "16px", md: "20px"}}}>
+                                        sx={{maxWidth: "md", mx: "auto", fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },}}>
                                 PEP delivers comprehensive support through two integrated components that work together
                                 to create lasting positive impact for both mentors and aspirants.
                             </Typography>

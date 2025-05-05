@@ -12,9 +12,18 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import logo from "../../assets/Emotionally Yours Logo-01.jpg";
+import logo from "../../assets/Emotionally Yours Logo.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
+import {Facebook, Instagram, LinkedIn, YouTube} from "@mui/icons-material";
+
+
+const SOCIAL_MEDIA_LINKS = [
+    {icon: <LinkedIn/>, link: "https://www.linkedin.com/company/emotionallyours/"},
+    {icon: <Facebook/>, link: "https://www.facebook.com/share/1AmSYda79K/"},
+    {icon: <Instagram/>, link: "https://www.instagram.com/mann_miitr?igsh=cWp1aWNiNm1vNzNx"},
+    {icon: <YouTube/>, link: "https://youtube.com/@emotionallyours?si=6h0Su7ZsmTpj0QbL"}
+];
 
 
 function Navigation() {
@@ -98,7 +107,7 @@ function Navigation() {
         <Toolbar
           sx={{
             justifyContent: "space-between",
-            margin: { xl: "0 172px", lg: "0 80px" },
+            margin: { xl: "0 172px", lg: "0 50px" },
             padding: "12px 16px",
           }}
         >
@@ -203,23 +212,29 @@ function Navigation() {
             )}
           </Box>
 
-          <Link href="/contact" style={{ textDecoration: "none" }}>
-            <Box
-              sx={{
-                fontSize: "16px",
-                color: "#fff",
-                borderRadius: "0.375rem",
-                cursor: "pointer",
-                backgroundColor: "#FE6A00",
-                padding: "8px 20px",
-                display: { lg: "flex", xs: "none" },
-                transition: "0.5s",
-                "&:hover": { backgroundColor: "#da5e05" },
-              }}
-            >
-              Get Started
+            <Box sx={{display: "flex", gap: 2, mt: 2}}>
+                {SOCIAL_MEDIA_LINKS.map((item, index) => (
+                    <IconButton
+                        key={index}
+                        component={Link}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener"
+                        sx={{
+                            padding: "10px",
+                            backgroundColor: "#002D62",
+                            borderRadius: "50%",
+                            color: "white",
+                            display: { lg: "flex", xs: "none" },
+                            '&:hover': {
+                                backgroundColor: "#001f44",
+                            }
+                        }}
+                    >
+                        {item.icon}
+                    </IconButton>
+                ))}
             </Box>
-          </Link>
 
           {/* Mobile Menu Icon */}
           <IconButton
@@ -332,26 +347,28 @@ function Navigation() {
                 ))}
 
                 {/* Mobile Get Started Button */}
-                <Link href="/contact" passHref style={{ textDecoration: "none" }}>
-                    <Box
-                        component="a"
-                        sx={{
-                            backgroundColor: "#FE6A00",
-                            color: "#fff",
-                            cursor: "pointer",
-                            textAlign: "center",
-                            borderRadius: "0.375rem",
-                            padding: "8px 20px",
-                            width: "100%",
-                            marginTop: "26px",
-                            textDecoration: "none",
-                            "&:hover": { backgroundColor: "#da5e05" },
-                        }}
-                        onClick={() => setMobileMenuOpen(false)}
-                    >
-                        Get Started
-                    </Box>
-                </Link>
+                <Box sx={{display: "flex", gap: 2, mt: 2}}>
+                    {SOCIAL_MEDIA_LINKS.map((item, index) => (
+                        <IconButton
+                            key={index}
+                            component={Link}
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener"
+                            sx={{
+                                padding: "10px",
+                                backgroundColor: "#002D62",
+                                borderRadius: "50%",
+                                color: "white",
+                                '&:hover': {
+                                    backgroundColor: "#001f44",
+                                }
+                            }}
+                        >
+                            {item.icon}
+                        </IconButton>
+                    ))}
+                </Box>
             </List>
         </Collapse>
     </Box>

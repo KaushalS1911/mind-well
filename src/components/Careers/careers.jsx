@@ -111,7 +111,12 @@ const HeroSection = () => (
                 className="Montserrat"
                 variant="h3"
                 sx={{
-                    fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                    fontSize: {
+                        xs: '1.7rem',
+                        sm: '1.85rem',
+                        md: '2rem',
+                        lg: '2.125rem'
+                    },
                     marginBottom: { xs: "25px", sm: "10px" },
                     lineHeight: "1.2",
                     textAlign: "center",
