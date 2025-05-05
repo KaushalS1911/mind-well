@@ -32,6 +32,7 @@ import CorporateWellness from "../../components/Home/CorporateWellness.jsx";
 import {Box, Container, Grid, Typography} from "@mui/material";
 import Partners from "../../components/Home/Partners.jsx";
 import WorkPlaceHeroSection from "../../components/Home/workPlaceHeroSection.jsx";
+import GallerySection from "../../components/Home/GallerySection.jsx";
 
 function Home() {
     return (
@@ -50,6 +51,7 @@ function Home() {
             <Assessments/>
             <Struggling/>
             {/*<EmployeeMentalHealth/>*/}
+            <GallerySection/>
             <MajorClients/>
             <Clientsreview/>
 
