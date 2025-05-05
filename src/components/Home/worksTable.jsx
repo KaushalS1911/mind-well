@@ -158,25 +158,25 @@ function WorksTable() {
                                         },
                                     }}
                                 >
-                                    <Box
-                                        sx={{
-                                            position: "absolute",
-                                            top: "10px",
-                                            right: "12px",
-                                            display: {xs: "inline-flex", sm: "none"},
-                                            alignItems: "center",
-                                            justifyContent: "center",
-                                            width: 35,
-                                            height: 35,
-                                            borderRadius: "50%",
-                                            bgcolor: "#FE6A00",
-                                            color: "#fff",
-                                            fontWeight: "bold",
-                                            fontSize: 14,
-                                        }}
-                                    >
-                                        <CircleIcon/>
-                                    </Box>
+                                    {/*<Box*/}
+                                    {/*    sx={{*/}
+                                    {/*        position: "absolute",*/}
+                                    {/*        top: "10px",*/}
+                                    {/*        right: "12px",*/}
+                                    {/*        display: {xs: "inline-flex", sm: "none"},*/}
+                                    {/*        alignItems: "center",*/}
+                                    {/*        justifyContent: "center",*/}
+                                    {/*        width: 35,*/}
+                                    {/*        height: 35,*/}
+                                    {/*        borderRadius: "50%",*/}
+                                    {/*        bgcolor: "#FE6A00",*/}
+                                    {/*        color: "#fff",*/}
+                                    {/*        fontWeight: "bold",*/}
+                                    {/*        fontSize: 14,*/}
+                                    {/*    }}*/}
+                                    {/*>*/}
+                                    {/*    <CircleIcon/>*/}
+                                    {/*</Box>*/}
 
                                     <Grid container spacing={4}>
                                         <Grid
@@ -190,7 +190,7 @@ function WorksTable() {
                                             <Typography
                                                 sx={{
                                                     fontWeight: 700,
-                                                    fontSize: {xs: 23, sm: 25, md: 28},
+                                                    fontSize: {xs: 20, sm: 22, md: 24},
                                                     mb: 2,
                                                     color: "#002F6C",
                                                 }}
@@ -204,7 +204,7 @@ function WorksTable() {
                                                         sx={{color: "#FE6A00", mr: 1, mt: 0.5, fontSize: 20}}
                                                     />
                                                     <Typography
-                                                        sx={{fontSize: {xs: 14, sm: 18}, lineHeight: 1.5}}
+                                                        sx={{fontSize: {xs: 12, sm: 16}, lineHeight: 1.5}}
                                                     >
                                                         {detail}
                                                     </Typography>

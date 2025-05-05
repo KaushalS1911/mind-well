@@ -175,14 +175,14 @@ const WellbeingJourney = () => {
                                         }}
                                     >
                                         <Box display="flex" alignItems="center">
-                                            <ListItemIcon sx={{minWidth: 48}}>
+                                            <ListItemIcon>
                                                 <Avatar sx={{bgcolor: category.color}}>
                                                     {category.icon}
                                                 </Avatar>
                                             </ListItemIcon>
                                             <ListItemText
                                                 primary={
-                                                    <Typography fontWeight={600} fontSize={20} color="#333">
+                                                    <Typography fontWeight={600} fontSize={16} color="#333">
                                                         {category.name}
                                                     </Typography>
                                                 }

@@ -36,10 +36,16 @@ const GallerySection = () => {
                         className="Montserrat"
                         variant="h4"
                         sx={{
-                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
-                            color: '#012765',
+                            fontSize: {
+                                xs: '1.7rem',
+                                sm: '1.85rem',
+                                md: '2rem',
+                                lg: '2.125rem'
+                            },
+                            color: "#012765",
                             fontWeight: 700,
-                            mb: 2
+                            mb: 2,
+                            letterSpacing: "-1px",
                         }}
                     >
                         Our Gallery

@@ -35,7 +35,7 @@ const StepCard = ({number, title, description}) => (
         <Box>
             <Typography
                 sx={{
-                    fontSize: {xs: '20px', md: '22px'},
+                    fontSize: {xs: '18px', md: '20px'},
                     fontWeight: 600,
                     color: "#012765",
                     mb: 0.5
@@ -45,7 +45,7 @@ const StepCard = ({number, title, description}) => (
             </Typography>
             <Typography
                 sx={{
-                    fontSize: {xs: '16px', md: '18px'},
+                    fontSize: {xs: '14px', md: '16px'},
                     fontWeight: 400,
                     color: "#012765",
                     mb: 1,

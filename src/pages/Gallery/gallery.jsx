@@ -43,9 +43,10 @@ const Gallery = () => {
                                 md: '2rem',
                                 lg: '2.125rem'
                             },
-                            color: '#012765',
+                            color: "#012765",
                             fontWeight: 700,
-                            mb: 2
+                            mb: 2,
+                            letterSpacing: "-1px",
                         }}
                     >
                         Our Gallery
