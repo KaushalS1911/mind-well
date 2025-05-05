@@ -1,98 +1,162 @@
-import React from 'react';
-import {Box, Button, Container, Grid} from "@mui/material";
+import React, { useState } from 'react';
+import { Box, Container, Grid, Typography, Card, CardContent, CardMedia, Chip, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { blogsData } from '../../data/blogsData';
 
 function Blogs() {
+    const navigate = useNavigate();
+    const [visibleBlogs, setVisibleBlogs] = useState(6);
 
-    const blogs = [
-        {
-            date: "Jul 12, 2023",
-            category: "Work Stress",
-            title: "Setting Healthy Boundaries at Work: A Guide for Professionals",
-            description:
-                "Learn practical strategies for establishing and maintaining boundaries that protect your mental health while advancing your career.",
-            action: "Read Article →",
-        },
-        {
-            date: "Jul 5, 2023",
-            category: "Student Life",
-            title: "Exam Anxiety: Strategies for Staying Calm and Performing at Your Best",
-            description:
-                "Discover evidence-based techniques to manage test anxiety and optimize your performance during high-pressure academic situations.",
-            action: "Read Article →",
-        },
-    ];
+    const handleViewMore = () => {
+        setVisibleBlogs(prev => prev + 6);
+    };
+
+    const hasMoreBlogs = visibleBlogs < blogsData.length;
 
     return (
-        <Box sx={{
-            p: "96px 0 0 0", mt: {md: 5, xs: 0},px: {sm:"30px ",xs:"0",xl:"0"},
-        }}>
-            <Container maxWidth={"xl"}>
-                <Box>
-                    {/* Header Section */}
-                    <Box className={"Montserrat"} display="flex" justifyContent="space-between" alignItems="center">
-                        <Box sx={{
-                            color: "#012765",
-                            fontSize: "24px",
-                            fontWeight: "700",
-                            lineHeight: "2rem",
-                        }}>
-                            From Our Blog
-                        </Box>
-                        <Button sx={{
-                            fontSize: "16px",
-                            color: "#FE6A00",
-                            fontWeight: "500",
-                            transition: ".3s",
-                            "&:hover": {color: "#012765"}
-                        }}>Visit Blog →</Button>
-                    </Box>
-
-                    {/* Blog Cards */}
-                    <Grid container spacing={4} mt={2}>
-                        {blogs.map((blog, index) => (
-                            <>
-                                <Grid item xs={12} sm={4} md={2} key={`image-${index}`}>
-                                    <Box sx={{
-                                        color: "#1f2937",
-                                        padding: "16px",
-                                        backgroundColor: "#E7EAEE",
-                                        borderRadius: "0.375rem",
-                                    }}>
-                                        <Box sx={{
-                                            fontSize: "16px",
-                                            color: "#012765",
-                                            fontWeight: "500",
-                                            textAlign: "center",
-                                        }}>
-                                            Blog Image
-                                        </Box>
-                                    </Box>
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={4} key={`content-${index}`}>
-                                    <Box fontSize={12} color="#6b7280" mb="12px">
-                                        {blog.date} • <span style={{
-                                        fontSize: "12px",
-                                        ml: "8px",
-                                        color: "#FE6A00",
-                                        fontWeight: "400"
-                                    }}>{blog.category}</span>
-                                    </Box>
-                                    <Box fontSize={18} fontWeight={700} sx={{color: "#012765", mb: "8px"}}>
-                                        {blog.title}
-                                    </Box>
-                                    <Box fontSize={14} color="#4B5563" mb="12px" textAlign="justify">
-                                        {blog.description}
-                                    </Box>
-                                    <Box fontSize={14} fontWeight={500} color="#FE6A00" mt={1.7} sx={{
-                                        transition: ".3s", cursor: "pointer", "&:hover": {color: "#012765"}
-                                    }}>
-                                        {blog.action}
-                                    </Box>
-                                </Grid>
-                            </>
-                        ))}
-                    </Grid>
+        <Box sx={{ py: { xs: 6, md: 20 }, backgroundColor: '#F9FAFB' }}>
+            <Container maxWidth="xl">
+                {/* Header Section */}
+                <Box sx={{ textAlign: 'center', mb: 6 }}>
+                    <Typography
+                        className="Montserrat"
+                        variant="h4"
+                        sx={{
+                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                            color: '#012765',
+                            fontWeight: 700,
+                            mb: 2
+                        }}
+                    >
+                        Blogs & Articles
+                    </Typography>
+                    <Typography
+                        sx={{
+                            color: '#4B5563',
+                            fontSize: { xs: '16px', md: '18px' },
+                            maxWidth: '800px',
+                            mx: 'auto'
+                        }}
+                    >
+                        Explore our latest articles on health, wellness, and personal growth
+                    </Typography>
                 </Box>
+
+                {/* Blog Cards */}
+                <Grid container spacing={4}>
+                    {blogsData.slice(0, visibleBlogs).map((blog) => (
+                        <Grid item xs={12} md={4} key={blog.id}>
+                            <Card 
+                                sx={{ 
+                                    height: '100%',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    transition: 'transform 0.3s ease-in-out',
+                                    '&:hover': {
+                                        transform: 'translateY(-8px)',
+                                        cursor: 'pointer'
+                                    }
+                                }}
+                                onClick={() => navigate(`/blogs/${blog.id}`)}
+                            >
+                                <CardMedia
+                                    component="img"
+                                    height="200"
+                                    image={blog.image}
+                                    alt={blog.title}
+                                    sx={{
+                                        objectFit: 'cover'
+                                    }}
+                                />
+                                <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {blog.date}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            •
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {blog.readTime}
+                                        </Typography>
+                                    </Box>
+                                    <Chip 
+                                        label={blog.category}
+                                        size="small"
+                                        sx={{ 
+                                            backgroundColor: '#FFF3E0',
+                                            color: '#FE6A00',
+                                            mb: 2
+                                        }}
+                                    />
+                                    <Typography
+                                        variant="h6"
+                                        sx={{
+                                            color: '#012765',
+                                            fontWeight: 600,
+                                            mb: 1,
+                                            fontSize: '18px',
+                                            lineHeight: 1.4
+                                        }}
+                                    >
+                                        {blog.title}
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        color="text.secondary"
+                                        sx={{
+                                            mb: 2,
+                                            display: '-webkit-box',
+                                            WebkitLineClamp: 3,
+                                            WebkitBoxOrient: 'vertical',
+                                            overflow: 'hidden'
+                                        }}
+                                    >
+                                        {blog.description}
+                                    </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            color: '#FE6A00',
+                                            fontWeight: 500,
+                                            '&:hover': {
+                                                color: '#012765'
+                                            }
+                                        }}
+                                    >
+                                        Read Article →
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    ))}
+                </Grid>
+
+                {/* View More Button */}
+                {hasMoreBlogs && (
+                    <Box sx={{ textAlign: 'center', mt: 6 }}>
+                        <Button
+                            variant="outlined"
+                            onClick={handleViewMore}
+                            sx={{
+                                color: '#FE6A00',
+                                borderColor: '#FE6A00',
+                                px: 4,
+                                py: 1.5,
+                                borderRadius: '30px',
+                                fontSize: '16px',
+                                fontWeight: 600,
+                                '&:hover': {
+                                    borderColor: '#012765',
+                                    color: '#012765',
+                                    backgroundColor: 'transparent'
+                                }
+                            }}
+                        >
+                            View More Articles
+                        </Button>
+                    </Box>
+                )}
             </Container>
         </Box>
     );

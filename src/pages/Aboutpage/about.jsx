@@ -8,6 +8,7 @@ import MajorClients from "../../components/About/majorClients.jsx";
 import AboutHeader from "../../components/About/aboutHeader.jsx";
 import Psychologist from "../../components/About/psychologist.jsx";
 import Mindwell from "../../components/Home/mindwell.jsx";
+import FoundersMessage from "../../components/About/FoundersMessage.jsx";
 import {Box} from "@mui/material";
 
 
@@ -18,6 +19,7 @@ const About = () => {
             <Box sx={{px: {sm: "30px ", xs: "0", xl: "0"}}}>
                 <VisionMission/>
                 <Mindwell/>
+                <FoundersMessage/>
                 {/*<Goals/>*/}
                 <Founders/>
                 <Psychologist/>

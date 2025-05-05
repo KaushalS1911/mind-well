@@ -8,6 +8,8 @@ import Services from "./pages/ServicesShap/Services.jsx";
 import Resource from "./pages/resource/resource.jsx";
 import Contact from "./pages/Contact/contact.jsx";
 import React, {useEffect} from "react";
+import Gallery from "./pages/Gallery/gallery.jsx";
+import SingleBlog from "./components/resources/SingleBlog.jsx";
 
 import AcademicStressAssessment from "./components/resources/Academic-Stress/AcademicStressAssessment.jsx";
 import AcademicStressQuestions from "./components/resources/Academic-Stress/AcademicStressQuestions.jsx";
@@ -85,20 +87,17 @@ function App() {
                 <Route path="/services/SHAPE-Designe" element={<ShapeDesigne/>}/>
                 <Route path="/services/ESOP" element={<Esop/>}/>
                 <Route path="/services/PEP" element={<Pep/>}/>
-                {/*<Route path="/partner" element={ <Partner/> }/>*/}
+                <Route path="/gallery" element={<Gallery/>}/>
                 <Route path="/careers" element={<Careers/>}/>
                 <Route path={"/resources/journaling"} element={<Journaling/>}/>
                 <Route path={"/resources/assessments"} element={<Assessments/>}/>
                 <Route path={"/resources/selfHelpTools"} element={<SelfHelpTools/>}/>
-                <Route
-                    path={"/resources/podCastsndblog"}
-                    element={<Podcastsndblog/>}
-                />
-                <Route
-                    path={"/resources/crisisResources"}
-                    element={<CrisisResources/>}
-                />
+                <Route path={"/resources/podCastsndblog"} element={<Podcastsndblog/>}/>
+                <Route path={"/resources/crisisResources"} element={<CrisisResources/>}/>
+                <Route path="/blogs" element={<Blogs/>}/>
+                <Route path="/blogs/:id" element={<SingleBlog/>}/>
                 <Route path={"/resources/blogs"} element={<Blogs/>}/>
+                <Route path={"/resources/blogs/:id"} element={<SingleBlog/>}/>
                 <Route path="/resources" element={<Resource/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route
