@@ -30,14 +30,19 @@ const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
 
     return (
-        <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#F9FAFB' }}>
+        <Box sx={{ pt: { xs: 6, md: 18 }}}>
             <Container maxWidth="xl">
                 <Box sx={{ textAlign: 'center', mb: 6 }}>
                     <Typography
                         className="Montserrat"
                         variant="h4"
                         sx={{
-                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                            fontSize: {
+                                xs: '1.7rem',
+                                sm: '1.85rem',
+                                md: '2rem',
+                                lg: '2.125rem'
+                            },
                             color: '#012765',
                             fontWeight: 700,
                             mb: 2
@@ -48,7 +53,7 @@ const Gallery = () => {
                     <Typography
                         sx={{
                             color: '#4B5563',
-                            fontSize: { xs: '16px', md: '18px' },
+                            fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
                             maxWidth: '800px',
                             mx: 'auto',
                             mb: 4
@@ -85,7 +90,7 @@ const Gallery = () => {
                                     style={{
                                         width: '100%',
                                         height: '100%',
-                                        objectFit: 'cover',
+                                        objectFit: 'contain',
                                         transition: 'transform 0.3s ease-in-out'
                                     }}
                                 />

@@ -24,7 +24,7 @@ const SingleBlog = () => {
     }
 
     return (
-        <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#F9FAFB' }}>
+        <Box sx={{ pt: { xs: 6, md: 8 }, }}>
             <Container maxWidth="lg">
                 {/* Breadcrumbs */}
                 <Breadcrumbs sx={{ mb: 4 }}>

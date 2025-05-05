@@ -1,10 +1,10 @@
 // Import blog images
-import blog1Image from '../assets/images/Vectors/mental-health-concept.jpg';
-import blog2Image from '../assets/images/Vectors/mental-health-concept.jpg';
-import blog3Image from '../assets/images/Vectors/mental-health-concept.jpg';
-import blog4Image from '../assets/images/Vectors/mental-health-concept.jpg';
-import blog5Image from '../assets/images/Vectors/mental-health-concept.jpg';
-import blog6Image from '../assets/images/Vectors/mental-health-concept.jpg';
+import img1 from '../assets/images/Resources/Blogs/broken-heart-1024x684.jpg'
+import img2 from '../assets/images/Resources/Blogs/Self value 1.png'
+import img3 from '../assets/images/Resources/Blogs/Shok ke prati badle nazaria.jpg'
+import img4 from '../assets/images/Resources/Blogs/Take a break 1.jpg'
+import img5 from '../assets/images/Resources/Blogs/Exam stress.png'
+
 
 export const blogsData = [
     {
@@ -13,7 +13,7 @@ export const blogsData = [
         category: "Work Stress",
         title: "Setting Healthy Boundaries at Work: A Guide for Professionals",
         description: "Learn practical strategies for establishing and maintaining boundaries that protect your mental health while advancing your career.",
-        image: blog1Image,
+        image: img1,
         readTime: "8 min read",
         author: "Dr. Sarah Johnson",
         authorRole: "Mental Health Specialist",
@@ -49,7 +49,7 @@ export const blogsData = [
         category: "Student Life",
         title: "Exam Anxiety: Strategies for Staying Calm and Performing at Your Best",
         description: "Discover evidence-based techniques to manage test anxiety and optimize your performance during high-pressure academic situations.",
-        image: blog2Image,
+        image: img2,
         readTime: "6 min read",
         author: "Dr. Michael Chen",
         authorRole: "Educational Psychologist",
@@ -75,7 +75,7 @@ export const blogsData = [
         category: "Mental Health",
         title: "Understanding and Managing Seasonal Affective Disorder",
         description: "A comprehensive guide to recognizing the signs of SAD and implementing effective coping strategies throughout the year.",
-        image: blog3Image,
+        image: img3,
         readTime: "7 min read",
         author: "Dr. Emily Parker",
         authorRole: "Clinical Psychologist",
@@ -109,7 +109,7 @@ export const blogsData = [
         category: "Wellness",
         title: "The Power of Daily Mental Wellness Practices",
         description: "Simple yet effective daily practices that can significantly improve your mental well-being and overall quality of life.",
-        image: blog4Image,
+        image: img4,
         readTime: "5 min read",
         author: "Dr. Lisa Thompson",
         authorRole: "Wellness Coach",
@@ -132,7 +132,7 @@ export const blogsData = [
         category: "Digital Wellness",
         title: "Digital Detox: Finding Balance in a Connected World",
         description: "Learn how to maintain a healthy relationship with technology while staying connected to what matters most.",
-        image: blog5Image,
+        image: img5,
         readTime: "6 min read",
         author: "Dr. James Wilson",
         authorRole: "Digital Wellness Expert",
@@ -149,27 +149,27 @@ export const blogsData = [
             </ul>
         `
     },
-    {
-        id: 6,
-        date: "May 20, 2023",
-        category: "Mindfulness",
-        title: "Mindfulness in Everyday Life: A Practical Guide",
-        description: "Discover how to incorporate mindfulness into your daily routine for improved mental clarity and emotional well-being.",
-        image: blog6Image,
-        readTime: "7 min read",
-        author: "Dr. Rachel Martinez",
-        authorRole: "Mindfulness Instructor",
-        content: `
-            <p>Mindfulness isn't just about meditation—it's a way of living that can transform your relationship with yourself and the world around you.</p>
-            
-            <h2>Simple Mindfulness Practices</h2>
-            <ul>
-                <li>Mindful breathing</li>
-                <li>Body scan meditation</li>
-                <li>Mindful eating</li>
-                <li>Walking meditation</li>
-                <li>Present moment awareness</li>
-            </ul>
-        `
-    }
+    // {
+    //     id: 6,
+    //     date: "May 20, 2023",
+    //     category: "Mindfulness",
+    //     title: "Mindfulness in Everyday Life: A Practical Guide",
+    //     description: "Discover how to incorporate mindfulness into your daily routine for improved mental clarity and emotional well-being.",
+    //     image: blog6Image,
+    //     readTime: "7 min read",
+    //     author: "Dr. Rachel Martinez",
+    //     authorRole: "Mindfulness Instructor",
+    //     content: `
+    //         <p>Mindfulness isn't just about meditation—it's a way of living that can transform your relationship with yourself and the world around you.</p>
+    //
+    //         <h2>Simple Mindfulness Practices</h2>
+    //         <ul>
+    //             <li>Mindful breathing</li>
+    //             <li>Body scan meditation</li>
+    //             <li>Mindful eating</li>
+    //             <li>Walking meditation</li>
+    //             <li>Present moment awareness</li>
+    //         </ul>
+    //     `
+    // }
 ]; 

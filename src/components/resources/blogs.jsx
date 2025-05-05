@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Box, Container, Grid, Typography, Card, CardContent, CardMedia, Chip, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { blogsData } from '../../data/blogsData';
+import img1 from '../../assets/images/Resources/Blogs/broken-heart-1024x684.jpg'
+import img2 from '../../assets/images/Resources/Blogs/Self value 1.png'
+import img3 from '../../assets/images/Resources/Blogs/Shok ke prati badle nazaria.jpg'
+import img4 from '../../assets/images/Resources/Blogs/Take a break 1.jpg'
+import img5 from '../../assets/images/Resources/Blogs/Shok ke prati badle nazaria.jpg'
 
 function Blogs() {
     const navigate = useNavigate();
@@ -14,7 +19,7 @@ function Blogs() {
     const hasMoreBlogs = visibleBlogs < blogsData.length;
 
     return (
-        <Box sx={{ py: { xs: 6, md: 20 }, backgroundColor: '#F9FAFB' }}>
+        <Box sx={{ pt: { xs: 6, md: 20 }, }}>
             <Container maxWidth="xl">
                 {/* Header Section */}
                 <Box sx={{ textAlign: 'center', mb: 6 }}>
@@ -22,7 +27,12 @@ function Blogs() {
                         className="Montserrat"
                         variant="h4"
                         sx={{
-                            fontSize: { xs: '28px', sm: '34px', md: '42px', lg: '46px' },
+                            fontSize: {
+                                xs: '1.7rem',
+                                sm: '1.85rem',
+                                md: '2rem',
+                                lg: '2.125rem'
+                            },
                             color: '#012765',
                             fontWeight: 700,
                             mb: 2
@@ -33,7 +43,7 @@ function Blogs() {
                     <Typography
                         sx={{
                             color: '#4B5563',
-                            fontSize: { xs: '16px', md: '18px' },
+                            fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
                             maxWidth: '800px',
                             mx: 'auto'
                         }}

@@ -29,7 +29,7 @@ const GallerySection = () => {
     const navigate = useNavigate();
 
     return (
-        <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#F9FAFB' }}>
+        <Box sx={{ pb: { xs: 6, md: 8 }, }}>
             <Container maxWidth="xl">
                 <Box sx={{ textAlign: 'center', mb: 6 }}>
                     <Typography
