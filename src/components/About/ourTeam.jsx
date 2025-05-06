@@ -110,7 +110,7 @@ const founders = [
         image: img3,
         role: 'IT lead',
         name: 'Paurush Sharma',
-        description: 'NLP Therapist, CBT, REBT, Counselor',
+        // description: 'NLP Therapist, CBT, REBT, Counselor',
     },
 ];
 
@@ -148,7 +148,7 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
                         lineHeight: '25px',
                     }}
                 >
-                    Our team of psychologists brings together years of experience, compassionate care, and evidence-based practices to support your mental well-being.
+                    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey.
                 </Typography>
 
                 <Grid container spacing={3}>
