@@ -6,10 +6,11 @@ import PublicIcon from '@mui/icons-material/Public';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 
 // import img2 from '../../assets/images/Vectors/Mission.jpg';
-import img2 from '../../assets/images/about/mission-vission-goals/istockphoto.jpg';
-import img1 from '../../assets/images/Vectors/Vision.png';
+// import img1 from '../../assets/images/Vectors/Vision.png';
 // import img3 from '../../assets/images/Vectors/Goals.png';
-import img3 from '../../assets/images/about/mission-vission-goals/goal.jpg';
+import img2 from '../../assets/images/about/mission-vission-goals/Misson.png';
+import img1 from '../../assets/images/about/mission-vission-goals/our_vision.png';
+import img3 from '../../assets/images/about/mission-vission-goals/goal1.png';
 
 const StyledPaper = styled(Paper)(({theme, side}) => ({
     padding: theme.spacing(3),
@@ -133,7 +134,7 @@ const VisionMission = () => {
                                           sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                         <Box sx={{
                                             width: '100%',
-                                            maxWidth: 250,
+                                            maxWidth: 380,
                                             borderRadius: '12px',
                                             overflow: 'hidden'
                                         }}>
