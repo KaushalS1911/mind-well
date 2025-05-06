@@ -231,14 +231,24 @@ const FounderCard = React.memo(({ founder, icon = <PersonIcon /> }) => (
 
 
 const Founders = () => (
-    <Box sx={{ padding: {sm:"96px 0",xs:"66px 0"}  }}>
+    <Box sx={{ padding: {xs:"20px 0 96px 0"}  }}>
         <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4, lg: 6 } }}>
-            <Title sx={{fontSize: {
-                    xs: '1.7rem',
-                    sm: '1.85rem',
-                    md: '2rem',
-                    lg: '2.125rem'
-                },}}>Founding members</Title>
+            <Box className="Montserrat"
+                 sx={{
+                     fontSize: {
+                         xs: '1.7rem',
+                         sm: '1.85rem',
+                         md: '2rem',
+                         lg: '2.125rem'
+                     },
+                     marginBottom: "16px",
+                     lineHeight: "40px",
+                     display: "flex",
+                     justifyContent: "center",
+                     color: "#012765",
+                     fontWeight: "700",
+                     textAlign: "center",
+                 }}>Founding members</Box>
             <SubTitle sx={{
                 fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
             }}>

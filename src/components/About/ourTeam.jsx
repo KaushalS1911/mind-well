@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
 import img1 from '../../assets/images/about/Founder/Fatima Lobo.png';
 import img2 from '../../assets/images/about/Founder/Chaman Kumar.png';
-import img3 from '../../assets/images/about/Founder/paurush_sharma.jpg';
+import img3 from '../../assets/images/about/Founder/paurush_sharma.png';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
@@ -108,7 +108,7 @@ const founders = [
     },
     {
         image: img3,
-        role: 'Wellness Consultant',
+        role: 'IT lead',
         name: 'Paurush Sharma',
         description: 'NLP Therapist, CBT, REBT, Counselor',
     },
@@ -119,6 +119,7 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
         <Box sx={{ padding: '0 0 96px 0' }}>
             <Container maxWidth="xl">
                 <Typography
+                    className={"Montserrat"}
                     variant="h4"
                     sx={{
                         fontFamily: 'Montserrat',
@@ -147,7 +148,7 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
                         lineHeight: '25px',
                     }}
                 >
-                    Our experienced psychologists provide compassionate, personalized care to support mental wellness, emotional resilience, and meaningful personal growth.
+                    Our team of psychologists brings together years of experience, compassionate care, and evidence-based practices to support your mental well-being.
                 </Typography>
 
                 <Grid container spacing={3}>
@@ -163,7 +164,7 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
                                                 style={{
                                                     width: '100%',
                                                     height: '100%',
-                                                    objectFit: 'cover',
+                                                    objectFit: 'contain',
                                                     borderRadius: '50%',
                                                 }}
                                             />
