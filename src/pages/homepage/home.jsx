@@ -36,7 +36,7 @@ import GallerySection from "../../components/Home/GallerySection.jsx";
 
 function Home() {
     return (
-        <Box sx={{mx: {sm:10,xs:1}}}>
+        <Box >
             <WorkPlaceHeroSection/>
             {/*<Herosection/>*/}
             <Overview/>

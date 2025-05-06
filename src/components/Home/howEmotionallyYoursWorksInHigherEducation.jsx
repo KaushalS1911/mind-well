@@ -86,7 +86,7 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
     ];
 
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
             <Container maxWidth="xl">
                 <Box textAlign="center" mb={{xs: 4, md: 8}}>
                     <Typography

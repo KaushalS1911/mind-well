@@ -9,7 +9,7 @@ const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
 
     return (
-        <Box sx={{pt: {xs: 6, md: 18}}}>
+        <Box sx={{pt: {xs: 6, md: 18},mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
             <Container maxWidth="xl">
                 <Box sx={{textAlign: 'center', mb: 6}}>
                     <Typography
@@ -40,7 +40,7 @@ const Gallery = () => {
 
                 <Grid container spacing={3}>
                     {galleryImages.map((item, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
+                        <Grid item xs={12} md={6} lg={4} key={index}>
                             <Box sx={{
                                 position: 'relative',
                                 borderRadius: '16px',

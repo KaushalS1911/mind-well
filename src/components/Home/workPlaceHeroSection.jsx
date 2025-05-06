@@ -22,8 +22,8 @@ import 'swiper/css/pagination';
 
 const SLIDE_DATA = [
     {
-        titles: ["Students", "Aspirantss", "Employees"],
-        titleChangeDelay: 2500,
+        titles: ["Students", "Aspirants", "Employees"],
+        titleChangeDelay: 5000,
         mainHeading: "Building Mindsets",
         description:
             "Empowering individuals and organizations with emotional intelligence tools that drive personal growth, enhance performance, and foster meaningful workplace connections",
@@ -31,7 +31,7 @@ const SLIDE_DATA = [
     },
     {
         titles: ["Growths", "Performances", "Success"],
-        titleChangeDelay: 2500,
+        titleChangeDelay: 5000,
         mainHeading: "Transforming individuals & workplaces to enable",
         description:
             "Create a culture of trust and psychological safety where team members feel valued, heard, and empowered to contribute their best work and ideas",
@@ -39,7 +39,7 @@ const SLIDE_DATA = [
     },
     {
         titles: ["Inspires", "Empowers", "Transforms", "Excels"],
-        titleChangeDelay: 2500,
+        titleChangeDelay: 5000,
         mainHeading: "Developing leaders who",
         description:
             "Equip leaders with the emotional intelligence skills needed to navigate challenges, inspire teams, and drive sustainable organizational success in today's complex world",
@@ -100,6 +100,7 @@ const HeroSlide = ({ slideData, index }) => {
                     {index === 0 ? (
                         <>
                             <Typography
+                                className={"Montserrat"}
                                 component="div"
                                 sx={{
                                     letterSpacing: "-1px",
@@ -120,6 +121,7 @@ const HeroSlide = ({ slideData, index }) => {
                             <Box
                                 key={slideData.titles[currentTitleIndex]}
                                 component="div"
+                                className={"Montserrat"}
                                 sx={{
                                     display: 'inline-block',
                                     color: "#FE6A00",
@@ -149,6 +151,7 @@ const HeroSlide = ({ slideData, index }) => {
                     ) : (
                         // Other slides: title inline in main heading
                         <Typography
+                            className={"Montserrat"}
                             component="div"
                             sx={{
                                 letterSpacing: "-1px",
@@ -168,6 +171,7 @@ const HeroSlide = ({ slideData, index }) => {
                             <Box
                                 key={slideData.titles[currentTitleIndex]}
                                 component="span"
+                                className={"Montserrat"}
                                 sx={{
                                     display: 'inline-block',
                                     color: "#FE6A00",

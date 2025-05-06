@@ -33,7 +33,7 @@ function Overview() {
                 sx={{
                     py: {xs: 4, md: 5, lg: 3, xl: 0},
                     overflow: 'hidden',
-                    mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
+                    mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
                 }}
             >
                 <Container maxWidth="xl">

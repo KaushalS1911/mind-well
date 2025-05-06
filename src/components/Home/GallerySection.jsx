@@ -149,10 +149,10 @@ const GallerySection = () => {
                     </Swiper>
 
                     {/* Arrows (only for lg and up) */}
-                    <IconButton ref={navigationPrevRef} sx={{...navButtonSx, left: -80}}>
+                    <IconButton ref={navigationPrevRef} sx={{...navButtonSx, left: 0}}>
                         <ArrowBackIosNewIcon fontSize="medium"/>
                     </IconButton>
-                    <IconButton ref={navigationNextRef} sx={{...navButtonSx, right: -80}}>
+                    <IconButton ref={navigationNextRef} sx={{...navButtonSx, right: 0}}>
                         <ArrowForwardIosIcon fontSize="medium"/>
                     </IconButton>
                 </Box>

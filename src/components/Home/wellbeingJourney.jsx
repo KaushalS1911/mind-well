@@ -88,7 +88,7 @@ const WellbeingJourney = () => {
         : categories[0].image;
 
     return (
-        <Box component="section" sx={{py: 8, mx: {xs: '20px', sm: '30px', md: '50px', xl: 'auto'},}}>
+        <Box component="section" sx={{py: 8, mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
             <Container maxWidth="xl">
                 <Box textAlign="center" mb={3}>
                     <Typography

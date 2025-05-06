@@ -47,7 +47,7 @@ const testimonials = [
 
 function ClientsReview() {
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' },padding:"96px 0 0 0"}}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' },padding:"96px 0 0 0"}}>
             <Container maxWidth="xl">
                 <Typography
                     className={"Montserrat"}

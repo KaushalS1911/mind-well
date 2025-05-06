@@ -97,7 +97,7 @@ const HowEmotionallyYoursinSchools = () => {
     ];
 
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
             <Container maxWidth="xl" sx={{py: {xs: 8, md: 12}, }}>
                 <Box textAlign="center" mb={{xs: 4, md: 6}}>
                     <Typography

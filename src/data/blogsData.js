@@ -11,7 +11,7 @@ export const blogsData = [
         id: 1,
         date: "Jul 12, 2023",
         category: "Work Stress",
-        title: "Setting Healthy Boundaries at Work: A Guide for Professionals",
+        title: "Broken hearts",
         description: "Learn practical strategies for establishing and maintaining boundaries that protect your mental health while advancing your career.",
         image: img1,
         readTime: "8 min read",
