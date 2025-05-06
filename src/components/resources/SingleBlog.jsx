@@ -40,10 +40,10 @@ const SingleBlog = () => {
                 </Breadcrumbs>
 
                 {/* Blog Header */}
-                <Box sx={{ mb: 6 }}>
+                <Box sx={{ mb: 3 }}>
                     <Typography
                         variant="overline"
-                        sx={{ color: '#FE6A00', mb: 1, display: 'block' }}
+                        sx={{ color: '#FE6A00', mb: 1, display: 'block',fontSize:"15px" }}
                     >
                         {blog.category}
                     </Typography>
@@ -51,42 +51,49 @@ const SingleBlog = () => {
                         variant="h3"
                         sx={{
                             color: '#012765',
-                            fontWeight: 700,
-                            mb: 2,
-                            fontSize: { xs: '28px', md: '36px' }
+                            fontWeight: 600,
+                            mb: 4,
+                            fontSize: {
+                                xs: '1.7rem',
+                                sm: '1.85rem',
+                                md: '2rem',
+                                lg: '2.0rem'
+                            },
                         }}
                     >
                         {blog.title}
                     </Typography>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-                        <Typography variant="body2" color="text.secondary">
-                            {blog.date}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            {blog.readTime}
-                        </Typography>
-                    </Box>
+                    {/*<Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>*/}
+                    {/*    <Typography variant="body2" color="text.secondary">*/}
+                    {/*        {blog.date}*/}
+                    {/*    </Typography>*/}
+                    {/*    <Typography variant="body2" color="text.secondary">*/}
+                    {/*        {blog.readTime}*/}
+                    {/*    </Typography>*/}
+                    {/*</Box>*/}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                         <Box
                             sx={{
                                 width: 48,
                                 height: 48,
                                 borderRadius: '50%',
-                                backgroundColor: '#E7EAEE',
+                                backgroundColor: '#012765',
                                 display: 'flex',
                                 alignItems: 'center',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
+                                fontSize:"25px",
+                                color:"white"
                             }}
                         >
                             {blog.author.charAt(0)}
                         </Box>
                         <Box>
-                            <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                            <Typography variant="subtitle1" sx={{ fontWeight: 600,fontSize:"22px",color:"#012765" }}>
                                 {blog.author}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                {blog.authorRole}
-                            </Typography>
+                            {/*<Typography variant="body2" color="text.secondary">*/}
+                            {/*    {blog.authorRole}*/}
+                            {/*</Typography>*/}
                         </Box>
                     </Box>
                 </Box>
@@ -119,7 +126,8 @@ const SingleBlog = () => {
                             color: '#4B5563',
                             fontSize: '16px',
                             lineHeight: 1.7,
-                            mb: 2
+                            mb: 2,
+                            textAlign:"justify"
                         },
                         '& ul': {
                             color: '#4B5563',

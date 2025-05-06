@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, useTheme, useMediaQuery } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import img1 from '../../assets/images/about/Founder/Devesh Kumar.png';
+import img1 from '../../assets/images/about/Founder/Chaman Kumar.png';
 
 const Section = styled(Box)(({ theme }) => ({
     padding: '60px 0',
@@ -75,7 +75,6 @@ const Text = styled(Typography)(({ theme }) => ({
 
 const Signature = styled(Box)({
     marginTop: '32px',
-    textAlign: 'right',
 });
 
 const Name = styled(Typography)({
@@ -96,7 +95,24 @@ const FoundersMessage = () => {
     return (
         <Section>
             <Container maxWidth="xl">
-                <Title>Founder's Message</Title>
+                <Box
+                    className="Montserrat"
+                    sx={{
+                        fontSize: {
+                            xs: '1.7rem',
+                            sm: '1.85rem',
+                            md: '2rem',
+                            lg: '2.125rem'
+                        },
+                        marginBottom: "16px",
+                        lineHeight: "40px",
+                        display: "flex",
+                        justifyContent: "center",
+                        color: "#012765",
+                        fontWeight: "700",
+                        textAlign: "center",
+                        mb:5
+                    }}>Founder's Message</Box>
                 <MainContent>
                     <ImageSection>
                         <img src={img1} alt="Chaman Kumar" />

@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
 import img1 from '../../assets/images/about/Founder/Fatima Lobo.png';
 import img2 from '../../assets/images/about/Founder/Chaman Kumar.png';
+import img3 from '../../assets/images/about/Founder/paurush_sharma.jpg';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
@@ -106,6 +107,7 @@ const founders = [
             'A visionary with a successful 25-year corporate career. Worked in Banks and NBFC institutions in sales & Business Development',
     },
     {
+        image: img3,
         role: 'Wellness Consultant',
         name: 'Paurush Sharma',
         description: 'NLP Therapist, CBT, REBT, Counselor',

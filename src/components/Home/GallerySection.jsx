@@ -48,7 +48,7 @@ const GallerySection = () => {
     }, [swiperInstance]);
 
     return (
-        <Box sx={{pb: {xs: 6, md: 8}, position: 'relative'}}>
+        <Box sx={{pb: {xs: 6, md: 8}, position: 'relative',mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' } }}>
             <Container maxWidth="xl">
                 <Box sx={{textAlign: 'center', mb: 6}}>
                     <Typography
@@ -149,10 +149,10 @@ const GallerySection = () => {
                     </Swiper>
 
                     {/* Arrows (only for lg and up) */}
-                    <IconButton ref={navigationPrevRef} sx={{...navButtonSx, left: 0}}>
+                    <IconButton ref={navigationPrevRef} sx={{...navButtonSx, left: -50}}>
                         <ArrowBackIosNewIcon fontSize="medium"/>
                     </IconButton>
-                    <IconButton ref={navigationNextRef} sx={{...navButtonSx, right: 0}}>
+                    <IconButton ref={navigationNextRef} sx={{...navButtonSx, right: -50}}>
                         <ArrowForwardIosIcon fontSize="medium"/>
                     </IconButton>
                 </Box>
