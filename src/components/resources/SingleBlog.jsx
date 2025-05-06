@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Container, Typography, Breadcrumbs, Link } from '@mui/material';
 import { useParams, useNavigate } from 'react-router-dom';
 import { blogsData } from '../../data/blogsData';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const SingleBlog = () => {
     const { id } = useParams();
@@ -24,19 +25,21 @@ const SingleBlog = () => {
     }
 
     return (
-        <Box sx={{ pt: { xs: 6, md: 8 },mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' } }}>
+        <Box sx={{ pt: { xs: 6, md: 16 },mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' } }}>
             <Container maxWidth="lg">
                 {/* Breadcrumbs */}
-                <Breadcrumbs sx={{ mb: 4 }}>
-                    <Link 
-                        underline="hover" 
-                        color="inherit" 
+                <Breadcrumbs separator={<ArrowRightAltIcon sx={{ color: '#FE6A00', verticalAlign: 'middle' }} />} sx={{ mb: 6 }}>
+                    <Link
+                        underline="hover"
+                        color="inherit"
                         onClick={() => navigate('/blogs')}
-                        sx={{ cursor: 'pointer' }}
+                        sx={{ cursor: 'pointer', color: '#012765', fontWeight: 600 }}
                     >
                         Blogs
                     </Link>
-                    <Typography color="text.primary">{blog.title}</Typography>
+                    <Typography sx={{ color: '#FE6A00', fontWeight: 500 }}>
+                        {blog.title}
+                    </Typography>
                 </Breadcrumbs>
 
                 {/* Blog Header */}
