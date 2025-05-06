@@ -79,17 +79,17 @@ function Blogs() {
                                     }}
                                 />
                                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-                                        <Typography variant="body2" color="text.secondary">
-                                            {blog.date}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            •
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            {blog.readTime}
-                                        </Typography>
-                                    </Box>
+                                    {/*<Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>*/}
+                                    {/*    <Typography variant="body2" color="text.secondary">*/}
+                                    {/*        {blog.date}*/}
+                                    {/*    </Typography>*/}
+                                    {/*    <Typography variant="body2" color="text.secondary">*/}
+                                    {/*        •*/}
+                                    {/*    </Typography>*/}
+                                    {/*    <Typography variant="body2" color="text.secondary">*/}
+                                    {/*        {blog.readTime}*/}
+                                    {/*    </Typography>*/}
+                                    {/*</Box>*/}
                                     <Chip
                                         label={blog.category}
                                         size="small"

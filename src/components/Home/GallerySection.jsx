@@ -138,7 +138,7 @@ const GallerySection = () => {
                                             transition: 'transform 0.4s ease, opacity 0.4s ease',
                                             py: 2
                                         }}>
-                                            <Typography variant="h6" sx={{fontWeight: 600}}>
+                                            <Typography variant="h6" sx={{fontWeight: 400,fontSize:"17px"}}>
                                                 {item.title}
                                             </Typography>
                                         </Box>
