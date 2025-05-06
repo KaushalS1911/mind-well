@@ -112,7 +112,7 @@ const FoundersMessage = () => {
                         fontWeight: "700",
                         textAlign: "center",
                         mb:5
-                    }}>Founder's Message</Box>
+                    }}>Founder's Note</Box>
                 <MainContent>
                     <ImageSection>
                         <img src={img1} alt="Chaman Kumar" />
