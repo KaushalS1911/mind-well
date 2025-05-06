@@ -2,47 +2,21 @@ import React, { useState } from 'react';
 import { Box, Container, Typography, Grid, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-// Import your gallery images here
-import img1 from '../../assets/images/Vectors/mental-health-concept.jpg';
-import img2 from '../../assets/images/Vectors/online-internet.jpg';
-import img3 from '../../assets/images/Vectors/vector-collection.jpg';
-
-const galleryImages = [
-    {
-        image: img1,
-        title: "Mental Health Workshop",
-        description: "Interactive sessions for emotional well-being"
-    },
-    {
-        image: img2,
-        title: "Online Counseling",
-        description: "Virtual support for modern challenges"
-    },
-    {
-        image: img3,
-        title: "Group Therapy",
-        description: "Shared experiences, collective growth"
-    },
-    // Add more images here
-];
+// Import shared gallery images
+import galleryImages from '../../data/galleryImages';
 
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState(null);
 
     return (
-        <Box sx={{ pt: { xs: 6, md: 18 }}}>
+        <Box sx={{ pt: { xs: 6, md: 18 } }}>
             <Container maxWidth="xl">
                 <Box sx={{ textAlign: 'center', mb: 6 }}>
                     <Typography
                         className="Montserrat"
                         variant="h4"
                         sx={{
-                            fontSize: {
-                                xs: '1.7rem',
-                                sm: '1.85rem',
-                                md: '2rem',
-                                lg: '2.125rem'
-                            },
+                            fontSize: { xs: '1.7rem', sm: '1.85rem', md: '2rem', lg: '2.125rem' },
                             color: "#012765",
                             fontWeight: 700,
                             mb: 2,
@@ -67,72 +41,53 @@ const Gallery = () => {
                 <Grid container spacing={3}>
                     {galleryImages.map((item, index) => (
                         <Grid item xs={12} sm={6} md={4} key={index}>
-                            <Box
-                                sx={{
-                                    position: 'relative',
-                                    borderRadius: '16px',
-                                    overflow: 'hidden',
-                                    height: { xs: '250px', sm: '300px', md: '350px' },
-                                    cursor: 'pointer',
-                                    '&:hover': {
-                                        '& img': {
-                                            transform: 'scale(1.1)'
-                                        },
-                                        '& .content-overlay': {
-                                            opacity: 1
-                                        }
-                                    }
-                                }}
-                                onClick={() => setSelectedImage(item)}
-                            >
+                            <Box sx={{
+                                position: 'relative',
+                                borderRadius: '16px',
+                                overflow: 'hidden',
+                                height: '450px',
+                                cursor: 'pointer',
+                                '&:hover img': {transform: 'scale(1.1)'},
+                                '&:hover .hover-overlay': {background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 100%)'},
+                                '&:hover .hover-text': {transform: 'translateY(0%)', opacity: 1}
+                            }}>
                                 <img
                                     src={item.image}
                                     alt={item.title}
                                     style={{
                                         width: '100%',
                                         height: '100%',
-                                        objectFit: 'contain',
-                                        transition: 'transform 0.3s ease-in-out'
+                                        objectFit: 'cover',
+                                        objectPosition: 'top',
+                                        transition: 'transform 0.4s ease'
                                     }}
                                 />
-                                <Box
-                                    className="content-overlay"
-                                    sx={{
+
+                                <Box className="hover-overlay" sx={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    color: 'white',
+                                    background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
+                                    transition: 'background 0.4s ease'
+                                }}>
+                                    <Box className="hover-text" sx={{
                                         position: 'absolute',
-                                        top: 0,
+                                        bottom: 0,
                                         left: 0,
                                         right: 0,
-                                        bottom: 0,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        p: 3,
-                                        color: 'white',
-                                        background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
+                                        textAlign: 'center',
+                                        transform: 'translateY(100%)',
                                         opacity: 0,
-                                        transition: 'opacity 0.3s ease-in-out'
-                                    }}
-                                >
-                                    <Typography
-                                        variant="h6"
-                                        sx={{
-                                            fontWeight: 600,
-                                            mb: 1,
-                                            textAlign: 'center'
-                                        }}
-                                    >
-                                        {item.title}
-                                    </Typography>
-                                    <Typography
-                                        sx={{
-                                            textAlign: 'center',
-                                            fontSize: '14px',
-                                            opacity: 0.9
-                                        }}
-                                    >
-                                        {item.description}
-                                    </Typography>
+                                        transition: 'transform 0.4s ease, opacity 0.4s ease',
+                                        py: 2
+                                    }}>
+                                        <Typography variant="h6" sx={{fontWeight: 600}}>
+                                            {item.title}
+                                        </Typography>
+                                    </Box>
                                 </Box>
                             </Box>
                         </Grid>
@@ -158,24 +113,12 @@ const Gallery = () => {
                         onClick={() => setSelectedImage(null)}
                     >
                         <IconButton
-                            sx={{
-                                position: 'absolute',
-                                top: 20,
-                                right: 20,
-                                color: 'white'
-                            }}
+                            sx={{ position: 'absolute', top: 20, right: 20, color: 'white' }}
                             onClick={() => setSelectedImage(null)}
                         >
                             <CloseIcon />
                         </IconButton>
-                        <Box
-                            sx={{
-                                maxWidth: '90%',
-                                maxHeight: '90vh',
-                                position: 'relative'
-                            }}
-                            onClick={(e) => e.stopPropagation()}
-                        >
+                        <Box sx={{ maxWidth: '90%', maxHeight: '90vh', position: 'relative' }} onClick={(e) => e.stopPropagation()}>
                             <img
                                 src={selectedImage.image}
                                 alt={selectedImage.title}
@@ -186,17 +129,7 @@ const Gallery = () => {
                                     objectFit: 'contain'
                                 }}
                             />
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                                    color: 'white',
-                                    p: 2
-                                }}
-                            >
+                            <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, backgroundColor: 'rgba(0, 0, 0, 0.7)', color: 'white', p: 2 }}>
                                 <Typography variant="h6">{selectedImage.title}</Typography>
                                 <Typography variant="body2">{selectedImage.description}</Typography>
                             </Box>
@@ -208,4 +141,4 @@ const Gallery = () => {
     );
 };
 
-export default Gallery; 
+export default Gallery;

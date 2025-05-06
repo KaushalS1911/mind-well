@@ -1,47 +1,61 @@
-import React from 'react';
-import { Box, Container, Typography, Grid, Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import React, {useEffect, useRef, useState} from 'react';
+import {Box, Container, Typography, Button, IconButton, useMediaQuery, useTheme} from '@mui/material';
+import {useNavigate} from 'react-router-dom';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Navigation, Autoplay, Pagination} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-// Import your gallery images here
-import img1 from '../../assets/images/Vectors/mental-health-concept.jpg';
-import img2 from '../../assets/images/Vectors/online-internet.jpg';
-import img3 from '../../assets/images/Vectors/vector-collection.jpg';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-const galleryImages = [
-    {
-        image: img1,
-        title: "Mental Health Workshop",
-        description: "Interactive sessions for emotional well-being"
+// Import shared gallery images
+import galleryImages from '../../data/galleryImages';
+
+const navButtonSx = {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    zIndex: 10,
+    color: "#062957",
+    backgroundColor: "#e8e5e5",
+    opacity: 0.9,
+    ":hover": {
+        backgroundColor: "#bababa",
+        opacity: 1,
     },
-    {
-        image: img2,
-        title: "Online Counseling",
-        description: "Virtual support for modern challenges"
-    },
-    {
-        image: img3,
-        title: "Group Therapy",
-        description: "Shared experiences, collective growth"
-    }
-];
+    display: {xs: "none", lg: "flex"},
+};
 
 const GallerySection = () => {
     const navigate = useNavigate();
+    const navigationPrevRef = useRef(null);
+    const navigationNextRef = useRef(null);
+    const [swiperInstance, setSwiperInstance] = useState(null);
+
+    const theme = useTheme();
+    const isBelowLg = useMediaQuery(theme.breakpoints.down('lg'));
+
+    useEffect(() => {
+        if (swiperInstance && navigationPrevRef.current && navigationNextRef.current) {
+            swiperInstance.params.navigation.prevEl = navigationPrevRef.current;
+            swiperInstance.params.navigation.nextEl = navigationNextRef.current;
+            swiperInstance.navigation.destroy();
+            swiperInstance.navigation.init();
+            swiperInstance.navigation.update();
+        }
+    }, [swiperInstance]);
 
     return (
-        <Box sx={{ pb: { xs: 6, md: 8 }, }}>
+        <Box sx={{pb: {xs: 6, md: 8}, position: 'relative'}}>
             <Container maxWidth="xl">
-                <Box sx={{ textAlign: 'center', mb: 6 }}>
+                <Box sx={{textAlign: 'center', mb: 6}}>
                     <Typography
                         className="Montserrat"
                         variant="h4"
                         sx={{
-                            fontSize: {
-                                xs: '1.7rem',
-                                sm: '1.85rem',
-                                md: '2rem',
-                                lg: '2.125rem'
-                            },
+                            fontSize: {xs: '1.7rem', sm: '1.85rem', md: '2rem', lg: '2.125rem'},
                             color: "#012765",
                             fontWeight: 700,
                             mb: 2,
@@ -53,7 +67,7 @@ const GallerySection = () => {
                     <Typography
                         sx={{
                             color: '#4B5563',
-                            fontSize: { xs: '16px', md: '18px' },
+                            fontSize: {xs: '16px', md: '18px'},
                             maxWidth: '800px',
                             mx: 'auto'
                         }}
@@ -62,74 +76,88 @@ const GallerySection = () => {
                     </Typography>
                 </Box>
 
-                <Grid container spacing={3} sx={{ mb: 4 }}>
-                    {galleryImages.map((item, index) => (
-                        <Grid item xs={12} md={4} key={index}>
-                            <Box
-                                sx={{
+                <Box sx={{
+                    position: 'relative',
+                    '& .swiper-pagination': {position: 'relative', marginTop: 2, textAlign: 'center'}
+                }}>
+                    <Swiper
+                        modules={[Autoplay, Pagination, Navigation]}
+                        spaceBetween={20}
+                        slidesPerView={1}
+                        autoplay={{delay: 5000}}
+                        onSwiper={setSwiperInstance}
+                        pagination={isBelowLg ? {clickable: true} : false}
+                        breakpoints={{
+                            600: {slidesPerView: 1},
+                            900: {slidesPerView: 2},
+                            1200: {slidesPerView: 3},
+                        }}
+                    >
+                        {galleryImages.map((item, index) => (
+                            <SwiperSlide key={index}>
+                                <Box sx={{
                                     position: 'relative',
                                     borderRadius: '16px',
                                     overflow: 'hidden',
-                                    height: '300px',
-                                    '&:hover': {
-                                        '& img': {
-                                            transform: 'scale(1.1)'
-                                        }
-                                    }
-                                }}
-                            >
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                        transition: 'transform 0.3s ease-in-out'
-                                    }}
-                                />
-                                <Box
-                                    sx={{
+                                    height: '450px',
+                                    cursor: 'pointer',
+                                    '&:hover img': {transform: 'scale(1.1)'},
+                                    '&:hover .hover-overlay': {background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 100%)'},
+                                    '&:hover .hover-text': {transform: 'translateY(0%)', opacity: 1}
+                                }}>
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'cover',
+                                            objectPosition: 'top',
+                                            transition: 'transform 0.4s ease'
+                                        }}
+                                    />
+
+                                    <Box className="hover-overlay" sx={{
                                         position: 'absolute',
                                         top: 0,
                                         left: 0,
                                         right: 0,
                                         bottom: 0,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        p: 3,
                                         color: 'white',
-                                        background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)'
-                                    }}
-                                >
-                                    <Typography
-                                        variant="h6"
-                                        sx={{
-                                            fontWeight: 600,
-                                            mb: 1,
-                                            textAlign: 'center'
-                                        }}
-                                    >
-                                        {item.title}
-                                    </Typography>
-                                    <Typography
-                                        sx={{
+                                        background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
+                                        transition: 'background 0.4s ease'
+                                    }}>
+                                        <Box className="hover-text" sx={{
+                                            position: 'absolute',
+                                            bottom: 0,
+                                            left: 0,
+                                            right: 0,
                                             textAlign: 'center',
-                                            fontSize: '14px',
-                                            opacity: 0.9
-                                        }}
-                                    >
-                                        {item.description}
-                                    </Typography>
+                                            transform: 'translateY(100%)',
+                                            opacity: 0,
+                                            transition: 'transform 0.4s ease, opacity 0.4s ease',
+                                            py: 2
+                                        }}>
+                                            <Typography variant="h6" sx={{fontWeight: 600}}>
+                                                {item.title}
+                                            </Typography>
+                                        </Box>
+                                    </Box>
                                 </Box>
-                            </Box>
-                        </Grid>
-                    ))}
-                </Grid>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
 
-                <Box sx={{ textAlign: 'center' }}>
+                    {/* Arrows (only for lg and up) */}
+                    <IconButton ref={navigationPrevRef} sx={{...navButtonSx, left: -80}}>
+                        <ArrowBackIosNewIcon fontSize="medium"/>
+                    </IconButton>
+                    <IconButton ref={navigationNextRef} sx={{...navButtonSx, right: -80}}>
+                        <ArrowForwardIosIcon fontSize="medium"/>
+                    </IconButton>
+                </Box>
+
+                <Box sx={{textAlign: 'center', mt: 4}}>
                     <Button
                         variant="contained"
                         onClick={() => navigate('/gallery')}
@@ -154,4 +182,4 @@ const GallerySection = () => {
     );
 };
 
-export default GallerySection; 
+export default GallerySection;
