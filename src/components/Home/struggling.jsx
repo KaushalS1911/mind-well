@@ -34,7 +34,7 @@ const struggling = [
         image: img4
     },
     {
-        title: "Grief/Trauma",
+        title: "Grief-Trauma",
         description: "Heal from difficult experiences",
         icon: <Security sx={{fontSize: 30, color: "orange"}}/>,
         image: img5
