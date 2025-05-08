@@ -414,7 +414,7 @@ const Footer = () => {
                             Attribution
                         </Typography>
                         <Typography variant="body2" sx={{ color: "#FFFFFFCC" }}>
-                            Mahadevasth Technologies provides attribution to Freepik for images.
+                            "Emotionally Yours" provides attribution to Freepik for images.
                         </Typography>
                     </Box>
                 </Box>

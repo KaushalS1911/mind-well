@@ -459,7 +459,7 @@ const GetInTouch = () => {
     };
 
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }}}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
             <Container maxWidth="xl" sx={{py: 12, mt: {md: 10, sm: 0}}}>
                 {/* Header Section */}
                 <Box
@@ -515,10 +515,10 @@ const GetInTouch = () => {
                         <ContactInfo/>
 
                         <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={12} md={6}>
                                 <BusinessHours/>
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={12} md={6}>
                                 <SocialMedia/>
                             </Grid>
                         </Grid>

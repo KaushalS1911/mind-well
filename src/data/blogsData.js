@@ -11,165 +11,101 @@ export const blogsData = [
         id: 1,
         date: "Jul 12, 2023",
         category: "Work Stress",
-        title: "Setting Healthy Boundaries at Work: A Guide for Professionals",
+        title: "Broken hearts",
         description: "Learn practical strategies for establishing and maintaining boundaries that protect your mental health while advancing your career.",
         image: img1,
         readTime: "8 min read",
-        author: "Dr. Sarah Johnson",
+        author: "Pandey Nidhi",
         authorRole: "Mental Health Specialist",
         content: `
-            <p>In today's fast-paced work environment, maintaining healthy boundaries is more important than ever. This comprehensive guide will help you navigate the complex world of professional relationships while protecting your mental well-being.</p>
-            
-            <h2>Understanding Work Boundaries</h2>
-            <p>Work boundaries are the limits you set to protect your physical, emotional, and mental well-being in the workplace. They help you maintain a healthy work-life balance and prevent burnout.</p>
-            
-            <h2>Key Strategies for Setting Boundaries</h2>
-            <ul>
-                <li>Communicate clearly and directly</li>
-                <li>Learn to say no respectfully</li>
-                <li>Set specific work hours</li>
-                <li>Take regular breaks</li>
-                <li>Maintain professional relationships</li>
-            </ul>
-            
-            <h2>Benefits of Healthy Boundaries</h2>
-            <p>Setting and maintaining healthy boundaries at work can lead to:</p>
-            <ul>
-                <li>Reduced stress and anxiety</li>
-                <li>Improved work-life balance</li>
-                <li>Better professional relationships</li>
-                <li>Increased productivity</li>
-                <li>Enhanced job satisfaction</li>
-            </ul>
+            <p>Amongst the top reasons that young adults come to me for psychotherapy, in recent times, is the ending of a relationship, or breakup. This seems to be a concern that is becoming more and more common, seemingly turning into an epidemic. And if we do not equip our young population to deal with this we will see a further increase in instances of depression.</p>
+            <p>As we are becoming more liberated as a society in matters of romance and partner selection, the experience of heartbreak is increasing in proportion. This is not to say that this is a negative development. People learn from trial and error. Unless you will not taste a few flavors of the Baskin Robbins ice cream you would not know which your favorite one is. It’s the same with partner selection. Each failed relationship makes one clearer about the characteristics of their compatible partner. In the days of old, people partnered up and accommodated their personalities according to their partners. Now we build our personalities first and then find a compatible partner. Which is better? I leave it to your opinion.</p>
+            <p>There are a lot of other concerns that we face but the emotional impact of this particular trauma becomes so overwhelming that we are led to visit the counsellor’s office. Some have even come in with suicidal ideations since the feelings are so painfully unbearable. What makes this pain so unbearable is that they are not able to discuss this with their families, and their friends with the best of their intentions merely tell them to ‘forget about it’, ‘get over it’ etc. All very accurate suggestions, but unfortunately don’t work. Those feelings need to be properly expressed and processed. Suppressing them will cause long-term damage, like building trust issues or fear of becoming vulnerable to anyone ever again. In simple words the person might find it difficult to connect with anyone again in the future.</p>
+            <p>Why are breakups so painful? I will write an article in the future discussing this at length, however, to briefly mention. One is at their most vulnerable in the context of a romantic relationship. It could be said that it is the most intimate connection. It requires a great deal of trust and self-giving to be able to hand over the key to one’s emotional wellbeing in the hands of the other. In essence we give the other person a huge amount of control over ourselves. Thus, a metaphorical cord gets connected between two individuals. And when this trust is breached and this cord is ruthlessly severed, it could very actually feel like the cutting off of a part of the body. Research suggests that actual physical pain is experienced as an outcome of a heart break. But more on this later.</p>
+            <p>In this article I want to talk specifically about the drop in self worth and self-esteem after a ‘bad breakup’. The intrusive thoughts that come to mind on being rejected or ghosted or even after a mutual break up is “what’s wrong with me” “I am ugly” “I don’t deserve love” “I will never find love” “why do I always pick the wrong person”. There is often blame and anger for the other person, but mostly the negative thoughts are internalized. One also tends to wallow in self-pity during this time. Self-desirability and niceness in general are brought to question.</p>
+            <p>So, the question is, what should be done. First, we have to become skilled at the art of handling rejection. This applies in both personal and professional front, because the experience of rejection is inevitable in life. Second, talk to someone, get a third person perspective. During a breakup period you are most likely to see the reality in a skewed manner, with extreme thoughts and black and white thinking. You need a third person to show you the reality in a more realistic manner. Third, this is not the end of the world, you do not know what wonders the future holds. The overwhelming emotions of the present moment feel like doom and finalistic. But you need to keep reminding yourself that “this too shall pass”. I have not known one person in my practice or personal life who has not successfully overcome a breakup and learnt valuable life lessons consequently.</p>
+            <p>Finally, and most importantly, see a therapist. No one can help you process your emotions in a better manner at the moment than a therapist. And these feelings do need to be addressed. We have been trained to handle such situations, and I can say with confidence that a lot of my clients who have come to me with this concern have found peace and relief.</p>
+            <p>Remember your heart never gets broken, it only gets wounded. And human mind and body have a miraculous capacity to heal itself. Hence, your heart will most certainly become as good as new, soon.</p>
         `
     },
     {
         id: 2,
         date: "Jul 5, 2023",
         category: "Student Life",
-        title: "Exam Anxiety: Strategies for Staying Calm and Performing at Your Best",
+        title: "Self-value isn't all about face value!",
         description: "Discover evidence-based techniques to manage test anxiety and optimize your performance during high-pressure academic situations.",
         image: img2,
         readTime: "6 min read",
-        author: "Dr. Michael Chen",
+        author: "Devesh Kumar",
         authorRole: "Educational Psychologist",
         content: `
-            <p>Exam anxiety affects millions of students worldwide, but with the right strategies, it can be managed effectively. This guide provides practical techniques to help you perform at your best during exams.</p>
-            
-            <h2>Understanding Exam Anxiety</h2>
-            <p>Exam anxiety is a type of performance anxiety that can manifest as physical symptoms, negative thoughts, and emotional distress before or during exams.</p>
-            
-            <h2>Effective Coping Strategies</h2>
-            <ul>
-                <li>Practice deep breathing exercises</li>
-                <li>Develop a study schedule</li>
-                <li>Use positive self-talk</li>
-                <li>Get adequate sleep</li>
-                <li>Stay physically active</li>
-            </ul>
+            <p>We come across phrases like 'Don't judge a book by its cover 'All that glitters is not gold’. These phrases describe the discrepancy or the gap between self-value and face value. Self-value is the assessment of self-worth based on many factors. Self-value encompasses various aspects of self such as self-esteem, self-confidence, and self-worth.</p>
+            <p>Each person has a varied way of forming self-value and it keeps on being different throughout the course of life, it is subject to constant change. Self-value is an absolutely vulnerable aspect of self during childhood and teenage times as it can be influenced by people or peers. Self-value can act both positively and negatively in shaping a personality. The concept of self can be classified into three types, the actual self, the ideal self, and the ought self. The actual self refers to the value that a person gives to oneself. The ideal self is how a person wants to be valued by other people. While ought self refers to how an individual thinks he or she should be valued by people. Usually, there is a constant drive between the actual self-value of a person to get to the ideal self-value.</p>
+            <p>Face value means entirely defining the worth of a person based on the physical features. History attests to the idea that face value has always been polluted and attached itself to the acceptance of fake beauty standards. The color, complexion, hair length, skin type, etc. don’t in any way contribute to the emotional and mental capability of an individual. Making a girl believe that she should maintain a certain kind of face to make sure that she gets married into a respected family while expecting a boy to not play sports much as due to the tan, the worth of the guy would drop many folds are the typical instances we observe in our society. Every action of the person is monitored by society and it is being altered in a way that would suit the already existing notions. These already-formed notions are called stereotypes. Breaking stereotypes, especially those centered towards face value is a task that not many in the circle of society try engaging in. Negative aspects of face value are further pushed forward by the spurs on social media, television programs, reading materials, and so on. Due to the digitalized day and age, it is extremely difficult for people to keep away from such arguments, and hence even if unwilling to accept these impositions people have to find ways of dealing with them. The specific culture and traditions that a person belongs to have a great hold on shaping self-value. The family structure and gender roles described in such institutions result in the betterment or the worsening of self-value.</p>
+            <p>In recent times face value is given utmost importance or at least comparatively way higher importance than that self-value. Right from newspapers to cinemas every aspect of daily life emphasizes how undeniable the place for face value is. Judging a person based on color, caste, creed, and race isn’t acceptable. Social media such as Instagram, Snapchat and so on add to the problem of decreasing self-value in people as it creates an issue of lost self-confidence as people would run after the glitz and glamour offered in the world of face value. One such potent example is newspapers publishing fairness cream advertisements which create a notion in the minds of viewers that only fair people get considerable respect. These kinds of soft imposition strategies are applied by television broadcasters as well. Excelling in any field isn't in the slightest of way dependent on the face value of an individual.</p>
+            <p>Keeping all religious things aside and applying logic to the concept of how self-value is more significant than face value, the fact that arises is that we have a good amount of scope to change our conceived self-value is, humans are gifted their physical features by the higher and divine authority while they form their self-value through the experiences they gather along living life whether happy or sad. Undoubtedly the gap between self-value and face value is humongous. But each day makes a difference and if steps are taken in the right direction there can be a notable decrease in the existing gap. 'Face value is made by humans but essential self-value can make beings into humans'.</p>
+
         `
     },
     {
         id: 3,
         date: "Jun 28, 2023",
         category: "Mental Health",
-        title: "Understanding and Managing Seasonal Affective Disorder",
+        title: "शोक के प्रति बदले नजरिया।",
         description: "A comprehensive guide to recognizing the signs of SAD and implementing effective coping strategies throughout the year.",
         image: img3,
         readTime: "7 min read",
-        author: "Dr. Emily Parker",
+        author: "Pandey Nidhi",
         authorRole: "Clinical Psychologist",
         content: `
-            <p>Seasonal Affective Disorder (SAD) is a type of depression that occurs during specific seasons, typically winter. Understanding its causes and symptoms is the first step toward effective management.</p>
-            
-            <h2>Recognizing the Signs</h2>
-            <p>Common symptoms of SAD include:</p>
-            <ul>
-                <li>Persistent low mood</li>
-                <li>Changes in sleep patterns</li>
-                <li>Loss of interest in activities</li>
-                <li>Changes in appetite</li>
-                <li>Difficulty concentrating</li>
-            </ul>
-            
-            <h2>Management Strategies</h2>
-            <p>Effective ways to manage SAD include:</p>
-            <ul>
-                <li>Light therapy</li>
-                <li>Regular exercise</li>
-                <li>Maintaining a consistent sleep schedule</li>
-                <li>Social connection</li>
-                <li>Professional support when needed</li>
-            </ul>
+            <p>जब हमारे किसी अपने या किसी प्रिय व्यक्ति की मौत हो जाती है तो हम शोक मानते हैं, लेकिन कभी कभी हम अपने प्रियजन के जीवित रहने के बावजूद भी शोक मनाने को मजबूर हो जाते है। यानि की तब जब आपका कोई अपना किसी ऐसे गंभीर बीमारी के चपेट में आ जाता है जिसमे उसकी मृत्यु तय है। वैसी बीमारी जिसमे व्यक्ति के कॉग्नेटिव और शारीरिक रूप से काम करने की क्षमता में कमी आ जाती है।</p>
+            <p>अक्सर एक पुरानी बीमारी के साथ किसी का लम्बे समय तक देखभाल करते हुए केयर गिवर को बहुत सारी परेशानियों का सामना करना पड़ता ह। इस अवस्था में उनका भावनात्मक रूप से बिखर जाना बहुत सामान्य है और खासकर तब जब हमें पता है कि अब अंत नज़दीक है। ऐसी हालत में हम अक्सर रोगी के सामने असहज महसूस करने लगते है। उनसे नज़र मिलाना मुश्किल हो जाता है। उनके बदलते हुए व्यवहार की वजह से केयरगिवर को बहुत सारी शारीरिक और भावनात्मक कठिनाईओं के गुज़ारना पड़ता हैं। रोगियों के चिड़चिड़ापन, झुंझलाहट, और गुस्सा को मैनेज करना बहुत चुनौतीपूर्ण होता है। अगर इन समस्याओं को समझदारी और हिम्मत से संभाला न जाए तो केयरटेकर एक समय के बाद बर्नआउट होने लगता है और जिससे उसके मानसिक और शारीरिक रूप खुद बीमार होने की खतरे बढ़ जाते हैं। वो लगातार चिंतित रहने लगते हैं। थकान, अनिद्रा, बहुत अधिक वजन बढ़ना या घटना, आसानी से चिढ़ या नाराज होना, जिन गतिविधियों में उनकी रूचि होती है, उनमें रुचि खोना,लगातार सिरदर्द, शारीरिक दर्द या अन्य शारीरिक समस्याएं शामिल है।</p>
+            <p>एक केयरटेकर की सबसे बड़ी समस्या ये होती है की वो समझ ही नहीं पाता कि मुझे इस स्थिति को कैसे मैनेज करना है, कैसे व्यवहार करना है, उसके खुद के अंदर चल रही तमाम झंझावात को सम्हालते हुए कैसे अपने प्रिय का ख्याल रखना चाहिए? कभी कभी केयरगिवर को मौत के बाद की योजना के बारे में सोचना और उसपर अमल करना महत्वपूर्ण हो जाता है। लम्बे समय तक देखभाल करते हुए हम कभी कभी उस व्यक्ति के मरने से पहले ही शोक मनाना शुरू कर सकते हैं। रोज़मर्रा में हो रहे नुकसान को झेलते हुए, साथ ही साथ जीवन के अंत में होने वाले नुकसान की आशंका से यानि क्या हो रहा है और आगे क्या होगा, यह ख्याल भी मौत के समान ही दर्द देता है।</p>
+            <p>कभी कभी आपके अपने प्रिय की हालत इतनी बुरी होती है कि आप उसके लिए उसके जीवन का अंत ही चाहने लगते है, जिस वजह से केयरगिवर के अंदर गिल्ट, अवसाद, शर्म पनपने लगता है। इन भावनाओं को सामान्य रूप से पहचानना महत्वपूर्ण ह। Anticipatory grief हमें परोक्ष रूप से तैयार करता है कि हम आने वाले समय में कैसे खुद को भावनात्मक, आर्थिक, मानसिक रूप से मज़बूत कर सके। परिवार के सदस्यों को अनसुलझे मुद्दों को ध्यान में रखकर एक-एक करके उन विषयों पर काम करने की ज़रुरत होती है। कई बार आपको सच्चाई को स्वीकार करने में वक़्त लगता है कि आपके किसी अपने को घातक बीमारी है। इसके साथ डील करने के भी सबके अलग अलग तरीके होते हैं। कोई सहजता से स्वीकार करता है कोई रो कर करता है..</p>
+            <p>जब आपका पार्टनर इस अवस्था में होता है तो उस परिस्थिति में कम्युनिअक्शन यानि संवाद का बहुत महत्व होता है। ज़्यादातर कपल आपसी कम्युनिकेशन को ही कम कर देते हैं कि कहीं इनसे दबा हुआ दर्द न दिख जाये। इसलिए वो आपस में बातचीत ही कम कर देते हैं, जो बाद में चलकर एक गहरे अवसाद को जनम देता है। जबकि मनोवैज्ञानिक शोध से पता चला है कि खुल कर किया हुआ संवाद अक्सर बाद के घाव को भरने में बहुत जल्दी मदद करता है। ऐसे समय में पहले बिताये हुए अच्छे समय को याद करना और एक दुसरे के गलतियों को माफ़ करना भी बहुत ज़रूरी होता है, नहीं तो वो ज़िन्दगी भर का गिल्ट बन जाता है।</p>
+            <p>आपका अपना जो कि अब बीमार है, इससे आपके और उसके बीच के सम्बन्ध पर उसके बीमार होने की वजह से कोई फ़र्क़ नहीं पड़ने दे। यदि आप चिंतित हैं तो भी अपने रिश्ते की मधुरता को बनाये रखने की कोशिश करें। नई संभावनाओं के लिए खुला होना भी महत्वपूर्ण है। अनसुलझे टकराव नई चुनौतियां पेश कर सकते हैं इसलिए उनको सुलझाने का प्रयास करें। खूब बातें करे। माहौल को हल्का बना कर रखे। मुश्किल है लेकिन असंभव नहीं।</p>
+            <p>याद रखें कि आपका प्रियजन अभी भी एक जीता-जागता इंसान है और अभी भी उसकी जरूरतें और इच्छाएं हैं। एक लम्बे समय तक तनावपूर्ण और थका देने वाला रूटीन जीते जीते केयर गिवर शारीरिक रूप से बहुत कमज़ोर हो जाता है। सुनने और देखने की क्षमता, नींद न आने की समस्या जो देखभाल के दौरान शुरू हुई थी वो मृत्यु के बाद भी जारी रहती है। इस दौरान हमारा मन में तरह तरह के ख्याल आते हैं। कभी-कभी खुद को दोषी महसूस करना एक सामान्य बात है, लेकिन यह समझें कि कोई भी केयर गिवर परफेक्ट नहीं होता है कि वो जो भी करे वो सही ही हो।आप किसी भी समय गलत भी हो सकते हैं। सही होने के साथ-साथ गलत होने की भी ज़िम्मेदारी उठाने का साहस रखिये।</p>
+            <p>दु: ख से निपटने के लिए हमारे पास कोई फिक्स्ड रोड मैप नहीं होता। उदाहरण के लिए हमारे जीवन में जो कुछ हो रहा है उसके आधार पर हम दुःखी होते हैं। किसी विशेष अवसरों पर, जैसे एनिवर्सरी, जन्मदिन, इत्यादि मौकों पर हम अकेलेपन, अलगाव या अवसाद में घिरने लगते हैं। ऐसे स्थिति में हम ज़्यादा से ज़्यादा उस पल को वैसे ही जिए जैसे हम पहले जीते थे। खुद को किसी ऐसी चीज़ या एक्टिविटी में बिजी करने की कोशिश करे। देखभाल करने के साथ साथ अपने शारीरिक और भावनात्मक ज़रूरतों पर ध्यान दे। याद रखें, अगर आप अपनी देखभाल नहीं करते हैं तो आप किसी और की देखभाल नहीं कर पाएंगे।</p>
         `
     },
     {
         id: 4,
         date: "Jun 15, 2023",
         category: "Wellness",
-        title: "The Power of Daily Mental Wellness Practices",
+        title: "TAKE A BREAK!",
         description: "Simple yet effective daily practices that can significantly improve your mental well-being and overall quality of life.",
         image: img4,
         readTime: "5 min read",
-        author: "Dr. Lisa Thompson",
+        author: "Fatima Lobo",
         authorRole: "Wellness Coach",
         content: `
-            <p>Incorporating daily mental wellness practices into your routine can have profound effects on your overall well-being. This guide explores simple yet powerful practices you can start today.</p>
+            <p>Take a break...If you won’t take it your mind will force you to take one.</p>
+            <p>Our global culture is moved to a mind-set where productivity is the epitome of virtue. You’re respected and worthwhile only if you are productive or at least seem so. This has led to a lot of people trying hard to keep themselves busy, which might or might not be in a productive direction. This has also led to “Lazy shaming”, what I mean by this is that it’s just not acceptable anymore to be lying still without having earned that lying around time. This is not to say that its desire to be lazy but to consider it a matter of shame and ridicule doesn’t alleviate it, rather might discourage people from resorting to it even when they thoroughly need it. Or on the other extreme, demotivate the person to sink deeper into laziness.</p>
+            <p>“Time is money”, “and the wastage of time is the ultimate loss” are some of the quotes that are bombarded to us on a regular basis. I do not disagree with these statements, but I do disagree with taking time off being considered a wastage of time.</p>
+            <p>To give oneself the permission to take a break, to just sit aimlessly, things which were very much a part of life just a few decades ago, are not reaching a taboo point. In my practice, I often meet parents who are absolutely aghast by such behavior in their teenage children. As a result, we have raised a generation of workforce that cannot pick up the cues from their mind and body when they are overworked until they reach an absolute breaking point of burnout. This is the point when they either develop a mental or a physical illness. Or one fine day they wake up and realize that they just cannot pull themselves out of bed to go to work or college or school. Then what follows is what leads to a long period of “unproductive” time, irreversible damage, or a lot of emotional pain. I have had students who were my clients who reached that point of burnout, post which they could never revert back to their education. And these were those kids who used to ace in their class. It is because of this reason that I insist that top performers need as much counseling and guidance as underperformers.</p>
+            <p>I have heard parents mention with pride “our child studies for 8 hours straight, without taking a break, doesn’t engage in unnecessary things like friendships and outings”. Our Indian parents in their well-meaning efforts for their child’s “bright” future, do more harm than good.</p>
+            <p>They forget that success doesn’t only mean the pay scale. And they forget what the ultimate point of that pay scale is, to have a good life. And it’s not a good life if you’re earning very well but spending half of your salary on medication, and being unhappy at the end of it anyway. The quick retort that comes to such reasoning is it’s better to cry in a car than in an auto-rickshaw. So what this statement implies is that we have accepted by default that life is going to be misery and all we have control over is exactly in what circumstances this misery is going to play out. I refuse to accept this scenario.</p>
+            <p>Coming back to ‘laziness’. This article doesn’t attempt to condone laziness, it merely suggests that it’s a necessity for everyone every once in a while, similar to sleep. Just like our biology has set aside a certain portion of the day for non-productive rest, in the same way, our mind requires a phase of lazy resignation, infrequent intervals. There is an ample amount of research that shows a positive correlation between lunch/ short breaks and employee productivity, creativity, engagement, and mental health. Similar results have been found regarding vacations.</p>
+            <p>How frequent these intervals have to be is a very subjective matter, and varies largely from individual to individual. For some, a mere lazy weekend is sufficient for others they need a month of vacation once every year. The point of this article is to remove the shame and/or guilty of being purposeless and non-useful for some period of time. I hope after reading this, you’ll feel much less guilty just lying on your couch (…for some period of time).</p>
             
-            <h2>Daily Wellness Practices</h2>
-            <ul>
-                <li>Morning meditation</li>
-                <li>Gratitude journaling</li>
-                <li>Mindful movement</li>
-                <li>Digital boundaries</li>
-                <li>Quality sleep habits</li>
-            </ul>
         `
     },
     {
         id: 5,
         date: "Jun 1, 2023",
         category: "Digital Wellness",
-        title: "Digital Detox: Finding Balance in a Connected World",
+        title: "The Pre-Exam State of Mind",
         description: "Learn how to maintain a healthy relationship with technology while staying connected to what matters most.",
         image: img5,
         readTime: "6 min read",
-        author: "Dr. James Wilson",
+        author: "Fatima Lobo",
         authorRole: "Digital Wellness Expert",
         content: `
-            <p>In our increasingly connected world, finding balance with technology is essential for mental well-being. This guide helps you develop a healthier relationship with digital devices.</p>
-            
-            <h2>Signs You Need a Digital Detox</h2>
-            <ul>
-                <li>Constant device checking</li>
-                <li>Difficulty focusing</li>
-                <li>Sleep disturbances</li>
-                <li>Social isolation</li>
-                <li>Increased anxiety</li>
-            </ul>
+            <p>More often than not a day before a candidate appears for an exam involves renal-biting over-learning, nail-biting, fidgeting, clammy hands, and so on. The blend of all such emotions and actions equals the stress an individual experiences before exams. Examination stress is often referred to as the worry and nervousness that an individual appearing for an exam goes through. Students are posed with the issue of examination stress throughout their academic life and they eventually learn to deal with it. When a person succumbs to such pressure it leads to anxiety. There are various causes of examination stress some of which are internal or external pressures, a lifestyle that includes lack of planning and inadequate sleep, study, habits, health, food habits, etc. All that other factors in some way or the other contribute to the functioning of an individual's mind before and during exams. External pressures are exerted by immediate family, relationships, and friends while internal pressures are the pressures within an individual. Examination stress is also understood to be a byproduct of a lack of preparation. Stress experienced is attributed to the fear of failure and can negatively influence the self-esteem of the student. Cognitive effects such as difficulties in memory and recalling information are observed due to it. Examination stress is subjective in nature. It differs from person to person. The intensity of stress with respect to exams varies due to factors like lifestyle, genetics, family life, etc. we find people facing higher levels of examination stress when they have a problematic personal life whereas on the other hand people who are somewhat balanced face lower levels of stress. When it comes to examination stress the factors that are not very important are age, gender, intelligence, physical attractiveness, and money while those somewhat important are social life, religion, and culture. The factors extremely important for avoiding examination stress are love, family, and relationship satisfaction. Different body types react differently to all the factors mentioned and hence stress levels can keep fluctuating throughout the course of ups and downs in life. Examination stress is the part and parcel of the educational period and life in general. One has to go through many exams in the form of obstacles, problems, and losses but to come out of it in a way that only enriches one's life is of utmost importance. The higher indication of stress denotes the greater impact of the particular challenge (exam in our context) on life.</p>
+            <p>According to psychologists, experiencing a certain level of anxiety and stress before exams is absolutely normal. In fact, it somewhere pushes the individual to perform the task best to one's capability and well before the deadline. The situation gets out of hand when such stress is not channelized the way it's supposed to be and leads to the downfall of the respective individual. The most effective way of managing examination stress is through the lens of learned optimism. Learned optimism is fostering positive behavior in the face of negative circumstances. Following this idea researchers, Heather Lench and Zari Carpenter discovered the relation between optimism and efforts with respect to an approaching exam wherein they found out that a greater positive approach two weeks before the exam predicted longer study hours, higher overall satisfaction with the quality of learning, and better exam performance. When students lower their expectations the day before an exam, they study less and get lower grades.</p>
+            <p>Examinations form a critical part of a student's life. They provide the individual with a self-assessment function through which an individual gets a better understanding of the potential residing within. Hence they are bound to be significant and examination stress acts as a proof for such arguments. Inculcating good habits, positive thoughts, exercises, effective relaxation, techniques, adequate sleep, and talking to someone are some hand full ways to reduce examination stress. The objective of exams is just to add to an individual's personal growth and not hamper it. Thus exams must be treated as tools or measures to assimilate the knowledge grasped through academics and not as speed breakers along the path of accomplishment. There is no formula based to tackle examination stress but undoubtedly there exist ways in which one can channel stress in bringing out positive outcomes. Some of the commonly suggested ways to tackle moderate examination stress are listening to music, talking to a role model that is someone you look up to, meditation and consistency with exercise. Stress is partly imposed by the brain hence it is often all in one's head whether or not the external situation is potentially capable of bringing in worry or tension. Hence to fight examination stress it is required to have a strong head which in all dedication is focused towards the goal. One very important thing required is to have a clean and hygienic lifestyle which includes scheduled sleeping patterns, healthy food habits, etc. stress is mostly associated with things that are valuable or are expected to affect ones living in some form or other. Parental pressure and expectations lead to the multiplication of examination stress by many folds. It is often observed that students who have parents who coerce them into studying beyond their capacity end up with high levels of stress while students fortunate to have supportive parents are not really caught by such issues. Healthy family life, relations, and interactions shape one's ability to combat stress and problems in general. Examination stress is very similar to technological advancements in the sense that just like gadgets, more specifically mobile phones have good and bad examination stress also has its positive and negative effects. Just how a mobile phone used for constructive purposes can be of extreme help is similar to the case of stress. If treated appropriately it would fill in wonders in one's life.</p>
+            <p>One should hold on to the thought that examination stress is just another problem with acceptable solutions available.</p>
+            <p>To wind up, try and imbibe the saying by Terri Guillemots to "Give your stress wings and let it fly away."</p>
         `
     },
-    // {
-    //     id: 6,
-    //     date: "May 20, 2023",
-    //     category: "Mindfulness",
-    //     title: "Mindfulness in Everyday Life: A Practical Guide",
-    //     description: "Discover how to incorporate mindfulness into your daily routine for improved mental clarity and emotional well-being.",
-    //     image: blog6Image,
-    //     readTime: "7 min read",
-    //     author: "Dr. Rachel Martinez",
-    //     authorRole: "Mindfulness Instructor",
-    //     content: `
-    //         <p>Mindfulness isn't just about meditation—it's a way of living that can transform your relationship with yourself and the world around you.</p>
-    //
-    //         <h2>Simple Mindfulness Practices</h2>
-    //         <ul>
-    //             <li>Mindful breathing</li>
-    //             <li>Body scan meditation</li>
-    //             <li>Mindful eating</li>
-    //             <li>Walking meditation</li>
-    //             <li>Present moment awareness</li>
-    //         </ul>
-    //     `
-    // }
 ]; 

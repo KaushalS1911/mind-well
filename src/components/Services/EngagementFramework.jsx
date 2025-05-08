@@ -124,7 +124,7 @@ const EngagementFramework = () => {
     };
 
     return (
-        <Box component="section" sx={{ pt: 8, mt: { md: 10, sm: 0 },mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' } }}>
+        <Box component="section" sx={{ pt: 8, mt: { md: 10, sm: 0 },mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' } }}>
             <Container maxWidth="xl">
                 <Box className="Montserrat" sx={{
                     fontSize: {

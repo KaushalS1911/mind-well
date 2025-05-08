@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Typography, Container, Alert, Paper } from "@mui/material";
+import {Box, Button, Typography, Container, Alert, Paper} from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 
@@ -18,32 +18,31 @@ const MapLocation = () => (
         elevation={0}
         sx={{
             backgroundColor: COLORS.lightBg,
-            height: { xs: "auto", md: 320 },
+            height: {xs: "auto", md: 320},
             borderRadius: "10px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             textAlign: "center",
-            padding: { xs: 2, md: 4 },
-            mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
+            padding: {xs: 2, md: 4},
         }}
     >
         <Box
             sx={{
-                padding: { xs: 2, md: 3 },
-                margin: { xs: "0 auto", xl: "0 528px" },
+                padding: {xs: 2, md: 3},
+                margin: {xs: "0 auto", xl: "0 500px"},
                 maxWidth: "90%",
             }}
         >
             <LocationOnIcon
-                sx={{ fontSize: { xs: 30, md: 40 }, color: "#003366", mb: 2 }}
+                sx={{fontSize: {xs: 30, md: 40}, color: "#003366", mb: 2}}
             />
             <Typography
                 variant="h6"
                 fontWeight={700}
                 sx={{
-                    fontSize: { xs: "16px", md: "18px" },
+                    fontSize: {xs: "16px", md: "18px"},
                     color: COLORS.primary,
                     mb: 1,
                     lineHeight: "1.75rem"
@@ -55,7 +54,7 @@ const MapLocation = () => (
             <Typography
                 variant="body2"
                 sx={{
-                    fontSize: { xs: "12px", sm: "14px", md: "16px" },
+                    fontSize: {xs: "12px", sm: "14px", md: "16px"},
                     mb: 2,
                     color: "#4b5563",
                 }}
@@ -67,7 +66,7 @@ const MapLocation = () => (
                 variant="contained"
                 sx={{
                     backgroundColor: COLORS.primary,
-                    fontSize: { xs: "14px", md: "16px" },
+                    fontSize: {xs: "14px", md: "16px"},
                     borderRadius: "0.375rem",
                     py: 1,
                     px: 2,
@@ -87,7 +86,7 @@ const MapLocation = () => (
 const EmergencyNotice = () => (
     <Alert
         severity="error"
-        icon={<ReportProblemIcon />}
+        icon={<ReportProblemIcon/>}
         sx={{
             mt: 6,
             backgroundColor: COLORS.warningBg,
@@ -97,7 +96,6 @@ const EmergencyNotice = () => (
             '& .MuiAlert-icon': {
                 color: COLORS.warningBorder
             },
-            mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
         }}
     >
         <Typography
@@ -132,10 +130,15 @@ const EmergencyNotice = () => (
 // Main component
 function Map() {
     return (
-        <Container maxWidth="xl">
-            <MapLocation />
-            <EmergencyNotice />
-        </Container>
+        <Box sx={{
+            mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
+
+        }}>
+            <Container maxWidth="xl">
+                <MapLocation/>
+                <EmergencyNotice/>
+            </Container>
+        </Box>
     );
 }
 

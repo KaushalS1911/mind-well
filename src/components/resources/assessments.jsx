@@ -101,7 +101,7 @@ function Assessments() {
 
     return (
         <Box sx={{
-            mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
+            mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
         }}>
         <Container maxWidth="xl">
             <Box sx={{ p: {sm:"96px 0 0 0",xs:"50px 0 0 0"}, mt: {md: 5, xs: 0}}}>

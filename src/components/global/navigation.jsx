@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-  Box,
-  Collapse,
-  Link,
+    AppBar,
+    Toolbar,
+    IconButton,
+    List,
+    ListItem,
+    ListItemText,
+    Box,
+    Collapse,
+    Link,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import logo from "../../assets/Emotionally Yours Logo.png";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Link as RouterLink } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
+import {Link as RouterLink} from "react-router-dom";
 import {Facebook, Instagram, LinkedIn, YouTube} from "@mui/icons-material";
 
 
@@ -27,352 +27,355 @@ const SOCIAL_MEDIA_LINKS = [
 
 
 function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [hoverMenu, setHoverMenu] = useState(null);
-  const navigate = useNavigate();
-  const location = useLocation();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [hoverMenu, setHoverMenu] = useState(null);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const [openSubmenu, setOpenSubmenu] = useState(null);
 
-  const handleMobileMenuToggle = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+    const handleMobileMenuToggle = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
 
-  const handleScrollToSection = (sectionId, parentPath) => {
-    if (location.pathname !== parentPath) {
-      navigate(`${parentPath}?scrollTo=${sectionId}`);
-    } else {
-      scrollToSection(sectionId);
-    }
-  };
+    const handleScrollToSection = (sectionId, parentPath) => {
+        if (location.pathname !== parentPath) {
+            navigate(`${parentPath}?scrollTo=${sectionId}`);
+        } else {
+            scrollToSection(sectionId);
+        }
+    };
 
-  const scrollToSection = (sectionId) => {
-    setTimeout(() => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const offset = 100;
-        const top =
-          section.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-    }, 100);
-  };
+    const scrollToSection = (sectionId) => {
+        setTimeout(() => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offset = 100;
+                const top =
+                    section.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({top, behavior: "smooth"});
+            }
+        }, 100);
+    };
 
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const scrollTo = params.get("scrollTo");
-    if (scrollTo) {
-      scrollToSection(scrollTo);
-    }
-  }, [location]);
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const scrollTo = params.get("scrollTo");
+        if (scrollTo) {
+            scrollToSection(scrollTo);
+        }
+    }, [location]);
 
-  const navItems = [
-    { label: "Home", path: "/" },
-    { label: "About Us", path: "/about" },
-    {
-      label: "Services",
-      path: "/services",
-      submenu: [
-        { label: "SHAPE", path: "/services/SHAPE" },
-        { label: "SHAPE+", path: "/services/SHAPE-Designe" },
-        { label: "ESOP", path: "/services/ESOP" },
-        { label: "PEP", path: "/services/PEP" },
-      ],
-    },
-    // {label: "Partner", path: "/partner"},
-    {
-      label: "Resources",
-      path: "/resources",
-      submenu: [
-        // { label: "Journaling", path: "/resources/journaling" },
-        { label: "Assessments", path: "/resources/assessments" },
-        { label: "Self Help Tools", path: "/resources/selfHelpTools" },
-        // {label: "Forms", path: "/resources/forms"},
-        { label: "Blogs", path: "/resources/blogs" },
-      ],
-    },
-    { label: "Careers", path: "/careers" },
-    { label: "Contact Us", path: "/contact" },
-  ];
+    const navItems = [
+        {label: "Home", path: "/"},
+        {label: "About Us", path: "/about"},
+        {
+            label: "Services",
+            path: "/services",
+            submenu: [
+                {label: "SHAPE", path: "/services/SHAPE"},
+                {label: "SHAPE+", path: "/services/SHAPE-Designe"},
+                {label: "ESOP", path: "/services/ESOP"},
+                {label: "PEP", path: "/services/PEP"},
+            ],
+        },
+        // {label: "Partner", path: "/partner"},
+        {
+            label: "Resources",
+            path: "/resources",
+            submenu: [
+                // { label: "Journaling", path: "/resources/journaling" },
+                {label: "Assessments", path: "/resources/assessments"},
+                {label: "Self Help Tools", path: "/resources/selfHelpTools"},
+                // {label: "Forms", path: "/resources/forms"},
+                {label: "Blogs", path: "/resources/blogs"},
+            ],
+        },
+        {label: "Careers", path: "/careers"},
+        {label: "Contact Us", path: "/contact"},
+    ];
 
-  return (
-    <Box>
-      <AppBar
-        sx={{
-          backgroundColor: "white",
-          color: "navy",
-          position: { md: "fixed", xs: "static" },
-        }}
-      >
-        <Toolbar
-          sx={{
-            justifyContent: "space-between",
-            margin: { xl: "0 172px", lg: "0 50px" },
-            padding: "12px 16px",
-          }}
-        >
-            <Box sx={{ height: "70px", width: "270px" }}>
-                <RouterLink to="/" style={{ display: "inline-block", height: "100%" }}>
-                    <img
-                        src={logo}
-                        alt="Emotionally Yours Logo"
-                        style={{ height: "100%", width: "auto", objectFit: "contain", cursor: "pointer" }}
-                    />
-                </RouterLink>
-            </Box>
-
-
-            {/* Desktop Menu */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
-            {navItems.map((item) =>
-              item.submenu ? (
-                <Box
-                  key={item.label}
-                  sx={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px",
-                  }}
-                  onMouseEnter={() => setHoverMenu(item.label)}
-                  onMouseLeave={() => setHoverMenu(null)}
-                >
-                  <Box
-                    sx={{
-                      color: "#012765",
-                      fontSize: "16px",
-                      fontWeight: "500",
-                      cursor: "pointer",
-                      "&:hover": { color: "#FF6600" },
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "4px",
-                    }}
-                    onClick={() => navigate(item.path)}
-                  >
-                    {item.label}
-                    <KeyboardArrowDownIcon fontSize="small" />
-                  </Box>
-                  {hoverMenu === item.label && (
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        top: "100%",
-                        left: 0,
-                        backgroundColor: "white",
-                        boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
-                        borderRadius: "5px",
-                        zIndex: 10,
-                        width: "150px",
-                      }}
-                    >
-                      {item.submenu.map((sub) => (
-                        <Box
-                          key={sub.label}
-                          onClick={() => {
-                            // handleScrollToSection(sub.sectionId, item.path)
-                            navigate(sub.path);
-                          }}
-                          sx={{
-                            padding: "10px",
-                            color: "#012765",
-                            fontSize: "14px",
-                            cursor: "pointer",
-                            "&:hover": {
-                              backgroundColor: "#FF6600",
-                              color: "#fff",
-                            },
-                          }}
-                        >
-                          {sub.label}
-                        </Box>
-                      ))}
-                    </Box>
-                  )}
-                </Box>
-              ) : (
-                <Link
-                  key={item.label}
-                  href={item.path}
-                  style={{ textDecoration: "none" }}
-                >
-                  <Box
-                    sx={{
-                      color: "#012765",
-                      fontSize: "16px",
-                      fontWeight: "500",
-                      cursor: "pointer",
-                      "&:hover": { color: "#FF6600" },
-                    }}
-                  >
-                    {item.label}
-                  </Box>
-                </Link>
-              )
-            )}
-          </Box>
-
-            <Box sx={{display: "flex", gap: 2, mt: 2}}>
-                {SOCIAL_MEDIA_LINKS.map((item, index) => (
-                    <IconButton
-                        key={index}
-                        component={Link}
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener"
-                        sx={{
-                            padding: "10px",
-                            backgroundColor: "#002D62",
-                            borderRadius: "50%",
-                            color: "white",
-                            display: { lg: "flex", xs: "none" },
-                            '&:hover': {
-                                backgroundColor: "#001f44",
-                            }
-                        }}
-                    >
-                        {item.icon}
-                    </IconButton>
-                ))}
-            </Box>
-
-          {/* Mobile Menu Icon */}
-          <IconButton
-            edge="end"
-            color="inherit"
-            sx={{ display: { md: "none" } }}
-            onClick={handleMobileMenuToggle}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-
-      {/* Mobile Menu */}
-        <Collapse
-            in={mobileMenuOpen}
-            timeout="auto"
-            unmountOnExit
-            sx={{ display: { xs: "block", md: "none" } }}
-            onExited={() => setMobileMenuOpen(false)}
-        >
-            <List
+    return (
+        <Box>
+            <AppBar
                 sx={{
-                    backgroundColor: "#fff",
-                    color: "#000",
-                    padding: "8px 16px 16px",
+                    backgroundColor: "white",
+                    color: "navy",
+                    position: {md: "fixed", xs: "static"},
                 }}
             >
-                {navItems.map((item, index) => (
-                    <Box key={index}>
-                        <ListItem
-                            sx={{
-                                p: 0,
-                                cursor: "pointer",
-                                display: "flex",
-                                justifyContent: "space-between",
-                                alignItems: "center",
-                            }}
-                        >
-                            {/* Title Click → navigate to main path */}
-                            <Box
-                                onClick={() => {
-                                    setMobileMenuOpen(false);
-                                    navigate(item.path);
-                                }}
-                                style={{ flexGrow: 1 }}
-                            >
-                                <ListItemText
-                                    primary={item.label}
-                                    primaryTypographyProps={{
-                                        fontSize: "16px",
-                                        letterSpacing: "1px",
-                                        color: "#012765",
-                                        padding: "8px 0",
-                                    }}
-                                />
-                            </Box>
+                <Toolbar
+                    sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        margin: {xl: "0 172px", lg: "0 50px"},
+                        padding: "12px 16px",
+                    }}
+                >
+                    <Box sx={{height: "70px", width: "270px"}}>
+                        <RouterLink to="/" style={{display: "inline-block", height: "100%"}}>
+                            <img
+                                src={logo}
+                                alt="Emotionally Yours Logo"
+                                style={{height: "100%", width: "auto", objectFit: "contain", cursor: "pointer"}}
+                            />
+                        </RouterLink>
+                    </Box>
 
-                            {/* Arrow Click → expand/collapse submenu */}
-                            {item.submenu && (
-                                <IconButton
-                                    size="small"
-                                    onClick={(e) => {
-                                        e.stopPropagation(); // stop bubbling to parent
-                                        setOpenSubmenu(openSubmenu === index ? null : index);
+
+                    {/* Desktop Menu */}
+                    <Box sx={{display: {xs: "none", md: "flex"}, gap: 2}}>
+                        {navItems.map((item) =>
+                            item.submenu ? (
+                                <Box
+                                    key={item.label}
+                                    sx={{
+                                        position: "relative",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "4px",
                                     }}
+                                    onMouseEnter={() => setHoverMenu(item.label)}
+                                    onMouseLeave={() => setHoverMenu(null)}
                                 >
-                                    <KeyboardArrowDownIcon
+                                    <Box
                                         sx={{
-                                            transition: "0.3s",
-                                            transform: openSubmenu === index ? "rotate(180deg)" : "rotate(0deg)",
                                             color: "#012765",
+                                            fontSize: "16px",
+                                            fontWeight: "500",
+                                            cursor: "pointer",
+                                            "&:hover": {color: "#FF6600"},
+                                            display: "flex",
+                                            alignItems: "center",
+                                            gap: "4px",
                                         }}
-                                    />
-                                </IconButton>
-                            )}
-                        </ListItem>
-
-                        {/* Submenu Items */}
-                        {item.submenu && (
-                            <Collapse in={openSubmenu === index} timeout="auto" unmountOnExit>
-                                <List sx={{ paddingLeft: "20px" }}>
-                                    {item.submenu.map((sub, subIndex) => (
-                                        <ListItem
-                                            key={subIndex}
+                                        onClick={() => navigate(item.path)}
+                                    >
+                                        {item.label}
+                                        <KeyboardArrowDownIcon fontSize="small"/>
+                                    </Box>
+                                    {hoverMenu === item.label && (
+                                        <Box
                                             sx={{
-                                                p: 0,
-                                                cursor: "pointer",
-                                                "&:hover .MuiTypography-root": { color: "#FF6600" },
-                                            }}
-                                            onClick={() => {
-                                                setMobileMenuOpen(false);
-                                                navigate(sub.path);
+                                                position: "absolute",
+                                                top: "100%",
+                                                left: 0,
+                                                backgroundColor: "white",
+                                                boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+                                                borderRadius: "5px",
+                                                zIndex: 10,
+                                                width: "150px",
                                             }}
                                         >
-                                            <ListItemText
-                                                primary={sub.label}
-                                                primaryTypographyProps={{
-                                                    fontSize: "14px",
-                                                    color: "#012765",
-                                                    padding: "4px 0",
-                                                }}
-                                            />
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            </Collapse>
+                                            {item.submenu.map((sub) => (
+                                                <Box
+                                                    key={sub.label}
+                                                    onClick={() => {
+                                                        // handleScrollToSection(sub.sectionId, item.path)
+                                                        navigate(sub.path);
+                                                    }}
+                                                    sx={{
+                                                        padding: "10px",
+                                                        color: "#012765",
+                                                        fontSize: "14px",
+                                                        cursor: "pointer",
+                                                        "&:hover": {
+                                                            backgroundColor: "#FF6600",
+                                                            color: "#fff",
+                                                        },
+                                                    }}
+                                                >
+                                                    {sub.label}
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    )}
+                                </Box>
+                            ) : (
+                                <Link
+                                    key={item.label}
+                                    href={item.path}
+                                    style={{textDecoration: "none"}}
+                                >
+                                    <Box
+                                        sx={{
+                                            color: "#012765",
+                                            fontSize: "16px",
+                                            fontWeight: "500",
+                                            cursor: "pointer",
+                                            "&:hover": {color: "#FF6600"},
+                                        }}
+                                    >
+                                        {item.label}
+                                    </Box>
+                                </Link>
+                            )
                         )}
                     </Box>
-                ))}
 
-                {/* Mobile Get Started Button */}
-                <Box sx={{display: "flex", gap: 2, mt: 2}}>
-                    {SOCIAL_MEDIA_LINKS.map((item, index) => (
-                        <IconButton
-                            key={index}
-                            component={Link}
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener"
-                            sx={{
-                                padding: "10px",
-                                backgroundColor: "#002D62",
-                                borderRadius: "50%",
-                                color: "white",
-                                '&:hover': {
-                                    backgroundColor: "#001f44",
-                                }
-                            }}
-                        >
-                            {item.icon}
-                        </IconButton>
+                    <Box sx={{display: "flex", gap: 1}}>
+                        {SOCIAL_MEDIA_LINKS.map((item, index) => (
+                            <IconButton
+                                key={index}
+                                component={Link}
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener"
+                                sx={{
+                                    padding: "10px",
+                                    backgroundColor: "#002D62",
+                                    borderRadius: "50%",
+                                    color: "white",
+                                    display: {lg: "flex", xs: "none"},
+                                    transition:"0.5s",
+                                    '&:hover': {
+                                        backgroundColor: "#FE6A00",
+                                    }
+                                }}
+                            >
+                                {item.icon}
+                            </IconButton>
+                        ))}
+                    </Box>
+
+                    {/* Mobile Menu Icon */}
+                    <IconButton
+                        edge="end"
+                        color="inherit"
+                        sx={{display: {md: "none"}}}
+                        onClick={handleMobileMenuToggle}
+                    >
+                        <MenuIcon/>
+                    </IconButton>
+                </Toolbar>
+            </AppBar>
+
+            {/* Mobile Menu */}
+            <Collapse
+                in={mobileMenuOpen}
+                timeout="auto"
+                unmountOnExit
+                sx={{display: {xs: "block", md: "none"}}}
+                onExited={() => setMobileMenuOpen(false)}
+            >
+                <List
+                    sx={{
+                        backgroundColor: "#fff",
+                        color: "#000",
+                        padding: "8px 16px 16px",
+                    }}
+                >
+                    {navItems.map((item, index) => (
+                        <Box key={index}>
+                            <ListItem
+                                sx={{
+                                    p: 0,
+                                    cursor: "pointer",
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignItems: "center",
+                                }}
+                            >
+                                {/* Title Click → navigate to main path */}
+                                <Box
+                                    onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        navigate(item.path);
+                                    }}
+                                    style={{flexGrow: 1}}
+                                >
+                                    <ListItemText
+                                        primary={item.label}
+                                        primaryTypographyProps={{
+                                            fontSize: "16px",
+                                            letterSpacing: "1px",
+                                            color: "#012765",
+                                            padding: "8px 0",
+                                        }}
+                                    />
+                                </Box>
+
+                                {/* Arrow Click → expand/collapse submenu */}
+                                {item.submenu && (
+                                    <IconButton
+                                        size="small"
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // stop bubbling to parent
+                                            setOpenSubmenu(openSubmenu === index ? null : index);
+                                        }}
+                                    >
+                                        <KeyboardArrowDownIcon
+                                            sx={{
+                                                transition: "0.3s",
+                                                transform: openSubmenu === index ? "rotate(180deg)" : "rotate(0deg)",
+                                                color: "#012765",
+                                            }}
+                                        />
+                                    </IconButton>
+                                )}
+                            </ListItem>
+
+                            {/* Submenu Items */}
+                            {item.submenu && (
+                                <Collapse in={openSubmenu === index} timeout="auto" unmountOnExit>
+                                    <List sx={{paddingLeft: "20px"}}>
+                                        {item.submenu.map((sub, subIndex) => (
+                                            <ListItem
+                                                key={subIndex}
+                                                sx={{
+                                                    p: 0,
+                                                    cursor: "pointer",
+                                                    "&:hover .MuiTypography-root": {color: "#FF6600"},
+                                                }}
+                                                onClick={() => {
+                                                    setMobileMenuOpen(false);
+                                                    navigate(sub.path);
+                                                }}
+                                            >
+                                                <ListItemText
+                                                    primary={sub.label}
+                                                    primaryTypographyProps={{
+                                                        fontSize: "14px",
+                                                        color: "#012765",
+                                                        padding: "4px 0",
+                                                    }}
+                                                />
+                                            </ListItem>
+                                        ))}
+                                    </List>
+                                </Collapse>
+                            )}
+                        </Box>
                     ))}
-                </Box>
-            </List>
-        </Collapse>
-    </Box>
-  );
+
+                    {/* Mobile Get Started Button */}
+                    <Box sx={{display: "flex", gap: 2, mt: 2}}>
+                        {SOCIAL_MEDIA_LINKS.map((item, index) => (
+                            <IconButton
+                                key={index}
+                                component={Link}
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener"
+                                sx={{
+                                    padding: "10px",
+                                    backgroundColor: "#002D62",
+                                    borderRadius: "50%",
+                                    color: "white",
+                                    '&:hover': {
+                                        backgroundColor: "#001f44",
+                                    }
+                                }}
+                            >
+                                {item.icon}
+                            </IconButton>
+                        ))}
+                    </Box>
+                </List>
+            </Collapse>
+        </Box>
+    );
 }
 
 export default Navigation;

@@ -17,7 +17,7 @@ const About = () => {
     return (
         <>
             <AboutHeader/>
-            <Box component="section" sx={{mx: {sm:8,xs:1}}}>
+            <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
                 <VisionMission/>
                 <Mindwell/>
                 <FoundersMessage/>

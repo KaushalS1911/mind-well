@@ -145,6 +145,7 @@ const Psychologist = ({ icon = <PersonIcon /> }) => {
         <Box sx={{ padding: '0 0 96px 0', }}>
             <Container maxWidth="xl">
                 <Typography
+                    className={"Montserrat"}
                     variant="h4"
                     sx={{
                         fontFamily: 'Montserrat',
@@ -173,7 +174,7 @@ const Psychologist = ({ icon = <PersonIcon /> }) => {
                         lineHeight: '25px',
                     }}
                 >
-                    Our team of psychologists brings together years of experience, compassionate care, and evidence-based practices to support your mental well-being.
+                    Our experienced psychologists provide compassionate, personalized care to support mental wellness, emotional resilience, and meaningful personal growth.
                 </Typography>
 
 

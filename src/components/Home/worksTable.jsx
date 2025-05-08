@@ -59,7 +59,7 @@ const steps = [
 function WorksTable() {
     return (
         <Box component="section" sx={{
-            mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' }
+            mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
         }}>
             <Container maxWidth={"xl"}>
                 <Box sx={{padding: "0"}}>
