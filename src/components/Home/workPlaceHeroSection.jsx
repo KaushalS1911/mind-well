@@ -86,6 +86,7 @@ const HeroSlide = ({ slideData, index }) => {
                 justifyContent: 'space-between',
                 gap: { xs: 6, md: 10 },
                 height: '100%',
+                mx: { xs: '20px',md:"50px", xl: '100px' }
             }}
         >
             <Stack

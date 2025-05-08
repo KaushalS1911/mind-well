@@ -214,7 +214,7 @@ function Navigation() {
                         )}
                     </Box>
 
-                    <Box sx={{display: "flex", gap: 2}}>
+                    <Box sx={{display: "flex", gap: 1}}>
                         {SOCIAL_MEDIA_LINKS.map((item, index) => (
                             <IconButton
                                 key={index}
@@ -228,8 +228,9 @@ function Navigation() {
                                     borderRadius: "50%",
                                     color: "white",
                                     display: {lg: "flex", xs: "none"},
+                                    transition:"0.5s",
                                     '&:hover': {
-                                        backgroundColor: "#001f44",
+                                        backgroundColor: "#FE6A00",
                                     }
                                 }}
                             >
