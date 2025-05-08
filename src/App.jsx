@@ -10,6 +10,7 @@ import Contact from "./pages/Contact/contact.jsx";
 import React, {useEffect} from "react";
 import Gallery from "./pages/Gallery/gallery.jsx";
 import SingleBlog from "./components/resources/SingleBlog.jsx";
+import StrugglingDetail from "./components/Home/StrugglingDetail.jsx";
 
 import AcademicStressAssessment from "./components/resources/Academic-Stress/AcademicStressAssessment.jsx";
 import AcademicStressQuestions from "./components/resources/Academic-Stress/AcademicStressQuestions.jsx";
@@ -100,6 +101,7 @@ function App() {
                 <Route path={"/resources/blogs/:id"} element={<SingleBlog/>}/>
                 <Route path="/resources" element={<Resource/>}/>
                 <Route path="/contact" element={<Contact/>}/>
+                <Route path="/struggling/:topic" element={<StrugglingDetail/>}/>
                 <Route
                     path="/assessments/exam-stress"
                     element={<ExamStressGaugeAssessments/>}

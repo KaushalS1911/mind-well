@@ -8,6 +8,7 @@ import {
     Visibility,
     Cake
 } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 import img1 from "../../assets/images/Home/Struggling/Anxiety.webp";
 import img2 from "../../assets/images/Home/Struggling/Depression.webp";
 import img3 from "../../assets/images/Home/Struggling/stres.jpg";
@@ -18,7 +19,6 @@ import img7 from "../../assets/images/Home/Struggling/Self-esteem1.jpg";
 import img8 from "../../assets/images/Home/Struggling/Grief & Loss1.jpg";
 import img9 from "../../assets/images/Home/Struggling/little-boy-bullying.jpg";
 import img10 from "../../assets/images/Home/Struggling/Overthinking.jpg";
-
 
 const struggling = [
     {
@@ -66,6 +66,12 @@ const struggling = [
 ];
 
 const Struggling = () => {
+    const navigate = useNavigate();
+
+    const handleTopicClick = (title) => {
+        navigate(`/struggling/${title}`);
+    };
+
     return (
         <Box component="section" sx={{mx: { xs: '20px', sm: '30px', md: '50px', xl: 'auto' },padding:"96px 0"}}>
             <Container maxWidth="xl">
@@ -98,6 +104,7 @@ const Struggling = () => {
                         {struggling.map((item, index) => (
                             <Grid item xs={12} sm={6} md={4} lg={2.3} key={index}>
                                 <Box
+                                    onClick={() => handleTopicClick(item.title)}
                                     sx={{
                                         p: 3,
                                         textAlign: "center",
@@ -108,6 +115,7 @@ const Struggling = () => {
                                         cursor: "pointer",
                                         "&:hover": {
                                             boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                                            transform: "translateY(-5px)",
                                         },
                                         display: "flex",
                                         flexDirection: "column",
@@ -147,7 +155,6 @@ const Struggling = () => {
                                             className="hover-scale-image"
                                         />
                                     </Box>
-
                                 </Box>
                             </Grid>
                         ))}
