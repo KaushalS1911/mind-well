@@ -23,23 +23,23 @@ import 'swiper/css/pagination';
 const SLIDE_DATA = [
     {
         titles: ["Students", "Aspirants", "Employees"],
-        titleChangeDelay: 3000,
+        titleChangeDelay: 2000,
         mainHeading: "Building Mindsets",
         description:
             "Empowering individuals and organizations with emotional intelligence tools that drive personal growth, enhance performance, and foster meaningful workplace connections",
         image: img1,
     },
     {
-        titles: ["Growths", "Performances", "Success"],
+        titles: ["Growth", "Performance", "Success"],
         titleChangeDelay: 3000,
-        mainHeading: "Transforming individuals & workplaces to enable",
+        mainHeading: "Transforming to enable",
         description:
             "Create a culture of trust and psychological safety where team members feel valued, heard, and empowered to contribute their best work and ideas",
         image: img2,
     },
     {
-        titles: ["Inspires", "Empowers", "Transforms", "Excels"],
-        titleChangeDelay: 3000,
+        titles: ["Inspire", "Empower", "Transform"],
+        titleChangeDelay: 2000,
         mainHeading: "Developing leaders who",
         description:
             "Equip leaders with the emotional intelligence skills needed to navigate challenges, inspire teams, and drive sustainable organizational success in today's complex world",
@@ -97,104 +97,52 @@ const HeroSlide = ({ slideData, index }) => {
                 }}
             >
                 <Box>
-                    {/* First slide: mainHeading then title below */}
-                    {index === 0 ? (
-                        <>
-                            <Typography
-                                className={"Montserrat"}
-                                component="div"
-                                sx={{
-                                    letterSpacing: "-1px",
-                                    fontSize: {
-                                        xs: '1.7rem',
-                                        sm: '1.85rem',
-                                        md: '2rem',
-                                        lg: '2.125rem'
-                                    },
-                                    color: "#012765",
-                                    fontWeight: 700,
-                                    lineHeight: 1.2,
-                                    // mb: { xs: 1, md: 2 },
-                                }}
-                            >
-                                {slideData.mainHeading}
-                            </Typography>
-                            <Box
-                                key={slideData.titles[currentTitleIndex]}
-                                component="div"
-                                className={"Montserrat"}
-                                sx={{
-                                    display: 'inline-block',
-                                    color: "#FE6A00",
-                                    fontWeight: 700,
-                                    fontSize: {
-                                        xs: '1.7rem',
-                                        sm: '1.85rem',
-                                        md: '2rem',
-                                        lg: '2.125rem'
-                                    },
-                                    animation: 'slideUpFade 1s ease',
-                                    '@keyframes slideUpFade': {
-                                        '0%': {
-                                            opacity: 0,
-                                            transform: 'translateY(40%)',
-                                        },
-                                        '100%': {
-                                            opacity: 1,
-                                            transform: 'translateY(0)',
-                                        },
-                                    },
-                                }}
-                            >
-                                {slideData.titles[currentTitleIndex]}
-                            </Box>
-                        </>
-                    ) : (
-                        // Other slides: title inline in main heading
-                        <Typography
+
+
+                    <Typography
+                        className={"Montserrat"}
+                        component="div"
+                        sx={{
+                            letterSpacing: "-1px",
+                            fontSize: {
+                                xs: '1.7rem',
+                                sm: '1.85rem',
+                                md: '2rem',
+                                lg: '2.125rem'
+                            },
+                            color: "#012765",
+                            fontWeight: 700,
+                            lineHeight: 1.2,
+                            mb: { xs: 2, md: 3 },
+                        }}
+                    >
+                        {slideData.mainHeading}&nbsp;
+                        <Box
+                            key={slideData.titles[currentTitleIndex]}
+                            component="span"
                             className={"Montserrat"}
-                            component="div"
                             sx={{
-                                letterSpacing: "-1px",
-                                fontSize: {
-                                    xs: '1.7rem',
-                                    sm: '1.85rem',
-                                    md: '2rem',
-                                    lg: '2.125rem'
-                                },
-                                color: "#012765",
+                                display: 'inline-block',
+                                color: "#FE6A00",
                                 fontWeight: 700,
-                                lineHeight: 1.2,
-                                mb: { xs: 2, md: 3 },
+                                fontSize: 'inherit',
+                                animation: 'slideUpFade 1s ease',
+                                '@keyframes slideUpFade': {
+                                    '0%': {
+                                        opacity: 0,
+                                        transform: 'translateY(40%)',
+                                    },
+                                    '100%': {
+                                        opacity: 1,
+                                        transform: 'translateY(0)',
+                                    },
+                                },
                             }}
                         >
-                            {slideData.mainHeading}&nbsp;
-                            <Box
-                                key={slideData.titles[currentTitleIndex]}
-                                component="span"
-                                className={"Montserrat"}
-                                sx={{
-                                    display: 'inline-block',
-                                    color: "#FE6A00",
-                                    fontWeight: 700,
-                                    fontSize: 'inherit',
-                                    animation: 'slideUpFade 1s ease',
-                                    '@keyframes slideUpFade': {
-                                        '0%': {
-                                            opacity: 0,
-                                            transform: 'translateY(40%)',
-                                        },
-                                        '100%': {
-                                            opacity: 1,
-                                            transform: 'translateY(0)',
-                                        },
-                                    },
-                                }}
-                            >
-                                {slideData.titles[currentTitleIndex]}
-                            </Box>
-                        </Typography>
-                    )}
+                            {slideData.titles[currentTitleIndex]}
+                        </Box>
+                    </Typography>
+
 
                     {/* Description */}
                     <Typography
