@@ -32,12 +32,20 @@ import img3 from '../../assets/images/Home/Struggling/Substance-Abuse-Tel.webp';
 import img4 from '../../assets/images/Home/Struggling/Self-esteemhero.webp';
 import img5 from '../../assets/images/Home/Struggling/Bullying.webp';
 import img6 from '../../assets/images/Home/Struggling/Overthinkinghero.jpg';
+import img7 from '../../assets/images/Home/Struggling/stress.jpg';
+import img8 from '../../assets/images/Home/Struggling/Healthy-Relationships.jpg';
+import img9 from '../../assets/images/Home/Struggling/Signs-Your-Body-is-Releasing-Grief-Trauma.jpg';
+import img10 from '../../assets/images/Home/Struggling/addiction feature.png';
+import img11 from '../../assets/images/Home/Struggling/self-esteem2.jpg';
+import img12 from '../../assets/images/Home/Struggling/Bullying-Prevention.png';
+import img13 from '../../assets/images/Home/Struggling/Overthinking1.jpg';
 
 const strugglingData = {
     "Stress-Anxiety": {
         title: "Understanding and Managing Stress & Anxiety",
         description: "Learn about the causes, symptoms, and effective strategies to manage stress and anxiety in your daily life.",
         image: img,
+        image1: img7,
         icon: <SelfImprovementIcon />,
         solutionIcons: [
             <SpaIcon fontSize="50px"/>,
@@ -74,6 +82,7 @@ const strugglingData = {
         title: "Building Healthy Relationships",
         description: "Discover how to improve communication, build trust, and maintain healthy relationships in your life.",
         image: img1,
+        image1: img8,
         icon: <FavoriteIcon />,
         solutionIcons: [
             <Diversity3Icon fontSize="50px"/>,
@@ -110,6 +119,7 @@ const strugglingData = {
         title: "Healing from Grief and Trauma",
         description: "Find support and guidance in processing loss and traumatic experiences.",
         image: img2,
+        image1: img9,
         icon: <HealingIcon />,
         solutionIcons: [
             <SupportIcon fontSize="50px"/>,
@@ -146,6 +156,7 @@ const strugglingData = {
         title: "Overcoming Addiction",
         description: "Get support in breaking free from harmful patterns and building a healthier life.",
         image: img3,
+        image1: img10,
         icon: <HealthAndSafetyIcon />,
         solutionIcons: [
             <AccessibilityNewIcon fontSize="50px"/>,
@@ -182,6 +193,7 @@ const strugglingData = {
         title: "Building Self-Esteem and Confidence",
         description: "Learn to develop a positive self-image and build lasting confidence.",
         image: img4,
+        image1: img11,
         icon: <SentimentSatisfiedIcon />,
         solutionIcons: [
             <SelfImprovementIcon fontSize="50px"/>,
@@ -218,6 +230,7 @@ const strugglingData = {
         title: "Dealing with Bullying",
         description: "Get support in handling bullying situations and building resilience.",
         image: img5,
+        image1: img12,
         icon: <ThumbUpIcon />,
         solutionIcons: [
             <ChatIcon fontSize="50px"/>,
@@ -254,6 +267,7 @@ const strugglingData = {
         title: "Managing Overthinking",
         description: "Learn to break free from the cycle of excessive thinking and find peace of mind.",
         image: img6,
+        image1: img13,
         icon: <LightbulbIcon />,
         solutionIcons: [
             <PsychologyIcon fontSize="50px"/>,
@@ -454,58 +468,72 @@ const StrugglingDetail = () => {
                                     display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center',
-                                    height: { md: 260, xs: 240 },
+                                    height: { md: 360, xs: 330 },
                                 }}
                             >
                                 {/* Accent color block behind images */}
                                 <Box
                                     sx={{
-                                        width: 220,
-                                        height: 220,
-                                        borderRadius: 4,
-                                        background: secondary,
-                                        position: 'absolute',
-                                        top: 30,
-                                        left: 30,
-                                        zIndex: 0,
-                                        opacity: 0.12,
+                                        position: 'relative',
+                                        width: '100%',
+                                        maxWidth: 400,
+                                        height: 'auto',
+                                        aspectRatio: '1 / 1', // Keep square shape
                                     }}
-                                />
-                                {/* First image */}
-                                <Box
-                                    component="img"
-                                    src={heroPersonImg1}
-                                    alt="Friendly person 1"
-                                    sx={{
-                                        width: 140,
-                                        height: 140,
-                                        borderRadius: 4,
-                                        objectFit: 'cover',
-                                        position: 'absolute',
-                                        left: 0,
-                                        top: 30,
-                                        zIndex: 2,
-                                        boxShadow: '0 4px 24px rgba(1,39,101,0.10)',
-                                    }}
-                                />
-                                {/* Second image, slightly overlapping */}
-                                <Box
-                                    component="img"
-                                    src={heroPersonImg2}
-                                    alt="Friendly person 2"
-                                    sx={{
-                                        width: 120,
-                                        height: 120,
-                                        borderRadius: 4,
-                                        objectFit: 'cover',
-                                        position: 'absolute',
-                                        left: 80,
-                                        top: 80,
-                                        zIndex: 3,
-                                        boxShadow: '0 4px 24px rgba(255,127,30,0.10)',
-                                        border: `4px solid ${softGray}`,
-                                    }}
-                                />
+                                >
+                                    {/* Background box */}
+                                    <Box
+                                        sx={{
+                                            position: 'absolute',
+                                            width: { xs: '70%', sm: 320 },
+                                            height: { xs: '70%', sm: 320 },
+                                            borderRadius: 4,
+                                            background: secondary,
+                                            top: { xs: 20, sm: 30 },
+                                            left: { xs: 20, sm: 30 },
+                                            zIndex: 0,
+                                            opacity: 0.12,
+                                        }}
+                                    />
+
+                                    {/* First image */}
+                                    <Box
+                                        component="img"
+                                        src={heroPersonImg1}
+                                        alt="Friendly person 1"
+                                        sx={{
+                                            position: 'absolute',
+                                            width: { xs: '60%', sm: 240 },
+                                            height: { xs: '60%', sm: 240 },
+                                            borderRadius: 4,
+                                            objectFit: 'cover',
+                                            top: { xs: 20, sm: 30 },
+                                            left: { xs: 0, sm: 0 },
+                                            zIndex: 2,
+                                            boxShadow: '0 4px 24px rgba(1,39,101,0.10)',
+                                        }}
+                                    />
+
+                                    {/* Second image */}
+                                    <Box
+                                        component="img"
+                                        src={heroPersonImg2}
+                                        alt="Friendly person 2"
+                                        sx={{
+                                            position: 'absolute',
+                                            width: { xs: '55%', sm: 220 },
+                                            height: { xs: '55%', sm: 220 },
+                                            borderRadius: 4,
+                                            objectFit: 'cover',
+                                            top: { xs: 60, sm: 80 },
+                                            left: { xs: 50, sm: 80 },
+                                            zIndex: 3,
+                                            boxShadow: '0 4px 24px rgba(255,127,30,0.10)',
+                                            border: `4px solid ${softGray}`,
+                                        }}
+                                    />
+                                </Box>
+
                                 {/* Doodle SVGs */}
                                 <Box sx={{ position: 'absolute', bottom: 10, right: 10, zIndex: 4 }}>{doodleSVG}</Box>
                                 <Box sx={{ position: 'absolute', top: 0, right: 0, zIndex: 4 }}>{heartSVG}</Box>
@@ -602,7 +630,7 @@ const StrugglingDetail = () => {
                                                         width: 30,
                                                         height: 30,
                                                         borderRadius: '50%',
-                                                        display: 'flex',
+                                                        display: {sm:'flex',xs:"none"},
                                                         alignItems: 'center',
                                                         justifyContent: 'center',
                                                         fontWeight: 'bold',
@@ -706,7 +734,7 @@ const StrugglingDetail = () => {
                                 }}
                             >
                                 <Box sx={{ position: 'relative' }}>
-                                    <Box component="img" src={expertImg} alt="Expert" sx={{ width: '100%', height: 180, objectFit: 'cover' }} />
+                                    <Box component="img" src={data.image1} alt="Expert" sx={{ width: '100%', height: 350, objectFit: 'cover' }} />
                                     <Box
                                         sx={{
                                             position: 'absolute',
