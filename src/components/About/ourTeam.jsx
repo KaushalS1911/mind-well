@@ -5,6 +5,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import img1 from '../../assets/images/about/Founder/Fatima Lobo.png';
 import img2 from '../../assets/images/about/Founder/chaman_kumar.jpeg';
 import img3 from '../../assets/images/about/Founder/paurush_sharma.png';
+import {LinkedIn} from "@mui/icons-material";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
@@ -85,7 +86,6 @@ const Description = styled(Typography)(() => ({
     color: '#4B5563',
     fontSize: '14px',
     lineHeight: 1.5,
-    marginBottom: '16px',
     fontFamily: 'Poppins, sans-serif',
     flex: 1,
     textAlign: 'center',
@@ -98,6 +98,7 @@ const founders = [
         name: 'Fatima Lobo',
         description:
             'Masters in Psychology, PGD In Therapeutic Counselling and a Certified NLP Practitioner with over 15 Years of experience.',
+        link: "https://www.linkedin.com/in/fatima-lobo-89a442332/"
     },
     {
         image: img2,
@@ -105,12 +106,14 @@ const founders = [
         name: 'Chaman Kumar',
         description:
             'A visionary with a successful 25-year corporate career. Worked in Banks and NBFC institutions in sales & Business Development',
+        link: "https://www.linkedin.com/in/chaman-kumar-b3aa8528/",
     },
     {
         image: img3,
         role: 'IT lead',
         name: 'Paurush Sharma',
         description: 'IT Head with 10 years of experience driving product development across multiple startups, delivering impactful tech solutions. Passion and zeal for building innovative, user-focused products',
+        link: "#",
     },
 ];
 
@@ -177,6 +180,32 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
                                 <Role>{founder.role}</Role>
                                 <Name>{founder.name}</Name>
                                 <Description>{founder.description}</Description>
+                                {founder.link && (
+                                    <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+                                        <Box
+                                            component="a"
+                                            href={founder.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            sx={{
+                                                width: 48,
+                                                height: 48,
+                                                borderRadius: '50%',
+                                                backgroundColor: '#002D62',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                transition: '0.3s',
+                                                color: 'white',
+                                                '&:hover': {
+                                                    backgroundColor: '#001f44',
+                                                },
+                                            }}
+                                        >
+                                            <LinkedIn sx={{ fontSize: 28 }} />
+                                        </Box>
+                                    </Box>
+                                )}
                             </StyledPaper>
                         </Grid>
                     ))}
