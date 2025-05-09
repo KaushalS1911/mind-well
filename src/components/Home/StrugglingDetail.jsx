@@ -40,11 +40,11 @@ const strugglingData = {
         image: img,
         icon: <SelfImprovementIcon />,
         solutionIcons: [
-            <SpaIcon />,
-            <LightbulbIcon />,
-            <HeadphonesIcon />,
-            <FitnessCenterIcon />,
-            <BalanceIcon />
+            <SpaIcon fontSize="50px"/>,
+            <LightbulbIcon fontSize="50px"/>,
+            <HeadphonesIcon fontSize="50px"/>,
+            <FitnessCenterIcon fontSize="50px"/>,
+            <BalanceIcon fontSize="50px" />
         ],
         causes: [
             "Work or academic pressure",
@@ -76,11 +76,11 @@ const strugglingData = {
         image: img1,
         icon: <FavoriteIcon />,
         solutionIcons: [
-            <Diversity3Icon />,
-            <ChatIcon />,
-            <PeopleIcon />,
-            <VolunteerActivismIcon />,
-            <SentimentSatisfiedIcon />
+            <Diversity3Icon fontSize="50px"/>,
+            <ChatIcon fontSize="50px"/>,
+            <PeopleIcon fontSize="50px"/>,
+            <VolunteerActivismIcon fontSize="50px"/>,
+            <SentimentSatisfiedIcon fontSize="50px"/>
         ],
         causes: [
             "Communication breakdown",
@@ -112,11 +112,11 @@ const strugglingData = {
         image: img2,
         icon: <HealingIcon />,
         solutionIcons: [
-            <SupportIcon />,
-            <GroupIcon />,
-            <Groups2Icon />,
-            <PsychologyIcon />,
-            <MenuBookIcon />
+            <SupportIcon fontSize="50px"/>,
+            <GroupIcon fontSize="50px"/>,
+            <Groups2Icon fontSize="50px"/>,
+            <PsychologyIcon fontSize="50px"/>,
+            <MenuBookIcon fontSize="50px"/>
         ],
         causes: [
             "Loss of a loved one",
@@ -148,11 +148,11 @@ const strugglingData = {
         image: img3,
         icon: <HealthAndSafetyIcon />,
         solutionIcons: [
-            <AccessibilityNewIcon />,
-            <ThumbUpIcon />,
-            <VideoLibraryIcon />,
-            <FavoriteIcon />,
-            <LightbulbIcon />
+            <AccessibilityNewIcon fontSize="50px"/>,
+            <ThumbUpIcon fontSize="50px"/>,
+            <VideoLibraryIcon fontSize="50px"/>,
+            <FavoriteIcon fontSize="50px"/>,
+            <LightbulbIcon fontSize="50px"/>
         ],
         causes: [
             "Genetic predisposition",
@@ -184,11 +184,11 @@ const strugglingData = {
         image: img4,
         icon: <SentimentSatisfiedIcon />,
         solutionIcons: [
-            <SelfImprovementIcon />,
-            <SpaIcon />,
-            <BalanceIcon />,
-            <HeadphonesIcon />,
-            <VolunteerActivismIcon />
+            <SelfImprovementIcon fontSize="50px"/>,
+            <SpaIcon fontSize="50px"/>,
+            <BalanceIcon fontSize="50px"/>,
+            <HeadphonesIcon fontSize="50px"/>,
+            <VolunteerActivismIcon fontSize="50px"/>
         ],
         causes: [
             "Negative self-talk",
@@ -220,11 +220,11 @@ const strugglingData = {
         image: img5,
         icon: <ThumbUpIcon />,
         solutionIcons: [
-            <ChatIcon />,
-            <MenuBookIcon />,
-            <PeopleIcon />,
-            <SupportIcon />,
-            <HealthAndSafetyIcon />
+            <ChatIcon fontSize="50px"/>,
+            <MenuBookIcon fontSize="50px"/>,
+            <PeopleIcon fontSize="50px"/>,
+            <SupportIcon fontSize="50px"/>,
+            <HealthAndSafetyIcon fontSize="50px"/>
         ],
         causes: [
             "Power imbalance",
@@ -256,11 +256,11 @@ const strugglingData = {
         image: img6,
         icon: <LightbulbIcon />,
         solutionIcons: [
-            <PsychologyIcon />,
-            <FitnessCenterIcon />,
-            <ManageHistoryIcon />,
-            <Diversity3Icon />,
-            <SpaIcon />
+            <PsychologyIcon fontSize="50px"/>,
+            <FitnessCenterIcon fontSize="50px"/>,
+            <ManageHistoryIcon fontSize="50px"/>,
+            <Diversity3Icon fontSize="50px"/>,
+            <SpaIcon fontSize="50px"/>
         ],
         causes: [
             "Anxiety",
