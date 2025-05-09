@@ -72,7 +72,7 @@ const HeroSlide = ({ slideData, index }) => {
             setCurrentTitleIndex((prev) =>
                 prev < slideData.titles.length - 1 ? prev + 1 : 0
             );
-        }, slideData.titleChangeDelay * 4);
+        }, slideData.titleChangeDelay);
 
         return () => clearInterval(interval);
     }, [slideData.titles.length, slideData.titleChangeDelay]);
@@ -287,7 +287,7 @@ function WorkPlaceHeroSection() {
                     slidesPerView={1}
                     pagination={{ clickable: true }}
                     autoplay={{
-                        delay: 5000,
+                        delay: 18000,
                         disableOnInteraction: false,
                     }}
                     onSwiper={setSwiperInstance}
