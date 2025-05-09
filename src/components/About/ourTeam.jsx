@@ -3,7 +3,7 @@ import { Box, Container, Grid, Paper, Typography, Avatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
 import img1 from '../../assets/images/about/Founder/Fatima Lobo.png';
-import img2 from '../../assets/images/about/Founder/Chaman Kumar.png';
+import img2 from '../../assets/images/about/Founder/chaman_kumar.jpeg';
 import img3 from '../../assets/images/about/Founder/paurush_sharma.png';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
@@ -110,7 +110,7 @@ const founders = [
         image: img3,
         role: 'IT lead',
         name: 'Paurush Sharma',
-        // description: 'NLP Therapist, CBT, REBT, Counselor',
+        description: 'IT Head with 10 years of experience driving product development across multiple startups, delivering impactful tech solutions. Passion and zeal for building innovative, user-focused products',
     },
 ];
 
@@ -135,7 +135,7 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
                         mb: 2,
                     }}
                 >
-                    Our team
+                    Founding Members
                 </Typography>
                 <Typography
                     sx={{

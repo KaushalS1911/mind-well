@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, useTheme, useMediaQuery } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import img1 from '../../assets/images/about/Founder/Chaman Kumar.png';
+import img1 from '../../assets/images/about/Founder/founders.jpeg';
 
 const Section = styled(Box)(({ theme }) => ({
     padding: '60px 0',
@@ -112,50 +112,46 @@ const FoundersMessage = () => {
                         fontWeight: "700",
                         textAlign: "center",
                         mb:5
-                    }}>Director Sales</Box>
+                    }}>Founder's Note</Box>
                 <MainContent>
                     <ImageSection>
                         <img src={img1} alt="Chaman Kumar" />
                     </ImageSection>
                     <TextSection>
-                        <Quote>
-                            "Empowering Mindsets, Shaping Futures – Your Role in Building a Productive Nation"
-                        </Quote>
+                        {/*<Quote>*/}
+                        {/*    "Empowering Mindsets, Shaping Futures – Your Role in Building a Productive Nation"*/}
+                        {/*</Quote>*/}
                         <Text>Dear Team,</Text>
                         <Text>
-                            As sales professionals and brand ambassadors of "Emotionally Yours" and our flagship
-                            offerings – SHAPE, SHAPE+, and ESOP – you hold the key to unlocking a powerful
-                            transformation in the minds of today's students and workforce to build a positive
-                            mindset to help nations in the journey of a "developed nation".
+                            At Emotionally Yours, we began our journey with a core belief: Emotional Wellness is not a luxury, it’s the foundation for personal, academic and professional success. I a world that is constantly accelerating, where academic pressure weighs heavy on young minds and workplace stress silently drains potential, we felt the need to intervene meaningfully and mindfully.
                         </Text>
                         <Text>
-                            These programs aren't just products; they are purpose-driven solutions designed to
-                            address the core emotional and psychological needs that drive individuals'
-                            productivity, performance, and purpose.
+                            The SHAPE and ESOP programs were born out of lived experiences, research and countless conversations with students, teachers, professionals and leaders across sectors.
+
                         </Text>
                         <Text>
-                            SHAPE helps students build self-awareness, emotional resilience, and growth-oriented
-                            habits.
+                            Through SHAPE (Student’s Health Assessment & Performance Evaluation), we aim to empower academic institutions with structured emotional wellness support on a reinforcement model. This is not just about stress relief or motivation; it’s about equipping the students and the ecosystem around them with tools to manage academic pressure, enhance focus, tke informed career choices and foster meaning relationships.
+
                         </Text>
                         <Text>
-                            SHAPE+ strengthens aspirants and young adults in their transitional phases, instilling
-                            confidence, clarity, and emotional agility.
+                            Our ESOP (Employee’s Self Ownership Program) was designed with similar philosophy, adapted to workplace. Organisations thrive when people do and yet, burnout, stagnation and disengagement are alarmingly common. ESOP does not offer a One-Size-Fits-ALL training; it identifies where each employee stands on the performance and engagement spectrum and offered targeted and human centric solutions, whether through Self-Assessments, Psychometric Tests, On-on-One Counselling or interactive workshops under leadership taskforces.
+
                         </Text>
                         <Text>
-                            ESOP supports organizations by cultivating a wellness-first, emotionally intelligent
-                            workforce ready to thrive in demanding business environments.
+                            As we continue to scale SHAPE and ESOP across geographies and sectors, our mission remains clear: to make emotional wellness a part of everyday language and leadership. Because when people feel well, they perform well. And when they perform well, they build a future that’s not just successful, but meaningful.
+
                         </Text>
-                        <Text>
-                            Through your outreach efforts, you're not just selling a program – you're contributing
-                            to a national mission: building a stronger, more productive future by nurturing
-                            healthier mindsets from school to the workplace.
-                        </Text>
-                        <Text>Let's lead with empathy, insight, and conviction. The change begins with you.</Text>
-                        <Text>Warm Regards,</Text>
-                        <Signature>
-                            <Name>Chaman Kumar</Name>
-                            <Role>Director and Chief Sales Officer</Role>
-                        </Signature>
+                        <Text>Emotionally Yours</Text>
+                        <Box sx={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                            <Signature>
+                                <Name>Pandey Nidhi</Name>
+                                <Role>Founder & Director</Role>
+                            </Signature>
+                            <Signature>
+                                <Name>Devesh Tripathi</Name>
+                                <Role>Founder & CBO</Role>
+                            </Signature>
+                        </Box>
                     </TextSection>
                 </MainContent>
             </Container>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Grid, Paper, Typography, Avatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
-import img1 from '../../assets/images/about/Founder/Pandey Nidhi .png';
+import img1 from '../../assets/images/about/Founder/Pandey Nidhi.png';
 import img2 from '../../assets/images/about/Founder/Devesh Kumar.png';
 import img3 from '../../assets/images/about/Founder/Ashutosh_Mishra.png';
 import img4 from '../../assets/images/about/Founder/Fatima Lobo.png';
@@ -248,7 +248,7 @@ const Founders = () => (
                      color: "#012765",
                      fontWeight: "700",
                      textAlign: "center",
-                 }}>Founding members</Box>
+                 }}>Founders</Box>
             <SubTitle sx={{
                 fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
             }}>

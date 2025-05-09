@@ -8,6 +8,8 @@ import img3 from '../../assets/images/about/Psychologists/Vedanshi Gupta.png'
 import img4 from '../../assets/images/about/Psychologists/Anjali Sinha.png'
 import img5 from '../../assets/images/about/Psychologists/Aishwarya Saxena.png'
 import img6 from '../../assets/images/about/Psychologists/Pratibha Kotak.png'
+import img7 from '../../assets/images/about/Psychologists/Liza Hazarika.png'
+import img8 from '../../assets/images/about/Psychologists/Anju Sinha.png'
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(3),
@@ -95,18 +97,43 @@ const Description = styled(Typography)(() => ({
 }));
 
 const founders = [
+
     {
-        img: img1,
-        role: "Wellness Consultant",
-        name: "Pratibha Sanganeria",
-        skills: "Client centered therapy, DBT, movement therapy (currently upskilling), Workshop facilitation",
+        img: img4,
+        role: "Psychologist / Sp. Educator",
+        name: "Anjali Sinha",
+        skills: "Eclectic approach, CBT, Special Educator & Speec",
+    },
+    {
+        img: img7,
+        role: "Psychologist",
+        name: "Liza Hazarika",
+        skills: "Certified Queer Affirmative, Spiritual Therapist",
+    },
+    {
+        img: img8,
+        role: "Psychotherapist",
+        name: "Anju Sinha",
+        skills: "CBT, REBT, Rehab Counselling",
     },
     {
         img: img2,
-        role: "Psychologist",
+        role: "Psychologist / Soft Skills",
         name: "Anshita Raghav",
         skills: "Workplace Psychology, Training, Counselling",
 
+    },
+    {
+        img: img6,
+        role: "Psychologist",
+        name: "Pratibha Kotak",
+        skills: "Couple Counselling, Rehabilitation, REBT",
+    },
+    {
+        img: img1,
+        role: "Psychologist",
+        name: "Pratibha Sanganeria",
+        skills: "Client centered therapy, DBT, movement therapy (currently upskilling), Workshop facilitation",
     },
     {
         img: img3,
@@ -115,29 +142,15 @@ const founders = [
         skills: "Person Centred Therapy, CBT, ACT and Gestalt, School Counselor",
     },
     {
-        img: img4,
-        role: "Wellness Consultant",
-        name: "Anjali Sinha",
-        skills: "Eclectic approach, CBT, Special Educator & Speec",
-    },
-    {
         img: img5,
-        role: "Wellness Consultant",
+        role: "Psychologist ",
         name: "Aishwarya Saxena",
-        skills: "CBT and Behaviour Modif, Mindfulness, School Counselor",
+        skills: "CBT, Mindfulness, School Counselor",
 
     },
-    // {
-    //     role: "Wellness Consultant",
-    //     name: "Fatima Lobo",
-    //     skills: "NLP Therapist, CBT, REBT, Counselor",
-    // },
-    {
-        img: img6,
-        role: "Counselling Psychologist",
-        name: "Pratibha Kotak",
-        skills: "Couple Counselling, Rehabilitation, REBT",
-    },
+
+
+
 ];
 
 const Psychologist = ({ icon = <PersonIcon /> }) => {
