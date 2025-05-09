@@ -40,7 +40,7 @@ function Home() {
             <WorkPlaceHeroSection/>
             {/*<Herosection/>*/}
             <Overview/>
-            <WellbeingJourney/>
+            {/*<WellbeingJourney/>*/}
             <WorksTable/>
             <WhyChooseUs/>
             <MileStones/>
