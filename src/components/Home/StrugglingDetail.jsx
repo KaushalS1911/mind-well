@@ -425,7 +425,6 @@ const StrugglingDetail = () => {
                     </Button>
 
                     <Grid container spacing={4} alignItems="center" sx={{ mb: { xs: 6, md: 0,lg:10 } }}>
-                        {/* Image Section */}
                         <Grid item xs={12} md={5.5}>
                             <Box
                                 sx={{
@@ -445,7 +444,6 @@ const StrugglingDetail = () => {
                                         aspectRatio: '1 / 1',
                                     }}
                                 >
-                                    {/* Background Shape */}
                                     <Box
                                         sx={{
                                             position: 'absolute',
@@ -459,7 +457,6 @@ const StrugglingDetail = () => {
                                             opacity: 0.2,
                                         }}
                                     />
-                                    {/* Foreground Image */}
                                     <Box
                                         component="img"
                                         src={data.firstimage}
@@ -480,7 +477,6 @@ const StrugglingDetail = () => {
                             </Box>
                         </Grid>
 
-                        {/* Text Section */}
                         <Grid item xs={12} md={6.5}>
                             <Box sx={{ position: 'relative', px: { xs: 1, sm: 2, md: 4 } ,mt:{xs:5,md:0}}}>
                                 <Typography
@@ -502,9 +498,8 @@ const StrugglingDetail = () => {
                                     {data.title}
                                 </Typography>
 
-                                {/* SVG Decorations */}
                                 <Box sx={{ position: 'absolute', top: -30, left: -40, zIndex: 1 }}>{doodleSVG}</Box>
-                                <Box sx={{ position: 'absolute', top: 60, left: 80, zIndex: 1 }}>{heartSVG}</Box>
+                                {/*<Box sx={{ position: 'absolute', top: 60, left: 80, zIndex: 1 }}>{heartSVG}</Box>*/}
 
                                 <Typography
                                     sx={{
@@ -535,7 +530,6 @@ const StrugglingDetail = () => {
                                     Book a Counsellor
                                 </Button>
 
-                                {/* Decorative SVGs - hidden on XS */}
                                 <Box
                                     sx={{
                                         position: 'absolute',
