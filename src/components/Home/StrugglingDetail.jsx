@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Paper, Button, Divider } from '@mui/material';
-import { useParams, useNavigate } from 'react-router-dom';
+import {Box, Container, Typography, Grid, Paper, Button, Divider} from '@mui/material';
+import {useParams, useNavigate} from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SupportIcon from '@mui/icons-material/Support';
 import PsychologyIcon from '@mui/icons-material/Psychology';
@@ -39,6 +39,13 @@ import img10 from '../../assets/images/Home/Struggling/addiction feature.png';
 import img11 from '../../assets/images/Home/Struggling/self-esteem2.jpg';
 import img12 from '../../assets/images/Home/Struggling/Bullying-Prevention.png';
 import img13 from '../../assets/images/Home/Struggling/Overthinking1.jpg';
+import img14 from '../../assets/images/Home/Struggling/stresstime.webp';
+import img15 from '../../assets/images/Home/Struggling/Relationshiptime.png';
+import img16 from '../../assets/images/Home/Struggling/Grief-Traumatime.jpg';
+import img17 from '../../assets/images/Home/Struggling/Addictiontime.jpg';
+import img18 from '../../assets/images/Home/Struggling/Self-esteemtime.jpg';
+import img19 from '../../assets/images/Home/Struggling/bullingtime.jpg';
+import img20 from '../../assets/images/Home/Struggling/Overthinkingtime.jpg';
 
 const strugglingData = {
     "Stress-Anxiety": {
@@ -46,13 +53,14 @@ const strugglingData = {
         description: "Learn about the causes, symptoms, and effective strategies to manage stress and anxiety in your daily life.",
         image: img,
         image1: img7,
-        icon: <SelfImprovementIcon />,
+        firstimage: img14,
+        icon: <SelfImprovementIcon/>,
         solutionIcons: [
             <SpaIcon fontSize="50px"/>,
             <LightbulbIcon fontSize="50px"/>,
             <HeadphonesIcon fontSize="50px"/>,
             <FitnessCenterIcon fontSize="50px"/>,
-            <BalanceIcon fontSize="50px" />
+            <BalanceIcon fontSize="50px"/>
         ],
         causes: [
             "Work or academic pressure",
@@ -83,7 +91,8 @@ const strugglingData = {
         description: "Discover how to improve communication, build trust, and maintain healthy relationships in your life.",
         image: img1,
         image1: img8,
-        icon: <FavoriteIcon />,
+        firstimage: img15,
+        icon: <FavoriteIcon/>,
         solutionIcons: [
             <Diversity3Icon fontSize="50px"/>,
             <ChatIcon fontSize="50px"/>,
@@ -120,7 +129,8 @@ const strugglingData = {
         description: "Find support and guidance in processing loss and traumatic experiences.",
         image: img2,
         image1: img9,
-        icon: <HealingIcon />,
+        firstimage: img16,
+        icon: <HealingIcon/>,
         solutionIcons: [
             <SupportIcon fontSize="50px"/>,
             <GroupIcon fontSize="50px"/>,
@@ -157,7 +167,8 @@ const strugglingData = {
         description: "Get support in breaking free from harmful patterns and building a healthier life.",
         image: img3,
         image1: img10,
-        icon: <HealthAndSafetyIcon />,
+        firstimage: img17,
+        icon: <HealthAndSafetyIcon/>,
         solutionIcons: [
             <AccessibilityNewIcon fontSize="50px"/>,
             <ThumbUpIcon fontSize="50px"/>,
@@ -194,7 +205,8 @@ const strugglingData = {
         description: "Learn to develop a positive self-image and build lasting confidence.",
         image: img4,
         image1: img11,
-        icon: <SentimentSatisfiedIcon />,
+        firstimage: img18,
+        icon: <SentimentSatisfiedIcon/>,
         solutionIcons: [
             <SelfImprovementIcon fontSize="50px"/>,
             <SpaIcon fontSize="50px"/>,
@@ -231,7 +243,8 @@ const strugglingData = {
         description: "Get support in handling bullying situations and building resilience.",
         image: img5,
         image1: img12,
-        icon: <ThumbUpIcon />,
+        firstimage: img19,
+        icon: <ThumbUpIcon/>,
         solutionIcons: [
             <ChatIcon fontSize="50px"/>,
             <MenuBookIcon fontSize="50px"/>,
@@ -268,7 +281,8 @@ const strugglingData = {
         description: "Learn to break free from the cycle of excessive thinking and find peace of mind.",
         image: img6,
         image1: img13,
-        icon: <LightbulbIcon />,
+        firstimage: img20,
+        icon: <LightbulbIcon/>,
         solutionIcons: [
             <PsychologyIcon fontSize="50px"/>,
             <FitnessCenterIcon fontSize="50px"/>,
@@ -311,7 +325,7 @@ const textBody = '#4B5563';
 
 const doodleSVG = (
     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="30" cy="30" r="28" stroke={secondary} strokeWidth="2" strokeDasharray="6 6" />
+        <circle cx="30" cy="30" r="28" stroke={secondary} strokeWidth="2" strokeDasharray="6 6"/>
     </svg>
 );
 
@@ -327,34 +341,32 @@ const heartSVG = (
 );
 
 const StrugglingDetail = () => {
-    const { topic } = useParams();
+    const {topic} = useParams();
     const navigate = useNavigate();
     const data = strugglingData[topic];
 
     if (!data) {
         return (
-            <Container maxWidth="xl" sx={{ py: 8 }}>
+            <Container maxWidth="xl" sx={{py: 8}}>
                 <Typography variant="h4" color="error">
                     Topic not found
                 </Typography>
-                <Button onClick={() => navigate(-1)} startIcon={<ArrowBackIcon />}>
+                <Button onClick={() => navigate(-1)} startIcon={<ArrowBackIcon/>}>
                     Go Back
                 </Button>
             </Container>
         );
     }
 
-    // Example Unsplash images for hero
     const heroPersonImg1 = 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=400&q=80';
     const heroPersonImg2 = 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=facearea&w=400&q=80';
-    // Example Unsplash image for sidebar expert
     const expertImg = 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=400&q=80';
 
     return (
         <>
             <Box
                 sx={{
-                    py: { xs: 8, sm: 10, md: 22 },
+                    py: {xs: 8, sm: 10, md: 22},
                     position: 'relative',
                     backgroundImage: `url(${data.image})`,
                     backgroundSize: 'cover',
@@ -374,11 +386,11 @@ const StrugglingDetail = () => {
                         zIndex: 1,
                     }}
                 />
-                <Container sx={{ position: 'relative', zIndex: 2 }}>
+                <Container sx={{position: 'relative', zIndex: 2}}>
                     <Typography
                         className={'Montserrat'}
                         sx={{
-                            fontSize: { xs: '1.7rem', sm: '2rem', md: '2.25rem' },
+                            fontSize: {xs: '1.7rem', sm: '2rem', md: '2.25rem'},
                             fontWeight: '700',
                             color: secondary,
                             mt: 8,
@@ -387,17 +399,17 @@ const StrugglingDetail = () => {
                     >
                         {topic}
                     </Typography>
-                    <Divider sx={{ backgroundColor: secondary, height: 4, width: 100, margin: 'auto', my: 3 }} />
-                    <Typography variant="h6" sx={{ color: '#fff', fontWeight: 400 }}>
+                    <Divider sx={{backgroundColor: secondary, height: 4, width: 100, margin: 'auto', my: 3}}/>
+                    <Typography variant="h6" sx={{color: '#fff', fontWeight: 400}}>
                         {data.description}
                     </Typography>
                 </Container>
             </Box>
-            <Box sx={{ minHeight: '100vh', pt: 10, mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' } }}>
+            <Box sx={{minHeight: '100vh', pt: 10, mx: {xs: '20px', sm: '70px', md: '90px', xl: '100px'}}}>
                 <Container maxWidth="xl">
                     <Button
                         onClick={() => navigate(-1)}
-                        startIcon={<ArrowBackIcon />}
+                        startIcon={<ArrowBackIcon/>}
                         sx={{
                             mb: 4,
                             color: primary,
@@ -412,10 +424,65 @@ const StrugglingDetail = () => {
                         Back to Struggling Topics
                     </Button>
 
-                    {/* Hero Section with Two Person Images and Doodles */}
-                    <Grid container spacing={4} alignItems="center" sx={{ mb: 6 }}>
-                        <Grid item xs={12} md={7}>
-                            <Box sx={{ position: 'relative', pl: { md: 6, xs: 0 } }}>
+                    <Grid container spacing={4} alignItems="center" sx={{ mb: { xs: 6, md: 0,lg:10 } }}>
+                        {/* Image Section */}
+                        <Grid item xs={12} md={5.5}>
+                            <Box
+                                sx={{
+                                    position: 'relative',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    height: '100%',
+                                    minHeight: { xs: 300, sm: 380, md: 440 },
+                                }}
+                            >
+                                <Box
+                                    sx={{
+                                        position: 'relative',
+                                        width: '100%',
+                                        maxWidth: 450,
+                                        aspectRatio: '1 / 1',
+                                    }}
+                                >
+                                    {/* Background Shape */}
+                                    <Box
+                                        sx={{
+                                            position: 'absolute',
+                                            width: '100%',
+                                            height: '100%',
+                                            borderRadius: 4,
+                                            background: secondary,
+                                            top: '5%',
+                                            left: { xs: '5%', sm: '10%' },
+                                            zIndex: 0,
+                                            opacity: 0.2,
+                                        }}
+                                    />
+                                    {/* Foreground Image */}
+                                    <Box
+                                        component="img"
+                                        src={data.firstimage}
+                                        alt={data.title}
+                                        sx={{
+                                            position: 'absolute',
+                                            width: '100%',
+                                            height: '100%',
+                                            borderRadius: 4,
+                                            objectFit: 'cover',
+                                            top: 0,
+                                            left: 0,
+                                            zIndex: 2,
+                                            boxShadow: '0 4px 24px rgba(1,39,101,0.10)',
+                                        }}
+                                    />
+                                </Box>
+                            </Box>
+                        </Grid>
+
+                        {/* Text Section */}
+                        <Grid item xs={12} md={6.5}>
+                            <Box sx={{ position: 'relative', px: { xs: 1, sm: 2, md: 4 } ,mt:{xs:5,md:0}}}>
                                 <Typography
                                     className={'Montserrat'}
                                     variant="h2"
@@ -432,16 +499,24 @@ const StrugglingDetail = () => {
                                         lineHeight: 1.1,
                                     }}
                                 >
-                                    Embrace Your Mental Well-being
-                                    <br />- You Are Not Alone.
+                                    {data.title}
                                 </Typography>
+
+                                {/* SVG Decorations */}
                                 <Box sx={{ position: 'absolute', top: -30, left: -40, zIndex: 1 }}>{doodleSVG}</Box>
                                 <Box sx={{ position: 'absolute', top: 60, left: 80, zIndex: 1 }}>{heartSVG}</Box>
-                                <Typography sx={{ color: textBody, mb: 3, maxWidth: 500, fontFamily: 'Arial' }}>
-                                    Welcome to SereneMinds, a sanctuary for mental well-being and personal growth. We understand that life's
-                                    journey can be challenging, and at times, it may feel overwhelming. But remember: you are not alone in
-                                    this path. Together, we can cultivate inner strength, resilience, and happiness.
+
+                                <Typography
+                                    sx={{
+                                        color: textBody,
+                                        mb: 3,
+                                        maxWidth: 500,
+                                        fontFamily: 'Arial',
+                                    }}
+                                >
+                                    {data.motivation}
                                 </Typography>
+
                                 <Button
                                     variant="contained"
                                     sx={{
@@ -459,92 +534,37 @@ const StrugglingDetail = () => {
                                 >
                                     Book a Counsellor
                                 </Button>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} md={5}>
-                            <Box
-                                sx={{
-                                    position: 'relative',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    height: { md: 360, xs: 330 },
-                                }}
-                            >
-                                {/* Accent color block behind images */}
+
+                                {/* Decorative SVGs - hidden on XS */}
                                 <Box
                                     sx={{
-                                        position: 'relative',
-                                        width: '100%',
-                                        maxWidth: 400,
-                                        height: 'auto',
-                                        aspectRatio: '1 / 1', // Keep square shape
+                                        position: 'absolute',
+                                        bottom: 10,
+                                        right: 10,
+                                        zIndex: 4,
+                                        display: { xs: 'none', sm: 'block' },
                                     }}
                                 >
-                                    {/* Background box */}
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            width: { xs: '70%', sm: 320 },
-                                            height: { xs: '70%', sm: 320 },
-                                            borderRadius: 4,
-                                            background: secondary,
-                                            top: { xs: 20, sm: 30 },
-                                            left: { xs: 20, sm: 30 },
-                                            zIndex: 0,
-                                            opacity: 0.12,
-                                        }}
-                                    />
-
-                                    {/* First image */}
-                                    <Box
-                                        component="img"
-                                        src={heroPersonImg1}
-                                        alt="Friendly person 1"
-                                        sx={{
-                                            position: 'absolute',
-                                            width: { xs: '60%', sm: 240 },
-                                            height: { xs: '60%', sm: 240 },
-                                            borderRadius: 4,
-                                            objectFit: 'cover',
-                                            top: { xs: 20, sm: 30 },
-                                            left: { xs: 0, sm: 0 },
-                                            zIndex: 2,
-                                            boxShadow: '0 4px 24px rgba(1,39,101,0.10)',
-                                        }}
-                                    />
-
-                                    {/* Second image */}
-                                    <Box
-                                        component="img"
-                                        src={heroPersonImg2}
-                                        alt="Friendly person 2"
-                                        sx={{
-                                            position: 'absolute',
-                                            width: { xs: '55%', sm: 220 },
-                                            height: { xs: '55%', sm: 220 },
-                                            borderRadius: 4,
-                                            objectFit: 'cover',
-                                            top: { xs: 60, sm: 80 },
-                                            left: { xs: 50, sm: 80 },
-                                            zIndex: 3,
-                                            boxShadow: '0 4px 24px rgba(255,127,30,0.10)',
-                                            border: `4px solid ${softGray}`,
-                                        }}
-                                    />
+                                    {doodleSVG}
                                 </Box>
-
-                                {/* Doodle SVGs */}
-                                <Box sx={{ position: 'absolute', bottom: 10, right: 10, zIndex: 4 }}>{doodleSVG}</Box>
-                                <Box sx={{ position: 'absolute', top: 0, right: 0, zIndex: 4 }}>{heartSVG}</Box>
+                                <Box
+                                    sx={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        right: 0,
+                                        zIndex: 4,
+                                        display: { xs: 'none', sm: 'block' },
+                                    }}
+                                >
+                                    {heartSVG}
+                                </Box>
                             </Box>
                         </Grid>
                     </Grid>
 
+
                     <Grid container spacing={4}>
-                        {/* Main Content */}
                         <Grid item xs={12} lg={8}>
-                            {/* Understanding Section */}
                             <Paper
                                 elevation={3}
                                 sx={{
@@ -555,20 +575,25 @@ const StrugglingDetail = () => {
                                     mb: 4,
                                 }}
                             >
-                                <Box sx={{ backgroundColor: primary, color: 'white', p: 3, borderRadius: 2, mb: 3 }}>
-                                    <Typography variant="h5" className="Montserrat" sx={{ fontWeight: 700 }}>
+                                <Box sx={{backgroundColor: primary, color: 'white', p: 3, borderRadius: 2, mb: 3}}>
+                                    <Typography variant="h5" className="Montserrat" sx={{fontWeight: 700}}>
                                         Understanding {topic}
                                     </Typography>
                                 </Box>
-                                <Typography variant="h6" sx={{ color: textMain, mb: 2, fontFamily: 'Montserrat' }}>
+
+                                <Typography variant="h6" sx={{color: textMain, mb: 2, fontFamily: 'Montserrat'}}>
                                     What you're experiencing is normal
                                 </Typography>
-                                <Typography sx={{ color: textBody, mb: 3, fontFamily: 'Arial' }}>{data.description}</Typography>
-                                {/* Quick Help Section */}
-                                <Box sx={{ backgroundColor: lightOrange, p: 3, borderRadius: 2, mb: 4 }}>
-                                    <Typography variant="h6" sx={{ color: textMain, mb: 2, fontWeight: '600' }}>
+
+                                <Typography
+                                    sx={{color: textBody, mb: 3, fontFamily: 'Arial'}}>{data.description}
+                                </Typography>
+
+                                <Box sx={{backgroundColor: lightOrange, p: 3, borderRadius: 2, mb: 4}}>
+                                    <Typography variant="h6" sx={{color: textMain, mb: 2, fontWeight: '600'}}>
                                         Quick Relief Strategies
                                     </Typography>
+
                                     <Grid container spacing={2}>
                                         {data.solutions.slice(0, 5).map((solution, index) => (
                                             <Grid item xs={12} sm={6} key={index}>
@@ -585,10 +610,14 @@ const StrugglingDetail = () => {
                                                         },
                                                     }}
                                                 >
-                                                    <Box sx={{ color: secondary, fontSize: 30, mb: 1 }}>{data.solutionIcons[index]}</Box>
+                                                    <Box sx={{
+                                                        color: secondary,
+                                                        fontSize: 30,
+                                                        mb: 1
+                                                    }}>{data.solutionIcons[index]}</Box>
                                                     <Typography
                                                         variant="subtitle1"
-                                                        sx={{ fontWeight: 600, color: primary, fontFamily: 'Montserrat' }}
+                                                        sx={{fontWeight: 600, color: primary, fontFamily: 'Montserrat'}}
                                                     >
                                                         {solution}
                                                     </Typography>
@@ -597,10 +626,10 @@ const StrugglingDetail = () => {
                                         ))}
                                     </Grid>
                                 </Box>
-                                {/* Techniques Section */}
+
                                 <Typography
                                     variant="h6"
-                                    sx={{ color: textMain, mb: 3, fontWeight: '600', fontFamily: 'Montserrat' }}
+                                    sx={{color: textMain, mb: 3, fontWeight: '600', fontFamily: 'Montserrat'}}
                                 >
                                     Evidence-Based Techniques
                                 </Typography>
@@ -615,8 +644,8 @@ const StrugglingDetail = () => {
                                                     position: 'relative',
                                                     transition: 'transform 0.2s',
                                                     '&:hover': {
-                                                        transform: 'translateY(-3px)',
-                                                        boxShadow: '0 4px 8px rgba(1,39,101,0.10)',
+                                                        boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                                                        transform: "translateY(-3px)",
                                                     },
                                                 }}
                                             >
@@ -630,7 +659,7 @@ const StrugglingDetail = () => {
                                                         width: 30,
                                                         height: 30,
                                                         borderRadius: '50%',
-                                                        display: {sm:'flex',xs:"none"},
+                                                        display: {sm: 'flex', xs: "none"},
                                                         alignItems: 'center',
                                                         justifyContent: 'center',
                                                         fontWeight: 'bold',
@@ -639,10 +668,10 @@ const StrugglingDetail = () => {
                                                 >
                                                     {index + 1}
                                                 </Box>
-                                                <Typography variant="h6" sx={{ color: primary, mb: 1 }}>
+                                                <Typography variant="h6" sx={{color: primary, mb: 1}}>
                                                     {solution}
                                                 </Typography>
-                                                <Typography sx={{ color: textBody, mb: 2, fontFamily: 'Arial' }}>
+                                                <Typography sx={{color: textBody, mb: 2, fontFamily: 'Arial'}}>
                                                     Learn effective techniques to manage and overcome this challenge.
                                                 </Typography>
                                                 <Button
@@ -661,7 +690,7 @@ const StrugglingDetail = () => {
                                     ))}
                                 </Grid>
                             </Paper>
-                            {/* Success Stories */}
+
                             <Paper
                                 elevation={3}
                                 sx={{
@@ -686,7 +715,12 @@ const StrugglingDetail = () => {
                                 <Grid container spacing={3}>
                                     {[1, 2, 3].map((_, index) => (
                                         <Grid item xs={12} xl={4} key={index}>
-                                            <Box sx={{ p: 3, backgroundColor: softGray, borderRadius: 2, position: 'relative' }}>
+                                            <Box sx={{
+                                                p: 3,
+                                                backgroundColor: softGray,
+                                                borderRadius: 2,
+                                                position: 'relative'
+                                            }}>
                                                 <Typography
                                                     sx={{
                                                         fontSize: 60,
@@ -699,17 +733,27 @@ const StrugglingDetail = () => {
                                                 >
                                                     "
                                                 </Typography>
-                                                <Typography sx={{ fontStyle: 'italic', color: textBody, mb: 2, fontFamily: 'Arial' }}>
-                                                    The strategies I learned here have been life-changing. I finally feel in control of my emotions
+                                                <Typography sx={{
+                                                    fontStyle: 'italic',
+                                                    color: textBody,
+                                                    mb: 2,
+                                                    fontFamily: 'Arial'
+                                                }}>
+                                                    The strategies I learned here have been life-changing. I finally
+                                                    feel in control of my emotions
                                                     and have the tools to handle difficult situations.
                                                 </Typography>
-                                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                                <Box sx={{display: 'flex', alignItems: 'center'}}>
                                                     <Box
                                                         component="img"
                                                         src={`https://i.pravatar.cc/40?img=${index + 10}`}
-                                                        sx={{ width: 40, height: 40, borderRadius: '50%', mr: 1 }}
+                                                        sx={{width: 40, height: 40, borderRadius: '50%', mr: 1}}
                                                     />
-                                                    <Typography sx={{ fontWeight: 600, color: textMain, fontFamily: 'Montserrat' }}>
+                                                    <Typography sx={{
+                                                        fontWeight: 600,
+                                                        color: textMain,
+                                                        fontFamily: 'Montserrat'
+                                                    }}>
                                                         {['Sarah, 28', 'Michael, 34', 'David, 41'][index]}
                                                     </Typography>
                                                 </Box>
@@ -719,9 +763,8 @@ const StrugglingDetail = () => {
                                 </Grid>
                             </Paper>
                         </Grid>
-                        {/* Sidebar */}
+
                         <Grid item xs={12} lg={4}>
-                            {/* Years of Experience Badge + Expert Image */}
                             <Paper
                                 elevation={3}
                                 sx={{
@@ -733,8 +776,9 @@ const StrugglingDetail = () => {
                                     boxShadow: '0 4px 20px rgba(1,39,101,0.07)',
                                 }}
                             >
-                                <Box sx={{ position: 'relative' }}>
-                                    <Box component="img" src={data.image1} alt="Expert" sx={{ width: '100%', height: 350, objectFit: 'cover' }} />
+                                <Box sx={{position: 'relative'}}>
+                                    <Box component="img" src={data.image1} alt="Expert"
+                                         sx={{width: '100%', height: 350, objectFit: 'cover'}}/>
                                     <Box
                                         sx={{
                                             position: 'absolute',
@@ -754,19 +798,19 @@ const StrugglingDetail = () => {
                                         12+ Years of Experience
                                     </Box>
                                 </Box>
-                                <Box sx={{ p: 3 }}>
-                                    <Typography variant="h6" sx={{ color: primary, mb: 1, fontFamily: 'Montserrat' }}>
+                                <Box sx={{p: 3}}>
+                                    <Typography variant="h6" sx={{color: primary, mb: 1, fontFamily: 'Montserrat'}}>
                                         We are leading Mental Health's Consultation Centre for you.
                                     </Typography>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                                        <ChatIcon sx={{ color: secondary, mr: 1 }} />
-                                        <Typography variant="body2" sx={{ color: textBody, fontFamily: 'Arial' }}>
+                                    <Box sx={{display: 'flex', alignItems: 'center', mb: 1}}>
+                                        <ChatIcon sx={{color: secondary, mr: 1}}/>
+                                        <Typography variant="body2" sx={{color: textBody, fontFamily: 'Arial'}}>
                                             Online Counseling
                                         </Typography>
                                     </Box>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                                        <GroupIcon sx={{ color: secondary, mr: 1 }} />
-                                        <Typography variant="body2" sx={{ color: textBody, fontFamily: 'Arial' }}>
+                                    <Box sx={{display: 'flex', alignItems: 'center', mb: 1}}>
+                                        <GroupIcon sx={{color: secondary, mr: 1}}/>
+                                        <Typography variant="body2" sx={{color: textBody, fontFamily: 'Arial'}}>
                                             Group Therapy
                                         </Typography>
                                     </Box>
@@ -792,7 +836,7 @@ const StrugglingDetail = () => {
                                     </Button>
                                 </Box>
                             </Paper>
-                            {/* Self Assessment */}
+
                             <Paper
                                 elevation={3}
                                 sx={{
@@ -805,11 +849,11 @@ const StrugglingDetail = () => {
                             >
                                 <Typography
                                     variant="h6"
-                                    sx={{ color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: '600' }}
+                                    sx={{color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: '600'}}
                                 >
                                     Understand Your Situation
                                 </Typography>
-                                <Typography sx={{ color: textBody, mb: 3, fontFamily: 'Arial' }}>
+                                <Typography sx={{color: textBody, mb: 3, fontFamily: 'Arial'}}>
                                     Take our quick assessment to get personalized insights and recommendations.
                                 </Typography>
                                 <Button
@@ -827,7 +871,7 @@ const StrugglingDetail = () => {
                                     Start Assessment
                                 </Button>
                             </Paper>
-                            {/* Expert Help */}
+
                             <Paper
                                 elevation={3}
                                 sx={{
@@ -840,27 +884,27 @@ const StrugglingDetail = () => {
                             >
                                 <Typography
                                     variant="h6"
-                                    sx={{ color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: '600' }}
+                                    sx={{color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: '600'}}
                                 >
                                     Expert Support
                                 </Typography>
-                                <Typography sx={{ color: textBody, mb: 3, fontFamily: 'Arial' }}>
+                                <Typography sx={{color: textBody, mb: 3, fontFamily: 'Arial'}}>
                                     Connect with our qualified professionals for personalized guidance.
                                 </Typography>
-                                <Box sx={{ mb: 3 }}>
+                                <Box sx={{mb: 3}}>
                                     {[
                                         {
-                                            icon: <ChatIcon />,
+                                            icon: <ChatIcon/>,
                                             title: '1-on-1 Counseling',
                                             desc: 'Personal sessions with licensed therapists',
                                         },
                                         {
-                                            icon: <GroupIcon />,
+                                            icon: <GroupIcon/>,
                                             title: 'Group Therapy',
                                             desc: 'Connect with others on similar journeys',
                                         },
                                         {
-                                            icon: <SupportIcon />,
+                                            icon: <SupportIcon/>,
                                             title: 'Text Support',
                                             desc: 'Immediate assistance via chat',
                                         },
@@ -899,11 +943,11 @@ const StrugglingDetail = () => {
                                             <Box>
                                                 <Typography
                                                     variant="subtitle1"
-                                                    sx={{ fontWeight: 600, color: textMain, fontFamily: 'Montserrat' }}
+                                                    sx={{fontWeight: 600, color: textMain, fontFamily: 'Montserrat'}}
                                                 >
                                                     {option.title}
                                                 </Typography>
-                                                <Typography variant="body2" sx={{ color: textBody, fontFamily: 'Arial' }}>
+                                                <Typography variant="body2" sx={{color: textBody, fontFamily: 'Arial'}}>
                                                     {option.desc}
                                                 </Typography>
                                             </Box>
@@ -925,7 +969,7 @@ const StrugglingDetail = () => {
                                     Book a Session
                                 </Button>
                             </Paper>
-                            {/* Resources */}
+
                             <Paper
                                 elevation={3}
                                 sx={{
@@ -937,28 +981,28 @@ const StrugglingDetail = () => {
                             >
                                 <Typography
                                     variant="h6"
-                                    sx={{ color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: '600' }}
+                                    sx={{color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: '600'}}
                                 >
                                     Helpful Resources
                                 </Typography>
                                 {[
                                     {
-                                        icon: <MenuBookIcon />,
+                                        icon: <MenuBookIcon/>,
                                         title: 'Self-Help Workbook',
                                         desc: 'Practical exercises and tools',
                                     },
                                     {
-                                        icon: <HeadphonesIcon />,
+                                        icon: <HeadphonesIcon/>,
                                         title: 'Guided Meditation',
                                         desc: 'Audio sessions for different needs',
                                     },
                                     {
-                                        icon: <PsychologyIcon />,
+                                        icon: <PsychologyIcon/>,
                                         title: 'Expert Articles',
                                         desc: 'Insights from professionals',
                                     },
                                     {
-                                        icon: <VideoLibraryIcon />,
+                                        icon: <VideoLibraryIcon/>,
                                         title: 'Video Tutorials',
                                         desc: 'Visual guides for techniques',
                                     },
@@ -987,14 +1031,14 @@ const StrugglingDetail = () => {
                                         >
                                             {resource.icon}
                                         </Box>
-                                        <Box sx={{ flex: 1 }}>
+                                        <Box sx={{flex: 1}}>
                                             <Typography
                                                 variant="subtitle1"
-                                                sx={{ fontWeight: 600, color: textMain, fontFamily: 'Montserrat' }}
+                                                sx={{fontWeight: 600, color: textMain, fontFamily: 'Montserrat'}}
                                             >
                                                 {resource.title}
                                             </Typography>
-                                            <Typography variant="body2" sx={{ color: textBody, fontFamily: 'Arial' }}>
+                                            <Typography variant="body2" sx={{color: textBody, fontFamily: 'Arial'}}>
                                                 {resource.desc}
                                             </Typography>
                                         </Box>
@@ -1003,7 +1047,7 @@ const StrugglingDetail = () => {
                             </Paper>
                         </Grid>
                     </Grid>
-                    {/* Main CTA */}
+
                     <Box
                         sx={{
                             backgroundColor: primary,
@@ -1029,12 +1073,12 @@ const StrugglingDetail = () => {
                         >
                             Ready to Take the Next Step?
                         </Typography>
-                        <Typography sx={{ mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial' }}>
-                            Our counselors are trained to help you navigate through your challenges with professional guidance tailored to
+                        <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
+                            Our counselors are trained to help you navigate through your challenges with professional
+                            guidance tailored to
                             your unique situation.
                         </Typography>
                         <Button
-                            Slightly larger buttons
                             variant="contained"
                             sx={{
                                 backgroundColor: secondary,
