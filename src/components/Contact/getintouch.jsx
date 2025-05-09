@@ -46,11 +46,11 @@ const INQUIRY_TYPES = [
 ];
 
 const CONTACT_INFO = [
-    {
-        title: "Phone",
-        icon: <Phone sx={{color: "#FF6600", mr: 1}}/>,
-        details: ["+91 7977135096"]
-    },
+    // {
+    //     title: "Phone",
+    //     icon: <Phone sx={{color: "#FF6600", mr: 1}}/>,
+    //     details: ["+91 7977135096"]
+    // },
     {
         title: "Email",
         icon: <Email sx={{color: "#FF6600", mr: 1}}/>,
@@ -68,9 +68,8 @@ const CONTACT_INFO = [
 ];
 
 const BUSINESS_HOURS = [
-    {day: "Monday - Friday", time: "8:00 AM - 8:00 PM"},
-    {day: "Saturday", time: "9:00 AM - 5:00 PM"},
-    {day: "Sunday", time: "Closed"}
+    {day: "Monday - Saturday", time: "7:00 AM onwards"},
+    {day: "Sunday", time: "As per Commitment"}
 ];
 
 const SOCIAL_MEDIA_LINKS = [
@@ -367,9 +366,9 @@ const BusinessHours = () => (
                 <Typography>{entry.time}</Typography>
             </Box>
         ))}
-        <Typography sx={{mt: 2, fontSize: "14px", color: "#6B7280"}}>
-            Customer support is available 24/7 through our app and online portal.
-        </Typography>
+        {/*<Typography sx={{mt: 2, fontSize: "14px", color: "#6B7280"}}>*/}
+        {/*    Customer support is available 24/7 through our app and online portal.*/}
+        {/*</Typography>*/}
     </Box>
 );
 
@@ -506,12 +505,12 @@ const GetInTouch = () => {
                 {/* Main Content */}
                 <Grid container spacing={4}>
                     {/* Left Side - Form */}
-                    <Grid item xs={12} lg={6}>
-                        <ContactForm onSubmit={handleSubmit}/>
-                    </Grid>
+                    {/*<Grid item xs={12} lg={6}>*/}
+                    {/*    <ContactForm onSubmit={handleSubmit}/>*/}
+                    {/*</Grid>*/}
 
                     {/* Right Side - Contact Information, Business Hours & Social Media */}
-                    <Grid item xs={12} lg={6}>
+                    <Grid item xs={12}>
                         <ContactInfo/>
 
                         <Grid container spacing={2}>

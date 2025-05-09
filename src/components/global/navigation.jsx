@@ -86,7 +86,7 @@ function Navigation() {
             submenu: [
                 // { label: "Journaling", path: "/resources/journaling" },
                 {label: "Assessments", path: "/resources/assessments"},
-                {label: "Self Help Tools", path: "/resources/selfHelpTools"},
+                // {label: "Self Help Tools", path: "/resources/selfHelpTools"},
                 // {label: "Forms", path: "/resources/forms"},
                 {label: "Blogs", path: "/resources/blogs"},
             ],

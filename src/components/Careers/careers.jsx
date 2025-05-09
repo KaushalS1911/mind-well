@@ -139,68 +139,73 @@ const ApplicationForm = ({
     <Box sx={{pt: 10}}>
         <Container maxWidth="md">
             <StyledPaper elevation={3}>
-                <Typography variant="h5" fontWeight="bold" gutterBottom sx={{color: '#012765', mb: 4}}>
-                    Apply for Position
+                {/*<Typography variant="h5" fontWeight="bold" gutterBottom sx={{color: '#012765', mb: 4}}>*/}
+                {/*    Apply for Position*/}
+                {/*</Typography>*/}
+                {/*<form onSubmit={handleSubmit}>*/}
+                {/*    <Grid container spacing={3}>*/}
+                {/*        <Grid item xs={12} sm={6}>*/}
+                {/*            <TextField fullWidth label="Full Name" name="name" value={formData.name}*/}
+                {/*                       onChange={handleInputChange} required sx={formFieldStyle}/>*/}
+                {/*        </Grid>*/}
+                {/*        <Grid item xs={12} sm={6}>*/}
+                {/*            <TextField fullWidth label="Email" type="email" name="email" value={formData.email}*/}
+                {/*                       onChange={handleInputChange} required sx={formFieldStyle}/>*/}
+                {/*        </Grid>*/}
+                {/*        <Grid item xs={12} sm={6}>*/}
+                {/*            <TextField fullWidth label="Phone Number" name="phone" value={formData.phone}*/}
+                {/*                       onChange={handleInputChange} required sx={formFieldStyle}/>*/}
+                {/*        </Grid>*/}
+                {/*        <Grid item xs={12} sm={6}>*/}
+                {/*            <FormControl fullWidth required sx={formFieldStyle}>*/}
+                {/*                <InputLabel>Position</InputLabel>*/}
+                {/*                <Select name="position" value={formData.position} onChange={handleInputChange}*/}
+                {/*                        label="Position">*/}
+                {/*                    {JOBS.map((job, index) => (*/}
+                {/*                        <MenuItem key={index} value={job.title}>{job.title}</MenuItem>*/}
+                {/*                    ))}*/}
+                {/*                </Select>*/}
+                {/*            </FormControl>*/}
+                {/*        </Grid>*/}
+                {/*        <Grid item xs={12}>*/}
+                {/*            <TextField fullWidth label="Years of Experience" name="experience"*/}
+                {/*                       value={formData.experience} onChange={handleInputChange} required*/}
+                {/*                       sx={formFieldStyle}/>*/}
+                {/*        </Grid>*/}
+                {/*        <Grid item xs={12}>*/}
+                {/*            <TextField fullWidth label="Cover Letter" name="message" value={formData.message}*/}
+                {/*                       onChange={handleInputChange} multiline rows={4} required sx={formFieldStyle}/>*/}
+                {/*        </Grid>*/}
+                {/*        <Grid item xs={12}>*/}
+                {/*            <UploadButton component="label" startIcon={<AttachFile/>}>*/}
+                {/*                Upload Resume*/}
+                {/*                <input type="file" hidden accept=".pdf,.doc,.docx" onChange={handleFileChange}/>*/}
+                {/*            </UploadButton>*/}
+                {/*            {selectedFile && (*/}
+                {/*                <Box sx={{mt: 2, display: 'flex', alignItems: 'center', gap: 1}}>*/}
+                {/*                    <Typography variant="body2">{selectedFile.name}</Typography>*/}
+                {/*                    <IconButton size="small" onClick={() => setSelectedFile(null)}>*/}
+                {/*                        <Close fontSize="small"/>*/}
+                {/*                    </IconButton>*/}
+                {/*                </Box>*/}
+                {/*            )}*/}
+                {/*        </Grid>*/}
+                {/*        <Grid item xs={12}>*/}
+                {/*            <Button type="submit" variant="contained" size="large" sx={{*/}
+                {/*                backgroundColor: '#FF7A00',*/}
+                {/*                color: 'white',*/}
+                {/*                '&:hover': {backgroundColor: '#E66A00'}*/}
+                {/*            }}>*/}
+                {/*                Submit Application*/}
+                {/*            </Button>*/}
+                {/*        </Grid>*/}
+                {/*    </Grid>*/}
+                {/*</form>*/}
+                <Typography variant="h5"  gutterBottom sx={{color: '#012765', mb: 4}}>
+                    We're Hiring!
                 </Typography>
-                <form onSubmit={handleSubmit}>
-                    <Grid container spacing={3}>
-                        <Grid item xs={12} sm={6}>
-                            <TextField fullWidth label="Full Name" name="name" value={formData.name}
-                                       onChange={handleInputChange} required sx={formFieldStyle}/>
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField fullWidth label="Email" type="email" name="email" value={formData.email}
-                                       onChange={handleInputChange} required sx={formFieldStyle}/>
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField fullWidth label="Phone Number" name="phone" value={formData.phone}
-                                       onChange={handleInputChange} required sx={formFieldStyle}/>
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <FormControl fullWidth required sx={formFieldStyle}>
-                                <InputLabel>Position</InputLabel>
-                                <Select name="position" value={formData.position} onChange={handleInputChange}
-                                        label="Position">
-                                    {JOBS.map((job, index) => (
-                                        <MenuItem key={index} value={job.title}>{job.title}</MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField fullWidth label="Years of Experience" name="experience"
-                                       value={formData.experience} onChange={handleInputChange} required
-                                       sx={formFieldStyle}/>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField fullWidth label="Cover Letter" name="message" value={formData.message}
-                                       onChange={handleInputChange} multiline rows={4} required sx={formFieldStyle}/>
-                        </Grid>
-                        <Grid item xs={12}>
-                            <UploadButton component="label" startIcon={<AttachFile/>}>
-                                Upload Resume
-                                <input type="file" hidden accept=".pdf,.doc,.docx" onChange={handleFileChange}/>
-                            </UploadButton>
-                            {selectedFile && (
-                                <Box sx={{mt: 2, display: 'flex', alignItems: 'center', gap: 1}}>
-                                    <Typography variant="body2">{selectedFile.name}</Typography>
-                                    <IconButton size="small" onClick={() => setSelectedFile(null)}>
-                                        <Close fontSize="small"/>
-                                    </IconButton>
-                                </Box>
-                            )}
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Button type="submit" variant="contained" size="large" sx={{
-                                backgroundColor: '#FF7A00',
-                                color: 'white',
-                                '&:hover': {backgroundColor: '#E66A00'}
-                            }}>
-                                Submit Application
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </form>
+                <Typography variant="title">
+                    If you are a Psychologist, Special Educator, Psychotherapists, Content Writer, Flutter Developer, React Developer, Accounts and Finance, Sales Professionals, HR then reach us at <span style={{color: "#FE6A00"}}>connect@mahadevasth.com</span> to explore exciting career opportunities.               </Typography>
             </StyledPaper>
         </Container>
     </Box>
