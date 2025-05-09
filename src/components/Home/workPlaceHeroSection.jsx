@@ -24,7 +24,7 @@ const SLIDE_DATA = [
     {
         titles: ["Students", "Aspirants", "Employees"],
         titleChangeDelay: 2000,
-        mainHeading: "Building Mindsets",
+        mainHeading: "Building Mindsets.",
         description:
             "Empowering individuals and organizations with emotional intelligence tools that drive personal growth, enhance performance, and foster meaningful workplace connections",
         image: img1,
@@ -32,7 +32,7 @@ const SLIDE_DATA = [
     {
         titles: ["Growth", "Performance", "Success"],
         titleChangeDelay: 3000,
-        mainHeading: "Transforming to enable",
+        mainHeading: "Transforming to enable.",
         description:
             "Create a culture of trust and psychological safety where team members feel valued, heard, and empowered to contribute their best work and ideas",
         image: img2,
@@ -40,7 +40,7 @@ const SLIDE_DATA = [
     {
         titles: ["Inspire", "Empower", "Transform"],
         titleChangeDelay: 2000,
-        mainHeading: "Developing leaders who",
+        mainHeading: "Developing leaders who.",
         description:
             "Equip leaders with the emotional intelligence skills needed to navigate challenges, inspire teams, and drive sustainable organizational success in today's complex world",
         image: img3,
