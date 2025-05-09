@@ -56,6 +56,7 @@ function Assessments() {
         {
             img: img3,
             title: "General Stress & Anxiety",
+            subTitle: "(Age 18+)",
             description: "Measure your current stress levels and coping mechanisms.",
             url: '/assessments/general-stress',
             questions: "12 questions",

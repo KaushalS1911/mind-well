@@ -26,7 +26,7 @@ function MileStones() {
 
     const milestones = [
         { end: 150, suffix: 'K+', label: 'Lives Touched' },
-        { end: 5000, suffix: '+', label: 'Sessions' },
+        { end: 7000, suffix: '+', label: 'Sessions' },
         { end: 100, suffix: '+', label: 'Suicides Prevented' },
         { end: 86, suffix: '%', label: 'Improved Behavior Reported' },
     ];

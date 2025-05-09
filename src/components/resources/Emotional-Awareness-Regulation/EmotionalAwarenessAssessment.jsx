@@ -186,7 +186,7 @@ const EmotionalAwarenessAssessment = () => {
                                     mb: 1,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    Note:
+                                    DISCLAIMER:
                                 </Typography>
                                 <Typography sx={{
                                     color: '#4B5563',

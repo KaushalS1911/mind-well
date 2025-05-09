@@ -62,7 +62,7 @@ function WorksTable() {
             mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
         }}>
             <Container maxWidth={"xl"}>
-                <Box sx={{padding: "0"}}>
+                <Box sx={{py: "40px"}}>
                     <Typography
                         className="Montserrat"
                         variant="h4"

@@ -163,7 +163,7 @@ const AcademicStressAssessment = () => {
                                     fontWeight: 600,
                                     mb: 1,
                                 }}>
-                                    Note:
+                                    DISCLAIMER:
                                 </Typography>
                                 <CommonTypography>
                                     This assessment is not a diagnostic tool. If you're experiencing severe distress, please seek professional help immediately.
