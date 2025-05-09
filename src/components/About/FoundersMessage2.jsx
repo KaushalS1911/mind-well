@@ -34,6 +34,7 @@ const MainContent = styled(Box)(({ theme }) => ({
 
 const ImageSection = styled(Box)(({ theme }) => ({
     flex: '0 0 300px',
+    marginTop: "12%",
     [theme.breakpoints.down('md')]: {
         width: '100%',
         flex: 'none',
@@ -118,26 +119,25 @@ const FoundersMessage = () => {
                         <img src={img1} alt="Chaman Kumar" />
                     </ImageSection>
                     <TextSection>
-                        {/*<Quote>*/}
-                        {/*    "Empowering Mindsets, Shaping Futures – Your Role in Building a Productive Nation"*/}
-                        {/*</Quote>*/}
-                        <Text>Dear Team,</Text>
-                        <Text>
+                        <Quote>
+                            "Emotionally Yours" began as our own search for healing, now, it’s a space where others can feel seen, heard, and held too."                        </Quote>
+                        <Text>Namaste!</Text>
+                        <Text  sx={{textAlign:" justify"}}>
                             At Emotionally Yours, we began our journey with a core belief: Emotional Wellness is not a luxury, it’s the foundation for personal, academic and professional success. I a world that is constantly accelerating, where academic pressure weighs heavy on young minds and workplace stress silently drains potential, we felt the need to intervene meaningfully and mindfully.
                         </Text>
-                        <Text>
+                        <Text  sx={{textAlign:" justify"}}>
                             The SHAPE and ESOP programs were born out of lived experiences, research and countless conversations with students, teachers, professionals and leaders across sectors.
 
                         </Text>
-                        <Text>
+                        <Text  sx={{textAlign:" justify"}}>
                             Through SHAPE (Student’s Health Assessment & Performance Evaluation), we aim to empower academic institutions with structured emotional wellness support on a reinforcement model. This is not just about stress relief or motivation; it’s about equipping the students and the ecosystem around them with tools to manage academic pressure, enhance focus, tke informed career choices and foster meaning relationships.
 
-                        </Text>
-                        <Text>
+                        </Text >
+                        <Text sx={{textAlign:" justify"}}>
                             Our ESOP (Employee’s Self Ownership Program) was designed with similar philosophy, adapted to workplace. Organisations thrive when people do and yet, burnout, stagnation and disengagement are alarmingly common. ESOP does not offer a One-Size-Fits-ALL training; it identifies where each employee stands on the performance and engagement spectrum and offered targeted and human centric solutions, whether through Self-Assessments, Psychometric Tests, On-on-One Counselling or interactive workshops under leadership taskforces.
 
                         </Text>
-                        <Text>
+                        <Text sx={{textAlign:" justify"}}>
                             As we continue to scale SHAPE and ESOP across geographies and sectors, our mission remains clear: to make emotional wellness a part of everyday language and leadership. Because when people feel well, they perform well. And when they perform well, they build a future that’s not just successful, but meaningful.
 
                         </Text>

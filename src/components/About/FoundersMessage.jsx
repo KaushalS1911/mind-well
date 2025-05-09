@@ -34,6 +34,7 @@ const MainContent = styled(Box)(({ theme }) => ({
 
 const ImageSection = styled(Box)(({ theme }) => ({
     flex: '0 0 300px',
+    marginTop: "10%",
     [theme.breakpoints.down('md')]: {
         width: '100%',
         flex: 'none',
@@ -115,49 +116,50 @@ const FoundersMessage = () => {
                         mb:5
                     }}>Director Sales</Box>
                 <MainContent>
-                    <ImageSection>
-                        <img src={img1} alt="Chaman Kumar" />
-                    </ImageSection>
+
                     <TextSection>
                         <Quote>
                             "Empowering Mindsets, Shaping Futures – Your Role in Building a Productive Nation"
                         </Quote>
-                        <Text>Dear Team,</Text>
-                        <Text>
+                        <Text>Namaste!</Text>
+                        <Text sx={{textAlign:" justify"}}>
                             As sales professionals and brand ambassadors of "Emotionally Yours" and our flagship
                             offerings – SHAPE, SHAPE+, and ESOP – you hold the key to unlocking a powerful
                             transformation in the minds of today's students and workforce to build a positive
                             mindset to help nations in the journey of a "developed nation".
                         </Text>
-                        <Text>
+                        <Text  sx={{textAlign:" justify"}}>
                             These programs aren't just products; they are purpose-driven solutions designed to
                             address the core emotional and psychological needs that drive individuals'
                             productivity, performance, and purpose.
                         </Text>
-                        <Text>
+                        <Text  sx={{textAlign:" justify"}}>
                             SHAPE helps students build self-awareness, emotional resilience, and growth-oriented
                             habits.
                         </Text>
-                        <Text>
+                        <Text  sx={{textAlign:" justify"}}>
                             SHAPE+ strengthens aspirants and young adults in their transitional phases, instilling
                             confidence, clarity, and emotional agility.
                         </Text>
-                        <Text>
+                        <Text  sx={{textAlign:" justify"}}>
                             ESOP supports organizations by cultivating a wellness-first, emotionally intelligent
                             workforce ready to thrive in demanding business environments.
                         </Text>
-                        <Text>
+                        <Text  sx={{textAlign:" justify"}}>
                             Through your outreach efforts, you're not just selling a program – you're contributing
                             to a national mission: building a stronger, more productive future by nurturing
                             healthier mindsets from school to the workplace.
                         </Text>
-                        <Text>Let's lead with empathy, insight, and conviction. The change begins with you.</Text>
+                        <Text  sx={{textAlign:" justify"}}>Let's lead with empathy, insight, and conviction. The change begins with you.</Text>
                         <Text>Warm Regards,</Text>
                         <Signature>
                             <Name>Chaman Kumar</Name>
                             <Role>Director and Chief Sales Officer</Role>
                         </Signature>
                     </TextSection>
+                    <ImageSection>
+                        <img src={img1} alt="Chaman Kumar" />
+                    </ImageSection>
                 </MainContent>
             </Container>
         </Section>
