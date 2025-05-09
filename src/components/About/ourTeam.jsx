@@ -50,7 +50,7 @@ const AvatarWrapper = styled(Box)(() => ({
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
     width: 120,
     height: 120,
-    backgroundColor: '#E6EAF3',
+    backgroundColor: '#FFFFFF',
     border: '3px solid #E6EAF3',
     position: 'relative',
     zIndex: 1,

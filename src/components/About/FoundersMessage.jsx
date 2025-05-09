@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, useTheme, useMediaQuery } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import img1 from '../../assets/images/about/Founder/Chaman Kumar.png';
+import img1 from '../../assets/images/about/Founder/chaman_kumar.jpeg';
 
 const Section = styled(Box)(({ theme }) => ({
     padding: '60px 0',
@@ -39,6 +39,7 @@ const ImageSection = styled(Box)(({ theme }) => ({
         flex: 'none',
     },
     '& img': {
+        backgroundColor: '#fff',
         width: '100%',
         height: 'auto',
         borderRadius: '12px',

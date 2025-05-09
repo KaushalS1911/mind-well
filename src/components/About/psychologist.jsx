@@ -3,13 +3,13 @@ import { Box, Container, Grid, Paper, Typography, Avatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
 import img1 from '../../assets/images/about/Psychologists/Pratibha Sanganeria.png'
-import img2 from '../../assets/images/about/Psychologists/Anshita Raghav.png'
+import img2 from '../../assets/images/about/Psychologists/Anshita Raghav.jpeg'
 import img3 from '../../assets/images/about/Psychologists/Vedanshi Gupta.png'
 import img4 from '../../assets/images/about/Psychologists/Anjali Sinha.png'
-import img5 from '../../assets/images/about/Psychologists/Aishwarya Saxena.png'
+import img5 from '../../assets/images/about/Psychologists/Aishwarya Saxena.jpeg'
 import img6 from '../../assets/images/about/Psychologists/Pratibha Kotak.png'
 import img7 from '../../assets/images/about/Psychologists/Liza Hazarika.png'
-import img8 from '../../assets/images/about/Psychologists/Anju Sinha.png'
+import img8 from '../../assets/images/about/Psychologists/Anju Sinha.jpeg'
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(3),
@@ -55,7 +55,7 @@ const AvatarWrapper = styled(Box)(() => ({
 const StyledAvatar = styled(Avatar)(({theme}) => ({
     width: 120,
     height: 120,
-    backgroundColor: '#E6EAF3',
+    backgroundColor: '#FFFFFF',
     border: '3px solid #E6EAF3',
     position: 'relative',
     zIndex: 1,
@@ -133,7 +133,7 @@ const founders = [
         img: img1,
         role: "Psychologist",
         name: "Pratibha Sanganeria",
-        skills: "Client centered therapy, DBT, movement therapy (currently upskilling), Workshop facilitation",
+        skills: "Client centered therapy, DBT",
     },
     {
         img: img3,
