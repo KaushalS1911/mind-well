@@ -18,15 +18,15 @@ import img9 from "../../assets/images/about/majorClients/Army.png";
 
 // Image Array
 const images = [
-    { image: img1, title: "Agribid" },
-    { image: img2, title: "Drishti IAS" },
-    { image: img3, title: "Wingsss" },
-    { image: img4, title: "IES" },
-    { image: img5, title: "TathaGat" },
-    { image: img6, title: "Delhi Academy" },
-    { image: img7, title: "AIMT" },
-    { image: img8, title: "AWES" },
-    { image: img9, title: "Army" },
+    { image: img1, title: "Agribid", location: "Mumbai" },
+    { image: img2, title: "Drishti IAS", location: "All Centers" },
+    { image: img3, title: "Wingsss", location: "Pune" },
+    { image: img4, title: "IES", location: "Thane" },
+    { image: img5, title: "TathaGat", location: "New Delhi" },
+    { image: img6, title: "ACMS" , location: "New Delhi" },
+    { image: img7, title: "AIMT", location: "Gr. Noida" },
+    { image: img8, title: "APS" , location: "12 Branches" },
+    { image: img9, title: "AIE", location: "Gr. Noida" },
 ];
 
 // Reusable Styles
@@ -102,6 +102,12 @@ const MajorClients = () => {
                                     sx={{ mt: 2,fontSize:"17px", fontWeight: 600, color: "#012765", textAlign: "center" }}
                                 >
                                     {img.title}
+                                </Typography>
+                                <Typography
+                                    variant="body2"
+                                    sx={{ mt: 2,fontSize:"17px", fontWeight: 600, color: "#012765", textAlign: "center" }}
+                                >
+                                    {img.location}
                                 </Typography>
                             </Box>
                         </SwiperSlide>

@@ -49,7 +49,7 @@ function Home() {
             <HowEmotionallyYoursinCoachingInstitute/>
             <HowEmotionallyYoursinWorkplaces/>
             <Assessments/>
-            <Struggling/>
+            {/*<Struggling/>*/}
             {/*<EmployeeMentalHealth/>*/}
             <GallerySection/>
             <MajorClients/>

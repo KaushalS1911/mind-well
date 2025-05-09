@@ -17,8 +17,8 @@ const testimonials = [
         role: "Principal,RKHK Academy, Surat",
         review:
             "I saw a huge difference in attaining timely deliveries of our product with the new rejuvenated students, parents and teachers. In just 8 months, the premise is livelier than before. Way to go Team Mahadevasth",
-        duration: "6 months with \"Emotionally Yours\"",
-        sessions: "12 sessions completed",
+        duration: "2 years with \"Emotionally Yours\"",
+        sessions: "650 sessions completed",
         color: "#012765",
     },
     {
@@ -27,8 +27,8 @@ const testimonials = [
         role: "Director, Agribid",
         review:
             "\"We are happy to tie up with Mahadevasth Technologies. They are a digital platform for Emotional Wellness that brings Healing through Awareness, Diagnosis and Evaluation. This tie-up is contributing towards Agribid’s initiatives in bringing growth and positive developments in the lives of the Farmers. Good mental and emotional health is essential; we must prioritize it.\"",
-        duration: "1 year with \"Emotionally Yours\"",
-        sessions: "18 sessions completed",
+        duration: "2 years with \"Emotionally Yours\"",
+        sessions: "100 sessions completed",
         color: "#FF7F1E",
     },
     {
