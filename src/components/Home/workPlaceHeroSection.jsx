@@ -72,7 +72,7 @@ const HeroSlide = ({ slideData, index }) => {
             setCurrentTitleIndex((prev) =>
                 prev < slideData.titles.length - 1 ? prev + 1 : 0
             );
-        }, slideData.titleChangeDelay);
+        }, 15000);
 
         return () => clearInterval(interval);
     }, [slideData.titles.length, slideData.titleChangeDelay]);
