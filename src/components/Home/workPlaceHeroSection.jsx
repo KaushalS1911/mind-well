@@ -235,7 +235,7 @@ function WorkPlaceHeroSection() {
                     slidesPerView={1}
                     pagination={{ clickable: true }}
                     autoplay={{
-                        delay: 18000,
+                        delay: 10000,
                         disableOnInteraction: false,
                     }}
                     onSwiper={setSwiperInstance}
