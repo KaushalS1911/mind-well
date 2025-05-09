@@ -32,7 +32,7 @@ const services = [
     {name: "PEP", path: "/services/PEP"},
 ]
 const contactDetails = {
-    phone: "+91 7977135096",
+
     email: "connect@mahadevasth.com",
     address: "B-204, Kanakia Wall Street, Andheri - Kurla Rd, Chakala, Andheri East, Mumbai, Maharashtra 400093",
 };
@@ -226,7 +226,7 @@ const Footer = () => {
                             }}
                         >
                             {[
-                                {icon: <CallIcon/>, text: contactDetails.phone},
+                                // {icon: <CallIcon/>, text: contactDetails.phone},
                                 {icon: <MailOutlineIcon/>, text: contactDetails.email},
                                 {icon: <LocationOnIcon/>, text: contactDetails.address}
                             ].map((item, index) => (
