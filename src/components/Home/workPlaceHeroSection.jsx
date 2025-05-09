@@ -23,7 +23,7 @@ import 'swiper/css/pagination';
 const SLIDE_DATA = [
     {
         titles: ["Students", "Aspirants", "Employees"],
-        titleChangeDelay: 5000,
+        titleChangeDelay: 3000,
         mainHeading: "Building Mindsets",
         description:
             "Empowering individuals and organizations with emotional intelligence tools that drive personal growth, enhance performance, and foster meaningful workplace connections",
@@ -31,7 +31,7 @@ const SLIDE_DATA = [
     },
     {
         titles: ["Growths", "Performances", "Success"],
-        titleChangeDelay: 5000,
+        titleChangeDelay: 3000,
         mainHeading: "Transforming individuals & workplaces to enable",
         description:
             "Create a culture of trust and psychological safety where team members feel valued, heard, and empowered to contribute their best work and ideas",
@@ -39,7 +39,7 @@ const SLIDE_DATA = [
     },
     {
         titles: ["Inspires", "Empowers", "Transforms", "Excels"],
-        titleChangeDelay: 5000,
+        titleChangeDelay: 3000,
         mainHeading: "Developing leaders who",
         description:
             "Equip leaders with the emotional intelligence skills needed to navigate challenges, inspire teams, and drive sustainable organizational success in today's complex world",
@@ -72,7 +72,7 @@ const HeroSlide = ({ slideData, index }) => {
             setCurrentTitleIndex((prev) =>
                 prev < slideData.titles.length - 1 ? prev + 1 : 0
             );
-        }, 15000);
+        }, slideData.titleChangeDelay * 4);
 
         return () => clearInterval(interval);
     }, [slideData.titles.length, slideData.titleChangeDelay]);
