@@ -54,6 +54,7 @@ import Careers from "./components/Careers/careers.jsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import WorkPlaceHeroSection from "./components/Home/workPlaceHeroSection.jsx";
+import SeminarPage from "./pages/seminar/seminarPage.jsx";
 
 function App() {
     function ScrollToTop() {
@@ -102,6 +103,7 @@ function App() {
                 <Route path="/resources" element={<Resource/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/struggling/:topic" element={<StrugglingDetail/>}/>
+                <Route path="/session" element={<SeminarPage/>}/>
                 <Route
                     path="/assessments/exam-stress"
                     element={<ExamStressGaugeAssessments/>}

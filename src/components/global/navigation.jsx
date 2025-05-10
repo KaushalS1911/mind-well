@@ -91,6 +91,7 @@ function Navigation() {
                 {label: "Blogs", path: "/resources/blogs"},
             ],
         },
+        // {label: "Session", path: "/session"},
         {label: "Careers", path: "/careers"},
         {label: "Contact Us", path: "/contact"},
     ];
