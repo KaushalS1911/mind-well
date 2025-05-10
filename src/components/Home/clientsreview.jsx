@@ -48,8 +48,8 @@ const testimonials = [
         role: "Principal",
         review:
             "\"I commend the efforts of the  team  Emotionally Yours and facilitators for conducting a thoughtful and well-structured counselling program through out the year.The sessions effectively addressed students' academic, emotional, and personal development needs. Such initiatives play a vital role in fostering a supportive school environment and equipping our students with essential life skills. I encourage the continuation and regular enhancement of this program to further benefit our student community.\"",
-        duration: "1 year with \"Emotionally Yours\"",
-        sessions: "15 sessions completed",
+        duration: "3 year with \"Emotionally Yours\"",
+        sessions: "700 sessions completed",
         color: "#FF7F1E",
     },
 ];
