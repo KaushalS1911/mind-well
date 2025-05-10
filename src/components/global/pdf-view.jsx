@@ -182,8 +182,8 @@ export default function PdfView({data}) {
     const styles = useStyles(data.totalScore);
     const strokeColor = getColor(data.totalScore);
     const percentage = (data.totalScore / 80) * 100;
-    // const circumference = 2 * Math.PI * 45;
-    // const offset = circumference - (percentage / 100) * circumference;
+    const circumference = 2 * Math.PI * 45;
+    const offset = circumference - (percentage / 100) * circumference;
 
     const formatDate = (date) => {
         const d = new Date(date);
@@ -196,10 +196,6 @@ export default function PdfView({data}) {
     const currentDate = formatDate(new Date());
 
     const recommendations = data.recommendations ;
-    const radius = 45;
-    const circumference = 2 * Math.PI * radius;
-    const progress = (Math.min(data.totalScore, 80) / 80) * circumference;
-    const offset = circumference - progress;
 
     return (
         <Document>
@@ -224,14 +220,13 @@ export default function PdfView({data}) {
                                     <Circle
                                         cx="50"
                                         cy="50"
-                                        r={radius}
+                                        r="45"
                                         stroke={strokeColor}
                                         strokeWidth="10"
                                         fill="none"
-                                        strokeDasharray={circumference}
-                                        strokeDashoffset={offset}
+                                        strokeDasharray={`${circumference}`}
+                                        strokeDashoffset={`${offset}`}
                                         strokeLinecap="round"
-                                        transform="rotate(-90 50 50)"
                                     />
                                 </Svg>
                                 <Text style={styles.score}>{data.totalScore}</Text>
