@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Avatar, Card, Container } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
+import {  A11y, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -27,7 +27,7 @@ const testimonials = [
         name: "Sh. Manoj Suvarna",
         role: "Director, Agribid",
         review:
-            "\"We are happy to tie up with Mahadevasth Technologies. They are a digital platform for Emotional Wellness that brings Healing through Awareness, Diagnosis and Evaluation. This tie-up is contributing towards Agribid’s initiatives in bringing growth and positive developments in the lives of the Farmers. Good mental and emotional health is essential; we must prioritize it.\"",
+            "\"We are happy to tie up with Mahadevasth Technologies. They are a digital platform for Emotional Wellness that brings Healing through Awareness, Diagnosis and Evaluation. This tie-up is contributing towards Agribid's initiatives in bringing growth and positive developments in the lives of the Farmers. Good mental and emotional health is essential; we must prioritize it.\"",
         duration: "2 years with \"Emotionally Yours\"",
         sessions: "100 sessions completed",
         color: "#FF7F1E",
@@ -54,11 +54,15 @@ const testimonials = [
     },
 ];
 
-
-
 function ClientsReview() {
+
+    const longestReview = testimonials.reduce(
+        (max, testimonial) => (testimonial.review.length > max ? testimonial.review.length : max),
+        0
+    );
+
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' },padding:"96px 0 0 0"}}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }, padding:"96px 0 0 0"}}>
             <Container maxWidth="xl">
                 <Typography
                     className={"Montserrat"}
@@ -86,19 +90,22 @@ function ClientsReview() {
                 </Box>
 
                 <Swiper
-                    modules={[A11y , Autoplay]}
+                    modules={[ A11y, Autoplay]}
                     spaceBetween={24}
                     slidesPerView={1}
                     autoplay={{ delay: 2000, disableOnInteraction: false }}
+                    pagination={{ clickable: true }}
                     breakpoints={{
                         640: { slidesPerView: 1 },
                         960: { slidesPerView: 2 },
                         1280: { slidesPerView: 2 },
                     }}
+                    className="testimonial-swiper"
+                    style={{ paddingBottom: "50px" }}
                 >
                     {testimonials.map((testimonial, index) => (
-                        <SwiperSlide key={index}>
-                            <Box sx={{  display: "flex" }}>
+                        <SwiperSlide key={index} style={{ display: "flex", height: "auto" }}>
+                            <Box sx={{ display: "flex", width: "100%" }}>
                                 <Card
                                     sx={{
                                         p: 3,
@@ -107,10 +114,15 @@ function ClientsReview() {
                                         borderRadius: 3,
                                         display: "flex",
                                         flexDirection: "column",
-                                        // height: {xs:"750px",sm:"470px",md:"550px",lg:"450px"},
-                                        minHeight:"450px",
+
+                                        height: {
+                                            xs: "730px",
+                                            sm: "580px",
+                                            md: "750px",
+                                            lg: "630px",
+                                            xl:"530px"
+                                        },
                                         width: "100%",
-                                        // minHeight: 00,
                                     }}
                                 >
                                     <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
@@ -121,10 +133,9 @@ function ClientsReview() {
                                                 mr: 2,
                                                 width: 65,
                                                 height: 65,
-                                                backgroundColor:"#fff"
+                                                backgroundColor: "#fff"
                                             }}
                                         />
-
 
                                         <Box>
                                             <Box sx={{ fontWeight: 700, fontSize: 20, lineHeight: "28px" }}>
@@ -143,18 +154,38 @@ function ClientsReview() {
                                         ))}
                                     </Box>
 
-                                    <Box sx={{ mb: 3, fontSize: "18px", lineHeight: "28px", flexGrow: 1 ,textAlign: "justify" }}>
+                                    <Box
+                                        sx={{
+                                            mb: 3,
+                                            fontSize: "18px",
+                                            lineHeight: "28px",
+                                            flexGrow: 1,
+                                            textAlign: "justify",
+
+                                            "&::-webkit-scrollbar": {
+                                                width: "6px",
+                                            },
+                                            "&::-webkit-scrollbar-track": {
+                                                backgroundColor: "rgba(255,255,255,0.1)",
+                                                borderRadius: "10px",
+                                            },
+                                            "&::-webkit-scrollbar-thumb": {
+                                                backgroundColor: "rgba(255,255,255,0.3)",
+                                                borderRadius: "10px",
+                                            },
+                                        }}
+                                    >
                                         {testimonial.review}
                                     </Box>
 
-                                    <Box sx={{gap: 2, fontSize: 14 }}>
+                                    <Box sx={{ gap: 2, fontSize: 14, mt: "auto" }}>
                                         <Box
                                             sx={{
                                                 bgcolor: "rgba(255, 255, 255, 0.2)",
                                                 px: 2,
                                                 py: 0.8,
                                                 borderRadius: 10,
-                                                display:"inline-block",
+                                                display: "inline-block",
                                             }}
                                         >
                                             {testimonial.duration}
@@ -164,8 +195,8 @@ function ClientsReview() {
                                                 fontSize: 14,
                                                 alignSelf: "center",
                                                 color: index % 2 === 0 ? "#AEB3C3" : "#FFD3B3",
-                                                mt:2,
-                                                ml:1,
+                                                mt: 2,
+                                                ml: 1,
                                             }}
                                         >
                                             {testimonial.sessions}
