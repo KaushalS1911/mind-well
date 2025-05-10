@@ -20,12 +20,12 @@ import NightsStayIcon from '@mui/icons-material/NightsStay';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
-import img from '../../assets/images/Home/wellbeing-journey/man-is-smiling.jpg';
-import img1 from '../../assets/images/Home/wellbeing-journey/man-is-doing.jpg';
-import img2 from '../../assets/images/Home/wellbeing-journey/indian-young-man-asking-why-what.jpg';
+import img from '../../assets/images/Home/wellbeing-journey/Feeling Happier.jpg';
+import img1 from '../../assets/images/Home/wellbeing-journey/Be Mindful.jpg';
+import img2 from '../../assets/images/Home/wellbeing-journey/Reduce Worry.jpg';
 import img3 from '../../assets/images/Home/wellbeing-journey/Manage Stress.jpg';
 import img4 from '../../assets/images/Home/wellbeing-journey/Increase Productivity.jpg';
-import img5 from '../../assets/images/Home/wellbeing-journey/tired-indian-man-lying-down.jpg';
+import img5 from '../../assets/images/Home/wellbeing-journey/Improve Sleep.jpg';
 
 const WellbeingJourney = () => {
     const [openCategory, setOpenCategory] = useState(null);

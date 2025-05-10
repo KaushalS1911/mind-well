@@ -131,20 +131,20 @@ const ExamStressGaugeAssessments = () => {
                                     </Typography>
                                 </IconBox>
                             </Box>
-                            {/*<Box display={{sm: "flex"}} alignItems="center" margin="normal" my={2}*/}
-                            {/*     sx={{fontWeight: 700}} className={"overpass"}>*/}
-                            {/*    <FormLabel sx={{color: '#012765', fontFamily: 'Poppins'}}>Language*/}
-                            {/*        :</FormLabel>*/}
-                            {/*    <RadioGroup*/}
-                            {/*        onChange={handleChange}*/}
-                            {/*        row*/}
-                            {/*    >*/}
-                            {/*        <FormControlLabel value="english" control={<Radio/>} label="English"*/}
-                            {/*                          sx={{color: "#012765", ml: 1}}/>*/}
-                            {/*        <FormControlLabel value="hindi" control={<Radio/>} label="Hindi"*/}
-                            {/*                          sx={{color: "#012765"}}/>*/}
-                            {/*    </RadioGroup>*/}
-                            {/*</Box>*/}
+                            <Box display={{sm: "flex"}} alignItems="center" margin="normal" my={2}
+                                 sx={{fontWeight: 700}} className={"overpass"}>
+                                <FormLabel sx={{color: '#012765', fontFamily: 'Poppins'}}>Language
+                                    :</FormLabel>
+                                <RadioGroup
+                                    onChange={handleChange}
+                                    row
+                                >
+                                    <FormControlLabel value="english" control={<Radio/>} label="English"
+                                                      sx={{color: "#012765", ml: 1}}/>
+                                    <FormControlLabel value="hindi" control={<Radio/>} label="Hindi"
+                                                      sx={{color: "#012765"}}/>
+                                </RadioGroup>
+                            </Box>
                             <Box sx={{display: "flex", alignItems: "center"}}>
                                 <Checkbox onChange={(e) => setCheck(e.target.checked)}/>
                                 <Box sx={{
@@ -156,7 +156,7 @@ const ExamStressGaugeAssessments = () => {
                             <Box sx={{display: {sm: "flex"}, justifyContent: "end"}}>
                                 <Box sx={{mt: "20px", display: {sm: "flex"}, justifyContent: "end"}}>
                                     <Button
-                                        onClick={() => navigate('/resources?scrollTo=assessments')}
+                                        onClick={() => navigate('/resources/assessments')}
                                         sx={{
                                             backgroundColor: "#FF7F1E",
                                             py: "5px",
@@ -177,7 +177,7 @@ const ExamStressGaugeAssessments = () => {
                                     </Button>
                                     <Button
                                         onClick={() => navigate("/assessments/exam-stress/exam-assessment-form")}
-                                        disabled={check ? false : true}
+                                        disabled={check && language === true ? false : true}
                                         sx={{
                                             backgroundColor: "#FF7F1E",
                                             py: "5px",

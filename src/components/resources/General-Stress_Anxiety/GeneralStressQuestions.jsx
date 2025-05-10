@@ -38,142 +38,7 @@ const NavigationButton = styled(Button)(({theme}) => ({
     fontFamily: 'Poppins',
 }));
 
-const questions = [
-    {
-        id: 1,
-        text: " I have Experienced Headaches, Muscle Tension or Unexplained Pain or Aches.",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 2,
-        text: "I experienced trouble falling asleep, staying asleep, or woke up interrupted",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 3,
-        text: "I experienced Fatigue and felt tired even after resting",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 4,
-        text: "I experienced rapid heartbeat, shortness of breath and sweating",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 5,
-        text: "Was unable to cope up with daily tasks and felt overwhelmed",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 6,
-        text: "Worried excessively with unlikely or about small problems",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 7,
-        text: "I feel irritable and easily frustrated",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 8,
-        text: "I have trouble concentrating and staying focused",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 9,
-        text: "I avoid situations or tasks if they make me anxious",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 10,
-        text: " I procrastinate (Delay my Tasks) due to feeling stressed or overwhelmed",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 11,
-        text: "I have eating issues (Overeating or Undereating) or rely on substances (Caffeine, Nicotine, Alcohol) to manage stress.",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-    {
-        id: 12,
-        text: "I find it hard to relax even during non-working or leisure hours",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
-    },
-];
-
-const getScoreCategory = (score) => {
+const englishScore = (score) => {
     if (score >= 61 && score <= 80) {
         return {
             level: "Severe Stress/Anxiety",
@@ -194,6 +59,45 @@ const getScoreCategory = (score) => {
             level: "Low Stress/Anxiety",
             interpretation: "You appear to control Strain and tension well. Keep Practicing healthful habits. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, we suggest to engage with certified Psychologists and Professionals.",
         };
+    }
+}
+const hindiScore = (score) => {
+    if (score >= 61 && score <= 80) {
+        return {
+            level: " उच्च स्कोर ",
+            interpretation: "आपने उत्कृष्ट तनाव प्रबंधन, भावनात्मक दृढ़ता, और निर्णय लेने के कौशल का प्रदर्शन किया है, जो आपकी परीक्षा की तैयारी के लिए बहुत महत्वपूर्ण हैं। दबाव में शांत रहने और सकारात्मक सोच बनाए रखने की आपकी क्षमता सराहनीय है, और ये गुण न केवल आपकी परीक्षाओं में बल्कि आपके भविष्य के करियर में भी आपको अच्छी तरह से सेवा देंगे। अच्छा काम जारी रखें, अपने कौशल को परिष्कृत करते रहें, और याद रखें कि निरंतर प्रयास और आत्मविश्वास आपके लक्ष्यों को प्राप्त करने की कुंजी हैं। आपके दृढ़ संकल्प और दृढ़ता के साथ, आप किसी भी चुनौती को पार करने के लिए अच्छी तरह से सुसज्जित हैं।",
+        };
+    }
+    else if (score >= 41 && score <= 60) {
+        return {
+            level: "मध्यम स्कोर ",
+            interpretation: "आपने अच्छे कौशल और व्यवहार का प्रदर्शन किया है, लेकिन कुछ क्षेत्रों में सुधार की आवश्यकता है। आने वाली चुनौतियों के लिए पूरी तरह से तैयार होने के लिए अपने तनाव प्रबंधन तकनीकों और निर्णय लेने की रणनीतियों को बढ़ाने पर ध्यान दें। तनाव प्रबंधन कौशल को विकसित करना आपको दबाव में शांत और केंद्रित रहने में मदद करेगा, जबकि निर्णय लेने की रणनीतियों को परिष्कृत करना सुनिश्चित करेगा कि आप जटिल परिस्थितियों को आत्मविश्वास के साथ संभाल सकें। इन क्षेत्रों पर काम करके, आप किसी भी बाधा का मुकाबला करने और अपने लक्ष्यों को अधिक प्रभावी ढंग से प्राप्त करने के लिए बेहतर सुसज्जित होंगे।\"",
+        };
+    } else if (score >= 21 && score <= 40) {
+        return {
+            level: "मध्यम स्कोर",
+            interpretation: "आपमें संभावना है, लेकिन कई क्षेत्रों में विशेष अभिवृद्धि की आवश्यकता है। अपनी रूटीन में नियमित तनाव-मुक्ति तकनीकों, भावनात्मक बुद्धिमत्ता प्रशिक्षण, और संरचित निर्णय लेने की प्रथाओं को शामिल करने का विचार करें। तनाव-मुक्ति तकनीकों का अभ्यास आपको दबाव के तहत शांत रहने और सकारात्मक दृष्टिकोण बनाए रखने में मदद करेगा, भावनात्मक बुद्धिमत्ता प्रशिक्षण आपको अपनी भावनाओं को समझने और प्रभावी रूप से प्रबंधित करने में मदद करेगा, और संरचित निर्णय लेने की प्रथाएँ आपको जटिल स्थितियों को समझने और उन्हें हल करने में मदद करेंगी। इन सभी उपायों को अपनाकर, आप अपनी क्षमताओं को सुधार सकते हैं और अपने लक्ष्यों की दिशा में प्रगति कर सकते हैं",
+        };
+    } else if (score >= 11 && score <= 20) {
+        return {
+            level: "कम स्कोर",
+            interpretation: "कई चिंता के क्षेत्र हैं जिन्हें संबोधित करने की आवश्यकता है। अच्छे तनाव प्रबंधन तकनीकों, भावनात्मक संघर्षशीलता, और नियमित अध्ययन आदतों के विकास पर ध्यान केंद्रित करें। इन तकनीकों को सुधारकर आप दबाव को सही ढंग से संभाल सकेंगे, भावनात्मक संघर्षशीलता को बढ़ाकर आप संकटों से विश्वासपूर्वक उभर सकेंगे, और नियमित अध्ययन आदतें आपको आपके लक्ष्यों पर संगठित और ध्यानित रहने में मदद करेंगी। इन क्षेत्रों में सुधार के लिए मार्गदर्शन और संसाधनों की खोज करें। इन पहलुओं पर सक्रिय रूप से काम करके, आप अपने प्रयासों में सफलता प्राप्त करने के लिए मजबूत आधार बना सकेंगे।",
+        };
+    }
+    else {
+        return {
+            level: "बहुत कम स्कोर",
+            interpretation: "आपके उत्तर बताते हैं कि लगभग सभी पहलुओं में महत्वपूर्ण विकास की आवश्यकता है। तनाव प्रबंधन, भावनात्मक बुद्धिमत्ता, और अनुशासित अध्ययन रूटीन में मजबूत नींव बनाने पर ध्यान केंद्रित करें। इन कौशलों को सही दिशा में विकसित करना मुश्किलाहटों को सफलतापूर्वक निभाने और अपने लक्ष्यों को प्राप्त करने के लिए महत्वपूर्ण है। पेशेवर मार्गदर्शन या प्रशिक्षण लेना इन क्षेत्रों में आपके विकास को गति देने के लिए महत्वपूर्ण हो सकता है। इन बुनियादी कौशलों को सुधारने के लिए प्रतिबद्ध रहकर, आप अपनी तैयारी को मजबूत करेंगे और अपने प्रयासों में सफलता प्राप्त करने की क्षमता को बढ़ाएंगे।",
+        };
+    }
+}
+
+
+const getScoreCategory = (score,language) => {
+    if(language == "english") {
+        return englishScore(score);
+    }else{
+        return hindiScore(score);
     }
 };
 
@@ -319,6 +223,169 @@ const GeneralStressQuestions = () => {
     const [answers, setAnswers] = useState(Array(20).fill(''));
     const [showResults, setShowResults] = useState(false);
     const [totalScore, setTotalScore] = useState(0);
+    const [language, setLanguage] = useState(null);
+
+    useEffect(() => {
+        const lang = sessionStorage.getItem('language');
+        setLanguage(lang);
+    }, []);
+
+
+    const questions = language === "english" ? [
+        {
+            id: 1,
+            text: " I have Experienced Headaches, Muscle Tension or Unexplained Pain or Aches.",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 2,
+            text: "I experienced trouble falling asleep, staying asleep, or woke up interrupted",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 3,
+            text: "I experienced Fatigue and felt tired even after resting",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 4,
+            text: "I experienced rapid heartbeat, shortness of breath and sweating",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 5,
+            text: "Was unable to cope up with daily tasks and felt overwhelmed",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 6,
+            text: "Worried excessively with unlikely or about small problems",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 7,
+            text: "I feel irritable and easily frustrated",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 8,
+            text: "I have trouble concentrating and staying focused",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 9,
+            text: "I avoid situations or tasks if they make me anxious",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 10,
+            text: " I procrastinate (Delay my Tasks) due to feeling stressed or overwhelmed",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 11,
+            text: "I have eating issues (Overeating or Undereating) or rely on substances (Caffeine, Nicotine, Alcohol) to manage stress.",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+        {
+            id: 12,
+            text: "I find it hard to relax even during non-working or leisure hours",
+            options: [
+                {label: "Always", value: "0"},
+                {label: "Often", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Rarely", value: "3"},
+                {label: "Never", value: "4"}
+            ]
+        },
+    ] : [
+        {
+            id: 21,
+            text: "आप सामान्यतः उच्च दबाव वाली स्थितियों को कैसे संभालते हैं?",
+            options: [
+                {label: "शांत और केंद्रित रहते हैं", value: "0"},
+                {label: "चिंतित हो जाते हैं लेकिन फिर भी संभालते हैं", value: "1"},
+                {label: "संयम बनाए रखने में संघर्ष करते हैं", value: "2"},
+                {label: "स्थिति से बचने की कोशिश करते हैं", value: "3"}
+            ]
+        },
+        {
+            id: 22,
+            text: "जब आपके पास कई समय-सीमाएं होती हैं, तो आप कार्यों को कैसे प्राथमिकता देते हैं?",
+            options: [
+                {label: "तत्कालता और महत्व के आधार पर", value: "0"},
+                {label: "केवल समय-सीमाओं के आधार पर", value: "1"},
+                {label: "बेतरतीब ढंग से", value: "2"},
+                {label: "अक्सर उलझन में पड़ जाते हैं और निर्णय लेने में देरी करते हैं", value: "3"}
+            ]
+        }
+    ]
 
     const handleAnswerChange = (event) => {
         const newAnswers = [...answers];
@@ -349,7 +416,7 @@ const GeneralStressQuestions = () => {
     const progress = ((currentQuestion + 1) / questions.length) * 100;
 
     if (showResults) {
-        const result = getScoreCategory(totalScore);
+        const result = getScoreCategory(totalScore,language);
         const percentage = (totalScore / 80) * 100;
 
         return (
@@ -493,7 +560,8 @@ const GeneralStressQuestions = () => {
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
-                                    recommendations: result.recommendations
+                                    recommendations: result.recommendations,
+                                    language
                                 }}/>}
                                 fileName="General_stress_Report.pdf"
                                 style={{textDecoration: "none"}}

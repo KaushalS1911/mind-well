@@ -79,17 +79,21 @@ const MajorClients = () => {
             {/* Swiper Container */}
             <Container maxWidth="lg">
                 <Swiper
+                    modules={[Autoplay , Navigation]}
+                    spaceBetween={0}
                     slidesPerView={2}
-                    spaceBetween={10}
                     loop={true}
-                    breakpoints={{
-                        600: { slidesPerView: 3 },
-                        900: { slidesPerView: 4 },
-                        1200: { slidesPerView: 5 },
+                    autoplay={{
+                        delay: 1500,
+                        disableOnInteraction: false
                     }}
-                    autoplay={{ delay: 1500, disableOnInteraction: false }}
-                    modules={[Navigation, Autoplay]}
-                    centeredSlides={true}
+                    allowTouchMove={false}
+                    breakpoints={{
+                        640: { slidesPerView: 2 },
+                        768: { slidesPerView: 3 },
+                        1024: { slidesPerView: 4 },
+                        1500: { slidesPerView: 5 },
+                    }}
                 >
                     {images.map((img, index) => (
                         <SwiperSlide key={index}>

@@ -1,6 +1,25 @@
 import React, {useMemo} from 'react';
 import PropTypes from 'prop-types';
-import {Page, View, Text, Document, StyleSheet, Svg, Circle} from '@react-pdf/renderer';
+import {Page,Font, View, Text, Document, StyleSheet, Svg, Circle} from '@react-pdf/renderer';
+
+Font.register({
+    family: 'HindiPoppins',
+    src: '/font/Poppins-Medium.ttf',
+});
+Font.register({
+    family: 'PoppinsRegular',
+    src: '/font/Poppins-Regular.ttf',
+});
+
+Font.register({
+    family: 'PoppinsBold',
+    src: '/font/Poppins-Bold.ttf',
+});
+
+Font.register({
+    family: 'PoppinsSemiBold',
+    src: '/font/Poppins-SemiBold.ttf',
+});
 
 const getColor = (score) => {
     if (score >= 61) return '#ff4d4d';
@@ -19,6 +38,7 @@ const useStyles = (score) =>
                     padding: 30,
                     display: 'flex',
                     alignItems: 'center',
+                    fontFamily: 'PoppinsRegular',
                 },
                 pageItem: {
                     height: '95%',
@@ -42,21 +62,25 @@ const useStyles = (score) =>
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'space-between',
+
                 },
                 name: {
                     fontSize: 12,
                     fontWeight: '600',
                     color: '#0D2152',
+                    fontFamily: 'PoppinsSemiBold',
                     marginBottom: 8,
                 },
                 email: {
                     fontSize: 12,
                     fontWeight: '600',
+                    fontFamily: 'PoppinsSemiBold',
                     color: '#0D2152',
                     marginBottom: 8,
                 },
                 date: {
                     fontSize: 12,
+                    fontFamily: 'PoppinsSemiBold',
                     fontWeight: '600',
                     color: '#0D2152',
                 },
@@ -65,6 +89,7 @@ const useStyles = (score) =>
                     fontWeight: 'bold',
                     color: '#0D2152',
                     marginBottom: 15,
+                    fontFamily: 'PoppinsBold',
                     textAlign: "center"
                 },
                 scoreContainer: {
@@ -77,6 +102,7 @@ const useStyles = (score) =>
                 score: {
                     fontSize: 32,
                     fontWeight: 'bold',
+                    fontFamily: 'PoppinsBold',
                     color: '#0D2152',
                     position: 'absolute',
                 },
@@ -95,6 +121,7 @@ const useStyles = (score) =>
                 level: {
                     fontSize: 16,
                     fontWeight: 'bold',
+                    fontFamily: 'HindiPoppins',
                     color: '#F5811E',
                     marginVertical: 10,
                 },
@@ -114,6 +141,7 @@ const useStyles = (score) =>
                     fontSize: 14,
                     color: '#333',
                     textAlign: 'justify',
+                    fontFamily: 'HindiPoppins',
                 },
                 recommendationsContainer: {
                     marginTop: 20,
@@ -127,6 +155,7 @@ const useStyles = (score) =>
                 recommendationTitle: {
                     fontSize: 16,
                     fontWeight: '600',
+                    fontFamily: 'PoppinsBold',
                     color: '#0D2152',
                     marginBottom: 8,
                     textAlign: 'start',
@@ -134,12 +163,14 @@ const useStyles = (score) =>
                 recommendationBoxTitle: {
                     fontSize: 14,
                     fontWeight: '600',
+                    fontFamily: 'PoppinsSemiBold',
                     color: '#F5811E',
                     marginBottom: 8,
                     textAlign: 'start',
                 },
                 recommendationDescription: {
                     fontSize: 14,
+                    fontFamily: 'HindiPoppins',
                     color: '#4A5568',
                     textAlign: 'justify',
                 },
@@ -151,8 +182,24 @@ export default function PdfView({data}) {
     const styles = useStyles(data.totalScore);
     const strokeColor = getColor(data.totalScore);
     const percentage = (data.totalScore / 80) * 100;
-    const circumference = 2 * Math.PI * 45;
-    const offset = circumference - (percentage / 100) * circumference;
+    // const circumference = 2 * Math.PI * 45;
+    // const offset = circumference - (percentage / 100) * circumference;
+
+    const formatDate = (date) => {
+        const d = new Date(date);
+        let day = d.getDate().toString().padStart(2, '0');
+        let month = (d.getMonth() + 1).toString().padStart(2, '0');
+        let year = d.getFullYear();
+        return `${day}/${month}/${year}`;
+    };
+
+    const currentDate = formatDate(new Date());
+
+    const recommendations = data.recommendations ;
+    const radius = 45;
+    const circumference = 2 * Math.PI * radius;
+    const progress = (Math.min(data.totalScore, 80) / 80) * circumference;
+    const offset = circumference - progress;
 
     return (
         <Document>
@@ -165,7 +212,7 @@ export default function PdfView({data}) {
                                 <Text style={styles.email}>Email: john12@gmail.com</Text>
                             </View>
                             <View>
-                                <Text style={styles.date}>Date: {new Date().toLocaleDateString()}</Text>
+                                <Text style={styles.date}>Date: {currentDate}</Text>
                             </View>
                         </View>
                         <Text style={styles.header}>Emotional Awareness Assessment Results</Text>
@@ -177,13 +224,14 @@ export default function PdfView({data}) {
                                     <Circle
                                         cx="50"
                                         cy="50"
-                                        r="45"
+                                        r={radius}
                                         stroke={strokeColor}
                                         strokeWidth="10"
                                         fill="none"
-                                        strokeDasharray={`${circumference}`}
-                                        strokeDashoffset={`${offset}`}
+                                        strokeDasharray={circumference}
+                                        strokeDashoffset={offset}
                                         strokeLinecap="round"
+                                        transform="rotate(-90 50 50)"
                                     />
                                 </Svg>
                                 <Text style={styles.score}>{data.totalScore}</Text>
@@ -195,12 +243,12 @@ export default function PdfView({data}) {
                             <Text style={styles.interpretation}>{data.interpretation}</Text>
                         </View>
 
-                        {data.recommendations && data.recommendations.length > 0 && (
+                        {recommendations && recommendations.length > 0 && (
                             <View style={styles.recommendationsContainer}>
                                 <View style={styles.recommendationHeader}>
                                     <Text style={styles.recommendationTitle}>Recommendations :</Text>
                                 </View>
-                                {data.recommendations.map((rec, index) => (
+                                {recommendations.map((rec, index) => (
                                     <View
                                         key={index}
                                         style={[

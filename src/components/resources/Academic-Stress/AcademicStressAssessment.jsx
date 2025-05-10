@@ -1,5 +1,16 @@
-import React from 'react';
-import { Box, Container, Typography, Button, Grid, Paper } from '@mui/material';
+import React, {useState} from 'react';
+import {
+    Box,
+    Container,
+    Typography,
+    Button,
+    Grid,
+    Paper,
+    RadioGroup,
+    FormControlLabel,
+    FormLabel,
+    Checkbox, Radio
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
@@ -61,10 +72,13 @@ const HeaderTypography = styled(Typography)(({ theme }) => ({
 
 const AcademicStressAssessment = () => {
     const navigate = useNavigate();
+    const [check, setCheck] = useState()
+    const [language, setLanguage] = useState()
 
-    const handleStartAssessment = () => {
-        navigate('/assessments/academic-stress/academic-assessment-form');
-    };
+    const handleChange = (e) => {
+        setLanguage(e.target.checked)
+        sessionStorage.setItem("language", e.target.value)
+    }
 
     return (
         <Box sx={{
@@ -120,14 +134,81 @@ const AcademicStressAssessment = () => {
                                     </CommonTypography>
                                 </IconBox>
                             </Box>
+                            <Box display={{sm: "flex"}} alignItems="center" margin="normal" my={2}
+                                 sx={{fontWeight: 700}} className={"overpass"}>
+                                <FormLabel sx={{color: '#012765', fontFamily: 'Poppins'}}>Language
+                                    :</FormLabel>
+                                <RadioGroup
+                                    onChange={handleChange}
+                                    row
+                                >
+                                    <FormControlLabel value="english" control={<Radio/>} label="English"
+                                                      sx={{color: "#012765", ml: 1}}/>
+                                    <FormControlLabel value="hindi" control={<Radio/>} label="Hindi"
+                                                      sx={{color: "#012765"}}/>
+                                </RadioGroup>
+                            </Box>
+                            <Box sx={{display: "flex", alignItems: "center"}}>
+                                <Checkbox onChange={(e) => setCheck(e.target.checked)}/>
+                                <Box sx={{
+                                    color: "#012765",
+                                }}>
+                                    I accept the terms and conditions outlined above.
+                                </Box>
+                            </Box>
+                            <Box sx={{display: {sm: "flex"}, justifyContent: "end"}}>
+                                <Box sx={{mt: "20px", display: {sm: "flex"}, justifyContent: "end"}}>
+                                    <Button
+                                        onClick={() => navigate('/resources/assessments')}
+                                        sx={{
+                                            backgroundColor: "#FF7F1E",
+                                            py: "5px",
+                                            px: "28px",
+                                            textTransform: "unset",
+                                            fontSize: "18px",
+                                            color: "white",
+                                            borderRadius: "0.375rem",
+                                            "&:hover": {
+                                                backgroundColor: "#DA5E05",
+                                            },
+                                            mt: "10px",
+                                            marginRight: 1,
+                                            width: {xs: "100%", sm: "unset"}
+                                        }}
+                                    >
+                                        Cancel
+                                    </Button>
+                                    <Button
+                                        onClick={() => navigate("/assessments/academic-stress/academic-assessment-form")}
+                                        disabled={check && language === true ? false : true}
+                                        sx={{
+                                            backgroundColor: "#FF7F1E",
+                                            py: "5px",
+                                            px: "28px",
+                                            textTransform: "unset",
+                                            fontSize: "18px",
+                                            color: "white",
+                                            borderRadius: "0.375rem",
+                                            "&:hover": {
+                                                backgroundColor: "#DA5E05",
+                                            },
+                                            mt: "10px",
+                                            width: {xs: "100%", sm: "unset"}
+                                        }}
+                                    >
+                                        I Agree
+                                    </Button>
+                                </Box>
 
-                            <StartButton
-                                variant="contained"
-                                endIcon={<ArrowForwardIcon />}
-                                onClick={handleStartAssessment}
-                            >
-                                Start Assessment
-                            </StartButton>
+                            </Box>
+
+                            {/*<StartButton*/}
+                            {/*    variant="contained"*/}
+                            {/*    endIcon={<ArrowForwardIcon />}*/}
+                            {/*    onClick={handleStartAssessment}*/}
+                            {/*>*/}
+                            {/*    Start Assessment*/}
+                            {/*</StartButton>*/}
                         </StyledPaper>
                     </Grid>
 

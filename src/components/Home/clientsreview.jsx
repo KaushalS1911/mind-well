@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import img1 from '../../assets/images/Home/ClientsReview/SHailesh Sutaria.png'
 import img2 from '../../assets/images/Home/ClientsReview/Manoj_Suvarna.png'
 import img3 from '../../assets/images/Home/ClientsReview/Rajat_Kumar.png'
+import img4 from '../../assets/images/Home/ClientsReview/Mukinda Sawale.jpeg'
 
 const testimonials = [
     {
@@ -40,6 +41,16 @@ const testimonials = [
         duration: "1 year with \"Emotionally Yours\"",
         sessions: "18 sessions completed",
         color: "#012765",
+    },
+    {
+        image: img4,
+        name: "Mukinda Sawale",
+        role: "Principal",
+        review:
+            "\"I commend the efforts of the  team  Emotionally Yours and facilitators for conducting a thoughtful and well-structured counselling program through out the year.The sessions effectively addressed students' academic, emotional, and personal development needs. Such initiatives play a vital role in fostering a supportive school environment and equipping our students with essential life skills. I encourage the continuation and regular enhancement of this program to further benefit our student community.\"",
+        duration: "1 year with \"Emotionally Yours\"",
+        sessions: "15 sessions completed",
+        color: "#FF7F1E",
     },
 ];
 
@@ -96,7 +107,8 @@ function ClientsReview() {
                                         borderRadius: 3,
                                         display: "flex",
                                         flexDirection: "column",
-                                        height: {xs:"750px",sm:"470px",md:"550px",lg:"450px"},
+                                        // height: {xs:"750px",sm:"470px",md:"550px",lg:"450px"},
+                                        minHeight:"450px",
                                         width: "100%",
                                         // minHeight: 00,
                                     }}
@@ -135,13 +147,14 @@ function ClientsReview() {
                                         {testimonial.review}
                                     </Box>
 
-                                    <Box sx={{ display: "flex", gap: 2, fontSize: 14 }}>
+                                    <Box sx={{gap: 2, fontSize: 14 }}>
                                         <Box
                                             sx={{
                                                 bgcolor: "rgba(255, 255, 255, 0.2)",
                                                 px: 2,
                                                 py: 0.8,
                                                 borderRadius: 10,
+                                                display:"inline-block",
                                             }}
                                         >
                                             {testimonial.duration}
@@ -151,6 +164,8 @@ function ClientsReview() {
                                                 fontSize: 14,
                                                 alignSelf: "center",
                                                 color: index % 2 === 0 ? "#AEB3C3" : "#FFD3B3",
+                                                mt:2,
+                                                ml:1,
                                             }}
                                         >
                                             {testimonial.sessions}

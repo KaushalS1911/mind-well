@@ -39,175 +39,7 @@ const NavigationButton = styled(Button)(({theme}) => ({
     fontFamily: 'Poppins',
 }));
 
-const questions = [
-    {
-        id: 1,
-        text: " How often do you feel you have enough time for both work-related and personal activities?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 2,
-        text: "How frequently do you finish your work within scheduled hours?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 3,
-        text: "How confident are you in managing your time between professional and personal responsibilities?",
-        options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
-        ]
-    },
-    {
-        id: 4,
-        text: "How often do you feel overwhelmed by your job demands?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 5,
-        text: " How frequently does work-related stress affect your personal life?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 6,
-        text: "How often do you feel emotionally present when spending time with family and friends?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 7,
-        text: "How confident are you in setting boundaries between your work and personal life?",
-        options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
-        ]
-    },
-    {
-        id: 8,
-        text: "How often does your workload allow you to take breaks or time off without guilt?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 9,
-        text: "How comfortable do you feel saying no to extra work that could affect your personal time?",
-        options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
-        ]
-    },
-    {
-        id: 10,
-        text: "How often do you engage in hobbies or personal activities you enjoy?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 11,
-        text: "How satisfied are you with the quality time you spend with your loved ones?",
-        options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
-        ]
-    },
-    {
-        id: 12,
-        text: "How often do your personal relationships feel unaffected by work responsibilities?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 13,
-        text: "How regularly do you make time for activities that support your physical or mental well-being?",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 14,
-        text: "How frequently does work negatively impact your sleep or eating habits? ",
-        options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
-        ]
-    },
-    {
-        id: 15,
-        text: "How satisfied are you with the balance between your professional ambitions and personal happiness?",
-        options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
-        ]
-    },
-];
-
-const getScoreCategory = (score) => {
+const englishScore = (score) => {
     if (score >= 61 && score <= 80) {
         return {
             level: "Strong Work-Life Balance",
@@ -238,6 +70,51 @@ const getScoreCategory = (score) => {
                 },
             ]
         };
+    }
+}
+const hindiScore = (score) => {
+    if (score >= 61 && score <= 80) {
+        return {
+            level: " उच्च स्कोर ",
+            interpretation: "आपने उत्कृष्ट तनाव प्रबंधन, भावनात्मक दृढ़ता, और निर्णय लेने के कौशल का प्रदर्शन किया है, जो आपकी परीक्षा की तैयारी के लिए बहुत महत्वपूर्ण हैं। दबाव में शांत रहने और सकारात्मक सोच बनाए रखने की आपकी क्षमता सराहनीय है, और ये गुण न केवल आपकी परीक्षाओं में बल्कि आपके भविष्य के करियर में भी आपको अच्छी तरह से सेवा देंगे। अच्छा काम जारी रखें, अपने कौशल को परिष्कृत करते रहें, और याद रखें कि निरंतर प्रयास और आत्मविश्वास आपके लक्ष्यों को प्राप्त करने की कुंजी हैं। आपके दृढ़ संकल्प और दृढ़ता के साथ, आप किसी भी चुनौती को पार करने के लिए अच्छी तरह से सुसज्जित हैं।",
+            recommendations: [
+                {
+                    title: "कम स्कोर",
+                    description: "आपके उत्तर बताते हैं कि लगभग सभी पहलुओं में महत्वपूर्ण विकास की आवश्यकता है। तनाव प्रबंधन, भावनात्मक बुद्धिमत्ता, और अनुशासित अध्ययन रूटीन में मजबूत नींव बनाने पर ध्यान केंद्रित करें।"
+                },
+            ]
+        };
+    }
+    else if (score >= 41 && score <= 60) {
+        return {
+            level: "मध्यम स्कोर ",
+            interpretation: "आपने अच्छे कौशल और व्यवहार का प्रदर्शन किया है, लेकिन कुछ क्षेत्रों में सुधार की आवश्यकता है। आने वाली चुनौतियों के लिए पूरी तरह से तैयार होने के लिए अपने तनाव प्रबंधन तकनीकों और निर्णय लेने की रणनीतियों को बढ़ाने पर ध्यान दें। तनाव प्रबंधन कौशल को विकसित करना आपको दबाव में शांत और केंद्रित रहने में मदद करेगा, जबकि निर्णय लेने की रणनीतियों को परिष्कृत करना सुनिश्चित करेगा कि आप जटिल परिस्थितियों को आत्मविश्वास के साथ संभाल सकें। इन क्षेत्रों पर काम करके, आप किसी भी बाधा का मुकाबला करने और अपने लक्ष्यों को अधिक प्रभावी ढंग से प्राप्त करने के लिए बेहतर सुसज्जित होंगे।\"",
+            recommendations: [
+                {
+                    title: "कम स्कोर",
+                    description: "आपके उत्तर बताते हैं कि लगभग सभी पहलुओं में महत्वपूर्ण विकास की आवश्यकता है। तनाव प्रबंधन, भावनात्मक बुद्धिमत्ता, और अनुशासित अध्ययन रूटीन में मजबूत नींव बनाने पर ध्यान केंद्रित करें।"
+                },
+            ]
+        };
+    } else if (score <= 40) {
+        return {
+            level: "मध्यम स्कोर",
+            interpretation: "आपमें संभावना है, लेकिन कई क्षेत्रों में विशेष अभिवृद्धि की आवश्यकता है। अपनी रूटीन में नियमित तनाव-मुक्ति तकनीकों, भावनात्मक बुद्धिमत्ता प्रशिक्षण, और संरचित निर्णय लेने की प्रथाओं को शामिल करने का विचार करें। तनाव-मुक्ति तकनीकों का अभ्यास आपको दबाव के तहत शांत रहने और सकारात्मक दृष्टिकोण बनाए रखने में मदद करेगा, भावनात्मक बुद्धिमत्ता प्रशिक्षण आपको अपनी भावनाओं को समझने और प्रभावी रूप से प्रबंधित करने में मदद करेगा, और संरचित निर्णय लेने की प्रथाएँ आपको जटिल स्थितियों को समझने और उन्हें हल करने में मदद करेंगी। इन सभी उपायों को अपनाकर, आप अपनी क्षमताओं को सुधार सकते हैं और अपने लक्ष्यों की दिशा में प्रगति कर सकते हैं",
+            recommendations: [
+                {
+                    title: "कम स्कोर",
+                    description: "आपके उत्तर बताते हैं कि लगभग सभी पहलुओं में महत्वपूर्ण विकास की आवश्यकता है। तनाव प्रबंधन, भावनात्मक बुद्धिमत्ता, और अनुशासित अध्ययन रूटीन में मजबूत नींव बनाने पर ध्यान केंद्रित करें।"
+                },
+            ]
+        };
+    }
+}
+
+const getScoreCategory = (score,language) => {
+    if(language == "english") {
+        return englishScore(score);
+    }else{
+        return hindiScore(score);
     }
 };
 
@@ -363,6 +240,201 @@ const WorkLifeBalanceQuestions = () => {
     const [answers, setAnswers] = useState(Array(20).fill(''));
     const [showResults, setShowResults] = useState(false);
     const [totalScore, setTotalScore] = useState(0);
+    const [language, setLanguage] = useState(null);
+
+    useEffect(() => {
+        const lang = sessionStorage.getItem('language');
+        setLanguage(lang);
+    }, []);
+
+    const questions = language === "english" ? [
+        {
+            id: 1,
+            text: " How often do you feel you have enough time for both work-related and personal activities?",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 2,
+            text: "How frequently do you finish your work within scheduled hours?",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 3,
+            text: "How confident are you in managing your time between professional and personal responsibilities?",
+            options: [
+                {label: "Not at all", value: "0"},
+                {label: "Slightly", value: "1"},
+                {label: "Moderately", value: "2"},
+                {label: "Very", value: "3"},
+                {label: "Extremely", value: "4"}
+            ]
+        },
+        {
+            id: 4,
+            text: "How often do you feel overwhelmed by your job demands?",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 5,
+            text: " How frequently does work-related stress affect your personal life?",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 6,
+            text: "How often do you feel emotionally present when spending time with family and friends?",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 7,
+            text: "How confident are you in setting boundaries between your work and personal life?",
+            options: [
+                {label: "Not at all", value: "0"},
+                {label: "Slightly", value: "1"},
+                {label: "Moderately", value: "2"},
+                {label: "Very", value: "3"},
+                {label: "Extremely", value: "4"}
+            ]
+        },
+        {
+            id: 8,
+            text: "How often does your workload allow you to take breaks or time off without guilt?",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 9,
+            text: "How comfortable do you feel saying no to extra work that could affect your personal time?",
+            options: [
+                {label: "Not at all", value: "0"},
+                {label: "Slightly", value: "1"},
+                {label: "Moderately", value: "2"},
+                {label: "Very", value: "3"},
+                {label: "Extremely", value: "4"}
+            ]
+        },
+        {
+            id: 10,
+            text: "How often do you engage in hobbies or personal activities you enjoy?",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 11,
+            text: "How satisfied are you with the quality time you spend with your loved ones?",
+            options: [
+                {label: "Not at all", value: "0"},
+                {label: "Slightly", value: "1"},
+                {label: "Moderately", value: "2"},
+                {label: "Very", value: "3"},
+                {label: "Extremely", value: "4"}
+            ]
+        },
+        {
+            id: 12,
+            text: "How often do your personal relationships feel unaffected by work responsibilities?",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 13,
+            text: "How regularly do you make time for activities that support your physical or mental well-being?",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 14,
+            text: "How frequently does work negatively impact your sleep or eating habits? ",
+            options: [
+                {label: "Never", value: "0"},
+                {label: "Rarely", value: "1"},
+                {label: "Sometimes", value: "2"},
+                {label: "Often", value: "3"},
+                {label: "Always", value: "4"}
+            ]
+        },
+        {
+            id: 15,
+            text: "How satisfied are you with the balance between your professional ambitions and personal happiness?",
+            options: [
+                {label: "Not at all", value: "0"},
+                {label: "Slightly", value: "1"},
+                {label: "Moderately", value: "2"},
+                {label: "Very", value: "3"},
+                {label: "Extremely", value: "4"}
+            ]
+        },
+    ] : [
+        {
+            id: 16,
+            text: "आप सामान्यतः उच्च दबाव वाली स्थितियों को कैसे संभालते हैं?",
+            options: [
+                {label: "शांत और केंद्रित रहते हैं", value: "0"},
+                {label: "चिंतित हो जाते हैं लेकिन फिर भी संभालते हैं", value: "1"},
+                {label: "संयम बनाए रखने में संघर्ष करते हैं", value: "2"},
+                {label: "स्थिति से बचने की कोशिश करते हैं", value: "3"}
+            ]
+        },
+        {
+            id: 17,
+            text: "जब आपके पास कई समय-सीमाएं होती हैं, तो आप कार्यों को कैसे प्राथमिकता देते हैं?",
+            options: [
+                {label: "तत्कालता और महत्व के आधार पर", value: "0"},
+                {label: "केवल समय-सीमाओं के आधार पर", value: "1"},
+                {label: "बेतरतीब ढंग से", value: "2"},
+                {label: "अक्सर उलझन में पड़ जाते हैं और निर्णय लेने में देरी करते हैं", value: "3"}
+            ]
+        }
+    ]
 
     const handleAnswerChange = (event) => {
         const newAnswers = [...answers];
@@ -393,7 +465,7 @@ const WorkLifeBalanceQuestions = () => {
     const progress = ((currentQuestion + 1) / questions.length) * 100;
 
     if (showResults) {
-        const result = getScoreCategory(totalScore);
+        const result = getScoreCategory(totalScore,language);
         const percentage = (totalScore / 80) * 100;
 
         return (

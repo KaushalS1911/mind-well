@@ -81,17 +81,17 @@ const HeroSlide = ({ slideData, index }) => {
         <Box
             sx={{
                 display: 'flex',
-                flexDirection: { xs: 'column', md: 'row' },
+                flexDirection: { xs: 'column', lg: 'row' },
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 height: '100%',
                 mx: { xs: '20px',md:"50px", xl: '100px' }
             }}
         >
-            <Stack
+            <Box
                 spacing={4}
                 sx={{
-                    maxWidth: { md: '50%' },
+                    maxWidth: { lg: '62%',xl:"50%" },
                     width: '100%',
                 }}
             >
@@ -107,7 +107,8 @@ const HeroSlide = ({ slideData, index }) => {
                                 xs: '1.7rem',
                                 sm: '1.85rem',
                                 md: '2rem',
-                                lg: '2.125rem'
+                                lg: '2.0rem',
+                                xl: '2.125rem'
                             },
                             color: "#012765",
                             fontWeight: 700,
@@ -158,11 +159,11 @@ const HeroSlide = ({ slideData, index }) => {
                         {slideData.description}
                     </Typography>
                 </Box>
-            </Stack>
+            </Box>
 
             <Box
                 sx={{
-                    width: '100%',
+                    width: {lg:'40%',xs:"100%",xl:"50%"},
                     position: 'relative',
                     display: 'flex',
                     justifyContent: 'center',
