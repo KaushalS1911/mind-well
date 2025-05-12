@@ -89,7 +89,7 @@ const SelfEsteemScaleAssessmentForm = () => {
 
     return (
         <Box sx={{
-            backgroundColor: '#F3F4F6',
+            // backgroundColor: '#F3F4F6',
             padding: { sm: "120px 0", xs: "80px 0" },
             mt: { md: 5, xs: 0 },
         }}>

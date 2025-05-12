@@ -1540,7 +1540,7 @@ const EmotionalAwarenessQuestions = () => {
             minHeight: 'calc(100vh - 72px)',
             display: 'flex',
             alignItems: 'center',
-            backgroundColor: '#F3F4F6',
+            // backgroundColor: '#F3F4F6',
             mt: {xs: '64px', sm: '72px'},
             py: {xs: 4, md: 6},
         }}>
