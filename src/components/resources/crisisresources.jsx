@@ -29,21 +29,22 @@ const CrisisResourceCard = ({title, description, icon, contact}) => (
 function CrisisResources() {
     const crisisResources = [
         {
-            title: "National Suicide Prevention Lifeline",
-            description: "24/7, free and confidential support for people in distress.",
+            title: "NIMHANS Helpline",
+            description: "National Institute of Mental Health and Neurosciences offers professional mental health support.",
             icon: <Phone sx={{color: "#FF7A00", fontSize: 20}}/>,
-            contact: "988",
+            contact: "080-2661 0107",
         },
         {
-            title: "Crisis Text Line",
-            description: "Text with a trained crisis counselor 24/7.",
-            contact: "Text HOME to 741741",
+            title: "Kiran Mental Health Helpline",
+            description: "24/7 toll-free helpline providing support in 13 languages across India.",
+            icon: <Phone sx={{color: "#FF7A00", fontSize: 20}}/>,
+            contact: "1800-599-0019",
         },
         {
-            title: "Emergency Services",
-            description: "For immediate danger, call emergency services.",
+            title: "Vandrevala Foundation",
+            description: "24/7 helpline for emotional crisis and distress support.",
             icon: <Phone sx={{color: "#FF7A00", fontSize: 20}}/>,
-            contact: "911",
+            contact: "9999 666 555",
         },
     ];
 
@@ -58,8 +59,7 @@ function CrisisResources() {
                         </Typography>
                         <Typography sx={{color: "#4B5563", mb: 4, fontSize: "16px"}}>
                             If you or someone you know is experiencing a mental health emergency, please contact these
-                            resources
-                            for immediate support.
+                            resources for immediate support.
                         </Typography>
 
                         {/* Crisis Resource Cards */}
@@ -73,9 +73,7 @@ function CrisisResources() {
                         <Box sx={{backgroundColor: "#ECEFF3", padding: 2, marginTop: 3, borderRadius: 1}}>
                             <Typography sx={{fontSize: "14px", color: "#012765"}}>
                                 <b>Note:</b> "Emotionally Yours" is not a crisis service. If you are experiencing a
-                                mental
-                                health
-                                emergency, please contact the resources above for immediate assistance.
+                                mental health emergency, please contact the resources above for immediate assistance or dial 112 for emergency services.
                             </Typography>
                         </Box>
                     </Box>
