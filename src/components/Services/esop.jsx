@@ -370,43 +370,43 @@ const FAQSection = () => {
     const faqs = [
         {
             question: "What is the ESOP Program?",
-            answer: "ESOP (Employee Self Ownership Program) is a structured emotional wellness initiative designed to move employees from disengagement to high motivation and performance."
+            answer: "ESOP (Employee Self Ownership Program) is a structured emotional wellness initiative designed to move employees from disengagement to high motivation and performance"
         },
         {
             question: "Who is it for?",
-            answer: "It's for organizations aiming to improve employee engagement, mental wellness, performance, and retention through proactive support."
+            answer: "It's for organizations aiming to improve employee engagement, mental wellness, performance, and retention through proactive support"
         },
         {
             question: "What key challenges does ESOP address?",
-            answer: "Burnout, disengagement, performance stagnation, stress, lack of motivation, and poor work-life balance."
+            answer: "Burnout, disengagement, performance stagnation, stress, lack of motivation, and poor work-life balance"
         },
         {
             question: "What's unique about this program?",
-            answer: "It categorizes employees into 3 motivation zones and provides personalized interventions, workshops, counseling, and follow-up support accordingly."
+            answer: "It categorizes employees into 3 motivation zones and provides personalized interventions, workshops, counseling, and follow-up support accordingly"
         },
         {
             question: "What services are included?",
-            answer: "Psychometric tests, individual sessions, group workshops, DIY tools, stationed psychologists, and curated assessments."
+            answer: "Psychometric tests, individual sessions, group workshops, DIY tools, stationed psychologists, and curated assessments"
         },
         {
             question: "How does it help businesses?",
-            answer: "It boosts employee retention, productivity, morale, customer satisfaction, and reduces absenteeism and burnout."
+            answer: "It boosts employee retention, productivity, morale, customer satisfaction, and reduces absenteeism and burnout"
         },
         {
             question: "Can results be measured?",
-            answer: "Yes, through ROI-linked metrics such as productivity scores, retention rates, absenteeism, and mental health indicators."
+            answer: "Yes, through ROI-linked metrics such as productivity scores, retention rates, absenteeism, and mental health indicators"
         },
         {
             question: "What is the process of implementation?",
-            answer: "Starts with wellness assessment, forms a taskforce, conducts workshops, activates wellness modules, and tracks progress with data."
+            answer: "Starts with wellness assessment, forms a taskforce, conducts workshops, activates wellness modules, and tracks progress with data"
         },
         {
             question: "Is pricing fixed?",
-            answer: "No, pricing is customized based on organization size, workshop count, assessments, and session requirements."
+            answer: "No, pricing is customized based on organization size, workshop count, assessments, and session requirements"
         },
         {
             question: "How do we get started?",
-            answer: "Reach out to the MTPL team to schedule an initial assessment and explore tailored offerings for your workplace."
+            answer: "Reach out to the MTPL team to schedule an initial assessment and explore tailored offerings for your workplace"
         }
     ];
 

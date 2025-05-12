@@ -331,8 +331,8 @@ export default function ShapeDesigne() {
             title: 'Establishing the Groundwork for Emotional Mastery',
             icon: <MenuBook fontSize="large"/>,
             points: [
-                'Facilitate experiential learning sessions that introduce key principles of emotional intelligence, mindful awareness, and effective stress navigation.',
-                'Generate in-depth emotional wellness profiles using data-driven assessments to uncover core strengths and areas for growth.',
+                'Facilitate experiential learning sessions that introduce key principles of emotional intelligence, mindful awareness, and effective stress navigation',
+                'Generate in-depth emotional wellness profiles using data-driven assessments to uncover core strengths and areas for growth',
                 'Initiate reflective dialogue and guided activities to spark self-awareness and lay the foundation for long-term emotional development. Establishing',
             ],
         },
@@ -340,25 +340,25 @@ export default function ShapeDesigne() {
             title: 'Empowering Growth Through Targeted Training',
             icon: <People fontSize="large"/>,
             points: [
-                'Student enrichment sessions focus on building emotional regulation, enhancing academic resilience, and cultivating intrinsic motivation for sustained success.',
-                'Educator Development Workshops equip teachers with mindfulness-based strategies, classroom engagement techniques, and effective stress management tools.',
+                'Student enrichment sessions focus on building emotional regulation, enhancing academic resilience, and cultivating intrinsic motivation for sustained success',
+                'Educator Development Workshops equip teachers with mindfulness-based strategies, classroom engagement techniques, and effective stress management tools',
             ],
         },
         {
             title: 'Integrated Emotional Wellness & Sustainable Support',
             icon: <Favorite fontSize="large"/>,
             points: [
-                'Deliver customised individual counselling, accessible both online and on campus, to nurture the mental health of students and educators.',
-                'Facilitate supportive peer networks that encourage open dialogue, empathy, and the development of emotional strength and connection.',
+                'Deliver customised individual counselling, accessible both online and on campus, to nurture the mental health of students and educators',
+                'Facilitate supportive peer networks that encourage open dialogue, empathy, and the development of emotional strength and connection',
             ],
         },
         {
             title: 'Evaluating Outcomes & Shaping Sustainable Pathways',
             icon: <TrendingUp fontSize="large"/>,
             points: [
-                'Administer post-program diagnostic evaluations to assess growth in emotional well-being and behavioural transformation.',
-                'Facilitate collaborative review forums with students, educators, and parents to gather qualitative feedback and shared insights.',
-                'Co-develop a long-term emotional wellness strategy in partnership with school leadership to ensure continued impact and institutional integration.',
+                'Administer post-program diagnostic evaluations to assess growth in emotional well-being and behavioural transformation',
+                'Facilitate collaborative review forums with students, educators, and parents to gather qualitative feedback and shared insights',
+                'Co-develop a long-term emotional wellness strategy in partnership with school leadership to ensure continued impact and institutional integration',
             ],
         },
     ];
@@ -367,43 +367,43 @@ export default function ShapeDesigne() {
     const faqs = [
         {
             question: "What is the SHAPE Wellness Program?",
-            answer: "A year-long emotional wellness initiative focused on making college students Future Ready through awareness, training, counseling, and measurable impact."
+            answer: "A year-long emotional wellness initiative focused on making college students Future Ready through awareness, training, counseling, and measurable impact"
         },
         {
             question: "Who is this program meant for?",
-            answer: "It is designed for college students, faculty, and academic institutions seeking to address emotional, academic, and career-related challenges."
+            answer: "It is designed for college students, faculty, and academic institutions seeking to address emotional, academic, and career-related challenges"
         },
         {
             question: "What key challenges does it address?",
-            answer: "It tackles academic stress, emotional health issues, lack of career guidance, skill gaps, and limited industry exposure."
+            answer: "It tackles academic stress, emotional health issues, lack of career guidance, skill gaps, and limited industry exposure"
         },
         {
             question: "Is this program aligned with NEP?",
-            answer: "Yes, it follows NEP 2020 and Mental Health Act 2017 guidelines, supporting holistic student development."
+            answer: "Yes, it follows NEP 2020 and Mental Health Act 2017 guidelines, supporting holistic student development"
         },
         {
             question: "What activities are included?",
-            answer: "Workshops, counseling, peer support groups, self-assessments, classroom sessions, and psychologist-led guidance."
+            answer: "Workshops, counseling, peer support groups, self-assessments, classroom sessions, and psychologist-led guidance"
         },
         {
             question: "How is emotional well-being measured?",
-            answer: "Through pre- and post-assessments focusing on academic performance, stress, resilience, attendance, and placement progress."
+            answer: "Through pre- and post-assessments focusing on academic performance, stress, resilience, attendance, and placement progress"
         },
         {
             question: "Is individual counseling available?",
-            answer: "Yes, students can book personalized 15-minute sessions post-group activities."
+            answer: "Yes, students can book personalized 15-minute sessions post-group activities"
         },
         {
             question: "Does this program help with employability?",
-            answer: "Yes, it enhances soft skills, emotional intelligence, and industry readiness through hands-on sessions and mentorship."
+            answer: "Yes, it enhances soft skills, emotional intelligence, and industry readiness through hands-on sessions and mentorship"
         },
         {
             question: "How does it benefit the institution?",
-            answer: "It boosts student engagement, reduces behavioral issues, improves academic health, and contributes to the institute's reputation."
+            answer: "It boosts student engagement, reduces behavioral issues, improves academic health, and contributes to the institute's reputation"
         },
         {
             question: "How can a college get started?",
-            answer: "Institutions can contact the MTPL team to schedule an introductory session and baseline assessment."
+            answer: "Institutions can contact the MTPL team to schedule an introductory session and baseline assessment"
         }
     ];
 
@@ -421,7 +421,7 @@ export default function ShapeDesigne() {
                     <Box>
                         <SectionHeading
                             title="Our Four-Pillar Approach"
-                            subtitle="SHAPE+ delivers emotional wellness through four integrated components that work together to create lasting positive impact for higher education students."
+                            subtitle="SHAPE+ delivers emotional wellness through four integrated components that work together to create lasting positive impact for higher education students"
                             centered={true}
                         />
 

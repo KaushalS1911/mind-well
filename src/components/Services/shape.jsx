@@ -328,9 +328,9 @@ export default function ShapePlusMUI() {
             title: 'Emotional Wellness Insights & Awareness Building',
             icon: <MenuBook fontSize="large"/>,
             points: [
-                'Administer Comprehensive Emotional Wellness Surveys for students, educators, and parents to gather valuable insights into emotional well-being across the school community.',
-                'Facilitate Engaging Awareness Workshops focused on emotional intelligence, mindfulness practices, and stress management techniques to build foundational life skills.',
-                'Deliver In-Depth Emotional Well-Being Reports featuring actionable data, analysis, and tailored recommendations to support emotional health at the school level.',
+                'Administer Comprehensive Emotional Wellness Surveys for students, educators, and parents to gather valuable insights into emotional well-being across the school community',
+                'Facilitate Engaging Awareness Workshops focused on emotional intelligence, mindfulness practices, and stress management techniques to build foundational life skills',
+                'Deliver In-Depth Emotional Well-Being Reports featuring actionable data, analysis, and tailored recommendations to support emotional health at the school level',
             ],
         },
         {
@@ -338,26 +338,26 @@ export default function ShapePlusMUI() {
             icon: <People fontSize="large"/>,
             points: [
                 'Student group classroom sessions focus on strengthening emotional regulation, enhancing stress adaptability, and developing coping mechanism',
-                'Educators training integrating mindful teaching practices, build emotional resilience, and elevate student engagement.',
-                'Parents workshops empowering families to support childs emotional well-being, manage expectations mindfully, and reduce academic pressure.',
+                'Educators training integrating mindful teaching practices, build emotional resilience, and elevate student engagement',
+                'Parents workshops empowering families to support childs emotional well-being, manage expectations mindfully, and reduce academic pressure',
             ],
         },
         {
             title: 'Integrated Well-Being Support for Enduring Growth',
             icon: <Favorite fontSize="large"/>,
             points: [
-                'Offer personalised counselling, both online and in person, to support individual issues.',
-                'Create peer support networks that promote open communication, empathy, and collective resilience within the school community.',
-                'Embed emotional intelligence in classrooms through mindfulness, gratitude exercises and journaling.',
+                'Offer personalised counselling, both online and in person, to support individual issues',
+                'Create peer support networks that promote open communication, empathy, and collective resilience within the school community',
+                'Embed emotional intelligence in classrooms through mindfulness, gratitude exercises and journaling',
             ],
         },
         {
             title: 'Measuring Impact, Shaping Future',
             icon: <TrendingUp fontSize="large"/>,
             points: [
-                'Implement post-program evaluations to assess measurable improvements and personal growth across all participants.',
-                'Facilitate collaborative feedback and experience-sharing sessions with students, educators, and parents to capture insights and reflections.',
-                'Co-create a long-term sustainability roadmap with school leadership, ensuring continued integration of emotional wellness practices into the institutional framework.',
+                'Implement post-program evaluations to assess measurable improvements and personal growth across all participants',
+                'Facilitate collaborative feedback and experience-sharing sessions with students, educators, and parents to capture insights and reflections',
+                'Co-create a long-term sustainability roadmap with school leadership, ensuring continued integration of emotional wellness practices into the institutional framework',
             ],
         },
     ];
@@ -366,43 +366,43 @@ export default function ShapePlusMUI() {
     const faqs = [
         {
             question: "What is the SHAPE Wellness Program?",
-            answer: "The SHAPE Wellness Program is a year-long, structured emotional wellness initiative for students, teachers, and parents to build emotional intelligence, reduce stress, and improve academic performance."
+            answer: "The SHAPE Wellness Program is a year-long, structured emotional wellness initiative for students, teachers, and parents to build emotional intelligence, reduce stress, and improve academic performance"
         },
         {
             question: "Who benefits from this program?",
-            answer: "Students, teachers, parents, and non-academic staff benefit through awareness workshops, training sessions, personalized counseling, and self-help tools."
+            answer: "Students, teachers, parents, and non-academic staff benefit through awareness workshops, training sessions, personalized counseling, and self-help tools"
         },
         {
             question: "What makes this program different?",
-            answer: "It is aligned with NEP 2020 and Mental Health Act 2017, offers measurable outcomes, and uses both expert-led sessions and app-based self-help tools."
+            answer: "It is aligned with NEP 2020 and Mental Health Act 2017, offers measurable outcomes, and uses both expert-led sessions and app-based self-help tools"
         },
         {
             question: "How is the program delivered?",
-            answer: "Through classroom group sessions, digital workshops, personalized counseling (online/offline), psychometric assessments, and a Freemium wellness app."
+            answer: "Through classroom group sessions, digital workshops, personalized counseling (online/offline), psychometric assessments, and a Freemium wellness app"
         },
         {
             question: "What emotional challenges does it address?",
-            answer: "The program tackles academic stress, anxiety, emotional regulation, bullying, and lack of motivation in students, while supporting teachers and parents in managing related challenges."
+            answer: "The program tackles academic stress, anxiety, emotional regulation, bullying, and lack of motivation in students, while supporting teachers and parents in managing related challenges"
         },
         {
             question: "Is the program measurable?",
-            answer: "Yes. It tracks emotional, behavioral, academic, nutritional, physical, digital, and social parameters before and after implementation."
+            answer: "Yes. It tracks emotional, behavioral, academic, nutritional, physical, digital, and social parameters before and after implementation"
         },
         {
             question: "Is it suitable for all age groups?",
-            answer: "Yes, it is designed for K-12 students with age-appropriate content and separate modules for teachers and parents."
+            answer: "Yes, it is designed for K-12 students with age-appropriate content and separate modules for teachers and parents"
         },
         {
             question: "What tools are included in the app?",
-            answer: "Mood trackers, daily journals, self-assessments, recorded sessions, and emotional wellness quizzes are part of the app."
+            answer: "Mood trackers, daily journals, self-assessments, recorded sessions, and emotional wellness quizzes are part of the app"
         },
         {
             question: "How can a school enroll?",
-            answer: "Schools can reach out to the MTPL team through the contact information provided to schedule an initial assessment and program walkthrough."
+            answer: "Schools can reach out to the MTPL team through the contact information provided to schedule an initial assessment and program walkthrough"
         },
         {
             question: "What impact has the program shown so far?",
-            answer: "Over 150,000 beneficiaries, 5,000+ workshops, and 3,500+ individual sessions have led to better attendance, reduced stress, improved academic and emotional outcomes, and early identification of critical cases."
+            answer: "Over 150,000 beneficiaries, 5,000+ workshops, and 3,500+ individual sessions have led to better attendance, reduced stress, improved academic and emotional outcomes, and early identification of critical cases"
         }
     ];
 
@@ -420,7 +420,7 @@ export default function ShapePlusMUI() {
                     <Box>
                         <SectionHeading
                             title="Our Four-Pillar Approach"
-                            subtitle="SHAPE delivers emotional wellness through four integrated components that work together to create lasting positive impact for higher education students."
+                            subtitle="SHAPE delivers emotional wellness through four integrated components that work together to create lasting positive impact for higher education students"
                             centered={true}
                         />
 
