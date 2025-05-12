@@ -85,10 +85,10 @@ function App() {
                 <Route path="/home1" element={<WorkPlaceHeroSection/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/Services" element={<Services/>}/>
-                <Route path="/services/SHAPE" element={<Shape/>}/>
-                <Route path="/services/SHAPE-Designe" element={<ShapeDesigne/>}/>
-                <Route path="/services/ESOP" element={<Esop/>}/>
-                <Route path="/services/PEP" element={<Pep/>}/>
+                <Route path="/services/shape" element={<Shape/>}/>
+                <Route path="/services/shape-plus" element={<ShapeDesigne/>}/>
+                <Route path="/services/esop" element={<Esop/>}/>
+                <Route path="/services/pep" element={<Pep/>}/>
                 <Route path="/gallery" element={<Gallery/>}/>
                 <Route path="/careers" element={<Careers/>}/>
                 <Route path={"/resources/journaling"} element={<Journaling/>}/>
@@ -131,7 +131,7 @@ function App() {
                 />
                 <Route
                     path="/assessments/general-stress"
-                    element={<GeneralStressAssessment/>}
+                    element={<GeneralStressAssessment />}
                 />
                 <Route
                     path="/assessments/general-stress/questions"

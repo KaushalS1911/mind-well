@@ -406,13 +406,13 @@ const SelfEsteemScaleAssessment = () => {
                                 <IconBox>
                                     <TimerOutlinedIcon/>
                                     <Typography sx={{color: '#012765', fontFamily: 'Poppins'}}>
-                                        Time to complete: ~5 minutes
+                                        Time to complete: ~10 minutes
                                     </Typography>
                                 </IconBox>
                                 <IconBox>
                                     <HelpOutlineIcon/>
                                     <Typography sx={{color: '#012765', fontFamily: 'Poppins'}}>
-                                        5 questions to answer
+                                        20 questions to answer
                                     </Typography>
                                 </IconBox>
                                 <IconBox>
