@@ -421,7 +421,7 @@ const StrugglingDetail = () => {
                             },
                         }}
                     >
-                        Back to Struggling Topics
+                        Back
                     </Button>
 
                     <Grid container spacing={4} alignItems="center" sx={{ mb: { xs: 6, md: 0,lg:10 } }}>

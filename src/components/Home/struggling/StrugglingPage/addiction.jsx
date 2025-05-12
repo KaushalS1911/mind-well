@@ -251,7 +251,7 @@ const Addiction = () => {
                             '&:hover': {backgroundColor: primary, color: 'white'},
                         }}
                     >
-                        Back to Struggling Topics
+                        Back
                     </Button>
 
                     {/* Introduction Section */}
@@ -388,7 +388,7 @@ const Addiction = () => {
                                 />
                                 <Box sx={{backgroundColor: primary, color: 'white', p: 3, borderRadius: 2, mb: 4}}>
                                     <Typography variant="h5" className="Montserrat" sx={{fontWeight: 700}}>
-                                        Understanding Grief & Trauma
+                                        Understanding Addictions
                                     </Typography>
                                 </Box>
 

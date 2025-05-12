@@ -250,7 +250,7 @@ const Overthinking = () => {
                             '&:hover': {backgroundColor: primary, color: 'white'},
                         }}
                     >
-                        Back to Struggling Topics
+                        Back
                     </Button>
 
                     {/* Introduction Section */}

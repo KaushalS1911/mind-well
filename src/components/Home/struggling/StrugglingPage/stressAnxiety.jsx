@@ -174,8 +174,8 @@ const stressAnxietyData = {
     ],
     references: [
         'World Health Organization. Mental Health Data.',
-        'National Institute of Mental Health. Stress and Anxiety Facts.',
         'Mayo Clinic. Coping Skills for Anxiety.',
+        'National Institute of Mental Health. Stress and Anxiety Facts.',
     ],
     motivation: 'Millions of people around the world deal with stress and anxiety daily. These feelings can weigh you down and affect your mood, sleep, and even your health. Recognizing the signs early can help you avoid bigger problems later. This piece of information will explain what stress and anxiety are, why they happen, how they affect you, and what steps you can take to feel better.',
     counseling: 'Our expert therapists offer personalized strategies to manage stress and anxiety. Start your journey to better mental health today.',
@@ -280,7 +280,7 @@ const StressAnxiety = () => {
                             },
                         }}
                     >
-                        Back to Struggling Topics
+                        Back
                     </Button>
 
                     {/* Introduction Section */}
