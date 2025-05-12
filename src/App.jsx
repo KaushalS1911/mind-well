@@ -55,6 +55,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import WorkPlaceHeroSection from "./components/Home/workPlaceHeroSection.jsx";
 import SeminarPage from "./pages/seminar/seminarPage.jsx";
+import StressAnxiety from "./components/Home/struggling/StrugglingPage/stressAnxiety.jsx";
+import Relationship from "./components/Home/struggling/StrugglingPage/relationship.jsx";
+import GriefTrauma from "./components/Home/struggling/StrugglingPage/grief-Trauma.jsx";
+import Addiction from "./components/Home/struggling/StrugglingPage/addiction.jsx";
+import SelfEsteem from "./components/Home/struggling/StrugglingPage/selfEsteem.jsx";
+import Bullying from "./components/Home/struggling/StrugglingPage/bullying.jsx";
+import Overthinking from "./components/Home/struggling/StrugglingPage/overthinking.jsx";
+import Struggling from "./components/Home/struggling/struggling.jsx";
 
 function App() {
     function ScrollToTop() {
@@ -82,7 +90,7 @@ function App() {
 
             <Routes >
                 <Route path="/" element={<Home/>}/>
-                <Route path="/home1" element={<WorkPlaceHeroSection/>}/>
+                <Route path="/home1" element={<Struggling/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/Services" element={<Services/>}/>
                 <Route path="/services/shape" element={<Shape/>}/>
@@ -103,6 +111,13 @@ function App() {
                 <Route path="/resources" element={<Resource/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/struggling/:topic" element={<StrugglingDetail/>}/>
+                <Route path="/struggling/stress-anxiety" element={<StressAnxiety/>}/>
+                <Route path="/struggling/relationship" element={<Relationship/>}/>
+                <Route path="/struggling/grief-trauma" element={<GriefTrauma/>}/>
+                <Route path="/struggling/addiction" element={<Addiction/>}/>
+                <Route path="/struggling/self-esteem" element={<SelfEsteem/>}/>
+                <Route path="/struggling/bullying" element={<Bullying/>}/>
+                <Route path="/struggling/overthinking" element={<Overthinking/>}/>
                 <Route path="/session" element={<SeminarPage/>}/>
                 <Route
                     path="/assessments/exam-stress"

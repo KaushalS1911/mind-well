@@ -4,7 +4,7 @@ import Herosection from "../../components/Home/herosection.jsx";
 import Clientsreview from "../../components/Home/clientsreview.jsx";
 import EmployeeMentalHealth from "../../components/Home/EmployeeMentalHealth.jsx";
 import HowEmotionallyYoursinSchools from "../../components/Home/howEmotionallyYoursinSchools.jsx";
-import Struggling from "../../components/Home/struggling.jsx";
+import Struggling from "../../components/Home/struggling/struggling.jsx";
 import Assessments from "../../components/resources/assessments.jsx";
 import HowEmotionallyYoursWorksInHigherEducation
     from "../../components/Home/howEmotionallyYoursWorksInHigherEducation.jsx";

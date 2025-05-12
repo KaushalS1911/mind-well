@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Box, Grid, Container} from "@mui/material";
 import {
     WarningAmber,
@@ -9,71 +9,86 @@ import {
     Cake
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-import img1 from "../../assets/images/Home/Struggling/Anxiety.webp";
-import img2 from "../../assets/images/Home/Struggling/Depression.webp";
-import img3 from "../../assets/images/Home/Struggling/stres.jpg";
-import img4 from "../../assets/images/Home/Struggling/Relationships1.jpg";
-import img5 from "../../assets/images/Home/Struggling/Trauma1.jpg";
-import img6 from "../../assets/images/Home/Struggling/Addiction1.jpg";
-import img7 from "../../assets/images/Home/Struggling/Self-esteem1.jpg";
-import img8 from "../../assets/images/Home/Struggling/Grief & Loss1.jpg";
-import img9 from "../../assets/images/Home/Struggling/little-boy-bullying.jpg";
-import img10 from "../../assets/images/Home/Struggling/Overthinking.jpg";
+import img1 from "../../../assets/images/Home/Struggling/Anxiety.webp";
+import img2 from "../../../assets/images/Home/Struggling/Depression.webp";
+import img3 from "../../../assets/images/Home/Struggling/stres.jpg";
+import img4 from "../../../assets/images/Home/Struggling/Relationships1.jpg";
+import img5 from "../../../assets/images/Home/Struggling/Trauma1.jpg";
+import img6 from "../../../assets/images/Home/Struggling/Addiction1.jpg";
+import img7 from "../../../assets/images/Home/Struggling/Self-esteem1.jpg";
+import img8 from "../../../assets/images/Home/Struggling/Grief & Loss1.jpg";
+import img9 from "../../../assets/images/Home/Struggling/little-boy-bullying.jpg";
+import img10 from "../../../assets/images/Home/Struggling/Overthinking.jpg";
+import {toast} from "react-toastify";
 
-const struggling = [
-    {
-        title: "Stress-Anxiety",
-        description: "Manage worry, panic, and fear",
-        icon: <WarningAmber sx={{fontSize: 30, color: "orange"}}/>,
-        image: img1
-    },
-    {
-        title: "Relationship",
-        description: "Improve communication and connection",
-        icon: <Favorite sx={{fontSize: 30, color: "orange"}}/>,
-        image: img4
-    },
-    {
-        title: "Grief-Trauma",
-        description: "Heal from difficult experiences",
-        icon: <Security sx={{fontSize: 30, color: "orange"}}/>,
-        image: img5
-    },
-    {
-        title: "Addiction",
-        description: "Break free from harmful patterns",
-        icon: <Bolt sx={{fontSize: 30, color: "orange"}}/>,
-        image: img6
-    },
-    {
-        title: "Self-esteem",
-        description: "Build confidence and self-worth",
-        icon: <Visibility sx={{fontSize: 30, color: "orange"}}/>,
-        image: img7
-    },
-    {
-        title: "Bullying",
-        description: "Navigate through difficult transitions",
-        icon: <Cake sx={{fontSize: 30, color: "orange"}}/>,
-        image: img9
-    },
-    {
-        title: "Overthinking",
-        description: "Navigate through difficult transitions",
-        icon: <Cake sx={{fontSize: 30, color: "orange"}}/>,
-        image: img10
-    }
-];
 
 const Struggling = () => {
     const navigate = useNavigate();
+    const [selectedIndex, setSelectedIndex] = useState(null);
+    const [open, setOpen] = useState(false);
+    const [assessmentUrl, setAssessmentUrl] = useState("");
 
-    const handleTopicClick = (title) => {
-        navigate(`/struggling/${title}`);
+    const handleAssessmentClick = (index) => {
+        setSelectedIndex(index);
+        const url = struggling[index].url;
+        setAssessmentUrl(window.location.origin + url);
+        navigate(url);
     };
 
+    const struggling = [
+        {
+            title: "Stress-Anxiety",
+            description: "Manage worry, panic, and fear",
+            icon: <WarningAmber sx={{fontSize: 30, color: "orange"}}/>,
+            image: img1,
+            url: '/struggling/stress-anxiety',
+        },
+        {
+            title: "Relationship",
+            description: "Improve communication and connection",
+            icon: <Favorite sx={{fontSize: 30, color: "orange"}}/>,
+            image: img4,
+            url: '/struggling/relationship',
+        },
+        {
+            title: "Grief-Trauma",
+            description: "Heal from difficult experiences",
+            icon: <Security sx={{fontSize: 30, color: "orange"}}/>,
+            image: img5,
+            url: '/struggling/grief-trauma',
+        },
+        {
+            title: "Addiction",
+            description: "Break free from harmful patterns",
+            icon: <Bolt sx={{fontSize: 30, color: "orange"}}/>,
+            image: img6,
+            url: '/struggling/addiction',
+        },
+        {
+            title: "Self-esteem",
+            description: "Build confidence and self-worth",
+            icon: <Visibility sx={{fontSize: 30, color: "orange"}}/>,
+            image: img7,
+            url: '/struggling/self-esteem',
+        },
+        {
+            title: "Bullying",
+            description: "Navigate through difficult transitions",
+            icon: <Cake sx={{fontSize: 30, color: "orange"}}/>,
+            image: img9,
+            url: '/struggling/bullying',
+        },
+        {
+            title: "Overthinking",
+            description: "Navigate through difficult transitions",
+            icon: <Cake sx={{fontSize: 30, color: "orange"}}/>,
+            image: img10,
+            url: '/struggling/overthinking',
+        }
+    ];
+
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' },padding:"96px 0"}}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' },pt:25}}>
             <Container maxWidth="xl">
                 <Box sx={{textAlign: "center"}}>
                     <Box sx={{mb: 4}}>
@@ -104,7 +119,7 @@ const Struggling = () => {
                         {struggling.map((item, index) => (
                             <Grid item xs={12} sm={6} md={4} lg={2.3} key={index}>
                                 <Box
-                                    onClick={() => handleTopicClick(item.title)}
+                                    onClick={() => handleAssessmentClick(index)}
                                     sx={{
                                         p: 3,
                                         textAlign: "center",
