@@ -313,7 +313,7 @@ const StartButton = styled(Button)(({ theme }) => ({
 const CommonTypography = styled(Typography)(({ theme }) => ({
     fontFamily: 'Poppins',
     color: '#4B5563',
-    fontSize: '14px',
+    fontSize: '16px',
     lineHeight: 1.6,
 }));
 
@@ -362,12 +362,17 @@ const AcademicStressAssessment = () => {
                                         marginRight: '16px',
                                     }}
                                 />
-                                <HeaderTypography>
+                                <Typography className={"Montserrat"} variant="h4" sx={{
+                                    fontWeight: 700,
+                                    color: '#012765',
+                                    fontFamily: 'Montserrat',
+                                    fontSize: { xs: '24px', sm: '28px', md: '32px' },
+                                }}>
                                     Academic Stress (Age 16-25)
-                                </HeaderTypography>
+                                </Typography>
                             </Box>
 
-                            <CommonTypography sx={{ mb: 4 }}>
+                            <CommonTypography sx={{ mb: 4 ,fontSize: '16px',}}>
                                 This assessment helps measure your current stress and anxiety levels, identifying potential areas of concern and providing insights into your mental well-being. Your responses will help us understand your situation better and offer appropriate guidance.
                             </CommonTypography>
 
@@ -404,22 +409,52 @@ const AcademicStressAssessment = () => {
 
                     {/* Right Column - Additional Info */}
                     <Grid item xs={12} md={4}>
-                        <StyledPaper>
-                            <HeaderTypography variant="h6" sx={{ mb: 2 }}>
+                        <StyledPaper sx={{height: '100%'}}>
+                            <Typography className={"Montserrat"} variant="h6" sx={{
+                                mb: 2,
+                                color: '#012765',
+                                fontWeight: 600,
+                                fontFamily: 'Montserrat'
+                            }}>
                                 Before you begin
-                            </HeaderTypography>
+                            </Typography>
 
-                            <Box sx={{ mb: 3 }}>
-                                {[
-                                    '• Find a quiet, comfortable space where you won’t be interrupted',
-                                    '• Answer honestly - there are no right or wrong answers',
-                                    '• Consider how you’ve been feeling over the past two weeks',
-                                    '• Your responses are confidential and secure',
-                                ].map((text, index) => (
-                                    <CommonTypography key={index} sx={{ mb: 2 }}>
-                                        {text}
-                                    </CommonTypography>
-                                ))}
+                            <Box sx={{mb: 3}}>
+                                <Typography sx={{
+                                    mb: 2,
+                                    color: '#4B5563',
+                                    fontSize: '14px',
+                                    lineHeight: 1.6,
+                                    fontFamily: 'Poppins'
+                                }}>
+                                    • Find a quiet, comfortable space where you won't be interrupted
+                                </Typography>
+                                <Typography sx={{
+                                    mb: 2,
+                                    color: '#4B5563',
+                                    fontSize: '14px',
+                                    lineHeight: 1.6,
+                                    fontFamily: 'Poppins'
+                                }}>
+                                    • Answer honestly - there are no right or wrong answers
+                                </Typography>
+                                <Typography sx={{
+                                    mb: 2,
+                                    color: '#4B5563',
+                                    fontSize: '14px',
+                                    lineHeight: 1.6,
+                                    fontFamily: 'Poppins'
+                                }}>
+                                    • Consider how you've been feeling over the past two weeks
+                                </Typography>
+                                <Typography sx={{
+                                    color: '#4B5563',
+                                    fontSize: '14px',
+                                    lineHeight: 1.6,
+                                    fontFamily: 'Poppins'
+                                }}>
+                                    • Your responses are confidential and secure
+                                </Typography>
                             </Box>
 
                             <Box sx={{
@@ -433,12 +468,19 @@ const AcademicStressAssessment = () => {
                                     fontSize: '14px',
                                     fontWeight: 600,
                                     mb: 1,
+                                    fontFamily: 'Poppins'
                                 }}>
-                                    Note:
+                                    DISCLAIMER:
                                 </Typography>
-                                <CommonTypography>
-                                    This assessment is not a diagnostic tool. If you're experiencing severe distress, please seek professional help immediately.
-                                </CommonTypography>
+                                <Typography sx={{
+                                    color: '#4B5563',
+                                    fontSize: '14px',
+                                    lineHeight: 1.6,
+                                    fontFamily: 'Poppins'
+                                }}>
+                                    This assessment is not a diagnostic tool. If you're experiencing severe distress,
+                                    please seek professional help immediately.
+                                </Typography>
                             </Box>
                         </StyledPaper>
                     </Grid>
