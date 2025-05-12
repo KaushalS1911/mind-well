@@ -390,7 +390,7 @@ const GeneralStressAssessment = () => {
                                     fontFamily: 'Montserrat',
                                     fontSize: {xs: '24px', sm: '28px', md: '32px'},
                                 }}>
-                                    General Stress and Anxiety Assessment
+                                    General Stress and Anxiety Assessment (Age 18+)
                                 </Typography>
                             </Box>
 

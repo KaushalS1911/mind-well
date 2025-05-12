@@ -376,24 +376,24 @@ const AcademicStressAssessment = () => {
                                 This assessment helps measure your current stress and anxiety levels, identifying potential areas of concern and providing insights into your mental well-being. Your responses will help us understand your situation better and offer appropriate guidance.
                             </CommonTypography>
 
-                            <Box sx={{ mb: 4 }}>
+                            <Box sx={{mb: 2}}>
                                 <IconBox>
-                                    <TimerOutlinedIcon />
-                                    <CommonTypography>
+                                    <TimerOutlinedIcon/>
+                                    <Typography sx={{color: '#012765', fontFamily: 'Poppins'}}>
                                         Time to complete: ~5 minutes
-                                    </CommonTypography>
+                                    </Typography>
                                 </IconBox>
                                 <IconBox>
-                                    <HelpOutlineIcon />
-                                    <CommonTypography>
+                                    <HelpOutlineIcon/>
+                                    <Typography sx={{color: '#012765', fontFamily: 'Poppins'}}>
                                         5 questions to answer
-                                    </CommonTypography>
+                                    </Typography>
                                 </IconBox>
                                 <IconBox>
-                                    <DescriptionOutlinedIcon />
-                                    <CommonTypography>
+                                    <DescriptionOutlinedIcon/>
+                                    <Typography sx={{color: '#012765', fontFamily: 'Poppins'}}>
                                         Receive immediate results and recommendations
-                                    </CommonTypography>
+                                    </Typography>
                                 </IconBox>
                             </Box>
 
