@@ -14,7 +14,7 @@ function Resource() {
             <Journaling/>
             <Assessments/>
             <SelfHelpTools/>
-            <Podcastsndblog/>
+            {/*<Podcastsndblog/>*/}
             <CrisisResources/>
             <Blogs/>
         </Box>

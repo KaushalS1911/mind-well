@@ -218,123 +218,123 @@ function Journaling() {
                     </Grid>
 
                     {/* Latest Articles */}
-                    <Box className={"Montserrat"} sx={{
-                        color: "#012765",
-                        fontWeight: "700",
-                        margin: "0 0 32px",
-                        lineHeight: "2rem",
-                        fontSize: "24px",
-                    }}>
-                        Latest Articles
-                    </Box>
-                    <Grid container spacing={2} mb={4}>
-                        {articles.map((article, index) => (
-                            <Grid item xs={12} lg={4} key={index}>
-                                <Card sx={{borderRadius: 3, boxShadow: 1, height: "100%"}}>
-                                    {/* Top Gray Section */}
-                                    <Box sx={{
-                                        fontSize: "16px",
-                                        bgcolor: "#E7EAEE",
-                                        p: "16px",
-                                        fontWeight: 500,
-                                        display: "flex",
-                                        justifyContent: "center",
-                                        color: "#012765"
-                                    }}>
-                                        Article Thumbnail
-                                    </Box>
+                    {/*<Box className={"Montserrat"} sx={{*/}
+                    {/*    color: "#012765",*/}
+                    {/*    fontWeight: "700",*/}
+                    {/*    margin: "0 0 32px",*/}
+                    {/*    lineHeight: "2rem",*/}
+                    {/*    fontSize: "24px",*/}
+                    {/*}}>*/}
+                    {/*    Latest Articles*/}
+                    {/*</Box>*/}
+                    {/*<Grid container spacing={2} mb={4}>*/}
+                    {/*    {articles.map((article, index) => (*/}
+                    {/*        <Grid item xs={12} lg={4} key={index}>*/}
+                    {/*            <Card sx={{borderRadius: 3, boxShadow: 1, height: "100%"}}>*/}
+                    {/*                /!* Top Gray Section *!/*/}
+                    {/*                <Box sx={{*/}
+                    {/*                    fontSize: "16px",*/}
+                    {/*                    bgcolor: "#E7EAEE",*/}
+                    {/*                    p: "16px",*/}
+                    {/*                    fontWeight: 500,*/}
+                    {/*                    display: "flex",*/}
+                    {/*                    justifyContent: "center",*/}
+                    {/*                    color: "#012765"*/}
+                    {/*                }}>*/}
+                    {/*                    Article Thumbnail*/}
+                    {/*                </Box>*/}
 
-                                    <Box sx={{p: "24px"}}>
-                                        <Box sx={{
-                                            display: "flex",
-                                            justifyContent: "space-between",
-                                            alignItems: "center",
-                                            mb: 2
-                                        }}>
-                                            <Box sx={{
-                                                fontSize: "12px",
-                                                color: "#6b7280",
-                                                lineHeight: "1rem",
-                                            }}>{article.date}</Box>
-                                            <Chip
-                                                label={article.tag}
-                                                size="small"
-                                                sx={{
-                                                    bgcolor: "#0127651a",
-                                                    color: "#012765",
-                                                    alignItems: "center",
-                                                    padding: "4px 8px",
-                                                    fontSize: 12,
-                                                    fontWeight: 500
-                                                }}
-                                            />
-                                        </Box>
-                                        <Box sx={{
-                                            fontSize: "18px",
-                                            margin: "0 0 8px",
-                                            fontWeight: "700",
-                                            lineHeight: "1.75rem",
-                                            color: "#012765",
-                                        }}>
-                                            {article.title}
-                                        </Box>
-                                        <Box sx={{
-                                            fontSize: "14px",
-                                            color: "#4b5563",
-                                            mb: "16px",
-                                            lineHeight: "1.25rem",
-                                            textAlign: "justify"
-                                        }}>
-                                            {article.description}
-                                        </Box>
+                    {/*                <Box sx={{p: "24px"}}>*/}
+                    {/*                    <Box sx={{*/}
+                    {/*                        display: "flex",*/}
+                    {/*                        justifyContent: "space-between",*/}
+                    {/*                        alignItems: "center",*/}
+                    {/*                        mb: 2*/}
+                    {/*                    }}>*/}
+                    {/*                        <Box sx={{*/}
+                    {/*                            fontSize: "12px",*/}
+                    {/*                            color: "#6b7280",*/}
+                    {/*                            lineHeight: "1rem",*/}
+                    {/*                        }}>{article.date}</Box>*/}
+                    {/*                        <Chip*/}
+                    {/*                            label={article.tag}*/}
+                    {/*                            size="small"*/}
+                    {/*                            sx={{*/}
+                    {/*                                bgcolor: "#0127651a",*/}
+                    {/*                                color: "#012765",*/}
+                    {/*                                alignItems: "center",*/}
+                    {/*                                padding: "4px 8px",*/}
+                    {/*                                fontSize: 12,*/}
+                    {/*                                fontWeight: 500*/}
+                    {/*                            }}*/}
+                    {/*                        />*/}
+                    {/*                    </Box>*/}
+                    {/*                    <Box sx={{*/}
+                    {/*                        fontSize: "18px",*/}
+                    {/*                        margin: "0 0 8px",*/}
+                    {/*                        fontWeight: "700",*/}
+                    {/*                        lineHeight: "1.75rem",*/}
+                    {/*                        color: "#012765",*/}
+                    {/*                    }}>*/}
+                    {/*                        {article.title}*/}
+                    {/*                    </Box>*/}
+                    {/*                    <Box sx={{*/}
+                    {/*                        fontSize: "14px",*/}
+                    {/*                        color: "#4b5563",*/}
+                    {/*                        mb: "16px",*/}
+                    {/*                        lineHeight: "1.25rem",*/}
+                    {/*                        textAlign: "justify"*/}
+                    {/*                    }}>*/}
+                    {/*                        {article.description}*/}
+                    {/*                    </Box>*/}
 
-                                        {/* Author Section */}
-                                        <Box sx={{
-                                            display: "flex",
-                                            justifyContent: "space-between",
-                                            alignItems: "center",
-                                        }}>
-                                            <Box sx={{display: "flex", alignItems: "center"}}>
-                                                <Avatar sx={{
-                                                    bgcolor: "#012765",
-                                                    color: "#fff",
-                                                    width: 32,
-                                                    height: 32,
-                                                    fontSize: 13,
-                                                    fontWeight: "700"
-                                                }}>
-                                                    {article.initials}
-                                                </Avatar>
-                                                <Box sx={{
-                                                    color: "4B5563",
-                                                    fontSize: 12,
-                                                    ml: 1
-                                                }}>
-                                                    {article.author}
-                                                </Box>
-                                            </Box>
+                    {/*                    /!* Author Section *!/*/}
+                    {/*                    <Box sx={{*/}
+                    {/*                        display: "flex",*/}
+                    {/*                        justifyContent: "space-between",*/}
+                    {/*                        alignItems: "center",*/}
+                    {/*                    }}>*/}
+                    {/*                        <Box sx={{display: "flex", alignItems: "center"}}>*/}
+                    {/*                            <Avatar sx={{*/}
+                    {/*                                bgcolor: "#012765",*/}
+                    {/*                                color: "#fff",*/}
+                    {/*                                width: 32,*/}
+                    {/*                                height: 32,*/}
+                    {/*                                fontSize: 13,*/}
+                    {/*                                fontWeight: "700"*/}
+                    {/*                            }}>*/}
+                    {/*                                {article.initials}*/}
+                    {/*                            </Avatar>*/}
+                    {/*                            <Box sx={{*/}
+                    {/*                                color: "4B5563",*/}
+                    {/*                                fontSize: 12,*/}
+                    {/*                                ml: 1*/}
+                    {/*                            }}>*/}
+                    {/*                                {article.author}*/}
+                    {/*                            </Box>*/}
+                    {/*                        </Box>*/}
 
-                                            {/* Read More Link */}
-                                            <Box
-                                                sx={{
-                                                    fontSize: "14px",
-                                                    color: "#FE6A00",
-                                                    fontWeight: "500",
-                                                    cursor: "pointer",
-                                                    transition: ".3s",
-                                                    "&:hover": {
-                                                        color: "#012765"
-                                                    }
-                                                }}
-                                            >
-                                                {article.link}
-                                            </Box>
-                                        </Box>
-                                    </Box>
-                                </Card>
-                            </Grid>
-                        ))}
-                    </Grid>
+                    {/*                        /!* Read More Link *!/*/}
+                    {/*                        <Box*/}
+                    {/*                            sx={{*/}
+                    {/*                                fontSize: "14px",*/}
+                    {/*                                color: "#FE6A00",*/}
+                    {/*                                fontWeight: "500",*/}
+                    {/*                                cursor: "pointer",*/}
+                    {/*                                transition: ".3s",*/}
+                    {/*                                "&:hover": {*/}
+                    {/*                                    color: "#012765"*/}
+                    {/*                                }*/}
+                    {/*                            }}*/}
+                    {/*                        >*/}
+                    {/*                            {article.link}*/}
+                    {/*                        </Box>*/}
+                    {/*                    </Box>*/}
+                    {/*                </Box>*/}
+                    {/*            </Card>*/}
+                    {/*        </Grid>*/}
+                    {/*    ))}*/}
+                    {/*</Grid>*/}
                 </Box>
             </Container>
         </Box>

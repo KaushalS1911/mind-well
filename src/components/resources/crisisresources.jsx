@@ -49,7 +49,7 @@ function CrisisResources() {
     ];
 
     return (
-        <Box sx={{backgroundColor: "#F8FAFC",}}>
+        <Box >
             <Box component="section" sx={{mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}>
                 <Container maxWidth="xl" sx={{mt: 4, padding: "30px 0"}}>
                     {/* Crisis Resources Section */}
