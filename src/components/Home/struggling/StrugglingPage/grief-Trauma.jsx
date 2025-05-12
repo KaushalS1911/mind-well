@@ -21,7 +21,7 @@ import img9 from '../../../../assets/images/Home/Struggling/Signs-Your-Body-is-R
 import img16 from '../../../../assets/images/Home/Struggling/Grief-Traumatime.jpg';
 
 const griefTraumaData = {
-    title: 'How to Heal and Move Forward',
+    title: 'Understanding Grief and Trauma: How to Heal and Move Forward',
     description: 'Discover effective strategies to process grief and trauma, rebuild resilience, and move toward healing.',
     image: img2,
     image1: img9,

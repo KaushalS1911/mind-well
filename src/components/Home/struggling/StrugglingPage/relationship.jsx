@@ -21,7 +21,7 @@ import img8 from '../../../../assets/images/Home/Struggling/Healthy-Relationship
 import img15 from '../../../../assets/images/Home/Struggling/Relationshiptime.png';
 
 const relationshipData = {
-    title: 'Building Stronger Connections for a Happier Life',
+    title: 'Understanding and Managing Relationships: Building Stronger Connections for a Happier Lif',
     description: 'Discover practical strategies to build trust, improve communication, and maintain fulfilling relationships for a happier life.',
     image: img1,
     image1: img8,

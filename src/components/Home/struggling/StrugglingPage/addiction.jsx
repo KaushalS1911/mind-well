@@ -21,7 +21,7 @@ import img10 from '../../../../assets/images/Home/Struggling/addiction feature.p
 import img17 from '../../../../assets/images/Home/Struggling/Addictiontime.jpg';
 
 const addictionData = {
-    title: ' Why Quitting Is Essential for a Healthier Life',
+    title: 'Let’s Talk About Addiction: Why Quitting Is Essential for a Healthier Life',
     description: 'Discover effective strategies to break free from addiction and build a healthier, happier life.',
     image: img3,
     image1: img10,

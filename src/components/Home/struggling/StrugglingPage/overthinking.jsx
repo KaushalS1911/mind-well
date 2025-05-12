@@ -20,7 +20,7 @@ import img13 from '../../../../assets/images/Home/Struggling/Overthinking1.jpg';
 import img20 from '../../../../assets/images/Home/Struggling/Overthinkingtime.jpg';
 
 const overthinkingData = {
-    title: 'What Is Overthinking? Why It Is Bad for Success and How to Stop It',
+    title: 'What Is Overthinking? Why It is Bad for Success and How to Stop It',
     description: 'Discover techniques to quiet your mind, reduce excessive worry, and unlock your potential for success.',
     image: img6,
     image1: img13,

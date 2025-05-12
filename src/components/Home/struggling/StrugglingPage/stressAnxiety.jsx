@@ -21,7 +21,7 @@ import img7 from '../../../../assets/images/Home/Struggling/stress.jpg';
 import img14 from '../../../../assets/images/Home/Struggling/stresstime.webp';
 
 const stressAnxietyData = {
-    title: ' Understanding, Managing, and Overcoming Mental Health Challenges',
+    title: 'Stress and Anxiety: Understanding, Managing, and Overcoming Mental Health Challenges',
     description: 'Discover effective strategies to understand, manage, and overcome stress and anxiety for a healthier, happier life.',
     image: img,
     image1: img7,

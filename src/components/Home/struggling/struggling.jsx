@@ -19,6 +19,7 @@ import img7 from "../../../assets/images/Home/Struggling/Self-esteem1.jpg";
 import img8 from "../../../assets/images/Home/Struggling/Grief & Loss1.jpg";
 import img9 from "../../../assets/images/Home/Struggling/little-boy-bullying.jpg";
 import img10 from "../../../assets/images/Home/Struggling/Overthinking.jpg";
+import img11 from "../../../assets/images/Home/Struggling/career.png";
 import {toast} from "react-toastify";
 
 
@@ -84,6 +85,13 @@ const Struggling = () => {
             icon: <Cake sx={{fontSize: 30, color: "orange"}}/>,
             image: img10,
             url: '/struggling/overthinking',
+        },
+        {
+            title: "Career-uncertainty",
+            description: "Navigate through difficult transitions",
+            icon: <Cake sx={{fontSize: 30, color: "orange"}}/>,
+            image: img11,
+            url: '/struggling/careerUncertainty',
         }
     ];
 
@@ -117,7 +125,7 @@ const Struggling = () => {
 
                     <Grid container spacing={3} justifyContent="center">
                         {struggling.map((item, index) => (
-                            <Grid item xs={12} sm={6} md={4} lg={2.3} key={index}>
+                            <Grid item xs={12} sm={6} lg={4} xl={2.3} key={index}>
                                 <Box
                                     onClick={() => handleAssessmentClick(index)}
                                     sx={{
@@ -139,7 +147,7 @@ const Struggling = () => {
                                 >
                                     <Box
                                         sx={{
-                                            fontSize: {xl: "23px", md: "20px", lg: "18px", xs: "20px"},
+                                            fontSize: {xl: "21px", md: "23px", lg: "20px", xs: "20px"},
                                             color: "#012765",
                                             fontWeight: "bold",
                                             mb: 1

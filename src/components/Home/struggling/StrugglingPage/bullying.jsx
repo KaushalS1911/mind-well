@@ -22,7 +22,7 @@ import img19 from '../../../../assets/images/Home/Struggling/Bullying-Prevention
 import img2 from "../../../../assets/images/about/aboutHeader/aboutheader.jpg";
 
 const bullyingData = {
-    title: 'A Comprehensive Guide to Protecting Youth and Promoting Awareness',
+    title: 'Understanding Bullying and Its Side Effects: A Comprehensive Guide to Protecting Youth and Promoting Awareness',
     description: 'Find support and strategies to address and heal from the effects of bullying, creating safer environments for all.',
     image: img5,
     image1: img12,

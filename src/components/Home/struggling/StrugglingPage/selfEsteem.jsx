@@ -21,7 +21,7 @@ import img11 from '../../../../assets/images/Home/Struggling/Self-esteemtime.jpg
 import img18 from '../../../../assets/images/Home/Struggling/self-esteem2.jpg';
 
 const selfEsteemData = {
-    title: 'The Ultimate Guide to Building Confidence and Self-Worth',
+    title: 'Let’s Talk About Self-Esteem: The Ultimate Guide to Building Confidence and Self-Worth',
     description: 'Learn how to cultivate self-confidence, embrace your unique strengths, and build a positive self-image.',
     image: img4,
     image1: img11,
