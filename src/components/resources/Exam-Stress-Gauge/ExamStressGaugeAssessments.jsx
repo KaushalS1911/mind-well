@@ -55,7 +55,7 @@ const ExamStressGaugeAssessments = () => {
     const [language, setLanguage] = useState()
 
     const handleStartAssessment = () => {
-        navigate('/assessments/exam-stress/questions');
+        navigate('/assessments/exam-stress/exam-assessment-form');
     };
 
     const handleChange = (e) => {
