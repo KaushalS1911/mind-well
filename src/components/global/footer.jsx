@@ -26,10 +26,10 @@ const navigationLinks = [
     {name: "Contact", path: "/contact"},
 ];
 const services = [
-    {name: "SHAPE", path: "/services/SHAPE"},
-    {name: "SHAPE+", path: "/services/SHAPE-Designe"},
-    {name: "ESOP", path: "/services/ESOP"},
-    {name: "PEP", path: "/services/PEP"},
+    {name: "SHAPE", path: "/services/shape"},
+    {name: "SHAPE+", path: "/services/shape-plus"},
+    {name: "ESOP", path: "/services/esop"},
+    {name: "PEP", path: "/services/pep"},
 ]
 const contactDetails = {
 
