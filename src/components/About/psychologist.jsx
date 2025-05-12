@@ -120,7 +120,7 @@ const founders = [
         img: img2,
         role: "Psychologist / Soft Skills",
         name: "Anshita Raghav",
-        skills: "Workplace Psychology, Training, Counselling",
+        skills: "Trauma- Informed Psychologist, Workplace Consultant, Trainer",
 
     },
     {
