@@ -840,30 +840,6 @@ const CareerUncertainty = () => {
               Book a Counselor Now
             </Button>
           </Box>
-
-          {/* Sticky CTA Button */}
-          <Box
-            sx={{
-              position: 'fixed',
-              bottom: 20,
-              right: 20,
-              zIndex: 1000,
-              display: { xs: 'block', md: 'none' },
-            }}
-          >
-            <IconButton
-              sx={{
-                backgroundColor: secondary,
-                color: 'white',
-                width: 60,
-                height: 60,
-                boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
-                '&:hover': { backgroundColor: secondary },
-              }}
-            >
-              <BusinessCenterIcon fontSize="large" />
-            </IconButton>
-          </Box>
         </Container>
       </Box>
     </>
