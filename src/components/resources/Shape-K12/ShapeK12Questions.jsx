@@ -611,34 +611,34 @@ const ShapeK12Questions = () => {
                             }}
                         >
                             {/* Save Results Button - Downloads PDF */}
-                            <PDFDownloadLink
-                                document={<PdfView data={{
-                                    totalScore: totalScore,
-                                    level: result.level,
-                                    interpretation: result.interpretation,
-                                    recommendations: result.recommendations
-                                }}/>}
-                                fileName="Emotional_Awareness_Report.pdf"
-                                style={{textDecoration: "none"}}
-                            >
-                                {({loading}) => (
-                                    <Button
-                                        variant="outlined"
-                                        sx={{
-                                            color: "#F5811E",
-                                            borderColor: "#F5811E",
-                                            py: 1.5,
-                                            px: 4,
-                                            "&:hover": {
-                                                borderColor: "#E26C0A",
-                                                bgcolor: "rgba(245, 129, 30, 0.1)",
-                                            },
-                                        }}
-                                    >
-                                        {loading ? "Preparing..." : "Download Results"}
-                                    </Button>
-                                )}
-                            </PDFDownloadLink>
+                            {/*<PDFDownloadLink*/}
+                            {/*    document={<PdfView data={{*/}
+                            {/*        totalScore: totalScore,*/}
+                            {/*        level: result.level,*/}
+                            {/*        interpretation: result.interpretation,*/}
+                            {/*        recommendations: result.recommendations*/}
+                            {/*    }}/>}*/}
+                            {/*    fileName="Emotional_Awareness_Report.pdf"*/}
+                            {/*    style={{textDecoration: "none"}}*/}
+                            {/*>*/}
+                            {/*    {({loading}) => (*/}
+                            {/*        <Button*/}
+                            {/*            variant="outlined"*/}
+                            {/*            sx={{*/}
+                            {/*                color: "#F5811E",*/}
+                            {/*                borderColor: "#F5811E",*/}
+                            {/*                py: 1.5,*/}
+                            {/*                px: 4,*/}
+                            {/*                "&:hover": {*/}
+                            {/*                    borderColor: "#E26C0A",*/}
+                            {/*                    bgcolor: "rgba(245, 129, 30, 0.1)",*/}
+                            {/*                },*/}
+                            {/*            }}*/}
+                            {/*        >*/}
+                            {/*            {loading ? "Preparing..." : "Download Results"}*/}
+                            {/*        </Button>*/}
+                            {/*    )}*/}
+                            {/*</PDFDownloadLink>*/}
 
                             <Button
                                 variant="contained"
