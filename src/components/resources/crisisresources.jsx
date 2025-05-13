@@ -50,10 +50,10 @@ function CrisisResources() {
 
     return (
         <Box >
-            <Box component="section" sx={{mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}>
-                <Container maxWidth="xl" sx={{mt: 4, padding: "30px 0"}}>
+            <Box component="section" sx={{mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' },py:"60px"}}>
+                <Container maxWidth="xl">
                     {/* Crisis Resources Section */}
-                    <Box sx={{ borderRadius: 2, padding: "40px", marginBottom: "60px"}}>
+                    <Box sx={{ borderRadius: 2,mb:5 }}>
                         <Typography variant="h5" sx={{color: "#012765", fontWeight: "700", mb: 4}}>
                             Crisis Resources
                         </Typography>

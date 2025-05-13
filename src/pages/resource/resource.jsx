@@ -12,11 +12,11 @@ function Resource() {
     return (
         <Box >
             <Journaling/>
-            <Assessments/>
-            <SelfHelpTools/>
+            <Assessments sx={{ p: "50px 0"}}/>
+            <SelfHelpTools sx={{ padding: {sm:"20px 0 0 0",xs:"20px 0 30px 0"},mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}/>
             {/*<Podcastsndblog/>*/}
             <CrisisResources/>
-            <Blogs/>
+            <Blogs sx={{mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' },pt:3 }}/>
         </Box>
     );
 }

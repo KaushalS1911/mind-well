@@ -13,7 +13,7 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import ShareIcon from '@mui/icons-material/Share';
 import { ToastContainer, toast } from 'react-toastify';
 
-function Assessments() {
+function Assessments({sx}) {
     const navigate = useNavigate();
     const [selectedIndex, setSelectedIndex] = useState(null);
     const [open, setOpen] = useState(false);
@@ -105,7 +105,7 @@ function Assessments() {
             mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
         }}>
         <Container maxWidth="xl">
-            <Box sx={{ p: {sm:"96px 0 0 0",xs:"50px 0 0 0"}, mt: {md: 5, xs: 0}}}>
+            <Box sx={sx}>
                 <Box sx={{p: {xs: 3, md: 5}, bgcolor: "#012765", borderRadius: 3, color: "#fff"}}>
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={12}>

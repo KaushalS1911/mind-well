@@ -16,26 +16,6 @@ import img10 from '../../assets/images/about/Founder/chaman1.png';
 import {LinkedIn} from "@mui/icons-material";
 
 
-const Title = styled(Typography)(() => ({
-    color: '#012765',
-    fontWeight: 700,
-    fontFamily: 'Montserrat',
-    fontSize: '36px',
-    lineHeight: '1.2',
-    textAlign: 'center',
-    marginBottom: '12px',
-}));
-
-const SubTitle = styled(Typography)(() => ({
-    color: '#4B5563',
-    fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
-    textAlign: 'center',
-    maxWidth: '700px',
-    margin: '0 auto 40px',
-    lineHeight: '1.5',
-    fontFamily: 'Poppins, sans-serif',
-}));
-
 const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
     height: '100%',
@@ -99,6 +79,7 @@ const Role = styled(Typography)(() => ({
     fontFamily: 'Poppins, sans-serif',
     textTransform: 'uppercase',
     letterSpacing: '0.5px',
+    textAlign: 'center',
 }));
 
 const Name = styled(Typography)(() => ({
@@ -107,30 +88,16 @@ const Name = styled(Typography)(() => ({
     fontSize: '20px',
     marginBottom: '12px',
     fontFamily: 'Montserrat',
+    textAlign: 'center',
 }));
 
 const Description = styled(Typography)(() => ({
     color: '#4B5563',
     fontSize: '14px',
     lineHeight: 1.5,
-    marginBottom: '16px',
     fontFamily: 'Poppins, sans-serif',
     flex: 1,
-}));
-
-const QRCode = styled(Box)(() => ({
-    width: '80px',
-    height: '80px',
-    marginTop: 'auto',
-    backgroundColor: '#E6EAF3',
-    borderRadius: '8px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#012765',
-    fontSize: '12px',
-    fontFamily: 'Poppins, sans-serif',
-    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.05)',
+    textAlign: 'center',
 }));
 
 const founders = [
@@ -177,97 +144,103 @@ const founders = [
     // }
 ];
 
-const FounderCard = React.memo(({ founder, icon = <PersonIcon /> }) => (
-    <Grid item xs={12} sm={6} md={4}>
-        <StyledPaper elevation={3}>
-            <AvatarWrapper className="avatar-wrapper">
-                <StyledAvatar>
-                    {founder.img ? (
-                        <img
-                            src={founder.img}
-                            alt={founder.name}
-                            style={{ width: '100%', height: '100%', borderRadius: '50%' }}
-                        />
-                    ) : (
-                        icon
-                    )}
-                </StyledAvatar>
-            </AvatarWrapper>
-            <Role>{founder.role}</Role>
-            <Name>{founder.name}</Name>
-            <Description>{founder.description}</Description>
 
-            {/* ✅ Proper LinkedIn Icon Link */}
-            {founder.link && (
-                <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
-                    <Box
-                        component="a"
-                        href={founder.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        sx={{
-                            width: 48,
-                            height: 48,
-                            borderRadius: '50%',
-                            backgroundColor: '#002D62',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            transition: '0.3s',
-                            color: 'white',
-                            '&:hover': {
-                                backgroundColor: '#001f44',
-                            },
-                        }}
-                    >
-                        <LinkedIn sx={{ fontSize: 28 }} />
-                    </Box>
-                </Box>
-            )}
+const Founders = ({ icon = <PersonIcon /> }) => {
+    return (
+        <Box sx={{ padding: '0 0 96px 0' }}>
+            <Container maxWidth="xl">
+                <Typography
+                    className={"Montserrat"}
+                    variant="h4"
+                    sx={{
+                        fontFamily: 'Montserrat',
+                        fontSize: {
+                            xs: '1.7rem',
+                            sm: '1.85rem',
+                            md: '2rem',
+                            lg: '2.125rem',
+                        },
+                        color: '#012765',
+                        textAlign: 'center',
+                        fontWeight: 700,
+                        mb: 2,
+                    }}
+                >
+                    Founding Members
+                </Typography>
+                <Typography
+                    sx={{
+                        maxWidth: 700,
+                        mx: 'auto',
+                        mb: 8,
+                        fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
+                        color: '#4B5563',
+                        textAlign: 'center',
+                        lineHeight: '25px',
+                    }}
+                >
+                    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey.
+                </Typography>
 
-        </StyledPaper>
-    </Grid>
-));
+                <Grid container spacing={3}>
+                    {founders.map((founder, index) => (
+                        <Grid item xs={12} sm={6} lg={4} key={index}>
+                            <StyledPaper>
+                                <AvatarWrapper className="avatar-wrapper">
+                                    <StyledAvatar>
+                                        {founder.img ? (
+                                            <img
+                                                src={founder.img}
+                                                alt={founder.name}
+                                                style={{
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: 'contain',
+                                                    borderRadius: '50%',
+                                                }}
+                                            />
+                                        ) : (
+                                            icon
+                                        )}
+                                    </StyledAvatar>
+                                </AvatarWrapper>
 
-
-const Founders = () => (
-    <Box sx={{ padding: {xs:"20px 0 96px 0"}  }}>
-        <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 4, lg: 6 } }}>
-            <Box className="Montserrat"
-                 sx={{
-                     fontSize: {
-                         xs: '1.7rem',
-                         sm: '1.85rem',
-                         md: '2rem',
-                         lg: '2.125rem'
-                     },
-                     marginBottom: "16px",
-                     lineHeight: "40px",
-                     display: "flex",
-                     justifyContent: "center",
-                     color: "#012765",
-                     fontWeight: "700",
-                     textAlign: "center",
-                 }}>Founders</Box>
-            <SubTitle sx={{
-                fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
-            }}>
-                Meet our experienced team of professionals dedicated to revolutionizing mental health care
-            </SubTitle>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, maxWidth: 1200, margin: '0 auto' }}>
-                <Grid container spacing={3} justifyContent="center">
-                    {founders.slice(0, 3).map((founder, index) => (
-                        <FounderCard key={index} founder={founder} />
+                                <Role>{founder.role}</Role>
+                                <Name>{founder.name}</Name>
+                                <Description>{founder.description}</Description>
+                                {founder.link && (
+                                    <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+                                        <Box
+                                            component="a"
+                                            href={founder.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            sx={{
+                                                width: 48,
+                                                height: 48,
+                                                borderRadius: '50%',
+                                                backgroundColor: '#002D62',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                transition: '0.3s',
+                                                color: 'white',
+                                                '&:hover': {
+                                                    backgroundColor: '#001f44',
+                                                },
+                                            }}
+                                        >
+                                            <LinkedIn sx={{ fontSize: 28 }} />
+                                        </Box>
+                                    </Box>
+                                )}
+                            </StyledPaper>
+                        </Grid>
                     ))}
                 </Grid>
-                <Grid container spacing={3} justifyContent="center">
-                    {founders.slice(3, 5).map((founder, index) => (
-                        <FounderCard key={index + 3} founder={founder} />
-                    ))}
-                </Grid>
-            </Box>
-        </Container>
-    </Box>
-);
+            </Container>
+        </Box>
+    );
+};
 
 export default Founders;

@@ -105,7 +105,7 @@ const Gallery = () => {
                             left: 0,
                             right: 0,
                             bottom: 0,
-                            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.970)',
                             zIndex: 1300,
                             display: 'flex',
                             justifyContent: 'center',

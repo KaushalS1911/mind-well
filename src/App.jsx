@@ -101,13 +101,13 @@ function App() {
                 <Route path="/gallery" element={<Gallery/>}/>
                 <Route path="/careers" element={<Careers/>}/>
                 <Route path={"/resources/journaling"} element={<Journaling/>}/>
-                <Route path={"/resources/assessments"} element={<Assessments/>}/>
-                <Route path={"/resources/selfHelpTools"} element={<SelfHelpTools/>}/>
+                <Route path={"/resources/assessments"} element={<Assessments sx={{ p: {sm:"96px 0 0 0",xs:"50px 0 0 0"}, mt: {md: 5, xs: 0}}}/>}/>
+                <Route path={"/resources/selfHelpTools"} element={<SelfHelpTools sx={{ padding: {md:"156px 0 0 0",xs:"66px 0 30px 0"},mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}/>}/>
                 <Route path={"/resources/podCastsndblog"} element={<Podcastsndblog/>}/>
                 <Route path={"/resources/crisisResources"} element={<CrisisResources/>}/>
-                <Route path="/blogs" element={<Blogs/>}/>
+                <Route path="/blogs" element={<Blogs sx={{ pt: { xs: 6, md: 20 },mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' } }}/>}/>
                 <Route path="/blogs/:id" element={<SingleBlog/>}/>
-                <Route path={"/resources/blogs"} element={<Blogs/>}/>
+                <Route path={"/resources/blogs"} element={<Blogs sx={{ pt: { xs: 6, md: 20 },mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' } }}/>}/>
                 <Route path={"/resources/blogs/:id"} element={<SingleBlog/>}/>
                 <Route path="/resources" element={<Resource/>}/>
                 <Route path="/contact" element={<Contact/>}/>

@@ -5,10 +5,10 @@ import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import BoltIcon from "@mui/icons-material/Bolt";
 
-function SelfHelpTools() {
+function SelfHelpTools({sx}) {
     return (
 
-        <Box component="section" sx={{ padding: {sm:"96px 0 0 0",xs:"66px 0 30px 0"},mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' }}}>
+        <Box component="section" sx={sx}>
             <Container maxWidth={"xl"}>
                 <Box className={"Montserrat"} sx={{
                     color: "#012765",

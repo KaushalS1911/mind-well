@@ -8,7 +8,7 @@ import img3 from '../../assets/images/Resources/Blogs/Shok ke prati badle nazari
 import img4 from '../../assets/images/Resources/Blogs/Take a break 1.jpg'
 import img5 from '../../assets/images/Resources/Blogs/Shok ke prati badle nazaria.jpg'
 
-function Blogs() {
+function Blogs({sx}) {
     const navigate = useNavigate();
     const [visibleBlogs, setVisibleBlogs] = useState(6);
 
@@ -19,7 +19,7 @@ function Blogs() {
     const hasMoreBlogs = visibleBlogs < blogsData.length;
 
     return (
-        <Box sx={{ pt: { xs: 6, md: 20 },mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' } }}>
+        <Box sx={sx}>
             <Container maxWidth="xl">
                 {/* Header Section */}
                 <Box sx={{ textAlign: 'center', mb: 6 }}>
