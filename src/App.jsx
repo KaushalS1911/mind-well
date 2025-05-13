@@ -54,7 +54,7 @@ import Careers from "./components/Careers/careers.jsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import WorkPlaceHeroSection from "./components/Home/workPlaceHeroSection.jsx";
-import SeminarPage from "./pages/seminar/seminarPage.jsx";
+import SessionPage from "./pages/session/sessionPage.jsx";
 import StressAnxiety from "./components/Home/struggling/StrugglingPage/stressAnxiety.jsx";
 import Relationship from "./components/Home/struggling/StrugglingPage/relationship.jsx";
 import GriefTrauma from "./components/Home/struggling/StrugglingPage/grief-Trauma.jsx";
@@ -120,7 +120,7 @@ function App() {
                 <Route path="/struggling/bullying" element={<Bullying/>}/>
                 <Route path="/struggling/overthinking" element={<Overthinking/>}/>
                 <Route path="/struggling/careerUncertainty" element={<CareerUncertainty/>}/>
-                <Route path="/home1" element={<SeminarPage/>}/>
+                <Route path="/home1" element={<SessionPage/>}/>
                 <Route
                     path="/assessments/exam-stress"
                     element={<ExamStressGaugeAssessments/>}
