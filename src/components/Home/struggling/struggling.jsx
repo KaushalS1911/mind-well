@@ -96,7 +96,7 @@ const Struggling = () => {
     ];
 
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' },pt:25}}>
+        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' },pt: {md:25,xs:15}}}>
             <Container maxWidth="xl">
                 <Box sx={{textAlign: "center"}}>
                     <Box sx={{mb: 4}}>
