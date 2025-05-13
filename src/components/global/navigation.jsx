@@ -92,6 +92,7 @@ function Navigation() {
             ],
         },
         // {label: "Session", path: "/session"},
+        {label: "Gallery", path: "/gallery"},
         {label: "Careers", path: "/careers"},
         {label: "Contact Us", path: "/contact"},
     ];
@@ -114,12 +115,12 @@ function Navigation() {
                         padding: "12px 16px",
                     }}
                 >
-                    <Box sx={{height: "70px", width: "270px"}}>
+                    <Box sx={{height: "70px", width: {lg:"250px",xs:"220px"}}}>
                         <RouterLink to="/" style={{display: "inline-block", height: "100%"}}>
                             <img
                                 src={logo}
                                 alt="Emotionally Yours Logo"
-                                style={{height: "100%", width: "auto", objectFit: "contain", cursor: "pointer"}}
+                                style={{height: "100%", width: "100%", objectFit: "contain", cursor: "pointer"}}
                             />
                         </RouterLink>
                     </Box>

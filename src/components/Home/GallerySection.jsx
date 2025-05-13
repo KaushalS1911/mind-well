@@ -48,7 +48,7 @@ const GallerySection = () => {
     }, [swiperInstance]);
 
     return (
-        <Box sx={{py: {xs: 6, md: 8}, position: 'relative',mx: { xs: '30px', sm: '50px', md: '90px', xl: 'auto' } }}>
+        <Box sx={{py: {xs: 6, md: 8}, position: 'relative',mx: { xs: '30px', sm: '50px', md: '90px', xl: '80px' } }}>
             <Container maxWidth="xl">
                 <Box sx={{textAlign: 'center', mb: 6}}>
                     <Typography
