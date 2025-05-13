@@ -222,7 +222,7 @@ const CareerUncertainty = () => {
         sx={{
           minHeight: '100vh',
           pt: 8,
-          background: `linear-gradient(180deg, ${softGray} 0%, #FFFFFF 100%)`,
+            mx: { xs: '20px', sm: '70px', md: '90px', xl: 'auto' },
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -244,7 +244,7 @@ const CareerUncertainty = () => {
 
           {/* Introduction Section */}
           <Grid container spacing={4} alignItems="center" sx={{ mb: { xs: 8, md: 12 } }}>
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} lg={5}>
               <Box
                 sx={{
                   position: 'relative',
@@ -278,7 +278,7 @@ const CareerUncertainty = () => {
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} lg={7}>
               <Box sx={{ position: 'relative', px: { xs: 2, sm: 4 }, mt: { xs: 4, md: 0 } }}>
                 <Typography
                   className="Montserrat"

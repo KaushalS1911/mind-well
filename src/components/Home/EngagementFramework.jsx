@@ -157,7 +157,7 @@ const frameworks = {
                 title: 'Impact Measurement & Future Roadmap',
                 items: [
                     'Conduct Post-Intervention Assessments to measure improvement in emotional well-being.',
-                    'Organize Feedback & Experience Sharing Sessions with all stakeholders.',
+                    'Organize SessionFeedback & Experience Sharing Sessions with all stakeholders.',
                     'Develop a Sustainability Plan with school leadership for long-term implementation.',
                 ],
             },

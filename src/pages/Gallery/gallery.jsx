@@ -23,7 +23,7 @@ const Gallery = () => {
                             letterSpacing: "-1px",
                         }}
                     >
-                        Our Gallery
+                        Exhibits
                     </Typography>
                     <Typography
                         sx={{

@@ -1,13 +1,13 @@
 import React from 'react';
 import {Box} from "@mui/material";
-import Seminar from "../../components/seminar/seminar.jsx";
-import Feedback from "../../components/seminar/feedback.jsx";
+import SessionSeminar from "../../components/Session/sessionSeminar.jsx";
+import Struggling from "../../components/Home/struggling/struggling.jsx";
 
 function SeminarPage() {
     return (
         <Box>
-            <Seminar/>
-            <Feedback/>
+            <Struggling/>
+            <SessionSeminar/>
         </Box>
     );
 }

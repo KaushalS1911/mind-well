@@ -120,7 +120,7 @@ const overthinkingData = {
                     text: 'Focus on progress rather than perfection. Celebrate small wins, learn from setbacks, and keep moving forward. This shifts your view from fear of failure to confidence in growth.',
                 },
                 {
-                    subtitle: 'Seek Support and Feedback',
+                    subtitle: 'Seek Support and SessionFeedback',
                     text: 'Talk with friends, mentors, or coaches. External ideas can help you break free from mental loops. Support boosts confidence and provides fresh perspectives.\n\n\n ' +
                         'We can say that overthinking can slow your progress and block success. It causes delays, stress, and less creativity. But you can break its hold with simple, practical steps. Practice mindfulness, set decision time limits, accept mistakes, and seek support. When you learn to think clearly and act confidently, you will see faster progress toward your goals. Remember, success is about acting—despite imperfections or doubts. Master your mindset, and turning ideas into achievements becomes easier than ever.',
                 },
@@ -233,7 +233,7 @@ const Overthinking = () => {
                 sx={{
                     minHeight: '100vh',
                     pt: 8,
-                    background: `linear-gradient(180deg, ${softGray} 0%, #FFFFFF 100%)`,
+                    mx: { xs: '20px', sm: '70px', md: '90px', xl: 'auto' },
                     position: 'relative',
                     overflow: 'hidden',
                 }}
@@ -255,7 +255,7 @@ const Overthinking = () => {
 
                     {/* Introduction Section */}
                     <Grid container spacing={4} alignItems="center" sx={{mb: {xs: 8, md: 12}}}>
-                        <Grid item xs={12} md={5}>
+                        <Grid item xs={12} lg={5}>
                             <Box
                                 sx={{
                                     position: 'relative',
@@ -289,7 +289,7 @@ const Overthinking = () => {
                             </Box>
                         </Grid>
 
-                        <Grid item xs={12} md={7}>
+                        <Grid item xs={12} lg={7}>
                             <Box sx={{position: 'relative', px: {xs: 2, sm: 4}, mt: {xs: 4, md: 0}}}>
                                 <Typography
                                     className="Montserrat"
