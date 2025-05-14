@@ -64,6 +64,7 @@ import Bullying from "./components/Home/struggling/StrugglingPage/bullying.jsx";
 import Overthinking from "./components/Home/struggling/StrugglingPage/overthinking.jsx";
 import Struggling from "./components/Home/struggling/struggling.jsx";
 import CareerUncertainty from "./components/Home/struggling/StrugglingPage/careerUncertainty.jsx";
+import SingleSession from "./components/Session/singleSession.jsx";
 
 function App() {
     function ScrollToTop() {
@@ -121,6 +122,7 @@ function App() {
                 <Route path="/struggling/overthinking" element={<Overthinking/>}/>
                 <Route path="/struggling/careerUncertainty" element={<CareerUncertainty/>}/>
                 <Route path="/home1" element={<SessionPage/>}/>
+                <Route path="session/single-session" element={<SingleSession/>}/>
                 <Route
                     path="/assessments/exam-stress"
                     element={<ExamStressGaugeAssessments/>}

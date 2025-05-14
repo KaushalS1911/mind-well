@@ -1,5 +1,16 @@
-import React from 'react';
-import { Box, Container, Typography, Grid, Paper, Button, Divider, IconButton } from '@mui/material';
+import React, {useState} from 'react';
+import {
+    Box,
+    Container,
+    Typography,
+    Grid,
+    Paper,
+    Button,
+    Divider,
+    IconButton,
+    TextField,
+    FormControl, InputLabel, Select, MenuItem
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
@@ -19,6 +30,7 @@ import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import img from '../../../../assets/images/Home/Struggling/Anxiety-and-Stress-in-the-Workplace.jpg';
 import img7 from '../../../../assets/images/Home/Struggling/stress.jpg';
 import img14 from '../../../../assets/images/Home/Struggling/stresstime.webp';
+import {AttachFile, Close} from "@mui/icons-material";
 
 const stressAnxietyData = {
     title: 'Stress and Anxiety: Understanding, Managing, and Overcoming Mental Health Challenges',
@@ -205,9 +217,58 @@ const heartSVG = (
     </svg>
 );
 
+const formFieldStyle = {
+    "& label.Mui-focused": {color: "#FF7F1E"},
+    "& .MuiOutlinedInput-root": {
+        "& fieldset": {borderColor: "#FF7F1E"},
+        "&:hover fieldset": {borderColor: "#FF7F1E"},
+        "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
+    }
+};
+
+    const data = stressAnxietyData;
+
 const StressAnxiety = () => {
     const navigate = useNavigate();
-    const data = stressAnxietyData;
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        age: '',
+        message: ''
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Optional validation
+        if (!formData.name || !formData.email || !formData.phone || !formData.age || !formData.message) {
+            alert('Please fill out all fields');
+            return;
+        }
+
+        console.log('Submitted data:', formData);
+
+        // Reset form
+        setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            age: '',
+            message: ''
+        });
+    };
+
+
 
     return (
         <>
@@ -531,84 +592,96 @@ const StressAnxiety = () => {
 
                         {/* Sidebar */}
                         <Grid item xs={12} lg={4}>
-                            <Paper
-                                elevation={3}
-                                sx={{
-                                    p: 0,
-                                    mb: 4,
-                                    borderRadius: 4,
-                                    overflow: 'hidden',
-                                    background: 'white',
-                                    boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
-                                }}
-                            >
-                                <Box sx={{ position: 'relative' }}>
-                                    <Box
-                                        component="img"
-                                        src={data.image1}
-                                        alt="Expert"
-                                        sx={{ width: '100%', height: { xs: 250, sm: 300 }, objectFit: 'cover', borderRadius: '4px 4px 0 0' }}
-                                    />
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            bottom: 16,
-                                            left: 16,
-                                            background: secondary,
-                                            color: 'white',
-                                            px: 3,
-                                            py: 1,
-                                            borderRadius: 2,
-                                            fontWeight: 700,
-                                            fontSize: { xs: '0.9rem', sm: '1rem' },
-                                            fontFamily: 'Montserrat',
-                                            boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
-                                        }}
-                                    >
-                                        12+ Years of Experience
-                                    </Box>
-                                </Box>
-                                <Box sx={{ p: 4 }}>
-                                    <Typography
-                                        variant="h6"
-                                        sx={{ color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: 700 }}
-                                    >
-                                        Leading Mental Health Consultation
-                                    </Typography>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                        <ChatIcon sx={{ color: secondary, mr: 1.5 }} />
-                                        <Typography variant="body2" sx={{ color: textBody, fontFamily: 'Arial' }}>
-                                            Online Counseling
-                                        </Typography>
-                                    </Box>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                                        <GroupIcon sx={{ color: secondary, mr: 1.5 }} />
-                                        <Typography variant="body2" sx={{ color: textBody, fontFamily: 'Arial' }}>
-                                            Group Therapy
-                                        </Typography>
-                                    </Box>
-                                    <Button
-                                        variant="contained"
-                                        sx={{
-                                            backgroundColor: secondary,
-                                            color: 'white',
-                                            fontWeight: 700,
-                                            borderRadius: 3,
-                                            mt: 2,
-                                            px: 4,
-                                            py: 1.5,
-                                            fontFamily: 'Montserrat',
-                                            transition: 'transform 0.2s',
-                                            '&:hover': {
+                        <Paper elevation={3}
+                               sx={{
+                                   p: 4,
+                                   borderRadius: 4,
+                                   background: 'white',
+                                   boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
+                                   mb: 4,
+                               }}>
+                            <Box onSubmit={handleSubmit}>
+                                <Grid container spacing={3}>
+                                    <Grid item xs={12} sm={6}>
+                                        <TextField
+                                            fullWidth
+                                            label="Full Name"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleInputChange}
+                                            required
+                                            sx={formFieldStyle}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <TextField
+                                            fullWidth
+                                            label="Email"
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                            required
+                                            sx={formFieldStyle}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <TextField
+                                            fullWidth
+                                            label="Phone Number"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleInputChange}
+                                            required
+                                            sx={formFieldStyle}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <TextField
+                                            fullWidth
+                                            label="Age"
+                                            type="number"
+                                            name="age"
+                                            value={formData.age}
+                                            onChange={handleInputChange}
+                                            required
+                                            sx={formFieldStyle}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            fullWidth
+                                            multiline
+                                            rows={4}
+                                            label="Message"
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleInputChange}
+                                            required
+                                            sx={formFieldStyle}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <Button
+                                            type="submit"
+                                            variant="contained"
+                                            size="large"
+                                            sx={{
                                                 backgroundColor: secondary,
-                                                transform: 'translateY(-3px)',
-                                            },
-                                        }}
-                                    >
-                                        Explore Counseling
-                                    </Button>
-                                </Box>
-                            </Paper>
+                                                py: 1.5,
+                                                fontFamily: 'Montserrat',
+                                                fontWeight: 700,
+                                                borderRadius: 3,
+                                                transition: 'transform 0.2s',
+                                                '&:hover': { backgroundColor: secondary, transform: 'translateY(-3px)' },
+                                            }}
+                                        >
+                                            Request a call Back
+                                        </Button>
+                                    </Grid>
+                                </Grid>
+                            </Box>
+                        </Paper>
 
                             <Paper
                                 elevation={3}
@@ -622,11 +695,11 @@ const StressAnxiety = () => {
                             >
                                 <Typography
                                     variant="h6"
-                                    sx={{ color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: 700 }}
+                                    sx={{color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: 700}}
                                 >
                                     Assess Your Mental Health
                                 </Typography>
-                                <Typography sx={{ color: textBody, mb: 3, fontFamily: 'Arial', lineHeight: 1.6 }}>
+                                <Typography sx={{color: textBody, mb: 3, fontFamily: 'Arial', lineHeight: 1.6}}>
                                     Take our quick assessment to gain personalized insights and recommendations.
                                 </Typography>
                                 <Button
@@ -644,193 +717,10 @@ const StressAnxiety = () => {
                                             transform: 'translateY(-3px)',
                                         },
                                     }}
+                                    onClick={() => navigate("/assessments/general-stress")}
                                 >
                                     Start Assessment
                                 </Button>
-                            </Paper>
-
-                            <Paper
-                                elevation={3}
-                                sx={{
-                                    p: 4,
-                                    borderRadius: 4,
-                                    background: 'white',
-                                    boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
-                                    mb: 4,
-                                }}
-                            >
-                                <Typography
-                                    variant="h6"
-                                    sx={{ color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: 700 }}
-                                >
-                                    Expert Support
-                                </Typography>
-                                <Typography sx={{ color: textBody, mb: 3, fontFamily: 'Arial', lineHeight: 1.6 }}>
-                                    Connect with professionals for tailored guidance.
-                                </Typography>
-                                <Box sx={{ mb: 4 }}>
-                                    {[
-                                        {
-                                            icon: <ChatIcon />,
-                                            title: '1-on-1 Counseling',
-                                            desc: 'Personal sessions with licensed therapists',
-                                        },
-                                        {
-                                            icon: <GroupIcon />,
-                                            title: 'Group Therapy',
-                                            desc: 'Connect with others on similar journeys',
-                                        },
-                                        {
-                                            icon: <SupportIcon />,
-                                            title: 'Text Support',
-                                            desc: 'Immediate assistance via chat',
-                                        },
-                                    ].map((option, index) => (
-                                        <Box
-                                        >
-                                            <Box
-                                                sx={{
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    p: 2,
-                                                    backgroundColor: softGray,
-                                                    borderRadius: 2,
-                                                    mb: 2,
-                                                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                                                }}
-                                            >
-                                                <Box
-                                                    sx={{
-                                                        width: 48,
-                                                        height: 48,
-                                                        backgroundColor: lightOrange,
-                                                        borderRadius: '50%',
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        justifyContent: 'center',
-                                                        mr: 2,
-                                                        color: secondary,
-                                                    }}
-                                                >
-                                                    {option.icon}
-                                                </Box>
-                                                <Box>
-                                                    <Typography
-                                                        variant="subtitle1"
-                                                        sx={{ fontWeight: 600, color: primary, fontFamily: 'Montserrat' }}
-                                                    >
-                                                        {option.title}
-                                                    </Typography>
-                                                    <Typography variant="body2" sx={{ color: textBody, fontFamily: 'Arial' }}>
-                                                        {option.desc}
-                                                    </Typography>
-                                                </Box>
-                                            </Box>
-                                        </Box>
-                                    ))}
-                                </Box>
-                                <Button
-                                    fullWidth
-                                    variant="contained"
-                                    sx={{
-                                        backgroundColor: secondary,
-                                        py: 1.5,
-                                        fontFamily: 'Montserrat',
-                                        fontWeight: 700,
-                                        borderRadius: 3,
-                                        transition: 'transform 0.2s',
-                                        '&:hover': {
-                                            backgroundColor: secondary,
-                                            transform: 'translateY(-3px)',
-                                        },
-                                    }}
-                                >
-                                    Book a Session
-                                </Button>
-                            </Paper>
-
-                            <Paper
-                                elevation={3}
-                                sx={{
-                                    p: 4,
-                                    borderRadius: 4,
-                                    background: 'white',
-                                    boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
-                                }}
-                            >
-                                <Typography
-                                    variant="h6"
-                                    sx={{ color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: 700 }}
-                                >
-                                    Helpful Resources
-                                </Typography>
-                                {[
-                                    {
-                                        icon: <MenuBookIcon />,
-                                        title: 'Self-Help Workbook',
-                                        desc: 'Practical exercises and tools',
-                                        link: '#',
-                                    },
-                                    {
-                                        icon: <HeadphonesIcon />,
-                                        title: 'Guided Meditation',
-                                        desc: 'Audio sessions for different needs',
-                                        link: '#',
-                                    },
-                                    {
-                                        icon: <PsychologyIcon />,
-                                        title: 'Expert Articles',
-                                        desc: 'Insights from professionals',
-                                        link: '#',
-                                    },
-                                    {
-                                        icon: <VideoLibraryIcon />,
-                                        title: 'Video Tutorials',
-                                        desc: 'Visual guides for techniques',
-                                        link: '#',
-                                    },
-                                ].map((resource, index) => (
-                                    <Box
-                                    >
-                                        <Box
-                                            sx={{
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                p: 2,
-                                                borderBottom: index < 3 ? `1px solid ${softGray}` : 'none',
-                                            }}
-                                        >
-                                            <Box
-                                                sx={{
-                                                    width: 48,
-                                                    height: 48,
-                                                    backgroundColor: lightOrange,
-                                                    borderRadius: 1,
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    mr: 2,
-                                                    color: secondary,
-                                                }}
-                                            >
-                                                {resource.icon}
-                                            </Box>
-                                            <Box sx={{ flex: 1 }}>
-                                                <Typography
-                                                    variant="subtitle1"
-                                                    sx={{ fontWeight: 600, color: primary, fontFamily: 'Montserrat' }}
-                                                >
-                                                    <a href={resource.link} style={{ color: 'inherit', textDecoration: 'none' }}>
-                                                        {resource.title}
-                                                    </a>
-                                                </Typography>
-                                                <Typography variant="body2" sx={{ color: textBody, fontFamily: 'Arial' }}>
-                                                    {resource.desc}
-                                                </Typography>
-                                            </Box>
-                                        </Box>
-                                    </Box>
-                                ))}
                             </Paper>
                         </Grid>
                     </Grid>
@@ -861,25 +751,26 @@ const StressAnxiety = () => {
                         >
                             Ready to Take the Next Step?
                         </Typography>
-                        <Typography sx={{ mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial' }}>
-                            Our counselors are trained to help you navigate through your challenges with professional guidance tailored to
+                        <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
+                            Our counselors are trained to help you navigate through your challenges with professional
+                            guidance tailored to
                             your unique situation.
                         </Typography>
-                        <Button
-                            variant="contained"
-                            sx={{
-                                backgroundColor: secondary,
-                                py: 1.5,
-                                fontFamily: 'Montserrat',
-                                fontSize: '1.1rem',
-                                px: 4,
-                                '&:hover': {
-                                    backgroundColor: secondary,
-                                },
-                            }}
-                        >
-                            Book a Counselor Now
-                        </Button>
+                        {/*<Button*/}
+                        {/*    variant="contained"*/}
+                        {/*    sx={{*/}
+                        {/*        backgroundColor: secondary,*/}
+                        {/*        py: 1.5,*/}
+                        {/*        fontFamily: 'Montserrat',*/}
+                        {/*        fontSize: '1.1rem',*/}
+                        {/*        px: 4,*/}
+                        {/*        '&:hover': {*/}
+                        {/*            backgroundColor: secondary,*/}
+                        {/*        },*/}
+                        {/*    }}*/}
+                        {/*>*/}
+                        {/*    Book a Counselor Now*/}
+                        {/*</Button>*/}
                     </Box>
                 </Container>
             </Box>

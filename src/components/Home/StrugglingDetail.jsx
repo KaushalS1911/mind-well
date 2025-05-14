@@ -1072,21 +1072,21 @@ const StrugglingDetail = () => {
                             guidance tailored to
                             your unique situation.
                         </Typography>
-                        <Button
-                            variant="contained"
-                            sx={{
-                                backgroundColor: secondary,
-                                py: 1.5,
-                                fontFamily: 'Montserrat',
-                                fontSize: '1.1rem',
-                                px: 4,
-                                '&:hover': {
-                                    backgroundColor: secondary,
-                                },
-                            }}
-                        >
-                            Book a Counselor Now
-                        </Button>
+                        {/*<Button*/}
+                        {/*    variant="contained"*/}
+                        {/*    sx={{*/}
+                        {/*        backgroundColor: secondary,*/}
+                        {/*        py: 1.5,*/}
+                        {/*        fontFamily: 'Montserrat',*/}
+                        {/*        fontSize: '1.1rem',*/}
+                        {/*        px: 4,*/}
+                        {/*        '&:hover': {*/}
+                        {/*            backgroundColor: secondary,*/}
+                        {/*        },*/}
+                        {/*    }}*/}
+                        {/*>*/}
+                        {/*    Book a Counselor Now*/}
+                        {/*</Button>*/}
                     </Box>
                 </Container>
             </Box>

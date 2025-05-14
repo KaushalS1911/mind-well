@@ -33,6 +33,7 @@ import img5 from '../../assets/images/session/asian-female-farmer.jpg';
 import img6 from '../../assets/images/session/girl-with-down-syndrome-painting-with-colors.jpg';
 import img7 from '../../assets/images/session/man-using-laptop-office-doing-document-analysis.jpg';
 import img8 from '../../assets/images/session/medium-shot-young-people-church-praying.jpg';
+import {useNavigate} from "react-router-dom";
 
 
 const theme = {
@@ -141,6 +142,7 @@ const SessionSeminar = () => {
         phone: '',
         organization: '',
     });
+    const navigate = useNavigate();
 
     const handleTabChange = (event, newValue) => {
         setTabValue(newValue);
@@ -297,7 +299,7 @@ const SessionSeminar = () => {
                 <Box sx={{
                     textAlign: 'center',
                     mb: {xs: 6, md: 10},
-                    mx: {xs: '20px', sm: '70px', md: '90px', xl: '100px'}
+                    mx: {xs: '20px', sm: '70px', md: '90px', xl: '100px'},
                 }}>
                     <Typography
                         variant="h1"
@@ -340,7 +342,8 @@ const SessionSeminar = () => {
                                 <Grid container spacing={{xs: 3, md: 4}}>
                                     {upcomingSeminars.map((seminar) => (
                                         <Grid item xs={12} lg={6} xl={3} key={seminar.id}>
-                                            <StyledCard sx={{display: 'flex',flexDirection: 'column', justifyContent: 'space-between'}}>
+                                            <StyledCard sx={{display: 'flex',flexDirection: 'column', justifyContent: 'space-between',cursor: 'pointer'}}
+                                            >
                                                 <SeminarImage src={seminar.image} alt={seminar.title}/>
                                                 <CardContent sx={{p: {xs: 4, md: 5}}}>
                                                     <StyledChip
