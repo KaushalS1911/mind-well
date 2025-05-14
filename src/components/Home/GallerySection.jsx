@@ -99,7 +99,6 @@ const GallerySection = () => {
                                     position: 'relative',
                                     borderRadius: '16px',
                                     overflow: 'hidden',
-                                    height: '450px',
                                     cursor: 'pointer',
                                     '&:hover img': {transform: 'scale(1.1)'},
                                     '&:hover .hover-overlay': {background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 100%)'},
@@ -111,7 +110,7 @@ const GallerySection = () => {
                                         style={{
                                             width: '100%',
                                             height: '100%',
-                                            objectFit: 'cover',
+                                            objectFit: 'contain',
                                             objectPosition: 'top',
                                             transition: 'transform 0.4s ease'
                                         }}

@@ -32,6 +32,7 @@ import img4 from '../../assets/images/session/woman-office-stretching-work-day.j
 import img5 from '../../assets/images/session/asian-female-farmer.jpg';
 import img6 from '../../assets/images/session/girl-with-down-syndrome-painting-with-colors.jpg';
 import img7 from '../../assets/images/session/man-using-laptop-office-doing-document-analysis.jpg';
+import img8 from '../../assets/images/session/medium-shot-young-people-church-praying.jpg';
 
 
 const theme = {
@@ -255,7 +256,7 @@ const SessionSeminar = () => {
         },
         {
             id: 102,
-            title: 'Parent-Teacher Emotional Intelligence Workshop',
+            title: 'Parent-Teacher Workshop',
             date: 'March 28, 2025',
             location: 'IES School, Thane',
             category: 'Education',
@@ -275,6 +276,18 @@ const SessionSeminar = () => {
             participants: 65,
             image: img7,
         },
+        {
+            id: 104,
+            title: 'Workplace Mental Health Awareness',
+            date: 'May 2, 2025',
+            location: 'TechHub, Bengaluru',
+            category: 'Corporate Wellness',
+            description:
+                'This seminar focused on creating mentally healthy workplaces. HR professionals and employees explored strategies for reducing burnout, fostering a culture of openness, and implementing effective mental health policies through expert talks and group activities.',
+            participants: 58,
+            image: img8,
+        }
+
     ];
 
     return (
@@ -315,7 +328,7 @@ const SessionSeminar = () => {
 
                 {/* Tabs and Seminars */}
                 <Paper sx={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.08)'}}>
-                    <Box sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: 'auto' }}}>
+                    <Box sx={{mx: { sm: '70px', md: '90px', xl: 'auto' }}}>
                         <StyledTabs value={tabValue} onChange={handleTabChange} variant="scrollable"
                                     scrollButtons="auto">
                             <Tab label="Upcoming Seminars"/>
@@ -326,28 +339,22 @@ const SessionSeminar = () => {
                             {tabValue === 0 && (
                                 <Grid container spacing={{xs: 3, md: 4}}>
                                     {upcomingSeminars.map((seminar) => (
-                                        <Grid item xs={12} lg={6} key={seminar.id}>
-                                            <StyledCard>
+                                        <Grid item xs={12} lg={6} xl={3} key={seminar.id}>
+                                            <StyledCard sx={{display: 'flex',flexDirection: 'column', justifyContent: 'space-between'}}>
                                                 <SeminarImage src={seminar.image} alt={seminar.title}/>
                                                 <CardContent sx={{p: {xs: 4, md: 5}}}>
                                                     <StyledChip
                                                         label={seminar.category}
                                                         categoryColor={getCategoryColor(seminar.category)}
                                                     />
-                                                    <Typography variant="h5" sx={{
-                                                        mb: 2, fontSize: {
-                                                            xs: '1.5rem',
-                                                            sm: '1.85rem',
-                                                            md: '2rem',
-                                                            lg: '2.125rem'
-                                                        }, fontWeight: "600", color: theme.palette.text.primary
-                                                    }}>
+                                                    <Typography variant="h5"
+                                                                sx={{mb: 4, fontWeight:"600",color: theme.palette.text.primary}}>
                                                         {seminar.title}
                                                     </Typography>
-                                                    <Typography variant="body1"
-                                                                sx={{mb: 4, color: theme.palette.text.secondary}}>
-                                                        {seminar.description}
-                                                    </Typography>
+                                                    {/*<Typography variant="body1"*/}
+                                                    {/*            sx={{mb: 4, color: theme.palette.text.secondary}}>*/}
+                                                    {/*    {seminar.description}*/}
+                                                    {/*</Typography>*/}
                                                     <Stack spacing={2} sx={{mb: 4}}>
                                                         <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
                                                             <EventIcon fontSize="small"
@@ -428,8 +435,8 @@ const SessionSeminar = () => {
                             {tabValue === 1 && (
                                 <Grid container spacing={{xs: 3, md: 4}}>
                                     {pastSeminars.map((seminar) => (
-                                        <Grid item xs={12} lg={4} key={seminar.id}>
-                                            <StyledCard>
+                                        <Grid item xs={12} lg={6} xl={3} key={seminar.id}>
+                                            <StyledCard sx={{display: 'flex',flexDirection: 'column', justifyContent: 'space-between'}}>
                                                 <SeminarImage src={seminar.image} alt={seminar.title}/>
                                                 <CardContent sx={{p: {xs: 4, md: 5}}}>
                                                     <StyledChip
@@ -437,13 +444,13 @@ const SessionSeminar = () => {
                                                         categoryColor={getCategoryColor(seminar.category)}
                                                     />
                                                     <Typography variant="h5"
-                                                                sx={{mb: 2, fontWeight:"600",color: theme.palette.text.primary}}>
+                                                                sx={{mb: 4, fontWeight:"600",color: theme.palette.text.primary}}>
                                                         {seminar.title}
                                                     </Typography>
-                                                    <Typography variant="body1"
-                                                                sx={{mb: 4, color: theme.palette.text.secondary}}>
-                                                        {seminar.description}
-                                                    </Typography>
+                                                    {/*<Typography variant="body1"*/}
+                                                    {/*            sx={{mb: 4, color: theme.palette.text.secondary}}>*/}
+                                                    {/*    {seminar.description}*/}
+                                                    {/*</Typography>*/}
                                                     <Stack spacing={2}>
                                                         <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
                                                             <EventIcon fontSize="small"
@@ -471,7 +478,7 @@ const SessionSeminar = () => {
                                                         </Box>
                                                     </Stack>
                                                 </CardContent>
-                                                <CardActions sx={{p: {xs: 4, md: 5}, pt: 0}}>
+                                                <CardActions sx={{p: {xs: 4, md: 5}, pt: 0,mt:"auto"}}>
                                                     <StyledButton
                                                         variant="outlined"
                                                         sx={{
@@ -495,106 +502,7 @@ const SessionSeminar = () => {
                         </Box>
                     </Box>
                 </Paper>
-
-                {/* Call to Action Section */}
-                {/*<Paper*/}
-                {/*    sx={{*/}
-                {/*        mt: { xs: 8, md: 10 },*/}
-                {/*        p: { xs: 4, md: 6 },*/}
-                {/*        bgcolor: "#012765",*/}
-                {/*        color: '#fff',*/}
-                {/*        borderRadius: '20px',*/}
-                {/*        boxShadow: '0 6px 24px rgba(0,0,0,0.15)',*/}
-                {/*    }}*/}
-                {/*>*/}
-                {/*    <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">*/}
-                {/*        <Grid item xs={12} md={7}>*/}
-                {/*            <Typography*/}
-                {/*                variant="h2"*/}
-                {/*                sx={{*/}
-                {/*                    fontSize: { xs: '2rem', sm: '2.75rem', md: '3rem' },*/}
-                {/*                    fontWeight: 700,*/}
-                {/*                    mb: 3,*/}
-                {/*                }}*/}
-                {/*            >*/}
-                {/*                Need a Custom Seminar?*/}
-                {/*            </Typography>*/}
-                {/*            <Typography*/}
-                {/*                variant="body1"*/}
-                {/*                sx={{*/}
-                {/*                    fontSize: { xs: '1.1rem', sm: '1.25rem' },*/}
-                {/*                    maxWidth: '700px',*/}
-                {/*                    mb: 4,*/}
-                {/*                }}*/}
-                {/*            >*/}
-                {/*                Our expert psychologists design tailored workshops for schools, organizations, and coaching centers, customized to your unique goals and challenges.*/}
-                {/*            </Typography>*/}
-                {/*            <StyledButton*/}
-                {/*                variant="contained"*/}
-                {/*                sx={{*/}
-                {/*                    bgcolor: theme.palette.secondary.main,*/}
-                {/*                    color: '#fff',*/}
-                {/*                }}*/}
-                {/*            >*/}
-                {/*                Get in Touch*/}
-                {/*            </StyledButton>*/}
-                {/*        </Grid>*/}
-                {/*        <Grid item xs={12} md={5}>*/}
-                {/*            <Box sx={{ bgcolor: '#fff', p: { xs: 4, md: 5 }, borderRadius: '16px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>*/}
-                {/*                <Typography*/}
-                {/*                    variant="h5"*/}
-                {/*                    sx={{*/}
-                {/*                        color: theme.palette.text.primary,*/}
-                {/*                        mb: 4,*/}
-                {/*                        fontWeight: 600,*/}
-                {/*                    }}*/}
-                {/*                >*/}
-                {/*                    Request More Details*/}
-                {/*                </Typography>*/}
-                {/*                <TextField*/}
-                {/*                    fullWidth*/}
-                {/*                    placeholder="Enter Your Email"*/}
-                {/*                    variant="outlined"*/}
-                {/*                    sx={{*/}
-                {/*                        mb: 3,*/}
-                {/*                        '& .MuiOutlinedInput-root': {*/}
-                {/*                            borderRadius: '12px',*/}
-                {/*                            bgcolor: '#F4F7FE',*/}
-                {/*                            fontSize: '1rem',*/}
-                {/*                        },*/}
-                {/*                    }}*/}
-                {/*                />*/}
-                {/*                <StyledButton*/}
-                {/*                    fullWidth*/}
-                {/*                    variant="contained"*/}
-                {/*                    sx={{*/}
-                {/*                        bgcolor: theme.palette.secondary.main,*/}
-                {/*                        color: '#fff',*/}
-                {/*                    }}*/}
-                {/*                >*/}
-                {/*                    Submit Request*/}
-                {/*                </StyledButton>*/}
-                {/*                <Typography*/}
-                {/*                    variant="caption"*/}
-                {/*                    sx={{*/}
-                {/*                        mt: 3,*/}
-                {/*                        color: theme.palette.text.secondary,*/}
-                {/*                        display: 'block',*/}
-                {/*                        fontSize: '0.85rem',*/}
-                {/*                    }}*/}
-                {/*                >*/}
-                {/*                    We value your privacy. See our{' '}*/}
-                {/*                    <a href="#" style={{ color: theme.palette.secondary.main, fontWeight: 600 }}>*/}
-                {/*                        Privacy Policy*/}
-                {/*                    </a>.*/}
-                {/*                </Typography>*/}
-                {/*            </Box>*/}
-                {/*        </Grid>*/}
-                {/*    </Grid>*/}
-                {/*</Paper>*/}
             </Container>
-
-            {/* Registration Dialog */}
             <Dialog open={openDialog} onClose={handleCloseDialog} maxWidth="sm" fullWidth>
                 <DialogTitle
                     sx={{

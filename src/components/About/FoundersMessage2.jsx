@@ -26,7 +26,7 @@ const MainContent = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: '40px',
     alignItems: 'flex-start',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
         flexDirection: 'column',
         gap: '24px',
     },

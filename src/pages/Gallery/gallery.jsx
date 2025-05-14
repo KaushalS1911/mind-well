@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import {Box, Container, Typography, Grid, IconButton} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-
-// Import shared gallery images
 import galleryImages from '../../data/galleryImages';
 
 const Gallery = () => {
@@ -40,53 +38,69 @@ const Gallery = () => {
 
                 <Grid container spacing={3}>
                     {galleryImages.map((item, index) => (
-                        <Grid item xs={12} md={6} lg={4} key={index}>
-                            <Box sx={{
-                                position: 'relative',
-                                borderRadius: '16px',
-                                overflow: 'hidden',
-                                height: '450px',
-                                cursor: 'pointer',
-                                '&:hover img': {transform: 'scale(1.1)'},
-                                '&:hover .hover-overlay': {background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 100%)'},
-                                '&:hover .hover-text': {transform: 'translateY(0%)', opacity: 1}
-                            }}
-                                 onClick={() => setSelectedImage(item)}
+                        <Grid item xs={12} sm={6} md={4} key={index}>
+                            <Box
+                                sx={{
+                                    position: 'relative',
+                                    borderRadius: '16px',
+                                    overflow: 'hidden',
+                                    // height: { xs: 300, sm: 400, md: 480 },
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    // backgroundColor: '#f0f0f0',
+                                    cursor: 'pointer',
+                                    '&:hover img': { transform: 'scale(1.05)' },
+                                    '&:hover .hover-overlay': {
+                                        background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 100%)',
+                                    },
+                                    '&:hover .hover-text': {
+                                        transform: 'translateY(0%)',
+                                        opacity: 1,
+                                    },
+                                }}
+                                onClick={() => setSelectedImage(item)}
                             >
                                 <img
                                     src={item.image}
                                     alt={item.title}
+                                    loading="lazy"
                                     style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        objectFit: 'cover',
-                                        objectPosition: 'top',
-                                        transition: 'transform 0.4s ease'
+                                        maxWidth: '100%',
+                                        maxHeight: '100%',
+                                        objectFit: 'contain',
+                                        transition: 'transform 0.4s ease',
                                     }}
                                 />
 
-                                <Box className="hover-overlay" sx={{
-                                    position: 'absolute',
-                                    top: 0,
-                                    left: 0,
-                                    right: 0,
-                                    bottom: 0,
-                                    color: 'white',
-                                    background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
-                                    transition: 'background 0.4s ease'
-                                }}>
-                                    <Box className="hover-text" sx={{
+                                <Box
+                                    className="hover-overlay"
+                                    sx={{
                                         position: 'absolute',
-                                        bottom: 0,
+                                        top: 0,
                                         left: 0,
                                         right: 0,
-                                        textAlign: 'center',
-                                        transform: 'translateY(100%)',
-                                        opacity: 0,
-                                        transition: 'transform 0.4s ease, opacity 0.4s ease',
-                                        py: 2
-                                    }}>
-                                        <Typography variant="h6" sx={{fontWeight: 400, fontSize: "17px"}}>
+                                        bottom: 0,
+                                        color: 'white',
+                                        background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
+                                        transition: 'background 0.4s ease',
+                                    }}
+                                >
+                                    <Box
+                                        className="hover-text"
+                                        sx={{
+                                            position: 'absolute',
+                                            bottom: 0,
+                                            left: 0,
+                                            right: 0,
+                                            textAlign: 'center',
+                                            transform: 'translateY(100%)',
+                                            opacity: 0,
+                                            transition: 'transform 0.4s ease, opacity 0.4s ease',
+                                            py: 2,
+                                        }}
+                                    >
+                                        <Typography variant="h6" sx={{ fontWeight: 400, fontSize: '17px' }}>
                                             {item.title}
                                         </Typography>
                                     </Box>
@@ -95,6 +109,7 @@ const Gallery = () => {
                         </Grid>
                     ))}
                 </Grid>
+
 
                 {/* Image Modal */}
                 {selectedImage && (

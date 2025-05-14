@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box, Container, Typography, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Container, Typography, useTheme } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import img1 from '../../assets/images/about/Founder/chaman_kumar.jpeg';
 
+// === Styled Components ===
 const Section = styled(Box)(({ theme }) => ({
     padding: '60px 0',
     background: '#fff',
@@ -11,40 +12,28 @@ const Section = styled(Box)(({ theme }) => ({
     },
 }));
 
-const Title = styled(Typography)(({ theme }) => ({
-    fontSize: '2.5rem',
-    fontWeight: 700,
-    color: '#012765',
-    marginBottom: '40px',
-    textAlign: 'center',
-    [theme.breakpoints.down('sm')]: {
-        fontSize: '2rem',
-    },
-}));
-
 const MainContent = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: '40px',
     alignItems: 'flex-start',
-    [theme.breakpoints.down('md')]: {
-        flexDirection: 'column',
-        gap: '24px',
+    flexDirection: 'column', // default mobile layout
+    [theme.breakpoints.up('lg')]: {
+        flexDirection: 'row-reverse', // reverse on lg+: image on right
     },
 }));
 
 const ImageSection = styled(Box)(({ theme }) => ({
-    flex: '0 0 300px',
-    marginTop: "10%",
-    [theme.breakpoints.down('md')]: {
-        width: '100%',
-        flex: 'none',
+    width: '100%',
+    [theme.breakpoints.up('lg')]: {
+        width: '300px',
+        marginTop: '10%',
     },
     '& img': {
-        backgroundColor: '#fff',
         width: '100%',
         height: 'auto',
         borderRadius: '12px',
         boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+        display: 'block',
     },
 }));
 
@@ -70,6 +59,7 @@ const Text = styled(Typography)(({ theme }) => ({
     lineHeight: 1.8,
     color: '#4B5563',
     marginBottom: '16px',
+    textAlign: 'justify',
     [theme.breakpoints.down('sm')]: {
         fontSize: '15px',
     },
@@ -90,14 +80,14 @@ const Role = styled(Typography)({
     color: '#FF7F1E',
 });
 
+// === Component ===
 const FoundersMessage = () => {
     const theme = useTheme();
-    const isSmall = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
         <Section>
             <Container maxWidth="xl">
-                <Box
+                <Typography
                     className="Montserrat"
                     sx={{
                         fontSize: {
@@ -113,53 +103,57 @@ const FoundersMessage = () => {
                         color: "#012765",
                         fontWeight: "700",
                         textAlign: "center",
-                        mb:5
-                    }}>Director Sales</Box>
+                        mb: 5
+                    }}
+                >
+                    Director Sales
+                </Typography>
+
                 <MainContent>
+                    <ImageSection>
+                        <img src={img1} alt="Chaman Kumar" />
+                    </ImageSection>
 
                     <TextSection>
                         <Quote>
                             "Empowering Mindsets, Shaping Futures – Your Role in Building a Productive Nation"
                         </Quote>
                         <Text>Namaste!</Text>
-                        <Text sx={{textAlign:" justify"}}>
+                        <Text>
                             As sales professionals and brand ambassadors of "Emotionally Yours" and our flagship
                             offerings – SHAPE, SHAPE+, and ESOP – you hold the key to unlocking a powerful
                             transformation in the minds of today's students and workforce to build a positive
                             mindset to help nations in the journey of a "developed nation".
                         </Text>
-                        <Text  sx={{textAlign:" justify"}}>
+                        <Text>
                             These programs aren't just products; they are purpose-driven solutions designed to
                             address the core emotional and psychological needs that drive individuals'
                             productivity, performance, and purpose.
                         </Text>
-                        <Text  sx={{textAlign:" justify"}}>
+                        <Text>
                             SHAPE helps students build self-awareness, emotional resilience, and growth-oriented
                             habits.
                         </Text>
-                        <Text  sx={{textAlign:" justify"}}>
+                        <Text>
                             SHAPE+ strengthens aspirants and young adults in their transitional phases, instilling
                             confidence, clarity, and emotional agility.
                         </Text>
-                        <Text  sx={{textAlign:" justify"}}>
+                        <Text>
                             ESOP supports organizations by cultivating a wellness-first, emotionally intelligent
                             workforce ready to thrive in demanding business environments.
                         </Text>
-                        <Text  sx={{textAlign:" justify"}}>
+                        <Text>
                             Through your outreach efforts, you're not just selling a program – you're contributing
                             to a national mission: building a stronger, more productive future by nurturing
                             healthier mindsets from school to the workplace.
                         </Text>
-                        <Text  sx={{textAlign:" justify"}}>Let's lead with empathy, insight, and conviction. The change begins with you.</Text>
+                        <Text>Let's lead with empathy, insight, and conviction. The change begins with you.</Text>
                         <Text>Warm Regards,</Text>
                         <Signature>
                             <Name>Chaman Kumar</Name>
                             <Role>Director and Chief Sales Officer</Role>
                         </Signature>
                     </TextSection>
-                    <ImageSection>
-                        <img src={img1} alt="Chaman Kumar" />
-                    </ImageSection>
                 </MainContent>
             </Container>
         </Section>
