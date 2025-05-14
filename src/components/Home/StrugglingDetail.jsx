@@ -512,23 +512,23 @@ const StrugglingDetail = () => {
                                     {data.motivation}
                                 </Typography>
 
-                                <Button
-                                    variant="contained"
-                                    sx={{
-                                        backgroundColor: secondary,
-                                        color: 'white',
-                                        fontWeight: 700,
-                                        borderRadius: 2,
-                                        px: 4,
-                                        py: 1.5,
-                                        fontSize: '1rem',
-                                        fontFamily: 'Montserrat',
-                                        boxShadow: '0 2px 8px rgba(255,127,30,0.10)',
-                                        '&:hover': { backgroundColor: secondary },
-                                    }}
-                                >
-                                    Book a Counsellor
-                                </Button>
+                                {/*<Button*/}
+                                {/*    variant="contained"*/}
+                                {/*    sx={{*/}
+                                {/*        backgroundColor: secondary,*/}
+                                {/*        color: 'white',*/}
+                                {/*        fontWeight: 700,*/}
+                                {/*        borderRadius: 2,*/}
+                                {/*        px: 4,*/}
+                                {/*        py: 1.5,*/}
+                                {/*        fontSize: '1rem',*/}
+                                {/*        fontFamily: 'Montserrat',*/}
+                                {/*        boxShadow: '0 2px 8px rgba(255,127,30,0.10)',*/}
+                                {/*        '&:hover': { backgroundColor: secondary },*/}
+                                {/*    }}*/}
+                                {/*>*/}
+                                {/*    Book a Counsellor*/}
+                                {/*</Button>*/}
 
                                 <Box
                                     sx={{

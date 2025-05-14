@@ -368,28 +368,28 @@ const Overthinking = () => {
                                 >
                                     {data.motivation}
                                 </Typography>
-                                <Button
-                                    variant="contained"
-                                    sx={{
-                                        backgroundColor: secondary,
-                                        color: 'white',
-                                        fontWeight: 700,
-                                        borderRadius: 3,
-                                        px: 5,
-                                        py: 1.5,
-                                        fontSize: '1.1rem',
-                                        fontFamily: 'Montserrat',
-                                        boxShadow: '0 4px 16px rgba(255,127,30,0.3)',
-                                        transition: 'transform 0.2s, box-shadow 0.2s',
-                                        '&:hover': {
-                                            backgroundColor: secondary,
-                                            transform: 'translateY(-3px)',
-                                            boxShadow: '0 6px 24px rgba(255,127,30,0.4)',
-                                        },
-                                    }}
-                                >
-                                    Book a Counsellor
-                                </Button>
+                                {/*<Button*/}
+                                {/*    variant="contained"*/}
+                                {/*    sx={{*/}
+                                {/*        backgroundColor: secondary,*/}
+                                {/*        color: 'white',*/}
+                                {/*        fontWeight: 700,*/}
+                                {/*        borderRadius: 3,*/}
+                                {/*        px: 5,*/}
+                                {/*        py: 1.5,*/}
+                                {/*        fontSize: '1.1rem',*/}
+                                {/*        fontFamily: 'Montserrat',*/}
+                                {/*        boxShadow: '0 4px 16px rgba(255,127,30,0.3)',*/}
+                                {/*        transition: 'transform 0.2s, box-shadow 0.2s',*/}
+                                {/*        '&:hover': {*/}
+                                {/*            backgroundColor: secondary,*/}
+                                {/*            transform: 'translateY(-3px)',*/}
+                                {/*            boxShadow: '0 6px 24px rgba(255,127,30,0.4)',*/}
+                                {/*        },*/}
+                                {/*    }}*/}
+                                {/*>*/}
+                                {/*    Book a Counsellor*/}
+                                {/*</Button>*/}
                                 <Box
                                     sx={{
                                         position: 'absolute',
@@ -602,7 +602,7 @@ const Overthinking = () => {
                                    }}>
                                 <Box onSubmit={handleSubmit}>
                                     <Grid container spacing={3}>
-                                        <Grid item xs={12} sm={6}>
+                                        <Grid item xs={12} >
                                             <TextField
                                                 fullWidth
                                                 label="Full Name"
@@ -613,7 +613,7 @@ const Overthinking = () => {
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
-                                        <Grid item xs={12} sm={6}>
+                                        <Grid item xs={12} >
                                             <TextField
                                                 fullWidth
                                                 label="Email"
@@ -625,7 +625,7 @@ const Overthinking = () => {
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
-                                        <Grid item xs={12} sm={6}>
+                                        <Grid item xs={12} >
                                             <TextField
                                                 fullWidth
                                                 label="Phone Number"
@@ -636,7 +636,7 @@ const Overthinking = () => {
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
-                                        <Grid item xs={12} sm={6}>
+                                        <Grid item xs={12} >
                                             <TextField
                                                 fullWidth
                                                 label="Age"
@@ -676,7 +676,7 @@ const Overthinking = () => {
                                                     '&:hover': { backgroundColor: secondary, transform: 'translateY(-3px)' },
                                                 }}
                                             >
-                                                Request a call Back
+                                                Request a callBack
                                             </Button>
                                         </Grid>
                                     </Grid>
