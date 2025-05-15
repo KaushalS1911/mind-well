@@ -11,7 +11,7 @@ import {
     TextField,
     FormControl, InputLabel, Select, MenuItem
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
 import SpaIcon from '@mui/icons-material/Spa';
@@ -38,13 +38,13 @@ const stressAnxietyData = {
     image: img,
     image1: img7,
     firstimage: img14,
-    icon: <SelfImprovementIcon />,
+    icon: <SelfImprovementIcon/>,
     solutionIcons: [
-        <SpaIcon fontSize="large" />,
-        <LightbulbIcon fontSize="large" />,
-        <HeadphonesIcon fontSize="large" />,
-        <FitnessCenterIcon fontSize="large" />,
-        <BalanceIcon fontSize="large" />,
+        <SpaIcon fontSize="large"/>,
+        <LightbulbIcon fontSize="large"/>,
+        <HeadphonesIcon fontSize="large"/>,
+        <FitnessCenterIcon fontSize="large"/>,
+        <BalanceIcon fontSize="large"/>,
     ],
     sections: [
         {
@@ -167,7 +167,7 @@ const stressAnxietyData = {
             title: 'Real-Life Example',
             content: [
                 {
-                    text: 'For example, xyz started feeling anxious before work meetings. Her chest felt tight, and she couldn’t sleep. After talking to a counselor, she learned her symptoms were part of an anxiety disorder. Getting help improved her life.\n' ,
+                    text: 'For example, xyz started feeling anxious before work meetings. Her chest felt tight, and she couldn’t sleep. After talking to a counselor, she learned her symptoms were part of an anxiety disorder. Getting help improved her life.\n',
                 },
             ],
         },
@@ -180,9 +180,21 @@ const stressAnxietyData = {
         'Professional counseling',
     ],
     testimonials: [
-        { name: 'Sarah, 28', text: 'Counseling gave me tools to manage my anxiety. I feel empowered and in control now.', image: 'https://i.pravatar.cc/40?img=10' },
-        { name: 'Michael, 34', text: 'The strategies I learned transformed my stress into productivity. Highly recommend!', image: 'https://i.pravatar.cc/40?img=11' },
-        { name: 'David, 41', text: 'Joining a support group made me feel understood and less alone.', image: 'https://i.pravatar.cc/40?img=12' },
+        {
+            name: 'Sarah, 28',
+            text: 'Counseling gave me tools to manage my anxiety. I feel empowered and in control now.',
+            image: 'https://i.pravatar.cc/40?img=10'
+        },
+        {
+            name: 'Michael, 34',
+            text: 'The strategies I learned transformed my stress into productivity. Highly recommend!',
+            image: 'https://i.pravatar.cc/40?img=11'
+        },
+        {
+            name: 'David, 41',
+            text: 'Joining a support group made me feel understood and less alone.',
+            image: 'https://i.pravatar.cc/40?img=12'
+        },
     ],
     references: [
         'World Health Organization. Mental Health Data.',
@@ -202,7 +214,7 @@ const textBody = '#4B5563';
 
 const doodleSVG = (
     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="30" cy="30" r="28" stroke={secondary} strokeWidth="2" strokeDasharray="6 6" />
+        <circle cx="30" cy="30" r="28" stroke={secondary} strokeWidth="2" strokeDasharray="6 6"/>
     </svg>
 );
 
@@ -217,19 +229,20 @@ const heartSVG = (
     </svg>
 );
 
-const formFieldStyle = {
-    "& label.Mui-focused": {color: "#FF7F1E"},
-    "& .MuiOutlinedInput-root": {
-        "& fieldset": {borderColor: "#FF7F1E"},
-        "&:hover fieldset": {borderColor: "#FF7F1E"},
-        "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
-    }
-};
 
-    const data = stressAnxietyData;
+const data = stressAnxietyData;
 
 const StressAnxiety = () => {
     const navigate = useNavigate();
+
+    const formFieldStyle = {
+        "& label.Mui-focused": {color: "#FF7F1E"},
+        "& .MuiOutlinedInput-root": {
+            "& fieldset": {borderColor: "#FF7F1E"},
+            "&:hover fieldset": {borderColor: "#FF7F1E"},
+            "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
+        }
+    };
 
     const [formData, setFormData] = useState({
         name: '',
@@ -238,6 +251,8 @@ const StressAnxiety = () => {
         age: '',
         message: ''
     });
+
+    const [errors, setErrors] = useState({});
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -250,15 +265,29 @@ const StressAnxiety = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Optional validation
-        if (!formData.name || !formData.email || !formData.phone || !formData.age || !formData.message) {
-            alert('Please fill out all fields');
+        const newErrors = {};
+
+        if (!formData.name.trim()) newErrors.name = 'Full name is required';
+        if (!formData.email.trim()) newErrors.email = 'Email is required';
+        else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
+
+        if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
+        else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
+
+        if (!formData.age.trim()) newErrors.age = 'Age is required';
+        else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
+
+        if (!formData.message.trim()) newErrors.message = 'Message is required';
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
             return;
         }
 
+        // If validation passed
         console.log('Submitted data:', formData);
 
-        // Reset form
+        // Reset
         setFormData({
             name: '',
             email: '',
@@ -266,9 +295,8 @@ const StressAnxiety = () => {
             age: '',
             message: ''
         });
+        setErrors({});
     };
-
-
 
     return (
         <>
@@ -286,7 +314,7 @@ const StressAnxiety = () => {
                     backgroundRepeat: "no-repeat",
                 }}
             >
-                <Container sx={{ position: 'relative', zIndex: 2,mt:5 }}>
+                <Container sx={{position: 'relative', zIndex: 2, mt: 5}}>
                     <Box
                     >
                         <Typography
@@ -305,10 +333,10 @@ const StressAnxiety = () => {
                         >
                             Stress & Anxiety
                         </Typography>
-                        <Divider sx={{ backgroundColor: secondary, height: 4, width: 120, margin: 'auto', my: 3 }} />
+                        <Divider sx={{backgroundColor: secondary, height: 4, width: 120, margin: 'auto', my: 3}}/>
                         <Typography
                             variant="h6"
-                            sx={{ fontWeight: 400, maxWidth: 800, mx: 'auto', fontFamily: 'Arial', lineHeight: 1.6 }}
+                            sx={{fontWeight: 400, maxWidth: 800, mx: 'auto', fontFamily: 'Arial', lineHeight: 1.6}}
                         >
                             {data.description}
                         </Typography>
@@ -323,13 +351,13 @@ const StressAnxiety = () => {
                     pt: 8,
                     position: 'relative',
                     overflow: 'hidden',
-                    mx: { xs: '20px', sm: '70px', md: '90px', xl: 'auto' }
+                    mx: {xs: '20px', sm: '70px', md: '90px', xl: 'auto'}
                 }}
             >
                 <Container maxWidth="xl">
                     <Button
                         onClick={() => navigate(-1)}
-                        startIcon={<ArrowBackIcon />}
+                        startIcon={<ArrowBackIcon/>}
                         sx={{
                             mb: 4,
                             color: primary,
@@ -345,7 +373,7 @@ const StressAnxiety = () => {
                     </Button>
 
                     {/* Introduction Section */}
-                    <Grid container spacing={4} alignItems="center" sx={{ mb: { xs: 8, md: 12 } }}>
+                    <Grid container spacing={4} alignItems="center" sx={{mb: {xs: 8, md: 12}}}>
                         <Grid item xs={12} lg={5}>
                             <Box
                             >
@@ -363,10 +391,10 @@ const StressAnxiety = () => {
                                         alt={data.title}
                                         sx={{
                                             width: '100%',
-                                            height: { xs: 300, sm: 400, md: 450 },
+                                            height: {xs: 300, sm: 400, md: 450},
                                             objectFit: 'cover',
                                             transition: 'transform 0.3s',
-                                            '&:hover': { transform: 'scale(1.05)' },
+                                            '&:hover': {transform: 'scale(1.05)'},
                                         }}
                                     />
                                     <Box
@@ -386,7 +414,7 @@ const StressAnxiety = () => {
                         <Grid item xs={12} lg={7}>
                             <Box
                             >
-                                <Box sx={{ position: 'relative', px: { xs: 2, sm: 4 }, mt: { xs: 4, md: 0 } }}>
+                                <Box sx={{position: 'relative', px: {xs: 2, sm: 4}, mt: {xs: 4, md: 0}}}>
                                     <Typography
                                         className="Montserrat"
                                         variant="h2"
@@ -404,14 +432,20 @@ const StressAnxiety = () => {
                                     >
                                         {data.title}
                                     </Typography>
-                                    <Box sx={{ position: 'absolute', top: -40, left: -50, zIndex: 1, opacity: 0.7 }}>{doodleSVG}</Box>
+                                    <Box sx={{
+                                        position: 'absolute',
+                                        top: -40,
+                                        left: -50,
+                                        zIndex: 1,
+                                        opacity: 0.7
+                                    }}>{doodleSVG}</Box>
                                     <Typography
                                         sx={{
                                             color: textBody,
                                             mb: 4,
                                             maxWidth: 700,
                                             fontFamily: 'Arial',
-                                            fontSize: { xs: '1rem', sm: '1.1rem' },
+                                            fontSize: {xs: '1rem', sm: '1.1rem'},
                                             lineHeight: 1.7,
                                         }}
                                     >
@@ -446,7 +480,7 @@ const StressAnxiety = () => {
                                             right: -20,
                                             zIndex: 1,
                                             opacity: 0.7,
-                                            display: { xs: 'none', sm: 'block' },
+                                            display: {xs: 'none', sm: 'block'},
                                         }}
                                     >
                                         {heartSVG}
@@ -462,7 +496,7 @@ const StressAnxiety = () => {
                             <Paper
                                 elevation={3}
                                 sx={{
-                                    p: { xs: 3, sm: 5 },
+                                    p: {xs: 3, sm: 5},
                                     borderRadius: 4,
                                     background: 'white',
                                     boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
@@ -481,8 +515,8 @@ const StressAnxiety = () => {
                                         background: `linear-gradient(to right, ${primary}, ${secondary})`,
                                     }}
                                 />
-                                <Box sx={{ backgroundColor: primary, color: 'white', p: 3, borderRadius: 2, mb: 4 }}>
-                                    <Typography variant="h5" className="Montserrat" sx={{ fontWeight: 700 }}>
+                                <Box sx={{backgroundColor: primary, color: 'white', p: 3, borderRadius: 2, mb: 4}}>
+                                    <Typography variant="h5" className="Montserrat" sx={{fontWeight: 700}}>
                                         Understanding Stress & Anxiety
                                     </Typography>
                                 </Box>
@@ -490,7 +524,7 @@ const StressAnxiety = () => {
                                 {data.sections.map((section, index) => (
                                     <Box
                                     >
-                                        <Box sx={{ mb: 5 }}>
+                                        <Box sx={{mb: 5}}>
                                             <Typography
                                                 variant="h6"
                                                 sx={{
@@ -505,7 +539,7 @@ const StressAnxiety = () => {
                                                 {section.title}
                                             </Typography>
                                             {section.content.map((item, idx) => (
-                                                <Box key={idx} sx={{ mb: 3 ,textAlign:"justify"}}>
+                                                <Box key={idx} sx={{mb: 3, textAlign: "justify"}}>
                                                     {item.subtitle && (
                                                         <Typography
                                                             variant="subtitle1"
@@ -518,7 +552,7 @@ const StressAnxiety = () => {
                                                                 alignItems: 'center',
                                                             }}
                                                         >
-                                                            <SelfImprovementIcon sx={{ color: secondary, mr: 1 }} />
+                                                            <SelfImprovementIcon sx={{color: secondary, mr: 1}}/>
                                                             {item.subtitle}
                                                         </Typography>
                                                     )}
@@ -527,7 +561,7 @@ const StressAnxiety = () => {
                                                             color: textBody,
                                                             fontFamily: 'Arial',
                                                             lineHeight: 1.7,
-                                                            fontSize: { xs: '0.95rem', sm: '1rem' },
+                                                            fontSize: {xs: '0.95rem', sm: '1rem'},
                                                         }}
                                                     >
                                                         {item.text}
@@ -546,24 +580,29 @@ const StressAnxiety = () => {
                                                 >
                                                     <Typography
                                                         variant="subtitle1"
-                                                        sx={{ fontWeight: 600, color: primary, mb: 2, fontFamily: 'Montserrat' }}
+                                                        sx={{
+                                                            fontWeight: 600,
+                                                            color: primary,
+                                                            mb: 2,
+                                                            fontFamily: 'Montserrat'
+                                                        }}
                                                     >
                                                         Key Insight
                                                     </Typography>
-                                                    <Typography sx={{ color: textBody, fontFamily: 'Arial' }}>
+                                                    <Typography sx={{color: textBody, fontFamily: 'Arial'}}>
                                                         {section.content[0].text}
                                                     </Typography>
                                                 </Box>
                                             )}
                                         </Box>
-                                        <Divider sx={{ my: 3, backgroundColor: softGray }} />
+                                        <Divider sx={{my: 3, backgroundColor: softGray}}/>
                                     </Box>
                                 ))}
 
-                                <Box sx={{ mt: 6 }}>
+                                <Box sx={{mt: 6}}>
                                     <Typography
                                         variant="h6"
-                                        sx={{ color: primary, mb: 3, fontFamily: 'Montserrat', fontWeight: 700 }}
+                                        sx={{color: primary, mb: 3, fontFamily: 'Montserrat', fontWeight: 700}}
                                     >
                                         References
                                     </Typography>
@@ -576,10 +615,14 @@ const StressAnxiety = () => {
                                                         backgroundColor: softGray,
                                                         borderRadius: 2,
                                                         boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
-                                                        height:"100%"
+                                                        height: "100%"
                                                     }}
                                                 >
-                                                    <Typography sx={{ color: textBody, fontFamily: 'Arial', fontSize: '0.95rem' }}>
+                                                    <Typography sx={{
+                                                        color: textBody,
+                                                        fontFamily: 'Arial',
+                                                        fontSize: '0.95rem'
+                                                    }}>
                                                         • {ref}
                                                     </Typography>
                                                 </Box>
@@ -592,96 +635,109 @@ const StressAnxiety = () => {
 
                         {/* Sidebar */}
                         <Grid item xs={12} lg={4}>
-                        <Paper elevation={3}
-                               sx={{
-                                   p: 4,
-                                   borderRadius: 4,
-                                   background: 'white',
-                                   boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
-                                   mb: 4,
-                               }}>
-                            <Box onSubmit={handleSubmit}>
-                                <Grid container spacing={3}>
-                                    <Grid item xs={12} >
-                                        <TextField
-                                            fullWidth
-                                            label="Full Name"
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleInputChange}
-                                            required
-                                            sx={formFieldStyle}
-                                        />
+                            <Paper elevation={3}
+                                   sx={{
+                                       p: 4,
+                                       borderRadius: 4,
+                                       background: 'white',
+                                       boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
+                                       mb: 4,
+                                   }}>
+                                <Box component="form" onSubmit={handleSubmit}>
+                                    <Grid container spacing={3}>
+                                        <Grid item xs={12}>
+                                            <TextField
+                                                fullWidth
+                                                label="Full Name"
+                                                name="name"
+                                                value={formData.name}
+                                                onChange={handleInputChange}
+                                                required
+                                                error={!!errors.name}
+                                                helperText={errors.name}
+                                                sx={formFieldStyle}
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <TextField
+                                                fullWidth
+                                                label="Email"
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleInputChange}
+                                                required
+                                                error={!!errors.email}
+                                                helperText={errors.email}
+                                                sx={formFieldStyle}
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <TextField
+                                                fullWidth
+                                                label="Phone Number"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleInputChange}
+                                                required
+                                                error={!!errors.phone}
+                                                helperText={errors.phone}
+                                                sx={formFieldStyle}
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <TextField
+                                                fullWidth
+                                                label="Age"
+                                                type="number"
+                                                name="age"
+                                                value={formData.age}
+                                                onChange={handleInputChange}
+                                                required
+                                                error={!!errors.age}
+                                                helperText={errors.age}
+                                                sx={formFieldStyle}
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <TextField
+                                                fullWidth
+                                                multiline
+                                                rows={4}
+                                                label="Message"
+                                                name="message"
+                                                value={formData.message}
+                                                onChange={handleInputChange}
+                                                required
+                                                error={!!errors.message}
+                                                helperText={errors.message}
+                                                sx={formFieldStyle}
+                                            />
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <Button
+                                                type="submit"
+                                                variant="contained"
+                                                size="large"
+                                                sx={{
+                                                    backgroundColor: secondary,
+                                                    py: 1.5,
+                                                    fontFamily: 'Montserrat',
+                                                    fontWeight: 700,
+                                                    borderRadius: 3,
+                                                    transition: 'transform 0.2s',
+                                                    '&:hover': {
+                                                        backgroundColor: secondary,
+                                                        transform: 'translateY(-3px)'
+                                                    },
+                                                }}
+                                            >
+                                                Request a CallBack
+                                            </Button>
+                                        </Grid>
                                     </Grid>
-                                    <Grid item xs={12} >
-                                        <TextField
-                                            fullWidth
-                                            label="Email"
-                                            type="email"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
-                                            required
-                                            sx={formFieldStyle}
-                                        />
-                                    </Grid>
-                                    <Grid item xs={12} >
-                                        <TextField
-                                            fullWidth
-                                            label="Phone Number"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleInputChange}
-                                            required
-                                            sx={formFieldStyle}
-                                        />
-                                    </Grid>
-                                    <Grid item xs={12} >
-                                        <TextField
-                                            fullWidth
-                                            label="Age"
-                                            type="number"
-                                            name="age"
-                                            value={formData.age}
-                                            onChange={handleInputChange}
-                                            required
-                                            sx={formFieldStyle}
-                                        />
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <TextField
-                                            fullWidth
-                                            multiline
-                                            rows={4}
-                                            label="Message"
-                                            name="message"
-                                            value={formData.message}
-                                            onChange={handleInputChange}
-                                            required
-                                            sx={formFieldStyle}
-                                        />
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <Button
-                                            type="submit"
-                                            variant="contained"
-                                            size="large"
-                                            sx={{
-                                                backgroundColor: secondary,
-                                                py: 1.5,
-                                                fontFamily: 'Montserrat',
-                                                fontWeight: 700,
-                                                borderRadius: 3,
-                                                transition: 'transform 0.2s',
-                                                '&:hover': { backgroundColor: secondary, transform: 'translateY(-3px)' },
-                                            }}
-                                        >
-                                            Request a callBack
-                                        </Button>
-                                    </Grid>
-                                </Grid>
-                            </Box>
-                        </Paper>
+                                </Box>
+                            </Paper>
                             {/*<Paper*/}
                             {/*    elevation={3}*/}
                             {/*    sx={{*/}

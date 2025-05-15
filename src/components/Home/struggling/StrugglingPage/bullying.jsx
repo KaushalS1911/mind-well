@@ -199,6 +199,8 @@ const Bullying = () => {
         message: ''
     });
 
+    const [errors, setErrors] = useState({});
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -210,15 +212,29 @@ const Bullying = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Optional validation
-        if (!formData.name || !formData.email || !formData.phone || !formData.age || !formData.message) {
-            alert('Please fill out all fields');
+        const newErrors = {};
+
+        if (!formData.name.trim()) newErrors.name = 'Full name is required';
+        if (!formData.email.trim()) newErrors.email = 'Email is required';
+        else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
+
+        if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
+        else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
+
+        if (!formData.age.trim()) newErrors.age = 'Age is required';
+        else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
+
+        if (!formData.message.trim()) newErrors.message = 'Message is required';
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
             return;
         }
 
+        // If validation passed
         console.log('Submitted data:', formData);
 
-        // Reset form
+        // Reset
         setFormData({
             name: '',
             email: '',
@@ -226,6 +242,7 @@ const Bullying = () => {
             age: '',
             message: ''
         });
+        setErrors({});
     };
 
     return (
@@ -592,9 +609,9 @@ const Bullying = () => {
                                        boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
                                        mb: 4,
                                    }}>
-                                <Box onSubmit={handleSubmit}>
+                                <Box component="form" onSubmit={handleSubmit}>
                                     <Grid container spacing={3}>
-                                        <Grid item xs={12} >
+                                        <Grid item xs={12}>
                                             <TextField
                                                 fullWidth
                                                 label="Full Name"
@@ -602,10 +619,12 @@ const Bullying = () => {
                                                 value={formData.name}
                                                 onChange={handleInputChange}
                                                 required
+                                                error={!!errors.name}
+                                                helperText={errors.name}
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
-                                        <Grid item xs={12} >
+                                        <Grid item xs={12}>
                                             <TextField
                                                 fullWidth
                                                 label="Email"
@@ -614,10 +633,12 @@ const Bullying = () => {
                                                 value={formData.email}
                                                 onChange={handleInputChange}
                                                 required
+                                                error={!!errors.email}
+                                                helperText={errors.email}
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
-                                        <Grid item xs={12} >
+                                        <Grid item xs={12}>
                                             <TextField
                                                 fullWidth
                                                 label="Phone Number"
@@ -625,10 +646,12 @@ const Bullying = () => {
                                                 value={formData.phone}
                                                 onChange={handleInputChange}
                                                 required
+                                                error={!!errors.phone}
+                                                helperText={errors.phone}
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
-                                        <Grid item xs={12} >
+                                        <Grid item xs={12}>
                                             <TextField
                                                 fullWidth
                                                 label="Age"
@@ -637,6 +660,8 @@ const Bullying = () => {
                                                 value={formData.age}
                                                 onChange={handleInputChange}
                                                 required
+                                                error={!!errors.age}
+                                                helperText={errors.age}
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
@@ -650,6 +675,8 @@ const Bullying = () => {
                                                 value={formData.message}
                                                 onChange={handleInputChange}
                                                 required
+                                                error={!!errors.message}
+                                                helperText={errors.message}
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
@@ -665,10 +692,13 @@ const Bullying = () => {
                                                     fontWeight: 700,
                                                     borderRadius: 3,
                                                     transition: 'transform 0.2s',
-                                                    '&:hover': { backgroundColor: secondary, transform: 'translateY(-3px)' },
+                                                    '&:hover': {
+                                                        backgroundColor: secondary,
+                                                        transform: 'translateY(-3px)'
+                                                    },
                                                 }}
                                             >
-                                                Request a callBack
+                                                Request a CallBack
                                             </Button>
                                         </Grid>
                                     </Grid>
