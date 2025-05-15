@@ -293,7 +293,7 @@ const SessionSeminar = () => {
     ];
 
     return (
-        <Box sx={{pt: {xs: 8, md: 18},}}>
+        <Box sx={{pt: {xs: 8, md: 13},}}>
             <Container maxWidth="xl">
                 {/* Header Section with Banner */}
                 <Box sx={{
