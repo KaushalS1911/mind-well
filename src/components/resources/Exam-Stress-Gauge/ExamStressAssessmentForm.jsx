@@ -99,7 +99,7 @@ function ExamStressAssessmentForm() {
     return (
         <Box sx={{
             // backgroundColor: '#F3F4F6',
-            padding: { sm: "120px 0", xs: "80px 0" }, mt: { md: 5, xs: 0 } }}>
+            padding: { sm: "120px 0", xs: "80px 0" }, mt: { md: 5, xs: 0 }, mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' } }}>
             <Box className="Montserrat" sx={{ fontWeight: 700, color: '#012765', textAlign: 'center',fontSize: {
                     xs: '1.7rem',
                     sm: '1.85rem',

@@ -368,11 +368,12 @@ const WorkLifeBalanceAssessment = () => {
             // backgroundColor: '#F3F4F6',
             mt: {xs: '64px', sm: '72px'},
             py: {xs: 4, md: 6},
+            mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
         }}>
             <Container maxWidth="lg" sx={{my: 'auto'}}>
                 <Grid container spacing={4} justifyContent="center">
                     {/* Left Column - Main Content */}
-                    <Grid item xs={12} md={8}>
+                    <Grid item xs={12} lg={8}>
                         <StyledPaper sx={{
                             height: '100%',
                         }}>
@@ -441,7 +442,7 @@ const WorkLifeBalanceAssessment = () => {
                     </Grid>
 
                     {/* Right Column - Additional Info */}
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} lg={4}>
                         <StyledPaper>
                             <Typography className={"Montserrat"} variant="h6" sx={{
                                 mb: 2,
