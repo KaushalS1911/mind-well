@@ -114,13 +114,14 @@ function ClientsReview() {
                                         borderRadius: 3,
                                         display: "flex",
                                         flexDirection: "column",
-
                                         height: {
-                                            xs: "730px",
-                                            sm: "580px",
-                                            md: "750px",
-                                            lg: "630px",
-                                            xl:"530px"
+                                            0: "1100px",
+                                            360: "1000px",
+                                            480: "850px",
+                                            550: "720px",
+                                            768: "680px",
+                                            960: "630px",
+                                            1200: "530px",
                                         },
                                         width: "100%",
                                     }}
@@ -160,7 +161,7 @@ function ClientsReview() {
                                             fontSize: "18px",
                                             lineHeight: "28px",
                                             flexGrow: 1,
-                                            textAlign: "justify",
+                                            textAlign: {md:"justify",xs:"none"},
 
                                             "&::-webkit-scrollbar": {
                                                 width: "6px",

@@ -135,22 +135,22 @@ const WellbeingJourney = () => {
                 </Box>
 
                 <Grid container spacing={4}>
-                    <Grid item xs={12} md={6}>
-                        <Box sx={{height: '512px', width: '100%', boxShadow: 3, borderRadius: 2}}>
+                    <Grid item xs={12} lg={6}>
+                        <Box sx={{height: {xs:'100%' , lg:'512px'}, width: '100%' }}>
                             <img
                                 src={selectedImage}
                                 alt="Selected category"
                                 style={{
                                     width: '100%',
                                     height: '100%',
-                                    objectFit: 'cover',
-                                    borderRadius: '10px'
+                                    borderRadius: '10px',
+                                    objectFit: 'cover'
                                 }}
                             />
                         </Box>
                     </Grid>
 
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} lg={6}>
                         <Box>
                             {categories.map((category) => {
                                 const isOpen = openCategory === category.name;
@@ -166,7 +166,7 @@ const WellbeingJourney = () => {
                                         }}
                                         sx={{
                                             mb: 2,
-                                            p: 2,
+                                            p: {lg:2,md:1.7,sm:1.5,xs:1.2},
                                             bgcolor: isOpen ? '#f0f7ff' : '#fff',
                                             cursor: 'pointer',
                                             borderRadius: '10px',

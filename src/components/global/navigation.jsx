@@ -111,7 +111,7 @@ function Navigation() {
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
-                        margin: {xl: "0 172px", lg: "0 50px"},
+                        margin: {xl: "0 172px", lg: "0 30px"},
                         padding: "12px 16px",
                     }}
                 >

@@ -22,7 +22,7 @@ const navigationLinks = [
     {name: "About Us", path: "/about"},
     {name: "Services", path: "/services"},
     {name: "Gallery", path: "/gallery"},
-    {name: "Resources", path: "/resources"},
+    // {name: "Resources", path: "/resources"},
     {name: "Contact", path: "/contact"},
 ];
 const services = [

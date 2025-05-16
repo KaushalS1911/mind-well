@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Typography, Container } from '@mui/material';
+import {Box, Grid, Typography, Container} from '@mui/material';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -13,13 +13,13 @@ import img4 from '../../assets/images/Home/why-choose-us/repair-tools-design.jpg
 
 const leftCards = [
     {
-        icon: () => <AssignmentIcon fontSize="large" sx={{ color: 'inherit' }} />,
+        icon: () => <AssignmentIcon fontSize="large" sx={{color: 'inherit'}}/>,
         title: 'Policy Backed',
         description: 'Annual Curriculum designed basis NEP 2020 and National Suicide Prevention Strategy',
         image: img1,
     },
     {
-        icon: () => <BarChartIcon fontSize="large" sx={{ color: 'inherit' }} />,
+        icon: () => <BarChartIcon fontSize="large" sx={{color: 'inherit'}}/>,
         title: 'Measurable Metrices',
         description: 'Annual performance and growth are Data-Driven',
         image: img2,
@@ -28,13 +28,13 @@ const leftCards = [
 
 const rightCards = [
     {
-        icon: <LocalShippingIcon fontSize="large" sx={{ color: 'inherit' }} />,
+        icon: <LocalShippingIcon fontSize="large" sx={{color: 'inherit'}}/>,
         title: 'Structured Delivery',
         description: 'Programs are delivered by Qualified and Experienced Psychologist',
         image: img3,
     },
     {
-        icon: <BuildIcon fontSize="large" sx={{ color: 'inherit' }} />,
+        icon: <BuildIcon fontSize="large" sx={{color: 'inherit'}}/>,
         title: 'DIY Tools',
         description: 'Beneficiaries get Self-Help tools through Freemium Mobile App',
         image: img4,
@@ -43,7 +43,7 @@ const rightCards = [
 
 function WhyChooseUs() {
     return (
-        <Box component="section" sx={{padding:"96px 0 0 0",mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
+        <Box component="section" sx={{padding: "96px 0 0 0", mx: {xs: '20px', sm: '70px', md: '90px', xl: '100px'}}}>
             <Container maxWidth="xl">
                 <Box
                     className="Montserrat"
@@ -83,13 +83,14 @@ function WhyChooseUs() {
                     <Grid item xs={12} lg={6}>
                         <Grid container spacing={3}>
                             <Grid item xs={12} sm={6}>
-                                <Box sx={{ mt: 5 }}>
+                                <Box sx={{mt: 5}}>
                                     {leftCards.map((item, index) => (
                                         <Box key={index} mb={3}>
                                             <Box
                                                 sx={{
-                                                    padding: {xl:'30px',xs:'30px',lg:'20px'},
-                                                    height: '230px',
+                                                    p: { xs: 3, sm: 3.5, md: 4 },
+                                                    minHeight: { xs: 220, sm: 230, md: 240 },
+                                                    mb: 3,
                                                     borderRadius: 2,
                                                     transition: '0.5s',
                                                     boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
@@ -101,7 +102,7 @@ function WhyChooseUs() {
                                                     },
                                                 }}
                                             >
-                                                <Box mb={1} sx={{ color: 'inherit' }}>
+                                                <Box mb={1} sx={{color: 'inherit'}}>
                                                     <img
                                                         src={item.image}
                                                         alt={item.title}
@@ -110,7 +111,7 @@ function WhyChooseUs() {
                                                             height: 40,
                                                             borderRadius: "50%",
                                                             marginRight: 12,
-                                                            border:"1px solid #000",
+                                                            border: "1px solid #000",
                                                             boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
                                                         }}
                                                     />
@@ -132,8 +133,9 @@ function WhyChooseUs() {
                                     <Box key={index} mb={3}>
                                         <Box
                                             sx={{
-                                                padding: {xl:'30px',xs:'30px',lg:'20px'},
-                                                height: '230px',
+                                                p: { xs: 3, sm: 3.5, md: 4 },
+                                                minHeight: { xs: 220, sm: 230, md: 240 },
+                                                mb: 3,
                                                 borderRadius: 2,
                                                 transition: '0.5s',
                                                 boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
@@ -145,7 +147,7 @@ function WhyChooseUs() {
                                                 },
                                             }}
                                         >
-                                            <Box mb={1} sx={{ color: 'inherit' }}>
+                                            <Box mb={1} sx={{color: 'inherit'}}>
                                                 <img
                                                     src={item.image}
                                                     alt={item.title}
@@ -154,7 +156,7 @@ function WhyChooseUs() {
                                                         height: 40,
                                                         borderRadius: "50%",
                                                         marginRight: 12,
-                                                        border:"1px solid #000",
+                                                        border: "1px solid #000",
                                                         boxShadow: '0 4px 10px rgba(0,0,0,0.25)',
                                                     }}
                                                 />

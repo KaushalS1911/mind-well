@@ -324,7 +324,7 @@ const ContactInfo = () => (
     <Box sx={{
         backgroundColor: "#002D62",
         color: "white",
-        padding: 4,
+        padding: {sm:4,xs:2.8},
         marginBottom: 4,
         borderRadius: 2
     }}>
