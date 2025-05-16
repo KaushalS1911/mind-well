@@ -82,7 +82,7 @@ function Navigation() {
         // {label: "Partner", path: "/partner"},
         {
             label: "Resources",
-            path: "/resources",
+            // path: "/resources",
             submenu: [
                 // { label: "Journaling", path: "/resources/journaling" },
                 {label: "Assessments", path: "/resources/assessments"},
