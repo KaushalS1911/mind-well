@@ -552,7 +552,7 @@ const StressAnxiety = () => {
                                                                 alignItems: 'center',
                                                             }}
                                                         >
-                                                            <SelfImprovementIcon sx={{color: secondary, mr: 1}}/>
+                                                            {/*<SelfImprovementIcon sx={{color: secondary, mr: 1}}/>*/}
                                                             {item.subtitle}
                                                         </Typography>
                                                     )}

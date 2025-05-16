@@ -475,7 +475,7 @@ const Bullying = () => {
                                                             alignItems: 'center',
                                                         }}
                                                     >
-                                                        <ReportProblemIcon sx={{color: secondary, mr: 1}}/>
+                                                        {/*<ReportProblemIcon sx={{color: secondary, mr: 1}}/>*/}
                                                         {item.subtitle}
                                                     </Typography>
                                                 )}

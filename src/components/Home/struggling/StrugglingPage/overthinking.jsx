@@ -483,7 +483,7 @@ const Overthinking = () => {
                                                             alignItems: 'center',
                                                         }}
                                                     >
-                                                        <PsychologyIcon sx={{color: secondary, mr: 1}}/>
+                                                        {/*<PsychologyIcon sx={{color: secondary, mr: 1}}/>*/}
                                                         {item.subtitle}
                                                     </Typography>
                                                 )}
