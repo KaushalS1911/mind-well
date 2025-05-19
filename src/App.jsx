@@ -92,6 +92,7 @@ function App() {
 
             <Routes >
                 <Route path="/" element={<Home/>}/>
+                <Route path="/home1" element={<SessionPage/>}/>
                 {/*<Route path="/home1" element={<Struggling/>}/>*/}
                 <Route path="/about" element={<About/>}/>
                 <Route path="/Services" element={<Services/>}/>
@@ -121,7 +122,6 @@ function App() {
                 <Route path="/struggling/bullying" element={<Bullying/>}/>
                 <Route path="/struggling/overthinking" element={<Overthinking/>}/>
                 <Route path="/struggling/careerUncertainty" element={<CareerUncertainty/>}/>
-                <Route path="/home1" element={<SessionPage/>}/>
                 <Route path="session/single-session" element={<SingleSession/>}/>
                 <Route
                     path="/assessments/exam-stress"

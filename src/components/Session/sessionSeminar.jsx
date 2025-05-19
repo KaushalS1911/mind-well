@@ -341,7 +341,7 @@ const SessionSeminar = () => {
                             {tabValue === 0 && (
                                 <Grid container spacing={{xs: 3, md: 4}}>
                                     {upcomingSeminars.map((seminar) => (
-                                        <Grid item xs={12} lg={6} xl={3} key={seminar.id}>
+                                        <Grid item xs={12} md={6} lg={4} xl={3} key={seminar.id}>
                                             <StyledCard sx={{display: 'flex',flexDirection: 'column', justifyContent: 'space-between',cursor: 'pointer'}}
                                             >
                                                 <SeminarImage src={seminar.image} alt={seminar.title}/>
@@ -438,7 +438,7 @@ const SessionSeminar = () => {
                             {tabValue === 1 && (
                                 <Grid container spacing={{xs: 3, md: 4}}>
                                     {pastSeminars.map((seminar) => (
-                                        <Grid item xs={12} lg={6} xl={3} key={seminar.id}>
+                                        <Grid item xs={12} md={6} lg={4} xl={3} key={seminar.id}>
                                             <StyledCard sx={{display: 'flex',flexDirection: 'column', justifyContent: 'space-between'}}>
                                                 <SeminarImage src={seminar.image} alt={seminar.title}/>
                                                 <CardContent sx={{p: {xs: 4, md: 5}}}>
