@@ -122,7 +122,7 @@ function App() {
                 <Route path="/struggling/bullying" element={<Bullying/>}/>
                 <Route path="/struggling/overthinking" element={<Overthinking/>}/>
                 <Route path="/struggling/careerUncertainty" element={<CareerUncertainty/>}/>
-                <Route path="session/single-session" element={<SingleSession/>}/>
+                <Route path="/:id/session" element={<SingleSession/>}/>
                 <Route
                     path="/assessments/exam-stress"
                     element={<ExamStressGaugeAssessments/>}

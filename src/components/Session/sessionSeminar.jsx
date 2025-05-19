@@ -35,6 +35,120 @@ import img7 from '../../assets/images/session/man-using-laptop-office-doing-docu
 import img8 from '../../assets/images/session/medium-shot-young-people-church-praying.jpg';
 import {useNavigate} from "react-router-dom";
 
+export const seminars = [
+    {
+        id: 1,
+        title: 'Building Emotional Resilience in the Workplace',
+        date: 'May 25, 2025',
+        time: '10:00 AM - 12:00 PM',
+        location: 'Virtual',
+        facilitator: 'Dr. Ananya Sharma',
+        category: 'Workplace Wellness',
+        description:
+            'Join this transformative workshop to master emotional resilience in high-pressure work environments. Learn evidence-based techniques like cognitive restructuring, stress mapping, and mindfulness to manage workplace challenges. Perfect for professionals aiming to boost mental clarity, productivity, and team collaboration.',
+        spots: 30,
+        spotsLeft: 12,
+        image: img1,
+        status: 'upcoming',
+    },
+    {
+        id: 2,
+        title: 'Emotional Intelligence for K-12 Educators',
+        date: 'June 2, 2025',
+        time: '3:00 PM - 5:00 PM',
+        location: 'Mumbai Office',
+        facilitator: 'Dr. Rajan Mehta',
+        category: 'Education',
+        description:
+            'This engaging session empowers K-12 educators to harness emotional intelligence for better classroom dynamics. Explore strategies to foster empathy, manage conflicts, and create inclusive learning spaces. Includes hands-on activities, case studies, and practical tools to integrate EI into daily teaching.',
+        spots: 25,
+        spotsLeft: 8,
+        image: img2,
+        status: 'upcoming',
+    },
+    {
+        id: 3,
+        title: 'Mindfulness Practices for Exam Preparation',
+        date: 'June 10, 2025',
+        time: '4:00 PM - 6:00 PM',
+        location: 'Virtual',
+        facilitator: 'Ms. Priya Desai',
+        category: 'Student Wellness',
+        description:
+            'Designed for students, this workshop teaches mindfulness techniques to conquer exam stress and enhance focus. Learn guided meditation, breathing exercises, and visualization methods to stay calm under pressure. Participants will craft a personalized mindfulness plan for exam success.',
+        spots: 50,
+        spotsLeft: 23,
+        image: img3,
+        status: 'upcoming',
+    },
+    {
+        id: 4,
+        title: 'Leadership and Emotional Wellness',
+        date: 'June 15, 2025',
+        time: '9:00 AM - 12:00 PM',
+        location: 'Delhi Office',
+        facilitator: 'Mr. Vikram Singh',
+        category: 'Leadership',
+        description:
+            'Discover how emotional wellness fuels exceptional leadership in this immersive workshop. Topics include emotional regulation, empathetic decision-making, and building resilient teams. Through group discussions and practical exercises, leaders will gain tools to inspire and thrive in organizational settings.',
+        spots: 20,
+        spotsLeft: 5,
+        image: img4,
+        status: 'upcoming',
+    },
+    {
+        id: 101,
+        title: 'Emotional Wellness for Farmers',
+        date: 'April 12, 2025',
+        time: '9:00 AM - 12:00 PM',
+        location: 'Rural Development Center, Pune',
+        category: 'Community Wellness',
+        description:
+            'This impactful session equipped farmers with strategies to cope with stress in agricultural life. Participants explored mindfulness, peer support techniques, and emotional resilience tools through interactive discussions and practical exercises tailored to rural challenges.',
+        participants: 45,
+        image: img5,
+        status: 'past',
+    },
+    {
+        id: 102,
+        title: 'Parent-Teacher Workshop',
+        date: 'March 28, 2025',
+        time: '9:00 AM - 12:00 PM',
+        location: 'IES School, Thane',
+        category: 'Education',
+        description:
+            'A collaborative workshop for parents and teachers to enhance emotional intelligence. The session focused on effective communication, empathy, and partnership-building, with role-playing activities to strengthen relationships for better student outcomes.',
+        participants: 32,
+        image: img6,
+        status: 'past',
+    },
+    {
+        id: 103,
+        title: 'Managing Stress for UPSC Aspirants',
+        time: '9:00 AM - 12:00 PM',
+        date: 'February 15, 2025',
+        location: 'Drishti IAS, New Delhi',
+        category: 'Student Wellness',
+        description:
+            'Tailored for UPSC aspirants, this workshop provided stress management techniques to excel in high-pressure exam preparation. Participants learned mindfulness, time management, and emotional coping strategies to maintain focus and resilience.',
+        participants: 65,
+        image: img7,
+        status: 'past',
+    },
+    {
+        id: 104,
+        title: 'Workplace Mental Health Awareness',
+        date: 'May 2, 2025',
+        time: '9:00 AM - 12:00 PM',
+        location: 'TechHub, Bengaluru',
+        category: 'Corporate Wellness',
+        description:
+            'This seminar focused on creating mentally healthy workplaces. HR professionals and employees explored strategies for reducing burnout, fostering a culture of openness, and implementing effective mental health policies through expert talks and group activities.',
+        participants: 58,
+        image: img8,
+        status: 'past',
+    },
+];
 
 const theme = {
     palette: {
@@ -128,7 +242,7 @@ const StyledTabs = styled(Tabs)(({theme}) => ({
 const SeminarImage = styled('img')({
     width: '100%',
     height: '250px',
-    objectFit: {xs:'contain',sm:"cover"},
+    objectFit: {xs: 'contain', sm: "cover"},
     borderRadius: '20px 20px 0 0',
 });
 
@@ -185,113 +299,6 @@ const SessionSeminar = () => {
         return colors[category] || '#6B7280';
     };
 
-    const upcomingSeminars = [
-        {
-            id: 1,
-            title: 'Building Emotional Resilience in the Workplace',
-            date: 'May 25, 2025',
-            time: '10:00 AM - 12:00 PM',
-            location: 'Virtual',
-            facilitator: 'Dr. Ananya Sharma',
-            category: 'Workplace Wellness',
-            description:
-                'Join this transformative workshop to master emotional resilience in high-pressure work environments. Learn evidence-based techniques like cognitive restructuring, stress mapping, and mindfulness to manage workplace challenges. Perfect for professionals aiming to boost mental clarity, productivity, and team collaboration.',
-            spots: 30,
-            spotsLeft: 12,
-            image: img1,
-        },
-        {
-            id: 2,
-            title: 'Emotional Intelligence for K-12 Educators',
-            date: 'June 2, 2025',
-            time: '3:00 PM - 5:00 PM',
-            location: 'Mumbai Office',
-            facilitator: 'Dr. Rajan Mehta',
-            category: 'Education',
-            description:
-                'This engaging session empowers K-12 educators to harness emotional intelligence for better classroom dynamics. Explore strategies to foster empathy, manage conflicts, and create inclusive learning spaces. Includes hands-on activities, case studies, and practical tools to integrate EI into daily teaching.',
-            spots: 25,
-            spotsLeft: 8,
-            image: img2,
-        },
-        {
-            id: 3,
-            title: 'Mindfulness Practices for Exam Preparation',
-            date: 'June 10, 2025',
-            time: '4:00 PM - 6:00 PM',
-            location: 'Virtual',
-            facilitator: 'Ms. Priya Desai',
-            category: 'Student Wellness',
-            description:
-                'Designed for students, this workshop teaches mindfulness techniques to conquer exam stress and enhance focus. Learn guided meditation, breathing exercises, and visualization methods to stay calm under pressure. Participants will craft a personalized mindfulness plan for exam success.',
-            spots: 50,
-            spotsLeft: 23,
-            image: img3,
-        },
-        {
-            id: 4,
-            title: 'Leadership and Emotional Wellness',
-            date: 'June 15, 2025',
-            time: '9:00 AM - 12:00 PM',
-            location: 'Delhi Office',
-            facilitator: 'Mr. Vikram Singh',
-            category: 'Leadership',
-            description:
-                'Discover how emotional wellness fuels exceptional leadership in this immersive workshop. Topics include emotional regulation, empathetic decision-making, and building resilient teams. Through group discussions and practical exercises, leaders will gain tools to inspire and thrive in organizational settings.',
-            spots: 20,
-            spotsLeft: 5,
-            image: img4,
-        },
-    ];
-
-    const pastSeminars = [
-        {
-            id: 101,
-            title: 'Emotional Wellness for Farmers',
-            date: 'April 12, 2025',
-            location: 'Rural Development Center, Pune',
-            category: 'Community Wellness',
-            description:
-                'This impactful session equipped farmers with strategies to cope with stress in agricultural life. Participants explored mindfulness, peer support techniques, and emotional resilience tools through interactive discussions and practical exercises tailored to rural challenges.',
-            participants: 45,
-            image: img5,
-        },
-        {
-            id: 102,
-            title: 'Parent-Teacher Workshop',
-            date: 'March 28, 2025',
-            location: 'IES School, Thane',
-            category: 'Education',
-            description:
-                'A collaborative workshop for parents and teachers to enhance emotional intelligence. The session focused on effective communication, empathy, and partnership-building, with role-playing activities to strengthen relationships for better student outcomes.',
-            participants: 32,
-            image: img6,
-        },
-        {
-            id: 103,
-            title: 'Managing Stress for UPSC Aspirants',
-            date: 'February 15, 2025',
-            location: 'Drishti IAS, New Delhi',
-            category: 'Student Wellness',
-            description:
-                'Tailored for UPSC aspirants, this workshop provided stress management techniques to excel in high-pressure exam preparation. Participants learned mindfulness, time management, and emotional coping strategies to maintain focus and resilience.',
-            participants: 65,
-            image: img7,
-        },
-        {
-            id: 104,
-            title: 'Workplace Mental Health Awareness',
-            date: 'May 2, 2025',
-            location: 'TechHub, Bengaluru',
-            category: 'Corporate Wellness',
-            description:
-                'This seminar focused on creating mentally healthy workplaces. HR professionals and employees explored strategies for reducing burnout, fostering a culture of openness, and implementing effective mental health policies through expert talks and group activities.',
-            participants: 58,
-            image: img8,
-        }
-
-    ];
-
     return (
         <Box sx={{pt: {xs: 8, md: 13},}}>
             <Container maxWidth="xl">
@@ -330,18 +337,19 @@ const SessionSeminar = () => {
 
                 {/* Tabs and Seminars */}
                 <Paper sx={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.08)'}}>
-                    <Box sx={{mx: { xs:"10px",sm: '40px', md: '90px', lg:"50px",xl: 'auto' }}}>
+                    <Box sx={{mx: {xs: "10px", sm: '40px', md: '90px', lg: "50px", xl: 'auto'}}}>
                         <StyledTabs value={tabValue} onChange={handleTabChange} variant="scrollable"
                                     scrollButtons="auto">
                             <Tab label="Upcoming Session"/>
                             <Tab label="Past Session"/>
                         </StyledTabs>
 
-                        <Box sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
+                        <Box sx={{p: {xs: 2, sm: 3, md: 4}}}>
                             {tabValue === 0 && (
-                                <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
-                                    {upcomingSeminars.map((seminar) => (
-                                        <Grid item xs={12} sm={6} md={6} lg={3} xl={3} key={seminar.id}>
+                                <Grid container spacing={{xs: 2, sm: 3, md: 4}}>
+                                    {seminars.filter(s => s.status === 'upcoming').map((seminar) => (
+                                        <Grid item xs={12} sm={6} md={6} lg={3} xl={3}
+                                              onClick={() => navigate(`/${seminar.id}/session`)} key={seminar.id}>
                                             <StyledCard
                                                 sx={{
                                                     display: 'flex',
@@ -351,8 +359,8 @@ const SessionSeminar = () => {
                                                     cursor: 'pointer',
                                                 }}
                                             >
-                                                <SeminarImage src={seminar.image} alt={seminar.title} />
-                                                <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
+                                                <SeminarImage src={seminar.image} alt={seminar.title}/>
+                                                <CardContent sx={{p: {xs: 2, sm: 3}}}>
                                                     <StyledChip
                                                         label={seminar.category}
                                                         categoryColor={getCategoryColor(seminar.category)}
@@ -368,33 +376,49 @@ const SessionSeminar = () => {
                                                         {seminar.title}
                                                     </Typography>
 
-                                                    <Stack spacing={1.5} sx={{ mb: 2 }}>
-                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                                            <EventIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
-                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                                                    <Stack spacing={1.5} sx={{mb: 2}}>
+                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
+                                                            <EventIcon fontSize="small"
+                                                                       sx={{color: theme.palette.text.secondary}}/>
+                                                            <Typography variant="body2"
+                                                                        sx={{color: theme.palette.text.secondary}}>
                                                                 {seminar.date} | {seminar.time}
                                                             </Typography>
                                                         </Box>
-                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                                            <LocationOnIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
-                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
+                                                            <LocationOnIcon fontSize="small"
+                                                                            sx={{color: theme.palette.text.secondary}}/>
+                                                            <Typography variant="body2"
+                                                                        sx={{color: theme.palette.text.secondary}}>
                                                                 {seminar.location}
                                                             </Typography>
                                                         </Box>
-                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                                            <PersonIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
-                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
+                                                            <PersonIcon fontSize="small"
+                                                                        sx={{color: theme.palette.text.secondary}}/>
+                                                            <Typography variant="body2"
+                                                                        sx={{color: theme.palette.text.secondary}}>
                                                                 {seminar.facilitator}
                                                             </Typography>
                                                         </Box>
                                                     </Stack>
 
                                                     <Box>
-                                                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                                                            <Typography variant="body2" sx={{ fontWeight: 600, color: theme.palette.text.secondary }}>
+                                                        <Box sx={{
+                                                            display: 'flex',
+                                                            justifyContent: 'space-between',
+                                                            mb: 1
+                                                        }}>
+                                                            <Typography variant="body2" sx={{
+                                                                fontWeight: 600,
+                                                                color: theme.palette.text.secondary
+                                                            }}>
                                                                 Available Spots
                                                             </Typography>
-                                                            <Typography variant="body2" sx={{ fontWeight: 600, color: theme.palette.text.secondary }}>
+                                                            <Typography variant="body2" sx={{
+                                                                fontWeight: 600,
+                                                                color: theme.palette.text.secondary
+                                                            }}>
                                                                 {seminar.spotsLeft}/{seminar.spots}
                                                             </Typography>
                                                         </Box>
@@ -412,19 +436,6 @@ const SessionSeminar = () => {
                                                         />
                                                     </Box>
                                                 </CardContent>
-                                                <CardActions sx={{ p: { xs: 2, sm: 3 }, pt: 0 }}>
-                                                    <StyledButton
-                                                        variant="contained"
-                                                        onClick={() => handleOpenDialog(seminar)}
-                                                        fullWidth
-                                                        sx={{
-                                                            bgcolor: theme.palette.secondary.main,
-                                                            color: '#fff',
-                                                        }}
-                                                    >
-                                                        Register Now
-                                                    </StyledButton>
-                                                </CardActions>
                                             </StyledCard>
                                         </Grid>
                                     ))}
@@ -432,19 +443,22 @@ const SessionSeminar = () => {
                             )}
 
                             {tabValue === 1 && (
-                                <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
-                                    {pastSeminars.map((seminar) => (
-                                        <Grid item xs={12} sm={6} md={6} lg={3} xl={3} key={seminar.id}>
+                                <Grid container spacing={{xs: 2, sm: 3, md: 4}}>
+                                    {seminars.filter(s => s.status === 'past').map((seminar) => (
+                                        <Grid item xs={12} sm={6} md={6} lg={3} xl={3} key={seminar.id}
+                                              onClick={() => navigate(`/${seminar.id}/session`)}
+                                              style={{cursor: 'pointer'}}>
                                             <StyledCard
                                                 sx={{
                                                     display: 'flex',
                                                     flexDirection: 'column',
                                                     justifyContent: 'space-between',
                                                     height: '100%',
+                                                    cursor: 'pointer',
                                                 }}
                                             >
-                                                <SeminarImage src={seminar.image} alt={seminar.title} />
-                                                <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
+                                                <SeminarImage src={seminar.image} alt={seminar.title}/>
+                                                <CardContent sx={{p: {xs: 2, sm: 3}}}>
                                                     <StyledChip
                                                         label={seminar.category}
                                                         categoryColor={getCategoryColor(seminar.category)}
@@ -461,42 +475,32 @@ const SessionSeminar = () => {
                                                     </Typography>
 
                                                     <Stack spacing={1.5}>
-                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                                            <EventIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
-                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
+                                                            <EventIcon fontSize="small"
+                                                                       sx={{color: theme.palette.text.secondary}}/>
+                                                            <Typography variant="body2"
+                                                                        sx={{color: theme.palette.text.secondary}}>
                                                                 {seminar.date}
                                                             </Typography>
                                                         </Box>
-                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                                            <LocationOnIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
-                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
+                                                            <LocationOnIcon fontSize="small"
+                                                                            sx={{color: theme.palette.text.secondary}}/>
+                                                            <Typography variant="body2"
+                                                                        sx={{color: theme.palette.text.secondary}}>
                                                                 {seminar.location}
                                                             </Typography>
                                                         </Box>
-                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                                            <GroupIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
-                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
+                                                            <GroupIcon fontSize="small"
+                                                                       sx={{color: theme.palette.text.secondary}}/>
+                                                            <Typography variant="body2"
+                                                                        sx={{color: theme.palette.text.secondary}}>
                                                                 Participants: {seminar.participants}
                                                             </Typography>
                                                         </Box>
                                                     </Stack>
                                                 </CardContent>
-                                                <CardActions sx={{ p: { xs: 2, sm: 3 }, pt: 0, mt: 'auto' }}>
-                                                    <StyledButton
-                                                        variant="outlined"
-                                                        fullWidth
-                                                        sx={{
-                                                            color: theme.palette.primary.main,
-                                                            borderColor: theme.palette.primary.main,
-                                                            '&:hover': {
-                                                                bgcolor: '#E8EDFF',
-                                                                borderColor: theme.palette.primary.light,
-                                                            },
-                                                        }}
-                                                    >
-                                                        View Resources
-                                                    </StyledButton>
-                                                </CardActions>
                                             </StyledCard>
                                         </Grid>
                                     ))}
