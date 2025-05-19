@@ -127,8 +127,8 @@ const StyledTabs = styled(Tabs)(({theme}) => ({
 
 const SeminarImage = styled('img')({
     width: '100%',
-    height: '350px',
-    objectFit: 'cover',
+    height: '250px',
+    objectFit: {xs:'contain',sm:"cover"},
     borderRadius: '20px 20px 0 0',
 });
 
@@ -330,76 +330,71 @@ const SessionSeminar = () => {
 
                 {/* Tabs and Seminars */}
                 <Paper sx={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.08)'}}>
-                    <Box sx={{mx: { sm: '70px', md: '90px', xl: 'auto' }}}>
+                    <Box sx={{mx: { xs:"10px",sm: '40px', md: '90px', lg:"50px",xl: 'auto' }}}>
                         <StyledTabs value={tabValue} onChange={handleTabChange} variant="scrollable"
                                     scrollButtons="auto">
-                            <Tab label="Upcoming Seminars"/>
-                            <Tab label="Past Seminars"/>
+                            <Tab label="Upcoming Session"/>
+                            <Tab label="Past Session"/>
                         </StyledTabs>
 
-                        <Box sx={{p: {xs: 4, md: 6}}}>
+                        <Box sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
                             {tabValue === 0 && (
-                                <Grid container spacing={{xs: 3, md: 4}}>
+                                <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
                                     {upcomingSeminars.map((seminar) => (
-                                        <Grid item xs={12} md={6} lg={4} xl={3} key={seminar.id}>
-                                            <StyledCard sx={{display: 'flex',flexDirection: 'column', justifyContent: 'space-between',cursor: 'pointer'}}
+                                        <Grid item xs={12} sm={6} md={6} lg={3} xl={3} key={seminar.id}>
+                                            <StyledCard
+                                                sx={{
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    justifyContent: 'space-between',
+                                                    height: '100%',
+                                                    cursor: 'pointer',
+                                                }}
                                             >
-                                                <SeminarImage src={seminar.image} alt={seminar.title}/>
-                                                <CardContent sx={{p: {xs: 4, md: 5}}}>
+                                                <SeminarImage src={seminar.image} alt={seminar.title} />
+                                                <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
                                                     <StyledChip
                                                         label={seminar.category}
                                                         categoryColor={getCategoryColor(seminar.category)}
                                                     />
-                                                    <Typography variant="h5"
-                                                                sx={{mb: 4, fontWeight:"600",color: theme.palette.text.primary}}>
+                                                    <Typography
+                                                        variant="h6"
+                                                        sx={{
+                                                            my: 2,
+                                                            fontWeight: 600,
+                                                            color: theme.palette.text.primary,
+                                                        }}
+                                                    >
                                                         {seminar.title}
                                                     </Typography>
-                                                    {/*<Typography variant="body1"*/}
-                                                    {/*            sx={{mb: 4, color: theme.palette.text.secondary}}>*/}
-                                                    {/*    {seminar.description}*/}
-                                                    {/*</Typography>*/}
-                                                    <Stack spacing={2} sx={{mb: 4}}>
-                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
-                                                            <EventIcon fontSize="small"
-                                                                       sx={{color: theme.palette.text.secondary}}/>
-                                                            <Typography variant="body2"
-                                                                        sx={{color: theme.palette.text.secondary}}>
+
+                                                    <Stack spacing={1.5} sx={{ mb: 2 }}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                                            <EventIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
+                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
                                                                 {seminar.date} | {seminar.time}
                                                             </Typography>
                                                         </Box>
-                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
-                                                            <LocationOnIcon fontSize="small"
-                                                                            sx={{color: theme.palette.text.secondary}}/>
-                                                            <Typography variant="body2"
-                                                                        sx={{color: theme.palette.text.secondary}}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                                            <LocationOnIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
+                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
                                                                 {seminar.location}
                                                             </Typography>
                                                         </Box>
-                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
-                                                            <PersonIcon fontSize="small"
-                                                                        sx={{color: theme.palette.text.secondary}}/>
-                                                            <Typography variant="body2"
-                                                                        sx={{color: theme.palette.text.secondary}}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                                            <PersonIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
+                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
                                                                 {seminar.facilitator}
                                                             </Typography>
                                                         </Box>
                                                     </Stack>
+
                                                     <Box>
-                                                        <Box sx={{
-                                                            display: 'flex',
-                                                            justifyContent: 'space-between',
-                                                            mb: 1.5
-                                                        }}>
-                                                            <Typography variant="body2" sx={{
-                                                                color: theme.palette.text.secondary,
-                                                                fontWeight: 600
-                                                            }}>
+                                                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+                                                            <Typography variant="body2" sx={{ fontWeight: 600, color: theme.palette.text.secondary }}>
                                                                 Available Spots
                                                             </Typography>
-                                                            <Typography variant="body2" sx={{
-                                                                color: theme.palette.text.secondary,
-                                                                fontWeight: 600
-                                                            }}>
+                                                            <Typography variant="body2" sx={{ fontWeight: 600, color: theme.palette.text.secondary }}>
                                                                 {seminar.spotsLeft}/{seminar.spots}
                                                             </Typography>
                                                         </Box>
@@ -407,25 +402,25 @@ const SessionSeminar = () => {
                                                             variant="determinate"
                                                             value={(seminar.spotsLeft / seminar.spots) * 100}
                                                             sx={{
-                                                                height: 10,
-                                                                borderRadius: '6px',
-                                                                bgcolor: '#E2E8F0',
+                                                                height: 8,
+                                                                borderRadius: '5px',
+                                                                backgroundColor: '#E2E8F0',
                                                                 '& .MuiLinearProgress-bar': {
-                                                                    bgcolor: theme.palette.secondary.main,
+                                                                    backgroundColor: theme.palette.secondary.main,
                                                                 },
                                                             }}
                                                         />
                                                     </Box>
                                                 </CardContent>
-                                                <CardActions sx={{p: {xs: 4, md: 5}, pt: 0}}>
+                                                <CardActions sx={{ p: { xs: 2, sm: 3 }, pt: 0 }}>
                                                     <StyledButton
                                                         variant="contained"
                                                         onClick={() => handleOpenDialog(seminar)}
+                                                        fullWidth
                                                         sx={{
                                                             bgcolor: theme.palette.secondary.main,
                                                             color: '#fff',
                                                         }}
-                                                        fullWidth
                                                     >
                                                         Register Now
                                                     </StyledButton>
@@ -435,55 +430,61 @@ const SessionSeminar = () => {
                                     ))}
                                 </Grid>
                             )}
+
                             {tabValue === 1 && (
-                                <Grid container spacing={{xs: 3, md: 4}}>
+                                <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
                                     {pastSeminars.map((seminar) => (
-                                        <Grid item xs={12} md={6} lg={4} xl={3} key={seminar.id}>
-                                            <StyledCard sx={{display: 'flex',flexDirection: 'column', justifyContent: 'space-between'}}>
-                                                <SeminarImage src={seminar.image} alt={seminar.title}/>
-                                                <CardContent sx={{p: {xs: 4, md: 5}}}>
+                                        <Grid item xs={12} sm={6} md={6} lg={3} xl={3} key={seminar.id}>
+                                            <StyledCard
+                                                sx={{
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    justifyContent: 'space-between',
+                                                    height: '100%',
+                                                }}
+                                            >
+                                                <SeminarImage src={seminar.image} alt={seminar.title} />
+                                                <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
                                                     <StyledChip
                                                         label={seminar.category}
                                                         categoryColor={getCategoryColor(seminar.category)}
                                                     />
-                                                    <Typography variant="h5"
-                                                                sx={{mb: 4, fontWeight:"600",color: theme.palette.text.primary}}>
+                                                    <Typography
+                                                        variant="h6"
+                                                        sx={{
+                                                            my: 2,
+                                                            fontWeight: 600,
+                                                            color: theme.palette.text.primary,
+                                                        }}
+                                                    >
                                                         {seminar.title}
                                                     </Typography>
-                                                    {/*<Typography variant="body1"*/}
-                                                    {/*            sx={{mb: 4, color: theme.palette.text.secondary}}>*/}
-                                                    {/*    {seminar.description}*/}
-                                                    {/*</Typography>*/}
-                                                    <Stack spacing={2}>
-                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
-                                                            <EventIcon fontSize="small"
-                                                                       sx={{color: theme.palette.text.secondary}}/>
-                                                            <Typography variant="body2"
-                                                                        sx={{color: theme.palette.text.secondary}}>
+
+                                                    <Stack spacing={1.5}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                                            <EventIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
+                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
                                                                 {seminar.date}
                                                             </Typography>
                                                         </Box>
-                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
-                                                            <LocationOnIcon fontSize="small"
-                                                                            sx={{color: theme.palette.text.secondary}}/>
-                                                            <Typography variant="body2"
-                                                                        sx={{color: theme.palette.text.secondary}}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                                            <LocationOnIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
+                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
                                                                 {seminar.location}
                                                             </Typography>
                                                         </Box>
-                                                        <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
-                                                            <GroupIcon fontSize="small"
-                                                                       sx={{color: theme.palette.text.secondary}}/>
-                                                            <Typography variant="body2"
-                                                                        sx={{color: theme.palette.text.secondary}}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                                            <GroupIcon fontSize="small" sx={{ color: theme.palette.text.secondary }} />
+                                                            <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
                                                                 Participants: {seminar.participants}
                                                             </Typography>
                                                         </Box>
                                                     </Stack>
                                                 </CardContent>
-                                                <CardActions sx={{p: {xs: 4, md: 5}, pt: 0,mt:"auto"}}>
+                                                <CardActions sx={{ p: { xs: 2, sm: 3 }, pt: 0, mt: 'auto' }}>
                                                     <StyledButton
                                                         variant="outlined"
+                                                        fullWidth
                                                         sx={{
                                                             color: theme.palette.primary.main,
                                                             borderColor: theme.palette.primary.main,
@@ -492,7 +493,6 @@ const SessionSeminar = () => {
                                                                 borderColor: theme.palette.primary.light,
                                                             },
                                                         }}
-                                                        fullWidth
                                                     >
                                                         View Resources
                                                     </StyledButton>
@@ -503,6 +503,7 @@ const SessionSeminar = () => {
                                 </Grid>
                             )}
                         </Box>
+
                     </Box>
                 </Paper>
             </Container>
