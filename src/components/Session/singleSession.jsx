@@ -712,7 +712,7 @@ const SingleSession = () => {
                 {/*<SeminarResources /> */}
 
                 <RelatedSession currentId={id} seminars={seminars}/>
-                <ContactSupport/>
+                {/*<ContactSupport/>*/}
             </Box>
         </Box>
     );

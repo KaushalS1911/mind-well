@@ -9,7 +9,7 @@ const RelatedSession = ({currentId, seminars}) => {
     if (related.length === 0) return null;
 
     return (
-        <Box sx={{py: 8}}>
+        <Box sx={{pt: 8}}>
             <Typography className={"Montserrat"} variant="h4" sx={{
                 fontWeight: 700,
                 color: '#012765',

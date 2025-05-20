@@ -318,7 +318,6 @@ const SessionSeminar = () => {
     return (
         <Box sx={{pt: {xs: 8, md: 13},}}>
             <Container maxWidth="xl">
-                {/* Header Section with Banner */}
                 <Box sx={{
                     textAlign: 'center',
                     mb: {xs: 6, md: 10},
@@ -341,7 +340,7 @@ const SessionSeminar = () => {
                             mb: 1,
                         }}
                     >
-                        Seminars & Workshops
+                        Sessions & Workshops
                     </Typography>
                     <Typography
                         variant="h6" sx={{color: theme.palette.text.secondary, maxWidth: '800px', mx: 'auto', mb: 3}}
@@ -351,7 +350,6 @@ const SessionSeminar = () => {
                     </Typography>
                 </Box>
 
-                {/* Tabs and Seminars */}
                 <Paper sx={{borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.08)'}}>
                     <Box sx={{mx: {xs: "10px", sm: '40px', md: '90px', lg: "50px", xl: 'auto'}}}>
                         <StyledTabs value={tabValue} onChange={handleTabChange} variant="scrollable"
