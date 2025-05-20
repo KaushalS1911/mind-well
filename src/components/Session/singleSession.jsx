@@ -565,7 +565,7 @@ const SingleSession = () => {
                     </Grid>
                 </Container>
 
-                <Box sx={{py: 8}}>
+                <Box sx={{pb: 8}}>
                     <Container maxWidth="xl">
                         <Typography className={"Montserrat"} variant="h4" sx={{
                             mb: 6, fontWeight: 700, color: '#012765', textAlign: 'center', fontSize: {
