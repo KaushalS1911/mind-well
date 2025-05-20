@@ -10,7 +10,7 @@ const RelatedSession = ({currentId, seminars}) => {
 
     return (
         <Box sx={{py: 8}}>
-            <Typography variant="h4" sx={{
+            <Typography className={"Montserrat"} variant="h4" sx={{
                 fontWeight: 700,
                 color: '#012765',
                 mb: 5,
@@ -25,10 +25,10 @@ const RelatedSession = ({currentId, seminars}) => {
                 Related Session
             </Typography>
             <Container maxWidth={"xl"}>
-                <Grid container spacing={4} display="flex" justifyContent="space-between" alignItems="center">
+                <Grid container spacing={4}>
                     {related.map(seminar => (
-                        <Grid item xs={12} sm={6} md={4} key={seminar.id}>
-                            <Paper sx={{p: 0, boxShadow: 2, overflow: 'hidden', height: '100%'}}>
+                        <Grid item xs={12} sm={6} lg={4} key={seminar.id}>
+                            <Paper sx={{p: 0, boxShadow: 2, overflow: 'hidden', height: '100%',display:"flex", alignItems: 'center',justifyContent: 'space-between',flexDirection:"column"}}>
                                 <Box
                                     component="img"
                                     src={seminar.image}

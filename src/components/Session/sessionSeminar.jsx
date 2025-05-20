@@ -33,6 +33,14 @@ import img5 from '../../assets/images/session/asian-female-farmer.jpg';
 import img6 from '../../assets/images/session/girl-with-down-syndrome-painting-with-colors.jpg';
 import img7 from '../../assets/images/session/man-using-laptop-office-doing-document-analysis.jpg';
 import img8 from '../../assets/images/session/medium-shot-young-people-church-praying.jpg';
+import img9 from '../../assets/images/session/SingleSession/medium-shot-smiley-colleagues-sticking-post-its.jpg';
+import img10 from '../../assets/images/session/SingleSession/medium-shot-woman-girl-playing-memory-game.jpg';
+import img11 from '../../assets/images/session/SingleSession/apple-feather-near-drawing-supplies.jpg';
+import img12 from '../../assets/images/session/SingleSession/low-angle-view-businessman-standing-front-building-outstretching-his-arms.jpg';
+import img13 from '../../assets/images/session/SingleSession/man-looking-up-with-field-background.jpg';
+import img14 from '../../assets/images/session/SingleSession/kids-being-part-sunday-school.jpg';
+import img15 from '../../assets/images/session/SingleSession/educational-conept-tired-student-library.jpg';
+import img16 from '../../assets/images/session/SingleSession/group-friends-encouraging-rehab-patient.jpg';
 import {useNavigate} from "react-router-dom";
 
 export const seminars = [
@@ -49,6 +57,7 @@ export const seminars = [
         spots: 30,
         spotsLeft: 12,
         image: img1,
+        singleImage: img9,
         status: 'upcoming',
     },
     {
@@ -64,6 +73,7 @@ export const seminars = [
         spots: 25,
         spotsLeft: 8,
         image: img2,
+        singleImage: img10,
         status: 'upcoming',
     },
     {
@@ -79,6 +89,7 @@ export const seminars = [
         spots: 50,
         spotsLeft: 23,
         image: img3,
+        singleImage: img11,
         status: 'upcoming',
     },
     {
@@ -94,6 +105,7 @@ export const seminars = [
         spots: 20,
         spotsLeft: 5,
         image: img4,
+        singleImage: img12,
         status: 'upcoming',
     },
     {
@@ -107,6 +119,7 @@ export const seminars = [
             'This impactful session equipped farmers with strategies to cope with stress in agricultural life. Participants explored mindfulness, peer support techniques, and emotional resilience tools through interactive discussions and practical exercises tailored to rural challenges.',
         participants: 45,
         image: img5,
+        singleImage: img13,
         status: 'past',
     },
     {
@@ -120,6 +133,7 @@ export const seminars = [
             'A collaborative workshop for parents and teachers to enhance emotional intelligence. The session focused on effective communication, empathy, and partnership-building, with role-playing activities to strengthen relationships for better student outcomes.',
         participants: 32,
         image: img6,
+        singleImage: img14,
         status: 'past',
     },
     {
@@ -133,6 +147,7 @@ export const seminars = [
             'Tailored for UPSC aspirants, this workshop provided stress management techniques to excel in high-pressure exam preparation. Participants learned mindfulness, time management, and emotional coping strategies to maintain focus and resilience.',
         participants: 65,
         image: img7,
+        singleImage: img15,
         status: 'past',
     },
     {
@@ -146,6 +161,7 @@ export const seminars = [
             'This seminar focused on creating mentally healthy workplaces. HR professionals and employees explored strategies for reducing burnout, fostering a culture of openness, and implementing effective mental health policies through expert talks and group activities.',
         participants: 58,
         image: img8,
+        singleImage: img16,
         status: 'past',
     },
 ];

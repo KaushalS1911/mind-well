@@ -46,7 +46,7 @@ const ContactSupport = () => {
 
     return (
         <Box sx={{ py: 8 }}>
-            <Typography variant="h4" sx={{
+            <Typography className={"Montserrat"} variant="h4" sx={{
                 fontWeight: 700,
                 color: '#012765',
                 mb: 4,
@@ -62,7 +62,6 @@ const ContactSupport = () => {
             </Typography>
             <Container maxWidth="xl">
                 <Grid container spacing={4} justifyContent="center" alignItems="stretch">
-                    {/* Left Support Info */}
                     <Grid item xs={12} md={6}>
                         <Paper
                             sx={{
@@ -93,22 +92,21 @@ const ContactSupport = () => {
                             </Typography>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                                 <EmailIcon sx={{ color: '#FF6200', mr: 1 }} />
-                                <Link href="mailto:info@mindwell.com"
+                                <Box
                                       sx={{ color: '#012765', fontWeight: 600, fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-                                    info@mindwell.com
-                                </Link>
+                                    connect@mahadevasth.com
+                                </Box>
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                 <PhoneIcon sx={{ color: '#FF6200', mr: 1 }} />
-                                <Link href="tel:+911234567890"
+                                <Box
                                       sx={{ color: '#012765', fontWeight: 600, fontSize: { xs: '1rem', sm: '1.1rem' } }}>
                                     +91 12345 67890
-                                </Link>
+                                </Box>
                             </Box>
                         </Paper>
                     </Grid>
 
-                    {/* Right Form */}
                     <Grid item xs={12} md={6}>
                         <Paper sx={{
                             p: { xs: 3, sm: 5 },

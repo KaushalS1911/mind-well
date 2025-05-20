@@ -209,7 +209,7 @@ const SingleSession = () => {
                 sx={{
                     minHeight: {xs: 280, sm: 350, md: 420},
                     width: '100%',
-                    background: `linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%), url(${seminar.image || ''})`,
+                    background: `linear-gradient(90deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%), url(${seminar.singleImage || ''})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     position: "relative",
@@ -262,6 +262,7 @@ const SingleSession = () => {
                         </Box>
 
                         <Typography
+                            className={"Montserrat"}
                             variant="h1"
                             sx={{
                                 fontSize: {
@@ -505,7 +506,7 @@ const SingleSession = () => {
                             </Box>
                         </Grid>
                         <Grid item xs={12} lg={6}>
-                            <Typography variant="h3" sx={{
+                            <Typography className={"Montserrat"} variant="h3" sx={{
                                 fontWeight: 800, mb: 2, color: '#012765', fontSize: {
                                     xs: '1.7rem',
                                     sm: '1.85rem',
@@ -513,7 +514,7 @@ const SingleSession = () => {
                                     lg: '2.225rem'
                                 }, lineHeight: 1.2
                             }}>
-                                About {seminar.title}
+                                {seminar.title}
                             </Typography>
                             <Typography variant="body1" sx={{
                                 mb: 3,
@@ -566,7 +567,7 @@ const SingleSession = () => {
 
                 <Box sx={{py: 8}}>
                     <Container maxWidth="xl">
-                        <Typography variant="h4" sx={{
+                        <Typography className={"Montserrat"} variant="h4" sx={{
                             mb: 6, fontWeight: 700, color: '#012765', textAlign: 'center', fontSize: {
                                 xs: '1.7rem',
                                 sm: '1.85rem',
@@ -708,7 +709,7 @@ const SingleSession = () => {
                     </Container>
                 </Box>
 
-                 {/*<SeminarResources /> */}
+                {/*<SeminarResources /> */}
 
                 <RelatedSession currentId={id} seminars={seminars}/>
                 <ContactSupport/>
