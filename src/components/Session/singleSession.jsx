@@ -36,6 +36,7 @@ import SeminarResources from './SeminarResources';
 import ContactSupport from './ContactSupport';
 import React, {useState} from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const StyledButton = styled(Button)(({theme}) => ({
     borderRadius: '12px',
@@ -67,6 +68,11 @@ const SingleSession = () => {
         phone: '',
         organization: '',
     });
+    const [formErrors, setFormErrors] = useState({
+        name: '',
+        email: '',
+        phone: '',
+    });
 
     const handleTabChange = (event, newValue) => {
         setTabValue(newValue);
@@ -87,6 +93,30 @@ const SingleSession = () => {
     };
 
     const handleSubmit = () => {
+        let errors = {};
+        let isValid = true;
+        if (!formData.name.trim()) {
+            errors.name = 'Full name is required';
+            isValid = false;
+        }
+        if (!formData.email.trim()) {
+            errors.email = 'Email is required';
+            isValid = false;
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            errors.email = 'Enter a valid email';
+            isValid = false;
+        }
+        if (!formData.phone.trim()) {
+            errors.phone = 'Phone number is required';
+            isValid = false;
+        } else if (!/^\d{10}$/.test(formData.phone)) {
+            errors.phone = 'Enter a valid 10-digit phone number';
+            isValid = false;
+        }
+
+        setFormErrors(errors);
+
+        if (!isValid) return;
         console.log('Registration submitted:', formData);
         alert("Thank you for registering! We'll send confirmation details to your email shortly.");
         setOpenDialog(false);
@@ -96,14 +126,15 @@ const SingleSession = () => {
             phone: '',
             organization: '',
         });
+        setFormErrors({
+            name: '',
+            email: '',
+            phone: '',
+        });
     };
 
     const navigate = useNavigate();
     const seminar = seminars.find((seminar) => seminar.id == id);
-    // if (!seminar) {
-    //     navigate('/sessions');
-    //     return null;
-    // }
 
     const galleryImages = [
         {src: img1, title: 'Workshop Activities'},
@@ -174,7 +205,6 @@ const SingleSession = () => {
 
     return (
         <Box sx={{pt: {xs: 0, md: 0}}}>
-            {/* Responsive Hero Section */}
             <Box
                 sx={{
                     minHeight: {xs: 280, sm: 350, md: 420},
@@ -189,7 +219,7 @@ const SingleSession = () => {
                     px: {xs: 2, sm: 4, md: 0},
                 }}
             >
-                {/* Dark Overlay */}
+
                 <Box
                     sx={{
                         position: 'absolute',
@@ -201,22 +231,19 @@ const SingleSession = () => {
                         zIndex: 1,
                     }}
                 />
-
-                {/* Content Container */}
-                <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
+                <Container maxWidth="xl" sx={{position: 'relative', zIndex: 2}}>
                     <Box
                         sx={{
                             color: 'white',
-                            py: { xs: 6, sm: 8, md: 14 },
-                            mx: { xs: 0, md: 2 },
-                            mt: { xs: 2, md: 10 },
+                            py: {xs: 6, sm: 8, md: 14},
+                            mx: {xs: 0, md: 2},
+                            mt: {xs: 2, md: 10},
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
                             textAlign: 'center',
                         }}
                     >
-                        {/* Category Tag */}
                         <Box
                             sx={{
                                 display: 'inline-block',
@@ -226,7 +253,7 @@ const SingleSession = () => {
                                 bgcolor: 'rgba(255,98,0,0.9)',
                                 borderRadius: 2,
                                 fontWeight: 700,
-                                fontSize: { xs: '0.85rem', sm: '1rem' },
+                                fontSize: {xs: '0.85rem', sm: '1rem'},
                                 letterSpacing: 1,
                                 mt: 5,
                             }}
@@ -234,7 +261,6 @@ const SingleSession = () => {
                             {seminar.category}
                         </Box>
 
-                        {/* Title */}
                         <Typography
                             variant="h1"
                             sx={{
@@ -249,15 +275,14 @@ const SingleSession = () => {
                                 color: '#fff',
                                 mb: 2,
                                 mt: 3,
-                                px: { xs: 2, sm: 4 },
+                                px: {xs: 2, sm: 4},
                             }}
                         >
                             {seminar.title}
                         </Typography>
 
-                        {/* Info Stack */}
                         <Stack
-                            direction={{ xs: 'column', sm: 'row' }}
+                            direction={{xs: 'column', sm: 'row'}}
                             spacing={2}
                             justifyContent="center"
                             alignItems="center"
@@ -265,38 +290,32 @@ const SingleSession = () => {
                                 flexWrap: 'wrap',
                                 mb: 4,
                                 mt: 2,
-                                px: { xs: 2, sm: 4 },
-                                gap: { xs: 1, sm: 3 },
+                                px: {xs: 2, sm: 4},
+                                gap: {xs: 1, sm: 3},
                             }}
                         >
-                            {/* Date */}
-                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                <EventIcon sx={{ fontSize: { xs: 18, sm: 20 } }} />
-                                <Typography sx={{ fontSize: { xs: '0.95rem', sm: '1.05rem' }, fontWeight: 500 }}>
+                            <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
+                                <EventIcon sx={{fontSize: {xs: 18, sm: 20}}}/>
+                                <Typography sx={{fontSize: {xs: '0.95rem', sm: '1.05rem'}, fontWeight: 500}}>
                                     {seminar.date}
                                 </Typography>
                             </Box>
-
-                            {/* Time */}
-                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                <AccessTimeIcon sx={{ fontSize: { xs: 18, sm: 20 } }} />
-                                <Typography sx={{ fontSize: { xs: '0.95rem', sm: '1.05rem' }, fontWeight: 500 }}>
+                            <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
+                                <AccessTimeIcon sx={{fontSize: {xs: 18, sm: 20}}}/>
+                                <Typography sx={{fontSize: {xs: '0.95rem', sm: '1.05rem'}, fontWeight: 500}}>
                                     {seminar.time}
                                 </Typography>
                             </Box>
-
-                            {/* Location */}
-                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                                <LocationOnIcon sx={{ fontSize: { xs: 18, sm: 20 } }} />
-                                <Typography sx={{ fontSize: { xs: '0.95rem', sm: '1.05rem' }, fontWeight: 500 }}>
+                            <Box sx={{display: 'flex', alignItems: 'center', gap: 1}}>
+                                <LocationOnIcon sx={{fontSize: {xs: 18, sm: 20}}}/>
+                                <Typography sx={{fontSize: {xs: '0.95rem', sm: '1.05rem'}, fontWeight: 500}}>
                                     {seminar.location}
                                 </Typography>
                             </Box>
                         </Stack>
 
-                        {/* Register Button */}
                         {seminar.status === 'upcoming' && (
-                            <CardActions sx={{ p: { xs: 2, sm: 2 }, pt: 0, width: '100%', maxWidth: 300 }}>
+                            <CardActions sx={{p: {xs: 2, sm: 2}, pt: 0, width: '100%', maxWidth: 300}}>
                                 <StyledButton
                                     variant="contained"
                                     onClick={() => handleOpenDialog(seminar)}
@@ -306,7 +325,7 @@ const SingleSession = () => {
                                         color: '#fff',
                                         fontWeight: 600,
                                         py: 1.25,
-                                        fontSize: { xs: '0.9rem', sm: '1rem' },
+                                        fontSize: {xs: '0.9rem', sm: '1rem'},
                                     }}
                                 >
                                     Register Now
@@ -348,6 +367,8 @@ const SingleSession = () => {
                                     onChange={handleInputChange}
                                     margin="normal"
                                     required
+                                    error={!!formErrors.name}
+                                    helperText={formErrors.name}
                                     variant="outlined"
                                     sx={{
                                         '& .MuiOutlinedInput-root': {borderRadius: '12px'},
@@ -363,6 +384,8 @@ const SingleSession = () => {
                                     onChange={handleInputChange}
                                     margin="normal"
                                     required
+                                    error={!!formErrors.email}
+                                    helperText={formErrors.email}
                                     variant="outlined"
                                     sx={{
                                         '& .MuiOutlinedInput-root': {borderRadius: '12px'},
@@ -376,6 +399,8 @@ const SingleSession = () => {
                                     value={formData.phone}
                                     onChange={handleInputChange}
                                     margin="normal"
+                                    error={!!formErrors.phone}
+                                    helperText={formErrors.phone}
                                     variant="outlined"
                                     sx={{
                                         '& .MuiOutlinedInput-root': {borderRadius: '12px'},
@@ -434,10 +459,24 @@ const SingleSession = () => {
                 </Dialog>
             </Box>
 
-
-            {/* Modern About Section (Image + Content Side by Side) */}
             <Box sx={{mx: {xs: '20px', sm: '70px', md: '90px', xl: '100px'}}}>
                 <Container maxWidth="xl" sx={{py: 8}}>
+                    <Button
+                        onClick={() => navigate(-1)}
+                        startIcon={<ArrowBackIcon/>}
+                        sx={{
+                            mb: 4,
+                            color: "#012765",
+                            fontWeight: 600,
+                            fontFamily: 'Montserrat',
+                            '&:hover': {
+                                backgroundColor: "#012765",
+                                color: 'white',
+                            },
+                        }}
+                    >
+                        Back
+                    </Button>
                     <Grid container spacing={6} alignItems="center">
                         <Grid item xs={12} lg={6}>
                             <Box
@@ -525,7 +564,6 @@ const SingleSession = () => {
                     </Grid>
                 </Container>
 
-                {/* Enhanced Gallery Section */}
                 <Box sx={{py: 8}}>
                     <Container maxWidth="xl">
                         <Typography variant="h4" sx={{
@@ -546,11 +584,9 @@ const SingleSession = () => {
                                             position: 'relative',
                                             borderRadius: '16px',
                                             overflow: 'hidden',
-                                            // height: { xs: 300, sm: 400, md: 480 },
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            // backgroundColor: '#f0f0f0',
                                             cursor: 'pointer',
                                             '&:hover img': {transform: 'scale(1.05)'},
                                             '&:hover .hover-overlay': {
@@ -561,7 +597,7 @@ const SingleSession = () => {
                                                 opacity: 1,
                                             },
                                         }}
-                                        onClick={() => setSelectedImage(image)} // ✅ FIXED
+                                        onClick={() => setSelectedImage(image)}
                                     >
                                         <Box
                                             component="img"
@@ -641,7 +677,7 @@ const SingleSession = () => {
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     <img
-                                        src={selectedImage.src} // ✅ FIXED
+                                        src={selectedImage.src}
                                         alt={selectedImage.title}
                                         style={{
                                             width: '100%',
@@ -672,12 +708,8 @@ const SingleSession = () => {
                     </Container>
                 </Box>
 
-                {/* Contact Support Section */}
+                 {/*<SeminarResources /> */}
 
-                {/* Seminar Resources Section */}
-                {/* <SeminarResources /> */}
-
-                {/* Related Seminars Section */}
                 <RelatedSession currentId={id} seminars={seminars}/>
                 <ContactSupport/>
             </Box>
