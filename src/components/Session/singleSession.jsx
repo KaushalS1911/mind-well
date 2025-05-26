@@ -540,178 +540,178 @@ const SingleSession = () => {
                                     </Box>
                                 ))}
                             </Box>
-                            <Box>
-                                <Button
-                                    variant="text"
-                                    sx={{
-                                        fontWeight: 700,
-                                        color: '#012765',
-                                        borderBottom: '2px solid #FF6200',
-                                        borderRadius: 0,
-                                        px: 0,
-                                        textTransform: 'none',
-                                        fontSize: {xs: '1rem', sm: '1.1rem'},
-                                        '&:hover': {
-                                            bgcolor: 'transparent',
-                                            color: '#FF6200',
-                                            borderBottom: '2px solid #FF6200',
-                                        },
-                                    }}
-                                >
-                                    Discover Now
-                                </Button>
-                            </Box>
+                            {/*<Box>*/}
+                            {/*    <Button*/}
+                            {/*        variant="text"*/}
+                            {/*        sx={{*/}
+                            {/*            fontWeight: 700,*/}
+                            {/*            color: '#012765',*/}
+                            {/*            borderBottom: '2px solid #FF6200',*/}
+                            {/*            borderRadius: 0,*/}
+                            {/*            px: 0,*/}
+                            {/*            textTransform: 'none',*/}
+                            {/*            fontSize: {xs: '1rem', sm: '1.1rem'},*/}
+                            {/*            '&:hover': {*/}
+                            {/*                bgcolor: 'transparent',*/}
+                            {/*                color: '#FF6200',*/}
+                            {/*                borderBottom: '2px solid #FF6200',*/}
+                            {/*            },*/}
+                            {/*        }}*/}
+                            {/*    >*/}
+                            {/*        Discover Now*/}
+                            {/*    </Button>*/}
+                            {/*</Box>*/}
                         </Grid>
                     </Grid>
                 </Container>
 
-                <Box sx={{pb: 8}}>
-                    <Container maxWidth="xl">
-                        <Typography className={"Montserrat"} variant="h4" sx={{
-                            mb: 6, fontWeight: 700, color: '#012765', textAlign: 'center', fontSize: {
-                                xs: '1.7rem',
-                                sm: '1.85rem',
-                                md: '2rem',
-                                lg: '2.225rem'
-                            },
-                        }}>
-                            Session Gallery
-                        </Typography>
-                        <Grid container spacing={3}>
-                            {galleryImages.map((image, index) => (
-                                <Grid item xs={12} sm={6} md={4} key={index}>
-                                    <Paper
-                                        sx={{
-                                            position: 'relative',
-                                            borderRadius: '16px',
-                                            overflow: 'hidden',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            cursor: 'pointer',
-                                            '&:hover img': {transform: 'scale(1.05)'},
-                                            '&:hover .hover-overlay': {
-                                                background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 100%)',
-                                            },
-                                            '&:hover .hover-text': {
-                                                transform: 'translateY(0%)',
-                                                opacity: 1,
-                                            },
-                                        }}
-                                        onClick={() => setSelectedImage(image)}
-                                    >
-                                        <Box
-                                            component="img"
-                                            src={image.src}
-                                            alt={image.title}
-                                            sx={{
-                                                maxWidth: '100%',
-                                                maxHeight: '100%',
-                                                objectFit: 'contain',
-                                                transition: 'transform 0.4s ease',
-                                            }}
-                                        />
-                                        <Box
-                                            className="hover-overlay"
-                                            sx={{
-                                                position: 'absolute',
-                                                top: 0,
-                                                left: 0,
-                                                right: 0,
-                                                bottom: 0,
-                                                color: 'white',
-                                                background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
-                                                transition: 'background 0.4s ease',
-                                                pointerEvents: 'none',
-                                            }}
-                                        >
-                                            <Box
-                                                className="hover-text"
-                                                sx={{
-                                                    position: 'absolute',
-                                                    bottom: 0,
-                                                    left: 0,
-                                                    right: 0,
-                                                    textAlign: 'center',
-                                                    transform: 'translateY(100%)',
-                                                    opacity: 0,
-                                                    transition: 'transform 0.4s ease, opacity 0.4s ease',
-                                                    py: 2,
-                                                    pointerEvents: 'none',
-                                                }}
-                                            >
-                                                <Typography variant="h6" sx={{fontWeight: 500, fontSize: '17px'}}>
-                                                    {image.title}
-                                                </Typography>
-                                            </Box>
-                                        </Box>
-                                    </Paper>
-                                </Grid>
-                            ))}
-                        </Grid>
+                {/*<Box sx={{pb: 8}}>*/}
+                {/*    <Container maxWidth="xl">*/}
+                {/*        <Typography className={"Montserrat"} variant="h4" sx={{*/}
+                {/*            mb: 6, fontWeight: 700, color: '#012765', textAlign: 'center', fontSize: {*/}
+                {/*                xs: '1.7rem',*/}
+                {/*                sm: '1.85rem',*/}
+                {/*                md: '2rem',*/}
+                {/*                lg: '2.225rem'*/}
+                {/*            },*/}
+                {/*        }}>*/}
+                {/*            Session Gallery*/}
+                {/*        </Typography>*/}
+                {/*        <Grid container spacing={3}>*/}
+                {/*            {galleryImages.map((image, index) => (*/}
+                {/*                <Grid item xs={12} sm={6} md={4} key={index}>*/}
+                {/*                    <Paper*/}
+                {/*                        sx={{*/}
+                {/*                            position: 'relative',*/}
+                {/*                            borderRadius: '16px',*/}
+                {/*                            overflow: 'hidden',*/}
+                {/*                            display: 'flex',*/}
+                {/*                            alignItems: 'center',*/}
+                {/*                            justifyContent: 'center',*/}
+                {/*                            cursor: 'pointer',*/}
+                {/*                            '&:hover img': {transform: 'scale(1.05)'},*/}
+                {/*                            '&:hover .hover-overlay': {*/}
+                {/*                                background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 100%)',*/}
+                {/*                            },*/}
+                {/*                            '&:hover .hover-text': {*/}
+                {/*                                transform: 'translateY(0%)',*/}
+                {/*                                opacity: 1,*/}
+                {/*                            },*/}
+                {/*                        }}*/}
+                {/*                        onClick={() => setSelectedImage(image)}*/}
+                {/*                    >*/}
+                {/*                        <Box*/}
+                {/*                            component="img"*/}
+                {/*                            src={image.src}*/}
+                {/*                            alt={image.title}*/}
+                {/*                            sx={{*/}
+                {/*                                maxWidth: '100%',*/}
+                {/*                                maxHeight: '100%',*/}
+                {/*                                objectFit: 'contain',*/}
+                {/*                                transition: 'transform 0.4s ease',*/}
+                {/*                            }}*/}
+                {/*                        />*/}
+                {/*                        <Box*/}
+                {/*                            className="hover-overlay"*/}
+                {/*                            sx={{*/}
+                {/*                                position: 'absolute',*/}
+                {/*                                top: 0,*/}
+                {/*                                left: 0,*/}
+                {/*                                right: 0,*/}
+                {/*                                bottom: 0,*/}
+                {/*                                color: 'white',*/}
+                {/*                                background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',*/}
+                {/*                                transition: 'background 0.4s ease',*/}
+                {/*                                pointerEvents: 'none',*/}
+                {/*                            }}*/}
+                {/*                        >*/}
+                {/*                            <Box*/}
+                {/*                                className="hover-text"*/}
+                {/*                                sx={{*/}
+                {/*                                    position: 'absolute',*/}
+                {/*                                    bottom: 0,*/}
+                {/*                                    left: 0,*/}
+                {/*                                    right: 0,*/}
+                {/*                                    textAlign: 'center',*/}
+                {/*                                    transform: 'translateY(100%)',*/}
+                {/*                                    opacity: 0,*/}
+                {/*                                    transition: 'transform 0.4s ease, opacity 0.4s ease',*/}
+                {/*                                    py: 2,*/}
+                {/*                                    pointerEvents: 'none',*/}
+                {/*                                }}*/}
+                {/*                            >*/}
+                {/*                                <Typography variant="h6" sx={{fontWeight: 500, fontSize: '17px'}}>*/}
+                {/*                                    {image.title}*/}
+                {/*                                </Typography>*/}
+                {/*                            </Box>*/}
+                {/*                        </Box>*/}
+                {/*                    </Paper>*/}
+                {/*                </Grid>*/}
+                {/*            ))}*/}
+                {/*        </Grid>*/}
 
-                        {selectedImage && (
-                            <Box
-                                sx={{
-                                    position: 'fixed',
-                                    top: 0,
-                                    left: 0,
-                                    right: 0,
-                                    bottom: 0,
-                                    backgroundColor: 'rgba(0, 0, 0, 0.970)',
-                                    zIndex: 1300,
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    p: 2,
-                                }}
-                                onClick={() => setSelectedImage(null)}
-                            >
-                                <IconButton
-                                    sx={{position: 'absolute', top: 20, right: 20, color: 'white'}}
-                                    onClick={() => setSelectedImage(null)}
-                                >
-                                    <CloseIcon/>
-                                </IconButton>
-                                <Box
-                                    sx={{maxWidth: '90%', maxHeight: '90vh', position: 'relative'}}
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    <img
-                                        src={selectedImage.src}
-                                        alt={selectedImage.title}
-                                        style={{
-                                            width: '100%',
-                                            height: 'auto',
-                                            maxHeight: '90vh',
-                                            objectFit: 'contain',
-                                        }}
-                                    />
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            bottom: 0,
-                                            left: 0,
-                                            right: 0,
-                                            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                                            color: 'white',
-                                            p: 2,
-                                        }}
-                                    >
-                                        <Typography variant="h6" sx={{fontWeight: 400, fontSize: '17px'}}>
-                                            {selectedImage.title}
-                                        </Typography>
-                                    </Box>
-                                </Box>
-                            </Box>
-                        )}
+                {/*        {selectedImage && (*/}
+                {/*            <Box*/}
+                {/*                sx={{*/}
+                {/*                    position: 'fixed',*/}
+                {/*                    top: 0,*/}
+                {/*                    left: 0,*/}
+                {/*                    right: 0,*/}
+                {/*                    bottom: 0,*/}
+                {/*                    backgroundColor: 'rgba(0, 0, 0, 0.970)',*/}
+                {/*                    zIndex: 1300,*/}
+                {/*                    display: 'flex',*/}
+                {/*                    justifyContent: 'center',*/}
+                {/*                    alignItems: 'center',*/}
+                {/*                    p: 2,*/}
+                {/*                }}*/}
+                {/*                onClick={() => setSelectedImage(null)}*/}
+                {/*            >*/}
+                {/*                <IconButton*/}
+                {/*                    sx={{position: 'absolute', top: 20, right: 20, color: 'white'}}*/}
+                {/*                    onClick={() => setSelectedImage(null)}*/}
+                {/*                >*/}
+                {/*                    <CloseIcon/>*/}
+                {/*                </IconButton>*/}
+                {/*                <Box*/}
+                {/*                    sx={{maxWidth: '90%', maxHeight: '90vh', position: 'relative'}}*/}
+                {/*                    onClick={(e) => e.stopPropagation()}*/}
+                {/*                >*/}
+                {/*                    <img*/}
+                {/*                        src={selectedImage.src}*/}
+                {/*                        alt={selectedImage.title}*/}
+                {/*                        style={{*/}
+                {/*                            width: '100%',*/}
+                {/*                            height: 'auto',*/}
+                {/*                            maxHeight: '90vh',*/}
+                {/*                            objectFit: 'contain',*/}
+                {/*                        }}*/}
+                {/*                    />*/}
+                {/*                    <Box*/}
+                {/*                        sx={{*/}
+                {/*                            position: 'absolute',*/}
+                {/*                            bottom: 0,*/}
+                {/*                            left: 0,*/}
+                {/*                            right: 0,*/}
+                {/*                            backgroundColor: 'rgba(0, 0, 0, 0.7)',*/}
+                {/*                            color: 'white',*/}
+                {/*                            p: 2,*/}
+                {/*                        }}*/}
+                {/*                    >*/}
+                {/*                        <Typography variant="h6" sx={{fontWeight: 400, fontSize: '17px'}}>*/}
+                {/*                            {selectedImage.title}*/}
+                {/*                        </Typography>*/}
+                {/*                    </Box>*/}
+                {/*                </Box>*/}
+                {/*            </Box>*/}
+                {/*        )}*/}
 
-                    </Container>
-                </Box>
+                {/*    </Container>*/}
+                {/*</Box>*/}
 
                 {/*<SeminarResources /> */}
 
-                <RelatedSession currentId={id} seminars={seminars}/>
+                {/*<RelatedSession currentId={id} seminars={seminars}/>*/}
                 {/*<ContactSupport/>*/}
             </Box>
         </Box>

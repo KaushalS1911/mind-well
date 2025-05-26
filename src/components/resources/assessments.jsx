@@ -131,8 +131,7 @@ function Assessments({sx}) {
                                 </Box>
                             </Box>
                             <Box fontSize={{xs: 14, md: 18}} color="#CBD5E1" sx={{mb: "40px"}}>
-                                Take our scientifically-validated assessments to gain insights into your mental health
-                                and determine whether you might benefit from professional support.
+                                Start with a quick do-it-yourself mental health screening. These tools offer valuable insights into your emotional well-being and can help you determine if you might benefit from professional support. For a deeper understanding, we also recommend proper, professionally administered psychometric tests designed with scientific rigor.
                             </Box>
                             <Grid container spacing={2}>
                                 <Grid container spacing={2}>

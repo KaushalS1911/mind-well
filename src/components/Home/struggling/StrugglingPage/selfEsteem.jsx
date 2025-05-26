@@ -398,13 +398,13 @@ const SelfEsteem = () => {
                                 >
                                     {data.title}
                                 </Typography>
-                                <Box sx={{
-                                    position: 'absolute',
-                                    top: -40,
-                                    left: -50,
-                                    zIndex: 1,
-                                    opacity: 0.7
-                                }}>{doodleSVG}</Box>
+                                {/*<Box sx={{*/}
+                                {/*    position: 'absolute',*/}
+                                {/*    top: -40,*/}
+                                {/*    left: -50,*/}
+                                {/*    zIndex: 1,*/}
+                                {/*    opacity: 0.7*/}
+                                {/*}}>{doodleSVG}</Box>*/}
                                 <Typography
                                     sx={{
                                         color: textBody,

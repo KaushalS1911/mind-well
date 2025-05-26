@@ -1,6 +1,7 @@
 import React, {useMemo} from 'react';
 import PropTypes from 'prop-types';
-import {Page,Font, View, Text, Document, StyleSheet, Svg, Circle} from '@react-pdf/renderer';
+import {Page, Font, View, Text, Document, StyleSheet, Svg, Circle, Image} from '@react-pdf/renderer';
+import img from '../../assets/Emotionally Yours Logo.png'
 
 Font.register({
     family: 'HindiPoppins',
@@ -10,17 +11,14 @@ Font.register({
     family: 'PoppinsRegular',
     src: '/font/Poppins-Regular.ttf',
 });
-
 Font.register({
     family: 'PoppinsBold',
     src: '/font/Poppins-Bold.ttf',
 });
-
 Font.register({
     family: 'PoppinsSemiBold',
     src: '/font/Poppins-SemiBold.ttf',
 });
-
 const getColor = (score) => {
     if (score >= 61) return '#ff4d4d';
     if (score >= 41) return '#ffa500';
@@ -28,7 +26,6 @@ const getColor = (score) => {
     if (score >= 11) return '#90EE90';
     return '#47e447';
 };
-
 const useStyles = (score) =>
     useMemo(
         () =>
@@ -40,55 +37,57 @@ const useStyles = (score) =>
                     alignItems: 'center',
                     fontFamily: 'PoppinsRegular',
                 },
-                pageItem: {
-                    height: '95%',
-                },
                 card: {
                     width: '100%',
                     backgroundColor: '#FFFFFF',
-                    padding: 20,
+                    padding: "0 20px 20px 20px",
                     borderRadius: 10,
                     textAlign: 'center',
                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
                 },
-                personaldata: {
-                    textAlign: 'left',
-                    marginBottom: 10
-                },
+                // personaldata: {
+                //     display: 'flex',
+                //     flexDirection: 'row',
+                //     alignItems: 'center',
+                //     justifyContent: 'space-between',
+                //     marginBottom: 3
+                // },
                 personal: {
-                    marginBottom: 28,
+                    marginBottom: 8,
                     borderBottom: "1px solid #FF7F1E",
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-
                 },
                 name: {
-                    fontSize: 12,
+                    fontSize: 11,
                     fontWeight: '600',
                     color: '#0D2152',
                     fontFamily: 'PoppinsSemiBold',
-                    marginBottom: 8,
+                    marginBottom: 10,
                 },
                 email: {
-                    fontSize: 12,
+                    fontSize: 11,
                     fontWeight: '600',
                     fontFamily: 'PoppinsSemiBold',
                     color: '#0D2152',
-                    marginBottom: 8,
+                    marginBottom: 10,
                 },
                 date: {
-                    fontSize: 12,
+                    fontSize: 11,
                     fontFamily: 'PoppinsSemiBold',
                     fontWeight: '600',
                     color: '#0D2152',
+                    alignItems: 'center',
+                    display: 'flex',
+                    marginTop:8
                 },
                 header: {
-                    fontSize: 18,
+                    fontSize: 14,
                     fontWeight: 'bold',
                     color: '#0D2152',
-                    marginBottom: 15,
+                    marginBottom: 10,
                     fontFamily: 'PoppinsBold',
                     textAlign: "center"
                 },
@@ -107,7 +106,7 @@ const useStyles = (score) =>
                     position: 'absolute',
                 },
                 outOf: {
-                    fontSize: 18,
+                    fontSize: 10,
                     color: '#4A5568',
                 },
                 svgContainer: {
@@ -119,32 +118,31 @@ const useStyles = (score) =>
                     marginBottom: 10,
                 },
                 level: {
-                    fontSize: 16,
+                    fontSize: 12,
                     fontWeight: 'bold',
                     fontFamily: 'HindiPoppins',
                     color: '#F5811E',
-                    marginVertical: 10,
+                    marginTop: 5,
                 },
                 interpretationContainer: {
                     backgroundColor: '#E3EAF6',
-                    padding: 15,
+                    padding: 10,
                     borderRadius: 8,
-                    marginTop: 10,
+                },
+                interpretation: {
+                    fontSize: 9,
+                    textAlign: "justify",
+                    color: '#333',
+                    // fontFamily: 'HindiPoppins',
                 },
                 recommendationCard: {
                     backgroundColor: '#FBF6F2',
-                    padding: 15,
+                    padding: 10,
                     borderRadius: 8,
-                    marginTop: 10,
-                },
-                interpretation: {
-                    fontSize: 14,
-                    color: '#333',
-                    textAlign: 'justify',
-                    fontFamily: 'HindiPoppins',
+                    marginTop: 5,
                 },
                 recommendationsContainer: {
-                    marginTop: 20,
+                    marginTop: 5,
                     width: '100%',
                 },
                 recommendationHeader: {
@@ -153,38 +151,50 @@ const useStyles = (score) =>
                     alignItems: 'center',
                 },
                 recommendationTitle: {
-                    fontSize: 16,
+                    fontSize: 12,
                     fontWeight: '600',
                     fontFamily: 'PoppinsBold',
                     color: '#0D2152',
-                    marginBottom: 8,
+                    marginBottom: 3,
                     textAlign: 'start',
                 },
                 recommendationBoxTitle: {
-                    fontSize: 14,
+                    fontSize: 11,
                     fontWeight: '600',
                     fontFamily: 'PoppinsSemiBold',
                     color: '#F5811E',
-                    marginBottom: 8,
+                    marginBottom: 5,
                     textAlign: 'start',
                 },
                 recommendationDescription: {
-                    fontSize: 14,
+                    fontSize: 9,
                     fontFamily: 'HindiPoppins',
                     color: '#4A5568',
+                    textAlign: 'justify',
+                },
+                disclaimerTitle: {
+                    fontSize: 13,
+                    fontWeight: '600',
+                    fontFamily: 'PoppinsSemiBold',
+                    color: '#F5811E',
+                    marginBottom: 5,
+                    textAlign: 'start',
+                },
+                disclaimerDescription: {
+                    fontSize: 9,
+                    fontFamily: 'HindiPoppins',
+                    color: 'red',
                     textAlign: 'justify',
                 },
             }),
         [score]
     );
-
 export default function PdfView({data}) {
     const styles = useStyles(data.totalScore);
     const strokeColor = getColor(data.totalScore);
     const percentage = (data.totalScore / 80) * 100;
     const circumference = 2 * Math.PI * 45;
     const offset = circumference - (percentage / 100) * circumference;
-
     const formatDate = (date) => {
         const d = new Date(date);
         let day = d.getDate().toString().padStart(2, '0');
@@ -192,52 +202,70 @@ export default function PdfView({data}) {
         let year = d.getFullYear();
         return `${day}/${month}/${year}`;
     };
-
     const currentDate = formatDate(new Date());
-
-    const recommendations = data.recommendations ;
-
+    const recommendations = data.recommendations;
     return (
         <Document>
             <Page size="A4" style={styles.page}>
                 <View style={styles.pageItem}>
                     <View style={styles.card}>
-                        <View style={styles.personal}>
-                            <View style={styles.personaldata}>
-                                <Text style={styles.name}>Name: John-Deo</Text>
-                                <Text style={styles.email}>Email: john12@gmail.com</Text>
+                        <View style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            flexDirection:"row"
+                        }}>
+                            <View>
+                                <Image source={img} style={{
+                                    height: '65px',
+                                    width: '170px',
+                                    objectFit: 'contain',
+                                }}/>
                             </View>
                             <View>
-                                <Text style={styles.date}>Date: {currentDate}</Text>
+                                <Text style={styles.date}>Date : {currentDate}</Text>
                             </View>
+                        </View>
+                        <View style={styles.personal}>
+                            {/*<View style={styles.personaldata}>*/}
+                            <Text style={styles.name}>Name : John-Deo</Text>
+                            <Text style={styles.email}>Email : john12@gmail.com</Text>
+                            {/*</View>*/}
                         </View>
                         <Text style={styles.header}>Emotional Awareness Assessment Results</Text>
-
-                        <View style={styles.scoreContainer}>
-                            <View style={styles.svgContainer}>
-                                <Svg width="100" height="100" viewBox="0 0 100 100">
-                                    <Circle cx="50" cy="50" r="45" stroke="#E3EAF6" strokeWidth="10" fill="none"/>
-                                    <Circle
-                                        cx="50"
-                                        cy="50"
-                                        r="45"
-                                        stroke={strokeColor}
-                                        strokeWidth="10"
-                                        fill="none"
-                                        strokeDasharray={`${circumference}`}
-                                        strokeDashoffset={`${offset}`}
-                                        strokeLinecap="round"
-                                    />
-                                </Svg>
-                                <Text style={styles.score}>{data.totalScore}</Text>
+                        <View style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            alignItems: 'flex-start',
+                            justifyContent: 'space-between',
+                            paddingHorizontal: 16,
+                            paddingVertical: 10,
+                        }}>
+                            <View style={[styles.scoreContainer, {width: '40%', alignItems: 'center'}]}>
+                                <View style={styles.svgContainer}>
+                                    <Svg width="100" height="100" viewBox="0 0 100 100">
+                                        <Circle cx="50" cy="50" r="45" stroke="#E3EAF6" strokeWidth="10" fill="none"/>
+                                        <Circle
+                                            cx="50"
+                                            cy="50"
+                                            r="45"
+                                            stroke={strokeColor}
+                                            strokeWidth="10"
+                                            fill="none"
+                                            strokeDasharray={`${circumference}`}
+                                            strokeDashoffset={`${offset}`}
+                                            strokeLinecap="round"
+                                        />
+                                    </Svg>
+                                    <Text style={styles.score}>{data.totalScore}</Text>
+                                </View>
+                                <Text style={styles.outOf}>out of 80</Text>
+                                <Text style={styles.level}>{data.level}</Text>
                             </View>
-                            <Text style={styles.outOf}>out of 80</Text>
+                            <View style={[styles.interpretationContainer, {width: '60%'}]}>
+                                <Text style={styles.interpretation}>{data.interpretation}</Text>
+                            </View>
                         </View>
-                        <Text style={styles.level}>{data.level}</Text>
-                        <View style={styles.interpretationContainer}>
-                            <Text style={styles.interpretation}>{data.interpretation}</Text>
-                        </View>
-
                         {recommendations && recommendations.length > 0 && (
                             <View style={styles.recommendationsContainer}>
                                 <View style={styles.recommendationHeader}>
@@ -260,14 +288,24 @@ export default function PdfView({data}) {
                                 ))}
                             </View>
                         )}
-
+                        <View style={{
+                            flexDirection: 'row',
+                            alignItems: 'flex-start',
+                            justifyContent: 'flex-start',
+                            marginTop:20,
+                        }}>
+                            {/*<Text style={[styles.disclaimerTitle, { minWidth: 90 }]}></Text>*/}
+                            <Text style={[styles.disclaimerDescription, { flex: 1 }]}>
+                                Disclaimer : This assessment is for informational and self-awareness purposes only.
+                                It is not a substitute for professional psychological advice, diagnosis, or treatment.
+                            </Text>
+                        </View>
                     </View>
                 </View>
             </Page>
         </Document>
     );
 }
-
 PdfView.propTypes = {
     data: PropTypes.shape({
         totalScore: PropTypes.number.isRequired,

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import {
     Box,
     Typography,
@@ -354,8 +354,8 @@ const SessionSeminar = () => {
                     <Box sx={{mx: {xs: "10px", sm: '40px', md: '90px', lg: "50px", xl: 'auto'}}}>
                         <StyledTabs value={tabValue} onChange={handleTabChange} variant="scrollable"
                                     scrollButtons="auto">
-                            <Tab label="Upcoming Session"/>
-                            <Tab label="Past Session"/>
+                            {/*<Tab label="Upcoming Session"/>*/}
+                            {/*<Tab label="Past Session"/>*/}
                         </StyledTabs>
 
                         <Box sx={{p: {xs: 2, sm: 3, md: 4}}}>
@@ -363,7 +363,7 @@ const SessionSeminar = () => {
                                 <Grid container spacing={{xs: 2, sm: 3, md: 4}}>
                                     {seminars.filter(s => s.status === 'upcoming').map((seminar) => (
                                         <Grid item xs={12} sm={6} md={6} lg={3} xl={3}
-                                              onClick={() => navigate(`/${seminar.id}/session`)} key={seminar.id}>
+                                               key={seminar.id}>
                                             <StyledCard
                                                 sx={{
                                                     display: 'flex',
@@ -418,6 +418,23 @@ const SessionSeminar = () => {
                                                     </Stack>
 
                                                     <Box>
+                                                        <CardActions sx={{px: {xs: 2, sm: 2}, pt: 0, mb: 2,  width: '100%', maxWidth: 300}}>
+                                                            <StyledButton
+                                                                variant="contained"
+                                                                onClick={() => navigate(`/${seminar.id}/session`)}
+                                                                fullWidth
+                                                                sx={{
+                                                                    bgcolor: 'rgba(255,98,0,0.9)',
+                                                                    color: '#fff',
+                                                                    fontWeight: 600,
+                                                                    py: 1.25,
+                                                                    fontSize: {xs: '0.9rem', sm: '1rem'},
+                                                                }}
+                                                            >
+                                                                Register Now
+                                                            </StyledButton>
+                                                        </CardActions>
+
                                                         <Box sx={{
                                                             display: 'flex',
                                                             justifyContent: 'space-between',

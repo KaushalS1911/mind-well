@@ -522,7 +522,7 @@ const GetInTouch = () => {
                             </Grid>
                         </Grid>
 
-                        <FAQSection/>
+                        {/*<FAQSection/>*/}
                     </Grid>
                 </Grid>
             </Container>

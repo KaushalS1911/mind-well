@@ -366,13 +366,13 @@ const Overthinking = () => {
                                 >
                                     {data.title}
                                 </Typography>
-                                <Box sx={{
-                                    position: 'absolute',
-                                    top: -40,
-                                    left: -50,
-                                    zIndex: 1,
-                                    opacity: 0.7
-                                }}>{doodleSVG}</Box>
+                                {/*<Box sx={{*/}
+                                {/*    position: 'absolute',*/}
+                                {/*    top: -40,*/}
+                                {/*    left: -50,*/}
+                                {/*    zIndex: 1,*/}
+                                {/*    opacity: 0.7*/}
+                                {/*}}>{doodleSVG}</Box>*/}
                                 <Typography
                                     sx={{
                                         color: textBody,
@@ -793,43 +793,43 @@ const Overthinking = () => {
                             {/*    </Box>*/}
                             {/*</Paper>*/}
 
-                            <Paper
-                                elevation={3}
-                                sx={{
-                                    p: 4,
-                                    borderRadius: 4,
-                                    background: 'white',
-                                    boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
-                                    mb: 4,
-                                }}
-                            >
-                                <Typography
-                                    variant="h6"
-                                    sx={{color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: 700}}
-                                >
-                                    Assess Your Situation
-                                </Typography>
-                                <Typography sx={{color: textBody, mb: 3, fontFamily: 'Arial', lineHeight: 1.6}}>
-                                    Take our quick assessment to gain personalized insights and recommendations for
-                                    managing overthinking.
-                                </Typography>
-                                <Button
-                                    fullWidth
-                                    variant="contained"
-                                    sx={{
-                                        backgroundColor: secondary,
-                                        py: 1.5,
-                                        fontFamily: 'Montserrat',
-                                        fontWeight: 700,
-                                        borderRadius: 3,
-                                        transition: 'transform 0.2s',
-                                        '&:hover': {backgroundColor: secondary, transform: 'translateY(-3px)'},
-                                    }}
-                                    onClick={() => navigate("/resources/assessments")}
-                                >
-                                    Start Assessment
-                                </Button>
-                            </Paper>
+                            {/*<Paper*/}
+                            {/*    elevation={3}*/}
+                            {/*    sx={{*/}
+                            {/*        p: 4,*/}
+                            {/*        borderRadius: 4,*/}
+                            {/*        background: 'white',*/}
+                            {/*        boxShadow: '0 8px 32px rgba(1,39,101,0.15)',*/}
+                            {/*        mb: 4,*/}
+                            {/*    }}*/}
+                            {/*>*/}
+                            {/*    <Typography*/}
+                            {/*        variant="h6"*/}
+                            {/*        sx={{color: primary, mb: 2, fontFamily: 'Montserrat', fontWeight: 700}}*/}
+                            {/*    >*/}
+                            {/*        Assess Your Situation*/}
+                            {/*    </Typography>*/}
+                            {/*    <Typography sx={{color: textBody, mb: 3, fontFamily: 'Arial', lineHeight: 1.6}}>*/}
+                            {/*        Take our quick assessment to gain personalized insights and recommendations for*/}
+                            {/*        managing overthinking.*/}
+                            {/*    </Typography>*/}
+                            {/*    <Button*/}
+                            {/*        fullWidth*/}
+                            {/*        variant="contained"*/}
+                            {/*        sx={{*/}
+                            {/*            backgroundColor: secondary,*/}
+                            {/*            py: 1.5,*/}
+                            {/*            fontFamily: 'Montserrat',*/}
+                            {/*            fontWeight: 700,*/}
+                            {/*            borderRadius: 3,*/}
+                            {/*            transition: 'transform 0.2s',*/}
+                            {/*            '&:hover': {backgroundColor: secondary, transform: 'translateY(-3px)'},*/}
+                            {/*        }}*/}
+                            {/*        onClick={() => navigate("/resources/assessments")}*/}
+                            {/*    >*/}
+                            {/*        Start Assessment*/}
+                            {/*    </Button>*/}
+                            {/*</Paper>*/}
 
                             {/*<Paper*/}
                             {/*    elevation={3}*/}

@@ -7,7 +7,7 @@ function Contact() {
     return (
         <Box>
             <Getintouch/>
-            <Map/>
+            {/*<Map/>*/}
         </Box>
     );
 }
