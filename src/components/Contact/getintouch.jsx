@@ -459,7 +459,7 @@ const GetInTouch = () => {
 
     return (
         <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
-            <Container maxWidth="xl" sx={{py: 12, mt: {md: 10, sm: 0}}}>
+            <Container maxWidth="xl" sx={{pt: 12, mt: {md: 10, sm: 0}}}>
                 {/* Header Section */}
                 <Box
                     sx={{

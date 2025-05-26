@@ -324,6 +324,7 @@ const SessionSeminar = () => {
                     mx: {xs: '20px', sm: '70px', md: '90px', xl: '100px'},
                 }}>
                     <Typography
+                        className={"Montserrat"}
                         variant="h1"
                         component="h1"
                         sx={{
