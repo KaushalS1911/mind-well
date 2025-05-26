@@ -65,7 +65,8 @@ const Footer = () => {
                                 margin: "0 0 24px",
                                 fontSize: "16px",
                                 width: {lg: "70%"},
-                                color: "#FFFFFFCC"
+                                color: "#FFFFFFCC",
+                                textAlign: "justify"
                             }}
                         >
                             "Emotionally Yours" provides accessible, professional mental health services for students
@@ -99,7 +100,6 @@ const Footer = () => {
                                 </IconButton>
                             ))}
                         </Box>
-
 
 
                         {/*<Box sx={{display: "flex", mt: 3, gap: 2}}>*/}
@@ -236,7 +236,7 @@ const Footer = () => {
                                         fontSize: "14px",
                                         marginTop: "16px",
                                         display: "flex",
-                                        alignItems: "center"
+                                        textAlign:"justify",
                                     }}
                                 >
                                     <Box sx={{color: "#FE6A00", mr: 1}}>{item.icon}</Box> {item.text}
@@ -391,7 +391,7 @@ const Footer = () => {
                 {/*</Box>*/}
                 {/* --- Disclaimer & Attribution Section Fixed --- */}
                 <Box>
-                    <Divider sx={{ my: 4, borderColor: "#ffffff33", width: "100%" }} />
+                    <Divider sx={{my: 4, borderColor: "#ffffff33", width: "100%"}}/>
                     <Box sx={{
                         maxWidth: "900px",
                         mx: "auto",
@@ -404,7 +404,7 @@ const Footer = () => {
                         <Typography variant="subtitle2" gutterBottom>
                             Disclaimer
                         </Typography>
-                        <Typography variant="body2" sx={{ color: "#FFFFFFCC", mb: 2 }}>
+                        <Typography variant="body2" sx={{color: "#FFFFFFCC", mb: 2}}>
                             We are not a medical service or suicide prevention helpline. If you are feeling
                             suicidal, we suggest you immediately call a suicide prevention helpline like KIRAN:
                             18005990019 (24 hours, 7 days a week).
@@ -413,7 +413,7 @@ const Footer = () => {
                         <Typography variant="subtitle2" gutterBottom>
                             Attribution
                         </Typography>
-                        <Typography variant="body2" sx={{ color: "#FFFFFFCC" }}>
+                        <Typography variant="body2" sx={{color: "#FFFFFFCC"}}>
                             "Emotionally Yours" provides attribution to Freepik for images.
                         </Typography>
                     </Box>

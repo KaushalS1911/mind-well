@@ -974,21 +974,6 @@
 // export default ExamStressGaugeQuestions;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, {useEffect, useState} from 'react';
 import {
     Box,
@@ -1262,122 +1247,6 @@ const getScoreCategory = (score) => {
 };
 
 
-const GaugeChartComponent = ({score, maxScore}) => {
-    const percentage = (score / maxScore) * 100;
-    const data = [
-        {name: 'Score', value: percentage},
-        {name: 'Remaining', value: 100 - percentage}
-    ];
-
-    const getColor = (percentage) => {
-        if (percentage <= 25) return '#4CAF50';
-        if (percentage <= 50) return '#FFC107';
-        if (percentage <= 75) return '#FF9800';
-        return '#F44336';
-    };
-
-    const getStressLevel = (percentage) => {
-        if (percentage <= 25) return 'Low';
-        if (percentage <= 50) return 'Moderate';
-        if (percentage <= 75) return 'High';
-        return 'Severe';
-    };
-
-    return (
-        <Box sx={{
-            width: '100%',
-            height: 300,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            mb: 4,
-            position: 'relative'
-        }}>
-            <Box sx={{
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                        <Pie
-                            data={data}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={80}
-                            outerRadius={100}
-                            startAngle={90}
-                            endAngle={-270}
-                            paddingAngle={5}
-                            dataKey="value"
-                        >
-                            <Cell fill={getColor(percentage)}/>
-                            <Cell fill="#E6EAF3"/>
-                        </Pie>
-                        <Tooltip
-                            formatter={(value) => [`${value.toFixed(1)}%`, '']}
-                            contentStyle={{
-                                backgroundColor: '#FFFFFF',
-                                border: '1px solid #E6EAF3',
-                                borderRadius: '8px',
-                                fontFamily: 'Poppins'
-                            }}
-                        />
-                    </PieChart>
-                </ResponsiveContainer>
-                <Box sx={{
-                    position: 'absolute',
-                    textAlign: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 1
-                }}>
-                    <Typography variant="h2" sx={{
-                        color: getColor(percentage),
-                        fontWeight: 700,
-                        fontFamily: 'Montserrat',
-                        lineHeight: 1,
-                        fontSize: {xs: '3rem', sm: '4rem'}
-                    }}>
-                        {score}
-                    </Typography>
-                    <Typography sx={{
-                        color: '#4B5563',
-                        fontSize: '1rem',
-                        fontFamily: 'Poppins',
-                        fontWeight: 500
-                    }}>
-                        Points
-                    </Typography>
-                </Box>
-            </Box>
-            <Box sx={{
-                mt: 2,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                backgroundColor: `${getColor(percentage)}20`,
-                padding: '8px 16px',
-                borderRadius: '20px',
-                border: `1px solid ${getColor(percentage)}40`
-            }}>
-                <Typography sx={{
-                    color: getColor(percentage),
-                    fontSize: '1rem',
-                    fontFamily: 'Poppins',
-                    fontWeight: 600
-                }}>
-                    {getStressLevel(percentage)} Stress Level
-                </Typography>
-            </Box>
-        </Box>
-    );
-};
-
 const ExamStressGaugeQuestions = () => {
     const navigate = useNavigate();
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -1542,35 +1411,34 @@ const ExamStressGaugeQuestions = () => {
                                 mt: 4,
                             }}
                         >
-                            {/* Save Results Button - Downloads PDF */}
-                            {/*<PDFDownloadLink*/}
-                            {/*    document={<PdfView data={{*/}
-                            {/*        totalScore: totalScore,*/}
-                            {/*        level: result.level,*/}
-                            {/*        interpretation: result.interpretation,*/}
-                            {/*        recommendations: result.recommendations*/}
-                            {/*    }} />}*/}
-                            {/*    fileName="Exam_Stress_Gauge_report.pdf"*/}
-                            {/*    style={{ textDecoration: "none" }}*/}
-                            {/*>*/}
-                            {/*    {({ loading }) => (*/}
-                            {/*        <Button*/}
-                            {/*            variant="outlined"*/}
-                            {/*            sx={{*/}
-                            {/*                color: "#F5811E",*/}
-                            {/*                borderColor: "#F5811E",*/}
-                            {/*                py: 1.5,*/}
-                            {/*                px: 4,*/}
-                            {/*                "&:hover": {*/}
-                            {/*                    borderColor: "#E26C0A",*/}
-                            {/*                    bgcolor: "rgba(245, 129, 30, 0.1)",*/}
-                            {/*                },*/}
-                            {/*            }}*/}
-                            {/*        >*/}
-                            {/*            {loading ? "Preparing..." : "Download Results"}*/}
-                            {/*        </Button>*/}
-                            {/*    )}*/}
-                            {/*</PDFDownloadLink>*/}
+                            <PDFDownloadLink
+                                document={<PdfView data={{
+                                    totalScore: totalScore,
+                                    level: result.level,
+                                    interpretation: result.interpretation,
+                                    recommendations: result.recommendations
+                                }}/>}
+                                fileName="Exam_Stress_Gauge_report.pdf"
+                                style={{textDecoration: "none"}}
+                            >
+                                {({loading}) => (
+                                    <Button
+                                        variant="outlined"
+                                        sx={{
+                                            color: "#F5811E",
+                                            borderColor: "#F5811E",
+                                            py: 1.5,
+                                            px: 4,
+                                            "&:hover": {
+                                                borderColor: "#E26C0A",
+                                                bgcolor: "rgba(245, 129, 30, 0.1)",
+                                            },
+                                        }}
+                                    >
+                                        {loading ? "Preparing..." : "Download Results"}
+                                    </Button>
+                                )}
+                            </PDFDownloadLink>
 
                             <Button
                                 variant="contained"
@@ -1580,7 +1448,7 @@ const ExamStressGaugeQuestions = () => {
                                     color: "#fff",
                                     py: 1.5,
                                     px: 4,
-                                    "&:hover": { bgcolor: "#E26C0A" },
+                                    "&:hover": {bgcolor: "#E26C0A"},
                                 }}
                             >
                                 Return to Assessments
