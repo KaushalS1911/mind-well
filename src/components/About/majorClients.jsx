@@ -85,6 +85,7 @@ const MajorClients = () => {
                     loop={true}
                     autoplay={{
                         delay: 1500,
+
                         disableOnInteraction: false
                     }}
                     allowTouchMove={false}

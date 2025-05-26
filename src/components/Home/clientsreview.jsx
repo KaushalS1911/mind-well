@@ -101,7 +101,6 @@ function ClientsReview() {
                         1280: { slidesPerView: 2 },
                     }}
                     className="testimonial-swiper"
-                    style={{ paddingBottom: "50px" }}
                 >
                     {testimonials.map((testimonial, index) => (
                         <SwiperSlide key={index} style={{ display: "flex", height: "auto" }}>

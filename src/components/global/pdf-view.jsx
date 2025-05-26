@@ -11,14 +11,17 @@ Font.register({
     family: 'PoppinsRegular',
     src: '/font/Poppins-Regular.ttf',
 });
+
 Font.register({
     family: 'PoppinsBold',
     src: '/font/Poppins-Bold.ttf',
 });
+
 Font.register({
     family: 'PoppinsSemiBold',
     src: '/font/Poppins-SemiBold.ttf',
 });
+
 const getColor = (score) => {
     if (score >= 61) return '#ff4d4d';
     if (score >= 41) return '#ffa500';
@@ -26,6 +29,7 @@ const getColor = (score) => {
     if (score >= 11) return '#90EE90';
     return '#47e447';
 };
+
 const useStyles = (score) =>
     useMemo(
         () =>
@@ -59,6 +63,7 @@ const useStyles = (score) =>
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'space-between',
+
                 },
                 name: {
                     fontSize: 11,
@@ -189,12 +194,14 @@ const useStyles = (score) =>
             }),
         [score]
     );
+
 export default function PdfView({data}) {
     const styles = useStyles(data.totalScore);
     const strokeColor = getColor(data.totalScore);
     const percentage = (data.totalScore / 80) * 100;
     const circumference = 2 * Math.PI * 45;
     const offset = circumference - (percentage / 100) * circumference;
+
     const formatDate = (date) => {
         const d = new Date(date);
         let day = d.getDate().toString().padStart(2, '0');
@@ -202,8 +209,10 @@ export default function PdfView({data}) {
         let year = d.getFullYear();
         return `${day}/${month}/${year}`;
     };
+
     const currentDate = formatDate(new Date());
     const recommendations = data.recommendations;
+
     return (
         <Document>
             <Page size="A4" style={styles.page}>
@@ -228,8 +237,8 @@ export default function PdfView({data}) {
                         </View>
                         <View style={styles.personal}>
                             {/*<View style={styles.personaldata}>*/}
-                            <Text style={styles.name}>Name : John-Deo</Text>
-                            <Text style={styles.email}>Email : john12@gmail.com</Text>
+                                <Text style={styles.name}>Name : John-Deo</Text>
+                                <Text style={styles.email}>Email : john12@gmail.com</Text>
                             {/*</View>*/}
                         </View>
                         <Text style={styles.header}>Emotional Awareness Assessment Results</Text>
@@ -262,10 +271,13 @@ export default function PdfView({data}) {
                                 <Text style={styles.outOf}>out of 80</Text>
                                 <Text style={styles.level}>{data.level}</Text>
                             </View>
+
                             <View style={[styles.interpretationContainer, {width: '60%'}]}>
                                 <Text style={styles.interpretation}>{data.interpretation}</Text>
                             </View>
                         </View>
+
+
                         {recommendations && recommendations.length > 0 && (
                             <View style={styles.recommendationsContainer}>
                                 <View style={styles.recommendationHeader}>
@@ -288,6 +300,7 @@ export default function PdfView({data}) {
                                 ))}
                             </View>
                         )}
+
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'flex-start',
@@ -300,12 +313,14 @@ export default function PdfView({data}) {
                                 It is not a substitute for professional psychological advice, diagnosis, or treatment.
                             </Text>
                         </View>
+
                     </View>
                 </View>
             </Page>
         </Document>
     );
 }
+
 PdfView.propTypes = {
     data: PropTypes.shape({
         totalScore: PropTypes.number.isRequired,

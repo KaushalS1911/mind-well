@@ -902,6 +902,7 @@ import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
+import img1 from '../../../assets/images/Resources/Assessments/smiley person images.png'
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -923,6 +924,7 @@ const questions = [
     {
         id: 1,
         text: "Look at this picture. How do you think this person is feeling? (Show a picture of a happy face)",
+        image: img1,
         options: [
             {label: "Happy", value: "0"},
             {label: "Sad", value: "1"},
@@ -1485,34 +1487,34 @@ const EmotionalAwarenessQuestions = () => {
                             }}
                         >
                             {/* Save Results Button - Downloads PDF */}
-                            {/*<PDFDownloadLink*/}
-                            {/*    document={<PdfView data={{*/}
-                            {/*        totalScore: totalScore,*/}
-                            {/*        level: result.level,*/}
-                            {/*        interpretation: result.interpretation,*/}
-                            {/*        recommendations: result.recommendations*/}
-                            {/*    }} />}*/}
-                            {/*    fileName="Emotional_Awareness_Report.pdf"*/}
-                            {/*    style={{ textDecoration: "none" }}*/}
-                            {/*>*/}
-                            {/*    {({ loading }) => (*/}
-                            {/*        <Button*/}
-                            {/*            variant="outlined"*/}
-                            {/*            sx={{*/}
-                            {/*                color: "#F5811E",*/}
-                            {/*                borderColor: "#F5811E",*/}
-                            {/*                py: 1.5,*/}
-                            {/*                px: 4,*/}
-                            {/*                "&:hover": {*/}
-                            {/*                    borderColor: "#E26C0A",*/}
-                            {/*                    bgcolor: "rgba(245, 129, 30, 0.1)",*/}
-                            {/*                },*/}
-                            {/*            }}*/}
-                            {/*        >*/}
-                            {/*            {loading ? "Preparing..." : "Download Results"}*/}
-                            {/*        </Button>*/}
-                            {/*    )}*/}
-                            {/*</PDFDownloadLink>*/}
+                            <PDFDownloadLink
+                                document={<PdfView data={{
+                                    totalScore: totalScore,
+                                    level: result.level,
+                                    interpretation: result.interpretation,
+                                    recommendations: result.recommendations
+                                }} />}
+                                fileName="Emotional_Awareness_Report.pdf"
+                                style={{ textDecoration: "none" }}
+                            >
+                                {({ loading }) => (
+                                    <Button
+                                        variant="outlined"
+                                        sx={{
+                                            color: "#F5811E",
+                                            borderColor: "#F5811E",
+                                            py: 1.5,
+                                            px: 4,
+                                            "&:hover": {
+                                                borderColor: "#E26C0A",
+                                                bgcolor: "rgba(245, 129, 30, 0.1)",
+                                            },
+                                        }}
+                                    >
+                                        {loading ? "Preparing..." : "Download Results"}
+                                    </Button>
+                                )}
+                            </PDFDownloadLink>
 
                             <Button
                                 variant="contained"
@@ -1569,7 +1571,7 @@ const EmotionalAwarenessQuestions = () => {
                     </Box>
 
                     <Typography sx={{
-                        mb: 4,
+                        mb:2,
                         color: '#012765',
                         fontSize: '20px',
                         fontWeight: 600,
@@ -1578,6 +1580,25 @@ const EmotionalAwarenessQuestions = () => {
                     }}>
                         {questions[currentQuestion].text}
                     </Typography>
+                    {questions[currentQuestion].image ? (
+                        <Box
+                            sx={{
+                                height: "180px",
+                                width: "180px",
+                            }}
+                        >
+                            <img
+                                src={questions[currentQuestion].image}
+                                alt="smiley image"
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "contain",
+                                }}
+                            />
+                        </Box>
+                    ) : null}
+
 
                     <FormControl component="fieldset" sx={{width: '100%', mb: 4}}>
                         <RadioGroup

@@ -1308,7 +1308,7 @@ const getScoreCategory = (score) => {
     if (score >= 61 && score <= 80) {
         return {
             level: "High Academic Stress",
-            interpretation: " The student experiences high levels of academic stress but has developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
+            interpretation: "The student experiences high levels of academic stress but has developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
             recommendations: [
                 {
                     title: "Maintain Current Strategies",
@@ -1384,7 +1384,7 @@ const getScoreCategory = (score) => {
     } else {
         return {
             level: "Low Academic Stress",
-            interpretation: "The student experiences low levels of academic stress but may still benefit from improved coping strategies. Even though the stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
+            interpretation: "The student experiences low levels of academic stress but may still benefit from improved coping strategies. Even though the stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.The student experiences low levels of academic stress but may still benefit from improved coping strategies. Even though the stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
             recommendations: [
                 {
                     title: "Proactive Coping",
@@ -1761,35 +1761,34 @@ const AcademicStressQuestions = () => {
                                 mt: 4,
                             }}
                         >
-                            {/* Save Results Button - Downloads PDF */}
-                            {/*<PDFDownloadLink*/}
-                            {/*    document={<PdfView data={{*/}
-                            {/*        totalScore: totalScore,*/}
-                            {/*        level: result.level,*/}
-                            {/*        interpretation: result.interpretation,*/}
-                            {/*        recommendations: result.recommendations*/}
-                            {/*    }} />}*/}
-                            {/*    fileName="Academic_Stress_Report.pdf"*/}
-                            {/*    style={{ textDecoration: "none" }}*/}
-                            {/*>*/}
-                            {/*    {({ loading }) => (*/}
-                            {/*        <Button*/}
-                            {/*            variant="outlined"*/}
-                            {/*            sx={{*/}
-                            {/*                color: "#F5811E",*/}
-                            {/*                borderColor: "#F5811E",*/}
-                            {/*                py: 1.5,*/}
-                            {/*                px: 4,*/}
-                            {/*                "&:hover": {*/}
-                            {/*                    borderColor: "#E26C0A",*/}
-                            {/*                    bgcolor: "rgba(245, 129, 30, 0.1)",*/}
-                            {/*                },*/}
-                            {/*            }}*/}
-                            {/*        >*/}
-                            {/*            {loading ? "Preparing..." : "Download Results"}*/}
-                            {/*        </Button>*/}
-                            {/*    )}*/}
-                            {/*</PDFDownloadLink>*/}
+                            <PDFDownloadLink
+                                document={<PdfView data={{
+                                    totalScore: totalScore,
+                                    level: result.level,
+                                    interpretation: result.interpretation,
+                                    recommendations: result.recommendations
+                                }} />}
+                                fileName="Academic_Stress_Report.pdf"
+                                style={{ textDecoration: "none" }}
+                            >
+                                {({ loading }) => (
+                                    <Button
+                                        variant="outlined"
+                                        sx={{
+                                            color: "#F5811E",
+                                            borderColor: "#F5811E",
+                                            py: 1.5,
+                                            px: 4,
+                                            "&:hover": {
+                                                borderColor: "#E26C0A",
+                                                bgcolor: "rgba(245, 129, 30, 0.1)",
+                                            },
+                                        }}
+                                    >
+                                        {loading ? "Preparing..." : "Download Results"}
+                                    </Button>
+                                )}
+                            </PDFDownloadLink>
 
                             <Button
                                 variant="contained"
