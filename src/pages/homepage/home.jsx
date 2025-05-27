@@ -49,7 +49,7 @@ function Home() {
             <HowEmotionallyYoursinCoachingInstitute/>
             <HowEmotionallyYoursinWorkplaces/>
             <Assessments sx={{ p: {sm:"96px 0 0 0",xs:"50px 0 0 0"}}}/>
-            {/*<Struggling/>*/}
+            <Struggling/>
             {/*<EmployeeMentalHealth/>*/}
             <GallerySection/>
             <MajorClients/>
