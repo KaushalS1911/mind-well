@@ -6,7 +6,7 @@ import SessionSeminar from "../../components/Session/sessionSeminar.jsx";
 function SessionPage() {
     return (
         <Box>
-            <Struggling/>
+            {/*<Struggling/>*/}
             <SessionSeminar/>
         </Box>
     );

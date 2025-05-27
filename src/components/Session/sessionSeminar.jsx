@@ -316,7 +316,7 @@ const SessionSeminar = () => {
     };
 
     return (
-        <Box sx={{pt: {xs: 8, md: 13},}}>
+        <Box sx={{pt: {xs: 8, md: 18},}}>
             <Container maxWidth="xl">
                 <Box sx={{
                     textAlign: 'center',
