@@ -1,7 +1,20 @@
 import React, {useMemo} from 'react';
 import PropTypes from 'prop-types';
-import {Page, Font, View, Text, Document, StyleSheet, Svg, Circle, Image} from '@react-pdf/renderer';
-import img from '../../assets/Emotionally Yours Logo.png'
+import {
+    Page,
+    Font,
+    View,
+    Text,
+    Document,
+    StyleSheet,
+    Svg,
+    Circle,
+    Image,
+    Line,
+    Polygon,
+    Path
+} from '@react-pdf/renderer';
+import img from '../../assets/Emotionally Yours Logo.png';
 
 Font.register({
     family: 'HindiPoppins',
@@ -11,23 +24,21 @@ Font.register({
     family: 'PoppinsRegular',
     src: '/font/Poppins-Regular.ttf',
 });
-
 Font.register({
     family: 'PoppinsBold',
     src: '/font/Poppins-Bold.ttf',
 });
-
 Font.register({
     family: 'PoppinsSemiBold',
     src: '/font/Poppins-SemiBold.ttf',
 });
 
-const getColor = (score) => {
-    if (score >= 61) return '#ff4d4d';
-    if (score >= 41) return '#ffa500';
-    if (score >= 21) return '#ffdd00';
-    if (score >= 11) return '#90EE90';
-    return '#47e447';
+const getColorAndRisk = (score) => {
+    if (score >= 61) return {color: '#ff4d4d', risk: 'Very High Risk'};
+    if (score >= 41) return {color: '#ffa500', risk: 'High Risk'};
+    if (score >= 21) return {color: '#ffdd00', risk: 'Medium Risk'};
+    if (score >= 11) return {color: '#90EE90', risk: 'Low Risk'};
+    return {color: '#47e447', risk: 'Very Low Risk'};
 };
 
 const useStyles = (score) =>
@@ -44,26 +55,18 @@ const useStyles = (score) =>
                 card: {
                     width: '100%',
                     backgroundColor: '#FFFFFF',
-                    padding: "0 20px 20px 20px",
+                    padding: '0 20px 20px 20px',
                     borderRadius: 10,
                     textAlign: 'center',
                     boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
                 },
-                // personaldata: {
-                //     display: 'flex',
-                //     flexDirection: 'row',
-                //     alignItems: 'center',
-                //     justifyContent: 'space-between',
-                //     marginBottom: 3
-                // },
                 personal: {
                     marginBottom: 8,
-                    borderBottom: "1px solid #FF7F1E",
+                    borderBottom: '1px solid #FF7F1E',
                     display: 'flex',
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-
                 },
                 name: {
                     fontSize: 11,
@@ -71,6 +74,7 @@ const useStyles = (score) =>
                     color: '#0D2152',
                     fontFamily: 'PoppinsSemiBold',
                     marginBottom: 10,
+                    marginLeft: 8,
                 },
                 email: {
                     fontSize: 11,
@@ -86,7 +90,7 @@ const useStyles = (score) =>
                     color: '#0D2152',
                     alignItems: 'center',
                     display: 'flex',
-                    marginTop:8
+                    marginTop: 8,
                 },
                 header: {
                     fontSize: 14,
@@ -94,7 +98,7 @@ const useStyles = (score) =>
                     color: '#0D2152',
                     marginBottom: 10,
                     fontFamily: 'PoppinsBold',
-                    textAlign: "center"
+                    textAlign: 'center',
                 },
                 scoreContainer: {
                     display: 'flex',
@@ -103,24 +107,29 @@ const useStyles = (score) =>
                     flexDirection: 'column',
                     marginBottom: 10,
                 },
-                score: {
-                    fontSize: 32,
-                    fontWeight: 'bold',
-                    fontFamily: 'PoppinsBold',
-                    color: '#0D2152',
-                    position: 'absolute',
-                },
-                outOf: {
-                    fontSize: 10,
-                    color: '#4A5568',
-                },
                 svgContainer: {
                     position: 'relative',
-                    width: 100,
-                    height: 100,
+                    width: 220,
+                    height: 140,
                     justifyContent: 'center',
                     alignItems: 'center',
                     marginBottom: 10,
+                },
+                riskLabel: {
+                    backgroundColor: '#FFC107',
+                    borderRadius: 5,
+                    height: 30,
+                    paddingHorizontal: 10,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginTop: 10
+                },
+
+                riskLabelText: {
+                    fontSize: 10,
+                    color: '#000000',
+                    fontFamily: 'PoppinsBold',
+                    textAlign: 'center',
                 },
                 level: {
                     fontSize: 12,
@@ -136,19 +145,14 @@ const useStyles = (score) =>
                 },
                 interpretation: {
                     fontSize: 9,
-                    textAlign: "justify",
+                    textAlign: 'justify',
                     color: '#333',
-                    // fontFamily: 'HindiPoppins',
                 },
                 recommendationCard: {
                     backgroundColor: '#FBF6F2',
                     padding: 10,
                     borderRadius: 8,
                     marginTop: 5,
-                },
-                recommendationsContainer: {
-                    marginTop: 5,
-                    width: '100%',
                 },
                 recommendationHeader: {
                     display: 'flex',
@@ -197,10 +201,12 @@ const useStyles = (score) =>
 
 export default function PdfView({data}) {
     const styles = useStyles(data.totalScore);
-    const strokeColor = getColor(data.totalScore);
-    const percentage = (data.totalScore / 80) * 100;
-    const circumference = 2 * Math.PI * 45;
-    const offset = circumference - (percentage / 100) * circumference;
+    const {color: needleColor, risk: riskLabel} = getColorAndRisk(data.totalScore);
+    const totalMarks = 80;
+    const radius = 90;
+    const centerX = 110;
+    const centerY = 110;
+    const strokeWidth = 12;
 
     const formatDate = (date) => {
         const d = new Date(date);
@@ -210,8 +216,112 @@ export default function PdfView({data}) {
         return `${day}/${month}/${year}`;
     };
 
+    const name = sessionStorage.getItem('fullName');
+    const email = sessionStorage.getItem('email');
+
     const currentDate = formatDate(new Date());
     const recommendations = data.recommendations;
+
+    const segments = [
+        {color: '#47e447', startAngle: -90, endAngle: -60, threshold: 0},
+        {color: '#90EE90', startAngle: -60, endAngle: -30, threshold: 13.33},
+        {color: '#ffdd00', startAngle: -30, endAngle: 0, threshold: 26.66},
+        {color: '#ffa500', startAngle: 0, endAngle: 30, threshold: 40},
+        {color: '#ff6600', startAngle: 30, endAngle: 60, threshold: 53.33},
+        {color: '#ff4d4d', startAngle: 60, endAngle: 90, threshold: 66.66}
+    ];
+
+    const angle = ((data.totalScore / totalMarks) * 180 - 180) * (Math.PI / 180);
+    const needleLength = radius - 25;
+    const needleTipX = centerX + needleLength * Math.cos(angle);
+    const needleTipY = centerY + needleLength * Math.sin(angle);
+
+    const arrowSize = 8;
+    const arrowAngle = angle + Math.PI;
+    const needleBaseLeftX = centerX + 7 * Math.cos(angle + Math.PI / 2);
+    const needleBaseLeftY = centerY + 7 * Math.sin(angle + Math.PI / 2);
+
+    const needleBaseRightX = centerX + 7 * Math.cos(angle - Math.PI / 2);
+    const needleBaseRightY = centerY + 7 * Math.sin(angle - Math.PI / 2);
+
+    const createSegmentPath = (startAngle, endAngle, radius, centerX, centerY) => {
+        const startAngleRad = (startAngle - 90) * (Math.PI / 180);
+        const endAngleRad = (endAngle - 90) * (Math.PI / 180);
+        const outerRadius = radius + 15;
+        const innerRadius = radius - 15;
+
+        const x1 = centerX + innerRadius * Math.cos(startAngleRad);
+        const y1 = centerY + innerRadius * Math.sin(startAngleRad);
+        const x2 = centerX + outerRadius * Math.cos(startAngleRad);
+        const y2 = centerY + outerRadius * Math.sin(startAngleRad);
+
+        const x3 = centerX + outerRadius * Math.cos(endAngleRad);
+        const y3 = centerY + outerRadius * Math.sin(endAngleRad);
+        const x4 = centerX + innerRadius * Math.cos(endAngleRad);
+        const y4 = centerY + innerRadius * Math.sin(endAngleRad);
+
+        const largeArc = endAngle - startAngle > 180 ? 1 : 0;
+        return `M ${x1} ${y1} L ${x2} ${y2} A ${outerRadius} ${outerRadius} 0 ${largeArc} 1 ${x3} ${y3} L ${x4} ${y4} A ${innerRadius} ${innerRadius} 0 ${largeArc} 0 ${x1} ${y1}`;
+    };
+
+    const gaugeChart = (
+        <Svg width="220" height="140" viewBox="0 0 220 140">
+            {segments.map((segment, index) => {
+                const scorePercentage = (data.totalScore / totalMarks) * 100;
+                const isActive = scorePercentage >= segment.threshold;
+
+                return (
+                    <Path
+                        key={index}
+                        d={createSegmentPath(segment.startAngle, segment.endAngle, radius, centerX, centerY)}
+                        fill={segment.color}
+                        stroke="#FFFFFF"
+                        strokeWidth="2"
+                    />
+                );
+            })}
+
+            {/*<Line*/}
+            {/*    x1={centerX}*/}
+            {/*    y1={centerY}*/}
+            {/*    x2={needleEndX}*/}
+            {/*    y2={needleEndY}*/}
+            {/*    stroke="#2D3748"*/}
+            {/*    strokeWidth="3"*/}
+            {/*/>*/}
+
+            <Polygon
+                points={`
+                    ${needleBaseLeftX},${needleBaseLeftY}
+                    ${needleTipX},${needleTipY}
+                    ${needleBaseRightX},${needleBaseRightY}
+                `}
+                fill="#F97316"
+                stroke="#2D3748"
+                strokeWidth="1"
+            />
+
+            <Circle
+                cx={centerX}
+                cy={centerY}
+                r={7}
+                fill="#2D3748"
+            />
+
+            <Text
+                style={{
+                    x: centerX,
+                    y: centerY + 30,
+                    fontSize: 22,
+                    fontFamily: 'PoppinsBold',
+                    textAnchor: 'middle',
+                    fill: '#2D3748',
+                }}
+            >
+                {data.totalScore}
+            </Text>
+        </Svg>
+    );
 
     return (
         <Document>
@@ -222,7 +332,7 @@ export default function PdfView({data}) {
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'space-between',
-                            flexDirection:"row"
+                            flexDirection: 'row',
                         }}>
                             <View>
                                 <Image source={img} style={{
@@ -236,10 +346,8 @@ export default function PdfView({data}) {
                             </View>
                         </View>
                         <View style={styles.personal}>
-                            {/*<View style={styles.personaldata}>*/}
-                                <Text style={styles.name}>Name : John-Deo</Text>
-                                <Text style={styles.email}>Email : john12@gmail.com</Text>
-                            {/*</View>*/}
+                            <Text style={styles.name}>Name : {name}</Text>
+                            <Text style={styles.email}>Email : {email}</Text>
                         </View>
                         <Text style={styles.header}>Emotional Awareness Assessment Results</Text>
                         <View style={{
@@ -252,32 +360,17 @@ export default function PdfView({data}) {
                         }}>
                             <View style={[styles.scoreContainer, {width: '40%', alignItems: 'center'}]}>
                                 <View style={styles.svgContainer}>
-                                    <Svg width="100" height="100" viewBox="0 0 100 100">
-                                        <Circle cx="50" cy="50" r="45" stroke="#E3EAF6" strokeWidth="10" fill="none"/>
-                                        <Circle
-                                            cx="50"
-                                            cy="50"
-                                            r="45"
-                                            stroke={strokeColor}
-                                            strokeWidth="10"
-                                            fill="none"
-                                            strokeDasharray={`${circumference}`}
-                                            strokeDashoffset={`${offset}`}
-                                            strokeLinecap="round"
-                                        />
-                                    </Svg>
-                                    <Text style={styles.score}>{data.totalScore}</Text>
+                                    {gaugeChart}
+                                    <View style={[styles.riskLabel]}>
+                                        <Text style={styles.riskLabelText}>{riskLabel}</Text>
+                                    </View>
+                                    <Text style={styles.level}>{data.level}</Text>
                                 </View>
-                                <Text style={styles.outOf}>out of 80</Text>
-                                <Text style={styles.level}>{data.level}</Text>
                             </View>
-
                             <View style={[styles.interpretationContainer, {width: '60%'}]}>
                                 <Text style={styles.interpretation}>{data.interpretation}</Text>
                             </View>
                         </View>
-
-
                         {recommendations && recommendations.length > 0 && (
                             <View style={styles.recommendationsContainer}>
                                 <View style={styles.recommendationHeader}>
@@ -288,32 +381,30 @@ export default function PdfView({data}) {
                                         key={index}
                                         style={[
                                             styles.recommendationCard,
-                                            rec.title ? {marginBottom: 10} : {}
+                                            rec.title ? {marginBottom: 10} : {},
                                         ]}
                                     >
                                         {rec.title && (
-                                            <Text
-                                                style={styles.recommendationBoxTitle}>{rec.title}{rec.title ? ":" : ""}</Text>
+                                            <Text style={styles.recommendationBoxTitle}>
+                                                {rec.title}{rec.title ? ':' : ''}
+                                            </Text>
                                         )}
                                         <Text style={styles.recommendationDescription}>{rec.description}</Text>
                                     </View>
                                 ))}
                             </View>
                         )}
-
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'flex-start',
                             justifyContent: 'flex-start',
-                            marginTop:20,
+                            marginTop: 20,
                         }}>
-                            {/*<Text style={[styles.disclaimerTitle, { minWidth: 90 }]}></Text>*/}
-                            <Text style={[styles.disclaimerDescription, { flex: 1 }]}>
+                            <Text style={[styles.disclaimerDescription, {flex: 1}]}>
                                 Disclaimer : This assessment is for informational and self-awareness purposes only.
                                 It is not a substitute for professional psychological advice, diagnosis, or treatment.
                             </Text>
                         </View>
-
                     </View>
                 </View>
             </Page>
@@ -324,15 +415,13 @@ export default function PdfView({data}) {
 PdfView.propTypes = {
     data: PropTypes.shape({
         totalScore: PropTypes.number.isRequired,
-        result: PropTypes.shape({
-            level: PropTypes.string.isRequired,
-            interpretation: PropTypes.string.isRequired,
-            recommendations: PropTypes.arrayOf(
-                PropTypes.shape({
-                    title: PropTypes.string.isRequired,
-                    description: PropTypes.string.isRequired,
-                })
-            ).isRequired,
-        }).isRequired,
+        level: PropTypes.string.isRequired,
+        interpretation: PropTypes.string.isRequired,
+        recommendations: PropTypes.arrayOf(
+            PropTypes.shape({
+                title: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired,
+            })
+        ).isRequired,
     }).isRequired,
 };

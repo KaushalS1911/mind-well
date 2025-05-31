@@ -1296,6 +1296,7 @@ const ExamStressGaugeQuestions = () => {
                             px: {xs: 2, md: 10},
                             display: 'flex',
                             flexDirection: 'column',
+                            justifyContent:"center",
                         }}>
                         {/* Header Section */}
                         <Box sx={{textAlign: 'center', mb: 4}}>

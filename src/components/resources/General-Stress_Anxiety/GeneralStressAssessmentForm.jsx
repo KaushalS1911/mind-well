@@ -47,10 +47,13 @@ const GeneralStressAssessmentForm = () => {
             email: Yup.string().email("Invalid email").required("Email is required"),
             age: Yup.number().required("Age is required"),
         }),
-        onSubmit: () => {
+        onSubmit: (values) => {
+            sessionStorage.setItem("fullName", values.fullName);
+            sessionStorage.setItem("email", values.email);
             navigate("/assessments/general-stress/questions");
         },
     });
+
 
     const renderTextField = (name, label, type = "text") => (
         <TextField
@@ -100,7 +103,7 @@ const GeneralStressAssessmentForm = () => {
             // backgroundColor: '#F3F4F6',
             padding: { sm: "120px 0", xs: "80px 0" },
             mt: { md: 5, xs: 0 },
-            mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
+            mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' },
         }}>
             <Box className="Montserrat" sx={{
                 fontWeight: 700,

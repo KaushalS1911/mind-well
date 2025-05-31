@@ -1264,6 +1264,7 @@ const WorkLifeBalanceQuestions = () => {
                             minHeight: '100vh',
                             display: 'flex',
                             flexDirection: 'column',
+                            justifyContent:"center",
                         }}>
                         {/* Header Section */}
                         <Box sx={{textAlign: 'center', mb: 4}}>
