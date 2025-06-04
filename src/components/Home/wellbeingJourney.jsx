@@ -43,42 +43,42 @@ const WellbeingJourney = () => {
             name: 'Feel Happier',
             icon: <EmojiEmotionsIcon/>,
             color: '#a98bf5',
-            content: 'Discover techniques and practices to boost your mood, increase positive emotions, and find more joy in everyday experiences.',
+            content: 'Discover techniques and practices to boost your mood, increase positive emotions, and find more joy in everyday experiences',
             image: img,
         },
         {
             name: 'Be Mindful',
             icon: <SpaIcon/>,
             color: '#84c77a',
-            content: 'Learn mindfulness techniques to stay present, appreciate each moment, and develop a deeper awareness of yourself and your surroundings.',
+            content: 'Learn mindfulness techniques to stay present, appreciate each moment, and develop a deeper awareness of yourself and your surroundings',
             image: img1,
         },
         {
             name: 'Reduce Worry',
             icon: <PsychologyIcon/>,
             color: '#e8a87c',
-            content: 'Find effective strategies to manage excessive worry, overcome anxious thoughts, and develop a more peaceful mindset.',
+            content: 'Find effective strategies to manage excessive worry, overcome anxious thoughts, and develop a more peaceful mindset',
             image: img2,
         },
         {
             name: 'Manage Stress',
             icon: <SelfImprovementIcon/>,
             color: '#66c7d4',
-            content: 'Explore friendly approaches to handling stress, finding ways to navigate life\'s challenges with resilience and a calm, balanced mindset.',
+            content: 'Explore friendly approaches to handling stress, finding ways to navigate life\'s challenges with resilience and a calm, balanced mindset',
             image: img3,
         },
         {
             name: 'Increase Productivity',
             icon: <AlarmIcon/>,
             color: '#2dc692',
-            content: 'Discover methods to enhance your focus, organize your tasks effectively, and accomplish your goals with greater efficiency and satisfaction.',
+            content: 'Discover methods to enhance your focus, organize your tasks effectively, and accomplish your goals with greater efficiency and satisfaction',
             image: img4,
         },
         {
             name: 'Improve Sleep',
             icon: <NightsStayIcon/>,
             color: '#4a77c5',
-            content: 'Learn techniques for better sleep quality, establish healthy bedtime routines, and wake up feeling refreshed and energized.',
+            content: 'Learn techniques for better sleep quality, establish healthy bedtime routines, and wake up feeling refreshed and energized',
             image: img5,
         },
     ];
@@ -130,7 +130,7 @@ const WellbeingJourney = () => {
                             lineHeight: '1.5',
                         }}
                     >
-                        Select from a range of psychology-backed wellness plans tailored to your needs. Each plan offers personalized goals and expert-guided interventions to support your journey toward emotional and mental well-being.
+                        Select from a range of psychology-backed wellness plans tailored to your needs. Each plan offers personalized goals and expert-guided interventions to support your journey toward emotional and mental well-being
                     </Typography>
                 </Box>
 

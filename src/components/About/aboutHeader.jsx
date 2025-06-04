@@ -106,7 +106,7 @@ const AboutHeader = () => {
                         paragraph
                         sx={{ color: 'rgba(255,255,255,0.7)', mb: 4, maxWidth: "lg", mx: "auto" }}
                     >
-                        We're on a mission to empower individuals and organizations through emotional intelligence and well-being.
+                        We're on a mission to empower individuals and organizations through emotional intelligence and well-being
                     </Typography>
                 </Container>
             </Box>
@@ -133,7 +133,7 @@ const AboutHeader = () => {
                                     "Emotionally Yours" is an initiative by MTPL, a private limited company established in 2022 and
                                     recognised under the Start-Up India programme. We design structured, process-oriented programmes
                                     that enhance emotional intelligence and cultivate transformative mindsets. Our mission is to empower
-                                    individuals and organisations to build resilience, navigate challenges with clarity, and nurture meaningful relationships.
+                                    individuals and organisations to build resilience, navigate challenges with clarity, and nurture meaningful relationships
                                 </Typography>
                             </StyledPaper>
                         </Grid>

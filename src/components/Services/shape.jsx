@@ -248,7 +248,7 @@ const HeroSection = () => (
                     }}
                 >
                     Designed for K12 students, this emotional wellness program aligns with students to build emotional
-                    awareness, regulation, and the ability to recognize and manage emotions.
+                    awareness, regulation, and the ability to recognize and manage emotions
                 </Typography>
             </Box>
         </Container>
@@ -287,7 +287,7 @@ const ProgramOverview = () => {
                         esteemed academic institutions, builds emotional awareness, regulation, and the ability
                         to recognize and manage emotions.
                         Through expert-led training and interactive workshops, students enhance academic
-                        performance and emotional intelligence—laying the foundation for lifelong success.
+                        performance and emotional intelligence—laying the foundation for lifelong success
                     </Typography>
                 </Grid>
                 <Grid item xs={12} lg={4}>

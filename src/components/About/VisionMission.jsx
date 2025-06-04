@@ -40,8 +40,8 @@ const sections = [
         title: "Our Vision",
         icon: <PublicIcon sx={{fontSize: 32, color: "#012765"}}/>,
         content: [
-            'At "Emotionally Yours", we envision becoming India’s leading platform for emotional wellness—dedicated to shaping emotionally intelligent, resilient, and high-achieving individuals across academic and professional landscapes.',
-            "We see a future where every student and professional is equipped with the right emotional guidance and digital tools to unlock their true potential and leave a meaningful imprint on the world. By elevating productivity, strengthening emotional depth, nurturing essential life skills, and enabling growth-centric environments, we are committed to creating lasting, measurable change that empowers people to thrive.",
+            'At "Emotionally Yours", we envision becoming India’s leading platform for emotional wellness—dedicated to shaping emotionally intelligent, resilient, and high-achieving individuals across academic and professional landscapes',
+            "We see a future where every student and professional is equipped with the right emotional guidance and digital tools to unlock their true potential and leave a meaningful imprint on the world. By elevating productivity, strengthening emotional depth, nurturing essential life skills, and enabling growth-centric environments, we are committed to creating lasting, measurable change that empowers people to thrive",
         ],
         image: img1,
     },
@@ -49,8 +49,8 @@ const sections = [
         title: "Our Mission",
         icon: <TrackChangesIcon sx={{fontSize: 32, color: "#012765"}}/>,
         content: [
-            "Our mission is to empower academic institutions and workplaces with impactful emotional wellness solutions that elevate performance, enrich growth, and support holistic development.",
-            "Through structured programmes and insight-driven guidance, we cultivate resilient mindsets and enable environments where individuals and organisations thrive.",
+            "Our mission is to empower academic institutions and workplaces with impactful emotional wellness solutions that elevate performance, enrich growth, and support holistic development",
+            "Through structured programmes and insight-driven guidance, we cultivate resilient mindsets and enable environments where individuals and organisations thrive",
         ],
         image: img2,
     },
@@ -58,8 +58,8 @@ const sections = [
         title: "Goals",
         icon: <FlagOutlinedIcon sx={{fontSize: 32, color: "#012765"}}/>,
         content: [
-            'At "Emotionally Yours", our goal is to empower educational and professional spaces with transformative emotional wellness solutions. We aim to integrate emotional intelligence into everyday systems to enhance performance, support personal growth, and drive holistic development.',
-            "Through structured, outcome-focused programs, we cultivate emotionally resilient individuals and thriving environments where growth is intentional and lasting.",
+            'At "Emotionally Yours", our goal is to empower educational and professional spaces with transformative emotional wellness solutions. We aim to integrate emotional intelligence into everyday systems to enhance performance, support personal growth, and drive holistic development',
+            "Through structured, outcome-focused programs, we cultivate emotionally resilient individuals and thriving environments where growth is intentional and lasting",
         ],
         image: img3,
     },

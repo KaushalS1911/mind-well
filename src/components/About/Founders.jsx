@@ -106,7 +106,7 @@ const founders = [
         qr:img6,
         role: "Founder & Director",
         name: "Pandey Nidhi",
-        description: "Mass-com Graduate with experience in Media and Entertainment transitioned herself to a Therapeutic Counsellor.",
+        description: "Mass-com Graduate with experience in Media and Entertainment transitioned herself to a Therapeutic Counsellor",
         link: "https://www.linkedin.com/in/pandey-nidhii-2902ba219/",
     },
     {
@@ -114,7 +114,7 @@ const founders = [
         qr:img7,
         role: "Founder & CBO",
         name: "Devesh Tripathi",
-        description: "MBA from IIT(Dhanbad) with over 24 years of experience in Corporate World. A Mental Health Advocate and Life Coach.",
+        description: "MBA from IIT(Dhanbad) with over 24 years of experience in Corporate World. A Mental Health Advocate and Life Coach",
         link: "https://www.linkedin.com/in/devesh-tripathi-22b75a14/",
     },
     {
@@ -122,7 +122,7 @@ const founders = [
         qr:img8,
         role: "Founder & Director",
         name: "Ashutosh Mishra",
-        description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid.",
+        description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid",
         link: "https://www.linkedin.com/in/ashutosh-mishra-3240b68/",
     },
     // {
@@ -179,7 +179,7 @@ const Founders = ({ icon = <PersonIcon /> }) => {
                         lineHeight: '25px',
                     }}
                 >
-                    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey.
+                    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey
                 </Typography>
 
                 <Grid container spacing={3}>

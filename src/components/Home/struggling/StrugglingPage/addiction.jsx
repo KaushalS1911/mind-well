@@ -22,7 +22,7 @@ import img17 from '../../../../assets/images/Home/Struggling/Addictiontime.jpg';
 
 const addictionData = {
     title: 'Let’s Talk About Addiction: Why Quitting Is Essential for a Healthier Life',
-    description: 'Discover effective strategies to break free from addiction and build a healthier, happier life.',
+    description: 'Discover effective strategies to break free from addiction and build a healthier, happier life',
     image: img3,
     image1: img10,
     firstimage: img17,
@@ -39,7 +39,7 @@ const addictionData = {
             title: 'Understanding Addiction: Definitions and Types :',
             content: [
                 {
-                    text: 'Addiction is a strong dependence on a substance or behavior. It can be about drugs, alcohol, gambling, or even screens like social media or video games. These habits take control, making it tough to stop even when they cause harm. Not all addictions are the same, but they all change how the brain works.',
+                    text: 'Addiction is a strong dependence on a substance or behavior. It can be about drugs, acohol, gambling, or even screens like social media or video games. These habits take control, making it tough to stop even when they cause harm. Not all addictions are the same, but they all change how the brain works',
                 },
             ],
         },
@@ -47,7 +47,7 @@ const addictionData = {
             title: 'How Addiction Affects the Brain :',
             content: [
                 {
-                    text: 'When you use an addictive substance or engage in certain behaviors, your brain releases dopamine—a chemical that makes you feel good. Over time, your brain starts to rely on these feelings. It’s like your reward system gets hijacked. The more you repeat the act, the harder it becomes to feel happy or normal without it. Studies show that addiction physically changes the brain, making quitting a challenge.',
+                    text: 'When you use an addictive substance or engage in certain behaviors, your brain releases dopamine—a chemical that makes you feel good. Over time, your brain starts to rely on these feelings. It’s like your reward system gets hijacked. The more you repeat the act, the harder it becomes to feel happy or normal without it. Studies show that addiction physically changes the brain, making quitting a challenge',
                 },
             ],
         },
@@ -55,7 +55,7 @@ const addictionData = {
             title: 'Factors Contributing to Addiction :',
             content: [
                 {
-                    text: 'Many things can make you more prone to addiction. Genetics play a role—if family members have addiction issues, you might too. The environment matters as well; stress, peer pressure, or trauma can push someone toward addictive behaviours. Mental health issues like depression or anxiety often go together with addiction, making recovery even harder without help.',
+                    text: 'Many things can make you more prone to addiction. Genetics play a role—if family members have addiction issues, you might too. The environment matters as well; stress, peer pressure, or trauma can push someone toward addictive behaviours. Mental health issues like depression or anxiety often go together with addiction, making recovery even harder without help',
                 },
             ],
         },
@@ -64,19 +64,19 @@ const addictionData = {
             content: [
                 {
                     subtitle: 'Physical Health Risks',
-                    text: 'Continuing addiction damages your body. Long-term alcohol use can lead to liver disease, while drugs might cause heart problems or neurological damage. Overdose is a real danger that can kill instantly. The longer you stay caught in addiction’s grip, the higher the risk of serious health problems.',
+                    text: 'Continuing addiction damages your body. Long-term alcohol use can lead to liver disease, while drugs might cause heart problems or neurological damage. Overdose is a real danger that can kill instantly. The longer you stay caught in addiction’s grip, the higher the risk of serious health problems',
                 },
                 {
                     subtitle: 'Mental and Emotional Impact',
-                    text: 'Addiction doesn’t only hurt your body. It can also mess with your mind. Feelings of anxiety or depression often come with addiction. You may feel emotionally unstable, and mental health disorders can only worsen if addiction continues unchecked.',
+                    text: 'Addiction doesn’t only hurt your body. It can also mess with your mind. Feelings of anxiety or depression often come with addiction. You may feel emotionally unstable, and mental health disorders can only worsen if addiction continues unchecked',
                 },
                 {
                     subtitle: 'Social and Economic Consequences',
-                    text: 'Addiction can ruin relationships with friends and family. It often causes loneliness and social withdrawal. Financial problems are common too—spending money on substances or addictive behaviours drains savings and can ruin job prospects. Over time, addiction may lead to unemployment and poverty.',
+                    text: 'Addiction can ruin relationships with friends and family. It often causes loneliness and social withdrawal. Financial problems are common too—spending money on substances or addictive behaviours drains savings and can ruin job prospects. Over time, addiction may lead to unemployment and poverty',
                 },
                 {
                     subtitle: 'Societal Impact',
-                    text: 'When many people struggle with addiction, society feels the burden. Healthcare costs soar, and law enforcement must deal with related crimes. Families suffer when a loved one is addicted, creating a ripple effect that harms entire communities.',
+                    text: 'When many people struggle with addiction, society feels the burden. Healthcare costs soar, and law enforcement must deal with related crimes. Families suffer when a loved one is addicted, creating a ripple effect that harms entire communities',
                 },
             ],
         },
@@ -85,19 +85,19 @@ const addictionData = {
             content: [
                 {
                     subtitle: 'Improved Physical and Mental Health',
-                    text: 'Stopping addiction leads to better health. Liver function, heart health, and brain function improve. Emotionally, many report feeling calmer and more balanced. The mind clears, and there’s a new ability to handle stress without turning to old habits.',
+                    text: 'Stopping addiction leads to better health. Liver function, heart health, and brain function improve. Emotionally, many report feeling calmer and more balanced. The mind clears, and there’s a new ability to handle stress without turning to old habits',
                 },
                 {
                     subtitle: 'Better Relationships and Social Life',
-                    text: 'When you quit, trust with loved ones often rebuilds. You become more present and available. Cultivating a healthy social network encourages growth and support, which sustains long-term sobriety.',
+                    text: 'When you quit, trust with loved ones often rebuilds. You become more present and available. Cultivating a healthy social network encourages growth and support, which sustains long-term sobriety',
                 },
                 {
                     subtitle: 'Increased Productivity and Financial Stability',
-                    text: 'Quitters find it easier to hold down jobs and set goals. Not spending on substances saves money. Over time, this adds up and creates financial stability. Feeling productive and financially secure boosts self-esteem.',
+                    text: 'Quitters find it easier to hold down jobs and set goals. Not spending on substances saves money. Over time, this adds up and creates financial stability. Feeling productive and financially secure boosts self-esteem',
                 },
                 {
                     subtitle: 'Personal Growth and Self-Empowerment',
-                    text: 'Quitting builds resilience and self-control. You reclaim control over your life. Many discover hobbies, passions, or new careers that were once out of reach. It’s a chance to grow and become the best version of yourself.',
+                    text: 'Quitting builds resilience and self-control. You reclaim control over your life. Many discover hobbies, passions, or new careers that were once out of reach. It’s a chance to grow and become the best version of yourself',
                 },
             ],
         },
@@ -106,23 +106,23 @@ const addictionData = {
             content: [
                 {
                     subtitle: 'Professional Help and Treatment Options',
-                    text: 'A structured detox might be necessary for severe addiction. Medical help can ease withdrawal symptoms. Counseling, therapy, and support groups like Alcoholics Anonymous or Narcotics Anonymous provide ongoing encouragement and tools to stay sober.',
+                    text: 'A structured detox might be necessary for severe addiction. Medical help can ease withdrawal symptoms. Counseling, therapy, and support groups like Alcoholics Anonymous or Narcotics Anonymous provide ongoing encouragement and tools to stay sober',
                 },
                 {
                     subtitle: 'Lifestyle Changes and Healthy Habits',
-                    text: 'Changing daily routines helps break old patterns. Exercise, good nutrition, and mindfulness reduce stress and improve mood. Developing new hobbies fills the void left by old habits.',
+                    text: 'Changing daily routines helps break old patterns. Exercise, good nutrition, and mindfulness reduce stress and improve mood. Developing new hobbies fills the void left by old habits',
                 },
                 {
                     subtitle: 'Building a Support System',
-                    text: 'Surround yourself with family, friends, or peer groups who understand your journey. Seeking help is brave, and maintaining motivation often relies on support from others. Share your goals and setbacks openly.',
+                    text: 'Surround yourself with family, friends, or peer groups who understand your journey. Seeking help is brave, and maintaining motivation often relies on support from others. Share your goals and setbacks openly',
                 },
                 {
                     subtitle: 'Overcoming Relapse and Maintaining Sobriety',
                     text: 'Relapse can happen. Recognize triggers such as stress, certain places, or emotional lows. Have a plan for avoiding high-risk situations.' +
-                        ' Building long-term plans keeps you on track, even when facing tough times.:\n\n Lastly, addiction has a deep impact on your health, relationships,' +
+                        ' Building long-term plans keeps you on track, even when facing tough times\n\n Lastly, addiction has a deep impact on your health, relationships,' +
                         ' and life. Quitting is not easy, but it is worth every effort. Recovery is real and happening for many each day. With the right help and attitude,' +
-                        ' you can break free from addiction and reclaim a healthier, happier life.:\n\n If you or someone you know struggles with addiction, don’t wait. Reach out' +
-                        ' for help, explore resources, and commit to making a change. A brighter future starts today.',
+                        ' you can break free from addiction and reclaim a healthier, happier life\n\n If you or someone you know struggles with addiction, don’t wait. Reach out' +
+                        ' for help, explore resources, and commit to making a change. A brighter future starts today',
 
                 },
             ],
@@ -138,29 +138,29 @@ const addictionData = {
     testimonials: [
         {
             name: 'Sarah, 28',
-            text: 'Counseling gave me the tools to stay sober and rebuild my life.',
+            text: 'Counseling gave me the tools to stay sober and rebuild my life',
             image: 'https://i.pravatar.cc/40?img=10',
         },
         {
             name: 'Michael, 34',
-            text: 'Support groups helped me feel understood and motivated.',
+            text: 'Support groups helped me feel understood and motivated',
             image: 'https://i.pravatar.cc/40?img=11',
         },
         {
             name: 'David, 41',
-            text: 'Therapy helped me overcome my triggers and stay on track.',
+            text: 'Therapy helped me overcome my triggers and stay on track',
             image: 'https://i.pravatar.cc/40?img=12',
         },
     ],
     references: [
-        'National Institute on Drug Abuse. Understanding Drug Use and Addiction.',
-        'World Health Organization. Substance Abuse and Mental Health.',
-        'American Psychological Association. Addiction Recovery Strategies.',
+        'National Institute on Drug Abuse. Understanding Drug Use and Addiction',
+        'World Health Organization. Substance Abuse and Mental Health',
+        'American Psychological Association. Addiction Recovery Strategies',
     ],
     motivation:
-        'Addiction is everywhere today. From social media to alcohol, many people struggle with habits they can’t shake. It’s a problem that affects millions worldwide, costing lives and tearing families apart. Understanding addiction and knowing why quitting is so important can help you or someone you love start fresh. The good news? Recovery is possible, and life gets better when you take that first step.',
+        'Addiction is everywhere today. From social media to alcohol, many people struggle with habits they can’t shake. It’s a problem that affects millions worldwide, costing lives and tearing families apart. Understanding addiction and knowing why quitting is so important can help you or someone you love start fresh. The good news? Recovery is possible, and life gets better when you take that first step',
     counseling:
-        'Our addiction specialists provide personalized treatment plans to help you overcome addiction and embrace a healthier future. Start your recovery today.',
+        'Our addiction specialists provide personalized treatment plans to help you overcome addiction and embrace a healthier future. Start your recovery today',
 };
 
 const primary = '#012765';
@@ -1017,7 +1017,7 @@ const Addiction = () => {
                         </Typography>
                         <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
                             Our counselors are trained to help you navigate grief and trauma with professional guidance
-                            tailored to your unique situation.
+                            tailored to your unique situation
                         </Typography>
                         {/*<Button*/}
                         {/*    variant="contained"*/}

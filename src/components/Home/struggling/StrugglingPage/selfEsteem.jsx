@@ -22,7 +22,7 @@ import img18 from '../../../../assets/images/Home/Struggling/self-esteem2.jpg';
 
 const selfEsteemData = {
     title: 'Let’s Talk About Self-Esteem: The Ultimate Guide to Building Confidence and Self-Worth',
-    description: 'Learn how to cultivate self-confidence, embrace your unique strengths, and build a positive self-image.',
+    description: 'Learn how to cultivate self-confidence, embrace your unique strengths, and build a positive self-image',
     image: img4,
     image1: img11,
     firstimage: img18,
@@ -39,11 +39,11 @@ const selfEsteemData = {
             title: 'What Is Self-Esteem and Why Does It Matter?',
             content: [
                 {
-                    text: 'Self-esteem is how much you appreciate who you are. It’s your inner gauge of your value. Having high self-esteem means you believe in yourself and your abilities. Low self-esteem comes with feelings of doubt and self-criticism. Self-confidence is often confused with self-esteem, but it’s not the same. Confidence is about trusting your skills in specific situations. Self-efficacy is your belief that you can succeed at tasks. Think of self-esteem as a bigger picture of how you see yourself overall.',
+                    text: 'Self-esteem is how much you appreciate who you are. It’s your inner gauge of your value. Having high self-esteem means you believe in yourself and your abilities. Low self-esteem comes with feelings of doubt and self-criticism. Self-confidence is often confused with self-esteem, but it’s not the same. Confidence is about trusting your skills in specific situations. Self-efficacy is your belief that you can succeed at tasks. Think of self-esteem as a bigger picture of how you see yourself overall',
                 },
                 {
                     subtitle: 'The Significance of Healthy Self-Esteem :',
-                    text: 'Good self-esteem impacts every part of your life. It helps you make decisions, handle stress, and bounce back from setbacks. When your self-esteem is high, you are more likely to take risks and try new things. Experts say low self-esteem is linked to anxiety and depression, affecting up to 1 in 4 adults. In the workplace, school, college, or personal life, self-esteem plays a huge role. Feeling confident can open doors, while doubts may hold you back. Whether it’s landing that job, starting a new hobby, or building a good relationship, your sense of worth makes a difference.',
+                    text: 'Good self-esteem impacts every part of your life. It helps you make decisions, handle stress, and bounce back from setbacks. When your self-esteem is high, you are more likely to take risks and try new things. Experts say low self-esteem is linked to anxiety and depression, affecting up to 1 in 4 adults. In the workplace, school, college, or personal life, self-esteem plays a huge role. Feeling confident can open doors, while doubts may hold you back. Whether it’s landing that job, starting a new hobby, or building a good relationship, your sense of worth makes a difference',
                 },
             ],
         },
@@ -51,7 +51,7 @@ const selfEsteemData = {
             title: 'The Psychological Foundations of Self-Esteem',
             content: [
                 {
-                    text: 'Self-esteem starts in childhood—families, school, and society shape how you see yourself. Supportive environments boost your confidence, while criticism or neglect can do the opposite. Your early experiences and societal influences create your inner voice. This voice can be kind and encouraging or harsh and doubting. Understanding these roots helps you change your narrative for the better.',
+                    text: 'Self-esteem starts in childhood—families, school, and society shape how you see yourself. Supportive environments boost your confidence, while criticism or neglect can do the opposite. Your early experiences and societal influences create your inner voice. This voice can be kind and encouraging or harsh and doubting. Understanding these roots helps you change your narrative for the better',
                 },
             ],
         },
@@ -60,19 +60,19 @@ const selfEsteemData = {
             content: [
                 {
                     subtitle: 'Childhood and Upbringing',
-                    text: 'Growing up in a home with constant criticism or neglect can damage self-esteem. Overly protective parents or harsh teachers might make you doubt your worth. Family dynamics and early life messages stick with us into adulthood.',
+                    text: 'Growing up in a home with constant criticism or neglect can damage self-esteem. Overly protective parents or harsh teachers might make you doubt your worth. Family dynamics and early life messages stick with us into adulthood',
                 },
                 {
                     subtitle: 'Societal and Cultural Influences',
-                    text: 'Media plays a big role today. Constant exposure to images of “perfect” bodies and glamorous lifestyles can leave you feeling inadequate. Cultural stereotypes about gender roles, success, or beauty also influence how you see yourself.',
+                    text: 'Media plays a big role today. Constant exposure to images of “perfect” bodies and glamorous lifestyles can leave you feeling inadequate. Cultural stereotypes about gender roles, success, or beauty also influence how you see yourself',
                 },
                 {
                     subtitle: 'Life Events and Personal Experiences',
-                    text: 'Failures, rejections, or traumatic events can lower self-esteem. A bad breakup or losing a job may shake your confidence. Mental health issues like anxiety or depression often feed into feelings of worthlessness.',
+                    text: 'Failures, rejections, or traumatic events can lower self-esteem. A bad breakup or losing a job may shake your confidence. Mental health issues like anxiety or depression often feed into feelings of worthlessness',
                 },
                 {
                     subtitle: 'Modern Factors',
-                    text: 'Social media creates a comparison trap. Seeing others’ highlight reels makes you feel you don’t measure up. Additionally, job pressures or academic stress can leave you doubting your abilities.',
+                    text: 'Social media creates a comparison trap. Seeing others’ highlight reels makes you feel you don’t measure up. Additionally, job pressures or academic stress can leave you doubting your abilities',
                 },
             ],
         },
@@ -81,15 +81,15 @@ const selfEsteemData = {
             content: [
                 {
                     subtitle: 'Recognizing the Symptoms',
-                    text: 'Notice if you often talk negatively about yourself. Do you second-guess your choices or strive for perfection? Avoiding social events or challenges might be signs too.',
+                    text: 'Notice if you often talk negatively about yourself. Do you second-guess your choices or strive for perfection? Avoiding social events or challenges might be signs too',
                 },
                 {
                     subtitle: 'Effects on Personal Well-Being',
-                    text: 'When self-esteem drops, mental health can suffer. Anxiety and depression are common companions. Low confidence can also hurt your career by making you hesitant to show your skills or take on new tasks. In relationships, self-doubt might cause you to settle or stay silent. Recognizing these signs is the first step toward change.',
+                    text: 'When self-esteem drops, mental health can suffer. Anxiety and depression are common companions. Low confidence can also hurt your career by making you hesitant to show your skills or take on new tasks. In relationships, self-doubt might cause you to settle or stay silent. Recognizing these signs is the first step toward change',
                 },
                 {
                     subtitle: 'When to Seek Help',
-                    text: 'If feelings of worthlessness or hopelessness last for weeks, talk to a mental health professional. Therapy, coaching, or support groups can help rebuild your confidence and teach healthier habits.',
+                    text: 'If feelings of worthlessness or hopelessness last for weeks, talk to a mental health professional. Therapy, coaching, or support groups can help rebuild your confidence and teach healthier habits',
                 },
             ],
         },
@@ -98,27 +98,27 @@ const selfEsteemData = {
             content: [
                 {
                     subtitle: 'Practicing Self-Compassion',
-                    text: 'Be kind to yourself. Kristin Neff’s research shows that self-compassion reduces stress and builds resilience. Try daily exercises like writing yourself a supportive note or pausing before criticizing yourself.',
+                    text: 'Be kind to yourself. Kristin Neff’s research shows that self-compassion reduces stress and builds resilience. Try daily exercises like writing yourself a supportive note or pausing before criticizing yourself',
                 },
                 {
                     subtitle: 'Challenging Negative Self-Talk',
-                    text: 'Notice when your inner voice is harsh. Reframe those thoughts, replacing “I can’t do this” with “I’ll try my best.” Use journaling to identify limiting beliefs and affirmations to boost confidence.',
+                    text: 'Notice when your inner voice is harsh. Reframe those thoughts, replacing “I can’t do this” with “I’ll try my best.” Use journaling to identify limiting beliefs and affirmations to boost confidence',
                 },
                 {
                     subtitle: 'Setting Achievable Goals',
-                    text: 'Use SMART goals—Specific, Measurable, Attainable, Realistic, Time-bound. Completing small tasks gives you a sense of progress. Each success builds your belief in your abilities over time.',
+                    text: 'Use SMART goals—Specific, Measurable, Attainable, Realistic, Time-bound. Completing small tasks gives you a sense of progress. Each success builds your belief in your abilities over time',
                 },
                 {
                     subtitle: 'Cultivating a Positive Environment',
-                    text: 'Surround yourself with supportive, uplifting people. Engage in activities that make you feel good, like hobbies or volunteering. Positive environments reinforce your sense of worth.',
+                    text: 'Surround yourself with supportive, uplifting people. Engage in activities that make you feel good, like hobbies or volunteering. Positive environments reinforce your sense of worth',
                 },
                 {
                     subtitle: 'Embracing Failure and Learning from Mistakes',
-                    text: 'Failures aren’t the end—they’re lessons. Many successful people faced setbacks before reaching their goals. Resilience is built by accepting mistakes and trying again.',
+                    text: 'Failures aren’t the end—they’re lessons. Many successful people faced setbacks before reaching their goals. Resilience is built by accepting mistakes and trying again',
                 },
                 {
                     subtitle: 'Developing Self-Awareness and Mindfulness',
-                    text: 'Practicing mindfulness helps you understand your feelings and reactions. Simple meditation or reflection breaks can increase self-awareness and self-acceptance.',
+                    text: 'Practicing mindfulness helps you understand your feelings and reactions. Simple meditation or reflection breaks can increase self-awareness and self-acceptance',
                 },
             ],
         },
@@ -127,15 +127,15 @@ const selfEsteemData = {
             content: [
                 {
                     subtitle: 'Physical Health and Its Impact',
-                    text: 'Exercise boosts mood. Eating nutritious foods and getting enough sleep help your brain and self-image. As health expert Dr. John Ratey says, physical activity is a quick way to improve your self-esteem.',
+                    text: 'Exercise boosts mood. Eating nutritious foods and getting enough sleep help your brain and self-image. As health expert Dr. John Ratey says, physical activity is a quick way to improve your self-esteem',
                 },
                 {
                     subtitle: 'Building a Supportive Routine',
-                    text: 'Include habits like journaling, hobbies, or social time in your daily life. These routines reinforce positive feelings about yourself and keep your mind focused on growth.',
+                    text: 'Include habits like journaling, hobbies, or social time in your daily life. These routines reinforce positive feelings about yourself and keep your mind focused on growth',
                 },
                 {
                     subtitle: 'Avoiding Toxic Influences',
-                    text: 'Limit time on social media if it causes comparison or envy. Seek out environments and people who uplift you. Reducing exposure to negativity helps protect your self-esteem.',
+                    text: 'Limit time on social media if it causes comparison or envy. Seek out environments and people who uplift you. Reducing exposure to negativity helps protect your self-esteem',
                 },
             ],
         },
@@ -144,19 +144,19 @@ const selfEsteemData = {
             content: [
                 {
                     subtitle: 'Tracking Personal Growth',
-                    text: 'Use journals or apps to note your achievements. Regularly check in on your goals and feelings. Celebrate each milestone, no matter how small.',
+                    text: 'Use journals or apps to note your achievements. Regularly check in on your goals and feelings. Celebrate each milestone, no matter how small',
                 },
                 {
                     subtitle: 'Strategies for Long-term Maintenance',
-                    text: 'Keep learning, attending therapy, or working with a coach. Life changes, but your confidence can remain steady if you stay flexible and resilient.',
+                    text: 'Keep learning, attending therapy, or working with a coach. Life changes, but your confidence can remain steady if you stay flexible and resilient',
                 },
                 {
                     subtitle: 'Recognizing and Celebrating Achievements',
-                    text: 'Make it a habit to recognize your wins. This practice reminds you of your worth and keeps your self-esteem growing.',
+                    text: 'Make it a habit to recognize your wins. This practice reminds you of your worth and keeps your self-esteem growing',
                 },
                 {
                     subtitle: 'Take action today',
-                    text: 'Make it a habit to recognize your wins. This practice reminds you of your worth and keeps your self-esteem growing.',
+                    text: 'Make it a habit to recognize your wins. This practice reminds you of your worth and keeps your self-esteem growing',
                 },
             ],
         },
@@ -171,29 +171,29 @@ const selfEsteemData = {
     testimonials: [
         {
             name: 'Sarah, 28',
-            text: 'Counseling helped me silence my inner critic and embrace my worth.',
+            text: 'Counseling helped me silence my inner critic and embrace my worth',
             image: 'https://i.pravatar.cc/40?img=10',
         },
         {
             name: 'Michael, 34',
-            text: 'Mindfulness practices gave me the confidence to pursue my goals.',
+            text: 'Mindfulness practices gave me the confidence to pursue my goals',
             image: 'https://i.pravatar.cc/40?img=11',
         },
         {
             name: 'David, 41',
-            text: 'Therapy taught me to celebrate my achievements and believe in myself.',
+            text: 'Therapy taught me to celebrate my achievements and believe in myself',
             image: 'https://i.pravatar.cc/40?img=12',
         },
     ],
     references: [
-        'Neff, K. (2011). Self-Compassion: The Proven Power of Being Kind to Yourself.',
-        'Ratey, J. J. (2008). Spark: The Revolutionary New Science of Exercise and the Brain.',
-        'American Psychological Association. Self-Esteem and Mental Health.',
+        'Neff, K. (2011). Self-Compassion: The Proven Power of Being Kind to Yourself',
+        'Ratey, J. J. (2008). Spark: The Revolutionary New Science of Exercise and the Brain',
+        'American Psychological Association. Self-Esteem and Mental Health',
     ],
     motivation:
-        'When you think about your success and happiness, one thing often stands out: self-esteem. It’s the confidence you feel about yourself, how much you value your worth. Strong self-esteem can boost your mental health, help you connect better with others, and push you toward your goals. But many people struggle with feeling unsure or low about themselves.',
+        'When you think about your success and happiness, one thing often stands out: self-esteem. It’s the confidence you feel about yourself, how much you value your worth. Strong self-esteem can boost your mental health, help you connect better with others, and push you toward your goals. But many people struggle with feeling unsure or low about themselves',
     counseling:
-        'Our counselors can help you develop strategies to boost your self-esteem and live with greater confidence. Start your journey to self-acceptance today.',
+        'Our counselors can help you develop strategies to boost your self-esteem and live with greater confidence. Start your journey to self-acceptance today',
 };
 
 const primary = '#012765';
@@ -842,7 +842,7 @@ const SelfEsteem = () => {
                                 </Typography>
                                 <Typography sx={{color: textBody, mb: 3, fontFamily: 'Arial', lineHeight: 1.6}}>
                                     Take our quick assessment to gain personalized insights and recommendations for
-                                    building confidence.
+                                    building confidence
                                 </Typography>
                                 <Button
                                     fullWidth
@@ -1065,7 +1065,7 @@ const SelfEsteem = () => {
                         </Typography>
                         <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
                             Our counselors are trained to help you boost your self-esteem with professional guidance
-                            tailored to your unique journey.
+                            tailored to your unique journey
                         </Typography>
                         {/*<Button*/}
                         {/*    variant="contained"*/}

@@ -22,7 +22,7 @@ import img15 from '../../../../assets/images/Home/Struggling/Relationshiptime.pn
 
 const relationshipData = {
     title: 'Understanding and Managing Relationships: Building Stronger Connections for a Happier Life',
-    description: 'Discover practical strategies to build trust, improve communication, and maintain fulfilling relationships for a happier life.',
+    description: 'Discover practical strategies to build trust, improve communication, and maintain fulfilling relationships for a happier life',
     image: img1,
     image1: img8,
     firstimage: img15,
@@ -39,7 +39,7 @@ const relationshipData = {
             title: 'What Defines a Healthy Relationship',
             content: [
                 {
-                    text: 'Healthy relationships are built on trust, good communication, respect, and mutual support. When you trust someone, you feel safe sharing your feelings and being vulnerable. Good communication means listening actively and explaining yourself clearly. Respect shows in honouring each other\'s feelings and boundaries. Mutual support involves helping each other grow and face challenges together. Having shared values and goals also helps partners understand each other better. According to Pew Research Center, couples who prioritize mutual respect and honest communication report higher satisfaction and longer-lasting bonds.',
+                    text: 'Healthy relationships are built on trust, good communication, respect, and mutual support. When you trust someone, you feel safe sharing your feelings and being vulnerable. Good communication means listening actively and explaining yourself clearly. Respect shows in honouring each other\'s feelings and boundaries. Mutual support involves helping each other grow and face challenges together. Having shared values and goals also helps partners understand each other better. According to Pew Research Center, couples who prioritize mutual respect and honest communication report higher satisfaction and longer-lasting bonds',
                 },
             ],
         },
@@ -47,7 +47,7 @@ const relationshipData = {
             title: 'The Role of Self-Awareness In Relationships',
             content: [
                 {
-                    text: 'Knowing yourself is key to managing your relationships. When you understand what you need, what annoys you, or your emotional triggers, you\'re better equipped to handle conflicts. Self-awareness helps you communicate more clearly and avoid accidental hurt. Your ability to recognize and manage your feelings—makes relationships stronger. The more you know yourself, the more intentional your actions and responses become.',
+                    text: 'Knowing yourself is key to managing your relationships. When you understand what you need, what annoys you, or your emotional triggers, you\'re better equipped to handle conflicts. Self-awareness helps you communicate more clearly and avoid accidental hurt. Your ability to recognize and manage your feelings—makes relationships stronger. The more you know yourself, the more intentional your actions and responses become',
                 },
             ],
         },
@@ -55,7 +55,7 @@ const relationshipData = {
             title: 'Common Relationship Goals',
             content: [
                 {
-                    text: 'Every relationship has goals, whether spoken or just understood. Some common aims include emotional closeness, financial stability, or plans for family. Regularly talking about what you both want keeps your goals aligned. For example, scheduling weekly check-ins to share your feelings and reassess your goals helps everyone stay on the same page. Clarity on shared and individual goals prevents misunderstandings and builds teamwork.',
+                    text: 'Every relationship has goals, whether spoken or just understood. Some common aims include emotional closeness, financial stability, or plans for family. Regularly talking about what you both want keeps your goals aligned. For example, scheduling weekly check-ins to share your feelings and reassess your goals helps everyone stay on the same page. Clarity on shared and individual goals prevents misunderstandings and builds teamwork',
                 },
             ],
         },
@@ -64,15 +64,15 @@ const relationshipData = {
             content: [
                 {
                     subtitle: 'Effective Communication Skills',
-                    text: 'Great communication isn\'t just talking; it’s about listening with your heart. Active listening involves giving your full attention, making eye contact, and repeating what’s been said to confirm understanding. Empathy helps you see things from your partner’s view, strengthening your connection. Assertiveness means sharing your feelings honestly without blaming or attacking. Avoid patterns like contempt or stonewalling, which damage trust. Studies show that couples who communicate effectively experience higher overall happiness in their relationship.',
+                    text: 'Great communication isn\'t just talking; it’s about listening with your heart. Active listening involves giving your full attention, making eye contact, and repeating what’s been said to confirm understanding. Empathy helps you see things from your partner’s view, strengthening your connection. Assertiveness means sharing your feelings honestly without blaming or attacking. Avoid patterns like contempt or stonewalling, which damage trust. Studies show that couples who communicate effectively experience higher overall happiness in their relationship',
                 },
                 {
                     subtitle: 'Overcoming Communication Barriers',
-                    text: 'Many issues come from misunderstandings or holding back feelings. Sometimes, emotions pile up, leading to silent treatment or outbursts. Technology adds new hurdles—like misreading texts or social media mishaps that cause confusion. An example is how the "Mars-Venus" communication gap often affects couples—men and women might interpret words differently. To fix this, ask questions and clarify intent before jumping to conclusions.',
+                    text: 'Many issues come from misunderstandings or holding back feelings. Sometimes, emotions pile up, leading to silent treatment or outbursts. Technology adds new hurdles—like misreading texts or social media mishaps that cause confusion. An example is how the "Mars-Venus" communication gap often affects couples—men and women might interpret words differently. To fix this, ask questions and clarify intent before jumping to conclusions',
                 },
                 {
                     subtitle: 'Conflict Resolution Strategies',
-                    text: 'Disagreements happen, but how you handle them matters. Use I-statements to express feelings without blame—like “I feel upset when...” instead of “You always...” Find common ground and look for compromise. When disagreements heat up, take a break. Practicing a “pause” gives both sides time to cool down. If conflicts keep coming up, consider couples therapy or coaching. Professional help can guide you toward healthier communication and deeper understanding.',
+                    text: 'Disagreements happen, but how you handle them matters. Use I-statements to express feelings without blame—like “I feel upset when...” instead of “You always...” Find common ground and look for compromise. When disagreements heat up, take a break. Practicing a “pause” gives both sides time to cool down. If conflicts keep coming up, consider couples therapy or coaching. Professional help can guide you toward healthier communication and deeper understanding',
                 },
             ],
         },
@@ -81,15 +81,15 @@ const relationshipData = {
             content: [
                 {
                     subtitle: 'The Importance of Vulnerability',
-                    text: 'Opening up about fears, hopes, or mistakes makes your bond stronger. Vulnerability, although scary at first, creates an authentic connection. Brené Brown teaches that real closeness begins when we risk showing our true selves without fear of judgment. Sharing feelings, even difficult ones, boosts intimacy and trust over time.',
+                    text: 'Opening up about fears, hopes, or mistakes makes your bond stronger. Vulnerability, although scary at first, creates an authentic connection. Brené Brown teaches that real closeness begins when we risk showing our true selves without fear of judgment. Sharing feelings, even difficult ones, boosts intimacy and trust over time',
                 },
                 {
                     subtitle: 'Consistency and Reliability',
-                    text: 'Trust grows when you do what you say you will do. Being dependable means following through in small everyday actions—showing up on time, keeping promises, or being present. These small acts build a foundation of reliability. Over time, they prove you’re trustworthy, making the relationship more secure.',
+                    text: 'Trust grows when you do what you say you will do. Being dependable means following through in small everyday actions—showing up on time, keeping promises, or being present. These small acts build a foundation of reliability. Over time, they prove you’re trustworthy, making the relationship more secure',
                 },
                 {
                     subtitle: 'Rebuilding Trust after Breaches',
-                    text: 'Sometimes, trust is broken—like after an argument or an act of betrayal. Rebuilding takes effort. First, acknowledge what happened and express remorse. Next, work on restitution—show through actions you’re committed to change. Patience is vital because trust takes time to restore. For instance, couples who communicate openly and set trust routines find it easier to heal after breaches. Routine check-ins and honest conversations support this process.',
+                    text: 'Sometimes, trust is broken—like after an argument or an act of betrayal. Rebuilding takes effort. First, acknowledge what happened and express remorse. Next, work on restitution—show through actions you’re committed to change. Patience is vital because trust takes time to restore. For instance, couples who communicate openly and set trust routines find it easier to heal after breaches. Routine check-ins and honest conversations support this process',
                 },
             ],
         },
@@ -98,15 +98,15 @@ const relationshipData = {
             content: [
                 {
                     subtitle: 'Setting Realistic Expectations',
-                    text: 'Unrealistic ideals can hurt your relationship. No one is perfect; expecting perfection sets you up for disappointment. Recognize your partner’s strengths and flaws. Accepting imperfections allows love to grow naturally.',
+                    text: 'Unrealistic ideals can hurt your relationship. No one is perfect; expecting perfection sets you up for disappointment. Recognize your partner’s strengths and flaws. Accepting imperfections allows love to grow naturally',
                 },
                 {
                     subtitle: 'Embracing Personal and Partner Growth',
-                    text: 'Supporting each other’s individual pursuits makes your relationship healthier. Whether pursuing a hobby, new career, or education, give space for growth. Life also changes—such as career shifts, parenthood, or aging. Adapting together helps you stay connected through transitions.',
+                    text: 'Supporting each other’s individual pursuits makes your relationship healthier. Whether pursuing a hobby, new career, or education, give space for growth. Life also changes—such as career shifts, parenthood, or aging. Adapting together helps you stay connected through transitions',
                 },
                 {
                     subtitle: 'Dealing with External Stressors',
-                    text: 'Outside issues—like money troubles or health concerns—can strain your relationship. Instead of letting stress build up, work as a team to solve problems. Keep lines of communication open and support each other emotionally. Resilience is built on shared effort and understanding, making tough times manageable.',
+                    text: 'Outside issues—like money troubles or health concerns—can strain your relationship. Instead of letting stress build up, work as a team to solve problems. Keep lines of communication open and support each other emotionally. Resilience is built on shared effort and understanding, making tough times manageable',
                 },
             ],
         },
@@ -115,15 +115,15 @@ const relationshipData = {
             content: [
                 {
                     subtitle: 'Prioritizing Self-Care',
-                    text: 'Taking care of yourself improves your relationship. When you’re happy and healthy, you’re more patient and loving. Spend time on hobbies, exercise, or mental wellness activities. Self-care isn’t selfish—it’s necessary for long-term happiness.',
+                    text: 'Taking care of yourself improves your relationship. When you’re happy and healthy, you’re more patient and loving. Spend time on hobbies, exercise, or mental wellness activities. Self-care isn’t selfish—it’s necessary for long-term happiness',
                 },
                 {
                     subtitle: 'Maintaining Independence',
-                    text: 'Healthy relationships include personal space and boundaries. Having your own friends, interests, and goals keeps your identity intact. Independence brings balance and makes your connection more genuine.',
+                    text: 'Healthy relationships include personal space and boundaries. Having your own friends, interests, and goals keeps your identity intact. Independence brings balance and makes your connection more genuine',
                 },
                 {
                     subtitle: 'Seeking Support When Needed',
-                    text: 'Feeling overwhelmed or burned out is normal sometimes. If things feel too heavy, seek help. This could be a counsellor, a support group, or a workshop. Getting help early prevents issues from worsening and keeps your relationship strong.',
+                    text: 'Feeling overwhelmed or burned out is normal sometimes. If things feel too heavy, seek help. This could be a counsellor, a support group, or a workshop. Getting help early prevents issues from worsening and keeps your relationship strong',
                 },
             ],
         },
@@ -138,27 +138,27 @@ const relationshipData = {
     testimonials: [
         {
             name: 'Sarah, 28',
-            text: 'Counseling helped us communicate better and rebuild trust.',
+            text: 'Counseling helped us communicate better and rebuild trust',
             image: 'https://i.pravatar.cc/40?img=10'
         },
         {
             name: 'Michael, 34',
-            text: 'Learning to listen actively transformed our relationship.',
+            text: 'Learning to listen actively transformed our relationship',
             image: 'https://i.pravatar.cc/40?img=11'
         },
         {
             name: 'David, 41',
-            text: 'Couples therapy gave us tools to navigate conflicts.',
+            text: 'Couples therapy gave us tools to navigate conflicts',
             image: 'https://i.pravatar.cc/40?img=12'
         },
     ],
     references: [
-        'Pew Research Center. Relationship Satisfaction and Communication.',
-        'Brené Brown. The Power of Vulnerability.',
-        'Gottman Institute. Effective Communication in Relationships.',
+        'Pew Research Center. Relationship Satisfaction and Communication',
+        'Brené Brown. The Power of Vulnerability',
+        'Gottman Institute. Effective Communication in Relationships',
     ],
-    motivation: 'Maintaining healthy relationships is essential for our overall happiness. When your connections with loved ones are strong, your mental, emotional, and even physical health benefit. Yet, modern life throws many challenges your way—stress, busy schedules, misunderstandings—that can make keeping relationships fulfilling hard. The goal of this piece of information is to give you clear insights, practical strategies, and easy tips to better understand and manage your relationships.',
-    counseling: 'Our expert counselors provide personalized strategies to strengthen your relationships. Start building a happier partnership today.',
+    motivation: 'Maintaining healthy relationships is essential for our overall happiness. When your connections with loved ones are strong, your mental, emotional, and even physical health benefit. Yet, modern life throws many challenges your way—stress, busy schedules, misunderstandings—that can make keeping relationships fulfilling hard. The goal of this piece of information is to give you clear insights, practical strategies, and easy tips to better understand and manage your relationships',
+    counseling: 'Our expert counselors provide personalized strategies to strengthen your relationships. Start building a happier partnership today',
 };
 
 const primary = '#012765';
@@ -1043,7 +1043,7 @@ const Relationship = () => {
                         </Typography>
                         <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
                             Our counselors are trained to help you build stronger connections with professional guidance
-                            tailored to your unique situation.
+                            tailored to your unique situation
                         </Typography>
                         {/*<Button*/}
                         {/*    variant="contained"*/}

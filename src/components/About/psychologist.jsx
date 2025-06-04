@@ -187,7 +187,7 @@ const Psychologist = ({ icon = <PersonIcon /> }) => {
                         lineHeight: '25px',
                     }}
                 >
-                    Our experienced psychologists provide compassionate, personalized care to support mental wellness, emotional resilience, and meaningful personal growth.
+                    Our experienced psychologists provide compassionate, personalized care to support mental wellness, emotional resilience, and meaningful personal growth
                 </Typography>
 
 

@@ -97,7 +97,7 @@ const founders = [
         role: 'Product Head',
         name: 'Fatima Lobo',
         description:
-            'Masters in Psychology, PGD In Therapeutic Counselling and a Certified NLP Practitioner with over 15 Years of experience.',
+            'Masters in Psychology, PGD In Therapeutic Counselling and a Certified NLP Practitioner with over 15 Years of experience',
         link: "https://www.linkedin.com/in/fatima-lobo-89a442332/"
     },
     {
@@ -151,7 +151,7 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
                         lineHeight: '25px',
                     }}
                 >
-                    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey.
+                    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey
                 </Typography>
 
                 <Grid container spacing={3}>

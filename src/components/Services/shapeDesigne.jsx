@@ -272,7 +272,7 @@ const HeroSection = () => (
                     }}
                 >
                     Designed for higher education students, this emotional wellness program aligns with NEP to
-                    cultivate academic excellence, emotional resilience, and future readiness.
+                    cultivate academic excellence, emotional resilience, and future readiness
                 </Typography>
             </Box>
         </Container>
@@ -308,11 +308,11 @@ const ProgramOverview = () => {
                     </Typography>
                     <Typography variant="body1" paragraph color="text.secondary">
                         Through real-world exposure and leadership development, SHAPE+ empowers students to thrive
-                        holistically and grow into socially responsible global citizens.
+                        holistically and grow into socially responsible global citizens
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
                         Our program integrates emotional intelligence with academic excellence, preparing students
-                        not just for career success but for life-long resilience and personal fulfillment.
+                        not just for career success but for life-long resilience and personal fulfillment
                     </Typography>
                 </Grid>
                 <Grid item xs={12} lg={4}>

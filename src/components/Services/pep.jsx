@@ -164,7 +164,7 @@ export default function PEPMUI() {
                             }}
                         >
                             A focused programme crafted for aspirants of rigorous entrance exams and their mentors,
-                            addressing personal challenges that impact mental clarity and emotional stability.
+                            addressing personal challenges that impact mental clarity and emotional stability
                         </Typography>
                     </Box>
                 </Container>
@@ -186,12 +186,12 @@ export default function PEPMUI() {
                                 </Typography>
                                 <Typography variant="body1" paragraph color="text.secondary">
                                     PEP builds psychological resilience, sharpens focus, and provides proven strategies
-                                    to excel under pressure for both exam aspirants and their mentors.
+                                    to excel under pressure for both exam aspirants and their mentors
                                 </Typography>
                                 <Typography variant="body1" color="text.secondary">
                                     Our program integrates emotional wellness with academic excellence, preparing
                                     aspirants not just for exam success but for life-long resilience and personal
-                                    growth.
+                                    growth
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} lg={4}>
@@ -241,7 +241,7 @@ export default function PEPMUI() {
                             <Typography variant="body1" color="text.secondary"
                                         sx={{maxWidth: "md", mx: "auto", fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },}}>
                                 PEP delivers comprehensive support through two integrated components that work together
-                                to create lasting positive impact for both mentors and aspirants.
+                                to create lasting positive impact for both mentors and aspirants
                             </Typography>
                         </Box>
                         <Grid container spacing={4}>

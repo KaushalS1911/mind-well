@@ -21,7 +21,7 @@ import img20 from '../../../../assets/images/Home/Struggling/Overthinkingtime.jp
 
 const overthinkingData = {
     title: 'What Is Overthinking? Why It is Bad for Success and How to Stop It',
-    description: 'Discover techniques to quiet your mind, reduce excessive worry, and unlock your potential for success.',
+    description: 'Discover techniques to quiet your mind, reduce excessive worry, and unlock your potential for success',
     image: img6,
     image1: img13,
     firstimage: img20,
@@ -38,11 +38,11 @@ const overthinkingData = {
             title: 'What Is Overthinking? Understanding the Roots of Excessive Mental Processing',
             content: [
                 {
-                    text: 'Overthinking happens when your mind keeps going over the same problems or choices. It involves continuous mental effort that does not lead anywhere. Instead of helping, it keeps you stuck, making it harder to move forward. Healthy reflection involves thinking about options to make better choices. Overthinking, on the other hand, is overdoing it, causing you to doubt yourself constantly or get lost in details that do not matter.',
+                    text: 'Overthinking happens when your mind keeps going over the same problems or choices. It involves continuous mental effort that does not lead anywhere. Instead of helping, it keeps you stuck, making it harder to move forward. Healthy reflection involves thinking about options to make better choices. Overthinking, on the other hand, is overdoing it, causing you to doubt yourself constantly or get lost in details that do not matter',
                 },
                 {
                     subtitle: 'Types of Overthinking',
-                    text: '• Rumination: Dwelling on past mistakes or negative experiences. It’s like replaying a bad scene again and again.\n• Worrying: Excess concern about what might happen in the future. Worry can grow worse when you obsess over worst-case scenarios.\n• Analysis paralysis: Overanalyzing every option so much that you become unable to choose at all. This makes decision-making slow and frustrating.',
+                    text: '• Rumination: Dwelling on past mistakes or negative experiences. It’s like replaying a bad scene again and again\n• Worrying: Excess concern about what might happen in the future. Worry can grow worse when you obsess over worst-case scenarios\n• Analysis paralysis: Overanalyzing every option so much that you become unable to choose at all. This makes decision-making slow and frustrating',
                 },
             ],
         },
@@ -50,7 +50,7 @@ const overthinkingData = {
             title: 'Causes of Overthinking',
             content: [
                 {
-                    text: 'Why do some people keep overthinking? Several factors can lead to this habit:\n• Anxiety and fear of failure: Worrying about making mistakes can make you second-guess every move.\n• Perfectionism: Setting high standards makes it hard to accept mistakes or imperfect choices.\n• Information overload: Constant exposure to news, social media, or endless data can flood your mind, making it hard to focus.',
+                    text: 'Why do some people keep overthinking? Several factors can lead to this habit\n• Anxiety and fear of failure: Worrying about making mistakes can make you second-guess every move\n• Perfectionism: Setting high standards makes it hard to accept mistakes or imperfect choices\n• Information overload: Constant exposure to news, social media, or endless data can flood your mind, making it hard to focus',
                 },
             ],
         },
@@ -59,19 +59,19 @@ const overthinkingData = {
             content: [
                 {
                     subtitle: 'Diminished Decision-Making Ability',
-                    text: 'When you overthink, decisions take longer or never happen at all. This hesitation can cause missed opportunities. For example, an entrepreneur who spends too much time analyzing every detail may delay launching a new product. That delay can mean the difference between success and falling behind.',
+                    text: 'When you overthink, decisions take longer or never happen at all. This hesitation can cause missed opportunities. For example, an entrepreneur who spends too much time analyzing every detail may delay launching a new product. That delay can mean the difference between success and falling behind',
                 },
                 {
                     subtitle: 'Increased Stress and Anxiety',
-                    text: 'Overthinking creates stress, which hurts your mental health. When your mind races with worries, your body reacts with stress responses. Over time, this can lead to feelings of anxiety or depression. Plus, high stress makes it harder to focus or stay motivated.',
+                    text: 'Overthinking creates stress, which hurts your mental health. When your mind races with worries, your body reacts with stress responses. Over time, this can lead to feelings of anxiety or depression. Plus, high stress makes it harder to focus or stay motivated',
                 },
                 {
                     subtitle: 'Decreased Creativity and Innovation',
-                    text: 'A cluttered mind filled with overthinking struggles to think outside the box. When you second-guess every idea, spontaneous thoughts and new concepts get lost. Many innovative companies thrive because their team is not caught in endless analysis. Instead, they act quickly and learn as they go.',
+                    text: 'A cluttered mind filled with overthinking struggles to think outside the box. When you second-guess every idea, spontaneous thoughts and new concepts get lost. Many innovative companies thrive because their team is not caught in endless analysis. Instead, they act quickly and learn as they go',
                 },
                 {
                     subtitle: 'Negative Effect on Mental Health',
-                    text: 'Overthinking can make mental health worse. It often leads to feelings of hopelessness, frustration, or doubt. Experts say that constantly dwelling on problems can turn into depression or anxiety disorders if it’s left unchecked.',
+                    text: 'Overthinking can make mental health worse. It often leads to feelings of hopelessness, frustration, or doubt. Experts say that constantly dwelling on problems can turn into depression or anxiety disorders if it’s left unchecked',
                 },
             ],
         },
@@ -80,19 +80,19 @@ const overthinkingData = {
             content: [
                 {
                     subtitle: 'Analysis Paralysis Steals Your Momentum',
-                    text: 'Think about a runner frozen at the start line. Overthinking is like that—waiting for the perfect moment causes delays. An overthinker may delay taking action because they fear making mistakes or are not sure if they have all the answers.',
+                    text: 'Think about a runner frozen at the start line. Overthinking is like that—waiting for the perfect moment causes delays. An overthinker may delay taking action because they fear making mistakes or are not sure if they have all the answers',
                 },
                 {
                     subtitle: 'Fear of Mistakes Traps You',
-                    text: 'Constant worry about making wrong choices often leads to avoiding decisions altogether. This fear keeps you stuck in place instead of moving forward. Over time, fear of mistakes becomes a barrier to growth.',
+                    text: 'Constant worry about making wrong choices often leads to avoiding decisions altogether. This fear keeps you stuck in place instead of moving forward. Over time, fear of mistakes becomes a barrier to growth',
                 },
                 {
                     subtitle: 'Self-Confidence Takes a Hit',
-                    text: 'When you overthink, you second-guess yourself constantly. This chips away at your trust in your own judgment. Without confidence, it gets even harder to make bold moves toward your goals.',
+                    text: 'When you overthink, you second-guess yourself constantly. This chips away at your trust in your own judgment. Without confidence, it gets even harder to make bold moves toward your goals',
                 },
                 {
                     subtitle: 'Short-term vs. Long-term Results',
-                    text: 'Overthinkers often chase perfect solutions and miss out on quick wins. By waiting too long or overanalyzing, they may lose chances to learn or grow now. Success often comes from taking imperfect action fast.',
+                    text: 'Overthinkers often chase perfect solutions and miss out on quick wins. By waiting too long or overanalyzing, they may lose chances to learn or grow now. Success often comes from taking imperfect action fast',
                 },
             ],
         },
@@ -101,28 +101,28 @@ const overthinkingData = {
             content: [
                 {
                     subtitle: 'Practice Mindfulness and Focus on the Present',
-                    text: 'Staying in the moment helps stop your mind from wandering into endless worries. Try simple techniques like deep breathing, meditation, or grounding exercises. These calm your mind and clear mental clutter.',
+                    text: 'Staying in the moment helps stop your mind from wandering into endless worries. Try simple techniques like deep breathing, meditation, or grounding exercises. These calm your mind and clear mental clutter',
                 },
                 {
                     subtitle: 'Set Time Limits for Decisions',
-                    text: 'Decide how long you will spend thinking about a choice. Use deadlines to cut off endless analysis. Tools like pros-and-cons lists or decision matrices help you act faster and make smarter choices.',
+                    text: 'Decide how long you will spend thinking about a choice. Use deadlines to cut off endless analysis. Tools like pros-and-cons lists or decision matrices help you act faster and make smarter choices',
                 },
                 {
                     subtitle: 'Embrace Imperfection and Be Kind to Yourself',
-                    text: 'Accept that mistakes are part of growth. Reframe failures as lessons. Study psychologist Brené Brown’s advice—show vulnerability and accept your flaws. This builds courage and reduces fear.',
+                    text: 'Accept that mistakes are part of growth. Reframe failures as lessons. Study psychologist Brené Brown’s advice—show vulnerability and accept your flaws. This builds courage and reduces fear',
                 },
                 {
                     subtitle: 'Limit Information Intake',
-                    text: 'Reduce your exposure to overwhelming data or social media. Unfollow sources that cause stress. Less mental overload helps you stay focused and makes decision-making easier.',
+                    text: 'Reduce your exposure to overwhelming data or social media. Unfollow sources that cause stress. Less mental overload helps you stay focused and makes decision-making easier',
                 },
                 {
                     subtitle: 'Adopt a Growth Mindset',
-                    text: 'Focus on progress rather than perfection. Celebrate small wins, learn from setbacks, and keep moving forward. This shifts your view from fear of failure to confidence in growth.',
+                    text: 'Focus on progress rather than perfection. Celebrate small wins, learn from setbacks, and keep moving forward. This shifts your view from fear of failure to confidence in growth',
                 },
                 {
                     subtitle: 'Seek Support and SessionFeedback',
-                    text: 'Talk with friends, mentors, or coaches. External ideas can help you break free from mental loops. Support boosts confidence and provides fresh perspectives.\n\n\n ' +
-                        'We can say that overthinking can slow your progress and block success. It causes delays, stress, and less creativity. But you can break its hold with simple, practical steps. Practice mindfulness, set decision time limits, accept mistakes, and seek support. When you learn to think clearly and act confidently, you will see faster progress toward your goals. Remember, success is about acting—despite imperfections or doubts. Master your mindset, and turning ideas into achievements becomes easier than ever.',
+                    text: 'Talk with friends, mentors, or coaches. External ideas can help you break free from mental loops. Support boosts confidence and provides fresh perspectives\n\n\n ' +
+                        'We can say that overthinking can slow your progress and block success. It causes delays, stress, and less creativity. But you can break its hold with simple, practical steps. Practice mindfulness, set decision time limits, accept mistakes, and seek support. When you learn to think clearly and act confidently, you will see faster progress toward your goals. Remember, success is about acting—despite imperfections or doubts. Master your mindset, and turning ideas into achievements becomes easier than ever',
                 },
             ],
         },
@@ -137,29 +137,29 @@ const overthinkingData = {
     testimonials: [
         {
             name: 'Sarah, 28',
-            text: 'Mindfulness techniques helped me quiet my racing thoughts and focus on what matters.',
+            text: 'Mindfulness techniques helped me quiet my racing thoughts and focus on what matters',
             image: 'https://i.pravatar.cc/40?img=10',
         },
         {
             name: 'Michael, 34',
-            text: 'Counseling gave me tools to stop overanalyzing and start acting confidently.',
+            text: 'Counseling gave me tools to stop overanalyzing and start acting confidently',
             image: 'https://i.pravatar.cc/40?img=11',
         },
         {
             name: 'David, 41',
-            text: 'Learning to embrace imperfection changed how I approach decisions and boosted my success.',
+            text: 'Learning to embrace imperfection changed how I approach decisions and boosted my success',
             image: 'https://i.pravatar.cc/40?img=12',
         },
     ],
     references: [
-        'Brown, B. (2012). Daring Greatly: How the Courage to Be Vulnerable Transforms the Way We Live.',
-        'American Psychological Association. (2020). Overthinking and Mental Health.',
-        'Harvard Business Review. (2019). Overcoming Analysis Paralysis in Decision-Making.',
+        'Brown, B. (2012). Daring Greatly: How the Courage to Be Vulnerable Transforms the Way We Live',
+        'American Psychological Association. (2020). Overthinking and Mental Health',
+        'Harvard Business Review. (2019). Overcoming Analysis Paralysis in Decision-Making',
     ],
     motivation:
-        'Overthinking is a common problem many people face. It can slow you down, cause stress, and even keep you from reaching your goals. You might think that thinking more will help you make better choices, but often, the opposite is true. When you analyze things too much, you can miss chances to grow and succeed. Some of the most successful people have fallen into the trap of overthinking—missing opportunities because they couldn’t make a decision fast enough. Recognizing overthinking and learning how to avoid it can change your life.',
+        'Overthinking is a common problem many people face. It can slow you down, cause stress, and even keep you from reaching your goals. You might think that thinking more will help you make better choices, but often, the opposite is true. When you analyze things too much, you can miss chances to grow and succeed. Some of the most successful people have fallen into the trap of overthinking—missing opportunities because they couldn’t make a decision fast enough. Recognizing overthinking and learning how to avoid it can change your life',
     counseling:
-        'Our counselors can help you develop strategies to manage overthinking and find mental calm. Begin your journey to a quieter mind today.',
+        'Our counselors can help you develop strategies to manage overthinking and find mental calm. Begin your journey to a quieter mind today',
 };
 
 const primary = '#012765';
@@ -1035,7 +1035,7 @@ const Overthinking = () => {
                         </Typography>
                         <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
                             Our counselors are trained to help you overcome overthinking with professional guidance
-                            tailored to your unique situation.
+                            tailored to your unique situation
                         </Typography>
                         {/*<Button*/}
                         {/*    variant="contained"*/}

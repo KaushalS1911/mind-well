@@ -48,7 +48,7 @@ function Assessments({sx}) {
             img: img1,
             title: "Exam Stress Gauge",
             subTitle: "(Age 18-21)",
-            description: "Evaluate your anxiety levels and identify potential triggers.",
+            description: "Evaluate your anxiety levels and identify potential triggers",
             url: '/assessments/exam-stress',
             questions: "20 questions",
             time: "~ 10 min"
@@ -57,7 +57,7 @@ function Assessments({sx}) {
             img: img3,
             title: "General Stress & Anxiety",
             subTitle: "(Age 18+)",
-            description: "Measure your current stress levels and coping mechanisms.",
+            description: "Measure your current stress levels and coping mechanisms",
             url: '/assessments/general-stress',
             questions: "12 questions",
             time: "~ 6 min"
@@ -66,7 +66,7 @@ function Assessments({sx}) {
             img: img4,
             title: "Emotional Awareness & Regulation",
             subTitle: "(Age 4-10)",
-            description: "Understand your emotional intelligence and self-awareness.",
+            description: "Understand your emotional intelligence and self-awareness",
             url: '/assessments/emotional-awareness',
             questions: "15 questions",
             time: "~ 7 min"
@@ -75,7 +75,7 @@ function Assessments({sx}) {
             img: img5,
             title: "Academic Stress",
             subTitle: "(Age 16-25)",
-            description: "Analyze stress levels related to academic pressure and workload.",
+            description: "Analyze stress levels related to academic pressure and workload",
             url: '/assessments/academic-stress',
             questions: "20 questions",
             time: "~ 10 min"
@@ -84,7 +84,7 @@ function Assessments({sx}) {
             img: img6,
             title: "Self-Esteem Scale for Pre-Adolescents",
             subTitle: "(Age 11-13)",
-            description: "Measure your self-esteem and confidence levels.",
+            description: "Measure your self-esteem and confidence levels",
             url: '/assessments/self-esteem-scale',
             questions: "20 questions",
             time: "~ 10 min"
@@ -93,7 +93,7 @@ function Assessments({sx}) {
             img: img7,
             title: "Work-Life Balance",
             subTitle: "(Age 21+)",
-            description: "Evaluate your balance between work and personal life.",
+            description: "Evaluate your balance between work and personal life",
             url: '/assessments/work-life-balance',
             questions: "15 questions",
             time: "~ 7 min"
@@ -131,7 +131,7 @@ function Assessments({sx}) {
                                 </Box>
                             </Box>
                             <Box fontSize={{xs: 14, md: 18}} color="#CBD5E1" sx={{mb: "40px"}}>
-                                Start with a quick do-it-yourself mental health screening. These tools offer valuable insights into your emotional well-being and can help you determine if you might benefit from professional support. For a deeper understanding, we also recommend proper, professionally administered psychometric tests designed with scientific rigor.
+                                Start with a quick do-it-yourself mental health screening. These tools offer valuable insights into your emotional well-being and can help you determine if you might benefit from professional support. For a deeper understanding, we also recommend proper, professionally administered psychometric tests designed with scientific rigor
                             </Box>
                             <Grid container spacing={2}>
                                 <Grid container spacing={2}>

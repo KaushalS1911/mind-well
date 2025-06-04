@@ -43,33 +43,33 @@ const frameworks = {
             {
                 title: 'Baseline Assessment & Awareness',
                 items: [
-                    'Conduct Emotional Wellness Surveys for students, teachers, and parents.',
-                    'Organize Awareness Workshops on emotional intelligence, mindfulness, and stress management.',
-                    'Provide School Emotional Well-Being Reports with data insights and recommendations.',
+                    'Conduct Emotional Wellness Surveys for students, teachers, and parents',
+                    'Organize Awareness Workshops on emotional intelligence, mindfulness, and stress management',
+                    'Provide School Emotional Well-Being Reports with data insights and recommendations',
                 ],
             },
             {
                 title: 'Training & Capacity Building',
                 items: [
-                    'Student Sessions: Coping strategies for academic stress, emotional regulation, and motivation.',
-                    'Teacher Training: Managing stress, mindful teaching techniques, and student engagement strategies.',
-                    'Parent Workshops: Supporting children emotionally, managing expectations, and reducing academic pressure.',
+                    'Student Sessions: Coping strategies for academic stress, emotional regulation, and motivation',
+                    'Teacher Training: Managing stress, mindful teaching techniques, and student engagement strategies',
+                    'Parent Workshops: Supporting children emotionally, managing expectations, and reducing academic pressure',
                 ],
             },
             {
                 title: 'Practical Implementation & Support',
                 items: [
-                    'Personalized Counseling Support (Online/Offline) for students and teachers.',
-                    'Peer Support Groups to encourage emotional sharing and resilience-building.',
-                    'Emotionally Intelligent Classrooms: Incorporating mindfulness, gratitude exercises, and journaling.',
+                    'Personalized Counseling Support (Online/Offline) for students and teachers',
+                    'Peer Support Groups to encourage emotional sharing and resilience-building',
+                    'Emotionally Intelligent Classrooms: Incorporating mindfulness, gratitude exercises, and journaling',
                 ],
             },
             {
                 title: 'Impact Measurement & Future Roadmap',
                 items: [
-                    'Conduct Post-Intervention Assessments to measure improvement in emotional well-being.',
-                    'Organize SessionFeedback & Experience Sharing Sessions with all stakeholders.',
-                    'Develop a Sustainability Plan with school leadership for long-term implementation.',
+                    'Conduct Post-Intervention Assessments to measure improvement in emotional well-being',
+                    'Organize SessionFeedback & Experience Sharing Sessions with all stakeholders',
+                    'Develop a Sustainability Plan with school leadership for long-term implementation',
                 ],
             },
         ],

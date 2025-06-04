@@ -231,7 +231,7 @@ const HeroSection = () => {
                     >
                         A strategic, research-driven emotional wellness program designed to
                         elevate workplace well-being, boost employee engagement, and
-                        cultivate resilience.
+                        cultivate resilience
                     </Typography>
                 </Box>
             </Container>
@@ -260,12 +260,12 @@ const ProgramOverview = () => {
                         Tailored for business teams and HR leaders, this initiative
                         integrates evidence-based practices that strengthen emotional
                         intelligence, enhance team dynamics, and drive sustainable
-                        growth within organizational culture.
+                        growth within organizational culture
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
                         Our program focuses on creating a resilient workforce through
                         proactive burnout prevention, holistic engagement, and
-                        sustainable motivation strategies.
+                        sustainable motivation strategies
                     </Typography>
                 </Grid>
                 <Grid item xs={12} lg={4}>
@@ -332,7 +332,7 @@ const ThreePillarApproach = () => {
                 <Typography variant="body1" color="text.secondary" sx={styles.sectionDescription}>
                     ESOP delivers workplace emotional wellness through three
                     integrated components that work together to create lasting
-                    positive impact for organizations and their employees.
+                    positive impact for organizations and their employees
                 </Typography>
             </Box>
 

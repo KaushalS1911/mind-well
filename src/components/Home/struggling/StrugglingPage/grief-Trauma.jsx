@@ -22,7 +22,7 @@ import img16 from '../../../../assets/images/Home/Struggling/Grief-Traumatime.jp
 
 const griefTraumaData = {
     title: 'Understanding Grief and Trauma: How to Heal and Move Forward',
-    description: 'Discover effective strategies to process grief and trauma, rebuild resilience, and move toward healing.',
+    description: 'Discover effective strategies to process grief and trauma, rebuild resilience, and move toward healing',
     image: img2,
     image1: img9,
     firstimage: img16,
@@ -39,15 +39,15 @@ const griefTraumaData = {
             title: 'What Is Grief?',
             content: [
                 {
-                    text: 'Grief is the natural emotional response to losing someone or something important. It happens when we face death, breakups, or major changes. For example, losing a loved one, ending a relationship, or losing a job can trigger intense feelings of sadness. These feelings come and go but can be overwhelming at times.',
+                    text: 'Grief is the natural emotional response to losing someone or something important. It happens when we face death, breakups, or major changes. For example, losing a loved one, ending a relationship, or losing a job can trigger intense feelings of sadness. These feelings come and go but can be overwhelming at times',
                 },
                 {
                     subtitle: 'The Stages of Grief',
-                    text: 'People often go through five stages of grief, but everyone experiences them differently. These are:\n- Denial: Refusing to accept the loss\n- Anger: Feeling upset or mad over what happened\n- Bargaining: Trying to make deals to fix it\n- Depression: Feeling deeply sad and hopeless\n- Acceptance: Coming to terms with the loss\nRemember, these stages don’t always happen in order, and some people may skip some entirely. Grief is a personal journey.',
+                    text: 'People often go through five stages of grief, but everyone experiences them differently. These are:\n- Denial: Refusing to accept the loss\n- Anger: Feeling upset or mad over what happened\n- Bargaining: Trying to make deals to fix it\n- Depression: Feeling deeply sad and hopeless\n- Acceptance: Coming to terms with the loss\nRemember, these stages don’t always happen in order, and some people may skip some entirely. Grief is a personal journey',
                 },
                 {
                     subtitle: 'Recognizing Signs of Unhealthy Grief',
-                    text: 'While grief is normal, sometimes it lasts too long or becomes intense. Signs include feeling sad for months, avoiding people and activities, or having trouble functioning. If grief starts to impact your work, sleep, or relationships, it may be time to seek help from a mental health professional.',
+                    text: 'While grief is normal, sometimes it lasts too long or becomes intense. Signs include feeling sad for months, avoiding people and activities, or having trouble functioning. If grief starts to impact your work, sleep, or relationships, it may be time to seek help from a mental health professional',
                 },
             ],
         },
@@ -55,15 +55,15 @@ const griefTraumaData = {
             title: 'What Is Trauma?',
             content: [
                 {
-                    text: 'Trauma is an emotional response to a very upsetting or overwhelming event. This event could be abuse, violence, an accident, or a natural disaster. Trauma can happen after a single incident, like a car crash, or over time through ongoing stress or abuse. When someone experiences trauma, their mind and body react strongly.',
+                    text: 'Trauma is an emotional response to a very upsetting or overwhelming event. This event could be abuse, violence, an accident, or a natural disaster. Trauma can happen after a single incident, like a car crash, or over time through ongoing stress or abuse. When someone experiences trauma, their mind and body react strongly',
                 },
                 {
                     subtitle: 'Symptoms and Signs of Traumatic Impact :',
-                    text: 'People who go through trauma may have flashbacks, intrusive thoughts, or feel numb. They might be always on alert, easily startled, or avoid places that remind them of the event. Physical signs can include trouble sleeping, being exhausted, or feeling tense most of the time.',
+                    text: 'People who go through trauma may have flashbacks, intrusive thoughts, or feel numb. They might be always on alert, easily startled, or avoid places that remind them of the event. Physical signs can include trouble sleeping, being exhausted, or feeling tense most of the time',
                 },
                 {
                     subtitle: 'The Spectrum of Trauma-Related Disorders :',
-                    text: 'Trauma can lead to different mental health issues:\n- Acute Stress Disorder: Short-term distress shortly after trauma\n- Post-Traumatic Stress Disorder (PTSD): Longer-lasting symptoms that interfere with life\nBoth can change how you feel and interact with others.',
+                    text: 'Trauma can lead to different mental health issues:\n- Acute Stress Disorder: Short-term distress shortly after trauma\n- Post-Traumatic Stress Disorder (PTSD): Longer-lasting symptoms that interfere with life\nBoth can change how you feel and interact with others',
                 },
             ],
         },
@@ -72,15 +72,15 @@ const griefTraumaData = {
             content: [
                 {
                     subtitle: 'Differentiating the Emotional Responses',
-                    text: 'Grief usually involves feeling sad because of a loss, like losing a loved one. Trauma involves feeling overwhelmed by a frightening or violent event. Grief often leads to long-term mourning, while trauma may cause hyperarousal or avoidance behaviors. Still, both can hit hard and overlap in some cases.',
+                    text: 'Grief usually involves feeling sad because of a loss, like losing a loved one. Trauma involves feeling overwhelmed by a frightening or violent event. Grief often leads to long-term mourning, while trauma may cause hyperarousal or avoidance behaviors. Still, both can hit hard and overlap in some cases',
                 },
                 {
                     subtitle: 'Overlapping Symptoms',
-                    text: 'Both grief and trauma can cause feelings of sadness, anxiety, trouble concentrating, and even physical symptoms like headaches. Sometimes, grief can evolve into trauma if it’s intense or unresolved.',
+                    text: 'Both grief and trauma can cause feelings of sadness, anxiety, trouble concentrating, and even physical symptoms like headaches. Sometimes, grief can evolve into trauma if it’s intense or unresolved',
                 },
                 {
                     subtitle: 'When Grief Turns into Trauma or Vice Versa',
-                    text: 'In some situations, grief can trigger trauma symptoms, especially if the loss was sudden, violent, or traumatic. Recognizing the difference helps choose the right path to healing. Mental health assessments can guide you toward the best treatment.',
+                    text: 'In some situations, grief can trigger trauma symptoms, especially if the loss was sudden, violent, or traumatic. Recognizing the difference helps choose the right path to healing. Mental health assessments can guide you toward the best treatment',
                 },
             ],
         },
@@ -89,15 +89,15 @@ const griefTraumaData = {
             content: [
                 {
                     subtitle: 'Self-Care Practices and Coping Techniques',
-                    text: 'Taking care of yourself is vital. Here are some ways to cope:\n- Practice mindfulness or meditation\n- Write down your feelings in a journal\n- Engage in physical activity like walking or yoga\n- Reach out to trusted friends or family members\nThese actions help process emotions and reduce stress.',
+                    text: 'Taking care of yourself is vital. Here are some ways to cope:\n- Practice mindfulness or meditation\n- Write down your feelings in a journal\n- Engage in physical activity like walking or yoga\n- Reach out to trusted friends or family members\nThese actions help process emotions and reduce stress',
                 },
                 {
                     subtitle: 'Building Resilience Through Healthy Habits',
-                    text: 'Building resilience means creating routines that give stability. Examples include:\n- Setting small, achievable goals\n- Establishing regular sleep schedules\n- Saying no to things that overwhelm you\n- Doing activities that bring joy and purpose\nThese habits strengthen your ability to face difficult times.',
+                    text: 'Building resilience means creating routines that give stability. Examples include:\n- Setting small, achievable goals\n- Establishing regular sleep schedules\n- Saying no to things that overwhelm you\n- Doing activities that bring joy and purpose\nThese habits strengthen your ability to face difficult times',
                 },
                 {
                     subtitle: 'When and How to Seek Professional Help',
-                    text: 'If symptoms persist or interfere with daily life, seek professional help. Grief counseling or trauma-focused therapy can provide tailored support. Early intervention improves outcomes.',
+                    text: 'If symptoms persist or interfere with daily life, seek professional help. Grief counseling or trauma-focused therapy can provide tailored support. Early intervention improves outcomes',
                 },
             ],
         },
@@ -107,11 +107,11 @@ const griefTraumaData = {
                 {
                     text: 'Mental health professionals emphasize that early intervention improves outcomes. Research shows that therapy can significantly reduce symptoms and improve quality of life. ' +
                         'Experts suggest being patient and gentle with yourself. Healing takes time, and waiting too long can make things worse. Psychologists recommend small steps: start by accepting ' +
-                        'your feelings and asking for support. Overcoming grief and trauma is a process, but with dedication, recovery is within reach.:\n\n Psychologists recommend small steps. Start by' +
-                        ' accepting your feelings and asking for support. Overcoming grief and trauma is a process, but with dedication, recovery is within reach.\n\n To summarize understanding the difference' +
+                        'your feelings and asking for support. Overcoming grief and trauma is a process, but with dedication, recovery is within reach\n\n Psychologists recommend small steps. Start by' +
+                        ' accepting your feelings and asking for support. Overcoming grief and trauma is a process, but with dedication, recovery is within reach\n\n To summarize understanding the difference' +
                         ' between grief and trauma helps you navigate the road to healing. Grief mostly deals with loss, while trauma involves a shocking or frightening event. Both affect mental health deeply ' +
                         'but can be managed with the right tools. Be patient, kind to yourself, and seek help when needed. Healing is a journey, and better days are ahead. Prioritize your mental health and take' +
-                        ' steps to rebuild your strength. You deserve to move forward and find peace again.',
+                        ' steps to rebuild your strength. You deserve to move forward and find peace again',
                 },
             ],
         },
@@ -126,29 +126,29 @@ const griefTraumaData = {
     testimonials: [
         {
             name: 'Sarah, 28',
-            text: 'Counseling helped me process my grief and find hope again.',
+            text: 'Counseling helped me process my grief and find hope again',
             image: 'https://i.pravatar.cc/40?img=10',
         },
         {
             name: 'Michael, 34',
-            text: 'Trauma therapy gave me tools to manage my flashbacks.',
+            text: 'Trauma therapy gave me tools to manage my flashbacks',
             image: 'https://i.pravatar.cc/40?img=11',
         },
         {
             name: 'David, 41',
-            text: 'Support groups made me feel understood and less alone.',
+            text: 'Support groups made me feel understood and less alone',
             image: 'https://i.pravatar.cc/40?img=12',
         },
     ],
     references: [
-        'American Psychological Association. Grief and Loss.',
-        'National Institute of Mental Health. Post-Traumatic Stress Disorder.',
-        'World Health Organization. Mental Health and Trauma.',
+        'American Psychological Association. Grief and Loss',
+        'National Institute of Mental Health. Post-Traumatic Stress Disorder',
+        'World Health Organization. Mental Health and Trauma',
     ],
     motivation:
-        'Grief and trauma affect millions of people every day. They can turn life upside down and leave you feeling lost. Knowing what they are, how to spot them, and ways to cope makes a big difference. Healing is possible, but it takes time and effort. This piece of information will explain the differences between grief and trauma, signs to watch for, and ways to start feeling better.',
+        'Grief and trauma affect millions of people every day. They can turn life upside down and leave you feeling lost. Knowing what they are, how to spot them, and ways to cope makes a big difference. Healing is possible, but it takes time and effort. This piece of information will explain the differences between grief and trauma, signs to watch for, and ways to start feeling better',
     counseling:
-        'Our specialized grief and trauma counselors offer personalized strategies to help you heal. Start your journey to recovery today.',
+        'Our specialized grief and trauma counselors offer personalized strategies to help you heal. Start your journey to recovery today',
 };
 
 const primary = '#012765';
@@ -990,7 +990,7 @@ const GriefTrauma = () => {
                             Ready to Begin Your Healing Journey?
                         </Typography>
                         <Typography sx={{ mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial' }}>
-                            Our counselors are trained to help you navigate grief and trauma with professional guidance tailored to your unique situation.
+                            Our counselors are trained to help you navigate grief and trauma with professional guidance tailored to your unique situation
                         </Typography>
                         {/*<Button*/}
                         {/*    variant="contained"*/}

@@ -118,7 +118,7 @@ const HeroSection = () => (
             <Divider sx={{backgroundColor: "#FF7A00", height: 4, width: 100, margin: "auto", my: 3}}/>
             <Typography variant="h6" sx={{color: '#fff', fontWeight: 400}}>
                 Be part of our mission to transform emotional wellness and make a lasting impact on individuals
-                and organizations.
+                and organizations
             </Typography>
         </Container>
     </Box>
@@ -205,7 +205,7 @@ const ApplicationForm = ({
                     We're Hiring!
                 </Typography>
                 <Typography variant="title">
-                    If you are a Psychologist, Special Educator, Psychotherapists, Content Writer, Flutter Developer, React Developer, Accounts and Finance, Sales Professionals, HR then reach us at <span style={{color: "#FE6A00"}}>connect@mahadevasth.com</span> to explore exciting career opportunities.               </Typography>
+                    If you are a Psychologist, Special Educator, Psychotherapists, Content Writer, Flutter Developer, React Developer, Accounts and Finance, Sales Professionals, HR then reach us at <span style={{color: "#FE6A00"}}>connect@mahadevasth.com</span> to explore exciting career opportunities</Typography>
             </StyledPaper>
         </Container>
     </Box>

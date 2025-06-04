@@ -34,7 +34,7 @@ import {AttachFile, Close} from "@mui/icons-material";
 
 const stressAnxietyData = {
     title: 'Stress and Anxiety: Understanding, Managing, and Overcoming Mental Health Challenges',
-    description: 'Discover effective strategies to understand, manage, and overcome stress and anxiety for a healthier, happier life.',
+    description: 'Discover effective strategies to understand, manage, and overcome stress and anxiety for a healthier, happier life',
     image: img,
     image1: img7,
     firstimage: img14,
@@ -52,17 +52,17 @@ const stressAnxietyData = {
             content: [
                 {
                     subtitle: 'Understanding Stress',
-                    text: 'Stress happens when you face pressures or demands that feel overwhelming. It’s your body\'s way of reacting to threats or challenges.',
+                    text: 'Stress happens when you face pressures or demands that feel overwhelming. It’s your body\'s way of reacting to threats or challenges',
                 },
                 {
                     subtitle: 'Understanding Anxiety',
-                    text: 'Anxiety is a feeling of excessive worry or fear that does not go away easily. Unlike stress, it often involves a persistent pattern of negative thoughts. Normal anxiety helps us stay alert, but those with anxiety disorders feel it too much.',
+                    text: 'Anxiety is a feeling of excessive worry or fear that does not go away easily. Unlike stress, it often involves a persistent pattern of negative thoughts. Normal anxiety helps us stay alert, but those with anxiety disorders feel it too much',
                 },
                 {
                     subtitle: 'Key Differences Between Stress and Anxiety:',
                     text: 'Stress usually comes from external sources and disappears when the problem ends.\n' +
                         'Anxiety tends to linger, even without clear triggers, and can dominate your thoughts.\n' +
-                        'Both affect physical health but in different ways—stress can cause fatigue, while anxiety might cause chest tightness or racing thoughts.',
+                        'Both affect physical health but in different ways—stress can cause fatigue, while anxiety might cause chest tightness or racing thoughts',
                 },
             ],
         },
@@ -71,15 +71,15 @@ const stressAnxietyData = {
             content: [
                 {
                     subtitle: 'External Factors',
-                    text: 'Things like work overload, financial struggles, or relationship issues can set off stress or anxiety. Major life changes, like moving or losing a loved one, also play a big role. Traumatic events, such as accidents or abuse, can make anxiety worse.',
+                    text: 'Things like work overload, financial struggles, or relationship issues can set off stress or anxiety. Major life changes, like moving or losing a loved one, also play a big role. Traumatic events, such as accidents or abuse, can make anxiety worse',
                 },
                 {
                     subtitle: 'Internal Factors',
-                    text: 'Your genes and family history matter. If anxiety runs in your family, your chances of developing it are higher. Your personality also influences your risk. For example, perfectionists or people with low confidence tend to be more anxious.',
+                    text: 'Your genes and family history matter. If anxiety runs in your family, your chances of developing it are higher. Your personality also influences your risk. For example, perfectionists or people with low confidence tend to be more anxious',
                 },
                 {
                     subtitle: 'Societal and Environmental Influences',
-                    text: 'Social media and constant screen time can increase feelings of inadequacy and stress. Cultural or societal pressures to succeed or look a certain way can also heighten anxiety levels.',
+                    text: 'Social media and constant screen time can increase feelings of inadequacy and stress. Cultural or societal pressures to succeed or look a certain way can also heighten anxiety levels',
                 },
             ],
         },
@@ -87,7 +87,7 @@ const stressAnxietyData = {
             title: 'Statistics and Data:',
             content: [
                 {
-                    text: 'Out of 1,479 respondents, 9.6% experienced mild stress, 84.9% experienced moderate stress, and 5.5% experienced severe stress according to the PSS. Females experienced significantly higher stress levels when compared with males, but both experienced moderate stress levels.',
+                    text: 'Out of 1,479 respondents, 9.6% experienced mild stress, 84.9% experienced moderate stress, and 5.5% experienced severe stress according to the PSS. Females experienced significantly higher stress levels when compared with males, but both experienced moderate stress levels',
                 },
             ],
         },
@@ -96,15 +96,15 @@ const stressAnxietyData = {
             content: [
                 {
                     subtitle: 'Common Physical Symptoms',
-                    text: 'You might notice fast heartbeat, fatigue, tense muscles, or frequent headaches. Some people get upset stomachs or struggle to sleep.',
+                    text: 'You might notice fast heartbeat, fatigue, tense muscles, or frequent headaches. Some people get upset stomachs or struggle to sleep',
                 },
                 {
                     subtitle: 'Psychological and Emotional Indicators',
-                    text: 'Worrying constantly, being irritable, or finding it hard to focus are signs. Sleep problems and feeling on edge are common too.',
+                    text: 'Worrying constantly, being irritable, or finding it hard to focus are signs. Sleep problems and feeling on edge are common too',
                 },
                 {
                     subtitle: 'When to Consult a Professional:',
-                    text: 'If your symptoms are severe, last for weeks, or interfere with your daily routines, it’s time to see a professional. Early help can prevent things from getting worse.',
+                    text: 'If your symptoms are severe, last for weeks, or interfere with your daily routines, it’s time to see a professional. Early help can prevent things from getting worse',
                 },
             ],
         },
@@ -113,15 +113,15 @@ const stressAnxietyData = {
             content: [
                 {
                     subtitle: 'Lifestyle Modifications',
-                    text: 'Regular workouts can clear your mind and boost mood. Eating healthy and sleeping well also help. Cutting back on caffeine and alcohol reduces symptoms of anxiety.',
+                    text: 'Regular workouts can clear your mind and boost mood. Eating healthy and sleeping well also help. Cutting back on caffeine and alcohol reduces symptoms of anxiety',
                 },
                 {
                     subtitle: 'Mindfulness and Relaxation Techniques',
-                    text: 'Practicing deep breathing, meditation, or progressive muscle relaxation can calm your mind. Doing these daily makes a big difference.',
+                    text: 'Practicing deep breathing, meditation, or progressive muscle relaxation can calm your mind. Doing these daily makes a big difference',
                 },
                 {
                     subtitle: 'Cognitive Behavioral Techniques',
-                    text: 'Challenge negative thoughts that make anxiety worse. Replace them with positive or neutral ideas. Building healthy habits for coping can change how you react to stress.',
+                    text: 'Challenge negative thoughts that make anxiety worse. Replace them with positive or neutral ideas. Building healthy habits for coping can change how you react to stress',
                 },
                 {
                     subtitle: 'Important Tips:',
@@ -138,7 +138,7 @@ const stressAnxietyData = {
             content: [
                 {
                     subtitle: 'Support Systems:',
-                    text: 'A strong support network makes a big difference. Talking with friends or joining a support group can lessen feelings of loneliness and make managing anxiety easier.',
+                    text: 'A strong support network makes a big difference. Talking with friends or joining a support group can lessen feelings of loneliness and make managing anxiety easier',
                 },
             ],
         },
@@ -147,19 +147,19 @@ const stressAnxietyData = {
             content: [
                 {
                     subtitle: 'Building Resilience',
-                    text: 'Work on your emotional strength. Practice mindfulness, stay positive, and learn how to bounce back from setbacks.',
+                    text: 'Work on your emotional strength. Practice mindfulness, stay positive, and learn how to bounce back from setbacks',
                 },
                 {
                     subtitle: 'Routine Self-Care Practices',
-                    text: 'Exercise regularly, pursue hobbies, and take time to relax. Making these habits part of your life keeps stress in check.',
+                    text: 'Exercise regularly, pursue hobbies, and take time to relax. Making these habits part of your life keeps stress in check',
                 },
                 {
                     subtitle: 'Reducing External Stressors',
-                    text: 'Learn to say no when you’re overwhelmed. Manage your time better and set clear boundaries at work and home.',
+                    text: 'Learn to say no when you’re overwhelmed. Manage your time better and set clear boundaries at work and home',
                 },
                 {
                     subtitle: 'Monitoring and Maintaining Mental Health',
-                    text: 'Use journals or apps to track your mood. Recognize early signs of stress or anxiety so you can address them quickly.',
+                    text: 'Use journals or apps to track your mood. Recognize early signs of stress or anxiety so you can address them quickly',
                 },
             ],
         },
@@ -167,7 +167,7 @@ const stressAnxietyData = {
             title: 'Real-Life Example',
             content: [
                 {
-                    text: 'For example, xyz started feeling anxious before work meetings. Her chest felt tight, and she couldn’t sleep. After talking to a counselor, she learned her symptoms were part of an anxiety disorder. Getting help improved her life.\n',
+                    text: 'For example, xyz started feeling anxious before work meetings. Her chest felt tight, and she couldn’t sleep. After talking to a counselor, she learned her symptoms were part of an anxiety disorder. Getting help improved her life\n',
                 },
             ],
         },
@@ -182,7 +182,7 @@ const stressAnxietyData = {
     testimonials: [
         {
             name: 'Sarah, 28',
-            text: 'Counseling gave me tools to manage my anxiety. I feel empowered and in control now.',
+            text: 'Counseling gave me tools to manage my anxiety. I feel empowered and in control now',
             image: 'https://i.pravatar.cc/40?img=10'
         },
         {
@@ -192,17 +192,17 @@ const stressAnxietyData = {
         },
         {
             name: 'David, 41',
-            text: 'Joining a support group made me feel understood and less alone.',
+            text: 'Joining a support group made me feel understood and less alone',
             image: 'https://i.pravatar.cc/40?img=12'
         },
     ],
     references: [
-        'World Health Organization. Mental Health Data.',
-        'Mayo Clinic. Coping Skills for Anxiety.',
-        'National Institute of Mental Health. Stress and Anxiety Facts.',
+        'World Health Organization. Mental Health Data',
+        'Mayo Clinic. Coping Skills for Anxiety',
+        'National Institute of Mental Health. Stress and Anxiety Facts',
     ],
-    motivation: 'Millions of people around the world deal with stress and anxiety daily. These feelings can weigh you down and affect your mood, sleep, and even your health. Recognizing the signs early can help you avoid bigger problems later. This piece of information will explain what stress and anxiety are, why they happen, how they affect you, and what steps you can take to feel better.',
-    counseling: 'Our expert therapists offer personalized strategies to manage stress and anxiety. Start your journey to better mental health today.',
+    motivation: 'Millions of people around the world deal with stress and anxiety daily. These feelings can weigh you down and affect your mood, sleep, and even your health. Recognizing the signs early can help you avoid bigger problems later. This piece of information will explain what stress and anxiety are, why they happen, how they affect you, and what steps you can take to feel better',
+    counseling: 'Our expert therapists offer personalized strategies to manage stress and anxiety. Start your journey to better mental health today',
 };
 
 const primary = '#012765';
@@ -835,7 +835,7 @@ const StressAnxiety = () => {
                                     Assess Your Mental Health
                                 </Typography>
                                 <Typography sx={{color: textBody, mb: 3, fontFamily: 'Arial', lineHeight: 1.6}}>
-                                    Take our quick assessment to gain personalized insights and recommendations.
+                                    Take our quick assessment to gain personalized insights and recommendations
                                 </Typography>
                                 <Button
                                     fullWidth
@@ -1066,7 +1066,7 @@ const StressAnxiety = () => {
                         <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
                             Our counselors are trained to help you navigate through your challenges with professional
                             guidance tailored to
-                            your unique situation.
+                            your unique situation
                         </Typography>
                         {/*<Button*/}
                         {/*    variant="contained"*/}

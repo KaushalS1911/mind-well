@@ -63,25 +63,25 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
             number: '1',
             title: 'Leadership Taskforce',
             description:
-                'Enlighten Business and HR leadership towards the role of Mental Health and reinforcement of emotional wellness.',
+                'Enlighten Business and HR leadership towards the role of Mental Health and reinforcement of emotional wellness',
         },
         {
             number: '2',
             title: 'Proactive Resilience Building',
             description:
-                'Curated target-based Employee workshops and individual and family wellness counselling.',
+                'Curated target-based Employee workshops and individual and family wellness counselling',
         },
         {
             number: '3',
             title: 'Holistic Employee Engagement',
             description:
-                'Foster peer-support communities that encourage open dialogue and collective growth.',
+                'Foster peer-support communities that encourage open dialogue and collective growth',
         },
         {
             number: '4',
             title: 'Ownership Building',
             description:
-                'Recognise and celebrate emotional intelligence, fostering a culture where well-being and performance go hand in hand.',
+                'Recognise and celebrate emotional intelligence, fostering a culture where well-being and performance go hand in hand',
         },
     ];
 
@@ -118,7 +118,7 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
                         }}
                     >
                         Tailored for business teams and HR leaders, this initiative integrates evidence-based practices
-                        that enhance team dynamics, and drive sustainable growth within organizational culture.
+                        that enhance team dynamics, and drive sustainable growth within organizational culture
                     </Typography>
                 </Box>
 

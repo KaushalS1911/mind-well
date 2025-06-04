@@ -13,45 +13,45 @@ const steps = [
         image: img1,
         title: "Establish a Leadership Task force",
         details: [
-            "Amplify awareness of emotional intelligence as a leadership cornerstone.",
-            "Pinpoint challenges and uncover pathways for growth.",
-            "Develop a precision-driven strategy for lasting impact.",
+            "Amplify awareness of emotional intelligence as a leadership cornerstone",
+            "Pinpoint challenges and uncover pathways for growth",
+            "Develop a precision-driven strategy for lasting impact",
         ],
     },
     {
         image: img2,
         title: "Initial Evaluations – Laying the Groundwork",
         details: [
-            "Facilitate introspective self-assessments to foster personal growth.",
-            "Conduct comprehensive wellness evaluations for participants.",
-            "Deliver data-driven insights to empower organisational strategies.",
+            "Facilitate introspective self-assessments to foster personal growth",
+            "Conduct comprehensive wellness evaluations for participants",
+            "Deliver data-driven insights to empower organisational strategies",
         ],
     },
     {
         image: img3,
         title: "Awareness Creation for Meaningful Impact",
         details: [
-            "Develop demographic-specific curricula tailored by gender, age, and region.",
-            "Foster engagement through interactive workshops and training.",
-            "Empower self-help groups as first responders and feedback hubs.",
+            "Develop demographic-specific curricula tailored by gender, age, and region",
+            "Foster engagement through interactive workshops and training",
+            "Empower self-help groups as first responders and feedback hubs",
         ],
     },
     {
         image: img4,
         title: "Insight-Driven Personalised Enrichment",
         details: [
-            "Curate meticulously designed sessions for profound growth.",
-            "Provide customised guidance to cultivate essential life skills.",
-            "Detect underlying risks and elevate organisational consciousness.",
+            "Curate meticulously designed sessions for profound growth",
+            "Provide customised guidance to cultivate essential life skills",
+            "Detect underlying risks and elevate organisational consciousness",
         ],
     },
     {
         image: img5,
         title: "Strengthening Impact Through Measurable Metrices",
         details: [
-            "Assess intervention effectiveness with follow-up evaluations.",
-            "Facilitate collaborative feedback sessions for shared learning.",
-            "Develop a strategic roadmap with leadership for sustained success.",
+            "Assess intervention effectiveness with follow-up evaluations",
+            "Facilitate collaborative feedback sessions for shared learning",
+            "Develop a strategic roadmap with leadership for sustained success",
         ],
     },
 ];
@@ -94,7 +94,7 @@ function WorksTable() {
                     >
                         With "Emotionally Yours", you can embark on a transformative journey to
                         enhance your emotional well-being through a few simple and effective
-                        steps.
+                        steps
                     </Box>
 
                     <Box sx={{position: "relative", mt: {xs: 4, sm: 6}}}>

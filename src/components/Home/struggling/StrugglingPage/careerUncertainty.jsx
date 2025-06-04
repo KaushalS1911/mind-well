@@ -21,7 +21,7 @@ import imgPlaceholder3 from '../../../../assets/images/Home/Struggling/handsome-
 
 const careerUncertaintyData = {
     title: 'What is Career Uncertainty and How to Find a Career That Suits You',
-    description: 'Explore strategies to overcome career doubts and discover a path that aligns with your values and strengths.',
+    description: 'Explore strategies to overcome career doubts and discover a path that aligns with your values and strengths',
     image: imgPlaceholder1,
     image1: imgPlaceholder2,
     firstimage: imgPlaceholder3,
@@ -39,11 +39,11 @@ const careerUncertaintyData = {
             content: [
                 {
                     subtitle: 'Defining Career Uncertainty',
-                    text: 'Career uncertainty is the difficulty in choosing or sticking with a particular career plan. It often shows up as feeling lost or confused about your next move. Several things can cause this, like changes in the economy, new technology, your personal values, or life events. When unsure, it’s hard to commit or feel confident about your choices.',
+                    text: 'Career uncertainty is the difficulty in choosing or sticking with a particular career plan. It often shows up as feeling lost or confused about your next move. Several things can cause this, like changes in the economy, new technology, your personal values, or life events. When unsure, it’s hard to commit or feel confident about your choices',
                 },
                 {
                     subtitle: 'The Impact of Career Uncertainty',
-                    text: 'This kind of doubt can affect your mind and your work. You might feel anxious, stressed, or unmotivated. Professionally, it can lead to staying in jobs you dislike, missing chances for growth, or jumping from one role to another without a clear direction. Over time, this can make it tough to build a successful career.',
+                    text: 'This kind of doubt can affect your mind and your work. You might feel anxious, stressed, or unmotivated. Professionally, it can lead to staying in jobs you dislike, missing chances for growth, or jumping from one role to another without a clear direction. Over time, this can make it tough to build a successful career',
                 },
             ],
         },
@@ -51,7 +51,7 @@ const careerUncertaintyData = {
             title: 'Recognizing Signs of Career Uncertainty',
             content: [
                 {
-                    text: 'Do any of these sound familiar?\n• Feeling overwhelmed when thinking about your options\n• Frequently changing jobs or avoiding making long-term plans\n• Lack of enthusiasm or purpose in your current role\n• Second-guessing your choices and feeling unsure about your skills\nWhen these signs appear, it’s a sign you need to pause and explore what’s really important to you.',
+                    text: 'Do any of these sound familiar?\n• Feeling overwhelmed when thinking about your options\n• Frequently changing jobs or avoiding making long-term plans\n• Lack of enthusiasm or purpose in your current role\n• Second-guessing your choices and feeling unsure about your skills\nWhen these signs appear, it’s a sign you need to pause and explore what’s really important to you',
                 },
             ],
         },
@@ -60,15 +60,15 @@ const careerUncertaintyData = {
             content: [
                 {
                     subtitle: 'External Factors Contributing to Career Ambiguity',
-                    text: 'A few big changes make career doubts more common. Rapid tech advances are changing entire industries. The job market is now more competitive, with many options vying for your attention. Plus, more people than ever are working freelance or gig jobs, which can feel unpredictable.',
+                    text: 'A few big changes make career doubts more common. Rapid tech advances are changing entire industries. The job market is now more competitive, with many options vying for your attention. Plus, more people than ever are working freelance or gig jobs, which can feel unpredictable',
                 },
                 {
                     subtitle: 'Internal Factors Influencing Career Doubt',
-                    text: 'Sometimes, it’s what happens inside your mind. Your values may shift as you grow, and fears of failure or making the wrong choice can hold you back. You might not know enough about your own strengths and interests to decide confidently. Without clear self-knowledge, choosing a career feels even harder.',
+                    text: 'Sometimes, it’s what happens inside your mind. Your values may shift as you grow, and fears of failure or making the wrong choice can hold you back. You might not know enough about your own strengths and interests to decide confidently. Without clear self-knowledge, choosing a career feels even harder',
                 },
                 {
                     subtitle: 'Data and Trends',
-                    text: 'Studies show many workers switch careers multiple times. The average job length is dropping, and workers say they want more clarity about their future. This trend points to more uncertainty in today’s job scene. It’s normal to feel confused when so much is changing all the time.',
+                    text: 'Studies show many workers switch careers multiple times. The average job length is dropping, and workers say they want more clarity about their future. This trend points to more uncertainty in today’s job scene. It’s normal to feel confused when so much is changing all the time',
                 },
             ],
         },
@@ -77,19 +77,19 @@ const careerUncertaintyData = {
             content: [
                 {
                     subtitle: 'Self-Assessment as a Starting Point',
-                    text: 'Begin with a simple inventory of your skills and interests. Ask yourself what you enjoy doing every day. You can also try tools like personality tests or the Strong Interest Inventory to get a clearer picture of your strengths and preferences.',
+                    text: 'Begin with a simple inventory of your skills and interests. Ask yourself what you enjoy doing every day. You can also try tools like personality tests or the Strong Interest Inventory to get a clearer picture of your strengths and preferences',
                 },
                 {
                     subtitle: 'Exploring Your Values and Motivations',
-                    text: 'What truly matters to you at work? Is it having freedom to be creative? Wanting job security? Helping others? Knowing your core values makes it easier to find careers that match your reasons for working.',
+                    text: 'What truly matters to you at work? Is it having freedom to be creative? Wanting job security? Helping others? Knowing your core values makes it easier to find careers that match your reasons for working',
                 },
                 {
                     subtitle: 'Research and Connect with Others',
-                    text: 'Look into different industries and roles through online research. Reach out to people working in those fields and ask about their experiences. Informational interviews give you real stories and can spark your interest in new directions.',
+                    text: 'Look into different industries and roles through online research. Reach out to people working in those fields and ask about their experiences. Informational interviews give you real stories and can spark your interest in new directions',
                 },
                 {
                     subtitle: 'Testing and Gaining Experience',
-                    text: 'Trying out new careers through internships, volunteering, or side projects helps you understand what feels right. These opportunities provide practical experience and help reveal what you enjoy most.',
+                    text: 'Trying out new careers through internships, volunteering, or side projects helps you understand what feels right. These opportunities provide practical experience and help reveal what you enjoy most',
                 },
             ],
         },
@@ -98,20 +98,20 @@ const careerUncertaintyData = {
             content: [
                 {
                     subtitle: 'Set Clear Goals and Make Plans',
-                    text: 'Write down what you hope to achieve in the short and long term. Create simple action steps and deadlines. This way, you move forward with purpose, not just floating in uncertainty.',
+                    text: 'Write down what you hope to achieve in the short and long term. Create simple action steps and deadlines. This way, you move forward with purpose, not just floating in uncertainty',
                 },
                 {
                     subtitle: 'Find Guidance and Mentors',
-                    text: 'Talk to career coaches or counselors who can offer advice. Join industry groups or professional communities to meet people who can teach you more. Having a mentor can give you direction and confidence.',
+                    text: 'Talk to career coaches or counselors who can offer advice. Join industry groups or professional communities to meet people who can teach you more. Having a mentor can give you direction and confidence',
                 },
                 {
                     subtitle: 'Keep Learning and Improving Skills',
-                    text: 'Invest in courses, certifications, or workshops related to your interests. Stay updated on industry news and trends. Learning new skills keeps you flexible and ready for change.',
+                    text: 'Invest in courses, certifications, or workshops related to your interests. Stay updated on industry news and trends. Learning new skills keeps you flexible and ready for change',
                 },
                 {
                     subtitle: 'Reflect and Stay Open to Change',
-                    text: 'Take time regularly to think about your progress and feelings. Are you happier with your choices? If not, be willing to adjust your plans. Flexibility helps you grow and find jobs that truly fit you.\n\n\n' +
-                        'Career uncertainty is a common challenge in today’s busy world. It happens because of external changes and internal doubts. The key to overcoming it is to understand yourself better through self-assessment and research. Take practical steps like setting goals, seeking help, gaining experience, and staying open. Remember, your career path is not fixed; embrace change and continuous learning to build a satisfying future. Find what makes you happy and pushes you toward your goals. Your ideal career is easier to discover when you know yourself and are willing to explore.',
+                    text: 'Take time regularly to think about your progress and feelings. Are you happier with your choices? If not, be willing to adjust your plans. Flexibility helps you grow and find jobs that truly fit you\n\n\n' +
+                        'Career uncertainty is a common challenge in today’s busy world. It happens because of external changes and internal doubts. The key to overcoming it is to understand yourself better through self-assessment and research. Take practical steps like setting goals, seeking help, gaining experience, and staying open. Remember, your career path is not fixed; embrace change and continuous learning to build a satisfying future. Find what makes you happy and pushes you toward your goals. Your ideal career is easier to discover when you know yourself and are willing to explore',
                 },
             ],
         },
@@ -126,29 +126,29 @@ const careerUncertaintyData = {
     testimonials: [
         {
             name: 'Emma, 29',
-            text: 'Career counseling helped me identify my strengths and find a path I’m excited about.',
+            text: 'Career counseling helped me identify my strengths and find a path I’m excited about',
             image: 'https://i.pravatar.cc/40?img=13',
         },
         {
             name: 'Liam, 35',
-            text: 'Connecting with a mentor gave me the clarity and confidence to switch careers.',
+            text: 'Connecting with a mentor gave me the clarity and confidence to switch careers',
             image: 'https://i.pravatar.cc/40?img=14',
         },
         {
             name: 'Sophie, 42',
-            text: 'Exploring new roles through volunteering showed me what I truly enjoy doing.',
+            text: 'Exploring new roles through volunteering showed me what I truly enjoy doing',
             image: 'https://i.pravatar.cc/40?img=15',
         },
     ],
     references: [
-        'U.S. Bureau of Labor Statistics. (2022). Employment Projections and Career Changes.',
-        'Holland, J. L. (1997). Making Vocational Choices: A Theory of Vocational Personalities and Work Environments.',
-        'LinkedIn. (2023). Workforce Confidence Survey: Career Mobility Trends.',
+        'U.S. Bureau of Labor Statistics. (2022). Employment Projections and Career Changes',
+        'Holland, J. L. (1997). Making Vocational Choices: A Theory of Vocational Personalities and Work Environments',
+        'LinkedIn. (2023). Workforce Confidence Survey: Career Mobility Trends',
     ],
     motivation:
-        'Feeling unsure about your career path is more common than you might think. In today’s ever-changing job market, many people face questions like, “What should I do next?” or “Is this the right job for me?” This confusion can cause stress and hold you back from reaching your goals. Knowing how to understand your feelings and take smart steps can help you find a career that truly fits your interests and values.',
+        'Feeling unsure about your career path is more common than you might think. In today’s ever-changing job market, many people face questions like, “What should I do next?” or “Is this the right job for me?” This confusion can cause stress and hold you back from reaching your goals. Knowing how to understand your feelings and take smart steps can help you find a career that truly fits your interests and values',
     counseling:
-        'Our career counselors can guide you through uncertainty, helping you identify your strengths and build a fulfilling career.',
+        'Our career counselors can guide you through uncertainty, helping you identify your strengths and build a fulfilling career',
 };
 
 const primary = '#012765';
@@ -999,7 +999,7 @@ const CareerUncertainty = () => {
                         </Typography>
                         <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
                             Our career counselors are here to guide you through uncertainty and help you build a
-                            fulfilling career.
+                            fulfilling career
                         </Typography>
                         {/*<Button*/}
                         {/*  variant="contained"*/}

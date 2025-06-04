@@ -120,7 +120,7 @@ const FoundersMessage = () => {
                     </ImageSection>
                     <TextSection>
                         <Quote>
-                            "Emotionally Yours" began as our own search for healing, now, it’s a space where others can feel seen, heard, and held too."                        </Quote>
+                            "Emotionally Yours" began as our own search for healing, now, it’s a space where others can feel seen, heard, and held too"                        </Quote>
                         <Text>Namaste!</Text>
                         <Text  sx={{textAlign:" justify"}}>
                             At Emotionally Yours, we began our journey with a core belief: Emotional Wellness is not a luxury, it’s the foundation for personal, academic and professional success. I a world that is constantly accelerating, where academic pressure weighs heavy on young minds and workplace stress silently drains potential, we felt the need to intervene meaningfully and mindfully.

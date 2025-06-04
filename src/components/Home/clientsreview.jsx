@@ -86,14 +86,14 @@ function ClientsReview() {
                 </Typography>
                 <Box sx={{ textAlign: "center", opacity: 0.7, mb: 4, fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' }, }}>
                     Read what our community of students and professionals have to say
-                    about their mental wellness journey with "Emotionally Yours".
+                    about their mental wellness journey with "Emotionally Yours"
                 </Box>
 
                 <Swiper
                     modules={[ A11y, Autoplay]}
                     spaceBetween={24}
                     slidesPerView={1}
-                    autoplay={{ delay: 2000, disableOnInteraction: false }}
+                    autoplay={{ delay: 6000, disableOnInteraction: false }}
                     pagination={{ clickable: true }}
                     breakpoints={{
                         640: { slidesPerView: 1 },

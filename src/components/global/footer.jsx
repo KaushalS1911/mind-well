@@ -72,7 +72,7 @@ const Footer = () => {
                             "Emotionally Yours" provides accessible, professional mental health services for students
                             and
                             professionals. Our mission is to make quality therapy and mental wellness resources
-                            available to everyone who needs them.
+                            available to everyone who needs them
                         </Box>
 
 
@@ -407,14 +407,14 @@ const Footer = () => {
                         <Typography variant="body2" sx={{color: "#FFFFFFCC", mb: 2}}>
                             We are not a medical service or suicide prevention helpline. If you are feeling
                             suicidal, we suggest you immediately call a suicide prevention helpline like KIRAN:
-                            18005990019 (24 hours, 7 days a week).
+                            18005990019 (24 hours, 7 days a week)
                         </Typography>
 
                         <Typography variant="subtitle2" gutterBottom>
                             Attribution
                         </Typography>
                         <Typography variant="body2" sx={{color: "#FFFFFFCC"}}>
-                            "Emotionally Yours" provides attribution to Freepik for images.
+                            "Emotionally Yours" provides attribution to Freepik for images
                         </Typography>
                     </Box>
                 </Box>

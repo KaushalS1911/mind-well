@@ -10,29 +10,29 @@ const features = [
         icon: <SecurityIcon sx={{ fontSize: 50, color: "#002F6C" }} />,
         title: "Academic Institutions",
         description:
-            "A transformative program for schools, colleges, coaching institutes and universities, empowering students, parents, and educators towards laying a stronger foundation for a thriving learning environment and building emotionally resilient families.",
+            "A transformative program for schools, colleges, coaching institutes and universities, empowering students, parents, and educators towards laying a stronger foundation for a thriving learning environment and building emotionally resilient families",
         points: [
-            "Emphasis on awareness, training, and implementation.",
-            "Follows NEP 2020 and Mental Health Act 2017 Guidelines.",
-            "Adopts Data-driven insights and measures impact tracking.",
+            "Emphasis on awareness, training, and implementation",
+            "Follows NEP 2020 and Mental Health Act 2017 Guidelines",
+            "Adopts Data-driven insights and measures impact tracking",
         ],
     },
     {
         icon: <LockIcon sx={{ fontSize: 50, color: "#002F6C" }} />,
         title: "Workplaces",
         description:
-            "A strategically designed program empowering organizations to enhance productivity, cultivate emotional well-being and foster workplaces with highly engaged employees and a healthy work culture.",
+            "A strategically designed program empowering organizations to enhance productivity, cultivate emotional well-being and foster workplaces with highly engaged employees and a healthy work culture",
         points: [
             "Promotes participation in individual & organisational growth",
-            "Insight based programs working on reinforcement model.",
-            "Enhances workplace culture, leadership outreach and strengthen cohesiveness.",
+            "Insight based programs working on reinforcement model",
+            "Enhances workplace culture, leadership outreach and strengthen cohesiveness",
         ],
     },
     {
         icon: <PieChartIcon sx={{ fontSize: 50, color: "#002F6C" }} />,
         title: "Aspirants",
         description:
-            "We empower competitive exam aspirants with expert mentorship and time-tested strategies, enhancing resilience and equipping them to excel under pressure with confidence and clarity.",
+            "We empower competitive exam aspirants with expert mentorship and time-tested strategies, enhancing resilience and equipping them to excel under pressure with confidence and clarity",
         points: [
             "Cultivates stress and anxiety mastery",
             "Enhances emotional resilience and drive",
@@ -122,7 +122,7 @@ const Mindwell = () => {
                     }}
                 >
                     "Emotionally Yours" equips individuals with essential life skills to enhance their performance at academic
-                    institutions and workplaces, leveraging group sessions, workshops, assessments & personalized guidance.
+                    institutions and workplaces, leveraging group sessions, workshops, assessments & personalized guidance
                 </Box>
 
                 <Grid container spacing={3}>

@@ -63,25 +63,25 @@ const steps = [
         number: '1',
         title: 'Strengthen Mentorship',
         description:
-            'Conduct emotional wellness sessions to boost mentor self-awareness in high-pressure academic settings.',
+            'Conduct emotional wellness sessions to boost mentor self-awareness in high-pressure academic settings',
     },
     {
         number: '2',
         title: 'Aspirant Empowerment',
         description:
-            'Monthly therapist-guided group workshops offer tools for emotional regulation, resilience-building, and sustainable self-care practices.',
+            'Monthly therapist-guided group workshops offer tools for emotional regulation, resilience-building, and sustainable self-care practices',
     },
     {
         number: '3',
         title: 'Promote Diagnostics',
         description:
-            'Self-realisation and preparing towards individual counselling session backed by Psychometric Tests and Self Assessments.',
+            'Self-realisation and preparing towards individual counselling session backed by Psychometric Tests and Self Assessments',
     },
     {
         number: '4',
         title: 'Self-Help Groups',
         description:
-            'Creating first responders’ structure in form of Self-Help groups withing the institute.',
+            'Creating first responders’ structure in form of Self-Help groups withing the institute',
     },
 ];
 
@@ -95,7 +95,7 @@ const HowEmotionallyYoursinCoachingInstitute = () => {
                     </Typography>
                     <Typography sx={descriptionStyles}>
                         A focused and intensive program designed specifically for aspirants preparing for high-stakes
-                        entrance exams (like NEET, JEE, UPSC, CLAT) and their mentors.
+                        entrance exams (like NEET, JEE, UPSC, CLAT) and their mentors
                     </Typography>
                 </Box>
 

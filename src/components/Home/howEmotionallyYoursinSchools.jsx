@@ -77,22 +77,22 @@ const HowEmotionallyYoursinSchools = () => {
         {
             number: '1',
             title: 'Initial Wellness Assessment',
-            description: "7 factor self-assessment of students towards need analysis at individual and School level.",
+            description: "7 factor self-assessment of students towards need analysis at individual and School level",
         },
         {
             number: '2',
             title: 'Capacity Building',
-            description: 'Engaging in annual curriculum via Student’s Group Sessions, Parent’s Workshops, Teacher’s Training, Self-Help through Mobile App and activities.',
+            description: 'Engaging in annual curriculum via Student’s Group Sessions, Parent’s Workshops, Teacher’s Training, Self-Help through Mobile App and activities',
         },
         {
             number: '3',
             title: 'Personalised and Curated Counselling',
-            description: 'Self-Care with reinforced skill development through individual counselling of students, parents and teachers.',
+            description: 'Self-Care with reinforced skill development through individual counselling of students, parents and teachers',
         },
         {
             number: '4',
             title: 'Annual Performance Assessment',
-            description: "Ensuring the annual program is delivering towards the goals set during program implementation stage.",
+            description: "Ensuring the annual program is delivering towards the goals set during program implementation stage",
         },
     ];
 

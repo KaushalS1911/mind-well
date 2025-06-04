@@ -119,7 +119,7 @@ const Struggling = () => {
                         </Box>
                         <Box sx={{color: "#4B5563", fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' }, mx: "auto"}}>
                             We provide expert support for a wide range of mental health concerns. Select your challenge
-                            to learn more about how we can help.
+                            to learn more about how we can help
                         </Box>
                     </Box>
 

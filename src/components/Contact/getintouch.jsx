@@ -402,7 +402,7 @@ const SocialMedia = () => (
         </Box>
         <Typography sx={{mt: 2, fontSize: "14px", color: "#6B7280"}}>
             Follow us on social media for the latest updates, mental health tips, and
-            special offers.
+            special offers
         </Typography>
     </Box>
 );
@@ -498,7 +498,7 @@ const GetInTouch = () => {
                         }}
                     >
                         Have questions about our services? Reach out to our team for personalized support on your mental
-                        wellness journey.
+                        wellness journey
                     </Typography>
                 </Box>
 

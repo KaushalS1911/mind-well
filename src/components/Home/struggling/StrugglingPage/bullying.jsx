@@ -23,7 +23,7 @@ import img2 from "../../../../assets/images/about/aboutHeader/aboutheader.jpg";
 
 const bullyingData = {
     title: 'Understanding Bullying and Its Side Effects: A Comprehensive Guide to Protecting Youth and Promoting Awareness',
-    description: 'Find support and strategies to address and heal from the effects of bullying, creating safer environments for all.',
+    description: 'Find support and strategies to address and heal from the effects of bullying, creating safer environments for all',
     image: img5,
     image1: img12,
     firstimage: img19,
@@ -40,11 +40,11 @@ const bullyingData = {
             title: 'What Is Bullying?',
             content: [
                 {
-                    text: 'Bullying is repeated aggressive or hurtful behavior with the goal of harming someone. It usually involves an imbalance of power, where the bully feels stronger or more influential than the victim. Bullying can take many forms, each with its own impact.',
+                    text: 'Bullying is repeated aggressive or hurtful behavior with the goal of harming someone. It usually involves an imbalance of power, where the bully feels stronger or more influential than the victim. Bullying can take many forms, each with its own impact',
                 },
                 {
                     subtitle: 'Types of Bullying',
-                    text: '• Physical Bullying: Hitting, pushing, or damaging someone’s belongings.\n• Verbal Bullying: Name-calling, teasing, or threatening.\n• Social or Relational Bullying: Excluding someone, spreading rumors, or embarrassing them publicly.\n• Cyberbullying: Using social media, texts, or emails to harass or humiliate.\nIn most cases, bullying happens repeatedly, making it hard for victims to escape. The power difference fuels the cycle of harm.',
+                    text: '• Physical Bullying: Hitting, pushing, or damaging someone’s belongings\n• Verbal Bullying: Name-calling, teasing, or threatening\n• Social or Relational Bullying: Excluding someone, spreading rumors, or embarrassing them publicly\n• Cyberbullying: Using social media, texts, or emails to harass or humiliate\nIn most cases, bullying happens repeatedly, making it hard for victims to escape. The power difference fuels the cycle of harm',
                 },
             ],
         },
@@ -52,12 +52,12 @@ const bullyingData = {
             title: 'Impact of Bullying on Mental and Emotional Health',
             content: [
                 {
-                    text: 'The emotional toll of bullying is often severe. Victims may feel helpless or trapped, which can cause lasting harm.',
+                    text: 'The emotional toll of bullying is often severe. Victims may feel helpless or trapped, which can cause lasting harm',
                 },
                 {
                     subtitle: 'Common Psychological Side Effects',
-                    text: '• Anxiety and Depression: Feelings of constant worry or sadness are common among victims.\n• Low Self-Esteem: Victims often start believing they are worthless or at fault.\n• PTSD (Post-Traumatic Stress Disorder): Severe cases may lead to flashbacks, nightmares, or severe emotional distress.' +
-                        '\n For example, Recent studies show that children who face frequent bullying are more likely to develop anxiety disorders and depression later in life. Experts agree that emotional wounds from bullying can be deep and long-lasting.',
+                    text: '• Anxiety and Depression: Feelings of constant worry or sadness are common among victims\n• Low Self-Esteem: Victims often start believing they are worthless or at fault\n• PTSD (Post-Traumatic Stress Disorder): Severe cases may lead to flashbacks, nightmares, or severe emotional distress' +
+                        '\n For example, Recent studies show that children who face frequent bullying are more likely to develop anxiety disorders and depression later in life. Experts agree that emotional wounds from bullying can be deep and long-lasting',
                 },
             ],
         },
@@ -65,8 +65,8 @@ const bullyingData = {
             title: 'Academic and Social Consequences of Bullying',
             content: [
                 {
-                    subtitle: 'Bullying doesn’t only affect feelings — it hits school work and social skills too.',
-                    text: '• Effect on School and Learning \n • Lower grades due to decreased motivation.\n• School avoidance or skipping classes.\n• Higher chances of dropping out.\n• Isolation from peers.\n• Struggling to form healthy friendships.\n• Difficulty trusting others later in life.',
+                    subtitle: 'Bullying doesn’t only affect feelings — it hits school work and social skills too',
+                    text: '• Effect on School and Learning \n • Lower grades due to decreased motivation\n• School avoidance or skipping classes\n• Higher chances of dropping out\n• Isolation from peers\n• Struggling to form healthy friendships\n• Difficulty trusting others later in life',
                 },
             ],
         },
@@ -74,11 +74,11 @@ const bullyingData = {
             title: 'Physical Health Effects Linked to Bullying',
             content: [
                 {
-                    text: 'Stress from bullying can also hurt physical health over time.',
+                    text: 'Stress from bullying can also hurt physical health over time',
                 },
                 {
                     subtitle: 'Common Symptoms',
-                    text: '• Sleep problems or insomnia.\n• Headaches, stomachaches, or other aches.\n• Symptoms that don’t seem to have a medical cause (psychosomatic issues).\n • Many victims find that their physical health worsens as emotional stress builds up.',
+                    text: '• Sleep problems or insomnia\n• Headaches, stomachaches, or other aches\n• Symptoms that don’t seem to have a medical cause (psychosomatic issues)\n • Many victims find that their physical health worsens as emotional stress builds up',
                 },
             ],
         },
@@ -86,7 +86,7 @@ const bullyingData = {
             title: 'Long-term Side Effects of Bullying',
             content: [
                 {
-                    text: '• The scars left by bullying often extend beyond childhood.\n• Mental health issues like depression can continue into adulthood.\n• Increased risk of drug or alcohol abuse.\n• Difficulties maintaining personal relationships or holding jobs.\n • Research links childhood bullying to ongoing mental health struggles, showing that early acts of aggression can echo throughout life.',
+                    text: '• The scars left by bullying often extend beyond childhood\n• Mental health issues like depression can continue into adulthood\n• Increased risk of drug or alcohol abuse\n• Difficulties maintaining personal relationships or holding jobs\n • Research links childhood bullying to ongoing mental health struggles, showing that early acts of aggression can echo throughout life',
                 },
             ],
         },
@@ -94,19 +94,19 @@ const bullyingData = {
             title: 'Strategies for Prevention and Intervention',
             content: [
                 {
-                    text: 'Stopping bullying takes team effort. Schools, parents, and communities all play crucial roles.',
+                    text: 'Stopping bullying takes team effort. Schools, parents, and communities all play crucial roles',
                 },
                 {
                     subtitle: 'Schools Can Help',
-                    text: '• Create clear anti-bullying policies.\n• Set up easy ways for students to report bullying.\n• Hold workshops to teach students and teachers about respect and kindness.',
+                    text: '• Create clear anti-bullying policies\n• Set up easy ways for students to report bullying\n• Hold workshops to teach students and teachers about respect and kindness',
                 },
                 {
                     subtitle: 'Parents and Caregivers',
-                    text: '• Watch for signs of bullying, such as withdrawal or changes in mood.\n• Talk openly with children about their feelings.\n• Encourage them to speak up and seek help if needed.',
+                    text: '• Watch for signs of bullying, such as withdrawal or changes in mood\n• Talk openly with children about their feelings\n• Encourage them to speak up and seek help if needed',
                 },
                 {
                     subtitle: 'Digital Safety',
-                    text: '• Monitor online activity and limit screen time.\n• Talk about respectful online behavior.\n• Report cyberbullying to social media platforms or authorities.',
+                    text: '• Monitor online activity and limit screen time\n• Talk about respectful online behavior\n• Report cyberbullying to social media platforms or authorities',
                 },
             ],
         },
@@ -114,7 +114,7 @@ const bullyingData = {
             title: 'Supporting Victims and Promoting Resilience',
             content: [
                 {
-                    text: '• Helping victims bounce back is key to stopping long-term damage.\n• Boost confidence by praising achievements.\n• Offer emotional support or connect them to counselors.\n• Encourage peer support groups where victims can share their experiences.\n\nEarly help stops problems from getting worse and can turn victims into resilience builders. Experts say trauma-informed care, which focuses on understanding and healing emotional wounds, is especially effective.\n\n\nTo summarize, Bullying causes serious harm—mentally, physically, and socially. It can lead to lifelong struggles if not addressed early. Prevention, awareness, and support are vital tools we can all use. Schools should stay strict with anti-bullying policies. Parents need to stay involved and open with their children. And in the digital world, safe online habits are more important than ever. If we all work together, we can reduce bullying and help those affected heal and thrive. Everyone deserves a safe, respectful environment to grow and succeed.',
+                    text: '• Helping victims bounce back is key to stopping long-term damage\n• Boost confidence by praising achievements\n• Offer emotional support or connect them to counselors\n• Encourage peer support groups where victims can share their experiences\n\nEarly help stops problems from getting worse and can turn victims into resilience builders. Experts say trauma-informed care, which focuses on understanding and healing emotional wounds, is especially effective\n\n\nTo summarize, Bullying causes serious harm—mentally, physically, and socially. It can lead to lifelong struggles if not addressed early. Prevention, awareness, and support are vital tools we can all use. Schools should stay strict with anti-bullying policies. Parents need to stay involved and open with their children. And in the digital world, safe online habits are more important than ever. If we all work together, we can reduce bullying and help those affected heal and thrive. Everyone deserves a safe, respectful environment to grow and succeed',
                 },
             ],
         },
@@ -129,29 +129,29 @@ const bullyingData = {
     testimonials: [
         {
             name: 'Sarah, 28',
-            text: 'Counseling gave me the tools to stand up to bullying and rebuild my confidence.',
+            text: 'Counseling gave me the tools to stand up to bullying and rebuild my confidence',
             image: 'https://i.pravatar.cc/40?img=10',
         },
         {
             name: 'Michael, 34',
-            text: 'Support groups helped me feel less alone and stronger in facing my past.',
+            text: 'Support groups helped me feel less alone and stronger in facing my past',
             image: 'https://i.pravatar.cc/40?img=11',
         },
         {
             name: 'David, 41',
-            text: 'Therapy taught me to heal from bullying and advocate for others.',
+            text: 'Therapy taught me to heal from bullying and advocate for others',
             image: 'https://i.pravatar.cc/40?img=12',
         },
     ],
     references: [
-        'American Psychological Association. (2020). Bullying: Impact on Mental Health.',
-        'National Center for Education Statistics. (2019). Student Reports of Bullying.',
-        'StopBullying.gov. (2021). Effects of Bullying on Youth.',
+        'American Psychological Association. (2020). Bullying: Impact on Mental Health',
+        'National Center for Education Statistics. (2019). Student Reports of Bullying',
+        'StopBullying.gov. (2021). Effects of Bullying on Youth',
     ],
     motivation:
-        'Bullying is a problem that affects many people, from students in school to adults in the workplace. With the rise of online platforms, bullying has become even easier to do and harder to escape. This makes understanding its side effects more important than ever. Bullying doesn’t only cause immediate pain but can also lead to long-term struggles with mental health, school, and social life. Knowing what bullying is and how it impacts people can help us protect those at risk and create safer environments. This guide offers insights, real stories, and practical tips to stop bullying and reduce its effects.',
+        'Bullying is a problem that affects many people, from students in school to adults in the workplace. With the rise of online platforms, bullying has become even easier to do and harder to escape. This makes understanding its side effects more important than ever. Bullying doesn’t only cause immediate pain but can also lead to long-term struggles with mental health, school, and social life. Knowing what bullying is and how it impacts people can help us protect those at risk and create safer environments. This guide offers insights, real stories, and practical tips to stop bullying and reduce its effects',
     counseling:
-        'Our counselors can provide tools and strategies to cope with bullying and rebuild your self-esteem. Take the first step towards healing today.',
+        'Our counselors can provide tools and strategies to cope with bullying and rebuild your self-esteem. Take the first step towards healing today',
 };
 
 const primary = '#012765';
@@ -1027,7 +1027,7 @@ const Bullying = () => {
                         </Typography>
                         <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
                             Our counselors are trained to help you address bullying with professional guidance tailored
-                            to your unique situation.
+                            to your unique situation
                         </Typography>
                         {/*<Button*/}
                         {/*    variant="contained"*/}

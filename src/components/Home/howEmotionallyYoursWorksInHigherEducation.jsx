@@ -63,25 +63,25 @@ const HowEmotionallyYoursWorksInHigherEducation = () => {
             number: '1',
             title: 'Setting Groundwork',
             description:
-                'Identify stream specific Psychology-based Emotional Wellness and Mental Health program as per NEP Guidelines.',
+                'Identify stream specific Psychology-based Emotional Wellness and Mental Health program as per NEP Guidelines',
         },
         {
             number: '2',
             title: 'Targeted Training',
             description:
-                'Building emotional strength, enhancing academic focus, and cultivating intrinsic motivation through Psychologist and Corporate interaction.',
+                'Building emotional strength, enhancing academic focus, and cultivating intrinsic motivation through Psychologist and Corporate interaction',
         },
         {
             number: '3',
             title: 'Personalised and Curated Counselling',
             description:
-                'Self-Care with reinforced skill development through individual counselling of students.',
+                'Self-Care with reinforced skill development through individual counselling of students',
         },
         {
             number: '4',
             title: 'Self-Help Groups',
             description:
-                'Creating first responders’ structure in the form of Self-Help groups within the institute.',
+                'Creating first responders’ structure in the form of Self-Help groups within the institute',
         },
     ];
 
