@@ -171,24 +171,24 @@ const Psychologist = ({ icon = <PersonIcon /> }) => {
                         color: '#012765',
                         textAlign: 'center',
                         fontWeight: 700,
-                        mb: 2,
+                        mb: 8,
                     }}
                 >
                     Psychologists
                 </Typography>
-                <Typography
-                    sx={{
-                        maxWidth: 700,
-                        mx: 'auto',
-                        mb: 8,
-                        fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
-                        color: '#4B5563',
-                        textAlign: 'center',
-                        lineHeight: '25px',
-                    }}
-                >
-                    Our experienced psychologists provide compassionate, personalized care to support mental wellness, emotional resilience, and meaningful personal growth
-                </Typography>
+                {/*<Typography*/}
+                {/*    sx={{*/}
+                {/*        maxWidth: 700,*/}
+                {/*        mx: 'auto',*/}
+                {/*        mb: 8,*/}
+                {/*        fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },*/}
+                {/*        color: '#4B5563',*/}
+                {/*        textAlign: 'center',*/}
+                {/*        lineHeight: '25px',*/}
+                {/*    }}*/}
+                {/*>*/}
+                {/*    Our experienced psychologists provide compassionate, personalized care to support mental wellness, emotional resilience, and meaningful personal growth*/}
+                {/*</Typography>*/}
 
 
                 <Grid container spacing={3}>
