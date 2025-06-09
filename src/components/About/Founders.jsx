@@ -163,24 +163,24 @@ const Founders = ({ icon = <PersonIcon /> }) => {
                         color: '#012765',
                         textAlign: 'center',
                         fontWeight: 700,
-                        mb: 2,
-                    }}
-                >
-                    Founding Members
-                </Typography>
-                <Typography
-                    sx={{
-                        maxWidth: 700,
-                        mx: 'auto',
                         mb: 8,
-                        fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
-                        color: '#4B5563',
-                        textAlign: 'center',
-                        lineHeight: '25px',
                     }}
                 >
-                    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey
+                    Founders
                 </Typography>
+                {/*<Typography*/}
+                {/*    sx={{*/}
+                {/*        maxWidth: 700,*/}
+                {/*        mx: 'auto',*/}
+                {/*        mb: 8,*/}
+                {/*        fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },*/}
+                {/*        color: '#4B5563',*/}
+                {/*        textAlign: 'center',*/}
+                {/*        lineHeight: '25px',*/}
+                {/*    }}*/}
+                {/*>*/}
+                {/*    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey*/}
+                {/*</Typography>*/}
 
                 <Grid container spacing={3}>
                     {founders.map((founder, index) => (
