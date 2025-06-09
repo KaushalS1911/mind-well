@@ -274,7 +274,3 @@ function Assessments({sx}) {
 }
 
 export default Assessments;
-
-
-
-

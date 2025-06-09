@@ -210,6 +210,7 @@ const Bullying = () => {
     };
 
     const handleSubmit = (e) => {
+        alert("Requested send!");
         e.preventDefault();
 
         const newErrors = {};

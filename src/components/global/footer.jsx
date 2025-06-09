@@ -20,7 +20,7 @@ const SOCIAL_MEDIA_LINKS = [
 const navigationLinks = [
     {name: "Home", path: "/"},
     {name: "About Us", path: "/about"},
-    {name: "Services", path: "/services"},
+    // {name: "Services", path: "/services"},
     {name: "Gallery", path: "/gallery"},
     // {name: "Resources", path: "/resources"},
     {name: "Contact", path: "/contact"},

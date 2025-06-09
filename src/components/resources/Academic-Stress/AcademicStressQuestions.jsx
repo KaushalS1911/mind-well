@@ -1064,6 +1064,7 @@ import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
+import {GaugeComponent} from "react-gauge-component";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -1106,13 +1107,13 @@ const questions = [
     },
     {
         id: 3,
-        text: " How much pressure do you feel to achieve high grades?",
+        text: "How much pressure do you feel to achieve high grades?",
         options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "A lot", value: "3"},
-            {label: "Extremely", value: "4"}
+            {label: "None", value: "0"},
+            {label: "Little", value: "1"},
+            {label: "Moderate", value: "2"},
+            {label: "High", value: "3"},
+            {label: "Extreme", value: "4"}
         ]
     },
     {
@@ -1616,17 +1617,49 @@ const AcademicStressQuestions = () => {
                                             alignItems: 'center',
                                             mb: 3
                                         }}>
-                                            <CircularProgress
-                                                variant="determinate"
+                                            <GaugeComponent
                                                 value={percentage}
-                                                size={200}
-                                                thickness={4}
-                                                sx={{
-                                                    color: totalScore >= 61 ? '#ff4d4d' :
-                                                        totalScore >= 41 ? '#ffa500' :
-                                                            totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#47e447',
+                                                type="radial"
+                                                style={{width: 300}}
+                                                labels={{
+                                                    valueLabel: {
+                                                        formatTextValue: (value) => value,
+                                                        maxDecimalDigits: 0,
+                                                        matchColorWithArc: true,
+                                                        style: { borderColor:'none', fontSize: "50px" }
+                                                    },
+                                                    tickLabels: {
+                                                        hideMinMax: true,
+                                                    }
+                                                }}
+                                                arc={{
+                                                    colorArray: [ '#5BE12C', '#EA4228'],
+                                                    subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
+                                                    padding: 0.02,
+                                                    width: 0.3
+
+                                                }}
+                                                pointer={{
+                                                    elastic: true,
+                                                    type: "needle",
+                                                    length: 0.8,
+                                                    width: 14,
+                                                    animate: true,
+                                                    animationDuration: 2000,
+                                                    animationDelay: 100
                                                 }}
                                             />
+                                            {/*<CircularProgress*/}
+                                            {/*    variant="determinate"*/}
+                                            {/*    value={percentage}*/}
+                                            {/*    size={200}*/}
+                                            {/*    thickness={4}*/}
+                                            {/*    sx={{*/}
+                                            {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                            {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                            {/*                totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',*/}
+                                            {/*    }}*/}
+                                            {/*/>*/}
                                             {/*<CircularProgress*/}
                                             {/*    variant="determinate"*/}
                                             {/*    value={percentage}*/}
@@ -1641,21 +1674,21 @@ const AcademicStressQuestions = () => {
                                             {/*        left: 34,*/}
                                             {/*    }}*/}
                                             {/*/>*/}
-                                            <Box
-                                                sx={{
-                                                    position: 'absolute',
-                                                    display: 'flex',
-                                                    flexDirection: 'column',
-                                                    alignItems: 'center',
-                                                }}
-                                            >
-                                                <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                                    {totalScore}
-                                                </Typography>
-                                                <Typography variant="h6" sx={{color: '#4A5568'}}>
-                                                    out of 80
-                                                </Typography>
-                                            </Box>
+                                            {/*<Box*/}
+                                            {/*    sx={{*/}
+                                            {/*        position: 'absolute',*/}
+                                            {/*        display: 'flex',*/}
+                                            {/*        flexDirection: 'column',*/}
+                                            {/*        alignItems: 'center',*/}
+                                            {/*    }}*/}
+                                            {/*>*/}
+                                            {/*    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>*/}
+                                            {/*        {totalScore}*/}
+                                            {/*    </Typography>*/}
+                                            {/*    <Typography variant="h5" sx={{color: '#4A5568'}}>*/}
+                                            {/*        out of 80*/}
+                                            {/*    </Typography>*/}
+                                            {/*</Box>*/}
                                         </Box>
 
                                         <Typography
@@ -1764,15 +1797,18 @@ const AcademicStressQuestions = () => {
                         >
                             <PDFDownloadLink
                                 document={<PdfView data={{
+                                    title: "Academic Stress Assessment Result",
+                                    maxScore: 80,
+                                    totalScore1: percentage,
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
                                     recommendations: result.recommendations
-                                }} />}
-                                fileName="Academic_Stress_Report.pdf"
-                                style={{ textDecoration: "none" }}
+                                }}/>}
+                                fileName="Academic_Stress.pdf"
+                                style={{textDecoration: "none"}}
                             >
-                                {({ loading }) => (
+                                {({loading}) => (
                                     <Button
                                         variant="outlined"
                                         sx={{

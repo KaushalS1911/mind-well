@@ -903,6 +903,7 @@ import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
 import img1 from '../../../assets/images/Resources/Assessments/smiley person images.png'
+import {GaugeComponent} from "react-gauge-component";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -1075,7 +1076,7 @@ const questions = [
 ];
 
 const getScoreCategory = (score) => {
-    if (score >= 61 && score <= 80) {
+    if (score >= 13 && score <= 15) {
         return {
             level: "High Score",
             interpretation: "The child has a strong understanding of emotions and demonstrates effective emotional regulation skills.",
@@ -1085,7 +1086,7 @@ const getScoreCategory = (score) => {
                 },
             ]
         };
-    } else if (score >= 41 && score <= 60) {
+    } else if (score >= 10 && score <= 12) {
         return {
             level: "Moderate-High Score",
             interpretation: " The child has a good understanding of emotions and generally manages and expresses emotions appropriately, but there may be some areas needing slight improvement.",
@@ -1095,7 +1096,7 @@ const getScoreCategory = (score) => {
                 },
             ]
         };
-    } else if (score >= 21 && score <= 40) {
+    } else if (score >= 7 && score <= 9) {
         return {
             level: "Moderate Score",
             interpretation: "The child has a basic understanding of emotions but shows inconsistencies in emotional regulation and expression.",
@@ -1105,7 +1106,7 @@ const getScoreCategory = (score) => {
                 },
             ]
         };
-    } else if (score >= 11 && score <= 20) {
+    } else if (score >= 4 && score <= 6) {
         return {
             level: "Low-Moderate Score",
             interpretation: "The child has significant difficulty in identifying and managing emotions, indicating a need for targeted emotional learning and support.",
@@ -1281,7 +1282,8 @@ const EmotionalAwarenessQuestions = () => {
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
-        const percentage = (totalScore / 80) * 100;
+        const percentage = (totalScore / 45) * 100;
+        console.log(totalScore)
 
         return (
             <>
@@ -1340,17 +1342,49 @@ const EmotionalAwarenessQuestions = () => {
                                             alignItems: 'center',
                                             mb: 3
                                         }}>
-                                            <CircularProgress
-                                                variant="determinate"
+                                            <GaugeComponent
                                                 value={percentage}
-                                                size={200}
-                                                thickness={4}
-                                                sx={{
-                                                    color: totalScore >= 61 ? '#ff4d4d' :
-                                                        totalScore >= 41 ? '#ffa500' :
-                                                            totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#47e447',
+                                                type="radial"
+                                                style={{width: 300}}
+                                                labels={{
+                                                    valueLabel: {
+                                                        formatTextValue: (value) => value,
+                                                        maxDecimalDigits: 0,
+                                                        matchColorWithArc: true,
+                                                        style: { borderColor:'none', fontSize: "50px" }
+                                                    },
+                                                    tickLabels: {
+                                                        hideMinMax: true,
+                                                    }
+                                                }}
+                                                arc={{
+                                                    colorArray: [ '#5BE12C', '#EA4228'],
+                                                    subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
+                                                    padding: 0.02,
+                                                    width: 0.3
+
+                                                }}
+                                                pointer={{
+                                                    elastic: true,
+                                                    type: "needle",
+                                                    length: 0.8,
+                                                    width: 14,
+                                                    animate: true,
+                                                    animationDuration: 2000,
+                                                    animationDelay: 100
                                                 }}
                                             />
+                                            {/*<CircularProgress*/}
+                                            {/*    variant="determinate"*/}
+                                            {/*    value={percentage}*/}
+                                            {/*    size={200}*/}
+                                            {/*    thickness={4}*/}
+                                            {/*    sx={{*/}
+                                            {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                            {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                            {/*                totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',*/}
+                                            {/*    }}*/}
+                                            {/*/>*/}
                                             {/*<CircularProgress*/}
                                             {/*    variant="determinate"*/}
                                             {/*    value={percentage}*/}
@@ -1365,21 +1399,21 @@ const EmotionalAwarenessQuestions = () => {
                                             {/*        left: 34,*/}
                                             {/*    }}*/}
                                             {/*/>*/}
-                                            <Box
-                                                sx={{
-                                                    position: 'absolute',
-                                                    display: 'flex',
-                                                    flexDirection: 'column',
-                                                    alignItems: 'center',
-                                                }}
-                                            >
-                                                <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                                    {totalScore}
-                                                </Typography>
-                                                <Typography variant="h5" sx={{color: '#4A5568'}}>
-                                                    out of 80
-                                                </Typography>
-                                            </Box>
+                                            {/*<Box*/}
+                                            {/*    sx={{*/}
+                                            {/*        position: 'absolute',*/}
+                                            {/*        display: 'flex',*/}
+                                            {/*        flexDirection: 'column',*/}
+                                            {/*        alignItems: 'center',*/}
+                                            {/*    }}*/}
+                                            {/*>*/}
+                                            {/*    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>*/}
+                                            {/*        {totalScore}*/}
+                                            {/*    </Typography>*/}
+                                            {/*    <Typography variant="h5" sx={{color: '#4A5568'}}>*/}
+                                            {/*        out of 80*/}
+                                            {/*    </Typography>*/}
+                                            {/*</Box>*/}
                                         </Box>
 
                                         <Typography
@@ -1490,15 +1524,18 @@ const EmotionalAwarenessQuestions = () => {
                             {/* Save Results Button - Downloads PDF */}
                             <PDFDownloadLink
                                 document={<PdfView data={{
+                                    title: "Emotional Awareness Regulation Assessment Result",
+                                    maxScore: 45,
+                                    totalScore1: percentage,
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
                                     recommendations: result.recommendations
-                                }} />}
-                                fileName="Emotional_Awareness_Report.pdf"
-                                style={{ textDecoration: "none" }}
+                                }}/>}
+                                fileName="Emotional_Awareness_Regulation.pdf"
+                                style={{textDecoration: "none"}}
                             >
-                                {({ loading }) => (
+                                {({loading}) => (
                                     <Button
                                         variant="outlined"
                                         sx={{

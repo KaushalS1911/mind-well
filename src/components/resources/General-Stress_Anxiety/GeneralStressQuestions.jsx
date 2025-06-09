@@ -738,7 +738,7 @@
 
 
 
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
     Box,
     Container,
@@ -761,6 +761,7 @@ import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
+import { GaugeComponent } from 'react-gauge-component';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -778,158 +779,94 @@ const NavigationButton = styled(Button)(({theme}) => ({
     fontFamily: 'Poppins',
 }));
 
+const options = [
+    {label: "Always", value: "4"},
+    {label: "Often", value: "3"},
+    {label: "Sometimes", value: "2"},
+    {label: "Rarely", value: "1"},
+    {label: "Never", value: "0"}
+]
+
 const questions = [
     {
         id: 1,
         text: " I have Experienced Headaches, Muscle Tension or Unexplained Pain or Aches.",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 2,
         text: "I experienced trouble falling asleep, staying asleep, or woke up interrupted",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 3,
         text: "I experienced Fatigue and felt tired even after resting",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 4,
         text: "I experienced rapid heartbeat, shortness of breath and sweating",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 5,
         text: "Was unable to cope up with daily tasks and felt overwhelmed",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 6,
         text: "Worried excessively with unlikely or about small problems",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 7,
         text: "I feel irritable and easily frustrated",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 8,
         text: "I have trouble concentrating and staying focused",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 9,
         text: "I avoid situations or tasks if they make me anxious",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 10,
         text: " I procrastinate (Delay my Tasks) due to feeling stressed or overwhelmed",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 11,
         text: "I have eating issues (Overeating or Undereating) or rely on substances (Caffeine, Nicotine, Alcohol) to manage stress.",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
     {
         id: 12,
         text: "I find it hard to relax even during non-working or leisure hours",
-        options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
-        ]
+        options
     },
 ];
 
 const getScoreCategory = (score) => {
-    if (score >= 61 && score <= 80) {
+    if (score >= 37 && score <= 48) {
         return {
             level: "Severe Stress/Anxiety",
             interpretation: " Significant levels of stress and anxiety are present. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, it is strongly advised that you engage with certified Psychologists and Professionals.",
         };
-    } else if (score >= 41 && score <= 60) {
+    } else if (score >= 25 && score <= 36) {
         return {
             level: "High Stress/Anxiety",
             interpretation: "Your stress and anxiety levels may be impacting your daily life. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, it is recommended that you engage with certified Psychologists and Professionals.",
         };
-    } else if (score >= 21 && score <= 40) {
+    } else if (score >= 13 && score <= 24) {
         return {
             level: "Moderate Stress/Anxiety",
             interpretation: "You may be experiencing stress or anxiety at manageable levels. Consider mindfulness, self-care, or seeking support if needed. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, we suggest to engage with certified Psychologists and Professionals.",
         };
-    } else if (score <= 20) {
+    } else if (score <= 12) {
         return {
             level: "Low Stress/Anxiety",
             interpretation: "You appear to control Strain and tension well. Keep Practicing healthful habits. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, we suggest to engage with certified Psychologists and Professionals.",
@@ -1090,7 +1027,7 @@ const GeneralStressQuestions = () => {
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
-        const percentage = (totalScore / 80) * 100;
+        const percentage = (totalScore / 48) * 100;
 
         return (
             <>
@@ -1146,17 +1083,49 @@ const GeneralStressQuestions = () => {
                                     alignItems: 'center',
                                     mb: 3
                                 }}>
-                                    <CircularProgress
-                                        variant="determinate"
+                                    <GaugeComponent
                                         value={percentage}
-                                        size={200}
-                                        thickness={4}
-                                        sx={{
-                                            color: totalScore >= 61 ? '#ff4d4d' :
-                                                totalScore >= 41 ? '#ffa500' :
-                                                    totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',
+                                        type="radial"
+                                        style={{width: 300}}
+                                        labels={{
+                                            valueLabel: {
+                                                formatTextValue: (value) => value,
+                                                maxDecimalDigits: 0,
+                                                matchColorWithArc: true,
+                                                style: { borderColor:'none', fontSize: "50px" }
+                                            },
+                                            tickLabels: {
+                                                hideMinMax: true,
+                                            }
+                                        }}
+                                        arc={{
+                                            colorArray: [ '#5BE12C', '#EA4228'],
+                                            subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
+                                            padding: 0.02,
+                                            width: 0.3
+
+                                        }}
+                                        pointer={{
+                                            elastic: true,
+                                            type: "needle",
+                                            length: 0.8,
+                                            width: 14,
+                                            animate: true,
+                                            animationDuration: 2000,
+                                            animationDelay: 100
                                         }}
                                     />
+                                    {/*<CircularProgress*/}
+                                    {/*    variant="determinate"*/}
+                                    {/*    value={percentage}*/}
+                                    {/*    size={200}*/}
+                                    {/*    thickness={4}*/}
+                                    {/*    sx={{*/}
+                                    {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                    {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                    {/*                totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',*/}
+                                    {/*    }}*/}
+                                    {/*/>*/}
                                     {/*<CircularProgress*/}
                                     {/*    variant="determinate"*/}
                                     {/*    value={percentage}*/}
@@ -1171,21 +1140,21 @@ const GeneralStressQuestions = () => {
                                     {/*        left: 34,*/}
                                     {/*    }}*/}
                                     {/*/>*/}
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            alignItems: 'center',
-                                        }}
-                                    >
-                                        <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                            {totalScore}
-                                        </Typography>
-                                        <Typography variant="h5" sx={{color: '#4A5568'}}>
-                                            out of 80
-                                        </Typography>
-                                    </Box>
+                                    {/*<Box*/}
+                                    {/*    sx={{*/}
+                                    {/*        position: 'absolute',*/}
+                                    {/*        display: 'flex',*/}
+                                    {/*        flexDirection: 'column',*/}
+                                    {/*        alignItems: 'center',*/}
+                                    {/*    }}*/}
+                                    {/*>*/}
+                                    {/*    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>*/}
+                                    {/*        {totalScore}*/}
+                                    {/*    </Typography>*/}
+                                    {/*    <Typography variant="h5" sx={{color: '#4A5568'}}>*/}
+                                    {/*        out of 80*/}
+                                    {/*    </Typography>*/}
+                                    {/*</Box>*/}
                                 </Box>
 
                                 <Typography
@@ -1231,6 +1200,9 @@ const GeneralStressQuestions = () => {
                             {/* Save Results Button - Downloads PDF */}
                             <PDFDownloadLink
                                 document={<PdfView data={{
+                                    title: "General Stress Assessment Result",
+                                    maxScore: 48,
+                                    totalScore1: percentage,
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,

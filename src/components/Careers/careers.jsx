@@ -26,7 +26,7 @@ import {
 } from '@mui/icons-material';
 import img2 from "../../assets/images/career/istockphoto2.jpg";
 
-// Styled Components
+
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
     borderRadius: '16px',
@@ -87,11 +87,11 @@ const JOBS = [
     }
 ];
 
-// Hero Section
+
 const HeroSection = () => (
     <Box sx={{
         py: {xs: 8, sm: 10, md: 18},
-        // pb: 14,
+
         position: 'relative',
         backgroundImage: `url(${img2})`,
         backgroundSize: "cover",
@@ -124,10 +124,10 @@ const HeroSection = () => (
     </Box>
 );
 
-// Job Listings
 
 
-// Application Form
+
+
 const ApplicationForm = ({
                              formData,
                              handleInputChange,
@@ -211,7 +211,7 @@ const ApplicationForm = ({
     </Box>
 );
 
-// Main Component
+
 function Careers() {
     const [selectedFile, setSelectedFile] = useState(null);
     const [formData, setFormData] = useState({
@@ -234,9 +234,17 @@ function Careers() {
     };
 
     const handleSubmit = (event) => {
+        alert("Your application has been submitted!");
         event.preventDefault();
         console.log('Form Submitted:', {...formData, resume: selectedFile});
-        // Add submission logic here (API, Firebase, etc.)
+        setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            position: '',
+            experience: '',
+            message: ''
+        });
     };
 
     return (

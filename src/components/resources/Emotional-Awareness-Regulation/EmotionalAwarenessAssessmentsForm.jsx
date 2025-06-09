@@ -1,19 +1,30 @@
 import React from 'react';
-import { Box, Container, Select, FormControl, InputLabel, OutlinedInput, MenuItem, TextField, Button, FormHelperText } from "@mui/material";
-import { useFormik } from 'formik';
+import {
+    Box,
+    Container,
+    Select,
+    FormControl,
+    InputLabel,
+    OutlinedInput,
+    MenuItem,
+    TextField,
+    Button,
+    FormHelperText
+} from "@mui/material";
+import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 // Generate age options dynamically (10 to 59)
-const ageOptions = Array.from({ length: 7 }, (_, i) => i + 4);
+const ageOptions = Array.from({length: 7}, (_, i) => i + 4);
 
 // Reusable function for input styles
 const inputStyles = {
-    "& label.Mui-focused": { color: "#FF7F1E" },
+    "& label.Mui-focused": {color: "#FF7F1E"},
     "& .MuiOutlinedInput-root": {
-        "& fieldset": { borderColor: "#FF7F1E" },
-        "&:hover fieldset": { borderColor: "#FF7F1E" },
-        "&.Mui-focused fieldset": { borderColor: "#FF7F1E" },
+        "& fieldset": {borderColor: "#FF7F1E"},
+        "&:hover fieldset": {borderColor: "#FF7F1E"},
+        "&.Mui-focused fieldset": {borderColor: "#FF7F1E"},
     },
 };
 
@@ -31,7 +42,9 @@ function EmotionalAwarenessAssessmentsForm() {
             email: Yup.string().email("Invalid email").required("Email is required"),
             age: Yup.number().required("Age is required"),
         }),
-        onSubmit: () => {
+        onSubmit: (values) => {
+            sessionStorage.setItem("fullName", values.fullName);
+            sessionStorage.setItem("email", values.email);
             navigate("/assessments/emotional-awareness/questions");
         },
     });
@@ -39,18 +52,29 @@ function EmotionalAwarenessAssessmentsForm() {
     return (
         <Box sx={{
             // backgroundColor: '#F3F4F6',
-            padding: { sm: "120px 0", xs: "80px 0" }, mt: { md: 5, xs: 0 } , mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
-            <Box className={"Montserrat"} sx={{ fontWeight: 700, color: '#012765', textAlign: 'center',fontSize: {
+            padding: {sm: "120px 0", xs: "80px 0"},
+            mt: {md: 5, xs: 0},
+            mx: {xs: '20px', sm: '70px', md: '90px', xl: '100px'}
+        }}>
+            <Box className={"Montserrat"} sx={{
+                fontWeight: 700, color: '#012765', textAlign: 'center', fontSize: {
                     xs: '1.7rem',
                     sm: '1.85rem',
                     md: '2rem',
                     lg: '2.125rem'
-                }, }}>
+                },
+            }}>
                 Assessment Form
             </Box>
 
-            <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
-                <Box sx={{ width: "700px", backgroundColor: "#FFFFFF", padding: "50px 30px 30px", boxShadow: 2, borderRadius: "10px" }}>
+            <Box sx={{display: "flex", justifyContent: "center", mt: 5}}>
+                <Box sx={{
+                    width: "700px",
+                    backgroundColor: "#FFFFFF",
+                    padding: "50px 30px 30px",
+                    boxShadow: 2,
+                    borderRadius: "10px"
+                }}>
                     <form onSubmit={formik.handleSubmit}>
 
                         {/* Full Name Field */}
@@ -67,15 +91,16 @@ function EmotionalAwarenessAssessmentsForm() {
                         />
 
                         {/* Age Field */}
-                        <FormControl fullWidth margin="normal" error={formik.touched.age && Boolean(formik.errors.age)} sx={inputStyles}>
+                        <FormControl fullWidth margin="normal" error={formik.touched.age && Boolean(formik.errors.age)}
+                                     sx={inputStyles}>
                             <InputLabel>Age</InputLabel>
                             <Select
-                                input={<OutlinedInput label="Age" />}
+                                input={<OutlinedInput label="Age"/>}
                                 name="age"
                                 value={formik.values.age}
                                 onChange={formik.handleChange}
                                 MenuProps={{
-                                    PaperProps: { style: { maxHeight: 48 * 5, overflow: "auto" } },
+                                    PaperProps: {style: {maxHeight: 48 * 5, overflow: "auto"}},
                                     disablePortal: true,
                                 }}
                             >
@@ -83,7 +108,8 @@ function EmotionalAwarenessAssessmentsForm() {
                                     <MenuItem key={option} value={option}>{option}</MenuItem>
                                 ))}
                             </Select>
-                            {formik.touched.age && formik.errors.age && <FormHelperText>{formik.errors.age}</FormHelperText>}
+                            {formik.touched.age && formik.errors.age &&
+                                <FormHelperText>{formik.errors.age}</FormHelperText>}
                         </FormControl>
 
                         {/* Email Field */}
@@ -100,7 +126,7 @@ function EmotionalAwarenessAssessmentsForm() {
                         />
 
                         {/* Submit Button */}
-                        <Box sx={{ mt: "20px", display: "flex", justifyContent: "end" }}>
+                        <Box sx={{mt: "20px", display: "flex", justifyContent: "end"}}>
                             <Button
                                 type="submit"
                                 sx={{
@@ -111,7 +137,7 @@ function EmotionalAwarenessAssessmentsForm() {
                                     fontSize: "18px",
                                     color: "#fff",
                                     borderRadius: "0.375rem",
-                                    "&:hover": { backgroundColor: "#DA5E05" },
+                                    "&:hover": {backgroundColor: "#DA5E05"},
                                     marginRight: 1,
                                 }}
                             >

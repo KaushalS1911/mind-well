@@ -997,6 +997,7 @@ import {useNavigate} from 'react-router-dom';
 import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
+import {GaugeComponent} from "react-gauge-component";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -1284,7 +1285,8 @@ const ExamStressGaugeQuestions = () => {
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
-        const percentage = (totalScore / 80) * 100;
+        const percentage = (totalScore / 60) * 100;
+
 
         return (
             <>
@@ -1333,7 +1335,7 @@ const ExamStressGaugeQuestions = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'center',
-                                justifyContent: "space-between",
+                                justifyContent: "space-between"
                             }}>
                                 <Box>
                                     <Box sx={{
@@ -1343,32 +1345,79 @@ const ExamStressGaugeQuestions = () => {
                                         alignItems: 'center',
                                         mb: 3
                                     }}>
-                                        <CircularProgress
-                                            variant="determinate"
+                                        <GaugeComponent
                                             value={percentage}
-                                            size={200}
-                                            thickness={4}
-                                            sx={{
-                                                color: totalScore >= 61 ? '#ff4d4d' :
-                                                    totalScore >= 41 ? '#ffa500' :
-                                                        totalScore >= 21 ? '#ffdd00' : totalScore >= 11 ? '#90EE90' : '#47e447',
+                                            type="radial"
+                                            style={{width: 300}}
+                                            labels={{
+                                                valueLabel: {
+                                                    formatTextValue: (value) => value,
+                                                    maxDecimalDigits: 0,
+                                                    matchColorWithArc: true,
+                                                    style: { borderColor:'none', fontSize: "50px" }
+                                                },
+                                                tickLabels: {
+                                                    hideMinMax: true,
+                                                }
+                                            }}
+                                            arc={{
+                                                colorArray: [ '#5BE12C', '#EA4228'],
+                                                subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
+                                                padding: 0.02,
+                                                width: 0.3
+
+                                            }}
+                                            pointer={{
+                                                elastic: true,
+                                                type: "needle",
+                                                length: 0.8,
+                                                width: 14,
+                                                animate: true,
+                                                animationDuration: 2000,
+                                                animationDelay: 100
                                             }}
                                         />
-                                        <Box
-                                            sx={{
-                                                position: 'absolute',
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                alignItems: 'center',
-                                            }}
-                                        >
-                                            <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>
-                                                {totalScore}
-                                            </Typography>
-                                            <Typography variant="h5" sx={{color: '#4A5568'}}>
-                                                out of 80
-                                            </Typography>
-                                        </Box>
+                                        {/*<CircularProgress*/}
+                                        {/*    variant="determinate"*/}
+                                        {/*    value={percentage}*/}
+                                        {/*    size={200}*/}
+                                        {/*    thickness={4}*/}
+                                        {/*    sx={{*/}
+                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                        {/*                totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',*/}
+                                        {/*    }}*/}
+                                        {/*/>*/}
+                                        {/*<CircularProgress*/}
+                                        {/*    variant="determinate"*/}
+                                        {/*    value={percentage}*/}
+                                        {/*    size={200}*/}
+                                        {/*    thickness={4}*/}
+                                        {/*    sx={{*/}
+                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                        {/*                totalScore >= 21 ? '#ffff00' :*/}
+                                        {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
+                                        {/*        position: 'absolute',*/}
+                                        {/*        left: 34,*/}
+                                        {/*    }}*/}
+                                        {/*/>*/}
+                                        {/*<Box*/}
+                                        {/*    sx={{*/}
+                                        {/*        position: 'absolute',*/}
+                                        {/*        display: 'flex',*/}
+                                        {/*        flexDirection: 'column',*/}
+                                        {/*        alignItems: 'center',*/}
+                                        {/*    }}*/}
+                                        {/*>*/}
+                                        {/*    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>*/}
+                                        {/*        {totalScore}*/}
+                                        {/*    </Typography>*/}
+                                        {/*    <Typography variant="h5" sx={{color: '#4A5568'}}>*/}
+                                        {/*        out of 80*/}
+                                        {/*    </Typography>*/}
+                                        {/*</Box>*/}
+
                                     </Box>
 
                                     <Typography
@@ -1414,12 +1463,15 @@ const ExamStressGaugeQuestions = () => {
                         >
                             <PDFDownloadLink
                                 document={<PdfView data={{
+                                    title: "Exam Stress Gauge Assessment Result",
+                                    maxScore: 60,
+                                    totalScore1: percentage,
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
                                     recommendations: result.recommendations
                                 }}/>}
-                                fileName="Exam_Stress_Gauge_report.pdf"
+                                fileName="Exam_Stress_Gauge.pdf"
                                 style={{textDecoration: "none"}}
                             >
                                 {({loading}) => (

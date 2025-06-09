@@ -132,7 +132,7 @@ const useStyles = (score) =>
                     textAlign: 'center',
                 },
                 level: {
-                    fontSize: 12,
+                    fontSize: 11,
                     fontWeight: 'bold',
                     fontFamily: 'HindiPoppins',
                     color: '#F5811E',
@@ -202,7 +202,7 @@ const useStyles = (score) =>
 export default function PdfView({data}) {
     const styles = useStyles(data.totalScore);
     const {color: needleColor, risk: riskLabel} = getColorAndRisk(data.totalScore);
-    const totalMarks = 80;
+    const totalMarks = data.maxScore;
     const radius = 90;
     const centerX = 110;
     const centerY = 110;
@@ -318,7 +318,7 @@ export default function PdfView({data}) {
                     fill: '#2D3748',
                 }}
             >
-                {data.totalScore}
+                {Math.abs(data.totalScore1).toFixed(0)}
             </Text>
         </Svg>
     );
@@ -349,7 +349,7 @@ export default function PdfView({data}) {
                             <Text style={styles.name}>Name : {name}</Text>
                             <Text style={styles.email}>Email : {email}</Text>
                         </View>
-                        <Text style={styles.header}>Emotional Awareness Assessment Results</Text>
+                        <Text style={styles.header}>{data.title}</Text>
                         <View style={{
                             display: 'flex',
                             flexDirection: 'row',

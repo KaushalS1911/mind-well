@@ -91,7 +91,9 @@ function ExamStressAssessmentForm() {
             email: Yup.string().email("Invalid email").required("Email is required"),
             age: Yup.number().required("Age is required"),
         }),
-        onSubmit: () => {
+        onSubmit: (values) => {
+            sessionStorage.setItem("fullName", values.fullName);
+            sessionStorage.setItem("email", values.email);
             navigate("/assessments/exam-stress/questions");
         },
     });

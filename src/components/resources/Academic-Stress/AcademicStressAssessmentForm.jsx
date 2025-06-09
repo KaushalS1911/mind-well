@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     Box,
-    Container,
     Select,
     FormControl,
     InputLabel,
@@ -17,16 +16,68 @@ import { useNavigate } from "react-router-dom";
 
 const age = Array.from({ length: 10 }, (_, i) => i + 16);
 
-const InputStyle = {
-    "& label.Mui-focused": { color: "#FF7F1E" },
-    "& .MuiOutlinedInput-root": {
-        "& fieldset": { borderColor: "#FF7F1E" },
-        "&:hover fieldset": { borderColor: "#FF7F1E" },
-        "&.Mui-focused fieldset": { borderColor: "#FF7F1E" },
-    },
-};
+// Reusable TextField component
+const TextInput = ({ label, name, formik, ...props }) => (
+    <TextField
+        fullWidth
+        margin="normal"
+        label={label}
+        name={name}
+        value={formik.values[name]}
+        onChange={formik.handleChange}
+        error={formik.touched[name] && Boolean(formik.errors[name])}
+        helperText={formik.touched[name] && formik.errors[name]}
+        sx={{
+            "& label.Mui-focused": { color: "#FF7F1E" },
+            "& .MuiOutlinedInput-root": {
+                "& fieldset": { borderColor: "#FF7F1E" },
+                "&:hover fieldset": { borderColor: "#FF7F1E" },
+                "&.Mui-focused fieldset": { borderColor: "#FF7F1E" },
+            },
+        }}
+        {...props}
+    />
+);
 
-function AcademicStressAssessmentForm() {
+// Reusable Select component
+const SelectInput = ({ label, name, formik, options }) => (
+    <FormControl
+        fullWidth
+        margin="normal"
+        error={formik.touched[name] && Boolean(formik.errors[name])}
+        sx={{
+            "& label.Mui-focused": { color: "#FF7F1E" },
+            "& .MuiOutlinedInput-root": {
+                "& fieldset": { borderColor: "#FF7F1E" },
+                "&:hover fieldset": { borderColor: "#FF7F1E" },
+                "&.Mui-focused fieldset": { borderColor: "#FF7F1E" },
+            },
+        }}
+    >
+        <InputLabel>{label}</InputLabel>
+        <Select
+            input={<OutlinedInput label={label} />}
+            name={name}
+            value={formik.values[name]}
+            onChange={formik.handleChange}
+            MenuProps={{
+                PaperProps: {
+                    style: { maxHeight: 48 * 5, overflow: "auto" },
+                },
+                disablePortal: true,
+            }}
+        >
+            {options.map((option) => (
+                <MenuItem key={option} value={option}>{option}</MenuItem>
+            ))}
+        </Select>
+        {formik.touched[name] && formik.errors[name] && (
+            <FormHelperText>{formik.errors[name]}</FormHelperText>
+        )}
+    </FormControl>
+);
+
+function ExamStressAssessmentForm() {
     const navigate = useNavigate();
 
     const formik = useFormik({
@@ -40,7 +91,9 @@ function AcademicStressAssessmentForm() {
             email: Yup.string().email("Invalid email").required("Email is required"),
             age: Yup.number().required("Age is required"),
         }),
-        onSubmit: () => {
+        onSubmit: (values) => {
+            sessionStorage.setItem("fullName", values.fullName);
+            sessionStorage.setItem("email", values.email);
             navigate("/assessments/academic-stress/questions");
         },
     });
@@ -48,24 +101,16 @@ function AcademicStressAssessmentForm() {
     return (
         <Box sx={{
             // backgroundColor: '#F3F4F6',
-            padding: { sm: "120px 0", xs: "80px 0" },
-            mt: { md: 5, xs: 0 },
-            mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
-        }}>
-            <Box className={"Montserrat"} sx={{
-                fontWeight: 700,
-                color: '#012765',
-                textAlign: 'center',
-                fontSize: {
+            padding: { sm: "120px 0", xs: "80px 0" }, mt: { md: 5, xs: 0 }, mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' } }}>
+            <Box className="Montserrat" sx={{ fontWeight: 700, color: '#012765', textAlign: 'center',fontSize: {
                     xs: '1.7rem',
                     sm: '1.85rem',
                     md: '2rem',
                     lg: '2.125rem'
-                },
-            }}>
+                },}}>
                 Assessment Form
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "center", mt: 5, }}>
+            <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
                 <Box sx={{
                     width: "700px",
                     backgroundColor: "#FFFFFF",
@@ -74,62 +119,22 @@ function AcademicStressAssessmentForm() {
                     borderRadius: "10px"
                 }}>
                     <form onSubmit={formik.handleSubmit}>
-
-                        <TextField
-                            fullWidth
-                            margin="normal"
+                        <TextInput
                             label="Full Name"
                             name="fullName"
-                            value={formik.values.fullName}
-                            onChange={formik.handleChange}
-                            error={formik.touched.fullName && Boolean(formik.errors.fullName)}
-                            helperText={formik.touched.fullName && formik.errors.fullName}
-                            sx={InputStyle}
+                            formik={formik}
                         />
-
-                        <FormControl
-                            fullWidth
-                            margin="normal"
-                            error={formik.touched.age && Boolean(formik.errors.age)}
-                            sx={InputStyle}
-                        >
-                            <InputLabel>Age</InputLabel>
-                            <Select
-                                input={<OutlinedInput label="Age" />}
-                                name="age"
-                                value={formik.values.age}
-                                onChange={formik.handleChange}
-                                MenuProps={{
-                                    PaperProps: {
-                                        style: {
-                                            maxHeight: 48 * 5,
-                                            overflow: "auto",
-                                        },
-                                    },
-                                    disablePortal: true,
-                                }}
-                            >
-                                {age.map((option) => (
-                                    <MenuItem key={option} value={option}>{option}</MenuItem>
-                                ))}
-                            </Select>
-                            {formik.touched.age && formik.errors.age && (
-                                <FormHelperText>{formik.errors.age}</FormHelperText>
-                            )}
-                        </FormControl>
-
-                        <TextField
-                            fullWidth
-                            margin="normal"
+                        <SelectInput
+                            label="Age"
+                            name="age"
+                            formik={formik}
+                            options={age}
+                        />
+                        <TextInput
                             label="Email"
                             name="email"
-                            value={formik.values.email}
-                            onChange={formik.handleChange}
-                            error={formik.touched.email && Boolean(formik.errors.email)}
-                            helperText={formik.touched.email && formik.errors.email}
-                            sx={InputStyle}
+                            formik={formik}
                         />
-
                         <Box sx={{ mt: "20px", display: "flex", justifyContent: "end" }}>
                             <Button
                                 type="submit"
@@ -155,4 +160,4 @@ function AcademicStressAssessmentForm() {
     );
 }
 
-export default AcademicStressAssessmentForm;
+export default ExamStressAssessmentForm;
