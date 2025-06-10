@@ -1246,7 +1246,7 @@ const questions = [
 const getScoreCategory = (score) => {
     if (score >= 61 && score <= 80) {
         return {
-            level: "High Academic Stress",
+            level: "High Self-Esteem",
             interpretation: "You experience high levels of academic stress but have developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
             recommendations: [
                 {
@@ -1261,7 +1261,7 @@ const getScoreCategory = (score) => {
         };
     } else if (score >= 41 && score <= 60) {
         return {
-            level: "Moderate-High Academic Stress",
+            level: "Moderate-High Self-Esteem",
             interpretation: "You experience moderate to high levels of academic stress and use some effective coping strategies but may need improvement in certain areas. While you have some good techniques in place, there is room to enhance your ability to manage stress.",
             recommendations: [
                 {
@@ -1290,7 +1290,7 @@ const getScoreCategory = (score) => {
         };
     } else if (score >= 11 && score <= 20) {
         return {
-            level: "Low-Moderate Academic Stress",
+            level: "Low-Moderate Self-Esteem",
             interpretation: "You experience low to moderate levels of academic stress but have limited or ineffective coping strategies. This suggests that while your stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
             recommendations: [
                 {
@@ -1305,7 +1305,7 @@ const getScoreCategory = (score) => {
         };
     } else {
         return {
-            level: "Low Academic Stress",
+            level: "Low Self-Esteem",
             interpretation: "You experience low levels of academic stress but may still benefit from improved coping strategies. Even though your stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
             recommendations: [
                 {

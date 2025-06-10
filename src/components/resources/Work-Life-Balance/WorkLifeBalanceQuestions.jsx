@@ -900,173 +900,173 @@ const NavigationButton = styled(Button)(({theme}) => ({
 const questions = [
     {
         id: 1,
-        text: " How often do you feel you have enough time for both work-related and personal activities?",
+        text: "How often do you feel you have enough time for both work-related and personal activities?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 2,
         text: "How frequently do you finish your work within scheduled hours?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 3,
         text: "How confident are you in managing your time between professional and personal responsibilities?",
         options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
+            {label: "Not at all", value: "1"},
+            {label: "Slightly", value: "2"},
+            {label: "Moderately", value: "3"},
+            {label: "Very", value: "4"},
+            {label: "Extremely", value: "5"}
         ]
     },
     {
         id: 4,
         text: "How often do you feel overwhelmed by your job demands?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 5,
         text: " How frequently does work-related stress affect your personal life?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 6,
         text: "How often do you feel emotionally present when spending time with family and friends?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 7,
         text: "How confident are you in setting boundaries between your work and personal life?",
         options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
+            {label: "Not at all", value: "1"},
+            {label: "Slightly", value: "2"},
+            {label: "Moderately", value: "3"},
+            {label: "Very", value: "4"},
+            {label: "Extremely", value: "5"}
         ]
     },
     {
         id: 8,
         text: "How often does your workload allow you to take breaks or time off without guilt?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 9,
         text: "How comfortable do you feel saying no to extra work that could affect your personal time?",
         options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
+            {label: "Not at all", value: "1"},
+            {label: "Slightly", value: "2"},
+            {label: "Moderately", value: "3"},
+            {label: "Very", value: "4"},
+            {label: "Extremely", value: "5"}
         ]
     },
     {
         id: 10,
         text: "How often do you engage in hobbies or personal activities you enjoy?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 11,
         text: "How satisfied are you with the quality time you spend with your loved ones?",
         options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
+            {label: "Not at all", value: "1"},
+            {label: "Slightly", value: "2"},
+            {label: "Moderately", value: "3"},
+            {label: "Very", value: "4"},
+            {label: "Extremely", value: "5"}
         ]
     },
     {
         id: 12,
         text: "How often do your personal relationships feel unaffected by work responsibilities?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 13,
         text: "How regularly do you make time for activities that support your physical or mental well-being?",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 14,
         text: "How frequently does work negatively impact your sleep or eating habits? ",
         options: [
-            {label: "Never", value: "0"},
-            {label: "Rarely", value: "1"},
-            {label: "Sometimes", value: "2"},
-            {label: "Often", value: "3"},
-            {label: "Always", value: "4"}
+            {label: "Never", value: "1"},
+            {label: "Rarely", value: "2"},
+            {label: "Sometimes", value: "3"},
+            {label: "Often", value: "4"},
+            {label: "Always", value: "5"}
         ]
     },
     {
         id: 15,
         text: "How satisfied are you with the balance between your professional ambitions and personal happiness?",
         options: [
-            {label: "Not at all", value: "0"},
-            {label: "Slightly", value: "1"},
-            {label: "Moderately", value: "2"},
-            {label: "Very", value: "3"},
-            {label: "Extremely", value: "4"}
+            {label: "Not at all", value: "1"},
+            {label: "Slightly", value: "2"},
+            {label: "Moderately", value: "3"},
+            {label: "Very", value: "4"},
+            {label: "Extremely", value: "5"}
         ]
     },
 ];
 
 const getScoreCategory = (score) => {
-    if (score >= 61 && score <= 80) {
+    if (score >= 60 && score <= 75) {
         return {
             level: "Strong Work-Life Balance",
             interpretation: "This Self-Assessment shows an indicative result based on your responses. These are not Psychometric Tests. For accurate and scientific approach, you should consult professional psychology practitioners.",
@@ -1076,7 +1076,7 @@ const getScoreCategory = (score) => {
                 },
             ]
         };
-    } else if (score >= 41 && score <= 60) {
+    } else if (score >= 45 && score <= 59) {
         return {
             level: "Moderate Work-Life Balance; Improvement Needed",
             interpretation: "This Self-Assessment shows an indicative result based on your responses. These are not Psychometric Tests. For accurate and scientific approach, you should consult professional psychology practitioners.",
@@ -1086,7 +1086,7 @@ const getScoreCategory = (score) => {
                 },
             ]
         };
-    } else if (score <= 40) {
+    } else if (score <= 45) {
         return {
             level: "Significant Challenges Requiring Immediate Attention",
             interpretation: "This Self-Assessment shows an indicative result based on your responses. These are not Psychometric Tests. For accurate and scientific approach, you should consult professional psychology practitioners.",
@@ -1252,7 +1252,7 @@ const WorkLifeBalanceQuestions = () => {
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
-        const percentage = (totalScore / 60) * 100;
+        const percentage = (totalScore / 75) * 100;
 
         return (
             <>
@@ -1494,7 +1494,7 @@ const WorkLifeBalanceQuestions = () => {
                             <PDFDownloadLink
                                 document={<PdfView data={{
                                     title: "Work-Life Balance Assessments Result",
-                                    maxScore: 60,
+                                    maxScore: 75,
                                     totalScore1: percentage,
                                     totalScore: totalScore,
                                     level: result.level,

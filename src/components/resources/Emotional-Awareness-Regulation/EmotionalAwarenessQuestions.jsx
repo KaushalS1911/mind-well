@@ -927,150 +927,150 @@ const questions = [
         text: "Look at this picture. How do you think this person is feeling? (Show a picture of a happy face)",
         image: img1,
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "1a"},
+            {label: "Sad", value: "0b"},
+            {label: "Angry", value: "0c"},
+            {label: "Scared", value: "0d"},
         ]
     },
     {
         id: 2,
         text: "How do you feel when you get to play with your favourite toy?",
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "1a"},
+            {label: "Sad", value: "0b"},
+            {label: "Angry", value: "0c"},
+            {label: "Scared", value: "0d"},
         ]
     },
     {
         id: 3,
         text: "When someone takes your toy without asking, how do you feel?",
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "0a"},
+            {label: "Sad", value: "0b"},
+            {label: "Angry", value: "1c"},
+            {label: "Scared", value: "0d"},
         ]
     },
     {
         id: 4,
         text: "How do you feel when you lose a game?",
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "0a"},
+            {label: "Sad", value: "1b"},
+            {label: "Angry", value: "0c"},
+            {label: "Scared", value: "0d"},
         ]
     },
     {
         id: 5,
-        text: "When you get a hug from a family member, how do you feel?specify",
+        text: "When you get a hug from a family member, how do you feel?",
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "1a"},
+            {label: "Sad", value: "0b"},
+            {label: "Angry", value: "0c"},
+            {label: "Scared", value: "0d"},
         ]
     },
     {
         id: 6,
         text: "What do you do when you feel happy?",
         options: [
-            {label: "Smile And Laugh", value: "0"},
-            {label: "Cry", value: "1"},
-            {label: "Yell", value: "2"},
-            {label: "Stay Quiet", value: "3"},
+            {label: "Smile And Laugh", value: "1a"},
+            {label: "Cry", value: "0b"},
+            {label: "Yell", value: "0c"},
+            {label: "Stay Quiet", value: "0d"},
         ]
     },
     {
         id: 7,
         text: "What do you do when you feel sad?",
         options: [
-            {label: "Talk To Someone", value: "0"},
-            {label: "Cry", value: "1"},
-            {label: "Hit Something", value: "2"},
-            {label: "Stay Quiet", value: "3"},
+            {label: "Talk To Someone", value: "1a"},
+            {label: "Cry", value: "0b"},
+            {label: "Hit Something", value: "0c"},
+            {label: "Stay Quiet", value: "0d"},
         ]
     },
     {
         id: 8,
         text: "If you feel angry, what can you do to feel better?",
         options: [
-            {label: "Talk To Someone", value: "0"},
-            {label: "Take Deep Breaths", value: "1"},
-            {label: "Hit Something", value: "2"},
-            {label: "Stay Quiet", value: "3"},
+            {label: "Talk To Someone", value: "1a"},
+            {label: "Take Deep Breaths", value: "1b"},
+            {label: "Hit Something", value: "0c"},
+            {label: "Stay Quiet", value: "0d"},
         ]
     },
     {
         id: 9,
         text: "When you are scared, what do you do?",
         options: [
-            {label: "Talk To Someone", value: "0"},
-            {label: "Cry", value: "1"},
-            {label: "Yell", value: "2"},
-            {label: "Stay Quiet", value: "3"},
+            {label: "Talk To Someone", value: "1a"},
+            {label: "Cry", value: "0b"},
+            {label: "Yell", value: "0c"},
+            {label: "Stay Quiet", value: "0d"},
         ]
     },
     {
         id: 10,
         text: "What do you do when you feel frustrated?",
         options: [
-            {label: "Talk To Someone", value: "0"},
-            {label: "Take Deep Breaths", value: "1"},
-            {label: "Hit Something", value: "2"},
-            {label: "Stay Quiet", value: "3"},
+            {label: "Talk To Someone", value: "1a"},
+            {label: "Take Deep Breaths", value: "1b"},
+            {label: "Hit Something", value: "0c"},
+            {label: "Stay Quiet", value: "0d"},
         ]
     },
     {
         id: 11,
         text: "If your friend is crying, how do you think they feel?",
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "0a"},
+            {label: "Sad", value: "1b"},
+            {label: "Angry", value: "0c"},
+            {label: "Scared", value: "0d"},
         ]
     },
     {
         id: 12,
         text: "If your friend is yelling, how do you think they feel?",
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "0a"},
+            {label: "Sad", value: "0b"},
+            {label: "Angry", value: "1c"},
+            {label: "Scared", value: "0d"},
         ]
     },
     {
         id: 13,
         text: "If your friend is laughing, how do you think they feel?",
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "1a"},
+            {label: "Sad", value: "0b"},
+            {label: "Angry", value: "0c"},
+            {label: "Scared", value: "0d"},
         ]
     },
     {
         id: 14,
         text: "If your friend is very quiet, how do you think they feel? ",
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "0a"},
+            {label: "Sad", value: "1b"},
+            {label: "Angry", value: "0c"},
+            {label: "Scared", value: "0d"},
         ]
     },
     {
         id: 15,
         text: "If your friend is playing alone, how do you think they feel?",
         options: [
-            {label: "Happy", value: "0"},
-            {label: "Sad", value: "1"},
-            {label: "Angry", value: "2"},
-            {label: "Scared", value: "3"},
+            {label: "Happy", value: "0a"},
+            {label: "Sad", value: "0b"},
+            {label: "Angry", value: "0c"},
+            {label: "Scared", value: "1d"},
         ]
     },
 ];
@@ -1282,8 +1282,7 @@ const EmotionalAwarenessQuestions = () => {
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
-        const percentage = (totalScore / 45) * 100;
-        console.log(totalScore)
+        const percentage = (totalScore / 15) * 100;
 
         return (
             <>
@@ -1525,7 +1524,7 @@ const EmotionalAwarenessQuestions = () => {
                             <PDFDownloadLink
                                 document={<PdfView data={{
                                     title: "Emotional Awareness Regulation Assessment Result",
-                                    maxScore: 45,
+                                    maxScore: 15,
                                     totalScore1: percentage,
                                     totalScore: totalScore,
                                     level: result.level,
