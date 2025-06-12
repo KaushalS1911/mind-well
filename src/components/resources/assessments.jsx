@@ -46,7 +46,7 @@ function Assessments({sx}) {
     const assessments = [
         {
             img: img1,
-            title: "Exam Stress Gauge",
+            title: "Competitive Exam Stress",
             subTitle: "(Age 18-21)",
             description: "Evaluate your anxiety levels and identify potential triggers",
             url: '/assessments/exam-stress',
