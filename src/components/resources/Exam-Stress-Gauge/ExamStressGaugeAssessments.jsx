@@ -97,7 +97,7 @@ const ExamStressGaugeAssessments = () => {
                                     fontFamily: 'Montserrat',
                                     fontSize: {xs: '24px', sm: '28px', md: '32px'},
                                 }}>
-                                    Exam Stress Gauge (Age 18-21)
+                                    Competitive Exam Stress (Age 18-21)
                                 </Typography>
                             </Box>
 

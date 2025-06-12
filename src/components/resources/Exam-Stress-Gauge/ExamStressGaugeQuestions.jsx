@@ -1463,7 +1463,7 @@ const ExamStressGaugeQuestions = () => {
                         >
                             <PDFDownloadLink
                                 document={<PdfView data={{
-                                    title: "Exam Stress Gauge Assessment Result",
+                                    title: "Competitive Exam Stress Assessment Result",
                                     maxScore: 60,
                                     totalScore1: percentage,
                                     totalScore: totalScore,
