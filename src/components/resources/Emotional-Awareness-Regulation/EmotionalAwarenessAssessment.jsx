@@ -402,7 +402,7 @@ const EmotionalAwarenessAssessment = () => {
                                 lineHeight: 1.6,
                                 fontFamily: 'Poppins'
                             }}>
-                                This assessment helps measure your current stress and anxiety levels, identifying potential areas of concern and providing insights into your mental well-being. Your responses will help us understand your situation better and offer appropriate guidance.
+                                Welcome! This assessment is designed to understand the child’s awareness of emotions and how they manage and respond to various feelings. Parents/guardians are requested to accompany their child during the test to provide comfort and support but must avoid influencing the child’s answers.
                             </Typography>
 
                             <Box sx={{ mb: 4 }}>
@@ -456,7 +456,7 @@ const EmotionalAwarenessAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Find a quiet, comfortable space where you won't be interrupted
+                                    • There are no right or wrong answers.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -465,7 +465,7 @@ const EmotionalAwarenessAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Answer honestly - there are no right or wrong answers
+                                    • The child will answer simple questions and look at expressive pictures.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -474,7 +474,7 @@ const EmotionalAwarenessAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Consider how you've been feeling over the past two weeks
+                                    • The goal is to understand how the child recognizes and regulates emotions in day-to-day situations.
                                 </Typography>
                                 <Typography sx={{
                                     color: '#4B5563',
@@ -482,7 +482,7 @@ const EmotionalAwarenessAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Your responses are confidential and secure
+                                    • Your presence matters—please ensure a calm, encouraging atmosphere.
                                 </Typography>
                             </Box>
 

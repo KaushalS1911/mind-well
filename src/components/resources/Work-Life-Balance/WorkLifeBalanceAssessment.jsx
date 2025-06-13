@@ -399,15 +399,22 @@ const WorkLifeBalanceAssessment = () => {
                             </Box>
 
                             <Typography sx={{
+                                mb: 2,
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins'
+                            }}>
+                                Welcome to the Work-Life Balance Assessment Screening Test. This short and reflective questionnaire is designed to help you understand how well you are balancing your professional responsibilities and personal life.
+                            </Typography>
+                            <Typography sx={{
                                 mb: 4,
                                 color: '#4B5563',
                                 fontSize: '16px',
                                 lineHeight: 1.6,
                                 fontFamily: 'Poppins'
                             }}>
-                                This assessment helps measure your current stress and anxiety levels, identifying
-                                potential areas of concern and providing insights into your mental well-being. Your
-                                responses will help us understand your situation better and offer appropriate guidance.
+                                Please read each statement carefully and select the option that best represents your usual experience, not just how you feel today.
                             </Typography>
 
                             <Box sx={{mb: 4}}>

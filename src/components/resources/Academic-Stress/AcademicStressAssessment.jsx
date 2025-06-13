@@ -374,7 +374,7 @@ const AcademicStressAssessment = () => {
                             </Box>
 
                             <CommonTypography sx={{ mb: 4 ,fontSize: '16px',}}>
-                                This assessment helps measure your current stress and anxiety levels, identifying potential areas of concern and providing insights into your mental well-being. Your responses will help us understand your situation better and offer appropriate guidance.
+                                This test is designed to help you reflect on your academic stress levels and the ways you currently cope with that stress. There are no right or wrong answers — your honest responses will help you better understand yourself and take steps to manage stress in a healthy, balanced way.
                             </CommonTypography>
 
                             <Box sx={{mb: 2}}>
@@ -428,7 +428,7 @@ const AcademicStressAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Find a quiet, comfortable space where you won't be interrupted
+                                    • Please answer each question based on your current experiences.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -437,7 +437,7 @@ const AcademicStressAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Answer honestly - there are no right or wrong answers
+                                    • Choose the option that best describes how often you feel or behave as described.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -446,15 +446,7 @@ const AcademicStressAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Consider how you've been feeling over the past two weeks
-                                </Typography>
-                                <Typography sx={{
-                                    color: '#4B5563',
-                                    fontSize: '14px',
-                                    lineHeight: 1.6,
-                                    fontFamily: 'Poppins'
-                                }}>
-                                    • Your responses are confidential and secure
+                                    • Be truthful with yourself – this is a tool for self-growth, not for judgment.
                                 </Typography>
                             </Box>
 

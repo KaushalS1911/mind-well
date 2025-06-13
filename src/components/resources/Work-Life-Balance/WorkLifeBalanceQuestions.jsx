@@ -844,17 +844,6 @@
 // export default WorkLifeBalanceQuestions;
 
 
-
-
-
-
-
-
-
-
-
-
-
 import React, {useEffect, useState} from 'react';
 import {
     Box,
@@ -880,6 +869,10 @@ import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
 import {GaugeComponent} from "react-gauge-component";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import BuildCircleIcon from "@mui/icons-material/BuildCircle";
+import AutorenewIcon from "@mui/icons-material/Autorenew";
+import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -1069,151 +1062,33 @@ const getScoreCategory = (score) => {
     if (score >= 60 && score <= 75) {
         return {
             level: "Strong Work-Life Balance",
-            interpretation: "This Self-Assessment shows an indicative result based on your responses. These are not Psychometric Tests. For accurate and scientific approach, you should consult professional psychology practitioners.",
-            recommendations: [
-                {
-                    description: "\"Your responses reflect a strong ability to balance work and personal life effectively. You set clear boundaries, prioritize self-care, and manage your time well, which leads to both professional success and personal satisfaction. Continue practicing these healthy habits and remain mindful of maintaining this balance even during challenging times."
-                },
-            ]
+            Analysis: "Your responses indicate that you have a strong and consistent ability to manage your professional and personal life effectively. You appear to use your time well, set healthy boundaries, handle stress constructively, and make space for personal fulfillment and relationships.",
+            interpretation: "This balance suggests that you are highly self-aware and intentional in how you spend your time and energy. You likely complete tasks within work hours, engage meaningfully with your loved ones, maintain your well-being, and preserve space for hobbies or relaxation.",
+            recommendations: ["To maintain this level of balance, continue nurturing the habits that work well for you. Keep checking in with yourself during busy or stressful periods, and don’t hesitate to recalibrate if needed. You may also find it rewarding to support others by sharing tips or practices that help you manage well."],
+            actionPlan: ["As someone who already demonstrates strong work-life balance, your main goal should be to sustain and protect this rhythm. Regular self-reflection every few months can help you stay grounded. Take time to celebrate your efforts and, when possible, mentor colleagues or friends who may be struggling. If you're part of a team, you might offer to lead informal discussions or sessions on time management or well-being. Most importantly, continue prioritizing rest, personal time, and emotional presence, even during professional peaks."],
+            supportMessage: "You’re doing great! To keep thriving, explore our expert-backed tips and well-being resources. And if you're ever curious, the app also offers ways to guide others who may benefit from your strong habits."
         };
     } else if (score >= 45 && score <= 59) {
         return {
-            level: "Moderate Work-Life Balance; Improvement Needed",
-            interpretation: "This Self-Assessment shows an indicative result based on your responses. These are not Psychometric Tests. For accurate and scientific approach, you should consult professional psychology practitioners.",
-            recommendations: [
-                {
-                    description: "You have a fair degree of balance between your work and personal life, but some areas may need attention. Consider focusing on improving specific aspects such as stress management, setting clearer boundaries, or dedicating more time to personal well-being. By addressing these areas, you can elevate your overall sense of harmony and satisfaction."
-                },
-            ]
+            level: "Moderate Work-Life Balance (Needs Improvement)",
+            Analysis: "Your answers suggest that you are managing work and personal responsibilities reasonably well, but with occasional strain or imbalance in specific areas. You may find yourself struggling to disconnect from work, facing stress spillover into personal time, or sacrificing self-care more often than you'd like.",
+            interpretation: "This moderate balance is common and manageable, but it can become draining if left unaddressed. You might be doing well overall but may feel stretched, guilty for taking breaks, or uncertain about how to set boundaries or say no when needed.",
+            recommendations: ["Now is a great time to pause and explore what’s consuming more of your energy than necessary. Identify which habits, expectations, or routines might need adjusting. Focus on strengthening stress management skills, creating clearer boundaries, and reclaiming more time for activities that energize and fulfill you."],
+            actionPlan: ["To improve your work-life balance, start by identifying one or two small but meaningful changes. For example, you could try blocking specific hours for uninterrupted personal time or limiting after-hours work communication. Explore simple relaxation techniques like deep breathing or journaling to handle stress. Setting weekly personal goals—like reconnecting with a hobby, taking short breaks, or spending tech-free time with family—can help bring intentional balance. Also, learn to communicate boundaries confidently and tactfully. With these focused efforts, you can shift from a place of occasional imbalance to a more consistent and rewarding routine."],
+            supportMessage: "\"You’re doing fairly well, but some support could make things smoother. You can explore practical tips, guided tools, and expert advice available on the app to help strengthen your balance and reduce stress.\""
         };
-    } else if (score <= 45) {
+    } else {
         return {
-            level: "Significant Challenges Requiring Immediate Attention",
-            interpretation: "This Self-Assessment shows an indicative result based on your responses. These are not Psychometric Tests. For accurate and scientific approach, you should consult professional psychology practitioners.",
-            recommendations: [
-                {
-                    description: "Your score indicates significant challenges in maintaining a healthy work-life balance. You may experience stress, burnout, or dissatisfaction due to a lack of boundaries or insufficient time for personal needs. It's essential to reevaluate your priorities, develop better time management strategies, and incorporate regular self-care practices into your routine. Seeking guidance from a mentor, counselor, or professional may also be beneficial in helping you regain balance and improve your overall well-being."
-                },
-            ]
+            level: "Significant Challenges (Needs Immediate Attention)",
+            Analysis: "Your responses reflect a high level of strain, with work demands likely overshadowing personal needs and well-being. You may feel overwhelmed, emotionally exhausted, disconnected from loved ones, or unable to prioritize self-care or boundaries.",
+            interpretation: "This level of imbalance can seriously impact your physical health, emotional stability, and relationships if not addressed soon. It indicates a strong need for immediate adjustments in your routine, expectations, and support systems. The good news is that with focused attention and small intentional steps, you can regain a sense of control and fulfillment.",
+            recommendations: ["Begin by acknowledging that it's okay to ask for help or make changes. It’s essential to reevaluate how you manage your time, expectations, and emotional energy. Consider setting very clear start and end times for your workday. Practice saying no to non-urgent tasks that interfere with your personal time, and reintroduce basic self-care practices like proper meals, rest, and movement into your routine."],
+            actionPlan: ["Your priority should be to slow down and reset. Start by dedicating one small block of time each day just for yourself—whether it's a quiet walk, listening to music, or even doing nothing at all. If you feel overwhelmed, talking to a professional counselor, mentor, or trusted peer can offer valuable support and perspective. It’s also important to review your current workload—identify what is essential and what can be delegated or rescheduled. Build simple, non-negotiable personal rituals into your day: regular meals, 7–8 hours of sleep, limited screen time before bed, and short breaks every few hours. Rebuilding balance is not about drastic change but steady, compassionate choices that prioritize you."],
+            supportMessage: "You don’t have to navigate this alone. The app offers guided support, self-care resources, and expert tools designed to help you rebuild your work-life balance—step by step, at your pace."
         };
     }
 };
 
-const GaugeChartComponent = ({score, maxScore}) => {
-    const percentage = (score / maxScore) * 100;
-    const data = [
-        {name: 'Score', value: percentage},
-        {name: 'Remaining', value: 100 - percentage}
-    ];
-
-    const getColor = (percentage) => {
-        if (percentage <= 25) return '#4CAF50';
-        if (percentage <= 50) return '#FFC107';
-        if (percentage <= 75) return '#FF9800';
-        return '#F44336';
-    };
-
-    const getStressLevel = (percentage) => {
-        if (percentage <= 25) return 'Low';
-        if (percentage <= 50) return 'Moderate';
-        if (percentage <= 75) return 'High';
-        return 'Severe';
-    };
-
-    return (
-        <Box sx={{
-            width: '100%',
-            height: 300,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            mb: 4,
-            position: 'relative'
-        }}>
-            <Box sx={{
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                        <Pie
-                            data={data}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={80}
-                            outerRadius={100}
-                            startAngle={90}
-                            endAngle={-270}
-                            paddingAngle={5}
-                            dataKey="value"
-                        >
-                            <Cell fill={getColor(percentage)}/>
-                            <Cell fill="#E6EAF3"/>
-                        </Pie>
-                        <Tooltip
-                            formatter={(value) => [`${value.toFixed(1)}%`, '']}
-                            contentStyle={{
-                                backgroundColor: '#FFFFFF',
-                                border: '1px solid #E6EAF3',
-                                borderRadius: '8px',
-                                fontFamily: 'Poppins'
-                            }}
-                        />
-                    </PieChart>
-                </ResponsiveContainer>
-                <Box sx={{
-                    position: 'absolute',
-                    textAlign: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 1
-                }}>
-                    <Typography variant="h2" sx={{
-                        color: getColor(percentage),
-                        fontWeight: 700,
-                        fontFamily: 'Montserrat',
-                        lineHeight: 1,
-                        fontSize: {xs: '3rem', sm: '4rem'}
-                    }}>
-                        {score}
-                    </Typography>
-                    <Typography sx={{
-                        color: '#4B5563',
-                        fontSize: '1rem',
-                        fontFamily: 'Poppins',
-                        fontWeight: 500
-                    }}>
-                        Points
-                    </Typography>
-                </Box>
-            </Box>
-            <Box sx={{
-                mt: 2,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                backgroundColor: `${getColor(percentage)}20`,
-                padding: '8px 16px',
-                borderRadius: '20px',
-                border: `1px solid ${getColor(percentage)}40`
-            }}>
-                <Typography sx={{
-                    color: getColor(percentage),
-                    fontSize: '1rem',
-                    fontFamily: 'Poppins',
-                    fontWeight: 600
-                }}>
-                    {getStressLevel(percentage)} Stress Level
-                </Typography>
-            </Box>
-        </Box>
-    );
-};
 
 const WorkLifeBalanceQuestions = () => {
     const navigate = useNavigate();
@@ -1265,7 +1140,7 @@ const WorkLifeBalanceQuestions = () => {
                             minHeight: '100vh',
                             display: 'flex',
                             flexDirection: 'column',
-                            justifyContent:"center",
+                            justifyContent: "center",
                         }}>
                         {/* Header Section */}
                         <Box sx={{textAlign: 'center', mb: 4}}>
@@ -1289,7 +1164,7 @@ const WorkLifeBalanceQuestions = () => {
 
                         </Box>
 
-                        <Grid container spacing={4}>
+                        <Grid container spacing={4} sx={{mb:2}}>
                             {/* Score Display Section */}
                             <Grid item xs={12} md={6}>
                                 <Card sx={{
@@ -1320,14 +1195,14 @@ const WorkLifeBalanceQuestions = () => {
                                                         formatTextValue: (value) => value,
                                                         maxDecimalDigits: 0,
                                                         matchColorWithArc: true,
-                                                        style: { borderColor:'none', fontSize: "50px" }
+                                                        style: {borderColor: 'none', fontSize: "50px"}
                                                     },
                                                     tickLabels: {
                                                         hideMinMax: true,
                                                     }
                                                 }}
                                                 arc={{
-                                                    colorArray: [ '#5BE12C', '#EA4228'],
+                                                    colorArray: ['#5BE12C', '#EA4228'],
                                                     subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
                                                     padding: 0.02,
                                                     width: 0.3
@@ -1412,7 +1287,7 @@ const WorkLifeBalanceQuestions = () => {
                                             }
                                         }}
                                     >
-                                        {result.interpretation}
+                                        {result.supportMessage}
                                     </Typography>
                                 </Card>
                             </Grid>
@@ -1421,64 +1296,160 @@ const WorkLifeBalanceQuestions = () => {
                             }
                             <Grid item xs={12} md={6}>
                                 <Card sx={{
-                                    p: 4,
+                                    p: 2.5,
                                     height: '100%',
                                     background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
                                     boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                    borderRadius: 4
+                                    borderRadius: 4,
                                 }}>
                                     <Box sx={{
                                         display: 'flex',
                                         alignItems: 'center',
                                         mb: 2
                                     }}>
-                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
+                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
                                         <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
                                             Recommendations
                                         </Typography>
                                     </Box>
 
                                     <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
-                                        {result.recommendations.map((rec, index) => (
-                                            <Box
-                                                key={index}
-                                                sx={{
-                                                    p: 2.5,
-                                                    borderRadius: 2,
-                                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
-                                                    border: '1px solid rgba(245, 129, 30, 0.1)',
-                                                    transition: 'transform 0.2s',
-                                                    '&:hover': {
-                                                        transform: 'translateY(-2px)',
-                                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                                    }
-                                                }}
-                                            >
-                                                <Typography
-                                                    variant="h6"
-                                                    sx={{
-                                                        color: '#F5811E',
-                                                        fontSize: "19px",
-                                                        fontWeight: 600,
-                                                        mb: 1,
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        gap: 1
-                                                    }}
-                                                >
-                                                    {/*<AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
-                                                    {rec.title}
-                                                </Typography>
-                                                <Typography variant="body1"
-                                                            sx={{color: '#4A5568', textAlign: "justify",}}>
-                                                    {rec.description}
-                                                </Typography>
-                                            </Box>
-                                        ))}
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                mb:2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result?.recommendations?.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    <CheckCircleIcon sx={{ color: '#FF7F1E', fontSize: 20, mr: 1, }} />
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "15px",
+                                                                    mb:2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    </Box>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <BuildCircleIcon  sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Action Plan
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result?.actionPlan?.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    <CheckCircleIcon sx={{ color: '#FF7F1E', fontSize: 20, mr: 1, }} />
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "14px",
+                                                                    mb:2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
                                     </Box>
                                 </Card>
                             </Grid>
                         </Grid>
+                        <Card sx={{
+                            p: 3,
+                            height: '100%',
+                            background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                            borderRadius: 4,
+                        }}>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <AutorenewIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Analysis
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    mb:2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.Analysis}
+                            </Box>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <ImportContactsIcon  sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Interpretation
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.interpretation}
+                            </Box>
+                        </Card>
 
                         {/* Action Buttons */
                         }

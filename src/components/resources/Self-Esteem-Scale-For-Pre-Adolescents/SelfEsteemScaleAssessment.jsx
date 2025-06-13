@@ -392,15 +392,37 @@ const SelfEsteemScaleAssessment = () => {
                             </Box>
 
                             <Typography sx={{
+                                mb: 2,
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins',
+                                fontWeight:700
+                            }}>Instructions Before the Test</Typography>
+                            <Typography sx={{
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins',
+                                fontWeight:600
+                            }}>Dear Student,</Typography>
+                            <Typography sx={{
+                                mb: 1.5,
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins'
+                            }}>
+                                You're about to take a simple questionnaire that helps you understand how you feel about yourself. It is not a test, and there are no right or wrong answers.
+                            </Typography>
+                            <Typography sx={{
                                 mb: 4,
                                 color: '#4B5563',
                                 fontSize: '16px',
                                 lineHeight: 1.6,
                                 fontFamily: 'Poppins'
                             }}>
-                                This assessment helps measure your current stress and anxiety levels, identifying
-                                potential areas of concern and providing insights into your mental well-being. Your
-                                responses will help us understand your situation better and offer appropriate guidance.
+                                Please answer honestly based on how you usually feel—not just today.
                             </Typography>
 
                             <Box sx={{mb: 4}}>
@@ -454,7 +476,7 @@ const SelfEsteemScaleAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Find a quiet, comfortable space where you won't be interrupted
+                                    • Choose the answer that feels most true for you.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -463,7 +485,7 @@ const SelfEsteemScaleAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Answer honestly - there are no right or wrong answers
+                                    • This is for you—to understand your feelings and help you feel even better about yourself.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -472,7 +494,7 @@ const SelfEsteemScaleAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Consider how you've been feeling over the past two weeks
+                                    • It will take about 5–7 minutes to complete.
                                 </Typography>
                                 <Typography sx={{
                                     color: '#4B5563',
@@ -480,7 +502,7 @@ const SelfEsteemScaleAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Your responses are confidential and secure
+                                    • When you're ready, begin with the first question below.
                                 </Typography>
                             </Box>
 

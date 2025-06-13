@@ -1003,6 +1003,10 @@ import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
 import {GaugeComponent} from "react-gauge-component";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import BuildCircleIcon from "@mui/icons-material/BuildCircle";
+import AutorenewIcon from "@mui/icons-material/Autorenew";
+import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -1247,195 +1251,89 @@ const getScoreCategory = (score) => {
     if (score >= 61 && score <= 80) {
         return {
             level: "High Self-Esteem",
-            interpretation: "You experience high levels of academic stress but have developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
+            Analysis: "Your responses show that you have a strong sense of self-worth, confidence, and a positive view of yourself and your future.",
+            interpretation: "You feel good about who you are, what you can do, and how you relate to others. You likely feel confident trying new things and believe in your strengths.",
             recommendations: [
-                {
-                    title: "High Self-Esteem",
-                    description: "The student has a very positive self-image and high self-esteem. They demonstrate a strong sense of self-worth and" +
-                        " confidence in their abilities. To maintain and further enhance this positive self-perception, it is crucial to encourage" +
-                        " continued self-affirmation and support. Recognize and celebrate their achievements and strengths regularly. Provide an " +
-                        "environment that fosters self-confidence and reinforces their positive self-image. Engage them in activities that challenge" +
-                        " and help them grow, while also acknowledging their successes."
-                },
-            ]
+                "Keep doing the things that make you feel good about yourself.",
+                "Spend time with people who encourage and support you, and continue to believe in yourself, even during challenges."
+            ],
+            actionPlan: [
+                "You can grow even more by setting new goals, exploring your interests, and practicing kindness toward yourself and others.",
+                "Keep celebrating your small and big wins.",
+                "Activities in the app can help you reflect on your strengths and express yourself creatively."
+            ],
+            supportMessage: "Support is always available on the app to help you maintain and grow your confidence."
         };
     } else if (score >= 41 && score <= 60) {
         return {
             level: "Moderate-High Self-Esteem",
-            interpretation: "You experience moderate to high levels of academic stress and use some effective coping strategies but may need improvement in certain areas. While you have some good techniques in place, there is room to enhance your ability to manage stress.",
+            Analysis: "Your answers suggest that you mostly feel confident and positive about yourself, but there may be a few areas where you sometimes doubt yourself or feel unsure.",
+            interpretation: "You have a good foundation of self-esteem, but there are times when your confidence might dip, especially in certain situations or around others.",
             recommendations: [
-                {
-                    title: "Moderate-High Self-Esteem",
-                    description: "The student generally feels good about themselves but may have some areas where they feel less confident." +
-                        " It is important to identify these specific areas for improvement and focus on targeted self-affirmation exercises. " +
-                        "Encourage their participation in activities that build confidence and self-worth. Offer constructive feedback that " +
-                        "highlights both their strengths and areas for growth. Create opportunities for them to succeed and feel competent, " +
-                        "reinforcing their overall positive self-image."
-                },
-            ]
+                "Identify situations where you feel less confident and understand why.",
+                "Use positive self-talk and talk to someone you trust about your feelings.",
+                "Joining group activities or clubs you enjoy can also help."
+            ],
+            actionPlan: [
+                "Make a list of things you like about yourself.",
+                "Try activities that make you feel proud and accomplished.",
+                "The app offers exercises to strengthen self-worth and improve the way you feel about yourself through reflection, journaling, and affirmations"
+            ],
+            supportMessage: "Support is always available on the app to help you feel stronger and more positive every day."
         };
     } else if (score >= 21 && score <= 40) {
         return {
             level: "Moderate Self-Esteem",
-            interpretation: "You experience moderate levels of academic stress and have inconsistent coping strategies. You may sometimes manage stress well but struggle at other times.",
+            Analysis: "Your results indicate that while you sometimes feel good about yourself, there are also many moments of doubt and insecurity.",
+            interpretation: "You may feel unsure of your abilities or how others see you, and this can affect how happy and confident you feel. But it’s important to know that change is possible.",
             recommendations: [
-                {
-                    title: "Increase Effective Strategies",
-                    description: "The student has an average self-image with some positive feelings about themselves but also experiences areas of " +
-                        "self-doubt. Providing support and encouragement is essential to boost their self-esteem. Engage them in regular self-affirmation" +
-                        " and positive self-talk exercises. Focus on building their strengths and recognizing their achievements, no matter how small." +
-                        " Help them set realistic goals and celebrate their progress, fostering a sense of accomplishment and improved self-worth."
-                },
-            ]
+                "Start by focusing on small successes.",
+                "Practice saying kind things to yourself.",
+                "Spend time doing things you enjoy and talk to people who make you feel good about yourself."
+            ],
+            actionPlan: [
+                "Use app tools to write about your feelings and track your progress.",
+                "Try one new thing each week to build confidence.",
+                "Slowly, you’ll begin to feel stronger and more sure of yourself.",
+                "Celebrate every improvement, no matter how small."
+            ],
+            supportMessage: "Support is always available on the app to guide you in building more confidence and self-belief."
         };
     } else if (score >= 11 && score <= 20) {
         return {
             level: "Low-Moderate Self-Esteem",
-            interpretation: "You experience low to moderate levels of academic stress but have limited or ineffective coping strategies. This suggests that while your stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
+            Analysis: "Your answers show that you often struggle with feeling good about yourself and may not always believe in your abilities or feel confident in social situations.",
+            interpretation: "These feelings can make it hard to enjoy things or try new challenges. But you are not alone—and things can get better with support and small steps.",
             recommendations: [
-                {
-                    title: " Low-Moderate Self-Esteem",
-                    description: "The student may struggle with self-esteem and has significant areas of self-doubt and negative self-perception." +
-                        " Consistent support and encouragement are vital. Work on self-esteem-building activities, such as positive affirmations" +
-                        " and goal setting. Provide frequent opportunities to highlight and celebrate their strengths and achievements. Encourage" +
-                        " them to participate in activities where they can experience success and feel valued. Gradually help them build a more positive" +
-                        " self-image by focusing on their unique qualities and capabilities."
-                },
-            ]
+                "Talk to someone you trust, like a teacher, parent, or counselor.",
+                "Try writing down one good thing about yourself each day.",
+                "Spend time doing something that brings you joy, even if it's small."
+            ],
+            actionPlan: [
+                "Use the guided exercises on the app to reflect on your feelings, set small goals, and learn how to talk kindly to yourself.",
+                "Each small success can help you feel more capable and positive.",
+                "You are worthy and capable—believe that you can grow stronger with time and support."
+            ],
+            supportMessage: "Support is always available on the app with easy tools to help you boost your self-worth."
         };
     } else {
         return {
             level: "Low Self-Esteem",
-            interpretation: "You experience low levels of academic stress but may still benefit from improved coping strategies. Even though your stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
+            Analysis: "Your results show that you may be feeling very low about yourself right now and often struggle to see your value and strengths.",
+            interpretation: "These feelings can be very hard and can affect many parts of your life—from school to friendships. But please know that help is available, and you are not alone.",
             recommendations: [
-                {
-                    title: "Low Self-Esteem",
-                    description: "The student has a very low self-image and struggles significantly with self-esteem. Intensive support and intervention" +
-                        " may be needed to help them develop a more positive self-perception. Encourage their participation in counselling or group" +
-                        " activities focused on building self-esteem. Consistently reinforce their value and worth through positive affirmations and" +
-                        " supportive feedback. Help them set small, achievable goals and celebrate every success, no matter how minor. Provide a safe" +
-                        " and nurturing environment where they feel accepted and valued, gradually helping them build a stronger sense of self-worth" +
-                        " and confidence."
-                },
-            ]
+                "It’s very important to speak with a counselor, teacher, or trusted adult.",
+                " Start small by writing or saying kind things to yourself.",
+                "Focus on one thing you do well or enjoy."
+            ],
+            actionPlan: [
+                "Use the self-help tools on the app designed especially for moments like these.",
+                "You’ll find short videos, journaling activities, and audio tools to help you feel more calm and positive.",
+                "Building confidence takes time, but it starts with one small step."
+            ],
+            supportMessage: "Support is always available on the app to guide you gently toward believing in yourself and feeling stronger."
         };
     }
-};
-
-const GaugeChartComponent = ({score, maxScore}) => {
-    const percentage = (score / maxScore) * 100;
-    const data = [
-        {name: 'Score', value: percentage},
-        {name: 'Remaining', value: 100 - percentage}
-    ];
-
-    const getColor = (percentage) => {
-        if (percentage <= 25) return '#4CAF50';
-        if (percentage <= 50) return '#FFC107';
-        if (percentage <= 75) return '#FF9800';
-        return '#F44336';
-    };
-
-    const getStressLevel = (percentage) => {
-        if (percentage <= 25) return 'Low';
-        if (percentage <= 50) return 'Moderate';
-        if (percentage <= 75) return 'High';
-        return 'Severe';
-    };
-
-    return (
-        <Box sx={{
-            width: '100%',
-            height: 300,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            mb: 4,
-            position: 'relative'
-        }}>
-            <Box sx={{
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                        <Pie
-                            data={data}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={80}
-                            outerRadius={100}
-                            startAngle={90}
-                            endAngle={-270}
-                            paddingAngle={5}
-                            dataKey="value"
-                        >
-                            <Cell fill={getColor(percentage)}/>
-                            <Cell fill="#E6EAF3"/>
-                        </Pie>
-                        <Tooltip
-                            formatter={(value) => [`${value.toFixed(1)}%`, '']}
-                            contentStyle={{
-                                backgroundColor: '#FFFFFF',
-                                border: '1px solid #E6EAF3',
-                                borderRadius: '8px',
-                                fontFamily: 'Poppins'
-                            }}
-                        />
-                    </PieChart>
-                </ResponsiveContainer>
-                <Box sx={{
-                    position: 'absolute',
-                    textAlign: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 1
-                }}>
-                    <Typography variant="h2" sx={{
-                        color: getColor(percentage),
-                        fontWeight: 700,
-                        fontFamily: 'Montserrat',
-                        lineHeight: 1,
-                        fontSize: {xs: '3rem', sm: '4rem'}
-                    }}>
-                        {score}
-                    </Typography>
-                    <Typography sx={{
-                        color: '#4B5563',
-                        fontSize: '1rem',
-                        fontFamily: 'Poppins',
-                        fontWeight: 500
-                    }}>
-                        Points
-                    </Typography>
-                </Box>
-            </Box>
-            <Box sx={{
-                mt: 2,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                backgroundColor: `${getColor(percentage)}20`,
-                padding: '8px 16px',
-                borderRadius: '20px',
-                border: `1px solid ${getColor(percentage)}40`
-            }}>
-                <Typography sx={{
-                    color: getColor(percentage),
-                    fontSize: '1rem',
-                    fontFamily: 'Poppins',
-                    fontWeight: 600
-                }}>
-                    {getStressLevel(percentage)} Stress Level
-                </Typography>
-            </Box>
-        </Box>
-    );
 };
 
 const SelfEsteemScaleQuestions = () => {
@@ -1512,7 +1410,7 @@ const SelfEsteemScaleQuestions = () => {
 
                         </Box>
 
-                        <Grid container spacing={4}>
+                        <Grid container spacing={4} sx={{mb:2}}>
                             {/* Score Display Section */}
                             <Grid item xs={12} md={6}>
                                 <Card sx={{
@@ -1635,73 +1533,183 @@ const SelfEsteemScaleQuestions = () => {
                                             }
                                         }}
                                     >
-                                        {result.interpretation}
+                                        {result.supportMessage}
                                     </Typography>
                                 </Card>
                             </Grid>
 
-                            {/* Recommendations Section */
-                            }
+                            {/* Recommendations Section */}
                             <Grid item xs={12} md={6}>
                                 <Card sx={{
-                                    p: 4,
+                                    p: 2.5,
                                     height: '100%',
                                     background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
                                     boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                    borderRadius: 4
+                                    borderRadius: 4,
                                 }}>
                                     <Box sx={{
                                         display: 'flex',
                                         alignItems: 'center',
                                         mb: 2
                                     }}>
-                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
+                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
                                         <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
                                             Recommendations
                                         </Typography>
                                     </Box>
 
                                     <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
-                                        {result.recommendations.map((rec, index) => (
-                                            <Box
-                                                key={index}
-                                                sx={{
-                                                    p: 2.5,
-                                                    borderRadius: 2,
-                                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
-                                                    border: '1px solid rgba(245, 129, 30, 0.1)',
-                                                    transition: 'transform 0.2s',
-                                                    '&:hover': {
-                                                        transform: 'translateY(-2px)',
-                                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                                    }
-                                                }}
-                                            >
-                                                <Typography
-                                                    variant="h6"
-                                                    sx={{
-                                                        color: '#F5811E',
-                                                        fontSize: "19px",
-                                                        fontWeight: 600,
-                                                        mb: 1,
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        gap: 1
-                                                    }}
-                                                >
-                                                    <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
-                                                    {rec.title}
-                                                </Typography>
-                                                <Typography variant="body1"
-                                                            sx={{color: '#4A5568', textAlign: "justify",}}>
-                                                    {rec.description}
-                                                </Typography>
-                                            </Box>
-                                        ))}
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                mb: 2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.recommendations.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    {/*<Typography*/}
+                                                    {/*    variant="h6"*/}
+                                                    {/*    sx={{*/}
+                                                    {/*        color: '#F5811E',*/}
+                                                    {/*        fontSize: "18px",*/}
+                                                    {/*        fontWeight: 600,*/}
+                                                    {/*        mb: 0.5,*/}
+                                                    {/*        display: 'flex',*/}
+                                                    {/*        alignItems: 'center',*/}
+                                                    {/*        gap: 1*/}
+                                                    {/*    }}*/}
+                                                    {/*>*/}
+                                                    {/*    <AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
+                                                    {/*    {rec.title}*/}
+                                                    {/*</Typography>*/}
+                                                    <CheckCircleIcon sx={{color: '#FF7F1E', fontSize: 20, mr: 1,}}/>
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "15px",
+                                                                    mb: 2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    </Box>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <BuildCircleIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Action Plan
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.actionPlan.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    <CheckCircleIcon sx={{color: '#FF7F1E', fontSize: 20, mr: 1,}}/>
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "14px",
+                                                                    mb: 2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
                                     </Box>
                                 </Card>
                             </Grid>
                         </Grid>
+                        <Card sx={{
+                            p: 3,
+                            height: '100%',
+                            background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                            borderRadius: 4,
+                        }}>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <AutorenewIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Analysis
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    mb:2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.Analysis}
+                            </Box>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <ImportContactsIcon  sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Interpretation
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.interpretation}
+                            </Box>
+                        </Card>
 
                         {/* Action Buttons */
                         }
@@ -1722,7 +1730,10 @@ const SelfEsteemScaleQuestions = () => {
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
-                                    recommendations: result.recommendations
+                                    recommendations: result.recommendations,
+                                    actionPlan: result.actionPlan,
+                                    supportMessage: result.supportMessage,
+                                    Analysis: result.Analysis,
                                 }}/>}
                                 fileName="Self_Esteem_Scale_for_Pre_Adolescents.pdf"
                                 style={{textDecoration: "none"}}

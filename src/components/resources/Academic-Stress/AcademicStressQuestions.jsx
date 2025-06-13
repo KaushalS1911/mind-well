@@ -1031,13 +1031,6 @@
 // export default AcademicStressQuestions;
 
 
-
-
-
-
-
-
-
 import React, {useEffect, useState} from 'react';
 import {
     Box,
@@ -1065,6 +1058,11 @@ import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
 import {GaugeComponent} from "react-gauge-component";
+import BuildCircleIcon from '@mui/icons-material/BuildCircle';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import ImportContactsIcon from '@mui/icons-material/ImportContacts';
+import AutorenewIcon from '@mui/icons-material/Autorenew';
+
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -1308,217 +1306,92 @@ const questions = [
 const getScoreCategory = (score) => {
     if (score >= 61 && score <= 80) {
         return {
-            level: "High Academic Stress",
-            interpretation: "The student experiences high levels of academic stress but has developed effective coping strategies to manage it. This indicates a strong ability to handle pressure while maintaining mental and emotional balance.",
+            level: "High Score",
+            Analysis: "You are experiencing high levels of academic stress, but you also have strong coping mechanisms in place.",
+            interpretation: "This means you have developed ways to deal with pressure and maintain a level of balance despite challenges. Your ability to manage stress is a strength.",
+            supportMessage: "Academic pressure may be feeling overwhelming right now, and that's okay. You're not alone in this journey. The app offers supportive tools to help you manage stress and feel more in control. You deserve to feel calm and confident. Reach out—help is always available on this app.",
+            actionPlan: [
+                "Keep a weekly reflection journal to track what helps you most.",
+                "Join or form a peer support group to discuss stress and success strategies.",
+                "Maintain your balance with enough downtime, sleep, and physical activity."
+            ],
             recommendations: [
-                {
-                    title: "Maintain Current Strategies",
-                    description: "Encourage the student to continue using and refining their current coping strategies to ensure they remain effective."
-                },
-                {
-                    title: "Share Techniques",
-                    description: "Suggest that the student share their successful coping techniques with peers, which can help reinforce their own strategies and provide support to others."
-                },
-                {
-                    title: "Balance Life",
-                    description: "Advise maintaining a balanced lifestyle, incorporating academic responsibilities and personal well-being activities to sustain mental and emotional health."
-                }
+                "Continue using your current coping strategies — they are working well.",
+                "Reflect occasionally to make sure they’re still effective.",
+                "Share your strategies with peers — helping others can reinforce your own skills.",
             ]
         };
     } else if (score >= 41 && score <= 60) {
         return {
-            level: "Moderate-High Academic Stress",
-            interpretation: "The student experiences moderate to high levels of academic stress and uses some effective coping strategies but may need improvement in certain areas. While they have some good techniques in place, there is room to enhance their ability to manage stress.",
+            level: "Moderate–High Score",
+            Analysis: "You're under moderate to high stress, and you’ve developed some helpful coping techniques, but there's room to strengthen your approach.",
+            interpretation: "You may find yourself managing stress well in some situations and struggling in others. That’s completely normal and means you're in a good position to improve.",
+            supportMessage: "You seem to be carrying a considerable amount of academic stress. It's a signal to take a pause and care for your emotional well-being. The app has calming techniques and guidance just for you. You're capable of creating a better balance. Let the app support you whenever you need it.",
+            actionPlan: [
+                "Use a daily planner to prioritize tasks and avoid last-minute pressure.",
+                "Attend a time management or stress relief session.",
+                "Block time every week for breaks and leisure to recharge yourself."
+            ],
             recommendations: [
-                {
-                    title: "Develop Targeted Strategies",
-                    description: "Identify specific areas of stress and develop targeted coping strategies to address them effectively."
-                },
-                {
-                    title: "Engage in Workshops",
-                    description: "Encourage participation in stress management workshops or seeking guidance from academic advisors or counsellors to improve coping skills"
-                },
-                {
-                    title: "Time Management & Self-Care",
-                    description: "Focus on enhancing time management and self-care routines to better handle academic pressures."
-                }
+                "Identify what works for you and what doesn’t.",
+                "Seek out resources (workshops, mentors, or self-help materials) to fill any gaps.",
+                "Focus on building better routines around rest, food, and study.",
             ]
         };
     } else if (score >= 21 && score <= 40) {
         return {
-            level: "Moderate Academic Stress",
-            interpretation: " The student experiences moderate levels of academic stress and has inconsistent coping strategies. They may sometimes manage stress well but struggle at other times.",
+            level: "Moderate Score",
+            Analysis: "You are experiencing moderate academic stress, and your coping techniques may not always be effective or consistent.",
+            interpretation: "Sometimes you manage your stress, other times you may feel stuck. You might benefit from learning and practicing more reliable coping strategies.",
+            supportMessage: "You are handling academic stress reasonably well, but occasional pressure might still affect your peace of mind. The app provides helpful resources to boost your planning and emotional strength. Small changes can make big differences. Use the support available here to stay ahead with ease.",
+            actionPlan: [
+                "Build a weekly study-and-relaxation schedule.",
+                "Practice guided meditation or deep breathing three times a week.",
+                "Try talking about your stress more often with someone you trust."
+            ],
             recommendations: [
-                {
-                    title: "Increase Effective Strategies",
-                    description: "Promote the use of effective coping strategies such as time management, relaxation techniques, and seeking support from friends, family, or professionals."
-                },
-                {
-                    title: "Stress Reduction Programs",
-                    description: "Encourage participation in stress reduction programs to learn and implement new coping methods."
-                },
-                {
-                    title: "Structured Plan",
-                    description: "Help the student create a structured study and relaxation plan to manage their academic workload more effectively."
-                }
+                "Try new coping methods like breathing exercises, peer discussions, or organized study blocks.",
+                "Identify stress triggers and respond with purposeful coping.",
+                "Reach out to a trusted adult, teacher, or counselor for support.",
             ]
         };
     } else if (score >= 11 && score <= 20) {
         return {
             level: "Low-Moderate Academic Stress",
-            interpretation: "The student experiences low to moderate levels of academic stress but has limited or ineffective coping strategies. This suggests that while stress levels are not very high, the strategies in place to manage stress are not sufficiently effective.",
+            Analysis: "Your academic stress is low to moderate, but you may not yet have strong strategies to handle pressure when it comes.",
+            interpretation: "It’s great that stress isn’t overwhelming, but it’s a good idea to build up your coping skills now — before stress levels rise.",
+            supportMessage: "You're doing a great job managing academic demands. This balance is a valuable strength. To maintain and enhance it, explore the app's self-care tools and tips. Consistent support leads to lasting success. The app is here for you every step of the way.",
+            actionPlan: [
+                "Set a regular sleep schedule and stick to it.",
+                "Try out new stress management techniques such as journaling, music, or art.",
+                "Plan at least one fun activity per week that helps you unwind."
+            ],
             recommendations: [
-                {
-                    title: "Develop New Strategies",
-                    description: "Work on developing and practicing new coping strategies that can help manage stress better."
-                },
-                {
-                    title: "Seek Support",
-                    description: " Advise seeking regular support from peers, professors, or counsellors to gain different perspectives and coping methods."
-                },
-                {
-                    title: "Build a Routine",
-                    description: "Focus on building a routine that includes regular breaks, physical activity, and adequate sleep to maintain overall well-being."
-                }
+                "Learn new ways to manage stress (even if you don’t feel you need them now).",
+                "Begin a simple wellness routine.",
+                "Focus on building mental and physical strength consistently.",
             ]
         };
     } else {
         return {
             level: "Low Academic Stress",
-            interpretation: "The student experiences low levels of academic stress but may still benefit from improved coping strategies. Even though the stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.The student experiences low levels of academic stress but may still benefit from improved coping strategies. Even though the stress is currently low, having robust coping mechanisms in place can help prevent future stress buildup.",
+            Analysis: "You are currently experiencing low levels of academic stress.",
+            interpretation: "This is a positive sign, but you may not have developed coping strategies simply because you haven’t needed them yet. It’s wise to prepare now so you’re ready in the future.",
+            supportMessage: "You're doing a great job managing academic demands. This balance is a valuable strength. To maintain and enhance it, explore the app's self-care tools and tips. Consistent support leads to lasting success. The app is here for you every step of the way.",
+            actionPlan: [
+                "Build a foundation of habits that promote well-being even when life is calm.",
+                "Learn stress management techniques proactively.",
+                "Establish a support network before you need it."
+            ],
             recommendations: [
-                {
-                    title: "Proactive Coping",
-                    description: "Encourage the adoption of proactive coping strategies to maintain low stress levels and prevent future stress buildup."
-                },
-                {
-                    title: "Well-Being Activities",
-                    description: "Promote participation in activities that support overall well-being and help in preventing stress."
-                },
-                {
-                    title: "Monitor Stress Levels",
-                    description: "Stay vigilant about any potential increase in stress levels and address them promptly to ensure they do not escalate."
-                }
+                "Build a foundation of habits that promote well-being even when life is calm.",
+                "Stay alert to any increase in pressure and respond early.",
+                "Begin light practices in self-awareness and stress management.",
             ]
         };
     }
 };
 
-const GaugeChartComponent = ({score, maxScore}) => {
-    const percentage = (score / maxScore) * 100;
-    const data = [
-        {name: 'Score', value: percentage},
-        {name: 'Remaining', value: 100 - percentage}
-    ];
-
-    const getColor = (percentage) => {
-        if (percentage <= 25) return '#4CAF50';
-        if (percentage <= 50) return '#FFC107';
-        if (percentage <= 75) return '#FF9800';
-        return '#F44336';
-    };
-
-    const getStressLevel = (percentage) => {
-        if (percentage <= 25) return 'Low';
-        if (percentage <= 50) return 'Moderate';
-        if (percentage <= 75) return 'High';
-        return 'Severe';
-    };
-
-    return (
-        <Box sx={{
-            width: '100%',
-            height: 300,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            mb: 4,
-            position: 'relative'
-        }}>
-            <Box sx={{
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                        <Pie
-                            data={data}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={80}
-                            outerRadius={100}
-                            startAngle={90}
-                            endAngle={-270}
-                            paddingAngle={5}
-                            dataKey="value"
-                        >
-                            <Cell fill={getColor(percentage)}/>
-                            <Cell fill="#E6EAF3"/>
-                        </Pie>
-                        <Tooltip
-                            formatter={(value) => [`${value.toFixed(1)}%`, '']}
-                            contentStyle={{
-                                backgroundColor: '#FFFFFF',
-                                border: '1px solid #E6EAF3',
-                                borderRadius: '8px',
-                                fontFamily: 'Poppins'
-                            }}
-                        />
-                    </PieChart>
-                </ResponsiveContainer>
-                <Box sx={{
-                    position: 'absolute',
-                    textAlign: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 1
-                }}>
-                    <Typography variant="h2" sx={{
-                        color: getColor(percentage),
-                        fontWeight: 700,
-                        fontFamily: 'Montserrat',
-                        lineHeight: 1,
-                        fontSize: {xs: '3rem', sm: '4rem'}
-                    }}>
-                        {score}
-                    </Typography>
-                    <Typography sx={{
-                        color: '#4B5563',
-                        fontSize: '1rem',
-                        fontFamily: 'Poppins',
-                        fontWeight: 500
-                    }}>
-                        Points
-                    </Typography>
-                </Box>
-            </Box>
-            <Box sx={{
-                mt: 2,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                backgroundColor: `${getColor(percentage)}20`,
-                padding: '8px 16px',
-                borderRadius: '20px',
-                border: `1px solid ${getColor(percentage)}40`
-            }}>
-                <Typography sx={{
-                    color: getColor(percentage),
-                    fontSize: '1rem',
-                    fontFamily: 'Poppins',
-                    fontWeight: 600
-                }}>
-                    {getStressLevel(percentage)} Stress Level
-                </Typography>
-            </Box>
-        </Box>
-    );
-};
 
 const AcademicStressQuestions = () => {
     const navigate = useNavigate();
@@ -1571,7 +1444,7 @@ const AcademicStressQuestions = () => {
                             minHeight: '100vh',
                             display: 'flex',
                             flexDirection: 'column',
-                            justifyContent:"center",
+                            justifyContent: "center",
                         }}>
                         {/* Header Section */}
                         <Box sx={{textAlign: 'center', mb: 4}}>
@@ -1595,7 +1468,7 @@ const AcademicStressQuestions = () => {
 
                         </Box>
 
-                        <Grid container spacing={4}>
+                        <Grid container spacing={4} sx={{mb: 2}}>
                             {/* Score Display Section */}
                             <Grid item xs={12} md={6}>
                                 <Card sx={{
@@ -1626,14 +1499,14 @@ const AcademicStressQuestions = () => {
                                                         formatTextValue: (value) => value,
                                                         maxDecimalDigits: 0,
                                                         matchColorWithArc: true,
-                                                        style: { borderColor:'none', fontSize: "50px" }
+                                                        style: {borderColor: 'none', fontSize: "50px"}
                                                     },
                                                     tickLabels: {
                                                         hideMinMax: true,
                                                     }
                                                 }}
                                                 arc={{
-                                                    colorArray: [ '#5BE12C', '#EA4228'],
+                                                    colorArray: ['#5BE12C', '#EA4228'],
                                                     subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
                                                     padding: 0.02,
                                                     width: 0.3
@@ -1718,7 +1591,7 @@ const AcademicStressQuestions = () => {
                                             }
                                         }}
                                     >
-                                        {result.interpretation}
+                                        {result.supportMessage}
                                     </Typography>
                                 </Card>
                             </Grid>
@@ -1727,64 +1600,175 @@ const AcademicStressQuestions = () => {
                             }
                             <Grid item xs={12} md={6}>
                                 <Card sx={{
-                                    p: 4,
+                                    p: 2.5,
                                     height: '100%',
                                     background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
                                     boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                    borderRadius: 4
+                                    borderRadius: 4,
                                 }}>
                                     <Box sx={{
                                         display: 'flex',
                                         alignItems: 'center',
                                         mb: 2
                                     }}>
-                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
+                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
                                         <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
                                             Recommendations
                                         </Typography>
                                     </Box>
 
                                     <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
-                                        {result.recommendations.map((rec, index) => (
-                                            <Box
-                                                key={index}
-                                                sx={{
-                                                    p: 2.5,
-                                                    borderRadius: 2,
-                                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
-                                                    border: '1px solid rgba(245, 129, 30, 0.1)',
-                                                    transition: 'transform 0.2s',
-                                                    '&:hover': {
-                                                        transform: 'translateY(-2px)',
-                                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                                    }
-                                                }}
-                                            >
-                                                <Typography
-                                                    variant="h6"
-                                                    sx={{
-                                                        color: '#F5811E',
-                                                        fontSize: "19px",
-                                                        fontWeight: 600,
-                                                        mb: 1,
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        gap: 1
-                                                    }}
-                                                >
-                                                    <AssignmentTurnedInIcon sx={{fontSize: 20}}/>
-                                                    {rec.title}
-                                                </Typography>
-                                                <Typography variant="body1"
-                                                            sx={{color: '#4A5568', textAlign: "justify",}}>
-                                                    {rec.description}
-                                                </Typography>
-                                            </Box>
-                                        ))}
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                mb: 2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.recommendations.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    {/*<Typography*/}
+                                                    {/*    variant="h6"*/}
+                                                    {/*    sx={{*/}
+                                                    {/*        color: '#F5811E',*/}
+                                                    {/*        fontSize: "18px",*/}
+                                                    {/*        fontWeight: 600,*/}
+                                                    {/*        mb: 0.5,*/}
+                                                    {/*        display: 'flex',*/}
+                                                    {/*        alignItems: 'center',*/}
+                                                    {/*        gap: 1*/}
+                                                    {/*    }}*/}
+                                                    {/*>*/}
+                                                    {/*    <AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
+                                                    {/*    {rec.title}*/}
+                                                    {/*</Typography>*/}
+                                                    <CheckCircleIcon sx={{color: '#FF7F1E', fontSize: 20, mr: 1,}}/>
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "15px",
+                                                                    mb: 2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    </Box>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <BuildCircleIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Action Plan
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.actionPlan.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    <CheckCircleIcon sx={{color: '#FF7F1E', fontSize: 20, mr: 1,}}/>
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "14px",
+                                                                    mb: 2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
                                     </Box>
                                 </Card>
                             </Grid>
                         </Grid>
+                        <Card sx={{
+                            p: 3,
+                            height: '100%',
+                            background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                            borderRadius: 4,
+                        }}>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <AutorenewIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Analysis
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    mb: 2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.Analysis}
+                            </Box>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <ImportContactsIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Interpretation
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.interpretation}
+                            </Box>
+                        </Card>
 
 
                         <Box
@@ -1803,7 +1787,10 @@ const AcademicStressQuestions = () => {
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
-                                    recommendations: result.recommendations
+                                    recommendations: result.recommendations,
+                                    actionPlan: result.actionPlan,
+                                    supportMessage: result.supportMessage,
+                                    Analysis: result.Analysis,
                                 }}/>}
                                 fileName="Academic_Stress.pdf"
                                 style={{textDecoration: "none"}}
@@ -1835,7 +1822,7 @@ const AcademicStressQuestions = () => {
                                     color: "#fff",
                                     py: 1.5,
                                     px: 4,
-                                    "&:hover": { bgcolor: "#E26C0A" },
+                                    "&:hover": {bgcolor: "#E26C0A"},
                                 }}
                             >
                                 Return to Assessments

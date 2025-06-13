@@ -102,15 +102,28 @@ const ExamStressGaugeAssessments = () => {
                             </Box>
 
                             <Typography sx={{
+                                mb: 2,
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins',
+                                fontWeight:700
+                            }}>Instructions before Assessment</Typography>
+                            <Typography sx={{
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins',
+                                fontWeight:600
+                            }}>Dear Student,</Typography>
+                            <Typography sx={{
                                 mb: 4,
                                 color: '#4B5563',
                                 fontSize: '16px',
                                 lineHeight: 1.6,
                                 fontFamily: 'Poppins'
                             }}>
-                                This assessment helps measure your current stress and anxiety levels, identifying
-                                potential areas of concern and providing insights into your mental well-being. Your
-                                responses will help us understand your situation better and offer appropriate guidance.
+                                This assessment is designed to help you understand how well you are managing the stress, emotions, and challenges that come with preparing for competitive exams. There are 20 statements in this test, each related to different aspects of your emotional readiness, motivation, decision-making, and stress-handling ability.
                             </Typography>
 
                             <Box sx={{mb: 2}}>
@@ -231,7 +244,7 @@ const ExamStressGaugeAssessments = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Find a quiet, comfortable space where you won't be interrupted
+                                    • Be Honest: There are no right or wrong answers. The purpose is to understand your current emotional and mental state, so answer honestly based on how you truly feel or behave.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -240,7 +253,7 @@ const ExamStressGaugeAssessments = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Answer honestly - there are no right or wrong answers
+                                    • Work silently and independently.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -249,7 +262,7 @@ const ExamStressGaugeAssessments = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Consider how you've been feeling over the past two weeks
+                                    • If unsure about a question, go with your first instinct.
                                 </Typography>
                                 <Typography sx={{
                                     color: '#4B5563',
@@ -257,7 +270,7 @@ const ExamStressGaugeAssessments = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Your responses are confidential and secure
+                                    • There is no time limit, but try to complete the assessment in 10–15 minutes.
                                 </Typography>
                             </Box>
 

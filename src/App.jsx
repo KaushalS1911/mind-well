@@ -65,6 +65,12 @@ import Overthinking from "./components/Home/struggling/StrugglingPage/overthinki
 import Struggling from "./components/Home/struggling/struggling.jsx";
 import CareerUncertainty from "./components/Home/struggling/StrugglingPage/careerUncertainty.jsx";
 import SingleSession from "./components/Session/singleSession.jsx";
+import ChildLearningAbilityAssessment
+    from "./components/resources/Child-Learning-Ability/ChildLearningAbilityAssessment.jsx";
+import ChildLearningAbilityQuestions
+    from "./components/resources/Child-Learning-Ability/ChildLearningAbilityQuestions.jsx";
+import ChildLearningAbilityAssessmentForm
+    from "./components/resources/Child-Learning-Ability/ChildLearningAbilityAssessmentForm.jsx";
 
 function App() {
     function ScrollToTop() {
@@ -159,6 +165,18 @@ function App() {
                 <Route
                     path="/assessments/general-stress/general-assessment-form"
                     element={<GeneralStressAssessmentForm/>}
+                />
+                <Route
+                    path="/assessments/child-learning-ability"
+                    element={<ChildLearningAbilityAssessment />}
+                />
+                <Route
+                    path="/assessments/child-learning-ability/questions"
+                    element={<ChildLearningAbilityQuestions/>}
+                />
+                <Route
+                    path="/assessments/child-learning-ability/assessment-form"
+                    element={<ChildLearningAbilityAssessmentForm/>}
                 />
                 <Route
                     path="/assessments/emotional-awareness"

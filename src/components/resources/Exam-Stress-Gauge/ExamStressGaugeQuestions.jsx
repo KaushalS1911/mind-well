@@ -998,6 +998,11 @@ import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
 import {GaugeComponent} from "react-gauge-component";
+import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import BuildCircleIcon from "@mui/icons-material/BuildCircle";
+import AutorenewIcon from "@mui/icons-material/Autorenew";
+import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -1219,33 +1224,99 @@ const questions = [
 ];
 
 const getScoreCategory = (score) => {
-    if (score >= 50 && score <= 80) {
+    if (score >= 50 && score <= 60) {
         return {
             level: "High Score",
-            interpretation: "You have demonstrated excellent stress management, emotional resilience, and decision-making skills, which are crucial for your exam preparation. Your ability to stay calm under pressure and maintain a positive mindset is commendable, and these traits will serve you well not only in your exams but also in your future career. Keep up the good work, continue refining your skills, and remember that consistent effort and self-belief are key to achieving your goals. With your determination and resilience, you are well-equipped to overcome any challenges that come your way.",
+            Analysis: "The responses indicate strong skills in stress management, emotional resilience, decision-making, motivation, and interpersonal communication. A balance between emotional stability and strategic thinking is evident.",
+            interpretation: "This score reflects a highly prepared and emotionally aware aspirant who can handle academic pressure with composure. The ability to manage stress proactively, maintain motivation, and make sound decisions even under pressure suggests readiness for high-stakes competitive exams.",
+            supportMessage: "You’ve built strong habits and emotional resilience—well done! Still, maintaining this balance is important, especially during intense preparation phases. Explore the app for advanced strategies to stay at your best. Even top performers benefit from support. This app is here to help whenever you need it.",
+            actionPlan: [
+                "Schedule weekly reflections to evaluate progress and emotional responses.",
+                "Mentor peers or juniors to reinforce your strengths.",
+                "Participate in competitive mock tests to build endurance.",
+                "Celebrate small wins to stay motivated."
+            ],
+            recommendations: [
+                "Maintain your current practices in managing stress and staying focused.",
+                "Engage in regular self-assessment to fine-tune your preparation.",
+                "Continue to nourish your emotional well-being through relaxation practices like mindfulness or journaling."
+            ],
         };
     } else if (score >= 40 && score <= 49) {
         return {
-            level: "Moderate Score",
-            interpretation: "You have demonstrated good skills and behaviors, but there are some areas that could benefit from improvement. Focus on enhancing your stress management techniques and decision-making strategies to be fully prepared for the challenges ahead. Developing a robust set of stress management skills will help you stay calm and focused under pressure, while refining your decision-making strategies will ensure you can navigate complex situations with confidence. By addressing these areas, you'll be better equipped to tackle any obstacles and achieve your goals more effectively.",
+            level: "Moderately High Score",
+            Analysis: "There is a good foundation in emotional and academic skills, but certain areas like stress management consistency or emotional awareness may need refining.",
+            interpretation: "This score indicates a capable aspirant who is managing fairly well but may occasionally feel overwhelmed or uncertain. Some habits and coping mechanisms are beneficial but need to be strengthened for long-term success.",
+            supportMessage: "You’re showing good progress in managing exam-related stress. That’s something to be proud of. To keep growing, use the app's resources to strengthen your routines and mental clarity. Staying emotionally strong takes ongoing care. Keep using the tools available on this app to support your journey.",
+            actionPlan: [
+                "Use tools like Eisenhower Matrix for task prioritization.",
+                "Attend webinars/workshops on emotional intelligence.",
+                "Maintain a daily stress journal to track triggers and responses.",
+                "Set short-term achievable study goals to boost confidence."
+            ],
+            recommendations: [
+                "Identify specific weak areas – for example, is it time management, emotional regulation, or handling criticism?",
+                "Develop routines to reduce stress and improve focus.",
+                "Learn more structured decision-making tools."
+            ],
         };
     } else if (score >= 30 && score <= 39) {
         return {
             level: "Moderate Score",
-            interpretation: "You show potential, but there are several areas that need significant improvement. Consider incorporating regular stress-relief techniques, emotional intelligence training, and structured decision-making practices into your routine. Practicing stress-relief techniques will help you stay calm under pressure and maintain a positive outlook. Emotional intelligence training will aid you in understanding your emotions and managing them effectively. Structured decision-making practices will assist you in comprehending and resolving complex situations. By adopting these measures, you can enhance your abilities and make progress towards your goals.",
+            Analysis: "The assessment shows signs of inconsistency in emotional regulation, motivation, or time management. The ability to cope with pressure or bounce back from setbacks may be underdeveloped.",
+            interpretation: "This score reflects a student who has potential but is currently facing challenges in staying on track consistently. There may be emotional distractions, lack of self-discipline, or difficulty in adapting to the study routine.",
+            supportMessage: "You're doing some things right, but stress might still be affecting your focus and energy. Small improvements in planning and emotional regulation can make a big difference. This app offers expert-backed techniques and activities tailored for students like you. Use them to boost your confidence. Remember, support is available right here on the app.",
+            actionPlan: [
+                "Introduce a daily 'gratitude and challenge' reflection to build resilience.",
+                "Use guided meditation apps for 10 minutes daily.",
+                "Set weekly academic targets and review them with a mentor.",
+                "Engage in peer discussions to improve interpersonal confidence."
+            ],
+            recommendations: [
+                "Develop a structured daily plan with breaks and healthy habits.",
+                "Practice emotional awareness and reflection through journaling or mindfulness.",
+                "Identify patterns of procrastination or demotivation and address them directly."
+            ],
         };
     } else if (score >= 20 && score <= 29) {
         return {
             level: "Low Score",
-            interpretation: "There are several areas of concern that need to be addressed. It's crucial to prioritize the development of better stress management techniques, emotional resilience, and consistent study habits. Improving your stress management skills will empower you to handle pressure effectively; while enhancing emotional resilience will help you bounce back from setbacks with confidence. Developing consistent study habits will ensure you stay organized and focused on your goals. Don't hesitate to seek guidance from mentors and utilize resources that can support you in these areas of growth. By actively working on these aspects, you'll build a strong foundation for achieving success in your endeavours.",
+            Analysis: "This score reveals significant gaps in essential areas like stress management, self-motivation, emotional handling, and interpersonal interactions. There may be frequent struggles with distractions, frustration, or avoidance.",
+            interpretation: "An aspirant with this score is likely under high emotional strain and lacks effective coping strategies. There is a pressing need for structure, self-belief, and guidance to build core life and study skills.",
+            supportMessage: "You may be struggling to manage exam pressure right now. That’s a sign that you could use some emotional support and stress-relief strategies. The app provides simple tools to help you feel more in control. It’s never too late to learn healthier coping skills. Reach out—the help you need is on this app.",
+            actionPlan: [
+                "Connect with a teacher/coach for accountability.",
+                "Keep a 'study habit tracker' and reflect weekly.",
+                "Watch or read motivational stories of aspirants who overcame similar struggles.",
+                "Build emotional vocabulary and identify triggers for stress."
+            ],
+            recommendations: [
+                "Seek mentoring or counseling support for emotional balance.",
+                "Practice grounding techniques to reduce anxiety.",
+                "Build basic study routines and reward small successes."
+            ],
         };
     } else {
         return {
             level: "Very Low Score",
-            interpretation: "Your responses indicate major development is needed in almost all aspects. It's essential to prioritize building a strong foundation in stress management, emotional intelligence, and disciplined study routines. These skills are crucial for navigating challenges effectively and achieving your goals. Seeking professional guidance or training can provide valuable insights and strategies to accelerate your growth in these areas. By committing to improving these foundational skills, you'll enhance your readiness and capability to succeed in your endeavours.",
+            Analysis: "The results suggest critical weaknesses in all five dimensions—possibly due to low self-esteem, high anxiety, poor coping mechanisms, or lack of guidance.",
+            interpretation: "An aspirant in this category may feel stuck, directionless, or incapable of managing the emotional and academic pressures of competitive exams. This is a red flag that immediate intervention and support are necessary.",
+            supportMessage: "It seems you are under a lot of stress, and that’s completely okay. This journey can feel heavy, but you're not alone. The app offers caring support to help you build stronger habits and mindset. Start small and take one step at a time. Help is just a tap away on this app.",
+            actionPlan: [
+                "Schedule regular sessions with a mentor or counselor.",
+                "Engage in community learning (group studies, forums).",
+                "Start a daily self-care and journaling routine.",
+                "Develop simple, consistent habits (fixed wake-up time, short study blocks, planned breaks)."
+            ],
+            recommendations: [
+                "Do not navigate this journey alone—seek emotional and academic support.",
+                "Begin by building foundational life skills, such as self-discipline and emotional awareness.",
+                "Replace negative self-talk with affirmations and realistic self-assessment."
+            ],
         };
     }
 };
+
 
 
 const ExamStressGaugeQuestions = () => {
@@ -1290,12 +1361,13 @@ const ExamStressGaugeQuestions = () => {
 
         return (
             <>
-                <Container maxWidth="md">
+                <Container maxWidth="lg">
                     <Box
                         mt={12}
                         sx={{
-                            py: 10,
-                            px: {xs: 2, md: 10},
+                            py: 5,
+                            px: {xs: 2, md: 4},
+                            minHeight: '100vh',
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent:"center",
@@ -1322,137 +1394,310 @@ const ExamStressGaugeQuestions = () => {
 
                         </Box>
 
-                        <Box sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                        }}>
-                            <Card sx={{
-                                p: 4,
-                                height: '100%',
-                                background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
-                                boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                borderRadius: 4,
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                justifyContent: "space-between"
-                            }}>
-                                <Box>
-                                    <Box sx={{
-                                        position: 'relative',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        mb: 3
-                                    }}>
-                                        <GaugeComponent
-                                            value={percentage}
-                                            type="radial"
-                                            style={{width: 300}}
-                                            labels={{
-                                                valueLabel: {
-                                                    formatTextValue: (value) => value,
-                                                    maxDecimalDigits: 0,
-                                                    matchColorWithArc: true,
-                                                    style: { borderColor:'none', fontSize: "50px" }
-                                                },
-                                                tickLabels: {
-                                                    hideMinMax: true,
-                                                }
-                                            }}
-                                            arc={{
-                                                colorArray: [ '#5BE12C', '#EA4228'],
-                                                subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
-                                                padding: 0.02,
-                                                width: 0.3
+                        <Grid container spacing={4} sx={{mb:2}}>
+                            {/* Score Display Section */}
+                            <Grid item xs={12} md={6}>
+                                <Card sx={{
+                                    p: 4,
+                                    height: '100%',
+                                    background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                    borderRadius: 4,
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: "space-between"
+                                }}>
+                                    <Box>
+                                        <Box sx={{
+                                            position: 'relative',
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            mb: 3
+                                        }}>
+                                            <GaugeComponent
+                                                value={percentage}
+                                                type="radial"
+                                                style={{width: 300}}
+                                                labels={{
+                                                    valueLabel: {
+                                                        formatTextValue: (value) => value,
+                                                        maxDecimalDigits: 0,
+                                                        matchColorWithArc: true,
+                                                        style: { borderColor:'none', fontSize: "50px" }
+                                                    },
+                                                    tickLabels: {
+                                                        hideMinMax: true,
+                                                    }
+                                                }}
+                                                arc={{
+                                                    colorArray: [ '#5BE12C', '#EA4228'],
+                                                    subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
+                                                    padding: 0.02,
+                                                    width: 0.3
 
-                                            }}
-                                            pointer={{
-                                                elastic: true,
-                                                type: "needle",
-                                                length: 0.8,
-                                                width: 14,
-                                                animate: true,
-                                                animationDuration: 2000,
-                                                animationDelay: 100
-                                            }}
-                                        />
-                                        {/*<CircularProgress*/}
-                                        {/*    variant="determinate"*/}
-                                        {/*    value={percentage}*/}
-                                        {/*    size={200}*/}
-                                        {/*    thickness={4}*/}
-                                        {/*    sx={{*/}
-                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                        {/*                totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',*/}
-                                        {/*    }}*/}
-                                        {/*/>*/}
-                                        {/*<CircularProgress*/}
-                                        {/*    variant="determinate"*/}
-                                        {/*    value={percentage}*/}
-                                        {/*    size={200}*/}
-                                        {/*    thickness={4}*/}
-                                        {/*    sx={{*/}
-                                        {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                        {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                        {/*                totalScore >= 21 ? '#ffff00' :*/}
-                                        {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
-                                        {/*        position: 'absolute',*/}
-                                        {/*        left: 34,*/}
-                                        {/*    }}*/}
-                                        {/*/>*/}
-                                        {/*<Box*/}
-                                        {/*    sx={{*/}
-                                        {/*        position: 'absolute',*/}
-                                        {/*        display: 'flex',*/}
-                                        {/*        flexDirection: 'column',*/}
-                                        {/*        alignItems: 'center',*/}
-                                        {/*    }}*/}
-                                        {/*>*/}
-                                        {/*    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>*/}
-                                        {/*        {totalScore}*/}
-                                        {/*    </Typography>*/}
-                                        {/*    <Typography variant="h5" sx={{color: '#4A5568'}}>*/}
-                                        {/*        out of 80*/}
-                                        {/*    </Typography>*/}
-                                        {/*</Box>*/}
+                                                }}
+                                                pointer={{
+                                                    elastic: true,
+                                                    type: "needle",
+                                                    length: 0.8,
+                                                    width: 14,
+                                                    animate: true,
+                                                    animationDuration: 2000,
+                                                    animationDelay: 100
+                                                }}
+                                            />
+                                            {/*<CircularProgress*/}
+                                            {/*    variant="determinate"*/}
+                                            {/*    value={percentage}*/}
+                                            {/*    size={200}*/}
+                                            {/*    thickness={4}*/}
+                                            {/*    sx={{*/}
+                                            {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                            {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                            {/*                totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',*/}
+                                            {/*    }}*/}
+                                            {/*/>*/}
+                                            {/*<CircularProgress*/}
+                                            {/*    variant="determinate"*/}
+                                            {/*    value={percentage}*/}
+                                            {/*    size={200}*/}
+                                            {/*    thickness={4}*/}
+                                            {/*    sx={{*/}
+                                            {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                            {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                            {/*                totalScore >= 21 ? '#ffff00' :*/}
+                                            {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
+                                            {/*        position: 'absolute',*/}
+                                            {/*        left: 34,*/}
+                                            {/*    }}*/}
+                                            {/*/>*/}
+                                            {/*<Box*/}
+                                            {/*    sx={{*/}
+                                            {/*        position: 'absolute',*/}
+                                            {/*        display: 'flex',*/}
+                                            {/*        flexDirection: 'column',*/}
+                                            {/*        alignItems: 'center',*/}
+                                            {/*    }}*/}
+                                            {/*>*/}
+                                            {/*    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>*/}
+                                            {/*        {totalScore}*/}
+                                            {/*    </Typography>*/}
+                                            {/*    <Typography variant="h5" sx={{color: '#4A5568'}}>*/}
+                                            {/*        out of 80*/}
+                                            {/*    </Typography>*/}
+                                            {/*</Box>*/}
+                                        </Box>
 
+                                        <Typography
+                                            variant="h5"
+                                            sx={{
+                                                color: '#F5811E',
+                                                fontWeight: 600,
+                                                mb: 2,
+                                                textAlign: 'center',
+                                            }}
+                                        >
+                                            {result.level}
+                                        </Typography>
                                     </Box>
-
                                     <Typography
-                                        variant="h5"
+                                        variant="body1"
                                         sx={{
-                                            color: '#F5811E',
-                                            fontWeight: 600,
-                                            mb: 2,
-                                            textAlign: 'center',
+                                            p: 2.5,
+                                            borderRadius: 2,
+                                            bgcolor: 'rgb(227,234,246)',
+                                            border: '1px solid rgba(245, 129, 30, 0.1)',
+                                            transition: 'transform 0.2s',
+                                            textAlign: "justify",
+                                            '&:hover': {
+                                                transform: 'translateY(-2px)',
+                                                boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                            }
                                         }}
                                     >
-                                        {result.level}
+                                        {result.supportMessage}
                                     </Typography>
-                                </Box>
-                                <Typography
-                                    variant="body1"
-                                    sx={{
-                                        p: 2.5,
-                                        borderRadius: 2,
-                                        bgcolor: 'rgb(227,234,246)',
-                                        border: '1px solid rgba(245, 129, 30, 0.1)',
-                                        transition: 'transform 0.2s',
-                                        textAlign: "justify",
-                                        '&:hover': {
-                                            transform: 'translateY(-2px)',
-                                            boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                        }
-                                    }}
-                                >
-                                    {result.interpretation}
-                                </Typography>
-                            </Card>
-                        </Box>
+                                </Card>
+                            </Grid>
 
-                        {/* Action Buttons */}
+                            {/* Recommendations Section */
+                            }
+                            <Grid item xs={12} md={6}>
+                                <Card sx={{
+                                    p: 2.5,
+                                    height: '100%',
+                                    background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                    borderRadius: 4,
+                                }}>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Recommendations
+                                        </Typography>
+                                    </Box>
+
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                mb:2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.recommendations.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    {/*<Typography*/}
+                                                    {/*    variant="h6"*/}
+                                                    {/*    sx={{*/}
+                                                    {/*        color: '#F5811E',*/}
+                                                    {/*        fontSize: "18px",*/}
+                                                    {/*        fontWeight: 600,*/}
+                                                    {/*        mb: 0.5,*/}
+                                                    {/*        display: 'flex',*/}
+                                                    {/*        alignItems: 'center',*/}
+                                                    {/*        gap: 1*/}
+                                                    {/*    }}*/}
+                                                    {/*>*/}
+                                                    {/*    <AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
+                                                    {/*    {rec.title}*/}
+                                                    {/*</Typography>*/}
+                                                    <CheckCircleIcon sx={{ color: '#FF7F1E', fontSize: 20, mr: 1, }} />
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "15px",
+                                                                    mb:2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    </Box>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <BuildCircleIcon  sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Action Plan
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.actionPlan.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    <CheckCircleIcon sx={{ color: '#FF7F1E', fontSize: 20, mr: 1, }} />
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "14px",
+                                                                    mb:2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    </Box>
+                                </Card>
+                            </Grid>
+                        </Grid>
+                        <Card sx={{
+                            p: 3,
+                            height: '100%',
+                            background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                            borderRadius: 4,
+                        }}>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <AutorenewIcon   sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Analysis
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    mb:2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.Analysis}
+                            </Box>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <ImportContactsIcon  sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Interpretation
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.interpretation}
+                            </Box>
+                        </Card>
+
+                        {/* Action Buttons */
+                        }
                         <Box
                             sx={{
                                 display: "flex",
@@ -1461,6 +1706,7 @@ const ExamStressGaugeQuestions = () => {
                                 mt: 4,
                             }}
                         >
+                            {/* Save Results Button - Downloads PDF */}
                             <PDFDownloadLink
                                 document={<PdfView data={{
                                     title: "Competitive Exam Stress Assessment Result",
@@ -1469,7 +1715,10 @@ const ExamStressGaugeQuestions = () => {
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
-                                    recommendations: result.recommendations
+                                    recommendations: result.recommendations,
+                                    actionPlan: result.actionPlan,
+                                    supportMessage: result.supportMessage,
+                                    Analysis: result.Analysis,
                                 }}/>}
                                 fileName="Exam_Stress_Gauge.pdf"
                                 style={{textDecoration: "none"}}
@@ -1501,7 +1750,7 @@ const ExamStressGaugeQuestions = () => {
                                     color: "#fff",
                                     py: 1.5,
                                     px: 4,
-                                    "&:hover": {bgcolor: "#E26C0A"},
+                                    "&:hover": { bgcolor: "#E26C0A" },
                                 }}
                             >
                                 Return to Assessments
@@ -1510,7 +1759,8 @@ const ExamStressGaugeQuestions = () => {
                     </Box>
                 </Container>
             </>
-        );
+        )
+            ;
     }
 
     return (

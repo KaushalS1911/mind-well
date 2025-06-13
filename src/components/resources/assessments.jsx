@@ -9,6 +9,7 @@ import img4 from "../../assets/images/Resources/Assessments/awerness.jpg";
 import img5 from "../../assets/images/Resources/Assessments/Academic_Stress2.jpg";
 import img6 from "../../assets/images/Resources/Assessments/Self_Esteem_Scale1.jpg";
 import img7 from "../../assets/images/Resources/Assessments/worklife-Balance.jpg";
+import img8 from "../../assets/images/Resources/Assessments/cheerful-girl-kid-enjoy-color-painting-with-creativity-ideas-present-messy-hand-home.jpg";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import ShareIcon from '@mui/icons-material/Share';
 import { ToastContainer, toast } from 'react-toastify';
@@ -107,6 +108,15 @@ function Assessments({sx}) {
             questions: "15 questions",
             time: "~ 7 min"
         },
+        // {
+        //     img: img8,
+        //     title: "Child Learning Ability",
+        //     subTitle: "(Age 4–13)",
+        //     description: "Assess your child's cognitive strengths, learning style, and academic readiness.",
+        //     url: '/assessments/child-learning-ability',
+        //     questions: "25 questions",
+        //     time: "~ 13 min"
+        // },
     ];
 
     return (

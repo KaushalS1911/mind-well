@@ -458,7 +458,7 @@ const GeneralStressAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Find a quiet, comfortable space where you won't be interrupted
+                                    • This is not a medical diagnosis but a personal check-in tool to understand your stress and anxiety levels.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -467,7 +467,7 @@ const GeneralStressAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Answer honestly - there are no right or wrong answers
+                                    • There are 20 questions. Read each question carefully and select the option that feels most true for you in the past 2 weeks.
                                 </Typography>
                                 <Typography sx={{
                                     mb: 2,
@@ -476,7 +476,7 @@ const GeneralStressAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Consider how you've been feeling over the past two weeks
+                                    • There are no right or wrong answers — just be honest with yourself.
                                 </Typography>
                                 <Typography sx={{
                                     color: '#4B5563',
@@ -484,7 +484,7 @@ const GeneralStressAssessment = () => {
                                     lineHeight: 1.6,
                                     fontFamily: 'Poppins'
                                 }}>
-                                    • Your responses are confidential and secure
+                                    • If any question makes you feel uneasy, pause, take a deep breath, and come back when you feel ready.
                                 </Typography>
                             </Box>
 

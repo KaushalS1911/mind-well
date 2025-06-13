@@ -47,7 +47,7 @@ const useStyles = (score) =>
             StyleSheet.create({
                 page: {
                     backgroundColor: '#F8F9FA',
-                    padding: 30,
+                    padding: 20,
                     display: 'flex',
                     alignItems: 'center',
                     fontFamily: 'PoppinsRegular',
@@ -105,7 +105,7 @@ const useStyles = (score) =>
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexDirection: 'column',
-                    marginBottom: 10,
+                    marginBottom: 5,
                 },
                 svgContainer: {
                     position: 'relative',
@@ -138,12 +138,12 @@ const useStyles = (score) =>
                     color: '#F5811E',
                     marginTop: 5,
                 },
-                interpretationContainer: {
+                supportMessageContainer: {
                     backgroundColor: '#E3EAF6',
                     padding: 10,
                     borderRadius: 8,
                 },
-                interpretation: {
+                supportMessage: {
                     fontSize: 9,
                     textAlign: 'justify',
                     color: '#333',
@@ -153,6 +153,7 @@ const useStyles = (score) =>
                     padding: 10,
                     borderRadius: 8,
                     marginTop: 5,
+                    marginBottom: 7,
                 },
                 recommendationHeader: {
                     display: 'flex',
@@ -180,6 +181,7 @@ const useStyles = (score) =>
                     fontFamily: 'HindiPoppins',
                     color: '#4A5568',
                     textAlign: 'justify',
+                    marginBottom: 5,
                 },
                 disclaimerTitle: {
                     fontSize: 13,
@@ -194,6 +196,60 @@ const useStyles = (score) =>
                     fontFamily: 'HindiPoppins',
                     color: 'red',
                     textAlign: 'justify',
+                },
+                analysisHeader: {
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                },
+                analysisTitle: {
+                    fontSize: 12,
+                    fontWeight: '600',
+                    fontFamily: 'PoppinsBold',
+                    color: '#0D2152',
+                    marginBottom: 3,
+                    textAlign: 'start',
+                },
+                interpretationHeader: {
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                },
+                interpretationTitle: {
+                    fontSize: 12,
+                    fontWeight: '600',
+                    fontFamily: 'PoppinsBold',
+                    color: '#0D2152',
+                    marginBottom: 3,
+                    textAlign: 'start',
+                },
+                analysis: {
+                    fontSize: 9,
+                    fontFamily: 'HindiPoppins',
+                    color: '#4A5568',
+                    textAlign: 'justify',
+                    marginBottom: 5,
+                },
+                analysisContainer: {
+                    backgroundColor: '#FBF6F2',
+                    padding: 10,
+                    borderRadius: 8,
+                    marginTop: 5,
+                    marginBottom: 7,
+                },
+                interpretation: {
+                    fontSize: 9,
+                    fontFamily: 'HindiPoppins',
+                    color: '#4A5568',
+                    textAlign: 'justify',
+                    marginBottom: 5,
+                },
+                interpretationContainer: {
+                    backgroundColor: '#FBF6F2',
+                    padding: 10,
+                    borderRadius: 8,
+                    marginTop: 5,
+                    marginBottom: 7,
                 },
             }),
         [score]
@@ -221,6 +277,7 @@ export default function PdfView({data}) {
 
     const currentDate = formatDate(new Date());
     const recommendations = data.recommendations;
+    const actionPlan = data.actionPlan;
 
     const segments = [
         {color: '#47e447', startAngle: -90, endAngle: -60, threshold: 0},
@@ -355,7 +412,7 @@ export default function PdfView({data}) {
                             flexDirection: 'row',
                             alignItems: 'flex-start',
                             justifyContent: 'space-between',
-                            paddingHorizontal: 16,
+                            paddingHorizontal: 10,
                             paddingVertical: 10,
                         }}>
                             <View style={[styles.scoreContainer, {width: '40%', alignItems: 'center'}]}>
@@ -367,38 +424,63 @@ export default function PdfView({data}) {
                                     <Text style={styles.level}>{data.level}</Text>
                                 </View>
                             </View>
-                            <View style={[styles.interpretationContainer, {width: '60%'}]}>
-                                <Text style={styles.interpretation}>{data.interpretation}</Text>
+                            <View style={[styles.supportMessageContainer, {width: '60%'}]}>
+                                <Text style={styles.supportMessage}>{data.supportMessage}</Text>
                             </View>
+                        </View>
+                        <View style={styles.analysisHeader}>
+                            <Text style={styles.analysisTitle}>Analysis :</Text>
+                        </View>
+                        <View style={[styles.analysisContainer]}>
+                            <Text style={styles.analysis}>{data.Analysis}</Text>
+                        </View>
+                        <View style={styles.interpretationHeader}>
+                            <Text style={styles.interpretationTitle}>Interpretation :</Text>
+                        </View>
+                        <View style={[styles.interpretationContainer]}>
+                            <Text style={styles.interpretation}>{data.interpretation}</Text>
                         </View>
                         {recommendations && recommendations.length > 0 && (
                             <View style={styles.recommendationsContainer}>
                                 <View style={styles.recommendationHeader}>
                                     <Text style={styles.recommendationTitle}>Recommendations :</Text>
                                 </View>
-                                {recommendations.map((rec, index) => (
-                                    <View
-                                        key={index}
-                                        style={[
-                                            styles.recommendationCard,
-                                            rec.title ? {marginBottom: 10} : {},
-                                        ]}
-                                    >
-                                        {rec.title && (
-                                            <Text style={styles.recommendationBoxTitle}>
-                                                {rec.title}{rec.title ? ':' : ''}
-                                            </Text>
-                                        )}
-                                        <Text style={styles.recommendationDescription}>{rec.description}</Text>
-                                    </View>
-                                ))}
+                                <View
+                                    style={[
+                                        styles.recommendationCard,
+                                    ]}
+                                >
+                                    {recommendations.map((rec, index) => (
+                                        <View key={index}>
+                                            <Text style={styles.recommendationDescription}>• {rec}</Text>
+                                        </View>
+                                    ))}
+                                </View>
+                            </View>
+                        )}
+                        {actionPlan && actionPlan.length > 0 && (
+                            <View style={styles.recommendationsContainer}>
+                                <View style={styles.recommendationHeader}>
+                                    <Text style={styles.recommendationTitle}>Action Plan :</Text>
+                                </View>
+                                <View
+                                    style={[
+                                        styles.recommendationCard,
+                                    ]}
+                                >
+                                    {actionPlan.map((rec, index) => (
+                                        <View key={index}>
+                                            <Text style={styles.recommendationDescription}>• {rec}</Text>
+                                        </View>
+                                    ))}
+                                </View>
                             </View>
                         )}
                         <View style={{
                             flexDirection: 'row',
                             alignItems: 'flex-start',
                             justifyContent: 'flex-start',
-                            marginTop: 20,
+                            marginTop: 13,
                         }}>
                             <Text style={[styles.disclaimerDescription, {flex: 1}]}>
                                 Disclaimer : This assessment is for informational and self-awareness purposes only.

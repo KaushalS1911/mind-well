@@ -762,6 +762,11 @@ import {PieChart, Pie, Cell, ResponsiveContainer, Tooltip} from 'recharts';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
 import { GaugeComponent } from 'react-gauge-component';
+import ImportContactsIcon from "@mui/icons-material/ImportContacts";
+import AutorenewIcon from "@mui/icons-material/Autorenew";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import BuildCircleIcon from "@mui/icons-material/BuildCircle";
+import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -780,214 +785,185 @@ const NavigationButton = styled(Button)(({theme}) => ({
 }));
 
 const options = [
-    {label: "Always", value: "4"},
-    {label: "Often", value: "3"},
-    {label: "Sometimes", value: "2"},
+    {label: "Never", value: "0"},
     {label: "Rarely", value: "1"},
-    {label: "Never", value: "0"}
+    {label: "Sometimes", value: "2"},
+    {label: "Often", value: "3"},
+    {label: "Always", value: "4"}
 ]
 
 const questions = [
     {
         id: 1,
-        text: " I have Experienced Headaches, Muscle Tension or Unexplained Pain or Aches.",
+        text: "I feel nervous or worried for no clear reason.",
         options
     },
     {
         id: 2,
-        text: "I experienced trouble falling asleep, staying asleep, or woke up interrupted",
+        text: "My heart beats fast even when I am not doing physical activity.",
         options
     },
     {
         id: 3,
-        text: "I experienced Fatigue and felt tired even after resting",
+        text: "I find it hard to relax or calm down.",
         options
     },
     {
         id: 4,
-        text: "I experienced rapid heartbeat, shortness of breath and sweating",
+        text: "I overthink or replay situations in my mind again and again.",
         options
     },
     {
         id: 5,
-        text: "Was unable to cope up with daily tasks and felt overwhelmed",
+        text: "I feel tired or drained, even after sleeping.",
         options
     },
     {
         id: 6,
-        text: "Worried excessively with unlikely or about small problems",
+        text: "I get irritated or angry quickly.",
         options
     },
     {
         id: 7,
-        text: "I feel irritable and easily frustrated",
+        text: "I avoid people or situations because I feel anxious.",
         options
     },
     {
         id: 8,
-        text: "I have trouble concentrating and staying focused",
+        text: "I have trouble falling asleep or staying asleep.",
         options
     },
     {
         id: 9,
-        text: "I avoid situations or tasks if they make me anxious",
+        text: "I feel restless or fidgety most of the time.",
         options
     },
     {
         id: 10,
-        text: " I procrastinate (Delay my Tasks) due to feeling stressed or overwhelmed",
+        text: "I often feel like something bad is going to happen.",
         options
     },
     {
         id: 11,
-        text: "I have eating issues (Overeating or Undereating) or rely on substances (Caffeine, Nicotine, Alcohol) to manage stress.",
+        text: "I get headaches, stomach aches, or muscle pain without a clear reason.",
         options
     },
     {
         id: 12,
-        text: "I find it hard to relax even during non-working or leisure hours",
+        text: "I feel overwhelmed by small tasks or decisions.",
         options
     },
+    {
+        id: 13,
+        text: "I find it hard to concentrate or focus.",
+        options
+    },
+    {
+        id: 14,
+        text: "I often feel like crying or feel helpless.",
+        options
+    },
+    {
+        id: 15,
+        text: "I feel disconnected from my surroundings or people.",
+        options
+    },
+    {
+        id: 16,
+        text: "I worry too much about things I can't control.",
+        options
+    },
+    {
+        id: 17,
+        text: "I avoid doing things I used to enjoy.",
+        options
+    },
+    {
+        id: 18,
+        text: "I feel like I am not doing “enough” even when I am busy.",
+        options
+    },
+    {
+        id: 19,
+        text: "I feel tense in my shoulders, neck, or jaw.",
+        options
+    },
+    {
+        id: 20,
+        text: "I use my phone or social media to escape my thoughts or feelings.",
+        options
+    }
 ];
 
 const getScoreCategory = (score) => {
-    if (score >= 37 && score <= 48) {
-        return {
-            level: "Severe Stress/Anxiety",
-            interpretation: " Significant levels of stress and anxiety are present. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, it is strongly advised that you engage with certified Psychologists and Professionals.",
-        };
-    } else if (score >= 25 && score <= 36) {
+    if (score >= 61 && score <= 80) {
         return {
             level: "High Stress/Anxiety",
-            interpretation: "Your stress and anxiety levels may be impacting your daily life. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, it is recommended that you engage with certified Psychologists and Professionals.",
+            Analysis: "You may be feeling emotionally exhausted, anxious, or even trapped in your thoughts and feelings.",
+            interpretation: "These stress levels can seriously impact your health, mood, sleep, and relationships.",
+            recommendations: [
+                "It's okay to ask for help — and important to do so.",
+                "You deserve to feel better, and there are many ways to begin."
+            ],
+            actionPlan: [
+                "Begin with a guided emotional release session in your app.",
+                "Follow a simple daily self-care routine — even if it’s just 10 minutes.",
+                "Seek professional help through a counselor or mental health coach.",
+                "Practice grounding techniques."
+            ],
+            supportMessage: "Your app offers access to support, calming tools, and someone to talk to. You are not alone."
         };
-    } else if (score >= 13 && score <= 24) {
+    } else if (score >= 41 && score <= 60) {
         return {
             level: "Moderate Stress/Anxiety",
-            interpretation: "You may be experiencing stress or anxiety at manageable levels. Consider mindfulness, self-care, or seeking support if needed. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, we suggest to engage with certified Psychologists and Professionals.",
+            Analysis: "You are experiencing ongoing stress and anxiety that may be affecting your daily life.",
+            interpretation: "Your emotional balance is disrupted, and it’s beginning to impact your thoughts, sleep, or energy.",
+            recommendations: [
+                "Don’t ignore these signs. They need attention and active care.",
+                "Start with small changes that soothe your nervous system."
+            ],
+            actionPlan: [
+                "Use the guided breathing or relaxation audio in your app.",
+                "Set realistic daily goals to reduce overwhelm.",
+                "Try a “worry time” technique — write your thoughts in a worry notebook and then let them go.",
+                "If you feel stuck, book a session with a counselor or join a support group."
+            ],
+            supportMessage: "You’re not alone. Your app has guided tools and self-care support just for you."
         };
-    } else if (score <= 12) {
+    } else if (score >= 21 && score <= 40) {
+        return {
+            level: "Mild Stress/Anxiety",
+            Analysis: "You are showing signs of daily stress that may come and go.",
+            interpretation: "These levels are manageable but can become problematic if ignored.",
+            recommendations: [
+                "Begin noticing what triggers your stress — situations, people, thoughts, etc.",
+                "Build small, daily habits to stay emotionally grounded."
+            ],
+            actionPlan: [
+                "Practice deep breathing 5 minutes a day.",
+                "Reduce screen time before bed.",
+                "Try journaling your emotions or taking short nature walks.",
+                "Talk to someone you trust when you feel overwhelmed."
+            ],
+            supportMessage: "Use the emotional support tools in your app — anytime, anywhere."
+        };
+    } else {
         return {
             level: "Low Stress/Anxiety",
-            interpretation: "You appear to control Strain and tension well. Keep Practicing healthful habits. The results are indicative basis the Self-Assessment questions and are not Psychometric Tests. For better and accurate results and consultation, we suggest to engage with certified Psychologists and Professionals.",
+            Analysis: "You seem to be managing your stress well and maintaining a balanced mental state.",
+            interpretation: "Your coping strategies are working. You may experience stress sometimes, but it doesn’t overpower you.",
+            recommendations: [
+                "Continue doing what works — routines, sleep, breaks, or mindfulness.",
+                "Stay aware of your emotions and thoughts so that you can catch any rising stress early."
+            ],
+            actionPlan: [
+                "Keep a gratitude journal or engage in creative hobbies.",
+                "Schedule “me time” weekly.",
+                "Use the app to explore stress-prevention tips and emotional wellness activities."
+            ],
+            supportMessage: "Help is always available in your app — for support, ideas, or just a breather."
         };
     }
-};
-
-const GaugeChartComponent = ({score, maxScore}) => {
-    const percentage = (score / maxScore) * 100;
-    const data = [
-        {name: 'Score', value: percentage},
-        {name: 'Remaining', value: 100 - percentage}
-    ];
-
-    const getColor = (percentage) => {
-        if (percentage <= 25) return '#4CAF50';
-        if (percentage <= 50) return '#FFC107';
-        if (percentage <= 75) return '#FF9800';
-        return '#F44336';
-    };
-
-    const getStressLevel = (percentage) => {
-        if (percentage <= 25) return 'Low';
-        if (percentage <= 50) return 'Moderate';
-        if (percentage <= 75) return 'High';
-        return 'Severe';
-    };
-
-    return (
-        <Box sx={{
-            width: '100%',
-            height: 300,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            mb: 4,
-            position: 'relative'
-        }}>
-            <Box sx={{
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                        <Pie
-                            data={data}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={80}
-                            outerRadius={100}
-                            startAngle={90}
-                            endAngle={-270}
-                            paddingAngle={5}
-                            dataKey="value"
-                        >
-                            <Cell fill={getColor(percentage)}/>
-                            <Cell fill="#E6EAF3"/>
-                        </Pie>
-                        <Tooltip
-                            formatter={(value) => [`${value.toFixed(1)}%`, '']}
-                            contentStyle={{
-                                backgroundColor: '#FFFFFF',
-                                border: '1px solid #E6EAF3',
-                                borderRadius: '8px',
-                                fontFamily: 'Poppins'
-                            }}
-                        />
-                    </PieChart>
-                </ResponsiveContainer>
-                <Box sx={{
-                    position: 'absolute',
-                    textAlign: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 1
-                }}>
-                    <Typography variant="h2" sx={{
-                        color: getColor(percentage),
-                        fontWeight: 700,
-                        fontFamily: 'Montserrat',
-                        lineHeight: 1,
-                        fontSize: {xs: '3rem', sm: '4rem'}
-                    }}>
-                        {score}
-                    </Typography>
-                    <Typography sx={{
-                        color: '#4B5563',
-                        fontSize: '1rem',
-                        fontFamily: 'Poppins',
-                        fontWeight: 500
-                    }}>
-                        Points
-                    </Typography>
-                </Box>
-            </Box>
-            <Box sx={{
-                mt: 2,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                backgroundColor: `${getColor(percentage)}20`,
-                padding: '8px 16px',
-                borderRadius: '20px',
-                border: `1px solid ${getColor(percentage)}40`
-            }}>
-                <Typography sx={{
-                    color: getColor(percentage),
-                    fontSize: '1rem',
-                    fontFamily: 'Poppins',
-                    fontWeight: 600
-                }}>
-                    {getStressLevel(percentage)} Stress Level
-                </Typography>
-            </Box>
-        </Box>
-    );
 };
 
 const GeneralStressQuestions = () => {
@@ -1027,11 +1003,11 @@ const GeneralStressQuestions = () => {
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
-        const percentage = (totalScore / 48) * 100;
+        const percentage = (totalScore / 80) * 100;
 
         return (
             <>
-                <Container maxWidth="md">
+                <Container maxWidth="lg">
                     <Box
                         mt={12}
                         sx={{
@@ -1064,120 +1040,298 @@ const GeneralStressQuestions = () => {
 
                         </Box>
 
+                        <Grid container spacing={4} sx={{mb:2}}>
+                            {/* Score Display Section */}
+                            <Grid item xs={12} md={6}>
+                                <Card sx={{
+                                    p: 4,
+                                    height: '100%',
+                                    background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                    borderRadius: 4,
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: "space-between"
+                                }}>
+                                    <Box>
+                                        <Box sx={{
+                                            position: 'relative',
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            mb: 3
+                                        }}>
+                                            <GaugeComponent
+                                                value={percentage}
+                                                type="radial"
+                                                style={{width: 300}}
+                                                labels={{
+                                                    valueLabel: {
+                                                        formatTextValue: (value) => value,
+                                                        maxDecimalDigits: 0,
+                                                        matchColorWithArc: true,
+                                                        style: { borderColor:'none', fontSize: "50px" }
+                                                    },
+                                                    tickLabels: {
+                                                        hideMinMax: true,
+                                                    }
+                                                }}
+                                                arc={{
+                                                    colorArray: [ '#5BE12C', '#EA4228'],
+                                                    subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
+                                                    padding: 0.02,
+                                                    width: 0.3
+
+                                                }}
+                                                pointer={{
+                                                    elastic: true,
+                                                    type: "needle",
+                                                    length: 0.8,
+                                                    width: 14,
+                                                    animate: true,
+                                                    animationDuration: 2000,
+                                                    animationDelay: 100
+                                                }}
+                                            />
+                                            {/*<CircularProgress*/}
+                                            {/*    variant="determinate"*/}
+                                            {/*    value={percentage}*/}
+                                            {/*    size={200}*/}
+                                            {/*    thickness={4}*/}
+                                            {/*    sx={{*/}
+                                            {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                            {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                            {/*                totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',*/}
+                                            {/*    }}*/}
+                                            {/*/>*/}
+                                            {/*<CircularProgress*/}
+                                            {/*    variant="determinate"*/}
+                                            {/*    value={percentage}*/}
+                                            {/*    size={200}*/}
+                                            {/*    thickness={4}*/}
+                                            {/*    sx={{*/}
+                                            {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
+                                            {/*            totalScore >= 41 ? '#ffa500' :*/}
+                                            {/*                totalScore >= 21 ? '#ffff00' :*/}
+                                            {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
+                                            {/*        position: 'absolute',*/}
+                                            {/*        left: 34,*/}
+                                            {/*    }}*/}
+                                            {/*/>*/}
+                                            {/*<Box*/}
+                                            {/*    sx={{*/}
+                                            {/*        position: 'absolute',*/}
+                                            {/*        display: 'flex',*/}
+                                            {/*        flexDirection: 'column',*/}
+                                            {/*        alignItems: 'center',*/}
+                                            {/*    }}*/}
+                                            {/*>*/}
+                                            {/*    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>*/}
+                                            {/*        {totalScore}*/}
+                                            {/*    </Typography>*/}
+                                            {/*    <Typography variant="h5" sx={{color: '#4A5568'}}>*/}
+                                            {/*        out of 80*/}
+                                            {/*    </Typography>*/}
+                                            {/*</Box>*/}
+                                        </Box>
+
+                                        <Typography
+                                            variant="h5"
+                                            sx={{
+                                                color: '#F5811E',
+                                                fontWeight: 600,
+                                                mb: 2,
+                                                textAlign: 'center',
+                                            }}
+                                        >
+                                            {result.level}
+                                        </Typography>
+                                    </Box>
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            p: 2.5,
+                                            borderRadius: 2,
+                                            bgcolor: 'rgb(227,234,246)',
+                                            border: '1px solid rgba(245, 129, 30, 0.1)',
+                                            transition: 'transform 0.2s',
+                                            textAlign: "justify",
+                                            '&:hover': {
+                                                transform: 'translateY(-2px)',
+                                                boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                            }
+                                        }}
+                                    >
+                                        {result.supportMessage}
+                                    </Typography>
+                                </Card>
+                            </Grid>
+
+                            {/* Recommendations Section */
+                            }
+                            <Grid item xs={12} md={6}>
+                                <Card sx={{
+                                    p: 2.5,
+                                    height: '100%',
+                                    background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                                    boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                                    borderRadius: 4,
+                                }}>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Recommendations
+                                        </Typography>
+                                    </Box>
+
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                mb:2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.recommendations.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    {/*<Typography*/}
+                                                    {/*    variant="h6"*/}
+                                                    {/*    sx={{*/}
+                                                    {/*        color: '#F5811E',*/}
+                                                    {/*        fontSize: "18px",*/}
+                                                    {/*        fontWeight: 600,*/}
+                                                    {/*        mb: 0.5,*/}
+                                                    {/*        display: 'flex',*/}
+                                                    {/*        alignItems: 'center',*/}
+                                                    {/*        gap: 1*/}
+                                                    {/*    }}*/}
+                                                    {/*>*/}
+                                                    {/*    <AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
+                                                    {/*    {rec.title}*/}
+                                                    {/*</Typography>*/}
+                                                    <CheckCircleIcon sx={{ color: '#FF7F1E', fontSize: 20, mr: 1, }} />
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "15px",
+                                                                    mb:2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    </Box>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <BuildCircleIcon  sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Action Plan
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.actionPlan.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    <CheckCircleIcon sx={{ color: '#FF7F1E', fontSize: 20, mr: 1, }} />
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "14px",
+                                                                    mb:2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    </Box>
+                                </Card>
+                            </Grid>
+                        </Grid>
                         <Card sx={{
-                            p: 4,
+                            p: 3,
                             height: '100%',
                             background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
                             boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
                             borderRadius: 4,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: "space-between"
                         }}>
-                            <Box>
-                                <Box sx={{
-                                    position: 'relative',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    mb: 3
-                                }}>
-                                    <GaugeComponent
-                                        value={percentage}
-                                        type="radial"
-                                        style={{width: 300}}
-                                        labels={{
-                                            valueLabel: {
-                                                formatTextValue: (value) => value,
-                                                maxDecimalDigits: 0,
-                                                matchColorWithArc: true,
-                                                style: { borderColor:'none', fontSize: "50px" }
-                                            },
-                                            tickLabels: {
-                                                hideMinMax: true,
-                                            }
-                                        }}
-                                        arc={{
-                                            colorArray: [ '#5BE12C', '#EA4228'],
-                                            subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
-                                            padding: 0.02,
-                                            width: 0.3
-
-                                        }}
-                                        pointer={{
-                                            elastic: true,
-                                            type: "needle",
-                                            length: 0.8,
-                                            width: 14,
-                                            animate: true,
-                                            animationDuration: 2000,
-                                            animationDelay: 100
-                                        }}
-                                    />
-                                    {/*<CircularProgress*/}
-                                    {/*    variant="determinate"*/}
-                                    {/*    value={percentage}*/}
-                                    {/*    size={200}*/}
-                                    {/*    thickness={4}*/}
-                                    {/*    sx={{*/}
-                                    {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                    {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                    {/*                totalScore >= 21 ? '#ffdd00' : totalScore >= 1 ? '#90EE90' : '#47e447',*/}
-                                    {/*    }}*/}
-                                    {/*/>*/}
-                                    {/*<CircularProgress*/}
-                                    {/*    variant="determinate"*/}
-                                    {/*    value={percentage}*/}
-                                    {/*    size={200}*/}
-                                    {/*    thickness={4}*/}
-                                    {/*    sx={{*/}
-                                    {/*        color: totalScore >= 61 ? '#ff4d4d' :*/}
-                                    {/*            totalScore >= 41 ? '#ffa500' :*/}
-                                    {/*                totalScore >= 21 ? '#ffff00' :*/}
-                                    {/*                    totalScore >= 11 ? '#90EE90' : '#00ff00',*/}
-                                    {/*        position: 'absolute',*/}
-                                    {/*        left: 34,*/}
-                                    {/*    }}*/}
-                                    {/*/>*/}
-                                    {/*<Box*/}
-                                    {/*    sx={{*/}
-                                    {/*        position: 'absolute',*/}
-                                    {/*        display: 'flex',*/}
-                                    {/*        flexDirection: 'column',*/}
-                                    {/*        alignItems: 'center',*/}
-                                    {/*    }}*/}
-                                    {/*>*/}
-                                    {/*    <Typography variant="h3" sx={{fontWeight: 700, color: '#0D2152'}}>*/}
-                                    {/*        {totalScore}*/}
-                                    {/*    </Typography>*/}
-                                    {/*    <Typography variant="h5" sx={{color: '#4A5568'}}>*/}
-                                    {/*        out of 80*/}
-                                    {/*    </Typography>*/}
-                                    {/*</Box>*/}
-                                </Box>
-
-                                <Typography
-                                    variant="h5"
-                                    sx={{
-                                        color: '#F5811E',
-                                        fontWeight: 600,
-                                        mb: 2,
-                                        textAlign: 'center',
-                                    }}
-                                >
-                                    {result.level}
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <AutorenewIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Analysis
                                 </Typography>
                             </Box>
-                            <Typography
-                                variant="body1"
+                            <Box
+                                // key={index}
                                 sx={{
-                                    p: 2.5,
+                                    p: 2,
+                                    mb:2,
                                     borderRadius: 2,
-                                    bgcolor: 'rgb(227,234,246)',
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
                                     border: '1px solid rgba(245, 129, 30, 0.1)',
                                     transition: 'transform 0.2s',
-                                    textAlign: "justify",
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.Analysis}
+                            </Box>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <ImportContactsIcon  sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Interpretation
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
                                     '&:hover': {
                                         transform: 'translateY(-2px)',
                                         boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
@@ -1185,10 +1339,11 @@ const GeneralStressQuestions = () => {
                                 }}
                             >
                                 {result.interpretation}
-                            </Typography>
+                            </Box>
                         </Card>
 
-                        {/* Action Buttons */}
+                        {/* Action Buttons */
+                        }
                         <Box
                             sx={{
                                 display: "flex",
@@ -1201,12 +1356,15 @@ const GeneralStressQuestions = () => {
                             <PDFDownloadLink
                                 document={<PdfView data={{
                                     title: "General Stress Assessment Result",
-                                    maxScore: 48,
+                                    maxScore: 80,
                                     totalScore1: percentage,
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
-                                    recommendations: result.recommendations
+                                    recommendations: result.recommendations,
+                                    actionPlan: result.actionPlan,
+                                    supportMessage: result.supportMessage,
+                                    Analysis: result.Analysis,
                                 }}/>}
                                 fileName="General_stress_Report.pdf"
                                 style={{textDecoration: "none"}}
@@ -1238,7 +1396,7 @@ const GeneralStressQuestions = () => {
                                     color: "#fff",
                                     py: 1.5,
                                     px: 4,
-                                    "&:hover": {bgcolor: "#E26C0A"},
+                                    "&:hover": { bgcolor: "#E26C0A" },
                                 }}
                             >
                                 Return to Assessments

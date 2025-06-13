@@ -903,7 +903,12 @@ import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import {PDFDownloadLink, PDFViewer} from "@react-pdf/renderer";
 import PdfView from "../../global/pdf-view.jsx";
 import img1 from '../../../assets/images/Resources/Assessments/smiley person images.png'
+import img2 from '../../../assets/images/Resources/Assessments/dev-asangbam-_sh9vkVbVgo-unsplash-removebg-preview.png'
 import {GaugeComponent} from "react-gauge-component";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import BuildCircleIcon from "@mui/icons-material/BuildCircle";
+import AutorenewIcon from "@mui/icons-material/Autorenew";
+import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 
 const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(4),
@@ -924,7 +929,7 @@ const NavigationButton = styled(Button)(({theme}) => ({
 const questions = [
     {
         id: 1,
-        text: "Look at this picture. How do you think this person is feeling? (Show a picture of a happy face)",
+        text: "Look at this picture. How do you think this person is feeling?",
         image: img1,
         options: [
             {label: "Happy", value: "1a"},
@@ -975,57 +980,8 @@ const questions = [
     },
     {
         id: 6,
-        text: "What do you do when you feel happy?",
-        options: [
-            {label: "Smile And Laugh", value: "1a"},
-            {label: "Cry", value: "0b"},
-            {label: "Yell", value: "0c"},
-            {label: "Stay Quiet", value: "0d"},
-        ]
-    },
-    {
-        id: 7,
-        text: "What do you do when you feel sad?",
-        options: [
-            {label: "Talk To Someone", value: "1a"},
-            {label: "Cry", value: "0b"},
-            {label: "Hit Something", value: "0c"},
-            {label: "Stay Quiet", value: "0d"},
-        ]
-    },
-    {
-        id: 8,
-        text: "If you feel angry, what can you do to feel better?",
-        options: [
-            {label: "Talk To Someone", value: "1a"},
-            {label: "Take Deep Breaths", value: "1b"},
-            {label: "Hit Something", value: "0c"},
-            {label: "Stay Quiet", value: "0d"},
-        ]
-    },
-    {
-        id: 9,
-        text: "When you are scared, what do you do?",
-        options: [
-            {label: "Talk To Someone", value: "1a"},
-            {label: "Cry", value: "0b"},
-            {label: "Yell", value: "0c"},
-            {label: "Stay Quiet", value: "0d"},
-        ]
-    },
-    {
-        id: 10,
-        text: "What do you do when you feel frustrated?",
-        options: [
-            {label: "Talk To Someone", value: "1a"},
-            {label: "Take Deep Breaths", value: "1b"},
-            {label: "Hit Something", value: "0c"},
-            {label: "Stay Quiet", value: "0d"},
-        ]
-    },
-    {
-        id: 11,
-        text: "If your friend is crying, how do you think they feel?",
+        text: "Look at this picture. How do you think this person is feeling? (Show a picture of a sad face)",
+        image: img2,
         options: [
             {label: "Happy", value: "0a"},
             {label: "Sad", value: "1b"},
@@ -1034,18 +990,38 @@ const questions = [
         ]
     },
     {
-        id: 12,
-        text: "If your friend is yelling, how do you think they feel?",
+        id: 7,
+        text: "How do you feel when you get a bad grade?",
         options: [
             {label: "Happy", value: "0a"},
-            {label: "Sad", value: "0b"},
-            {label: "Angry", value: "1c"},
+            {label: "Sad", value: "1b"},
+            {label: "Angry", value: "0c"},
             {label: "Scared", value: "0d"},
         ]
     },
     {
-        id: 13,
-        text: "If your friend is laughing, how do you think they feel?",
+        id: 8,
+        text: "When you are waiting for your turn to play, how do you feel?",
+        options: [
+            {label: "Happy", value: "0a"},
+            {label: "Sad", value: "0b"},
+            {label: "Angry", value: "0c"},
+            {label: "Excited", value: "1d"},
+        ]
+    },
+    {
+        id: 9,
+        text: "How do you feel when you are all alone?",
+        options: [
+            {label: "Happy", value: "0a"},
+            {label: "Sad", value: "1b"},
+            {label: "Angry", value: "0c"},
+            {label: "Scared", value: "0d"},
+        ]
+    },
+    {
+        id: 10,
+        text: "10.When you help someone, how do you feel?",
         options: [
             {label: "Happy", value: "1a"},
             {label: "Sad", value: "0b"},
@@ -1053,196 +1029,187 @@ const questions = [
             {label: "Scared", value: "0d"},
         ]
     },
+    // Section 2
+    {
+        id: 11,
+        text: "What do you do when you feel happy?",
+        options: [
+            {label: "Smile and laugh", value: "1a"},
+            {label: "Cry", value: "0b"},
+            {label: "Yell", value: "0c"},
+            {label: "Stay quiet", value: "0d"},
+        ]
+    },
+    {
+        id: 12,
+        text: "What do you do when you feel sad?",
+        options: [
+            {label: "Talk to someone", value: "1a"},
+            {label: "Cry", value: "0b"},
+            {label: "Hit something", value: "0c"},
+            {label: "Stay quiet", value: "0d"},
+        ]
+    },
+    {
+        id: 13,
+        text: "If you feel angry, what can you do to feel better?",
+        options: [
+            {label: "Talk to someone", value: "1a"},
+            {label: "Take deep breaths", value: "1b"},
+            {label: "Hit something", value: "0c"},
+            {label: "Stay quiet", value: "0d"},
+        ]
+    },
     {
         id: 14,
-        text: "If your friend is very quiet, how do you think they feel? ",
+        text: "When you are scared, what do you do?",
         options: [
-            {label: "Happy", value: "0a"},
-            {label: "Sad", value: "1b"},
-            {label: "Angry", value: "0c"},
-            {label: "Scared", value: "0d"},
+            {label: "Talk to someone", value: "1a"},
+            {label: "Cry", value: "0b"},
+            {label: "Yell", value: "0c"},
+            {label: "Stay quiet", value: "0d"},
         ]
     },
     {
         id: 15,
-        text: "If your friend is playing alone, how do you think they feel?",
+        text: "What do you do when you feel frustrated?",
         options: [
-            {label: "Happy", value: "0a"},
-            {label: "Sad", value: "0b"},
-            {label: "Angry", value: "0c"},
-            {label: "Scared", value: "1d"},
+            {label: "Talk to someone", value: "1a"},
+            {label: "Take deep breaths", value: "1b"},
+            {label: "Hit something", value: "0c"},
+            {label: "Stay quiet", value: "0d"},
         ]
     },
+    {
+        id: 16,
+        text: "When you are feeling really happy, how do you share that with others?",
+        options: [
+            {label: "Smile and tell them", value: "1a"},
+            {label: "Keep it to yourself", value: "0b"},
+            {label: "Cry", value: "0c"},
+            {label: "Yell", value: "0d"},
+        ]
+    },
+    {
+        id: 17,
+        text: "When you feel like crying, what do you do?",
+        options: [
+            {label: "Talk to someone", value: "1a"},
+            {label: "Cry alone", value: "0b"},
+            {label: "Hit something", value: "0c"},
+            {label: "Stay quiet", value: "0d"},
+        ]
+    },
+    {
+        id: 18,
+        text: "If you see a friend feeling sad, what do you do?",
+        options: [
+            {label: "Talk to them and ask what’s wrong", value: "1a"},
+            {label: "Ignore them", value: "0b"},
+            {label: "Laugh at them", value: "0c"},
+            {label: "Walk away", value: "0d"},
+        ]
+    },
+    {
+        id: 19,
+        text: "When you are angry, how do you calm down?",
+        options: [
+            {label: "Talk to someone", value: "1a"},
+            {label: "Take deep breaths", value: "1b"},
+            {label: "Yell", value: "0c"},
+            {label: "Hit something", value: "0d"},
+        ]
+    },
+    {
+        id: 20,
+        text: "What do you do when you feel really excited?",
+        options: [
+            {label: "Share your excitement with others", value: "1a"},
+            {label: "Keep it to yourself", value: "0b"},
+            {label: "Cry", value: "0c"},
+            {label: "Stay quiet", value: "0d"},
+        ]
+    }
+
 ];
 
 const getScoreCategory = (score) => {
-    if (score >= 13 && score <= 15) {
+    if (score >= 17 && score <= 20) {
         return {
             level: "High Score",
-            interpretation: "The child has a strong understanding of emotions and demonstrates effective emotional regulation skills.",
+            Analysis: "The child demonstrates excellent emotional awareness and self-regulation.",
+            interpretation: "This score reflects strong emotional intelligence for their age. The child understands a range of emotions and expresses them appropriately.",
+            supportMessage: "Your child shows strong emotional understanding. Nurturing these skills further can enhance social and academic growth. Celebrate their awareness and provide continuous encouragement.",
+            actionPlan: [
+                "Reinforce positive emotional responses at home and school.",
+                "Introduce advanced emotional vocabulary and nuanced scenarios.",
+                "Encourage the child to lead peer discussions or assist others during group activities."
+            ],
             recommendations: [
-                {
-                    description: "Encourage continued emotional development through positive reinforcement and activities that promote emotional intelligence. Engage the child in more complex emotional awareness activities to further enhance their skills."
-                },
+                    "Continue nurturing emotional growth through storytelling, art, and open conversations.",
             ]
         };
-    } else if (score >= 10 && score <= 12) {
+    } else if (score >= 13 && score <= 16) {
         return {
             level: "Moderate-High Score",
-            interpretation: " The child has a good understanding of emotions and generally manages and expresses emotions appropriately, but there may be some areas needing slight improvement.",
+            Analysis: "The child has a good grasp of emotions and usually regulates them well.",
+            interpretation: "Occasional inconsistencies suggest a few emotional skills are still developing.",
+            supportMessage: "Your child has developed a good foundation in emotional intelligence. Some areas may still need fine-tuning, and regular reinforcement can be very helpful.",
+            actionPlan: [
+                "Identify areas (e.g., frustration or fear) needing improvement.",
+                "Use books, feelings charts, and role-play to model coping strategies.",
+                "Praise emotionally healthy behavior both privately and publicly."
+            ],
             recommendations: [
-                {
-                    description: "Provide additional support through structured activities and discussions that focus on understanding and managing emotions. Reinforce positive behaviors and work on specific areas where the child showed some difficulty."
-                },
+                   "Provide regular opportunities for emotional exploration and reinforcement.",
             ]
         };
-    } else if (score >= 7 && score <= 9) {
+    } else if (score >= 9 && score <= 12) {
         return {
             level: "Moderate Score",
-            interpretation: "The child has a basic understanding of emotions but shows inconsistencies in emotional regulation and expression.",
+            Analysis: "The child is developing emotional skills but shows mixed understanding.",
+            interpretation: "There is room for growth in both emotional recognition and response.",
+            supportMessage: "Your child is progressing in emotional awareness but may need more guidance. Hands-on emotional learning can help bridge gaps and build consistency.",
+            actionPlan: [
+                "Schedule weekly emotional check-ins at home.",
+                "Engage in activities like puppet shows, emotional dice games, and expressive art.",
+                "Work closely with teachers for consistent reinforcement."
+            ],
             recommendations: [
-                {
-                    description: "Engage the child in more frequent and varied emotional learning activities. Use role-playing, storytelling, and interactive games to help the child better recognize and manage emotions. Consider involving a school counselor or psychologist if needed for targeted interventions."
-                },
+                   "Increase frequency and variety of emotional learning through play and stories.",
             ]
         };
-    } else if (score >= 4 && score <= 6) {
+    } else if (score >= 5 && score <= 8) {
         return {
             level: "Low-Moderate Score",
-            interpretation: "The child has significant difficulty in identifying and managing emotions, indicating a need for targeted emotional learning and support.",
+            Analysis: "The child struggles with identifying and managing emotions.",
+            interpretation: "Gaps in emotional learning could affect peer relationships and behavior.",
+            supportMessage: "The child needs support to better understand and manage emotions. Structured daily routines and adult guidance will help improve emotional functioning.",
+            actionPlan: [
+                "Use daily mood boards or emotion journals.",
+                "Involve the child in calm-down activities like breathing or storytelling.",
+                "Seek periodic guidance from a school counselor or emotional wellness specialist."
+            ],
             recommendations: [
-                {
-                    description: "Implement a structured emotional learning program with daily activities focused on identifying and managing emotions. Collaborate with teachers and parents to ensure consistent support across environments. Consider professional guidance from a child psychologist or counselor to develop personalized strategies for improvement."
-                },
+                    "Introduce a structured daily routine for emotional awareness and regulation.",
             ]
         };
     } else {
         return {
             level: "Low Score",
-            interpretation: "The child has major challenges in understanding and regulating emotions, which could impact their social interactions and overall well-being.",
+            Analysis: "The child faces serious challenges in understanding emotions.",
+            interpretation: "This may affect overall well-being and social functioning.",
+            supportMessage: "Your child may be overwhelmed and in need of personalized emotional support. Immediate intervention will help foster healthy development.",
+            actionPlan: [
+                "Initiate daily one-on-one emotional learning and guided emotional expression.",
+                "Collaborate with mental health professionals to create an individualized care plan.",
+                "Track progress through weekly parent-teacher meetings and progress logs."
+            ],
             recommendations: [
-                {
-                    description: "Immediate intervention is recommended. Develop a comprehensive support plan involving teachers, parents, and mental health professionals. Intensive emotional learning activities and one-on-one counseling sessions may be necessary to address the child's needs. Close monitoring and continuous support will be crucial for progress."
-                },
+                    "Immediate, personalized, and consistent emotional support is essential.",
             ]
         };
     }
-};
-
-const GaugeChartComponent = ({score, maxScore}) => {
-    const percentage = (score / maxScore) * 100;
-    const data = [
-        {name: 'Score', value: percentage},
-        {name: 'Remaining', value: 100 - percentage}
-    ];
-
-    const getColor = (percentage) => {
-        if (percentage <= 25) return '#4CAF50';
-        if (percentage <= 50) return '#FFC107';
-        if (percentage <= 75) return '#FF9800';
-        return '#F44336';
-    };
-
-    const getStressLevel = (percentage) => {
-        if (percentage <= 25) return 'Low';
-        if (percentage <= 50) return 'Moderate';
-        if (percentage <= 75) return 'High';
-        return 'Severe';
-    };
-
-    return (
-        <Box sx={{
-            width: '100%',
-            height: 300,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            mb: 4,
-            position: 'relative'
-        }}>
-            <Box sx={{
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }}>
-                <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                        <Pie
-                            data={data}
-                            cx="50%"
-                            cy="50%"
-                            innerRadius={80}
-                            outerRadius={100}
-                            startAngle={90}
-                            endAngle={-270}
-                            paddingAngle={5}
-                            dataKey="value"
-                        >
-                            <Cell fill={getColor(percentage)}/>
-                            <Cell fill="#E6EAF3"/>
-                        </Pie>
-                        <Tooltip
-                            formatter={(value) => [`${value.toFixed(1)}%`, '']}
-                            contentStyle={{
-                                backgroundColor: '#FFFFFF',
-                                border: '1px solid #E6EAF3',
-                                borderRadius: '8px',
-                                fontFamily: 'Poppins'
-                            }}
-                        />
-                    </PieChart>
-                </ResponsiveContainer>
-                <Box sx={{
-                    position: 'absolute',
-                    textAlign: 'center',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 1
-                }}>
-                    <Typography variant="h2" sx={{
-                        color: getColor(percentage),
-                        fontWeight: 700,
-                        fontFamily: 'Montserrat',
-                        lineHeight: 1,
-                        fontSize: {xs: '3rem', sm: '4rem'}
-                    }}>
-                        {score}
-                    </Typography>
-                    <Typography sx={{
-                        color: '#4B5563',
-                        fontSize: '1rem',
-                        fontFamily: 'Poppins',
-                        fontWeight: 500
-                    }}>
-                        Points
-                    </Typography>
-                </Box>
-            </Box>
-            <Box sx={{
-                mt: 2,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                backgroundColor: `${getColor(percentage)}20`,
-                padding: '8px 16px',
-                borderRadius: '20px',
-                border: `1px solid ${getColor(percentage)}40`
-            }}>
-                <Typography sx={{
-                    color: getColor(percentage),
-                    fontSize: '1rem',
-                    fontFamily: 'Poppins',
-                    fontWeight: 600
-                }}>
-                    {getStressLevel(percentage)} Stress Level
-                </Typography>
-            </Box>
-        </Box>
-    );
 };
 
 const EmotionalAwarenessQuestions = () => {
@@ -1282,7 +1249,7 @@ const EmotionalAwarenessQuestions = () => {
 
     if (showResults) {
         const result = getScoreCategory(totalScore);
-        const percentage = (totalScore / 15) * 100;
+        const percentage = (totalScore / 20) * 100;
 
         return (
             <>
@@ -1319,7 +1286,7 @@ const EmotionalAwarenessQuestions = () => {
 
                         </Box>
 
-                        <Grid container spacing={4}>
+                        <Grid container spacing={4} sx={{mb:2}}>
                             {/* Score Display Section */}
                             <Grid item xs={12} md={6}>
                                 <Card sx={{
@@ -1442,7 +1409,7 @@ const EmotionalAwarenessQuestions = () => {
                                             }
                                         }}
                                     >
-                                        {result.interpretation}
+                                        {result.supportMessage}
                                     </Typography>
                                 </Card>
                             </Grid>
@@ -1451,64 +1418,175 @@ const EmotionalAwarenessQuestions = () => {
                             }
                             <Grid item xs={12} md={6}>
                                 <Card sx={{
-                                    p: 4,
+                                    p: 2.5,
                                     height: '100%',
                                     background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
                                     boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                                    borderRadius: 4
+                                    borderRadius: 4,
                                 }}>
                                     <Box sx={{
                                         display: 'flex',
                                         alignItems: 'center',
                                         mb: 2
                                     }}>
-                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 2, fontSize: 30}}/>
+                                        <TipsAndUpdatesIcon sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
                                         <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
                                             Recommendations
                                         </Typography>
                                     </Box>
 
                                     <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
-                                        {result.recommendations.map((rec, index) => (
-                                            <Box
-                                                key={index}
-                                                sx={{
-                                                    p: 2.5,
-                                                    borderRadius: 2,
-                                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
-                                                    border: '1px solid rgba(245, 129, 30, 0.1)',
-                                                    transition: 'transform 0.2s',
-                                                    '&:hover': {
-                                                        transform: 'translateY(-2px)',
-                                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
-                                                    }
-                                                }}
-                                            >
-                                                <Typography
-                                                    variant="h6"
-                                                    sx={{
-                                                        color: '#F5811E',
-                                                        fontSize: "19px",
-                                                        fontWeight: 600,
-                                                        mb: 1,
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                        gap: 1
-                                                    }}
-                                                >
-                                                    {/*<AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
-                                                    {rec.title}
-                                                </Typography>
-                                                <Typography variant="body1"
-                                                            sx={{color: '#4A5568', textAlign: "justify",}}>
-                                                    {rec.description}
-                                                </Typography>
-                                            </Box>
-                                        ))}
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                mb:2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.recommendations.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    {/*<Typography*/}
+                                                    {/*    variant="h6"*/}
+                                                    {/*    sx={{*/}
+                                                    {/*        color: '#F5811E',*/}
+                                                    {/*        fontSize: "18px",*/}
+                                                    {/*        fontWeight: 600,*/}
+                                                    {/*        mb: 0.5,*/}
+                                                    {/*        display: 'flex',*/}
+                                                    {/*        alignItems: 'center',*/}
+                                                    {/*        gap: 1*/}
+                                                    {/*    }}*/}
+                                                    {/*>*/}
+                                                    {/*    <AssignmentTurnedInIcon sx={{fontSize: 20}}/>*/}
+                                                    {/*    {rec.title}*/}
+                                                    {/*</Typography>*/}
+                                                    <CheckCircleIcon sx={{ color: '#FF7F1E', fontSize: 20, mr: 1, }} />
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "15px",
+                                                                    mb:2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
+                                    </Box>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        mb: 2
+                                    }}>
+                                        <BuildCircleIcon  sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                        <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                            Action Plan
+                                        </Typography>
+                                    </Box>
+                                    <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+                                        <Box
+                                            // key={index}
+                                            sx={{
+                                                p: 2,
+                                                borderRadius: 2,
+                                                bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                                border: '1px solid rgba(245, 129, 30, 0.1)',
+                                                transition: 'transform 0.2s',
+                                                '&:hover': {
+                                                    transform: 'translateY(-2px)',
+                                                    boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                                }
+                                            }}
+                                        >
+                                            {result.actionPlan.map((rec, index) => (
+                                                <Box key={index} sx={{display: 'flex'}}>
+                                                    <CheckCircleIcon sx={{ color: '#FF7F1E', fontSize: 20, mr: 1, }} />
+                                                    <Typography variant="body1"
+                                                                sx={{
+                                                                    color: '#4A5568',
+                                                                    textAlign: "justify",
+                                                                    fontSize: "14px",
+                                                                    mb:2
+                                                                }}>
+                                                        {rec}
+                                                    </Typography>
+                                                </Box>
+                                            ))}
+                                        </Box>
                                     </Box>
                                 </Card>
                             </Grid>
                         </Grid>
+                        <Card sx={{
+                            p: 3,
+                            height: '100%',
+                            background: 'linear-gradient(135deg, #fff 0%, #f8f9fa 100%)',
+                            boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+                            borderRadius: 4,
+                        }}>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <AutorenewIcon   sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Analysis
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    mb:2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.Analysis}
+                            </Box>
+                            <Box sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                mb: 2
+                            }}>
+                                <ImportContactsIcon  sx={{color: '#F5811E', mr: 1.5, fontSize: 30}}/>
+                                <Typography variant="h6" sx={{color: '#0D2152', fontWeight: 600}}>
+                                    Interpretation
+                                </Typography>
+                            </Box>
+                            <Box
+                                // key={index}
+                                sx={{
+                                    p: 2,
+                                    borderRadius: 2,
+                                    bgcolor: 'rgba(245, 129, 30, 0.05)',
+                                    border: '1px solid rgba(245, 129, 30, 0.1)',
+                                    transition: 'transform 0.2s',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: '0 4px 20px rgba(0,0,0,0.05)'
+                                    }
+                                }}
+                            >
+                                {result.interpretation}
+                            </Box>
+                        </Card>
 
                         {/* Action Buttons */
                         }
@@ -1524,12 +1602,15 @@ const EmotionalAwarenessQuestions = () => {
                             <PDFDownloadLink
                                 document={<PdfView data={{
                                     title: "Emotional Awareness Regulation Assessment Result",
-                                    maxScore: 15,
+                                    maxScore: 20,
                                     totalScore1: percentage,
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
-                                    recommendations: result.recommendations
+                                    recommendations: result.recommendations,
+                                    actionPlan: result.actionPlan,
+                                    supportMessage: result.supportMessage,
+                                    Analysis: result.Analysis,
                                 }}/>}
                                 fileName="Emotional_Awareness_Regulation.pdf"
                                 style={{textDecoration: "none"}}
