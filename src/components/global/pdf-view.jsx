@@ -96,7 +96,6 @@ const useStyles = (score) =>
                     fontSize: 14,
                     fontWeight: 'bold',
                     color: '#0D2152',
-                    marginBottom: 10,
                     fontFamily: 'PoppinsBold',
                     textAlign: 'center',
                 },

@@ -1470,7 +1470,10 @@ const WorkLifeBalanceQuestions = () => {
                                     totalScore: totalScore,
                                     level: result.level,
                                     interpretation: result.interpretation,
-                                    recommendations: result.recommendations
+                                    recommendations: result.recommendations,
+                                    actionPlan: result.actionPlan,
+                                    supportMessage: result.supportMessage,
+                                    Analysis: result.Analysis,
                                 }}/>}
                                 fileName="Work_Life_Balance.pdf"
                                 style={{textDecoration: "none"}}
