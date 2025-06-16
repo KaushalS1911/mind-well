@@ -317,7 +317,7 @@ import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import img2 from "../../../assets/images/Resources/Assessments/Shape_K12.jpeg";
+import img8 from '../../../assets/images/Resources/Assessments/cheerful-girl-kid-enjoy-color-painting-with-creativity-ideas-present-messy-hand-home.jpg';
 import {useNavigate} from 'react-router-dom';
 
 const StyledPaper = styled(Paper)(({theme}) => ({
@@ -376,7 +376,7 @@ const ChildLearningAbilityAssessment = () => {
                         }}>
                             <Box sx={{display: 'flex', alignItems: 'center', mb: 3}}>
                                 <img
-                                    src={img2}
+                                    src={img8}
                                     alt="General Stress and Anxiety"
                                     style={{
                                         width: '64px',

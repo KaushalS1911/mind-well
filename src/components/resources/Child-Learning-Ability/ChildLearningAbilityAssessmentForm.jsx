@@ -22,7 +22,7 @@ const organization = [
     { id: 4, name: "Organization D" }
 ];
 
-const age = Array.from({ length: 83 }, (_, i) => i + 18);
+const age = Array.from({ length: 10 }, (_, i) => i + 4);
 
 const inputStyles = {
     "& label.Mui-focused": { color: "#FF7F1E" },
