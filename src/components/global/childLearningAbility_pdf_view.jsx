@@ -51,7 +51,7 @@ const useStyles = (score) =>
                     display: 'flex',
                     alignItems: 'center',
                     fontFamily: 'PoppinsRegular',
-                    height: '60%',
+                    height: '90%',
                 },
                 pageItem: {
                     width: '100%',
