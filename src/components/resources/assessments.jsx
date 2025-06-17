@@ -108,15 +108,15 @@ function Assessments({sx}) {
             questions: "15 questions",
             time: "~ 7 min"
         },
-        {
-            img: img8,
-            title: "Child Learning Ability",
-            subTitle: "(Age 4–13)",
-            description: "Assess your child's cognitive strengths, learning style, and academic readiness.",
-            url: '/assessments/child-learning-ability',
-            questions: "25 questions",
-            time: "~ 13 min"
-        },
+        // {
+        //     img: img8,
+        //     title: "Child Learning Ability",
+        //     subTitle: "(Age 4–13)",
+        //     description: "Assess your child's cognitive strengths, learning style, and academic readiness.",
+        //     url: '/assessments/child-learning-ability',
+        //     questions: "25 questions",
+        //     time: "~ 13 min"
+        // },
     ];
 
     return (
