@@ -780,27 +780,27 @@ const options = [
 
 const questions = [
     // Section A: Core Learning Skills (Thinking, Focus & Basics)
-    { id: 1, text: "My child follows simple instructions...", section: "A", options },
-    { id: 2, text: "My child can focus on one activity...", section: "A", options },
-    { id: 3, text: "My child uses age-appropriate words...", section: "A", options },
-    { id: 4, text: "My child remembers names...", section: "A", options },
-    { id: 5, text: "My child can write or copy letters...", section: "A", options },
-    { id: 6, text: "My child understands order or sequences...", section: "A", options },
+    { id: 1, text: "My child follows simple instructions the first or second time they are told.", section: "A", options },
+    { id: 2, text: "My child can focus on one activity (like reading, homework, or drawing) for 15–30 minutes.", section: "A", options },
+    { id: 3, text: "My child uses age-appropriate words and sentences while speaking.", section: "A", options },
+    { id: 4, text: "My child remembers names, daily routines, or instructions easily.", section: "A", options },
+    { id: 5, text: "My child can write or copy letters and numbers suitable for their age.", section: "A", options },
+    { id: 6, text: "My child understands order or sequences, like days of the week or steps in a story.", section: "A", options },
 
     // Section B: Thinking Skills & Problem-Solving
-    { id: 7, text: "My child understands 'if this, then that'...", section: "B", options },
-    { id: 8, text: "My child asks questions...", section: "B", options },
-    { id: 9, text: "My child can group objects...", section: "B", options },
-    { id: 10, text: "My child enjoys solving puzzles...", section: "B", options },
-    { id: 11, text: "My child can move from one task...", section: "B", options },
+    { id: 7, text: "My child understands “if this, then that” situations (cause and effect).", section: "B", options },
+    { id: 8, text: "My child asks questions or shows curiosity to learn something new.", section: "B", options },
+    { id: 9, text: "My child can group objects by color, size, or shape.", section: "B", options },
+    { id: 10, text: "My child enjoys solving puzzles or brain games.", section: "B", options },
+    { id: 11, text: "My child can move from one task to another without emotional upset.", section: "B", options },
 
     // Section C: Fine Motor Skills & Writing
-    { id: 12, text: "My child holds a pencil...", section: "C", options },
-    { id: 13, text: "My child can draw basic shapes...", section: "C", options },
-    { id: 14, text: "My child is able to cut with scissors...", section: "C", options },
+    { id: 12, text: "My child holds a pencil or crayon correctly while writing or drawing.", section: "C", options },
+    { id: 13, text: "My child can draw basic shapes or write their name clearly (for their age).", section: "C", options },
+    { id: 14, text: "My child is able to cut with scissors, color within lines, or build with blocks.", section: "C", options },
     {
         id: 15,
-        text: "My child avoids or complains about writing...",
+        text: "My child avoids or complains about writing, coloring, or drawing activities.",
         section: "C",
         options: [
             {label: "Always", value: "0"},
@@ -812,12 +812,12 @@ const questions = [
     },
 
     // Section D: Language & Communication
-    { id: 16, text: "My child speaks clearly...", section: "D", options },
-    { id: 17, text: "My child listens when someone talks...", section: "D", options },
-    { id: 18, text: "My child can express their feelings...", section: "D", options },
+    { id: 16, text: "My child speaks clearly and in full sentences as expected for their age.", section: "D", options },
+    { id: 17, text: "My child listens when someone talks and gives a suitable reply.", section: "D", options },
+    { id: 18, text: "My child can express their feelings or needs using words.", section: "D", options },
     {
         id: 19,
-        text: "My child finds it difficult to understand...",
+        text: "My child finds it difficult to understand what others say or what is written.",
         section: "D",
         options: [
             {label: "Always", value: "0"},
@@ -829,7 +829,7 @@ const questions = [
     },
     {
         id: 20,
-        text: "My child avoids talking with others...",
+        text: "My child avoids talking with others or speaking in a group.",
         section: "D",
         options: [
             {label: "Always", value: "0"},
@@ -841,11 +841,11 @@ const questions = [
     },
 
     // Section E: Emotional & Social Behavior
-    { id: 21, text: "My child manages frustration...", section: "E", options },
-    { id: 22, text: "My child gets along well...", section: "E", options },
-    { id: 23, text: "My child shows confidence...", section: "E", options },
-    { id: 24, text: "My child gets distracted easily...", section: "E", options },
-    { id: 25, text: "My child seems nervous...", section: "E", options }
+    { id: 21, text: "My child manages frustration or anger without hitting, shouting, or hurting.", section: "E", options },
+    { id: 22, text: "My child gets along well with other children (sharing, taking turns, etc.).", section: "E", options },
+    { id: 23, text: "My child shows confidence when learning or trying new things.", section: "E", options },
+    { id: 24, text: "My child gets distracted easily or acts without thinking.", section: "E", options },
+    { id: 25, text: "My child seems nervous, shy, or sad in school or social settings.", section: "E", options }
 ];
 
 // Section-wise scoring and interpretations
