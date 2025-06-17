@@ -79,7 +79,7 @@ const useStyles = (score) =>
                     fontWeight: '600',
                     fontFamily: 'PoppinsSemiBold',
                     color: '#0D2152',
-                    marginBottom: 10,
+                    marginBottom:10
                 },
                 date: {
                     fontSize: 11,
@@ -88,7 +88,6 @@ const useStyles = (score) =>
                     color: '#0D2152',
                     alignItems: 'center',
                     display: 'flex',
-                    marginTop: 8,
                 },
                 header: {
                     fontSize: 14,
@@ -106,8 +105,8 @@ const useStyles = (score) =>
                 },
                 svgContainer: {
                     position: 'relative',
-                    width: 220,
-                    height: 140,
+                    width: 200,
+                    height: 120,
                     justifyContent: 'center',
                     alignItems: 'center',
                     marginBottom: 10,
@@ -277,9 +276,9 @@ export default function PdfView({data}) {
     const actionPlan = data.actionPlan;
 
     const segments = [
-        {color: data.color ?  '#ff4d4d' : '#47e447', startAngle: -90, endAngle: -60, threshold: 0},
-        {color: data.color ?  '#ff6600' :'#90EE90', startAngle: -60, endAngle: -30, threshold: 13.33},
-        {color: data.color ? '#ffa500' : '#ffdd00' , startAngle: -30, endAngle: 0, threshold: 26.66},
+        {color: data.color ? '#ff4d4d' : '#47e447', startAngle: -90, endAngle: -60, threshold: 0},
+        {color: data.color ? '#ff6600' : '#90EE90', startAngle: -60, endAngle: -30, threshold: 13.33},
+        {color: data.color ? '#ffa500' : '#ffdd00', startAngle: -30, endAngle: 0, threshold: 26.66},
         {color: data.color ? '#ffdd00' : '#ffa500', startAngle: 0, endAngle: 30, threshold: 40},
         {color: data.color ? '#90EE90' : '#ff6600', startAngle: 30, endAngle: 60, threshold: 53.33},
         {color: data.color ? '#47e447' : '#ff4d4d', startAngle: 60, endAngle: 90, threshold: 66.66}
@@ -384,25 +383,34 @@ export default function PdfView({data}) {
                     <View style={styles.card}>
                         <View style={{
                             display: 'flex',
-                            alignItems: 'center',
                             justifyContent: 'space-between',
                             flexDirection: 'row',
+                            borderBottom: '1px solid #FF7F1E',
+                            marginBottom: 15,
                         }}>
+                            {/* Left Side: Logo */}
                             <View>
                                 <Image source={img} style={{
-                                    height: '70px',
-                                    width: '175px',
+                                    height: '75px',
+                                    width: '180px',
                                     objectFit: 'contain',
-                                }}/>
+                                }} />
                             </View>
-                            <View>
+
+                            {/* Right Side: Details aligned bottom-end */}
+                            <View style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'flex-end',
+                                alignItems: 'flex-end', // aligns text to right side
+                                height: '75px', // same as logo height for vertical alignment
+                            }}>
                                 <Text style={styles.date}>Date : {currentDate}</Text>
-                            <Text style={styles.name}>Name : {name}</Text>
-                            <Text style={styles.email}>Email : {email}</Text>
+                                <Text style={styles.name}>Name : {name}</Text>
+                                <Text style={styles.email}>Email : {email}</Text>
                             </View>
                         </View>
-                        <View style={styles.personal}>
-                        </View>
+
                         <Text style={styles.header}>{data.title}</Text>
                         <View style={{
                             display: 'flex',
@@ -415,9 +423,9 @@ export default function PdfView({data}) {
                             <View style={[styles.scoreContainer, {width: '40%', alignItems: 'center'}]}>
                                 <View style={styles.svgContainer}>
                                     {gaugeChart}
-                                    <View style={[styles.riskLabel]}>
-                                        <Text style={styles.riskLabelText}>{riskLabel}</Text>
-                                    </View>
+                                    {/*<View style={[styles.riskLabel]}>*/}
+                                    {/*    <Text style={styles.riskLabelText}>{riskLabel}</Text>*/}
+                                    {/*</View>*/}
                                     <Text style={styles.level}>{data.level}</Text>
                                 </View>
                             </View>
@@ -482,8 +490,10 @@ export default function PdfView({data}) {
                             <Text style={[styles.disclaimerDescription, {flex: 1}]}>
                                 Disclaimer : This assessment is for informational and self-awareness purposes only.
                                 It is not a substitute for professional psychological advice, diagnosis, or treatment.
-                                We are not a medical service or suicide prevention helpline. If you are feeling suicidal,
-                                we suggest you immediately call a suicide prevention helpline like KIRAN: 18005990019 (24 hours, 7 days a week)
+                                We are not a medical service or suicide prevention helpline. If you are feeling
+                                suicidal,
+                                we suggest you immediately call a suicide prevention helpline like KIRAN: 18005990019
+                                (24 hours, 7 days a week)
                             </Text>
                         </View>
                     </View>

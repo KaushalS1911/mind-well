@@ -1201,6 +1201,7 @@ const ChildLearningAbilityQuestions = () => {
             totalScore: totalScore,
             maxScore: maxPossibleScore,
             percentage: percentage,
+            level: overallInterpretation.level,
             overallInterpretation: overallInterpretation,
             sections: Object.entries(sectionData).map(([sectionKey, sectionInfo]) => {
                 const score = sectionScores[sectionKey];
