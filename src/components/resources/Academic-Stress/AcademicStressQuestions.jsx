@@ -1496,10 +1496,10 @@ const AcademicStressQuestions = () => {
                                                 style={{width: 300}}
                                                 labels={{
                                                     valueLabel: {
-                                                        formatTextValue: (value) => value,
+                                                        formatTextValue: (value) => totalScore,
                                                         maxDecimalDigits: 0,
                                                         matchColorWithArc: true,
-                                                        style: {borderColor: 'none', fontSize: "50px"}
+                                                        style: { borderColor:'none', fontSize: "50px" }
                                                     },
                                                     tickLabels: {
                                                         hideMinMax: true,

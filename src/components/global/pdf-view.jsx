@@ -73,8 +73,6 @@ const useStyles = (score) =>
                     fontWeight: '600',
                     color: '#0D2152',
                     fontFamily: 'PoppinsSemiBold',
-                    marginBottom: 10,
-                    marginLeft: 8,
                 },
                 email: {
                     fontSize: 11,
@@ -279,12 +277,12 @@ export default function PdfView({data}) {
     const actionPlan = data.actionPlan;
 
     const segments = [
-        {color: '#47e447', startAngle: -90, endAngle: -60, threshold: 0},
-        {color: '#90EE90', startAngle: -60, endAngle: -30, threshold: 13.33},
-        {color: '#ffdd00', startAngle: -30, endAngle: 0, threshold: 26.66},
-        {color: '#ffa500', startAngle: 0, endAngle: 30, threshold: 40},
-        {color: '#ff6600', startAngle: 30, endAngle: 60, threshold: 53.33},
-        {color: '#ff4d4d', startAngle: 60, endAngle: 90, threshold: 66.66}
+        {color: data.color ?  '#ff4d4d' : '#47e447', startAngle: -90, endAngle: -60, threshold: 0},
+        {color: data.color ?  '#ff6600' :'#90EE90', startAngle: -60, endAngle: -30, threshold: 13.33},
+        {color: data.color ? '#ffa500' : '#ffdd00' , startAngle: -30, endAngle: 0, threshold: 26.66},
+        {color: data.color ? '#ffdd00' : '#ffa500', startAngle: 0, endAngle: 30, threshold: 40},
+        {color: data.color ? '#90EE90' : '#ff6600', startAngle: 30, endAngle: 60, threshold: 53.33},
+        {color: data.color ? '#47e447' : '#ff4d4d', startAngle: 60, endAngle: 90, threshold: 66.66}
     ];
 
     const angle = ((data.totalScore / totalMarks) * 180 - 180) * (Math.PI / 180);
@@ -374,7 +372,7 @@ export default function PdfView({data}) {
                     fill: '#2D3748',
                 }}
             >
-                {Math.abs(data.totalScore1).toFixed(0)}
+                {Math.abs(data.totalScore).toFixed(0)}
             </Text>
         </Svg>
     );
@@ -392,18 +390,18 @@ export default function PdfView({data}) {
                         }}>
                             <View>
                                 <Image source={img} style={{
-                                    height: '65px',
-                                    width: '170px',
+                                    height: '70px',
+                                    width: '175px',
                                     objectFit: 'contain',
                                 }}/>
                             </View>
                             <View>
                                 <Text style={styles.date}>Date : {currentDate}</Text>
+                            <Text style={styles.name}>Name : {name}</Text>
+                            <Text style={styles.email}>Email : {email}</Text>
                             </View>
                         </View>
                         <View style={styles.personal}>
-                            <Text style={styles.name}>Name : {name}</Text>
-                            <Text style={styles.email}>Email : {email}</Text>
                         </View>
                         <Text style={styles.header}>{data.title}</Text>
                         <View style={{
@@ -484,6 +482,8 @@ export default function PdfView({data}) {
                             <Text style={[styles.disclaimerDescription, {flex: 1}]}>
                                 Disclaimer : This assessment is for informational and self-awareness purposes only.
                                 It is not a substitute for professional psychological advice, diagnosis, or treatment.
+                                We are not a medical service or suicide prevention helpline. If you are feeling suicidal,
+                                we suggest you immediately call a suicide prevention helpline like KIRAN: 18005990019 (24 hours, 7 days a week)
                             </Text>
                         </View>
                     </View>

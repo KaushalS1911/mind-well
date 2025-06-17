@@ -1192,7 +1192,7 @@ const WorkLifeBalanceQuestions = () => {
                                                 style={{width: 300}}
                                                 labels={{
                                                     valueLabel: {
-                                                        formatTextValue: (value) => value,
+                                                        formatTextValue: (value) => totalScore,
                                                         maxDecimalDigits: 0,
                                                         matchColorWithArc: true,
                                                         style: {borderColor: 'none', fontSize: "50px"}
@@ -1202,7 +1202,7 @@ const WorkLifeBalanceQuestions = () => {
                                                     }
                                                 }}
                                                 arc={{
-                                                    colorArray: ['#5BE12C', '#EA4228'],
+                                                    colorArray: [ '#EA4228','#5BE12C',],
                                                     subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
                                                     padding: 0.02,
                                                     width: 0.3
@@ -1474,6 +1474,7 @@ const WorkLifeBalanceQuestions = () => {
                                     actionPlan: result.actionPlan,
                                     supportMessage: result.supportMessage,
                                     Analysis: result.Analysis,
+                                    color: true,
                                 }}/>}
                                 fileName="Work_Life_Balance.pdf"
                                 style={{textDecoration: "none"}}

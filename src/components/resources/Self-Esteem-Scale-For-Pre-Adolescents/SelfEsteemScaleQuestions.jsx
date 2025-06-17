@@ -1438,7 +1438,7 @@ const SelfEsteemScaleQuestions = () => {
                                                 style={{width: 300}}
                                                 labels={{
                                                     valueLabel: {
-                                                        formatTextValue: (value) => value,
+                                                        formatTextValue: (value) => totalScore,
                                                         maxDecimalDigits: 0,
                                                         matchColorWithArc: true,
                                                         style: { borderColor:'none', fontSize: "50px" }
@@ -1448,7 +1448,7 @@ const SelfEsteemScaleQuestions = () => {
                                                     }
                                                 }}
                                                 arc={{
-                                                    colorArray: [ '#5BE12C', '#EA4228'],
+                                                    colorArray: ['#EA4228','#5BE12C',],
                                                     subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
                                                     padding: 0.02,
                                                     width: 0.3
@@ -1734,6 +1734,7 @@ const SelfEsteemScaleQuestions = () => {
                                     actionPlan: result.actionPlan,
                                     supportMessage: result.supportMessage,
                                     Analysis: result.Analysis,
+                                    color: true,
                                 }}/>}
                                 fileName="Self_Esteem_Scale_for_Pre_Adolescents.pdf"
                                 style={{textDecoration: "none"}}
