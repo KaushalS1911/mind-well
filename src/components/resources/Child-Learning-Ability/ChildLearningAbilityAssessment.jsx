@@ -402,7 +402,7 @@ const ChildLearningAbilityAssessment = () => {
                                 lineHeight: 1.6,
                                 fontFamily: 'Poppins'
                             }}>
-                                This assessment is designed to help you understand how well you are managing the stress, emotions, and challenges that come with preparing for competitive exams. There are 20 statements in this test, each related to different aspects of your emotional readiness, motivation, decision-making, and stress-handling ability.
+                                This self-assessment helps you understand your child’s learning development across five key areas.
                             </Typography>
                             <Box sx={{mb: 2}}>
                                 <IconBox>
