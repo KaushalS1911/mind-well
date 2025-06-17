@@ -1272,7 +1272,7 @@ const ChildLearningAbilityQuestions = () => {
                                     }
                                 }}
                                 arc={{
-                                    colorArray: [ '#5BE12C', '#EA4228'],
+                                    colorArray: [  '#EA4228','#5BE12C',],
                                     subArcs: [{limit: 20}, {limit: 40}, {}, {}, {}],
                                     padding: 0.02,
                                     width: 0.3

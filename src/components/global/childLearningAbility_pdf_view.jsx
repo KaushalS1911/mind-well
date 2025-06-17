@@ -34,11 +34,11 @@ Font.register({
 });
 
 const getColorAndRisk = (score) => {
-    if (score >= 61) return { color: '#ff4d4d', risk: 'Very High Risk' };
-    if (score >= 41) return { color: '#ffa500', risk: 'High Risk' };
+    if (score >= 61) return { color: '#47e447', risk: 'Very High Risk' };
+    if (score >= 41) return { color: '#90EE90', risk: 'High Risk' };
     if (score >= 21) return { color: '#ffdd00', risk: 'Medium Risk' };
-    if (score >= 11) return { color: '#90EE90', risk: 'Low Risk' };
-    return { color: '#47e447', risk: 'Very Low Risk' };
+    if (score >= 11) return { color: '#ffa500', risk: 'Low Risk' };
+    return { color: '#ff4d4d', risk: 'Very Low Risk' };
 };
 
 const useStyles = (score) =>
@@ -280,12 +280,12 @@ export default function ChildLearningAbility_pdf_view({ data }) {
     const actionPlan = data.actionPlan;
 
     const segments = [
-        { color: '#47e447', startAngle: -90, endAngle: -60, threshold: 0 },
-        { color: '#90EE90', startAngle: -60, endAngle: -30, threshold: 13.33 },
-        { color: '#ffdd00', startAngle: -30, endAngle: 0, threshold: 26.66 },
-        { color: '#ffa500', startAngle: 0, endAngle: 30, threshold: 40 },
-        { color: '#ff6600', startAngle: 30, endAngle: 60, threshold: 53.33 },
-        { color: '#ff4d4d', startAngle: 60, endAngle: 90, threshold: 66.66 }
+        { color: '#ff4d4d', startAngle: -90, endAngle: -60, threshold: 0 },
+        { color: '#ff6600', startAngle: -60, endAngle: -30, threshold: 13.33 },
+        { color: '#ffa500', startAngle: -30, endAngle: 0, threshold: 26.66 },
+        { color: '#ffdd00', startAngle: 0, endAngle: 30, threshold: 40 },
+        { color: '#90EE90', startAngle: 30, endAngle: 60, threshold: 53.33 },
+        { color: '#47e447', startAngle: 60, endAngle: 90, threshold: 66.66 }
     ];
 
     const angle = ((data.totalScore / totalMarks) * 180 - 180) * (Math.PI / 180);
