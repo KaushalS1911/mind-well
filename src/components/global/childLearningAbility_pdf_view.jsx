@@ -68,6 +68,8 @@ const useStyles = (score) =>
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     flexDirection: 'row',
+                    borderBottom: '1px solid #FF7F1E',
+                    marginBottom: 15,
                     // marginBottom: 5,
                 },
                 logo: {
@@ -95,6 +97,7 @@ const useStyles = (score) =>
                     fontWeight: '600',
                     fontFamily: 'PoppinsSemiBold',
                     color: '#0D2152',
+                    marginBottom:10
                 },
                 date: {
                     fontSize: 11,
@@ -127,8 +130,8 @@ const useStyles = (score) =>
                 },
                 svgContainer: {
                     position: 'relative',
-                    width: 220,
-                    height: 140,
+                    width: 200,
+                    height: 120,
                     justifyContent: 'center',
                     alignItems: 'center',
                     marginBottom: 0,
@@ -179,6 +182,7 @@ const useStyles = (score) =>
                     fontFamily: 'PoppinsBold',
                     color: '#0D2152',
                     textTransform: 'uppercase',
+                    marginTop:5
                 },
                 sectionContent: {
                     // padding: 15,
@@ -377,19 +381,34 @@ export default function ChildLearningAbility_pdf_view({ data }) {
                 <View style={styles.pageItem}>
                     <View style={styles.card}>
                         {/* Header Section */}
-                        <View style={styles.headerContainer}>
+                        <View style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            flexDirection: 'row',
+                            borderBottom: '1px solid #FF7F1E',
+                            marginBottom: 15,
+                        }}>
+                            {/* Left Side: Logo */}
                             <View>
-                                <Image source={img} style={styles.logo} />
+                                <Image source={img} style={{
+                                    height: '75px',
+                                    width: '180px',
+                                    objectFit: 'contain',
+                                }} />
                             </View>
-                            <View>
-                                <Text style={styles.date}>Date : {currentDate}</Text>
-                            </View>
-                        </View>
 
-                        {/* Personal Info */}
-                        <View style={styles.personal}>
-                            <Text style={styles.name}>Name : {name}</Text>
-                            <Text style={styles.email}>Email : {email}</Text>
+                            {/* Right Side: Details aligned bottom-end */}
+                            <View style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'flex-end',
+                                alignItems: 'flex-end', // aligns text to right side
+                                height: '75px', // same as logo height for vertical alignment
+                            }}>
+                                <Text style={styles.date}>Date : {currentDate}</Text>
+                                <Text style={styles.name}>Name : {name}</Text>
+                                <Text style={styles.email}>Email : {email}</Text>
+                            </View>
                         </View>
 
                         {/* Main Title */}
@@ -400,9 +419,9 @@ export default function ChildLearningAbility_pdf_view({ data }) {
                             <View style={styles.scoreContainer}>
                                 <View style={styles.svgContainer}>
                                     {gaugeChart}
-                                    <View style={styles.riskLabel}>
-                                        <Text style={styles.riskLabelText}>{riskLabel}</Text>
-                                    </View>
+                                    {/*<View style={styles.riskLabel}>*/}
+                                    {/*    <Text style={styles.riskLabelText}>{riskLabel}</Text>*/}
+                                    {/*</View>*/}
                                     <Text style={styles.level}>{data.level}</Text>
                                 </View>
                             </View>
@@ -476,6 +495,10 @@ export default function ChildLearningAbility_pdf_view({ data }) {
                             <Text style={styles.disclaimerText}>
                                 Disclaimer : This assessment is for informational and self-awareness purposes only.
                                 It is not a substitute for professional psychological advice, diagnosis, or treatment.
+                                We are not a medical service or suicide prevention helpline. If you are feeling
+                                suicidal,
+                                we suggest you immediately call a suicide prevention helpline like KIRAN: 18005990019
+                                (24 hours, 7 days a week)
                             </Text>
                         </View>
                     </View>
