@@ -99,7 +99,7 @@ function Navigation() {
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
-                        margin: {xl: "0 172px", lg: "0 10px"},
+                        margin: {xl: "0 122px", lg: "0 10px"},
                         padding: "12px 16px",
                     }}
                 >
@@ -115,7 +115,7 @@ function Navigation() {
 
 
                     {/* Desktop Menu */}
-                    <Box sx={{display: {xs: "none", md: "flex"}, gap: 2}}>
+                    <Box sx={{display: {xs: "none", lg: "flex"}, gap: 2}}>
                         {navItems.map((item) => item.submenu ? (<Box
                                 key={item.label}
                                 sx={{
@@ -201,6 +201,7 @@ function Navigation() {
                                 fontWeight: 600,
                                 py: 1,
                                 fontSize: {xs: '0.9rem', sm: '1rem'},
+                                display:{lg:"flex",xs:"none"}
                             }}
                         >
                             Self Assessments
@@ -234,7 +235,7 @@ function Navigation() {
                     <IconButton
                         edge="end"
                         color="inherit"
-                        sx={{display: {md: "none"}}}
+                        sx={{display: {lg: "none"}}}
                         onClick={handleMobileMenuToggle}
                     >
                         <MenuIcon/>
@@ -247,12 +248,12 @@ function Navigation() {
                 in={mobileMenuOpen}
                 timeout="auto"
                 unmountOnExit
-                sx={{display: {xs: "block", md: "none"}}}
+                sx={{display: {xs: "block", lg: "none"}}}
                 onExited={() => setMobileMenuOpen(false)}
             >
                 <List
                     sx={{
-                        backgroundColor: "#fff", color: "#000", padding: "8px 16px 16px",
+                        backgroundColor: "#fff", color: "#000", padding: "8px 16px 16px",mt: {md:13,xs:0}
                     }}
                 >
                     {navItems.map((item, index) => (<Box key={index}>
@@ -325,9 +326,38 @@ function Navigation() {
                                 </Collapse>)}
                         </Box>))}
 
-                    {/* Mobile Get Started Button */}
-                    <Box sx={{display: "flex", gap: 2, mt: 2}}>
-                        {SOCIAL_MEDIA_LINKS.map((item, index) => (<IconButton
+                    <Box sx={{px: 3, py: 2}}>
+                        <StyledButton
+                            variant="contained"
+                            fullWidth
+                            onClick={() => {
+                                navigate('/resources/assessments');
+                                setMobileMenuOpen(false);
+                            }}
+                            sx={{
+                                bgcolor: 'rgba(255,98,0,0.9)',
+                                color: '#fff',
+                                '&:hover': {
+                                    bgcolor: 'rgba(255,98,0,1)',
+                                },
+                                mb: 2
+                            }}
+                        >
+                            Self Assessments
+                        </StyledButton>
+                    </Box>
+
+                    {/* Mobile Social Icons */}
+                    <Box sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        gap: 2,
+                        px: 3,
+                        py: 2,
+                        borderTop: "1px solid rgba(0,0,0,0.05)"
+                    }}>
+                        {SOCIAL_MEDIA_LINKS.map((item, index) => (
+                            <IconButton
                                 key={index}
                                 component={Link}
                                 href={item.link}
@@ -344,7 +374,8 @@ function Navigation() {
                                 }}
                             >
                                 {item.icon}
-                            </IconButton>))}
+                            </IconButton>
+                        ))}
                     </Box>
                 </List>
             </Collapse>

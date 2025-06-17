@@ -1541,7 +1541,7 @@ const WorkLifeBalanceQuestions = () => {
                         fontSize: '1.8rem',
                         fontWeight: 600,
                         textAlign: 'center',
-                        mb: 1,
+                        mb: 3,
                         color: '#012765',
                         fontFamily: 'Montserrat'
                     }}>
