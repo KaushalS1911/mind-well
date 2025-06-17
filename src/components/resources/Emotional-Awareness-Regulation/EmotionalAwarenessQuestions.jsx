@@ -1281,7 +1281,7 @@ const EmotionalAwarenessQuestions = () => {
                                     },
                                 }}
                             >
-                                Your Assessment Results
+                                Emotional Awareness & Regulation Assessment Results
                             </Typography>
 
                         </Box>

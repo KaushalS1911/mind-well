@@ -778,6 +778,15 @@ const options = [
     {label: "Always", value: "4"},
 ];
 
+function handleSectionLabel(que) {
+    if (que >= 1 && que <= 6) return 'Core Learning Skills (Thinking, Focus & Basics)';
+    if (que >= 6 && que <= 11) return 'Thinking Skills & Problem-Solving';
+    if (que >= 12 && que <= 15) return 'Fine Motor Skills & Writing';
+    if (que >= 16 && que <= 20) return 'Language & Communication';
+    return 'Emotional & Social Behavior';
+}
+
+
 const questions = [
     // Section A: Core Learning Skills (Thinking, Focus & Basics)
     { id: 1, text: "My child follows simple instructions the first or second time they are told.", section: "A", options },
@@ -1234,7 +1243,7 @@ const ChildLearningAbilityQuestions = () => {
                                 },
                             }}
                         >
-                            Your Assessment Results
+                            Child Learning Ability Assessment Results
                         </Typography>
                     </Box>
 
@@ -1449,6 +1458,19 @@ const ChildLearningAbilityQuestions = () => {
             py: {xs: 4, md: 6},
         }}>
             <Container maxWidth="md">
+
+                <Box>
+                    <Typography sx={{
+                        fontSize: '1.8rem',
+                        fontWeight: 600,
+                        textAlign: 'center',
+                        mb: 1,
+                        color: '#012765',
+                        fontFamily: 'Montserrat'
+                    }}>
+                        {handleSectionLabel(currentQuestion + 1)}
+                    </Typography>
+                </Box>
                 <StyledPaper>
                     <Box sx={{mb: 4}}>
                         <Typography variant="h6" sx={{

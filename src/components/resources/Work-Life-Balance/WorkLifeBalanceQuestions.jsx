@@ -890,6 +890,14 @@ const NavigationButton = styled(Button)(({theme}) => ({
     fontFamily: 'Poppins',
 }));
 
+function handleSectionLabel(que) {
+    if (que >= 1 && que <= 3) return 'Time Management';
+    if (que >= 4 && que <= 6) return 'Stress Levels';
+    if (que >= 7 && que <= 9) return 'Workload and Boundaries';
+    if (que >= 10 && que <= 12) return 'Personal Time and Fulfillment';
+    return 'Physical and Mental Well-being';
+}
+
 const questions = [
     {
         id: 1,
@@ -1159,7 +1167,7 @@ const WorkLifeBalanceQuestions = () => {
                                     },
                                 }}
                             >
-                                Your Assessment Results
+                                Work-Life Balance Assessment Results
                             </Typography>
 
                         </Box>
@@ -1528,6 +1536,18 @@ const WorkLifeBalanceQuestions = () => {
             py: {xs: 4, md: 6},
         }}>
             <Container maxWidth="md">
+                <Box>
+                    <Typography sx={{
+                        fontSize: '1.8rem',
+                        fontWeight: 600,
+                        textAlign: 'center',
+                        mb: 1,
+                        color: '#012765',
+                        fontFamily: 'Montserrat'
+                    }}>
+                        {handleSectionLabel(currentQuestion + 1)}
+                    </Typography>
+                </Box>
                 <StyledPaper>
                     <Box sx={{mb: 4}}>
                         <Typography variant="h6" sx={{

@@ -974,7 +974,7 @@
 // export default ExamStressGaugeQuestions;
 
 
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
     Box,
     Container,
@@ -1019,6 +1019,15 @@ const NavigationButton = styled(Button)(({theme}) => ({
     textTransform: 'none',
     fontFamily: 'Poppins',
 }));
+
+function handleSectionLabel(que) {
+    if (que >= 1 && que <= 4) return 'Stress Management';
+    if (que >= 5 && que <= 8) return 'Emotional Resilience';
+    if (que >= 9 && que <= 12) return 'Decision-Making';
+    if (que >= 13 && que <= 16) return 'Motivation and Commitment';
+    return 'Interpersonal Skills';
+}
+
 
 const questions = [
     {
@@ -1389,7 +1398,7 @@ const ExamStressGaugeQuestions = () => {
                                     },
                                 }}
                             >
-                                Your Assessment Results
+                                Competitive Exam Stress Assessment Results
                             </Typography>
 
                         </Box>
@@ -1775,6 +1784,18 @@ const ExamStressGaugeQuestions = () => {
                 py: {xs: 4, md: 6},
             }}>
                 <Container maxWidth="md">
+                    <Box>
+                        <Typography sx={{
+                            fontSize: '1.8rem',
+                            fontWeight: 600,
+                            textAlign: 'center',
+                            mb: 1,
+                            color: '#012765',
+                            fontFamily: 'Montserrat'
+                        }}>
+                            {handleSectionLabel(currentQuestion + 1)}
+                        </Typography>
+                    </Box>
                     <StyledPaper>
                         <Box sx={{mb: 4}}>
                             <Typography variant="h6" sx={{

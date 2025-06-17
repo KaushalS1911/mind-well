@@ -1463,7 +1463,7 @@ const AcademicStressQuestions = () => {
                                     },
                                 }}
                             >
-                                Your Assessment Results
+                                Academic Stress Assessment Results
                             </Typography>
 
                         </Box>

@@ -1035,7 +1035,7 @@ const GeneralStressQuestions = () => {
                                     },
                                 }}
                             >
-                                Your Assessment Results
+                                General Stress & Anxiety Assessment Results
                             </Typography>
 
                         </Box>

@@ -1,14 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {
-    AppBar,
-    Toolbar,
-    IconButton,
-    List,
-    ListItem,
-    ListItemText,
-    Box,
-    Collapse,
-    Link,
+    AppBar, Toolbar, IconButton, List, ListItem, ListItemText, Box, Collapse, Link, Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -16,15 +8,24 @@ import logo from "../../assets/Emotionally Yours Logo.png";
 import {useLocation, useNavigate} from "react-router-dom";
 import {Link as RouterLink} from "react-router-dom";
 import {Facebook, Instagram, LinkedIn, YouTube} from "@mui/icons-material";
+import {styled} from "@mui/material/styles";
 
 
-const SOCIAL_MEDIA_LINKS = [
-    {icon: <LinkedIn/>, link: "https://www.linkedin.com/company/emotionallyours/"},
-    {icon: <Facebook/>, link: "https://www.facebook.com/share/1AmSYda79K/"},
-    {icon: <Instagram/>, link: "https://www.instagram.com/mann_miitr?igsh=cWp1aWNiNm1vNzNx"},
-    {icon: <YouTube/>, link: "https://youtube.com/@emotionallyours?si=6h0Su7ZsmTpj0QbL"}
-];
+const SOCIAL_MEDIA_LINKS = [{icon: <LinkedIn/>, link: "https://www.linkedin.com/company/emotionallyours/"}, {
+    icon: <Facebook/>, link: "https://www.facebook.com/share/1AmSYda79K/"
+}, {icon: <Instagram/>, link: "https://www.instagram.com/mann_miitr?igsh=cWp1aWNiNm1vNzNx"}, {
+    icon: <YouTube/>,
+    link: "https://youtube.com/@emotionallyours?si=6h0Su7ZsmTpj0QbL"
+}];
 
+const StyledButton = styled(Button)(({theme}) => ({
+    borderRadius: '12px',
+    padding: '12px 30px',
+    fontWeight: 700,
+    fontSize: '1.1rem',
+    textTransform: 'none',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
+}));
 
 function Navigation() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,8 +52,7 @@ function Navigation() {
             const section = document.getElementById(sectionId);
             if (section) {
                 const offset = 100;
-                const top =
-                    section.getBoundingClientRect().top + window.scrollY - offset;
+                const top = section.getBoundingClientRect().top + window.scrollY - offset;
                 window.scrollTo({top, behavior: "smooth"});
             }
         }, 100);
@@ -66,44 +66,32 @@ function Navigation() {
         }
     }, [location]);
 
-    const navItems = [
-        {label: "Home", path: "/"},
-        {label: "About Us", path: "/about"},
+    const navItems = [{label: "Home", path: "/"}, {
+        label: "About Us", path: "/about", submenu: [{label: "Gallery", path: "/gallery"}]
+    }, {
+        label: "Services",
+        path: "/services",
+        submenu: [{label: "SHAPE", path: "/services/shape"}, {
+            label: "SHAPE+",
+            path: "/services/shape-plus"
+        }, {label: "ESOP", path: "/services/esop"}, {label: "PEP", path: "/services/pep"},],
+    }, // {label: "Partner", path: "/partner"},
         {
-            label: "Services",
-            path: "/services",
-            submenu: [
-                {label: "SHAPE", path: "/services/shape"},
-                {label: "SHAPE+", path: "/services/shape-plus"},
-                {label: "ESOP", path: "/services/esop"},
-                {label: "PEP", path: "/services/pep"},
-            ],
-        },
-        // {label: "Partner", path: "/partner"},
-        {
-            label: "Resources",
-            // path: "/resources",
-            submenu: [
-                // { label: "Journaling", path: "/resources/journaling" },
-                {label: "Assessments", path: "/resources/assessments"},
-                // {label: "Self Help Tools", path: "/resources/selfHelpTools"},
+            label: "Resources", // path: "/resources",
+            submenu: [// { label: "Journaling", path: "/resources/journaling" },
+                // {
+                //     label: "Assessments",
+                //     path: "/resources/assessments"
+                // }, // {label: "Self Help Tools", path: "/resources/selfHelpTools"},
                 // {label: "Forms", path: "/resources/forms"},
-                {label: "Blogs", path: "/resources/blogs"},
-            ],
-        },
-        // {label: "Session", path: "/session"},
-        {label: "Gallery", path: "/gallery"},
-        {label: "Careers", path: "/careers"},
-        {label: "Contact Us", path: "/contact"},
-    ];
+                {label: "Blogs", path: "/resources/blogs"},],
+        }, // {label: "Session", path: "/session"},
+        {label: "Careers", path: "/careers"}, {label: "Contact Us", path: "/contact"},];
 
-    return (
-        <Box>
+    return (<Box>
             <AppBar
                 sx={{
-                    backgroundColor: "white",
-                    color: "navy",
-                    position: {md: "fixed", xs: "static"},
+                    backgroundColor: "white", color: "navy", position: {md: "fixed", xs: "static"},
                 }}
             >
                 <Toolbar
@@ -115,7 +103,7 @@ function Navigation() {
                         padding: "12px 16px",
                     }}
                 >
-                    <Box sx={{height: "70px", width: {lg:"250px",md:"210px",xs:"220px"}}}>
+                    <Box sx={{height: "70px", width: {lg: "250px", md: "210px", xs: "220px"}}}>
                         <RouterLink to="/" style={{display: "inline-block", height: "100%"}}>
                             <img
                                 src={logo}
@@ -128,97 +116,99 @@ function Navigation() {
 
                     {/* Desktop Menu */}
                     <Box sx={{display: {xs: "none", md: "flex"}, gap: 2}}>
-                        {navItems.map((item) =>
-                            item.submenu ? (
+                        {navItems.map((item) => item.submenu ? (<Box
+                                key={item.label}
+                                sx={{
+                                    position: "relative", display: "flex", alignItems: "center", gap: "4px",
+                                }}
+                                onMouseEnter={() => setHoverMenu(item.label)}
+                                onMouseLeave={() => setHoverMenu(null)}
+                            >
                                 <Box
-                                    key={item.label}
                                     sx={{
-                                        position: "relative",
+                                        color: "#012765",
+                                        fontSize: "16px",
+                                        fontWeight: "500",
+                                        cursor: "pointer",
+                                        "&:hover": {color: "#FF6600"},
                                         display: "flex",
                                         alignItems: "center",
                                         gap: "4px",
                                     }}
-                                    onMouseEnter={() => setHoverMenu(item.label)}
-                                    onMouseLeave={() => setHoverMenu(null)}
+                                    onClick={() => navigate(item.path)}
                                 >
-                                    <Box
-                                        sx={{
-                                            color: "#012765",
-                                            fontSize: "16px",
-                                            fontWeight: "500",
-                                            cursor: "pointer",
-                                            "&:hover": {color: "#FF6600"},
-                                            display: "flex",
-                                            alignItems: "center",
-                                            gap: "4px",
-                                        }}
-                                        onClick={() => navigate(item.path)}
-                                    >
-                                        {item.label}
-                                        <KeyboardArrowDownIcon fontSize="small"/>
-                                    </Box>
-                                    {hoverMenu === item.label && (
-                                        <Box
-                                            sx={{
-                                                position: "absolute",
-                                                top: "100%",
-                                                left: 0,
-                                                backgroundColor: "white",
-                                                boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
-                                                borderRadius: "5px",
-                                                zIndex: 10,
-                                                width: "150px",
-                                            }}
-                                        >
-                                            {item.submenu.map((sub) => (
-                                                <Box
-                                                    key={sub.label}
-                                                    onClick={() => {
-                                                        // handleScrollToSection(sub.sectionId, item.path)
-                                                        navigate(sub.path);
-                                                    }}
-                                                    sx={{
-                                                        padding: "10px",
-                                                        color: "#012765",
-                                                        fontSize: "14px",
-                                                        cursor: "pointer",
-                                                        "&:hover": {
-                                                            backgroundColor: "#FF6600",
-                                                            color: "#fff",
-                                                        },
-                                                    }}
-                                                >
-                                                    {sub.label}
-                                                </Box>
-                                            ))}
-                                        </Box>
-                                    )}
+                                    {item.label}
+                                    <KeyboardArrowDownIcon fontSize="small"/>
                                 </Box>
-                            ) : (
-                                <Link
-                                    key={item.label}
-                                    href={item.path}
-                                    style={{textDecoration: "none"}}
-                                >
-                                    <Box
+                                {hoverMenu === item.label && (<Box
                                         sx={{
-                                            color: "#012765",
-                                            fontSize: "16px",
-                                            fontWeight: "500",
-                                            cursor: "pointer",
-                                            "&:hover": {color: "#FF6600"},
+                                            position: "absolute",
+                                            top: "100%",
+                                            left: 0,
+                                            backgroundColor: "white",
+                                            boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+                                            borderRadius: "5px",
+                                            zIndex: 10,
+                                            width: "150px",
                                         }}
                                     >
-                                        {item.label}
-                                    </Box>
-                                </Link>
-                            )
-                        )}
+                                        {item.submenu.map((sub) => (<Box
+                                                key={sub.label}
+                                                onClick={() => {
+                                                    // handleScrollToSection(sub.sectionId, item.path)
+                                                    navigate(sub.path);
+                                                }}
+                                                sx={{
+                                                    padding: "10px",
+                                                    color: "#012765",
+                                                    fontSize: "14px",
+                                                    cursor: "pointer",
+                                                    "&:hover": {
+                                                        backgroundColor: "#FF6600", color: "#fff",
+                                                    },
+                                                }}
+                                            >
+                                                {sub.label}
+                                            </Box>))}
+                                    </Box>)}
+                            </Box>) : (<Link
+                                key={item.label}
+                                href={item.path}
+                                style={{textDecoration: "none"}}
+                            >
+                                <Box
+                                    sx={{
+                                        color: "#012765",
+                                        fontSize: "16px",
+                                        fontWeight: "500",
+                                        cursor: "pointer",
+                                        "&:hover": {color: "#FF6600"},
+                                    }}
+                                >
+                                    {item.label}
+                                </Box>
+                            </Link>))}
+                    </Box>
+
+                    <Box>
+                        <StyledButton
+                            variant="contained"
+                            onClick={() => navigate('/resources/assessments')}
+                            fullWidth
+                            sx={{
+                                bgcolor: 'rgba(255,98,0,0.9)',
+                                color: '#fff',
+                                fontWeight: 600,
+                                py: 1,
+                                fontSize: {xs: '0.9rem', sm: '1rem'},
+                            }}
+                        >
+                            Self Assessments
+                        </StyledButton>
                     </Box>
 
                     <Box sx={{display: "flex", gap: 1}}>
-                        {SOCIAL_MEDIA_LINKS.map((item, index) => (
-                            <IconButton
+                        {SOCIAL_MEDIA_LINKS.map((item, index) => (<IconButton
                                 key={index}
                                 component={Link}
                                 href={item.link}
@@ -230,15 +220,14 @@ function Navigation() {
                                     borderRadius: "50%",
                                     color: "white",
                                     display: {lg: "flex", xs: "none"},
-                                    transition:"0.5s",
+                                    transition: "0.5s",
                                     '&:hover': {
                                         backgroundColor: "#FE6A00",
                                     }
                                 }}
                             >
                                 {item.icon}
-                            </IconButton>
-                        ))}
+                            </IconButton>))}
                     </Box>
 
                     {/* Mobile Menu Icon */}
@@ -263,13 +252,10 @@ function Navigation() {
             >
                 <List
                     sx={{
-                        backgroundColor: "#fff",
-                        color: "#000",
-                        padding: "8px 16px 16px",
+                        backgroundColor: "#fff", color: "#000", padding: "8px 16px 16px",
                     }}
                 >
-                    {navItems.map((item, index) => (
-                        <Box key={index}>
+                    {navItems.map((item, index) => (<Box key={index}>
                             <ListItem
                                 sx={{
                                     p: 0,
@@ -290,17 +276,13 @@ function Navigation() {
                                     <ListItemText
                                         primary={item.label}
                                         primaryTypographyProps={{
-                                            fontSize: "16px",
-                                            letterSpacing: "1px",
-                                            color: "#012765",
-                                            padding: "8px 0",
+                                            fontSize: "16px", letterSpacing: "1px", color: "#012765", padding: "8px 0",
                                         }}
                                     />
                                 </Box>
 
                                 {/* Arrow Click → expand/collapse submenu */}
-                                {item.submenu && (
-                                    <IconButton
+                                {item.submenu && (<IconButton
                                         size="small"
                                         onClick={(e) => {
                                             e.stopPropagation(); // stop bubbling to parent
@@ -314,16 +296,13 @@ function Navigation() {
                                                 color: "#012765",
                                             }}
                                         />
-                                    </IconButton>
-                                )}
+                                    </IconButton>)}
                             </ListItem>
 
                             {/* Submenu Items */}
-                            {item.submenu && (
-                                <Collapse in={openSubmenu === index} timeout="auto" unmountOnExit>
+                            {item.submenu && (<Collapse in={openSubmenu === index} timeout="auto" unmountOnExit>
                                     <List sx={{paddingLeft: "20px"}}>
-                                        {item.submenu.map((sub, subIndex) => (
-                                            <ListItem
+                                        {item.submenu.map((sub, subIndex) => (<ListItem
                                                 key={subIndex}
                                                 sx={{
                                                     p: 0,
@@ -338,23 +317,17 @@ function Navigation() {
                                                 <ListItemText
                                                     primary={sub.label}
                                                     primaryTypographyProps={{
-                                                        fontSize: "14px",
-                                                        color: "#012765",
-                                                        padding: "4px 0",
+                                                        fontSize: "14px", color: "#012765", padding: "4px 0",
                                                     }}
                                                 />
-                                            </ListItem>
-                                        ))}
+                                            </ListItem>))}
                                     </List>
-                                </Collapse>
-                            )}
-                        </Box>
-                    ))}
+                                </Collapse>)}
+                        </Box>))}
 
                     {/* Mobile Get Started Button */}
                     <Box sx={{display: "flex", gap: 2, mt: 2}}>
-                        {SOCIAL_MEDIA_LINKS.map((item, index) => (
-                            <IconButton
+                        {SOCIAL_MEDIA_LINKS.map((item, index) => (<IconButton
                                 key={index}
                                 component={Link}
                                 href={item.link}
@@ -371,13 +344,11 @@ function Navigation() {
                                 }}
                             >
                                 {item.icon}
-                            </IconButton>
-                        ))}
+                            </IconButton>))}
                     </Box>
                 </List>
             </Collapse>
-        </Box>
-    );
+        </Box>);
 }
 
 export default Navigation;

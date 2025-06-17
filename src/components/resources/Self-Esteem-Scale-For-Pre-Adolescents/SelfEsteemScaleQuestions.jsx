@@ -1405,7 +1405,7 @@ const SelfEsteemScaleQuestions = () => {
                                     },
                                 }}
                             >
-                                Your Assessment Results
+                                Self-Esteem Scale for Pre-Adolescents Assessment Results
                             </Typography>
 
                         </Box>
