@@ -396,13 +396,58 @@ const ChildLearningAbilityAssessment = () => {
                             </Box>
 
                             <Typography sx={{
-                                mb: 4,
+                                mb: 3,
                                 color: '#4B5563',
                                 fontSize: '16px',
                                 lineHeight: 1.6,
                                 fontFamily: 'Poppins'
                             }}>
                                 This self-assessment helps you understand your child’s learning development across five key areas.
+                            </Typography>
+                            <Typography sx={{
+                                mb: 1,
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins'
+                            }}>
+                                •  Core Learning Skills (Thinking, Focus & Basics)
+                            </Typography>
+                            <Typography sx={{
+                                mb: 1,
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins'
+                            }}>
+                                • Thinking Skills & Problem-Solving
+                            </Typography>
+                            <Typography sx={{
+                                mb: 1,
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins'
+                            }}>
+                                •  Fine Motor Skills & Writing
+                            </Typography>
+                            <Typography sx={{
+                                mb: 1,
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins'
+                            }}>
+                                •  Language & Communication
+                            </Typography>
+                            <Typography sx={{
+                                mb: 4,
+                                color: '#4B5563',
+                                fontSize: '16px',
+                                lineHeight: 1.6,
+                                fontFamily: 'Poppins'
+                            }}>
+                                •  Emotional & Social Behavior
                             </Typography>
                             <Box sx={{mb: 2}}>
                                 <IconBox>
