@@ -53,7 +53,7 @@ function Blogs({sx}) {
                 </Box>
 
                 {/* Blog Cards */}
-                <Grid container spacing={4}>
+                <Grid container spacing={2}>
                     {blogsData.slice(0, visibleBlogs).map((blog) => (
                         <Grid item xs={12} md={4} key={blog.id}>
                             <Card

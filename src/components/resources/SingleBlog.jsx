@@ -8,10 +8,8 @@ const SingleBlog = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    // Find the blog post with the matching id
     const blog = blogsData.find(blog => blog.id === parseInt(id));
 
-    // If blog is not found, show a message
     if (!blog) {
         return (
             <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#F9FAFB' }}>
@@ -102,18 +100,34 @@ const SingleBlog = () => {
                 </Box>
 
                 {/* Featured Image */}
-                <Box sx={{ mb: 6 }}>
-                    <img
+                <Box
+                    sx={{
+                        mb: 6,
+                        width: '100%',
+                        height: {
+                            xs: 200,
+                            sm: 300,
+                            md: 400,
+                            lg: 450
+                        },
+                        overflow: 'hidden',
+                        borderRadius: '16px'
+                    }}
+                >
+                    <Box
+                        component="img"
                         src={blog.image}
                         alt={blog.title}
-                        style={{
+                        sx={{
                             width: '100%',
-                            height: '400px',
+                            height: '100%',
                             objectFit: 'cover',
+                            display: 'block',
                             borderRadius: '16px'
                         }}
                     />
                 </Box>
+
 
                 {/* Blog Content */}
                 <Box

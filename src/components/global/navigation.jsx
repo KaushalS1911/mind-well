@@ -99,8 +99,8 @@ function Navigation() {
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
-                        margin: {xl: "0 122px", lg: "0 10px"},
-                        padding: "12px 16px",
+                        margin: {xl: "0 122px", lg: "0",xs:"0 19px"},
+                        padding: {xl:"12px 16px",xs:"12px 10px"},
                     }}
                 >
                     <Box sx={{height: "70px", width: {lg: "250px", md: "210px", xs: "220px"}}}>
