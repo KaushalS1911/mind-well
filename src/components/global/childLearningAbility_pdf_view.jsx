@@ -70,7 +70,7 @@ const useStyles = (score) =>
                     flexDirection: 'row',
                     borderBottom: '1px solid #FF7F1E',
                     marginBottom: 15,
-                    // marginBottom: 5,
+
                 },
                 logo: {
                     height: '65px',
@@ -122,7 +122,7 @@ const useStyles = (score) =>
                     justifyContent: 'space-between',
                     paddingHorizontal: 10,
                     paddingVertical: 10,
-                    // marginBottom: 10,
+
                 },
                 scoreContainer: {
                     width: '40%',
@@ -185,7 +185,7 @@ const useStyles = (score) =>
                     marginTop:5
                 },
                 sectionContent: {
-                    // padding: 15,
+
                     borderRadius: 8,
                 },
                 listItem: {
@@ -402,8 +402,8 @@ export default function ChildLearningAbility_pdf_view({ data }) {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'flex-end',
-                                alignItems: 'flex-end', // aligns text to right side
-                                height: '75px', // same as logo height for vertical alignment
+                                alignItems: 'flex-end',
+                                height: '75px',
                             }}>
                                 <Text style={styles.date}>Date : {currentDate}</Text>
                                 <Text style={styles.name}>Name : {name}</Text>

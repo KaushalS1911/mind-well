@@ -1114,14 +1114,19 @@ const ChildLearningAbilityQuestions = () => {
         const scores = {};
         let total = 0;
 
-        // Calculate score for each section
         for (const [sectionKey, sectionInfo] of Object.entries(sectionData)) {
             let sectionScore = 0;
 
             sectionInfo.questions.forEach(questionId => {
                 const questionIndex = questions.findIndex(q => q.id === questionId);
-                if (questionIndex !== -1 && answers[questionIndex]) {
-                    sectionScore += parseInt(answers[questionIndex]);
+                const answer = answers[questionIndex];
+
+                if (questionIndex !== -1 && answer !== '') {
+                    const value = parseInt(answer);
+
+                    if (!isNaN(value)) {
+                        sectionScore += value; // ✅ Use value directly
+                    }
                 }
             });
 
@@ -1133,6 +1138,7 @@ const ChildLearningAbilityQuestions = () => {
         setTotalScore(total);
         setShowResults(true);
     };
+
 
     const handleNext = () => {
         if (currentQuestion < questions.length - 1) {
