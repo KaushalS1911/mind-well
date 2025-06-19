@@ -374,7 +374,7 @@ const GeneralStressAssessment = () => {
                         <StyledPaper sx={{
                             height: '100%',
                         }}>
-                            <Box sx={{display: 'flex', alignItems: 'center', mb: 3}}>
+                            <Box sx={{display: {sm:'flex',xs:"unset"}, alignItems: 'center', mb: 3}}>
                                 <img
                                     src={img3}
                                     alt="General Stress and Anxiety"
@@ -390,6 +390,7 @@ const GeneralStressAssessment = () => {
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
                                     fontSize: {xs: '24px', sm: '28px', md: '32px'},
+                                    mb:{xs:3,sm:0}
                                 }}>
                                     General Stress and Anxiety Assessment (Age 18+)
                                 </Typography>

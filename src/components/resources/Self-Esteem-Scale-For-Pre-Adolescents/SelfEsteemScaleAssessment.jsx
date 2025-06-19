@@ -370,7 +370,7 @@ const SelfEsteemScaleAssessment = () => {
                         <StyledPaper sx={{
                             height: '100%',
                         }}>
-                            <Box sx={{display: 'flex', alignItems: 'center', mb: 3}}>
+                            <Box sx={{display: {sm:'flex',xs:"unset"}, alignItems: 'center', mb: 3}}>
                                 <img
                                     src={img6}
                                     alt="General Stress and Anxiety"
@@ -386,6 +386,7 @@ const SelfEsteemScaleAssessment = () => {
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
                                     fontSize: {xs: '24px', sm: '28px', md: '32px'},
+                                    mb:{xs:3,sm:0}
                                 }}>
                                     Self-Esteem Scale for Pre-Adolescents (Age 11-13)
                                 </Typography>

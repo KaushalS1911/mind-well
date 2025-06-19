@@ -352,7 +352,7 @@ const AcademicStressAssessment = () => {
                     {/* Left Column - Main Content */}
                     <Grid item xs={12} lg={8}>
                         <StyledPaper>
-                            <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+                            <Box sx={{ display: {sm:'flex',xs:"unset"}, alignItems: 'center', mb: 3 }}>
                                 <img
                                     src={img5}
                                     alt="General Stress and Anxiety"
@@ -368,6 +368,7 @@ const AcademicStressAssessment = () => {
                                     color: '#012765',
                                     fontFamily: 'Montserrat',
                                     fontSize: { xs: '24px', sm: '28px', md: '32px' },
+                                    mb:{xs:3,sm:0}
                                 }}>
                                     Academic Stress (Age 16-25)
                                 </Typography>
