@@ -812,11 +812,11 @@ const questions = [
         text: "My child avoids or complains about writing, coloring, or drawing activities.",
         section: "C",
         options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
+            {label: "Never", value: "4"},
             {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "1"},
+            {label: "Always", value: "0"}
         ]
     },
 
@@ -829,11 +829,11 @@ const questions = [
         text: "My child finds it difficult to understand what others say or what is written.",
         section: "D",
         options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
+            {label: "Never", value: "4"},
             {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "1"},
+            {label: "Always", value: "0"}
         ]
     },
     {
@@ -841,11 +841,11 @@ const questions = [
         text: "My child avoids talking with others or speaking in a group.",
         section: "D",
         options: [
-            {label: "Always", value: "0"},
-            {label: "Often", value: "1"},
-            {label: "Sometimes", value: "2"},
+            {label: "Never", value: "4"},
             {label: "Rarely", value: "3"},
-            {label: "Never", value: "4"}
+            {label: "Sometimes", value: "2"},
+            {label: "Often", value: "1"},
+            {label: "Always", value: "0"}
         ]
     },
 
