@@ -504,13 +504,13 @@ const GetInTouch = () => {
 
                 {/* Main Content */}
                 <Grid container spacing={4}>
-                    {/* Left Side - Form */}
-                    {/*<Grid item xs={12} lg={6}>*/}
-                    {/*    <ContactForm onSubmit={handleSubmit}/>*/}
-                    {/*</Grid>*/}
+                     {/*Left Side - Form */}
+                    <Grid item xs={12} lg={6}>
+                        <ContactForm onSubmit={handleSubmit}/>
+                    </Grid>
 
                     {/* Right Side - Contact Information, Business Hours & Social Media */}
-                    <Grid item xs={12}>
+                    <Grid item xs={12} lg={6}>
                         <ContactInfo/>
 
                         <Grid container spacing={2}>
