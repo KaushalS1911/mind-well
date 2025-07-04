@@ -85,7 +85,7 @@ const useStyles = () => {
             padding: 0,
         },
         iconContainer: {
-            display: "flex",
+            display: {sm:'flex',xs:"unset"},
             alignItems: "center",
             gap: theme.spacing(2),
             marginBottom: theme.spacing(2),
@@ -95,6 +95,7 @@ const useStyles = () => {
             padding: theme.spacing(1),
             borderRadius: theme.shape.borderRadius,
             color: colors.primary,
+            display:"inline-block",
         },
         listItem: {
             py: 1.5,
@@ -344,7 +345,7 @@ const ThreePillarApproach = () => {
                             <CardContent sx={{p: 4}}>
                                 <Box sx={styles.iconContainer}>
                                     <Box sx={styles.icon}>{pillar.icon}</Box>
-                                    <Typography variant="h6" fontWeight="bold" sx={{color: styles.colors.primary}}>
+                                    <Typography variant="h6" fontWeight="bold" sx={{color: styles.colors.primary,mb:{xs:3,sm:0}}}>
                                         {pillar.title}
                                     </Typography>
                                 </Box>

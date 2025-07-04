@@ -54,11 +54,11 @@ const PillarCard = ({title, icon, points}) => (
     <Grid item xs={12} md={6}>
         <Card elevation={3} sx={{height: "100%", "&:hover": {boxShadow: 10}}}>
             <CardContent sx={{p: 4}}>
-                <Box sx={{display: "flex", alignItems: "center", gap: 2, mb: 2}}>
-                    <Box sx={{backgroundColor: `${colors.primary}10`, p: 1, borderRadius: 1}}>
+                <Box sx={{display: {sm:'flex',xs:"unset"}, alignItems: "center", gap: 2, mb: 2}}>
+                    <Box sx={{backgroundColor: `${colors.primary}10`, p: 1, borderRadius: 1,display:"inline-block",}}>
                         {icon}
                     </Box>
-                    <Typography variant="h6" fontWeight="bold" sx={{color: colors.primary}}>
+                    <Typography variant="h6" fontWeight="bold" sx={{color: colors.primary,mb:{xs:3,sm:0}}}>
                         {title}
                     </Typography>
                 </Box>

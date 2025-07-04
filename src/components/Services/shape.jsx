@@ -121,7 +121,7 @@ const PillarCard = ({title, icon, points}) => {
             <Box sx={{borderTop: `3px solid ${COLORS.secondary}`}}/>
             <CardContent sx={{p: 4}}>
                 <Box sx={{
-                    display: 'flex',
+                    display: {sm:'flex',xs:"unset"},
                     alignItems: 'center',
                     gap: theme.spacing(2),
                     marginBottom: theme.spacing(2),
@@ -131,10 +131,11 @@ const PillarCard = ({title, icon, points}) => {
                         padding: theme.spacing(1),
                         borderRadius: theme.shape.borderRadius,
                         color: COLORS.primary,
+                        display:"inline-block",
                     }}>
                         {icon}
                     </Box>
-                    <Typography variant="h6" fontWeight="bold" sx={{color: COLORS.primary}}>
+                    <Typography variant="h6" fontWeight="bold" sx={{color: COLORS.primary,mb:{xs:3,sm:0}}}>
                         {title}
                     </Typography>
                 </Box>
