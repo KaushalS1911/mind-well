@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import {
     TextField,
-    Button,
     Grid,
     Typography,
     Checkbox,
@@ -12,18 +11,31 @@ import {
     MenuItem,
     FormHelperText
 } from "@mui/material";
-import { 
-    ContactCard, 
-    ContactCardContent, 
-    FormTitle, 
-    SubmitButton, 
-    CustomSelect, 
-    styles 
+import {
+    ContactCard,
+    ContactCardContent,
+    FormTitle,
+    SubmitButton,
+    CustomSelect,
+    styles
 } from "./styles";
 import { INQUIRY_TYPES } from "./constants";
 
-const ContactForm = ({ onSubmit }) => {
-    const { register, handleSubmit, control, formState: { errors } } = useForm();
+const ContactForm = ({ onSubmit, submitStatus, resetTrigger }) => {
+    const {
+        register,
+        handleSubmit,
+        control,
+        reset,
+        formState: { errors }
+    } = useForm();
+
+    // Reset form after successful submission
+    useEffect(() => {
+        if (submitStatus?.success && resetTrigger) {
+            reset();
+        }
+    }, [submitStatus, resetTrigger, reset]);
 
     return (
         <ContactCard>
@@ -31,9 +43,7 @@ const ContactForm = ({ onSubmit }) => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
-                            <FormTitle variant="h5">
-                                Send Us a Message
-                            </FormTitle>
+                            <FormTitle variant="h5">Send Us a Message</FormTitle>
                         </Grid>
 
                         <Grid item xs={12} sm={6}>
@@ -73,8 +83,8 @@ const ContactForm = ({ onSubmit }) => {
                                     required: "Email is required",
                                     pattern: {
                                         value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                                        message: "Enter a valid email address",
-                                    },
+                                        message: "Enter a valid email address"
+                                    }
                                 })}
                                 error={!!errors.email}
                                 helperText={errors.email?.message}
@@ -91,8 +101,8 @@ const ContactForm = ({ onSubmit }) => {
                                 {...register("phone", {
                                     pattern: {
                                         value: /^[0-9+\-\s()]{10,15}$/,
-                                        message: "Enter a valid phone number",
-                                    },
+                                        message: "Enter a valid phone number"
+                                    }
                                 })}
                                 error={!!errors.phone}
                                 helperText={errors.phone?.message}
@@ -118,7 +128,7 @@ const ContactForm = ({ onSubmit }) => {
                                             sx={{
                                                 '&.Mui-selected': {
                                                     backgroundColor: "white",
-                                                    color: "black",
+                                                    color: "black"
                                                 },
                                                 '&:hover': {
                                                     backgroundColor: "#1976D2",

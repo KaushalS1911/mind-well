@@ -14,46 +14,42 @@ import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
 import BusinessHours from "./BusinessHours";
 import SocialMedia from "./SocialMedia";
-// Import FAQSection for future use if needed
-// import FAQSection from "./FAQSection";
 
-/**
- * GetInTouch component - Main contact page component
- * Displays a contact form and contact information in a responsive layout
- */
 const GetInTouch = () => {
-    // State to track loading and success/error status
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
+    const [resetTrigger, setResetTrigger] = useState(false);
 
-    // Handler for form submission
     const handleSubmit = async (data) => {
         try {
             setIsSubmitting(true);
-            
-            // Prepare the payload according to the required format
+
             const payload = {
-                name: `${data.firstName} ${data.lastName}`, // Assuming your form has 'firstName' and 'lastName' fields
+                name: `${data.firstName} ${data.lastName}`,
                 email: data.email,
-                mobile: data.phone, // Assuming your form has a 'phone' field
-                enquiry_type: data.inquiryType || "General", // Default to "General" if not provided
+                mobile: data.phone,
+                enquiry_type: data.inquiryType || "General",
                 message: data.message
             };
-            
-            // Make the API call
-            const response = await axios.post(
-                "https://interactapiverse.com/mahadevasth/enquiry", 
+
+            await axios.post(
+                "https://interactapiverse.com/mahadevasth/enquiry",
                 payload
             );
-            
-            setSubmitStatus({ success: true, message: "Your enquiry has been submitted successfully!" });
+
+            setSubmitStatus({
+                success: true,
+                message: "Your enquiry has been submitted successfully!"
+            });
             toast.success("Your message has been sent successfully! We'll get back to you shortly.");
-            
+
+            setResetTrigger(prev => !prev); // Toggle to trigger reset
+
         } catch (error) {
             console.error("API Error:", error);
-            setSubmitStatus({ 
-                success: false, 
-                message: "Failed to submit your enquiry. Please try again later." 
+            setSubmitStatus({
+                success: false,
+                message: "Failed to submit your enquiry. Please try again later."
             });
             toast.error("Failed to send your message. Please try again later.");
         } finally {
@@ -62,7 +58,7 @@ const GetInTouch = () => {
     };
 
     return (
-        <Box component="section" sx={{mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }}}>
+        <Box component="section" sx={{ mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' } }}>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -75,10 +71,8 @@ const GetInTouch = () => {
                 pauseOnHover
                 theme="light"
             />
-            
-            {/* Rest of your component... */}
-            <Container maxWidth="xl" sx={{pt: 12, mt: {md: 10, sm: 0}}}>
-                {/* Header Section */}
+
+            <Container maxWidth="xl" sx={{ pt: 12, mt: { md: 10, sm: 0 } }}>
                 <Box
                     sx={{
                         textAlign: "center",
@@ -101,7 +95,7 @@ const GetInTouch = () => {
                                 md: '2rem',
                                 lg: '2.125rem'
                             },
-                            lineHeight: {xs: "32px", sm: "40px"},
+                            lineHeight: { xs: "32px", sm: "40px" },
                             fontWeight: "700"
                         }}
                     >
@@ -120,21 +114,18 @@ const GetInTouch = () => {
                     </Typography>
                 </Box>
 
-                {/* Main Content */}
                 <Grid container spacing={4}>
-                    {/* Left Side - Form */}
                     <Grid item xs={12} lg={6}>
-                        <ContactForm 
-                            onSubmit={handleSubmit} 
+                        <ContactForm
+                            onSubmit={handleSubmit}
                             isSubmitting={isSubmitting}
                             submitStatus={submitStatus}
+                            resetTrigger={resetTrigger}
                         />
                     </Grid>
 
-                    {/* Right Side - Contact Information, Business Hours & Social Media */}
                     <Grid item xs={12} lg={6}>
                         <ContactInfo />
-
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6}>
                                 <BusinessHours />
@@ -143,9 +134,6 @@ const GetInTouch = () => {
                                 <SocialMedia />
                             </Grid>
                         </Grid>
-
-                        {/* FAQs section - currently commented out but available for future use */}
-                        {/* <FAQSection /> */}
                     </Grid>
                 </Grid>
             </Container>
