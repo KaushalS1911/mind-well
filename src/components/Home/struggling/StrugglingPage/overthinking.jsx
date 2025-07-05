@@ -13,6 +13,9 @@ import GroupIcon from '@mui/icons-material/Group';
 import SupportIcon from '@mui/icons-material/Support';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Image imports (retained from original)
 import img6 from '../../../../assets/images/Home/Struggling/Overthinkinghero.jpg';
@@ -42,7 +45,7 @@ const overthinkingData = {
                 },
                 {
                     subtitle: 'Types of Overthinking',
-                    text: '• Rumination: Dwelling on past mistakes or negative experiences. It’s like replaying a bad scene again and again\n• Worrying: Excess concern about what might happen in the future. Worry can grow worse when you obsess over worst-case scenarios\n• Analysis paralysis: Overanalyzing every option so much that you become unable to choose at all. This makes decision-making slow and frustrating',
+                    text: "• Rumination: Dwelling on past mistakes or negative experiences. It's like replaying a bad scene again and again\n• Worrying: Excess concern about what might happen in the future. Worry can grow worse when you obsess over worst-case scenarios\n• Analysis paralysis: Overanalyzing every option so much that you become unable to choose at all. This makes decision-making slow and frustrating",
                 },
             ],
         },
@@ -71,7 +74,7 @@ const overthinkingData = {
                 },
                 {
                     subtitle: 'Negative Effect on Mental Health',
-                    text: 'Overthinking can make mental health worse. It often leads to feelings of hopelessness, frustration, or doubt. Experts say that constantly dwelling on problems can turn into depression or anxiety disorders if it’s left unchecked',
+                    text: "Overthinking can make mental health worse. It often leads to feelings of hopelessness, frustration, or doubt. Experts say that constantly dwelling on problems can turn into depression or anxiety disorders if it's left unchecked",
                 },
             ],
         },
@@ -109,7 +112,7 @@ const overthinkingData = {
                 },
                 {
                     subtitle: 'Embrace Imperfection and Be Kind to Yourself',
-                    text: 'Accept that mistakes are part of growth. Reframe failures as lessons. Study psychologist Brené Brown’s advice—show vulnerability and accept your flaws. This builds courage and reduces fear',
+                    text: "Accept that mistakes are part of growth. Reframe failures as lessons. Study psychologist Brené Brown's advice—show vulnerability and accept your flaws. This builds courage and reduces fear",
                 },
                 {
                     subtitle: 'Limit Information Intake',
@@ -157,7 +160,7 @@ const overthinkingData = {
         'Harvard Business Review. (2019). Overcoming Analysis Paralysis in Decision-Making',
     ],
     motivation:
-        'Overthinking is a common problem many people face. It can slow you down, cause stress, and even keep you from reaching your goals. You might think that thinking more will help you make better choices, but often, the opposite is true. When you analyze things too much, you can miss chances to grow and succeed. Some of the most successful people have fallen into the trap of overthinking—missing opportunities because they couldn’t make a decision fast enough. Recognizing overthinking and learning how to avoid it can change your life',
+        "Overthinking is a common problem many people face. It can slow you down, cause stress, and even keep you from reaching your goals. You might think that thinking more will help you make better choices, but often, the opposite is true. When you analyze things too much, you can miss chances to grow and succeed. Some of the most successful people have fallen into the trap of overthinking—missing opportunities because they couldn't make a decision fast enough. Recognizing overthinking and learning how to avoid it can change your life",
     counseling:
         'Our counselors can help you develop strategies to manage overthinking and find mental calm. Begin your journey to a quieter mind today',
 };
@@ -217,45 +220,53 @@ const Overthinking = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        alert("Requested send!");
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
         const newErrors = {};
-
         if (!formData.name.trim()) newErrors.name = 'Full name is required';
         if (!formData.email.trim()) newErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-
         if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
         else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
-
         if (!formData.age.trim()) newErrors.age = 'Age is required';
         else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
-
         if (!formData.message.trim()) newErrors.message = 'Message is required';
-
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
         }
-
-        // If validation passed
-        console.log('Submitted data:', formData);
-
-        // Reset
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            message: ''
-        });
-        setErrors({});
+        try {
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                mobile: formData.phone,
+                enquiry_type: 'Request a Callback - Overthinking',
+                message: formData.message
+            };
+            await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
+            toast.success("Your message has been sent successfully! We'll get back to you shortly.");
+            setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+            setErrors({});
+        } catch (error) {
+            console.error('API Error:', error);
+            toast.error('Failed to send your message. Please try again later.');
+        }
     };
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {/* Hero Section */}
             <Box
                 sx={{

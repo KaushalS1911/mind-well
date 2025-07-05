@@ -14,6 +14,9 @@ import SupportIcon from '@mui/icons-material/Support';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Image imports (retained from original)
 import img3 from '../../../../assets/images/Home/Struggling/Substance-Abuse-Tel.webp';
@@ -21,19 +24,11 @@ import img10 from '../../../../assets/images/Home/Struggling/addiction feature.p
 import img17 from '../../../../assets/images/Home/Struggling/Addictiontime.jpg';
 
 const addictionData = {
-    title: 'Let’s Talk About Addiction: Why Quitting Is Essential for a Healthier Life',
+    title: "Let's Talk About Addiction: Why Quitting Is Essential for a Healthier Life",
     description: 'Discover effective strategies to break free from addiction and build a healthier, happier life',
     image: img3,
     image1: img10,
     firstimage: img17,
-    icon: <SelfImprovementIcon/>,
-    solutionIcons: [
-        <SpaIcon fontSize="large"/>,
-        <LightbulbIcon fontSize="large"/>,
-        <HeadphonesIcon fontSize="large"/>,
-        <FitnessCenterIcon fontSize="large"/>,
-        <BalanceIcon fontSize="large"/>,
-    ],
     sections: [
         {
             title: 'Understanding Addiction: Definitions and Types :',
@@ -47,7 +42,7 @@ const addictionData = {
             title: 'How Addiction Affects the Brain :',
             content: [
                 {
-                    text: 'When you use an addictive substance or engage in certain behaviors, your brain releases dopamine—a chemical that makes you feel good. Over time, your brain starts to rely on these feelings. It’s like your reward system gets hijacked. The more you repeat the act, the harder it becomes to feel happy or normal without it. Studies show that addiction physically changes the brain, making quitting a challenge',
+                    text: "When you use an addictive substance or engage in certain behaviors, your brain releases dopamine—a chemical that makes you feel good. Over time, your brain starts to rely on these feelings. It's like your reward system gets hijacked. The more you repeat the act, the harder it becomes to feel happy or normal without it. Studies show that addiction physically changes the brain, making quitting a challenge",
                 },
             ],
         },
@@ -64,11 +59,11 @@ const addictionData = {
             content: [
                 {
                     subtitle: 'Physical Health Risks',
-                    text: 'Continuing addiction damages your body. Long-term alcohol use can lead to liver disease, while drugs might cause heart problems or neurological damage. Overdose is a real danger that can kill instantly. The longer you stay caught in addiction’s grip, the higher the risk of serious health problems',
+                    text: "Continuing addiction damages your body. Long-term alcohol use can lead to liver disease, while drugs might cause heart problems or neurological damage. Overdose is a real danger that can kill instantly. The longer you stay caught in addiction's grip, the higher the risk of serious health problems",
                 },
                 {
                     subtitle: 'Mental and Emotional Impact',
-                    text: 'Addiction doesn’t only hurt your body. It can also mess with your mind. Feelings of anxiety or depression often come with addiction. You may feel emotionally unstable, and mental health disorders can only worsen if addiction continues unchecked',
+                    text: "Addiction doesn't only hurt your body. It can also mess with your mind. Feelings of anxiety or depression often come with addiction. You may feel emotionally unstable, and mental health disorders can only worsen if addiction continues unchecked",
                 },
                 {
                     subtitle: 'Social and Economic Consequences',
@@ -85,7 +80,7 @@ const addictionData = {
             content: [
                 {
                     subtitle: 'Improved Physical and Mental Health',
-                    text: 'Stopping addiction leads to better health. Liver function, heart health, and brain function improve. Emotionally, many report feeling calmer and more balanced. The mind clears, and there’s a new ability to handle stress without turning to old habits',
+                    text: "Stopping addiction leads to better health. Liver function, heart health, and brain function improve. Emotionally, many report feeling calmer and more balanced. The mind clears, and there's a new ability to handle stress without turning to old habits",
                 },
                 {
                     subtitle: 'Better Relationships and Social Life',
@@ -97,7 +92,7 @@ const addictionData = {
                 },
                 {
                     subtitle: 'Personal Growth and Self-Empowerment',
-                    text: 'Quitting builds resilience and self-control. You reclaim control over your life. Many discover hobbies, passions, or new careers that were once out of reach. It’s a chance to grow and become the best version of yourself',
+                    text: "Quitting builds resilience and self-control. You reclaim control over your life. Many discover hobbies, passions, or new careers that were once out of reach. It's a chance to grow and become the best version of yourself",
                 },
             ],
         },
@@ -118,11 +113,7 @@ const addictionData = {
                 },
                 {
                     subtitle: 'Overcoming Relapse and Maintaining Sobriety',
-                    text: 'Relapse can happen. Recognize triggers such as stress, certain places, or emotional lows. Have a plan for avoiding high-risk situations.' +
-                        ' Building long-term plans keeps you on track, even when facing tough times\n\n Lastly, addiction has a deep impact on your health, relationships,' +
-                        ' and life. Quitting is not easy, but it is worth every effort. Recovery is real and happening for many each day. With the right help and attitude,' +
-                        ' you can break free from addiction and reclaim a healthier, happier life\n\n If you or someone you know struggles with addiction, don’t wait. Reach out' +
-                        ' for help, explore resources, and commit to making a change. A brighter future starts today',
+                    text: "Relapse can happen. Recognize triggers such as stress, certain places, or emotional lows. Have a plan for avoiding high-risk situations.Building long-term plans keeps you on track, even when facing tough times\n\n Lastly, addiction has a deep impact on your health, relationshipsand life. Quitting is not easy, but it is worth every effort. Recovery is real and happening for many each day. With the right help and attitudeyou can break free from addiction and reclaim a healthier, happier life\n\n If you or someone you know struggles with addiction, don't wait. Reach out for help, explore resources, and commit to making a change. A brighter future starts today",
 
                 },
             ],
@@ -133,7 +124,7 @@ const addictionData = {
         'Engage in behavioral therapy',
         'Explore medication-assisted treatment',
         'Adopt healthy lifestyle changes',
-        'Seek professional counseling',
+        'Seek professional counseling'
     ],
     testimonials: [
         {
@@ -157,10 +148,8 @@ const addictionData = {
         'World Health Organization. Substance Abuse and Mental Health',
         'American Psychological Association. Addiction Recovery Strategies',
     ],
-    motivation:
-        'Addiction is everywhere today. From social media to alcohol, many people struggle with habits they can’t shake. It’s a problem that affects millions worldwide, costing lives and tearing families apart. Understanding addiction and knowing why quitting is so important can help you or someone you love start fresh. The good news? Recovery is possible, and life gets better when you take that first step',
-    counseling:
-        'Our addiction specialists provide personalized treatment plans to help you overcome addiction and embrace a healthier future. Start your recovery today',
+    motivation: 'Addiction is everywhere today. From social media to alcohol, many people struggle with habits they can\'t shake. It\'s a problem that affects millions worldwide, costing lives and tearing families apart. Understanding addiction and knowing why quitting is so important can help you or someone you love start fresh. The good news? Recovery is possible, and life gets better when you take that first step',
+    counseling: 'Our addiction specialists provide personalized treatment plans to help you overcome addiction and embrace a healthier future. Start your recovery today'
 };
 
 const primary = '#012765';
@@ -218,45 +207,53 @@ const Addiction = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        alert("Requested send!");
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
         const newErrors = {};
-
         if (!formData.name.trim()) newErrors.name = 'Full name is required';
         if (!formData.email.trim()) newErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-
         if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
         else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
-
         if (!formData.age.trim()) newErrors.age = 'Age is required';
         else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
-
         if (!formData.message.trim()) newErrors.message = 'Message is required';
-
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
         }
-
-        // If validation passed
-        console.log('Submitted data:', formData);
-
-        // Reset
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            message: ''
-        });
-        setErrors({});
+        try {
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                mobile: formData.phone,
+                enquiry_type: 'Request a Callback - Addiction',
+                message: formData.message
+            };
+            await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
+            toast.success("Your message has been sent successfully! We'll get back to you shortly.");
+            setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+            setErrors({});
+        } catch (error) {
+            console.error('API Error:', error);
+            toast.error('Failed to send your message. Please try again later.');
+        }
     };
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {/* Hero Section */}
             <Box
                 sx={{

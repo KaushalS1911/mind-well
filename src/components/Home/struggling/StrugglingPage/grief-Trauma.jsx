@@ -14,6 +14,9 @@ import SupportIcon from '@mui/icons-material/Support';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Image imports (retained from original)
 import img2 from '../../../../assets/images/Home/Struggling/Grief-Trauma.jpg';
@@ -43,7 +46,7 @@ const griefTraumaData = {
                 },
                 {
                     subtitle: 'The Stages of Grief',
-                    text: 'People often go through five stages of grief, but everyone experiences them differently. These are:\n- Denial: Refusing to accept the loss\n- Anger: Feeling upset or mad over what happened\n- Bargaining: Trying to make deals to fix it\n- Depression: Feeling deeply sad and hopeless\n- Acceptance: Coming to terms with the loss\nRemember, these stages don’t always happen in order, and some people may skip some entirely. Grief is a personal journey',
+                    text: "People often go through five stages of grief, but everyone experiences them differently. These are:\n- Denial: Refusing to accept the loss\n- Anger: Feeling upset or mad over what happened\n- Bargaining: Trying to make deals to fix it\n- Depression: Feeling deeply sad and hopeless\n- Acceptance: Coming to terms with the loss\nRemember, these stages don't always happen in order, and some people may skip some entirely. Grief is a personal journey",
                 },
                 {
                     subtitle: 'Recognizing Signs of Unhealthy Grief',
@@ -76,7 +79,7 @@ const griefTraumaData = {
                 },
                 {
                     subtitle: 'Overlapping Symptoms',
-                    text: 'Both grief and trauma can cause feelings of sadness, anxiety, trouble concentrating, and even physical symptoms like headaches. Sometimes, grief can evolve into trauma if it’s intense or unresolved',
+                    text: "Both grief and trauma can cause feelings of sadness, anxiety, trouble concentrating, and even physical symptoms like headaches. Sometimes, grief can evolve into trauma if it's intense or unresolved",
                 },
                 {
                     subtitle: 'When Grief Turns into Trauma or Vice Versa',
@@ -205,45 +208,53 @@ const GriefTrauma = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        alert("Requested send!");
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
         const newErrors = {};
-
         if (!formData.name.trim()) newErrors.name = 'Full name is required';
         if (!formData.email.trim()) newErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-
         if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
         else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
-
         if (!formData.age.trim()) newErrors.age = 'Age is required';
         else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
-
         if (!formData.message.trim()) newErrors.message = 'Message is required';
-
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
         }
-
-        // If validation passed
-        console.log('Submitted data:', formData);
-
-        // Reset
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            message: ''
-        });
-        setErrors({});
+        try {
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                mobile: formData.phone,
+                enquiry_type: 'Request a Callback - Grief & Trauma',
+                message: formData.message
+            };
+            await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
+            toast.success("Your message has been sent successfully! We'll get back to you shortly.");
+            setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+            setErrors({});
+        } catch (error) {
+            console.error('API Error:', error);
+            toast.error('Failed to send your message. Please try again later.');
+        }
     };
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {/* Hero Section */}
             <Box
                 sx={{

@@ -13,6 +13,9 @@ import GroupIcon from '@mui/icons-material/Group';
 import SupportIcon from '@mui/icons-material/Support';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Placeholder images (replace with actual images if available)
 import imgPlaceholder1 from '../../../../assets/images/Home/Struggling/careerhero.png';
@@ -39,7 +42,7 @@ const careerUncertaintyData = {
             content: [
                 {
                     subtitle: 'Defining Career Uncertainty',
-                    text: 'Career uncertainty is the difficulty in choosing or sticking with a particular career plan. It often shows up as feeling lost or confused about your next move. Several things can cause this, like changes in the economy, new technology, your personal values, or life events. When unsure, it’s hard to commit or feel confident about your choices',
+                    text: "Career uncertainty is the difficulty in choosing or sticking with a particular career plan. It often shows up as feeling lost or confused about your next move. Several things can cause this, like changes in the economy, new technology, your personal values, or life events. When unsure, it's hard to commit or feel confident about your choices",
                 },
                 {
                     subtitle: 'The Impact of Career Uncertainty',
@@ -51,12 +54,12 @@ const careerUncertaintyData = {
             title: 'Recognizing Signs of Career Uncertainty',
             content: [
                 {
-                    text: 'Do any of these sound familiar?\n• Feeling overwhelmed when thinking about your options\n• Frequently changing jobs or avoiding making long-term plans\n• Lack of enthusiasm or purpose in your current role\n• Second-guessing your choices and feeling unsure about your skills\nWhen these signs appear, it’s a sign you need to pause and explore what’s really important to you',
+                    text: "Do any of these sound familiar?\n• Feeling overwhelmed when thinking about your options\n• Frequently changing jobs or avoiding making long-term plans\n• Lack of enthusiasm or purpose in your current role\n• Second-guessing your choices and feeling unsure about your skills\nWhen these signs appear, it's a sign you need to pause and explore what's really important to you",
                 },
             ],
         },
         {
-            title: 'Why Career Uncertainty Is Increasing in Today’s World',
+            title: "Why Career Uncertainty Is Increasing in Today's World",
             content: [
                 {
                     subtitle: 'External Factors Contributing to Career Ambiguity',
@@ -64,11 +67,11 @@ const careerUncertaintyData = {
                 },
                 {
                     subtitle: 'Internal Factors Influencing Career Doubt',
-                    text: 'Sometimes, it’s what happens inside your mind. Your values may shift as you grow, and fears of failure or making the wrong choice can hold you back. You might not know enough about your own strengths and interests to decide confidently. Without clear self-knowledge, choosing a career feels even harder',
+                    text: "Sometimes, it's what happens inside your mind. Your values may shift as you grow, and fears of failure or making the wrong choice can hold you back. You might not know enough about your own strengths and interests to decide confidently. Without clear self-knowledge, choosing a career feels even harder",
                 },
                 {
                     subtitle: 'Data and Trends',
-                    text: 'Studies show many workers switch careers multiple times. The average job length is dropping, and workers say they want more clarity about their future. This trend points to more uncertainty in today’s job scene. It’s normal to feel confused when so much is changing all the time',
+                    text: "Studies show many workers switch careers multiple times. The average job length is dropping, and workers say they want more clarity about their future. This trend points to more uncertainty in today's job scene. It's normal to feel confused when so much is changing all the time",
                 },
             ],
         },
@@ -110,8 +113,7 @@ const careerUncertaintyData = {
                 },
                 {
                     subtitle: 'Reflect and Stay Open to Change',
-                    text: 'Take time regularly to think about your progress and feelings. Are you happier with your choices? If not, be willing to adjust your plans. Flexibility helps you grow and find jobs that truly fit you\n\n\n' +
-                        'Career uncertainty is a common challenge in today’s busy world. It happens because of external changes and internal doubts. The key to overcoming it is to understand yourself better through self-assessment and research. Take practical steps like setting goals, seeking help, gaining experience, and staying open. Remember, your career path is not fixed; embrace change and continuous learning to build a satisfying future. Find what makes you happy and pushes you toward your goals. Your ideal career is easier to discover when you know yourself and are willing to explore',
+                    text: "Take time regularly to think about your progress and feelings. Are you happier with your choices? If not, be willing to adjust your plans. Flexibility helps you grow and find jobs that truly fit you\n\n\n Career uncertainty is a common challenge in today's busy world. It happens because of external changes and internal doubts. The key to overcoming it is to understand yourself better through self-assessment and research. Take practical steps like setting goals, seeking help, gaining experience, and staying open. Remember, your career path is not fixed; embrace change and continuous learning to build a satisfying future. Find what makes you happy and pushes you toward your goals. Your ideal career is easier to discover when you know yourself and are willing to explore",
                 },
             ],
         },
@@ -126,7 +128,7 @@ const careerUncertaintyData = {
     testimonials: [
         {
             name: 'Emma, 29',
-            text: 'Career counseling helped me identify my strengths and find a path I’m excited about',
+            text: "Career counseling helped me identify my strengths and find a path I'm excited about",
             image: 'https://i.pravatar.cc/40?img=13',
         },
         {
@@ -146,7 +148,7 @@ const careerUncertaintyData = {
         'LinkedIn. (2023). Workforce Confidence Survey: Career Mobility Trends',
     ],
     motivation:
-        'Feeling unsure about your career path is more common than you might think. In today’s ever-changing job market, many people face questions like, “What should I do next?” or “Is this the right job for me?” This confusion can cause stress and hold you back from reaching your goals. Knowing how to understand your feelings and take smart steps can help you find a career that truly fits your interests and values',
+        "Feeling unsure about your career path is more common than you might think. In today's ever-changing job market, many people face questions like, 'What should I do next?' or 'Is this the right job for me?' This confusion can cause stress and hold you back from reaching your goals. Knowing how to understand your feelings and take smart steps can help you find a career that truly fits your interests and values",
     counseling:
         'Our career counselors can guide you through uncertainty, helping you identify your strengths and build a fulfilling career',
 };
@@ -206,45 +208,53 @@ const CareerUncertainty = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        alert("Requested send!");
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
         const newErrors = {};
-
         if (!formData.name.trim()) newErrors.name = 'Full name is required';
         if (!formData.email.trim()) newErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-
         if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
         else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
-
         if (!formData.age.trim()) newErrors.age = 'Age is required';
         else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
-
         if (!formData.message.trim()) newErrors.message = 'Message is required';
-
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
         }
-
-        // If validation passed
-        console.log('Submitted data:', formData);
-
-        // Reset
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            message: ''
-        });
-        setErrors({});
+        try {
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                mobile: formData.phone,
+                enquiry_type: 'Request a Callback - Career Uncertainty',
+                message: formData.message
+            };
+            await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
+            toast.success("Your message has been sent successfully! We'll get back to you shortly.");
+            setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+            setErrors({});
+        } catch (error) {
+            console.error('API Error:', error);
+            toast.error('Failed to send your message. Please try again later.');
+        }
     };
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {/* Hero Section */}
             <Box
                 sx={{

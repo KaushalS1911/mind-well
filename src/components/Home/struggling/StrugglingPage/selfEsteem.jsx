@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Container, Typography, Grid, Paper, Button, Divider, IconButton, TextField} from '@mui/material';
+import {Box, Container, Typography, Grid, Paper, Button, Divider, IconButton, TextField, FormControl, InputLabel, Select, MenuItem} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
@@ -14,6 +14,9 @@ import SupportIcon from '@mui/icons-material/Support';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Image imports (retained from original)
 import img4 from '../../../../assets/images/Home/Struggling/Self-esteemhero.webp';
@@ -21,7 +24,7 @@ import img11 from '../../../../assets/images/Home/Struggling/Self-esteemtime.jpg
 import img18 from '../../../../assets/images/Home/Struggling/self-esteem2.jpg';
 
 const selfEsteemData = {
-    title: 'Let’s Talk About Self-Esteem: The Ultimate Guide to Building Confidence and Self-Worth',
+    title: "Let's Talk About Self-Esteem: The Ultimate Guide to Building Confidence and Self-Worth",
     description: 'Learn how to cultivate self-confidence, embrace your unique strengths, and build a positive self-image',
     image: img4,
     image1: img11,
@@ -39,11 +42,11 @@ const selfEsteemData = {
             title: 'What Is Self-Esteem and Why Does It Matter?',
             content: [
                 {
-                    text: 'Self-esteem is how much you appreciate who you are. It’s your inner gauge of your value. Having high self-esteem means you believe in yourself and your abilities. Low self-esteem comes with feelings of doubt and self-criticism. Self-confidence is often confused with self-esteem, but it’s not the same. Confidence is about trusting your skills in specific situations. Self-efficacy is your belief that you can succeed at tasks. Think of self-esteem as a bigger picture of how you see yourself overall',
+                    text: "Self-esteem is how much you appreciate who you are. It's your inner gauge of your value. Having high self-esteem means you believe in yourself and your abilities. Low self-esteem comes with feelings of doubt and self-criticism. Self-confidence is often confused with self-esteem, but it's not the same. Confidence is about trusting your skills in specific situations. Self-efficacy is your belief that you can succeed at tasks. Think of self-esteem as a bigger picture of how you see yourself overall",
                 },
                 {
                     subtitle: 'The Significance of Healthy Self-Esteem :',
-                    text: 'Good self-esteem impacts every part of your life. It helps you make decisions, handle stress, and bounce back from setbacks. When your self-esteem is high, you are more likely to take risks and try new things. Experts say low self-esteem is linked to anxiety and depression, affecting up to 1 in 4 adults. In the workplace, school, college, or personal life, self-esteem plays a huge role. Feeling confident can open doors, while doubts may hold you back. Whether it’s landing that job, starting a new hobby, or building a good relationship, your sense of worth makes a difference',
+                    text: "Good self-esteem impacts every part of your life. It helps you make decisions, handle stress, and bounce back from setbacks. When your self-esteem is high, you are more likely to take risks and try new things. Experts say low self-esteem is linked to anxiety and depression, affecting up to 1 in 4 adults. In the workplace, school, college, or personal life, self-esteem plays a huge role. Feeling confident can open doors, while doubts may hold you back. Whether it's landing that job, starting a new hobby, or building a good relationship, your sense of worth makes a difference",
                 },
             ],
         },
@@ -64,7 +67,7 @@ const selfEsteemData = {
                 },
                 {
                     subtitle: 'Societal and Cultural Influences',
-                    text: 'Media plays a big role today. Constant exposure to images of “perfect” bodies and glamorous lifestyles can leave you feeling inadequate. Cultural stereotypes about gender roles, success, or beauty also influence how you see yourself',
+                    text: 'Media plays a big role today. Constant exposure to images of "perfect" bodies and glamorous lifestyles can leave you feeling inadequate. Cultural stereotypes about gender roles, success, or beauty also influence how you see yourself',
                 },
                 {
                     subtitle: 'Life Events and Personal Experiences',
@@ -72,7 +75,7 @@ const selfEsteemData = {
                 },
                 {
                     subtitle: 'Modern Factors',
-                    text: 'Social media creates a comparison trap. Seeing others’ highlight reels makes you feel you don’t measure up. Additionally, job pressures or academic stress can leave you doubting your abilities',
+                    text: "Social media creates a comparison trap. Seeing others' highlight reels makes you feel you don't measure up. Additionally, job pressures or academic stress can leave you doubting your abilities",
                 },
             ],
         },
@@ -98,11 +101,11 @@ const selfEsteemData = {
             content: [
                 {
                     subtitle: 'Practicing Self-Compassion',
-                    text: 'Be kind to yourself. Kristin Neff’s research shows that self-compassion reduces stress and builds resilience. Try daily exercises like writing yourself a supportive note or pausing before criticizing yourself',
+                    text: "Be kind to yourself. Kristin Neff's research shows that self-compassion reduces stress and builds resilience. Try daily exercises like writing yourself a supportive note or pausing before criticizing yourself",
                 },
                 {
                     subtitle: 'Challenging Negative Self-Talk',
-                    text: 'Notice when your inner voice is harsh. Reframe those thoughts, replacing “I can’t do this” with “I’ll try my best.” Use journaling to identify limiting beliefs and affirmations to boost confidence',
+                    text: "Notice when your inner voice is harsh. Reframe those thoughts, replacing 'I can't do this' with 'I'll try my best.' Use journaling to identify limiting beliefs and affirmations to boost confidence",
                 },
                 {
                     subtitle: 'Setting Achievable Goals',
@@ -114,7 +117,7 @@ const selfEsteemData = {
                 },
                 {
                     subtitle: 'Embracing Failure and Learning from Mistakes',
-                    text: 'Failures aren’t the end—they’re lessons. Many successful people faced setbacks before reaching their goals. Resilience is built by accepting mistakes and trying again',
+                    text: "Failures aren't the end—they're lessons. Many successful people faced setbacks before reaching their goals. Resilience is built by accepting mistakes and trying again",
                 },
                 {
                     subtitle: 'Developing Self-Awareness and Mindfulness',
@@ -191,7 +194,7 @@ const selfEsteemData = {
         'American Psychological Association. Self-Esteem and Mental Health',
     ],
     motivation:
-        'When you think about your success and happiness, one thing often stands out: self-esteem. It’s the confidence you feel about yourself, how much you value your worth. Strong self-esteem can boost your mental health, help you connect better with others, and push you toward your goals. But many people struggle with feeling unsure or low about themselves',
+        "When you think about your success and happiness, one thing often stands out: self-esteem. It's the confidence you feel about yourself, how much you value your worth. Strong self-esteem can boost your mental health, help you connect better with others, and push you toward your goals. But many people struggle with feeling unsure or low about themselves",
     counseling:
         'Our counselors can help you develop strategies to boost your self-esteem and live with greater confidence. Start your journey to self-acceptance today',
 };
@@ -250,8 +253,7 @@ const SelfEsteem = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        alert("Requested send!");
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const newErrors = {};
@@ -273,21 +275,53 @@ const SelfEsteem = () => {
             return;
         }
 
-        // If validation passed
-        console.log('Submitted data:', formData);
+        try {
+            // Create payload without age field
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                mobile: formData.phone,
+                enquiry_type: "Request a Callback - Self-Esteem",
+                message: formData.message
+            };
 
-        // Reset
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            message: ''
-        });
-        setErrors({});
+            await axios.post(
+                "https://interactapiverse.com/mahadevasth/enquiry",
+                payload
+            );
+
+            toast.success("Your message has been sent successfully! We'll get back to you shortly.");
+
+            // Reset form
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                age: '',
+                message: ''
+            });
+            setErrors({});
+
+        } catch (error) {
+            console.error("API Error:", error);
+            toast.error("Failed to send your message. Please try again later.");
+        }
     };
+
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {/* Hero Section */}
             <Box
                 sx={{

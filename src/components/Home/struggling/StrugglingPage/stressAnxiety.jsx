@@ -25,6 +25,9 @@ import SupportIcon from '@mui/icons-material/Support';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Replace with actual image paths
 import img from '../../../../assets/images/Home/Struggling/Anxiety-and-Stress-in-the-Workplace.jpg';
@@ -52,7 +55,7 @@ const stressAnxietyData = {
             content: [
                 {
                     subtitle: 'Understanding Stress',
-                    text: 'Stress happens when you face pressures or demands that feel overwhelming. It’s your body\'s way of reacting to threats or challenges',
+                    text: "Stress happens when you face pressures or demands that feel overwhelming. It's your body\'s way of reacting to threats or challenges",
                 },
                 {
                     subtitle: 'Understanding Anxiety',
@@ -104,7 +107,7 @@ const stressAnxietyData = {
                 },
                 {
                     subtitle: 'When to Consult a Professional:',
-                    text: 'If your symptoms are severe, last for weeks, or interfere with your daily routines, it’s time to see a professional. Early help can prevent things from getting worse',
+                    text: "If your symptoms are severe, last for weeks, or interfere with your daily routines, it's time to see a professional. Early help can prevent things from getting worse",
                 },
             ],
         },
@@ -155,7 +158,7 @@ const stressAnxietyData = {
                 },
                 {
                     subtitle: 'Reducing External Stressors',
-                    text: 'Learn to say no when you’re overwhelmed. Manage your time better and set clear boundaries at work and home',
+                    text: "Learn to say no when you're overwhelmed. Manage your time better and set clear boundaries at work and home",
                 },
                 {
                     subtitle: 'Monitoring and Maintaining Mental Health',
@@ -167,7 +170,7 @@ const stressAnxietyData = {
             title: 'Real-Life Example',
             content: [
                 {
-                    text: 'For example, xyz started feeling anxious before work meetings. Her chest felt tight, and she couldn’t sleep. After talking to a counselor, she learned her symptoms were part of an anxiety disorder. Getting help improved her life\n',
+                    text: "For example, xyz started feeling anxious before work meetings. Her chest felt tight, and she couldn't sleep. After talking to a counselor, she learned her symptoms were part of an anxiety disorder. Getting help improved her life\n",
                 },
             ],
         },
@@ -262,8 +265,7 @@ const StressAnxiety = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        alert("Requested send!");
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const newErrors = {};
@@ -285,22 +287,53 @@ const StressAnxiety = () => {
             return;
         }
 
-        // If validation passed
-        console.log('Submitted data:', formData);
+        try {
+            // Create payload without age field
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                mobile: formData.phone,
+                enquiry_type: "Request a Callback - Stress & Anxiety",
+                message: formData.message
+            };
 
-        // Reset
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            message: ''
-        });
-        setErrors({});
+            await axios.post(
+                "https://interactapiverse.com/mahadevasth/enquiry",
+                payload
+            );
+
+            toast.success("Your message has been sent successfully! We'll get back to you shortly.");
+
+            // Reset form
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                age: '',
+                message: ''
+            });
+            setErrors({});
+
+        } catch (error) {
+            console.error("API Error:", error);
+            toast.error("Failed to send your message. Please try again later.");
+        }
     };
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {/* Hero Section */}
             <Box
                 sx={{

@@ -14,6 +14,9 @@ import SupportIcon from '@mui/icons-material/Support';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Image imports (retained from original)
 import img1 from '../../../../assets/images/Home/Struggling/Relationshiphero.jpg';
@@ -64,7 +67,7 @@ const relationshipData = {
             content: [
                 {
                     subtitle: 'Effective Communication Skills',
-                    text: 'Great communication isn\'t just talking; it’s about listening with your heart. Active listening involves giving your full attention, making eye contact, and repeating what’s been said to confirm understanding. Empathy helps you see things from your partner’s view, strengthening your connection. Assertiveness means sharing your feelings honestly without blaming or attacking. Avoid patterns like contempt or stonewalling, which damage trust. Studies show that couples who communicate effectively experience higher overall happiness in their relationship',
+                    text: "Great communication isn\'t just talking; it's about listening with your heart. Active listening involves giving your full attention, making eye contact, and repeating what's been said to confirm understanding. Empathy helps you see things from your partner's view, strengthening your connection. Assertiveness means sharing your feelings honestly without blaming or attacking. Avoid patterns like contempt or stonewalling, which damage trust. Studies show that couples who communicate effectively experience higher overall happiness in their relationship",
                 },
                 {
                     subtitle: 'Overcoming Communication Barriers',
@@ -72,7 +75,7 @@ const relationshipData = {
                 },
                 {
                     subtitle: 'Conflict Resolution Strategies',
-                    text: 'Disagreements happen, but how you handle them matters. Use I-statements to express feelings without blame—like “I feel upset when...” instead of “You always...” Find common ground and look for compromise. When disagreements heat up, take a break. Practicing a “pause” gives both sides time to cool down. If conflicts keep coming up, consider couples therapy or coaching. Professional help can guide you toward healthier communication and deeper understanding',
+                    text: 'Disagreements happen, but how you handle them matters. Use I-statements to express feelings without blame—like "I feel upset when..." instead of "You always..." Find common ground and look for compromise. When disagreements heat up, take a break. Practicing a "pause" gives both sides time to cool down. If conflicts keep coming up, consider couples therapy or coaching. Professional help can guide you toward healthier communication and deeper understanding',
                 },
             ],
         },
@@ -85,11 +88,11 @@ const relationshipData = {
                 },
                 {
                     subtitle: 'Consistency and Reliability',
-                    text: 'Trust grows when you do what you say you will do. Being dependable means following through in small everyday actions—showing up on time, keeping promises, or being present. These small acts build a foundation of reliability. Over time, they prove you’re trustworthy, making the relationship more secure',
+                    text: "Trust grows when you do what you say you will do. Being dependable means following through in small everyday actions—showing up on time, keeping promises, or being present. These small acts build a foundation of reliability. Over time, they prove you're trustworthy, making the relationship more secure",
                 },
                 {
                     subtitle: 'Rebuilding Trust after Breaches',
-                    text: 'Sometimes, trust is broken—like after an argument or an act of betrayal. Rebuilding takes effort. First, acknowledge what happened and express remorse. Next, work on restitution—show through actions you’re committed to change. Patience is vital because trust takes time to restore. For instance, couples who communicate openly and set trust routines find it easier to heal after breaches. Routine check-ins and honest conversations support this process',
+                    text: "Sometimes, trust is broken—like after an argument or an act of betrayal. Rebuilding takes effort. First, acknowledge what happened and express remorse. Next, work on restitution—show through actions you're committed to change. Patience is vital because trust takes time to restore. For instance, couples who communicate openly and set trust routines find it easier to heal after breaches. Routine check-ins and honest conversations support this process",
                 },
             ],
         },
@@ -98,11 +101,11 @@ const relationshipData = {
             content: [
                 {
                     subtitle: 'Setting Realistic Expectations',
-                    text: 'Unrealistic ideals can hurt your relationship. No one is perfect; expecting perfection sets you up for disappointment. Recognize your partner’s strengths and flaws. Accepting imperfections allows love to grow naturally',
+                    text: "Unrealistic ideals can hurt your relationship. No one is perfect; expecting perfection sets you up for disappointment. Recognize your partner's strengths and flaws. Accepting imperfections allows love to grow naturally",
                 },
                 {
                     subtitle: 'Embracing Personal and Partner Growth',
-                    text: 'Supporting each other’s individual pursuits makes your relationship healthier. Whether pursuing a hobby, new career, or education, give space for growth. Life also changes—such as career shifts, parenthood, or aging. Adapting together helps you stay connected through transitions',
+                    text: "Supporting each other's individual pursuits makes your relationship healthier. Whether pursuing a hobby, new career, or education, give space for growth. Life also changes—such as career shifts, parenthood, or aging. Adapting together helps you stay connected through transitions",
                 },
                 {
                     subtitle: 'Dealing with External Stressors',
@@ -115,7 +118,7 @@ const relationshipData = {
             content: [
                 {
                     subtitle: 'Prioritizing Self-Care',
-                    text: 'Taking care of yourself improves your relationship. When you’re happy and healthy, you’re more patient and loving. Spend time on hobbies, exercise, or mental wellness activities. Self-care isn’t selfish—it’s necessary for long-term happiness',
+                    text: "Taking care of yourself improves your relationship. When you're happy and healthy, you're more patient and loving. Spend time on hobbies, exercise, or mental wellness activities. Self-care isn't selfish—it's necessary for long-term happiness"
                 },
                 {
                     subtitle: 'Maintaining Independence',
@@ -218,47 +221,55 @@ const Relationship = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        alert("Requested send!");
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
         const newErrors = {};
-
         if (!formData.name.trim()) newErrors.name = 'Full name is required';
         if (!formData.email.trim()) newErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-
         if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
         else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
-
         if (!formData.age.trim()) newErrors.age = 'Age is required';
         else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
-
         if (!formData.message.trim()) newErrors.message = 'Message is required';
-
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
         }
-
-        // If validation passed
-        console.log('Submitted data:', formData);
-
-        // Reset
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            message: ''
-        });
-        setErrors({});
+        try {
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                mobile: formData.phone,
+                enquiry_type: 'Request a Callback - Relationships',
+                message: formData.message
+            };
+            await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
+            toast.success("Your message has been sent successfully! We'll get back to you shortly.");
+            setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+            setErrors({});
+        } catch (error) {
+            console.error('API Error:', error);
+            toast.error('Failed to send your message. Please try again later.');
+        }
     };
 
 
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {/* Hero Section */}
             <Box
                 sx={{

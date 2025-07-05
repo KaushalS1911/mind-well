@@ -14,6 +14,9 @@ import SupportIcon from '@mui/icons-material/Support';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Image imports (retained from original)
 import img5 from '../../../../assets/images/Home/Struggling/bullingtime.jpg';
@@ -44,7 +47,7 @@ const bullyingData = {
                 },
                 {
                     subtitle: 'Types of Bullying',
-                    text: '• Physical Bullying: Hitting, pushing, or damaging someone’s belongings\n• Verbal Bullying: Name-calling, teasing, or threatening\n• Social or Relational Bullying: Excluding someone, spreading rumors, or embarrassing them publicly\n• Cyberbullying: Using social media, texts, or emails to harass or humiliate\nIn most cases, bullying happens repeatedly, making it hard for victims to escape. The power difference fuels the cycle of harm',
+                    text: "• Physical Bullying: Hitting, pushing, or damaging someone's belongings\n• Verbal Bullying: Name-calling, teasing, or threatening\n• Social or Relational Bullying: Excluding someone, spreading rumors, or embarrassing them publicly\n• Cyberbullying: Using social media, texts, or emails to harass or humiliate\nIn most cases, bullying happens repeatedly, making it hard for victims to escape. The power difference fuels the cycle of harm",
                 },
             ],
         },
@@ -65,7 +68,7 @@ const bullyingData = {
             title: 'Academic and Social Consequences of Bullying',
             content: [
                 {
-                    subtitle: 'Bullying doesn’t only affect feelings — it hits school work and social skills too',
+                    subtitle: "Bullying doesn't only affect feelings — it hits school work and social skills too",
                     text: '• Effect on School and Learning \n • Lower grades due to decreased motivation\n• School avoidance or skipping classes\n• Higher chances of dropping out\n• Isolation from peers\n• Struggling to form healthy friendships\n• Difficulty trusting others later in life',
                 },
             ],
@@ -78,7 +81,7 @@ const bullyingData = {
                 },
                 {
                     subtitle: 'Common Symptoms',
-                    text: '• Sleep problems or insomnia\n• Headaches, stomachaches, or other aches\n• Symptoms that don’t seem to have a medical cause (psychosomatic issues)\n • Many victims find that their physical health worsens as emotional stress builds up',
+                    text: "• Sleep problems or insomnia\n• Headaches, stomachaches, or other aches\n• Symptoms that don't seem to have a medical cause (psychosomatic issues)\n • Many victims find that their physical health worsens as emotional stress builds up",
                 },
             ],
         },
@@ -86,7 +89,7 @@ const bullyingData = {
             title: 'Long-term Side Effects of Bullying',
             content: [
                 {
-                    text: '• The scars left by bullying often extend beyond childhood\n• Mental health issues like depression can continue into adulthood\n• Increased risk of drug or alcohol abuse\n• Difficulties maintaining personal relationships or holding jobs\n • Research links childhood bullying to ongoing mental health struggles, showing that early acts of aggression can echo throughout life',
+                    text: "• The scars left by bullying often extend beyond childhood\n• Mental health issues like depression can continue into adulthood\n• Increased risk of drug or alcohol abuse\n• Difficulties maintaining personal relationships or holding jobs\n • Research links childhood bullying to ongoing mental health struggles, showing that early acts of aggression can echo throughout life",
                 },
             ],
         },
@@ -149,7 +152,7 @@ const bullyingData = {
         'StopBullying.gov. (2021). Effects of Bullying on Youth',
     ],
     motivation:
-        'Bullying is a problem that affects many people, from students in school to adults in the workplace. With the rise of online platforms, bullying has become even easier to do and harder to escape. This makes understanding its side effects more important than ever. Bullying doesn’t only cause immediate pain but can also lead to long-term struggles with mental health, school, and social life. Knowing what bullying is and how it impacts people can help us protect those at risk and create safer environments. This guide offers insights, real stories, and practical tips to stop bullying and reduce its effects',
+        "Bullying is a problem that affects many people, from students in school to adults in the workplace. With the rise of online platforms, bullying has become even easier to do and harder to escape. This makes understanding its side effects more important than ever. Bullying doesn't only cause immediate pain but can also lead to long-term struggles with mental health, school, and social life. Knowing what bullying is and how it impacts people can help us protect those at risk and create safer environments. This guide offers insights, real stories, and practical tips to stop bullying and reduce its effects",
     counseling:
         'Our counselors can provide tools and strategies to cope with bullying and rebuild your self-esteem. Take the first step towards healing today',
 };
@@ -209,45 +212,53 @@ const Bullying = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
-        alert("Requested send!");
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
         const newErrors = {};
-
         if (!formData.name.trim()) newErrors.name = 'Full name is required';
         if (!formData.email.trim()) newErrors.email = 'Email is required';
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
-
         if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
         else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
-
         if (!formData.age.trim()) newErrors.age = 'Age is required';
         else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
-
         if (!formData.message.trim()) newErrors.message = 'Message is required';
-
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
         }
-
-        // If validation passed
-        console.log('Submitted data:', formData);
-
-        // Reset
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            message: ''
-        });
-        setErrors({});
+        try {
+            const payload = {
+                name: formData.name,
+                email: formData.email,
+                mobile: formData.phone,
+                enquiry_type: 'Request a Callback - Bullying',
+                message: formData.message
+            };
+            await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
+            toast.success("Your message has been sent successfully! We'll get back to you shortly.");
+            setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+            setErrors({});
+        } catch (error) {
+            console.error('API Error:', error);
+            toast.error('Failed to send your message. Please try again later.');
+        }
     };
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             {/* Hero Section */}
             <Box
                 sx={{
