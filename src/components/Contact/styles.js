@@ -43,7 +43,8 @@ export const ContactCardContent = styled(CardContent)({
 
 export const FormTitle = styled(Typography)({
     marginBottom: 24,
-    fontWeight: "700"
+    fontWeight: "700",
+    color:"#002D62"
 });
 
 export const SubmitButton = styled(Button)({
