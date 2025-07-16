@@ -69,8 +69,8 @@ function Assessments({sx}) {
             subTitle: "(Age 18+)",
             description: "Measure your current stress levels and coping mechanisms",
             url: '/assessments/general-stress',
-            questions: "12 questions",
-            time: "~ 6 min"
+            questions: "20 questions",
+            time: "~ 10 min"
         },
         {
             img: img4,
@@ -78,8 +78,8 @@ function Assessments({sx}) {
             subTitle: "(Age 4-10)",
             description: "Understand your emotional intelligence and self-awareness",
             url: '/assessments/emotional-awareness',
-            questions: "15 questions",
-            time: "~ 7 min"
+            questions: "20 questions",
+            time: "~ 10 min"
         },
         {
             img: img5,
