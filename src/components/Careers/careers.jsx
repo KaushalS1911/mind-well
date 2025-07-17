@@ -79,7 +79,7 @@ const ApplicationForm = () => (
         <Typography variant="body1">
           If you are a Psychologist, Special Educator, Psychotherapists, Content Writer, Flutter Developer, 
           React Developer, Accounts and Finance, Sales Professionals, HR then reach us at{' '}
-          <span style={{ color: "#FE6A00" }}>connect@mahadevasth.com</span> to explore exciting career opportunities
+          <span style={{ color: "#FE6A00" }}>hr@emotionallyours.com</span> to explore exciting career opportunities
         </Typography>
       </StyledPaper>
     </Container>

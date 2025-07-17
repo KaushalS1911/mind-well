@@ -11,20 +11,27 @@ export const INQUIRY_TYPES = [
 
 export const CONTACT_INFO = [
     {
+        icon: "MailOutline",
         title: "Email",
-        icon: "Email",
-        details: [
-            "connect@mahadevasth.com"
-        ]
+        details: ["connect@mahadevasth.com"]
     },
     {
-        title: "Office Locations",
+        icon: "MarkAsUnread",
+        title: "Email",
+        details: ["hr@emotionallyours.com"]
+    },
+    {
+        icon: "MyLocation",
+        title: "Address1",
+        details: ["HO: B-204, Kanakia Wall Street, Chakala, Andheri-Kurla Road, Andheri East, Mumbai-400093."]
+    },
+    {
         icon: "LocationOn",
-        details: [
-            "B-204, Kanakia Wall Street, Andheri - Kurla Rd, Chakala, Andheri East, Mumbai, Maharashtra 400093"
-        ]
+        title: "Address2",
+        details: ["RO: B-205, Noida One, Sector 62, Noida, Uttar Pradesh 201309"]
     }
 ];
+
 
 export const BUSINESS_HOURS = [
     {day: "Monday - Saturday", time: "7:00 AM onwards"},

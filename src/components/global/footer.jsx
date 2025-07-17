@@ -4,7 +4,9 @@ import {Facebook, Twitter, Instagram, LinkedIn, YouTube} from "@mui/icons-materi
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CallIcon from '@mui/icons-material/Call';
+import MarkAsUnreadIcon from '@mui/icons-material/MarkAsUnread';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import MyLocationIcon from '@mui/icons-material/MyLocation';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import logo from "../../assets/Emotionally Yours Logo1.jpg";
 import {Link as RouterLink} from "react-router-dom";
@@ -31,12 +33,16 @@ const services = [
     {name: "ESOP", path: "/services/esop"},
     {name: "PEP", path: "/services/pep"},
 ]
+
 const contactDetails = {
-
-    email: "connect@mahadevasth.com",
-    address: "B-204, Kanakia Wall Street, Andheri - Kurla Rd, Chakala, Andheri East, Mumbai, Maharashtra 400093",
+    emails: [
+        { icon: <MailOutlineIcon />, value: "connect@mahadevasth.com" },
+    ],
+    addresses: [
+        { icon: <LocationOnIcon />, value: "HO: B-204, Kanakia Wall Street, Chakala, Andheri-Kurla Road, Andheri East, Mumbai-400093." },
+        { icon: <MyLocationIcon />, value: "RO: B-205, Noida One, Sector 62, Noida, Uttar Pradesh 201309" }
+    ]
 };
-
 const paymentMethods = ["VISA", "MC", "AMEX", "HSA"];
 
 const Footer = () => {
@@ -225,21 +231,39 @@ const Footer = () => {
                                 color: "#FFFFFFCC"
                             }}
                         >
-                            {[
-                                // {icon: <CallIcon/>, text: contactDetails.phone},
-                                {icon: <MailOutlineIcon/>, text: contactDetails.email},
-                                {icon: <LocationOnIcon/>, text: contactDetails.address}
-                            ].map((item, index) => (
+                            {/* Emails */}
+                            {contactDetails.emails.map((email, index) => (
                                 <Box
-                                    key={index}
+                                    key={`email-${index}`}
                                     sx={{
                                         fontSize: "14px",
                                         marginTop: "16px",
                                         display: "flex",
-                                        textAlign:"justify",
+                                        textAlign: "justify",
                                     }}
                                 >
-                                    <Box sx={{color: "#FE6A00", mr: 1}}>{item.icon}</Box> {item.text}
+                                    <Box sx={{ color: "#FE6A00", mr: 1 }}>
+                                        {email.icon}
+                                    </Box>
+                                    {email.value}
+                                </Box>
+                            ))}
+
+                            {/* Addresses */}
+                            {contactDetails.addresses.map((address, index) => (
+                                <Box
+                                    key={`address-${index}`}
+                                    sx={{
+                                        fontSize: "14px",
+                                        marginTop: "16px",
+                                        display: "flex",
+                                        textAlign: "justify",
+                                    }}
+                                >
+                                    <Box sx={{ color: "#FE6A00", mr: 1 }}>
+                                        {address.icon}
+                                    </Box>
+                                    {address.value}
                                 </Box>
                             ))}
                         </Box>

@@ -1,5 +1,17 @@
 import React, {useState} from 'react';
-import {Box, Container, Typography, Grid, Paper, Button, Divider, IconButton, TextField} from '@mui/material';
+import {
+    Box,
+    Container,
+    Typography,
+    Grid,
+    Paper,
+    Button,
+    Divider,
+    IconButton,
+    TextField,
+    MenuItem,
+    FormControl, InputLabel, Select
+} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
@@ -194,7 +206,8 @@ const Addiction = () => {
         email: '',
         phone: '',
         age: '',
-        message: ''
+        message: '',
+        gender: '',
     });
 
     const [errors, setErrors] = useState({});
@@ -207,6 +220,12 @@ const Addiction = () => {
         }));
     };
 
+    // Gender options
+    const genderOptions = ["Male", "Female", "Other"];
+
+// Age options (1 to 100)
+    const ageOptions = Array.from({ length: 100 }, (_, i) => i + 1);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newErrors = {};
@@ -215,7 +234,7 @@ const Addiction = () => {
         else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
         if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
         else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter a valid 10-digit phone number';
-        if (!formData.age.trim()) newErrors.age = 'Age is required';
+        if (!(formData.age ?? '').toString().trim()) newErrors.age = 'Age is required';
         else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
         if (!formData.message.trim()) newErrors.message = 'Message is required';
         if (Object.keys(newErrors).length > 0) {
@@ -590,14 +609,18 @@ const Addiction = () => {
 
                         {/* Sidebar */}
                         <Grid item xs={12} lg={4}>
-                            <Paper elevation={3}
-                                   sx={{
-                                       p: 4,
-                                       borderRadius: 4,
-                                       background: 'white',
-                                       boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
-                                       mb: 4,
-                                   }}>
+                            );
+
+                            <Paper
+                                elevation={3}
+                                sx={{
+                                    p: 4,
+                                    borderRadius: 4,
+                                    background: "white",
+                                    boxShadow: "0 8px 32px rgba(1,39,101,0.15)",
+                                    mb: 4,
+                                }}
+                            >
                                 <Box component="form" onSubmit={handleSubmit}>
                                     <Grid container spacing={3}>
                                         <Grid item xs={12}>
@@ -613,6 +636,7 @@ const Addiction = () => {
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
+
                                         <Grid item xs={12}>
                                             <TextField
                                                 fullWidth
@@ -627,6 +651,7 @@ const Addiction = () => {
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
+
                                         <Grid item xs={12}>
                                             <TextField
                                                 fullWidth
@@ -640,20 +665,45 @@ const Addiction = () => {
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
+
+                                        {/* Gender Field */}
                                         <Grid item xs={12}>
-                                            <TextField
-                                                fullWidth
-                                                label="Age"
-                                                type="number"
-                                                name="age"
-                                                value={formData.age}
-                                                onChange={handleInputChange}
-                                                required
-                                                error={!!errors.age}
-                                                helperText={errors.age}
-                                                sx={formFieldStyle}
-                                            />
+                                            <FormControl fullWidth required sx={formFieldStyle} error={!!errors.gender}>
+                                                <InputLabel>Gender</InputLabel>
+                                                <Select
+                                                    name="gender"
+                                                    value={formData.gender}
+                                                    onChange={handleInputChange}
+                                                    label="Gender"
+                                                >
+                                                    {genderOptions.map((gender) => (
+                                                        <MenuItem key={gender} value={gender}>
+                                                            {gender}
+                                                        </MenuItem>
+                                                    ))}
+                                                </Select>
+                                            </FormControl>
                                         </Grid>
+
+                                        {/* Age Dropdown */}
+                                        <Grid item xs={12}>
+                                            <FormControl fullWidth required sx={formFieldStyle} error={!!errors.age}>
+                                                <InputLabel>Age</InputLabel>
+                                                <Select
+                                                    name="age"
+                                                    value={formData.age}
+                                                    onChange={handleInputChange}
+                                                    label="Age"
+                                                >
+                                                    {ageOptions.map((age) => (
+                                                        <MenuItem key={age} value={age}>
+                                                            {age}
+                                                        </MenuItem>
+                                                    ))}
+                                                </Select>
+                                            </FormControl>
+                                        </Grid>
+
                                         <Grid item xs={12}>
                                             <TextField
                                                 fullWidth
@@ -669,6 +719,7 @@ const Addiction = () => {
                                                 sx={formFieldStyle}
                                             />
                                         </Grid>
+
                                         <Grid item xs={12}>
                                             <Button
                                                 type="submit"
@@ -677,13 +728,13 @@ const Addiction = () => {
                                                 sx={{
                                                     backgroundColor: secondary,
                                                     py: 1.5,
-                                                    fontFamily: 'Montserrat',
+                                                    fontFamily: "Montserrat",
                                                     fontWeight: 700,
                                                     borderRadius: 3,
-                                                    transition: 'transform 0.2s',
-                                                    '&:hover': {
+                                                    transition: "transform 0.2s",
+                                                    "&:hover": {
                                                         backgroundColor: secondary,
-                                                        transform: 'translateY(-3px)'
+                                                        transform: "translateY(-3px)",
                                                     },
                                                 }}
                                             >

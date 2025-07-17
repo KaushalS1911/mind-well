@@ -1,25 +1,36 @@
 import React from "react";
 import { Typography, List, ListItem, Box } from "@mui/material";
-import { Email, LocationOn } from "@mui/icons-material";
+import {
+    MarkAsUnread,
+    MailOutline,
+    MyLocation,
+    LocationOn
+} from "@mui/icons-material";
 import { ContactInfoBox, InfoDetailBox } from "./styles";
 import { CONTACT_INFO } from "./constants";
 
-const ContactInfo = () => {
-    // Function to render the appropriate icon based on icon name
-    const renderIcon = (iconName) => {
-        switch (iconName) {
-            case "Email":
-                return <Email sx={{ color: "#FF6600", mr: 1 }} />;
-            case "LocationOn":
-                return <LocationOn sx={{ color: "#FF6600", mr: 1 }} />;
-            default:
-                return null;
-        }
-    };
+// Icon rendering function
+const renderIcon = (iconName) => {
+    const iconProps = { sx: { color: "#FF6600", mr: 1 } };
 
+    switch (iconName) {
+        case "MarkAsUnread":
+            return <MarkAsUnread {...iconProps} />;
+        case "MailOutline":
+            return <MailOutline {...iconProps} />;
+        case "MyLocation":
+            return <MyLocation {...iconProps} />;
+        case "LocationOn":
+            return <LocationOn {...iconProps} />;
+        default:
+            return null;
+    }
+};
+
+const ContactInfo = () => {
     return (
         <ContactInfoBox>
-            <Typography variant="h5" sx={{ mb: 3, fontWeight: "700" }}>
+            <Typography variant="h5" sx={{ mb: 0, fontWeight: "700" }}>
                 Contact Information
             </Typography>
 

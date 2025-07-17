@@ -10,7 +10,7 @@ const BusinessHours = () => (
         </Typography>
         {BUSINESS_HOURS.map((entry, index) => (
             <Box key={index} sx={{ display: "flex", justifyContent: "space-between", mt: 1 }}>
-                <Typography>{entry.day}:</Typography>
+                <Typography>{entry.day} :</Typography>
                 <Typography>{entry.time}</Typography>
             </Box>
         ))}
