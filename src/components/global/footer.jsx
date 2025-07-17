@@ -8,6 +8,7 @@ import MarkAsUnreadIcon from '@mui/icons-material/MarkAsUnread';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import PinDropIcon from '@mui/icons-material/PinDrop';
 import logo from "../../assets/Emotionally Yours Logo1.jpg";
 import {Link as RouterLink} from "react-router-dom";
 
@@ -40,7 +41,7 @@ const contactDetails = {
     ],
     addresses: [
         { icon: <LocationOnIcon />, value: "HO: B-204, Kanakia Wall Street, Chakala, Andheri-Kurla Road, Andheri East, Mumbai-400093." },
-        { icon: <MyLocationIcon />, value: "RO: B-205, Noida One, Sector 62, Noida, Uttar Pradesh 201309" }
+        { icon: <PinDropIcon />, value: "RO: B-205, Noida One, Sector 62, Noida, Uttar Pradesh 201309" }
     ]
 };
 const paymentMethods = ["VISA", "MC", "AMEX", "HSA"];
