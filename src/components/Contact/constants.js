@@ -13,7 +13,7 @@ export const CONTACT_INFO = [
     {
         icon: "MailOutline",
         title: "Email",
-        details1: ["connect@mahadevasth.com"],
+        details1: ["connect@emotionallyours.com"],
         details2: []
     },
     {

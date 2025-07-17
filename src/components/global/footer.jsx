@@ -37,7 +37,7 @@ const services = [
 
 const contactDetails = {
     emails: [
-        { icon: <MailOutlineIcon />, value: "connect@mahadevasth.com" },
+        { icon: <MailOutlineIcon />, value: "connect@emotionallyours.com" },
     ],
     addresses: [
         { icon: <LocationOnIcon />, value: "HO: B-204, Kanakia Wall Street, Chakala, Andheri-Kurla Road, Andheri East, Mumbai-400093." },

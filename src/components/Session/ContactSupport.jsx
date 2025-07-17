@@ -94,7 +94,7 @@ const ContactSupport = () => {
                                 <EmailIcon sx={{ color: '#FF6200', mr: 1 }} />
                                 <Box
                                       sx={{ color: '#012765', fontWeight: 600, fontSize: { xs: '1rem', sm: '1.1rem' } }}>
-                                    connect@mahadevasth.com
+                                    connect@emotionallyours.com
                                 </Box>
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'center' }}>
