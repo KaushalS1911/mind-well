@@ -13,23 +13,15 @@ export const CONTACT_INFO = [
     {
         icon: "MailOutline",
         title: "Email",
-        details: ["connect@mahadevasth.com"]
-    },
-    {
-        icon: "MarkAsUnread",
-        title: "Email",
-        details: ["hr@emotionallyours.com"]
-    },
-    {
-        icon: "MyLocation",
-        title: "Address1",
-        details: ["HO: B-204, Kanakia Wall Street, Chakala, Andheri-Kurla Road, Andheri East, Mumbai-400093."]
+        details1: ["connect@mahadevasth.com"],
+        details2: []
     },
     {
         icon: "LocationOn",
-        title: "Address2",
-        details: ["RO: B-205, Noida One, Sector 62, Noida, Uttar Pradesh 201309"]
-    }
+        title: "Address",
+        details1: ["HO : B-204, Kanakia Wall Street, Chakala, Andheri-Kurla Road, Andheri East, Mumbai-400093."],
+        details2: ["RO : B-205, Noida One, Sector 62, Noida, Uttar Pradesh 201309"]
+    },
 ];
 
 

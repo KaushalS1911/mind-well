@@ -44,8 +44,15 @@ const ContactInfo = () => {
                             </Typography>
                         </Box>
                         <InfoDetailBox>
-                            {info.details.map((line, i) => (
+                            {info.details1.map((line, i) => (
                                 <Typography key={i} variant="body2">
+                                    {line}
+                                </Typography>
+                            ))}
+                        </InfoDetailBox>
+                        <InfoDetailBox>
+                            {info.details2.map((line, i) => (
+                                <Typography key={i} variant="body2" mt="15px">
                                     {line}
                                 </Typography>
                             ))}
