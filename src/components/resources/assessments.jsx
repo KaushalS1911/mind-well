@@ -9,10 +9,11 @@ import img4 from "../../assets/images/Resources/Assessments/awerness.jpg";
 import img5 from "../../assets/images/Resources/Assessments/Academic_Stress2.jpg";
 import img6 from "../../assets/images/Resources/Assessments/Self_Esteem_Scale1.jpg";
 import img7 from "../../assets/images/Resources/Assessments/worklife-Balance.jpg";
-import img8 from "../../assets/images/Resources/Assessments/cheerful-girl-kid-enjoy-color-painting-with-creativity-ideas-present-messy-hand-home.jpg";
+import img8
+    from "../../assets/images/Resources/Assessments/cheerful-girl-kid-enjoy-color-painting-with-creativity-ideas-present-messy-hand-home.jpg";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import ShareIcon from '@mui/icons-material/Share';
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 
 function Assessments({sx}) {
     const navigate = useNavigate();
@@ -121,173 +122,177 @@ function Assessments({sx}) {
 
     return (
         <Box sx={{
-            mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' }
+            mx: {xs: '20px', sm: '70px', md: '90px', xl: '100px'}
         }}>
-        <Container maxWidth="xl">
-            <Box sx={sx}>
-                <Box sx={{p: {xs: 3, md: 5}, bgcolor: "#012765", borderRadius: 3, color: "#fff"}}>
-                    <Grid container spacing={3}>
-                        <Grid item xs={12} md={12}>
-                            <Box sx={{display: "flex", alignItems: "center", mb: "24px"}}>
-                                <Box
-                                    sx={{
-                                        bgcolor: "#FE6A00",
-                                        color: "#fff",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        borderRadius: "30px",
-                                        padding: "10px",
-                                        fontSize: {xs: 16, md: 20},
-                                        mr: 2,
-                                    }}
-                                >
-                                    <BoltIcon/>
+            <Container maxWidth="xl">
+                <Box sx={sx}>
+                    <Box sx={{p: {xs: 3, md: 5}, bgcolor: "#012765", borderRadius: 3, color: "#fff"}}>
+                        <Grid container spacing={3}>
+                            <Grid item xs={12} md={12}>
+                                <Box sx={{display: "flex", alignItems: "center", mb: "24px"}}>
+                                    <Box
+                                        sx={{
+                                            bgcolor: "#FE6A00",
+                                            color: "#fff",
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            borderRadius: "30px",
+                                            padding: "10px",
+                                            fontSize: {xs: 16, md: 20},
+                                            mr: 2,
+                                        }}
+                                    >
+                                        <BoltIcon/>
+                                    </Box>
+                                    <Box className={"Montserrat"}
+                                         sx={{fontWeight: "700", fontSize: {xs: "24px", md: "30px"}}}>
+                                        Self Assessments
+                                    </Box>
                                 </Box>
-                                <Box className={"Montserrat"}
-                                     sx={{fontWeight: "700", fontSize: {xs: "24px", md: "30px"}}}>
-                                    Self Assessments
+                                <Box fontSize={{xs: 14, md: 18}} color="#CBD5E1" sx={{mb: "40px"}}>
+                                    Start with a quick do-it-yourself mental health screening. These tools offer
+                                    valuable insights into your emotional well-being and can help you determine if you
+                                    might benefit from professional support. For a deeper understanding, we also
+                                    recommend proper, professionally administered psychometric tests designed with
+                                    scientific rigor
                                 </Box>
-                            </Box>
-                            <Box fontSize={{xs: 14, md: 18}} color="#CBD5E1" sx={{mb: "40px"}}>
-                                Start with a quick do-it-yourself mental health screening. These tools offer valuable insights into your emotional well-being and can help you determine if you might benefit from professional support. For a deeper understanding, we also recommend proper, professionally administered psychometric tests designed with scientific rigor
-                            </Box>
-                            <Grid container spacing={2}>
                                 <Grid container spacing={2}>
-                                    {assessments.map((assessment, index) => (
-                                        <Grid item xs={12} md={6} lg={4} key={index}>
-                                            <Box
-                                                sx={{
-                                                    p: 2,
-                                                    borderRadius: 2,
-                                                    bgcolor: "#FFFFFF1A",
-                                                    color: "#fff",
-                                                    height: "100%",
-                                                    display: "flex",
-                                                    flexDirection: "column",
-                                                    ml: {xs:2,md:0}
-                                                }}
-                                            >
-                                                <Box display="flex" alignItems="center"
-                                                     sx={{justifyContent: "space-Between"}} mb={1.5}>
-                                                    <Box sx={{display: "flex", alignItems: "center"}}>
-                                                        <img
-                                                            src={assessment.img}
-                                                            alt={assessment.title}
-                                                            style={{
-                                                                width: 40,
-                                                                height: 40,
-                                                                borderRadius: "50%",
-                                                                marginRight: 12,
-                                                            }}
-                                                        />
-                                                        <Box display="flex" flexDirection="column">
-                                                            <Box fontWeight={600} sx={{
-                                                                fontSize: {xs: 16, md: 17},
-                                                                display: "flex",
-                                                                alignItems: "center"
-                                                            }}>
-                                                                {assessment.icon} <span
-                                                                style={{marginLeft: 6}}>{assessment.title}</span>
-                                                            </Box>
-                                                            {assessment.subTitle && (
-                                                                <Box sx={{
-                                                                    fontSize:14,
-                                                                    color: "#fff",
-                                                                    fontWeight: 400,
-                                                                }}>
-                                                                    {assessment.subTitle}
-                                                                </Box>
-                                                            )}
-                                                        </Box>
-                                                    </Box>
-                                                    <IconButton
-                                                        onClick={() => handleOpen(index)}
-                                                        sx={{
-                                                            backgroundColor: "#FE6A00",
-                                                            color: "#fff",
-                                                            p: 0.3,
-                                                            borderRadius: 2,
-                                                            "&:hover": {
-                                                                backgroundColor: "#FE6A00"
-                                                            }
-                                                        }}
-                                                    >
-                                                        <ShareIcon/>
-                                                    </IconButton>
-
-                                                </Box>
-
-                                                <Box color="#CBD5E1" mb={2} sx={{fontSize: 14}}>
-                                                    {assessment.description}
-                                                </Box>
-
-                                                <Box display="flex" gap={1} alignItems="center" mt={2}>
-                                                    <Box
-                                                        sx={{
-                                                            bgcolor: "#FFFFFF33",
-                                                            px: 1.5,
-                                                            py: 0.5,
-                                                            fontSize: 12,
-                                                            color: "#fff",
-                                                            borderRadius: 10,
-                                                        }}
-                                                    >
-                                                        {assessment.questions}
-                                                    </Box>
-                                                    <Box
-                                                        sx={{
-                                                            bgcolor: "#FFFFFF33",
-                                                            px: 1.5,
-                                                            py: 0.5,
-                                                            fontSize: 12,
-                                                            color: "#fff",
-                                                            borderRadius: 10,
-                                                        }}
-                                                    >
-                                                        {assessment.time}
-                                                    </Box>
-                                                </Box>
-
-                                                <Box sx={{flexGrow: 1}}/>
-
+                                    <Grid container spacing={2}>
+                                        {assessments.map((assessment, index) => (
+                                            <Grid item xs={12} md={6} lg={4} key={index}>
                                                 <Box
                                                     sx={{
-                                                        alignSelf: "flex-end",
-                                                        fontWeight: 400,
-                                                        fontSize: 14,
-                                                        color: "#FE6A00",
+                                                        p: 2,
+                                                        borderRadius: 2,
+                                                        bgcolor: "#FFFFFF1A",
+                                                        color: "#fff",
+                                                        height: "100%",
                                                         display: "flex",
-                                                        alignItems: "center",
-                                                        transition: "0.5s",
-                                                        cursor: "pointer",
-                                                        mt: {xs: 3},
-                                                        '&:hover': {
-                                                            color: "#fff",
-                                                        },
+                                                        flexDirection: "column",
+                                                        ml: {xs: 2, md: 0}
                                                     }}
-                                                    onClick={() => handleAssessmentClick(index)}
                                                 >
-                                                    TAKE ASSESSMENT <KeyboardDoubleArrowRightIcon/>
+                                                    <Box display="flex" alignItems="center"
+                                                         sx={{justifyContent: "space-Between"}} mb={1.5}>
+                                                        <Box sx={{display: "flex", alignItems: "center"}}>
+                                                            <img
+                                                                src={assessment.img}
+                                                                alt={assessment.title}
+                                                                style={{
+                                                                    width: 40,
+                                                                    height: 40,
+                                                                    borderRadius: "50%",
+                                                                    marginRight: 12,
+                                                                }}
+                                                            />
+                                                            <Box display="flex" flexDirection="column">
+                                                                <Box fontWeight={600} sx={{
+                                                                    fontSize: {xs: 16, md: 17},
+                                                                    display: "flex",
+                                                                    alignItems: "center"
+                                                                }}>
+                                                                    {assessment.icon} <span
+                                                                    style={{marginLeft: 6}}>{assessment.title}</span>
+                                                                </Box>
+                                                                {assessment.subTitle && (
+                                                                    <Box sx={{
+                                                                        fontSize: 14,
+                                                                        color: "#fff",
+                                                                        fontWeight: 400,
+                                                                    }}>
+                                                                        {assessment.subTitle}
+                                                                    </Box>
+                                                                )}
+                                                            </Box>
+                                                        </Box>
+                                                        <IconButton
+                                                            onClick={() => handleOpen(index)}
+                                                            sx={{
+                                                                backgroundColor: "#FE6A00",
+                                                                color: "#fff",
+                                                                p: 0.3,
+                                                                borderRadius: 2,
+                                                                "&:hover": {
+                                                                    backgroundColor: "#FE6A00"
+                                                                }
+                                                            }}
+                                                        >
+                                                            <ShareIcon/>
+                                                        </IconButton>
+
+                                                    </Box>
+
+                                                    <Box color="#CBD5E1" mb={2} sx={{fontSize: 14}}>
+                                                        {assessment.description}
+                                                    </Box>
+
+                                                    <Box display="flex" gap={1} alignItems="center" mt={2}>
+                                                        <Box
+                                                            sx={{
+                                                                bgcolor: "#FFFFFF33",
+                                                                px: 1.5,
+                                                                py: 0.5,
+                                                                fontSize: 12,
+                                                                color: "#fff",
+                                                                borderRadius: 10,
+                                                            }}
+                                                        >
+                                                            {assessment.questions}
+                                                        </Box>
+                                                        <Box
+                                                            sx={{
+                                                                bgcolor: "#FFFFFF33",
+                                                                px: 1.5,
+                                                                py: 0.5,
+                                                                fontSize: 12,
+                                                                color: "#fff",
+                                                                borderRadius: 10,
+                                                            }}
+                                                        >
+                                                            {assessment.time}
+                                                        </Box>
+                                                    </Box>
+
+                                                    <Box sx={{flexGrow: 1}}/>
+
+                                                    <Box
+                                                        sx={{
+                                                            alignSelf: "flex-end",
+                                                            fontWeight: 400,
+                                                            fontSize: 14,
+                                                            color: "#FE6A00",
+                                                            display: "flex",
+                                                            alignItems: "center",
+                                                            transition: "0.5s",
+                                                            cursor: "pointer",
+                                                            mt: {xs: 3},
+                                                            '&:hover': {
+                                                                color: "#fff",
+                                                            },
+                                                        }}
+                                                        onClick={() => handleAssessmentClick(index)}
+                                                    >
+                                                        TAKE ASSESSMENT <KeyboardDoubleArrowRightIcon/>
+                                                    </Box>
                                                 </Box>
-                                            </Box>
-                                        </Grid>
-                                    ))}
+                                            </Grid>
+                                        ))}
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Box>
                 </Box>
-            </Box>
-            <Dialog open={open}  onClose={handleClose}>
-                <DialogTitle>Share this URL</DialogTitle>
-                <DialogContent>
-                    <TextField fullWidth value={assessmentUrl} InputProps={{readOnly: true}} sx={{mt: 1}}/>
-                    <Button variant="contained" onClick={handleCopy} sx={{mt: 2}}>Copy URL</Button>
-                    <ToastContainer />
-                </DialogContent>
-            </Dialog>
-        </Container>
+                <Dialog open={open} onClose={handleClose}>
+                    <DialogTitle>Share this URL</DialogTitle>
+                    <DialogContent>
+                        <TextField fullWidth value={assessmentUrl} InputProps={{readOnly: true}} sx={{mt: 1}}/>
+                        <Button variant="contained" onClick={handleCopy} sx={{mt: 2}}>Copy URL</Button>
+                        <ToastContainer/>
+                    </DialogContent>
+                </Dialog>
+            </Container>
         </Box>
     );
 }

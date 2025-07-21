@@ -37,11 +37,14 @@ const services = [
 
 const contactDetails = {
     emails: [
-        { icon: <MailOutlineIcon />, value: "connect@emotionallyours.com" },
+        {icon: <MailOutlineIcon/>, value: "connect@emotionallyours.com"},
     ],
     addresses: [
-        { icon: <LocationOnIcon />, value: "HO: B-204, Kanakia Wall Street, Chakala, Andheri-Kurla Road, Andheri East, Mumbai-400093." },
-        { icon: <PinDropIcon />, value: "RO: B-205, Noida One, Sector 62, Noida, Uttar Pradesh 201309" }
+        {
+            icon: <LocationOnIcon/>,
+            value: "HO: B-204, Kanakia Wall Street, Chakala, Andheri-Kurla Road, Andheri East, Mumbai-400093."
+        },
+        {icon: <PinDropIcon/>, value: "RO: B-205, Noida One, Sector 62, Noida, Uttar Pradesh 201309"}
     ]
 };
 const paymentMethods = ["VISA", "MC", "AMEX", "HSA"];
@@ -243,7 +246,7 @@ const Footer = () => {
                                         textAlign: "justify",
                                     }}
                                 >
-                                    <Box sx={{ color: "#FE6A00", mr: 1 }}>
+                                    <Box sx={{color: "#FE6A00", mr: 1}}>
                                         {email.icon}
                                     </Box>
                                     {email.value}
@@ -261,7 +264,7 @@ const Footer = () => {
                                         textAlign: "justify",
                                     }}
                                 >
-                                    <Box sx={{ color: "#FE6A00", mr: 1 }}>
+                                    <Box sx={{color: "#FE6A00", mr: 1}}>
                                         {address.icon}
                                     </Box>
                                     {address.value}
