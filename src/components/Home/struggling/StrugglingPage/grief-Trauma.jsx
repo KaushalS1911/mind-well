@@ -11,7 +11,7 @@ import {
     TextField,
     FormControl, InputLabel, Select, MenuItem
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
 import SpaIcon from '@mui/icons-material/Spa';
@@ -26,7 +26,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Image imports (retained from original)
@@ -40,13 +40,13 @@ const griefTraumaData = {
     image: img2,
     image1: img9,
     firstimage: img16,
-    icon: <SelfImprovementIcon />,
+    icon: <SelfImprovementIcon/>,
     solutionIcons: [
-        <SpaIcon fontSize="large" />,
-        <LightbulbIcon fontSize="large" />,
-        <HeadphonesIcon fontSize="large" />,
-        <FitnessCenterIcon fontSize="large" />,
-        <BalanceIcon fontSize="large" />,
+        <SpaIcon fontSize="large"/>,
+        <LightbulbIcon fontSize="large"/>,
+        <HeadphonesIcon fontSize="large"/>,
+        <FitnessCenterIcon fontSize="large"/>,
+        <BalanceIcon fontSize="large"/>,
     ],
     sections: [
         {
@@ -174,7 +174,7 @@ const textBody = '#4B5563';
 
 const doodleSVG = (
     <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="30" cy="30" r="28" stroke={secondary} strokeWidth="2" strokeDasharray="6 6" />
+        <circle cx="30" cy="30" r="28" stroke={secondary} strokeWidth="2" strokeDasharray="6 6"/>
     </svg>
 );
 
@@ -214,12 +214,12 @@ const GriefTrauma = () => {
     const genderOptions = ["Male", "Female", "Other"];
 
 // Age options (1 to 100)
-    const ageOptions = Array.from({ length: 100 }, (_, i) => i + 1);
+    const ageOptions = Array.from({length: 100}, (_, i) => i + 1);
 
     const [errors, setErrors] = useState({});
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setFormData((prevData) => ({
             ...prevData,
             [name]: value
@@ -251,7 +251,7 @@ const GriefTrauma = () => {
             };
             await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
             toast.success("Your message has been sent successfully! We'll get back to you shortly.");
-            setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+            setFormData({name: '', email: '', phone: '', age: '', message: ''});
             setErrors({});
         } catch (error) {
             console.error('API Error:', error);
@@ -287,11 +287,11 @@ const GriefTrauma = () => {
                     backgroundRepeat: "no-repeat",
                 }}
             >
-                <Container sx={{ position: 'relative', zIndex: 2 ,mt:5}}>
+                <Container sx={{position: 'relative', zIndex: 2, mt: 5}}>
                     <Typography
                         className="Montserrat"
                         sx={{
-                            fontSize: { xs: '1.7rem', sm: '1.85rem', md: '2rem', lg: '2.125rem' },
+                            fontSize: {xs: '1.7rem', sm: '1.85rem', md: '2rem', lg: '2.125rem'},
                             fontWeight: 800,
                             color: secondary,
                             mb: 2,
@@ -299,10 +299,10 @@ const GriefTrauma = () => {
                     >
                         Grief & Trauma
                     </Typography>
-                    <Divider sx={{ backgroundColor: secondary, height: 4, width: 120, margin: 'auto', my: 3 }} />
+                    <Divider sx={{backgroundColor: secondary, height: 4, width: 120, margin: 'auto', my: 3}}/>
                     <Typography
                         variant="h6"
-                        sx={{ fontWeight: 400, maxWidth: 800, mx: 'auto', fontFamily: 'Arial', lineHeight: 1.6 }}
+                        sx={{fontWeight: 400, maxWidth: 800, mx: 'auto', fontFamily: 'Arial', lineHeight: 1.6}}
                     >
                         {data.description}
                     </Typography>
@@ -314,7 +314,7 @@ const GriefTrauma = () => {
                 sx={{
                     minHeight: '100vh',
                     pt: 8,
-                    mx: { xs: '20px', sm: '70px', md: '90px', xl: 'auto' },
+                    mx: {xs: '20px', sm: '70px', md: '90px', xl: 'auto'},
                     position: 'relative',
                     overflow: 'hidden',
                 }}
@@ -322,20 +322,20 @@ const GriefTrauma = () => {
                 <Container maxWidth="xl">
                     <Button
                         onClick={() => navigate(-1)}
-                        startIcon={<ArrowBackIcon />}
+                        startIcon={<ArrowBackIcon/>}
                         sx={{
                             mb: 4,
                             color: primary,
                             fontWeight: 600,
                             fontFamily: 'Montserrat',
-                            '&:hover': { backgroundColor: primary, color: 'white' },
+                            '&:hover': {backgroundColor: primary, color: 'white'},
                         }}
                     >
                         Back
                     </Button>
 
                     {/* Introduction Section */}
-                    <Grid container spacing={4} alignItems="center" sx={{ mb: { xs: 8, md: 12 } }}>
+                    <Grid container spacing={4} alignItems="center" sx={{mb: {xs: 8, md: 12}}}>
                         <Grid item xs={12} lg={5}>
                             <Box
                                 sx={{
@@ -351,10 +351,10 @@ const GriefTrauma = () => {
                                     alt={data.title}
                                     sx={{
                                         width: '100%',
-                                        height: { xs: 300, sm: 400, md: 450 },
+                                        height: {xs: 300, sm: 400, md: 450},
                                         objectFit: 'cover',
                                         transition: 'transform 0.3s',
-                                        '&:hover': { transform: 'scale(1.05)' },
+                                        '&:hover': {transform: 'scale(1.05)'},
                                     }}
                                 />
                                 <Box
@@ -371,7 +371,7 @@ const GriefTrauma = () => {
                         </Grid>
 
                         <Grid item xs={12} lg={7}>
-                            <Box sx={{ position: 'relative', px: { xs: 2, sm: 4 }, mt: { xs: 4, md: 0 } }}>
+                            <Box sx={{position: 'relative', px: {xs: 2, sm: 4}, mt: {xs: 4, md: 0}}}>
                                 <Typography
                                     className="Montserrat"
                                     variant="h2"
@@ -379,7 +379,7 @@ const GriefTrauma = () => {
                                         fontWeight: 800,
                                         color: primary,
                                         mb: 3,
-                                        fontSize: { xs: '1.7rem', sm: '1.85rem', md: '2rem', lg: '2.125rem' },
+                                        fontSize: {xs: '1.7rem', sm: '1.85rem', md: '2rem', lg: '2.125rem'},
                                     }}
                                 >
                                     {data.title}
@@ -391,7 +391,7 @@ const GriefTrauma = () => {
                                         mb: 4,
                                         maxWidth: 700,
                                         fontFamily: 'Arial',
-                                        fontSize: { xs: '1rem', sm: '1.1rem' },
+                                        fontSize: {xs: '1rem', sm: '1.1rem'},
                                         lineHeight: 1.7,
                                     }}
                                 >
@@ -426,7 +426,7 @@ const GriefTrauma = () => {
                                         right: -20,
                                         zIndex: 1,
                                         opacity: 0.7,
-                                        display: { xs: 'none', sm: 'block' },
+                                        display: {xs: 'none', sm: 'block'},
                                     }}
                                 >
                                     {heartSVG}
@@ -441,7 +441,7 @@ const GriefTrauma = () => {
                             <Paper
                                 elevation={3}
                                 sx={{
-                                    p: { xs: 3, sm: 5 },
+                                    p: {xs: 3, sm: 5},
                                     borderRadius: 4,
                                     background: 'white',
                                     boxShadow: '0 8px 32px rgba(1,39,101,0.15)',
@@ -460,14 +460,14 @@ const GriefTrauma = () => {
                                         background: `linear-gradient(to right, ${primary}, ${secondary})`,
                                     }}
                                 />
-                                <Box sx={{ backgroundColor: primary, color: 'white', p: 3, borderRadius: 2, mb: 4 }}>
-                                    <Typography variant="h5" className="Montserrat" sx={{ fontWeight: 700 }}>
+                                <Box sx={{backgroundColor: primary, color: 'white', p: 3, borderRadius: 2, mb: 4}}>
+                                    <Typography variant="h5" className="Montserrat" sx={{fontWeight: 700}}>
                                         Understanding Grief & Trauma
                                     </Typography>
                                 </Box>
 
                                 {data.sections.map((section, index) => (
-                                    <Box key={index} sx={{ mb: 5 }}>
+                                    <Box key={index} sx={{mb: 5}}>
                                         <Typography
                                             variant="h6"
                                             sx={{
@@ -482,7 +482,7 @@ const GriefTrauma = () => {
                                             {section.title}
                                         </Typography>
                                         {section.content.map((item, idx) => (
-                                            <Box key={idx} sx={{ mb: 3 }}>
+                                            <Box key={idx} sx={{mb: 3}}>
                                                 {item.subtitle && (
                                                     <Typography
                                                         variant="subtitle1"
@@ -504,7 +504,7 @@ const GriefTrauma = () => {
                                                         color: textBody,
                                                         fontFamily: 'Arial',
                                                         lineHeight: 1.7,
-                                                        fontSize: { xs: '0.95rem', sm: '1rem' },
+                                                        fontSize: {xs: '0.95rem', sm: '1rem'},
                                                         whiteSpace: 'pre-line',
                                                     }}
                                                 >
@@ -1044,13 +1044,14 @@ const GriefTrauma = () => {
                             sx={{
                                 mb: 2,
                                 fontWeight: 600,
-                                fontSize: { xs: '1.7rem', sm: '1.85rem', md: '2rem', lg: '2.125rem' },
+                                fontSize: {xs: '1.7rem', sm: '1.85rem', md: '2rem', lg: '2.125rem'},
                             }}
                         >
                             Ready to Begin Your Healing Journey?
                         </Typography>
-                        <Typography sx={{ mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial' }}>
-                            Our counselors are trained to help you navigate grief and trauma with professional guidance tailored to your unique situation
+                        <Typography sx={{mb: 4, maxWidth: 700, mx: 'auto', fontFamily: 'Arial'}}>
+                            Our counselors are trained to help you navigate grief and trauma with professional guidance
+                            tailored to your unique situation
                         </Typography>
                         {/*<Button*/}
                         {/*    variant="contained"*/}

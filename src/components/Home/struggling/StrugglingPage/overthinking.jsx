@@ -25,7 +25,7 @@ import SupportIcon from '@mui/icons-material/Support';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Image imports (retained from original)
@@ -226,12 +226,12 @@ const Overthinking = () => {
     const genderOptions = ["Male", "Female", "Other"];
 
 // Age options (1 to 100)
-    const ageOptions = Array.from({ length: 100 }, (_, i) => i + 1);
+    const ageOptions = Array.from({length: 100}, (_, i) => i + 1);
 
     const [errors, setErrors] = useState({});
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setFormData((prevData) => ({
             ...prevData,
             [name]: value
@@ -263,7 +263,7 @@ const Overthinking = () => {
             };
             await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
             toast.success("Your message has been sent successfully! We'll get back to you shortly.");
-            setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+            setFormData({name: '', email: '', phone: '', age: '', message: ''});
             setErrors({});
         } catch (error) {
             console.error('API Error:', error);
@@ -326,7 +326,7 @@ const Overthinking = () => {
                 sx={{
                     minHeight: '100vh',
                     pt: 8,
-                    mx: { xs: '20px', sm: '70px', md: '90px', xl: 'auto' },
+                    mx: {xs: '20px', sm: '70px', md: '90px', xl: 'auto'},
                     position: 'relative',
                     overflow: 'hidden',
                 }}

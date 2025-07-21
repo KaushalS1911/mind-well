@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Container, Grid, Paper, Typography, Avatar } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import {Box, Container, Grid, Paper, Typography, Avatar} from '@mui/material';
+import {styled} from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
 import img1 from '../../assets/images/about/Founder/Pandey Nidhi.png';
 import img2 from '../../assets/images/about/Founder/Devesh Kumar.png';
@@ -16,7 +16,7 @@ import img10 from '../../assets/images/about/Founder/chaman1.png';
 import {LinkedIn} from "@mui/icons-material";
 
 
-const StyledPaper = styled(Paper)(({ theme }) => ({
+const StyledPaper = styled(Paper)(({theme}) => ({
     padding: theme.spacing(3),
     height: '100%',
     backgroundColor: '#FFFFFF',
@@ -57,7 +57,7 @@ const AvatarWrapper = styled(Box)(() => ({
     },
 }));
 
-const StyledAvatar = styled(Avatar)(({ theme }) => ({
+const StyledAvatar = styled(Avatar)(({theme}) => ({
     width: 120,
     height: 120,
     backgroundColor: '#FFFFFF',
@@ -103,7 +103,7 @@ const Description = styled(Typography)(() => ({
 const founders = [
     {
         img: img1,
-        qr:img6,
+        qr: img6,
         role: "Founder & Director",
         name: "Pandey Nidhi",
         description: "Mass-com Graduate with experience in Media and Entertainment transitioned herself to a Therapeutic Counsellor",
@@ -111,7 +111,7 @@ const founders = [
     },
     {
         img: img2,
-        qr:img7,
+        qr: img7,
         role: "Founder & CBO",
         name: "Devesh Tripathi",
         description: "MBA from IIT(Dhanbad) with over 24 years of experience in Corporate World. A Mental Health Advocate and Life Coach",
@@ -119,7 +119,7 @@ const founders = [
     },
     {
         img: img3,
-        qr:img8,
+        qr: img8,
         role: "Founder & Director",
         name: "Ashutosh Mishra",
         description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid",
@@ -145,9 +145,9 @@ const founders = [
 ];
 
 
-const Founders = ({ icon = <PersonIcon /> }) => {
+const Founders = ({icon = <PersonIcon/>}) => {
     return (
-        <Box sx={{ padding: '0 0 96px 0' }}>
+        <Box sx={{padding: '0 0 96px 0'}}>
             <Container maxWidth="xl">
                 <Typography
                     className={"Montserrat"}
@@ -209,7 +209,7 @@ const Founders = ({ icon = <PersonIcon /> }) => {
                                 <Name>{founder.name}</Name>
                                 <Description>{founder.description}</Description>
                                 {founder.link && (
-                                    <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+                                    <Box sx={{mt: 2, display: 'flex', justifyContent: 'center'}}>
                                         <Box
                                             component="a"
                                             href={founder.link}
@@ -230,7 +230,7 @@ const Founders = ({ icon = <PersonIcon /> }) => {
                                                 },
                                             }}
                                         >
-                                            <LinkedIn sx={{ fontSize: 28 }} />
+                                            <LinkedIn sx={{fontSize: 28}}/>
                                         </Box>
                                     </Box>
                                 )}

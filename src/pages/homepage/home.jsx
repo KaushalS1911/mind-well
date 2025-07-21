@@ -36,7 +36,7 @@ import GallerySection from "../../components/Home/GallerySection.jsx";
 
 function Home() {
     return (
-        <Box >
+        <Box>
             <WorkPlaceHeroSection/>
             {/*<Herosection/>*/}
             <Overview/>
@@ -48,7 +48,7 @@ function Home() {
             <HowEmotionallyYoursWorksInHigherEducation/>
             <HowEmotionallyYoursinCoachingInstitute/>
             <HowEmotionallyYoursinWorkplaces/>
-            <Assessments sx={{ p: {sm:"96px 0 0 0",xs:"50px 0 0 0"}}}/>
+            <Assessments sx={{p: {sm: "96px 0 0 0", xs: "50px 0 0 0"}}}/>
             <Struggling/>
             {/*<EmployeeMentalHealth/>*/}
             <GallerySection/>

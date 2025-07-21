@@ -26,7 +26,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Replace with actual image paths
@@ -259,7 +259,7 @@ const StressAnxiety = () => {
     const [errors, setErrors] = useState({});
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setFormData((prevData) => ({
             ...prevData,
             [name]: value
@@ -270,7 +270,7 @@ const StressAnxiety = () => {
     const genderOptions = ["Male", "Female", "Other"];
 
 // Age options (1 to 100)
-    const ageOptions = Array.from({ length: 100 }, (_, i) => i + 1);
+    const ageOptions = Array.from({length: 100}, (_, i) => i + 1);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import {
     Grid,
@@ -6,7 +6,7 @@ import {
     Container,
     Box
 } from "@mui/material";
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Import extracted components
@@ -58,7 +58,7 @@ const GetInTouch = () => {
     };
 
     return (
-        <Box component="section" sx={{ mx: { xs: '20px', sm: '70px', md: '90px', xl: '100px' } }}>
+        <Box component="section" sx={{mx: {xs: '20px', sm: '70px', md: '90px', xl: '100px'}}}>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -72,7 +72,7 @@ const GetInTouch = () => {
                 theme="light"
             />
 
-            <Container maxWidth="xl" sx={{ pt: 12, mt: { md: 10, sm: 0 } }}>
+            <Container maxWidth="xl" sx={{pt: 12, mt: {md: 10, sm: 0}}}>
                 <Box
                     sx={{
                         textAlign: "center",
@@ -95,7 +95,7 @@ const GetInTouch = () => {
                                 md: '2rem',
                                 lg: '2.125rem'
                             },
-                            lineHeight: { xs: "32px", sm: "40px" },
+                            lineHeight: {xs: "32px", sm: "40px"},
                             fontWeight: "700"
                         }}
                     >
@@ -105,7 +105,7 @@ const GetInTouch = () => {
                         sx={{
                             color: "#4F4F4F",
                             maxWidth: "600px",
-                            fontSize: { xs: '0.99rem', sm: '1rem', md: '1.2rem' },
+                            fontSize: {xs: '0.99rem', sm: '1rem', md: '1.2rem'},
                             textAlign: "center"
                         }}
                     >
@@ -125,13 +125,13 @@ const GetInTouch = () => {
                     </Grid>
 
                     <Grid item xs={12} lg={6}>
-                        <ContactInfo />
+                        <ContactInfo/>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={6}>
-                                <BusinessHours />
+                                <BusinessHours/>
                             </Grid>
                             <Grid item xs={12} md={6}>
-                                <SocialMedia />
+                                <SocialMedia/>
                             </Grid>
                         </Grid>
                     </Grid>

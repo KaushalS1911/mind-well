@@ -1,5 +1,19 @@
 import React, {useState} from 'react';
-import {Box, Container, Typography, Grid, Paper, Button, Divider, IconButton, TextField,FormControl, InputLabel, Select, MenuItem} from '@mui/material';
+import {
+    Box,
+    Container,
+    Typography,
+    Grid,
+    Paper,
+    Button,
+    Divider,
+    IconButton,
+    TextField,
+    FormControl,
+    InputLabel,
+    Select,
+    MenuItem
+} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
@@ -15,7 +29,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Image imports (retained from original)
@@ -189,7 +203,6 @@ const heartSVG = (
 );
 
 
-
 const Relationship = () => {
     const navigate = useNavigate();
     const data = relationshipData;
@@ -216,12 +229,12 @@ const Relationship = () => {
     const genderOptions = ["Male", "Female", "Other"];
 
 // Age options (1 to 100)
-    const ageOptions = Array.from({ length: 100 }, (_, i) => i + 1);
+    const ageOptions = Array.from({length: 100}, (_, i) => i + 1);
 
     const [errors, setErrors] = useState({});
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setFormData((prevData) => ({
             ...prevData,
             [name]: value
@@ -253,14 +266,13 @@ const Relationship = () => {
             };
             await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
             toast.success("Your message has been sent successfully! We'll get back to you shortly.");
-            setFormData({ name: '', email: '', phone: '', age: '', message: '' });
+            setFormData({name: '', email: '', phone: '', age: '', message: ''});
             setErrors({});
         } catch (error) {
             console.error('API Error:', error);
             toast.error('Failed to send your message. Please try again later.');
         }
     };
-
 
 
     return (
@@ -291,7 +303,7 @@ const Relationship = () => {
                     backgroundRepeat: "no-repeat",
                 }}
             >
-                <Container sx={{position: 'relative', zIndex: 2,mt:5}}>
+                <Container sx={{position: 'relative', zIndex: 2, mt: 5}}>
                     <Typography
                         className="Montserrat"
                         sx={{
@@ -320,7 +332,7 @@ const Relationship = () => {
                     pt: 8,
                     position: 'relative',
                     overflow: 'hidden',
-                    mx: { xs: '20px', sm: '70px', md: '90px', xl: 'auto' }
+                    mx: {xs: '20px', sm: '70px', md: '90px', xl: 'auto'}
                 }}
             >
                 <Container maxWidth="xl">
@@ -497,7 +509,7 @@ const Relationship = () => {
                                             {section.title}
                                         </Typography>
                                         {section.content.map((item, idx) => (
-                                            <Box key={idx} sx={{mb: 3,textAlign:"justify"}}>
+                                            <Box key={idx} sx={{mb: 3, textAlign: "justify"}}>
                                                 {item.subtitle && (
                                                     <Typography
                                                         variant="subtitle1"
