@@ -89,7 +89,9 @@ function Navigation() {
                 // {label: "Forms", path: "/resources/forms"},
                 {label: "Blogs", path: "/resources/blogs"},],
         }, // {label: "Session", path: "/session"},
-        {label: "Careers", path: "/careers"}, {label: "Contact Us", path: "/contact"},];
+        {label: "Careers", path: "/careers"},
+        // {label: "Book Appointment", path: "/book-appointment"},
+        {label: "Contact Us", path: "/contact"},];
 
     return (<Box>
         <AppBar

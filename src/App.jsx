@@ -71,6 +71,8 @@ import ChildLearningAbilityQuestions
     from "./components/resources/Child-Learning-Ability/ChildLearningAbilityQuestions.jsx";
 import ChildLearningAbilityAssessmentForm
     from "./components/resources/Child-Learning-Ability/ChildLearningAbilityAssessmentForm.jsx";
+import BookAppointmentPage from "./pages/BookAppointmentPage.jsx";
+import BookAppointment from "./components/BookAppointment/BookAppointment.jsx";
 
 function App() {
     function ScrollToTop() {
@@ -99,6 +101,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/home1" element={<SessionPage/>}/>
+                <Route path="/home2" element={<BookAppointment/>}/>
                 {/*<Route path="/home1" element={<Struggling/>}/>*/}
                 <Route path="/about" element={<About/>}/>
                 <Route path="/Services" element={<Services/>}/>
@@ -134,6 +137,7 @@ function App() {
                 <Route path="/struggling/bullying" element={<Bullying/>}/>
                 <Route path="/struggling/overthinking" element={<Overthinking/>}/>
                 <Route path="/struggling/careerUncertainty" element={<CareerUncertainty/>}/>
+                <Route path="/book-appointment" element={<BookAppointmentPage/>}/>
                 <Route path="/:id/session" element={<SingleSession/>}/>
                 <Route
                     path="/assessments/exam-stress"
