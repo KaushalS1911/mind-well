@@ -17,7 +17,7 @@ import {
   TextField,
   Container,
 } from '@mui/material';
-import { format, addDays } from 'date-fns';
+import { format as formatDate, addDays, parse } from 'date-fns';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -90,7 +90,7 @@ const getNext7Days = () => {
 const BookAppointment = () => {
   const days = getNext7Days();
   const [selectedCounselorIdx, setSelectedCounselorIdx] = useState(0);
-  const [selectedDate, setSelectedDate] = useState(format(days[0], 'yyyy-MM-dd'));
+  const [selectedDate, setSelectedDate] = useState(formatDate(days[0], 'yyyy-MM-dd'));
   const [selectedSlot, setSelectedSlot] = useState('');
   const [formOpen, setFormOpen] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
@@ -205,7 +205,7 @@ const BookAppointment = () => {
             '&::-webkit-scrollbar': { display: 'none' },
           }}>
             {days.map((date) => {
-              const dateStr = format(date, 'yyyy-MM-dd');
+              const dateStr = formatDate(date, 'yyyy-MM-dd');
               const isSelected = selectedDate === dateStr;
               return (
                 <Button
@@ -236,8 +236,8 @@ const BookAppointment = () => {
                   startIcon={isSelected ? <CalendarTodayIcon sx={{ fontSize: 18 }} /> : null}
                 >
                   <Box>
-                    <Typography variant="body2" fontWeight={700}>{format(date, 'EEE')}</Typography>
-                    <Typography variant="caption">{format(date, 'd MMM')}</Typography>
+                    <Typography variant="body2" fontWeight={700}>{formatDate(date, 'EEE')}</Typography>
+                    <Typography variant="caption">{formatDate(date, 'd MMM')}</Typography>
                   </Box>
                 </Button>
               );
@@ -254,31 +254,36 @@ const BookAppointment = () => {
                 <Typography variant="body2" sx={{ color: ACCENT_ORANGE, fontWeight: 600 }}>No slots available for this day.</Typography>
               </Grid>
             ) : (
-              slots.map((slot) => (
-                <Grid item key={slot} xs="auto">
-                  <Chip
-                    label={slot}
-                    clickable
-                    color={selectedSlot === slot ? 'primary' : 'default'}
-                    onClick={() => setSelectedSlot(slot)}
-                    sx={{
-                      borderRadius: 2,
-                      bgcolor: selectedSlot === slot ? ACCENT_ORANGE : WHITE,
-                      color: selectedSlot === slot ? WHITE : PRIMARY_BLUE,
-                      border: `2px solid ${ACCENT_ORANGE}`,
-                      fontWeight: 700,
-                      fontSize: '1rem',
-                      minWidth: 80,
-                      boxShadow: selectedSlot === slot ? 2 : 0,
-                      transition: 'all 0.18s',
-                      '&:hover': {
-                        bgcolor: ACCENT_ORANGE,
-                        color: WHITE,
-                      },
-                    }}
-                  />
-                </Grid>
-              ))
+              slots.map((slot) => {
+                // Convert 'HH:mm' to AM/PM format
+                const parsed = parse(slot, 'HH:mm', new Date());
+                const ampm = formatDate(parsed, 'h:mm a');
+                return (
+                  <Grid item key={slot} xs="auto">
+                    <Chip
+                      label={ampm}
+                      clickable
+                      color={selectedSlot === slot ? 'primary' : 'default'}
+                      onClick={() => setSelectedSlot(slot)}
+                      sx={{
+                        borderRadius: 2,
+                        bgcolor: selectedSlot === slot ? ACCENT_ORANGE : WHITE,
+                        color: selectedSlot === slot ? WHITE : PRIMARY_BLUE,
+                        border: `2px solid ${ACCENT_ORANGE}`,
+                        fontWeight: 700,
+                        fontSize: '1rem',
+                        minWidth: 80,
+                        boxShadow: selectedSlot === slot ? 2 : 0,
+                        transition: 'all 0.18s',
+                        '&:hover': {
+                          bgcolor: ACCENT_ORANGE,
+                          color: WHITE,
+                        },
+                      }}
+                    />
+                  </Grid>
+                );
+              })
             )}
           </Grid>
 
@@ -363,8 +368,12 @@ const BookAppointment = () => {
                 fullWidth
                 margin="normal"
                 multiline
-                minRows={2}
-                InputProps={{ startAdornment: <DescriptionIcon sx={{ color: PRIMARY_BLUE, mr: 1, alignSelf: 'flex-start', mt: 1 }} /> }}
+                minRows={4}
+                maxRows={8}
+                InputProps={{
+                  startAdornment: <DescriptionIcon sx={{ color: PRIMARY_BLUE, mr: 1, alignSelf: 'flex-start', mt: 1 }} />,
+                  style: { alignItems: 'flex-start' },
+                }}
               />
               <DialogActions sx={{ px: 0, pt: 2 }}>
                 <Button onClick={() => setFormOpen(false)} sx={{ color: PRIMARY_BLUE, fontWeight: 700 }}>
@@ -394,23 +403,22 @@ const BookAppointment = () => {
         </Dialog>
 
         {/* Success Snackbar */}
-        <Snackbar
-          open={successOpen}
-          autoHideDuration={2000}
-          onClose={handleCloseSuccess}
-          message="Appointment booked successfully!"
-          anchorOrigin={{ vertical: 'end', horizontal: 'right' }}
-          ContentProps={{
-            sx: {
-              bgcolor: ACCENT_ORANGE,
-              color: WHITE,
-              fontWeight: 700,
-              fontSize: '1.15rem',
-              borderRadius: 2,
-              boxShadow: 3,
-            },
-          }}
-        />
+        {/* Replacing Snackbar with Dialog */}
+        <Dialog open={successOpen} onClose={handleCloseSuccess} maxWidth="xs" fullWidth PaperProps={{ sx: { borderRadius: 4, background: 'linear-gradient(135deg, #fff7f0 0%, #f8fafc 100%)' } }}>
+          <DialogTitle sx={{ fontFamily: FONT_FAMILY, color: PRIMARY_BLUE, fontWeight: 800, fontSize: '1.3rem', textAlign: 'center', letterSpacing: 0.5, pb: 0 }}>
+            Appointment Booked Successfully!
+          </DialogTitle>
+          <DialogContent>
+            <Typography sx={{ color: PRIMARY_BLUE, fontWeight: 600, textAlign: 'center', mt: 1, mb: 2 }}>
+              Thank you for booking your appointment. We look forward to seeing you!
+            </Typography>
+          </DialogContent>
+          <DialogActions sx={{ justifyContent: 'center', pb: 2 }}>
+            <Button onClick={handleCloseSuccess} variant="contained" sx={{ bgcolor: ACCENT_ORANGE, color: WHITE, fontWeight: 700, borderRadius: 2, px: 4, '&:hover': { bgcolor: '#FE6A00' } }}>
+              Close
+            </Button>
+          </DialogActions>
+        </Dialog>
       </Container>
     </Box>
   );
