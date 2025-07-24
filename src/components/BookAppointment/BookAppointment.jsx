@@ -415,7 +415,7 @@ const BookAppointment = () => {
           </DialogContent>
           <DialogActions sx={{ justifyContent: 'center', pb: 2 }}>
             <Button onClick={handleCloseSuccess} variant="contained" sx={{ bgcolor: ACCENT_ORANGE, color: WHITE, fontWeight: 700, borderRadius: 2, px: 4, '&:hover': { bgcolor: '#FE6A00' } }}>
-              Close
+              ok
             </Button>
           </DialogActions>
         </Dialog>
