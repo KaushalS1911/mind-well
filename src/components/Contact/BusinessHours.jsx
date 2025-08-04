@@ -9,8 +9,8 @@ const BusinessHours = () => (
             Business Hours
         </Typography>
         {BUSINESS_HOURS.map((entry, index) => (
-            <Box key={index} sx={{display: "flex", justifyContent: "space-between", mt: 1}}>
-                <Typography>{entry.day} :</Typography>
+            <Box key={index} sx={{display: "flex", mt: 1}}>
+                <Typography sx={{mr:0.5}}>{entry.day} :</Typography>
                 <Typography>{entry.time}</Typography>
             </Box>
         ))}
