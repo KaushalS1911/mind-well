@@ -212,23 +212,44 @@ const Bullying = () => {
         age: '',
         message: '',
         gender: '',
+        callbackRequest: '',
+        termsAccepted: false,
     });
 
     const [errors, setErrors] = useState({});
 
     const handleInputChange = (e) => {
-        const {name, value} = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [name]: value
-        }));
+        const {name, value, type, checked} = e.target;
+        setFormData((prevData) => {
+            const newData = {
+                ...prevData,
+                [name]: type === 'checkbox' ? checked : value
+            };
+            
+            // Reset age when callback request changes
+            if (name === 'callbackRequest') {
+                newData.age = '';
+            }
+            
+            return newData;
+        });
     };
 
     // Gender options
-    const genderOptions = ["Male", "Female", "Other"];
+    const genderOptions = ["Male", "Female", "Third"];
+    
+    // Callback request options
+    const callbackRequestOptions = ["Self (18+)", "Child (1 to 25)"];
 
-// Age options (1 to 100)
-    const ageOptions = Array.from({length: 100}, (_, i) => i + 1);
+    // Age options based on callback request selection
+    const getAgeOptions = (callbackRequest) => {
+        if (callbackRequest === "Self (18+)") {
+            return Array.from({length: 83}, (_, i) => i + 18); // 18 to 100
+        } else if (callbackRequest === "Child (1 to 25)") {
+            return Array.from({length: 25}, (_, i) => i + 1); // 1 to 25
+        }
+        return []; // Default empty array
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -241,6 +262,11 @@ const Bullying = () => {
         if (!(formData.age ?? '').toString().trim()) newErrors.age = 'Age is required';
         else if (+formData.age < 1 || +formData.age > 120) newErrors.age = 'Enter a valid age between 1 and 120';
         if (!formData.message.trim()) newErrors.message = 'Message is required';
+        
+        if (!formData.callbackRequest) newErrors.callbackRequest = 'Callback request is required';
+        
+        if (!formData.termsAccepted) newErrors.termsAccepted = 'Please accept the terms and conditions';
+
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
@@ -255,7 +281,16 @@ const Bullying = () => {
             };
             await axios.post('https://interactapiverse.com/mahadevasth/enquiry', payload);
             toast.success("Your message has been sent successfully! We'll get back to you shortly.");
-            setFormData({name: '', email: '', phone: '', age: '', message: ''});
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                age: '',
+                message: '',
+                gender: '',
+                callbackRequest: '',
+                termsAccepted: false,
+            });
             setErrors({});
         } catch (error) {
             console.error('API Error:', error);
@@ -705,6 +740,25 @@ const Bullying = () => {
                                             </FormControl>
                                         </Grid>
 
+                                        {/* Callback Request Dropdown */}
+                                        <Grid item xs={12}>
+                                            <FormControl fullWidth required sx={formFieldStyle} error={!!errors.callbackRequest}>
+                                                <InputLabel>Callback Request</InputLabel>
+                                                <Select
+                                                    name="callbackRequest"
+                                                    value={formData.callbackRequest}
+                                                    onChange={handleInputChange}
+                                                    label="Callback Request"
+                                                >
+                                                    {callbackRequestOptions.map((option) => (
+                                                        <MenuItem key={option} value={option}>
+                                                            {option}
+                                                        </MenuItem>
+                                                    ))}
+                                                </Select>
+                                            </FormControl>
+                                        </Grid>
+
                                         {/* Age Dropdown */}
                                         <Grid item xs={12}>
                                             <FormControl fullWidth required sx={formFieldStyle} error={!!errors.age}>
@@ -714,8 +768,24 @@ const Bullying = () => {
                                                     value={formData.age}
                                                     onChange={handleInputChange}
                                                     label="Age"
+                                                    disabled={!formData.callbackRequest}
+                                                    MenuProps={{
+                                                        PaperProps: {
+                                                            style: {
+                                                                maxHeight: 200,
+                                                            },
+                                                        },
+                                                        anchorOrigin: {
+                                                            vertical: 'bottom',
+                                                            horizontal: 'left',
+                                                        },
+                                                        transformOrigin: {
+                                                            vertical: 'top',
+                                                            horizontal: 'left',
+                                                        },
+                                                    }}
                                                 >
-                                                    {ageOptions.map((age) => (
+                                                    {getAgeOptions(formData.callbackRequest).map((age) => (
                                                         <MenuItem key={age} value={age}>
                                                             {age}
                                                         </MenuItem>
@@ -740,21 +810,60 @@ const Bullying = () => {
                                             />
                                         </Grid>
 
+                                        {/* Terms and Conditions Checkbox */}
+                                        <Grid item xs={12}>
+                                            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
+                                                <input
+                                                    type="checkbox"
+                                                    name="termsAccepted"
+                                                    checked={formData.termsAccepted}
+                                                    onChange={handleInputChange}
+                                                    style={{
+                                                        marginTop: '4px',
+                                                        accentColor: '#FF7F1E'
+                                                    }}
+                                                />
+                                                <Typography 
+                                                    variant="body2" 
+                                                    sx={{ 
+                                                        color: textBody, 
+                                                        fontSize: '0.875rem',
+                                                        lineHeight: 1.4
+                                                    }}
+                                                >
+                                                    I agree to the Terms and Conditions and consent to being contacted for callback requests.
+                                                </Typography>
+                                            </Box>
+                                            {errors.termsAccepted && (
+                                                <Typography 
+                                                    variant="caption" 
+                                                    sx={{ 
+                                                        color: 'error.main', 
+                                                        mt: 0.5,
+                                                        display: 'block'
+                                                    }}
+                                                >
+                                                    {errors.termsAccepted}
+                                                </Typography>
+                                            )}
+                                        </Grid>
+
                                         <Grid item xs={12}>
                                             <Button
                                                 type="submit"
                                                 variant="contained"
                                                 size="large"
+                                                disabled={!formData.termsAccepted}
                                                 sx={{
-                                                    backgroundColor: secondary,
+                                                    backgroundColor: formData.termsAccepted ? secondary : '#ccc',
                                                     py: 1.5,
                                                     fontFamily: "Montserrat",
                                                     fontWeight: 700,
                                                     borderRadius: 3,
                                                     transition: "transform 0.2s",
                                                     "&:hover": {
-                                                        backgroundColor: secondary,
-                                                        transform: "translateY(-3px)",
+                                                        backgroundColor: formData.termsAccepted ? secondary : '#ccc',
+                                                        transform: formData.termsAccepted ? "translateY(-3px)" : "none",
                                                     },
                                                 }}
                                             >
