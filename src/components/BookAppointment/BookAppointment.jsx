@@ -15,19 +15,33 @@ import {
     Chip,
     Paper,
     TextField,
-    Container,
+    Container, IconButton,
 } from '@mui/material';
 import {format as formatDate, addDays, parse} from 'date-fns';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+
+// Custom styles for counselor swiper
+const swiperStyles = `
+  .counselor-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+  
+  .counselor-swiper .swiper-slide {
+    height: auto;
+  }
+`;
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
 import DescriptionIcon from '@mui/icons-material/Description';
+import SchoolIcon from '@mui/icons-material/School';
 import StarIcon from '@mui/icons-material/Star';
-import { useFormik } from 'formik';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import {useFormik} from 'formik';
 import * as yup from 'yup';
 
 const PRIMARY_BLUE = '#012765';
@@ -65,6 +79,17 @@ const getNext7Days = () => {
 const BookAppointment = () => {
     const days = getNext7Days();
     const [selectedCounselorIdx, setSelectedCounselorIdx] = useState(0);
+
+    // Inject custom styles
+    useEffect(() => {
+        const style = document.createElement('style');
+        style.textContent = swiperStyles;
+        document.head.appendChild(style);
+
+        return () => {
+            document.head.removeChild(style);
+        };
+    }, []);
     const [selectedDate, setSelectedDate] = useState(formatDate(days[0], 'yyyy-MM-dd'));
     const [selectedSlot, setSelectedSlot] = useState('');
     const [formOpen, setFormOpen] = useState(false);
@@ -175,143 +200,309 @@ const BookAppointment = () => {
     return (
         <Box sx={{
             fontFamily: FONT_FAMILY,
-            mt: {xs: 8, md: 18},
+            mt: {xs: 6, sm: 8, md: 12, lg: 18},
+            px: {xs: 1, sm: 2, md: 3},
         }}>
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" sx={{px: {xs: 0, sm: 2}}}>
                 <Paper elevation={3} sx={{
-                    p: {xs: 2, sm: 5},
-                    borderRadius: 5,
+                    p: {xs: 2, sm: 3, md: 4, lg: 5},
+                    borderRadius: {xs: 3, sm: 4, md: 5},
                     background: 'rgba(255,255,255,0.95)',
                     boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.10)'
                 }}>
                     {/* Counselor Slider */}
-                    <Typography variant="subtitle1" sx={{
-                        color: PRIMARY_BLUE,
-                        fontWeight: 700,
-                        mb: 2,
-                        fontSize: '1.2rem',
-                        letterSpacing: 0.5
-                    }}>
-                        Choose Your Counselor
-                    </Typography>
-                    <Swiper
-                        modules={[Navigation]}
-                        navigation
-                        spaceBetween={24}
-                        slidesPerView={1}
-                        breakpoints={{
-                            600: {slidesPerView: 2},
-                            900: {slidesPerView: 3},
-                        }}
-                        style={{paddingBottom: 32}}
-                    >
-                        {counselors.map((c) => (
-                            <SwiperSlide key={c.user_id}>
-                                <Card
-                                    onClick={() => {
-                                        setSelectedCounselorIdx(counselors.findIndex(cou => cou.user_id === c.user_id));
-                                        setSelectedSlot('');
-                                    }}
+                    <Box sx={{mb: {xs: 3, sm: 4}, position: 'relative'}}>
+                        {/* Heading */}
+                        <Typography
+                            variant="h4"
+                            sx={{
+                                color: PRIMARY_BLUE,
+                                fontWeight: 800,
+                                mb: {xs: 4, sm: 5},
+                                fontSize: {xs: '1.3rem', sm: '1.5rem', md: '1.8rem', lg: '2rem'},
+                                letterSpacing: 0.5,
+                                textAlign: 'center',
+                                position: 'relative',
+                                px: {xs: 1, sm: 0},
+                                '&::after': {
+                                    content: '""',
+                                    position: 'absolute',
+                                    bottom: -8,
+                                    left: '50%',
+                                    transform: 'translateX(-50%)',
+                                    width: {xs: 40, sm: 50, md: 60},
+                                    height: 3,
+                                    backgroundColor: ACCENT_ORANGE,
+                                    borderRadius: 2,
+                                },
+                            }}
+                        >
+                            Choose Your Counselor
+                        </Typography>
+
+                        {/* Navigation Arrows (same as Gallery Section) */}
+                        <IconButton
+                            className="swiper-button-pre"
+                            sx={{
+                                position: "absolute",
+                                top: "53%",
+                                left: {xs: -15, sm: -20, md: -25, lg: -25},
+                                transform: "translateY(-0%)",
+                                zIndex: 10,
+                                color: "#062957",
+                                backgroundColor: "#e8e5e5",
+                                height: {xs: 40, sm: 45, md: 50},
+                                width: {xs: 40, sm: 45, md: 50},
+                                opacity: 0.9,
+                                ":hover": {
+                                    backgroundColor: "#bababa",
+                                    opacity: 1,
+                                },
+                                display: {xs: "none", md: "flex"},
+                            }}
+                        >
+                            <ArrowBackIosNewIcon fontSize="small"/>
+                        </IconButton>
+                        <IconButton
+                            className="swiper-button-nex"
+                            sx={{
+                                position: "absolute",
+                                top: "53%",
+                                right: {xs: -15, sm: -20, md: -25, lg: -25},
+                                transform: "translateY(-0%)",
+                                zIndex: 10,
+                                color: "#062957",
+                                height: {xs: 40, sm: 45, md: 50},
+                                width: {xs: 40, sm: 45, md: 50},
+                                backgroundColor: "#e8e5e5",
+                                opacity: 0.9,
+                                ":hover": {
+                                    backgroundColor: "#bababa",
+                                    opacity: 1,
+                                },
+                                display: {xs: "none", md: "flex"},
+                            }}
+                        >
+                            <ArrowForwardIosIcon fontSize="small"/>
+                        </IconButton>
+
+                        {/* Mobile Dots Navigation */}
+
+
+                        {/* Swiper Slider */}
+                        <Swiper
+                            modules={[Navigation]}
+                            navigation={{
+                                nextEl: '.swiper-button-nex',
+                                prevEl: '.swiper-button-pre',
+                            }}
+                            spaceBetween={16}
+                            slidesPerView={1}
+                            breakpoints={{
+                                480: {slidesPerView: 1, spaceBetween: 16},
+                                750: {slidesPerView: 2, spaceBetween: 20},
+                                900: {slidesPerView: 2, spaceBetween: 24},
+                                1200: {slidesPerView: 3, spaceBetween: 32},
+                            }}
+                            style={{
+                                paddingBottom: {xs: 10, sm: 15, md: 20},
+                                paddingTop: {xs: 10, sm: 15, md: 20},
+                                paddingLeft: {xs: 2, sm: 4},
+                                paddingRight: {xs: 2, sm: 4},
+                            }}
+                            className="counselor-swiper"
+                            onSwiper={(swiper) => (window.counselorSwiper = swiper)}
+                            onSlideChange={(swiper) => setSelectedCounselorIdx(swiper.activeIndex)}
+                        >
+                            {counselors.map((c) => {
+                                const isActive = c.user_id === counselor?.user_id;
+                                return (
+                                    <SwiperSlide key={c.user_id}>
+                                        <Card
+                                            onClick={() => {
+                                                setSelectedCounselorIdx(counselors.findIndex((cou) => cou.user_id === c.user_id));
+                                                setSelectedSlot('');
+                                            }}
+                                            sx={{
+                                                minWidth: {xs: 280, sm: 300, md: 320},
+                                                height: '100%',
+                                                borderRadius: {xs: 3, sm: 4},
+                                                border: isActive ? `2px solid ${ACCENT_ORANGE}` : '1px solid #e0e0e0',
+                                                boxShadow: isActive
+                                                    ? '0 12px 40px rgba(255,102,0,0.15)'
+                                                    : '0 4px 20px rgba(0,0,0,0.08)',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.3s ease',
+                                                bgcolor: WHITE,
+                                                position: 'relative',
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                overflow: 'hidden',
+                                                '&:hover': {
+                                                    boxShadow: isActive
+                                                        ? '0 16px 48px rgba(255,102,0,0.2)'
+                                                        : '0 8px 32px rgba(0,0,0,0.12)',
+                                                    // transform: 'translateY(-6px)',
+                                                },
+                                                '&::before': {
+                                                    content: '""',
+                                                    position: 'absolute',
+                                                    top: 0,
+                                                    left: 0,
+                                                    right: 0,
+                                                    height: '3px',
+                                                    background: isActive
+                                                        ? `linear-gradient(90deg, ${ACCENT_ORANGE} 0%, #ff8533 100%)`
+                                                        : 'transparent',
+                                                },
+                                            }}
+                                        >
+                                            <CardContent
+                                                sx={{
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    alignItems: 'center',
+                                                    p: {xs: 2, sm: 2.5, md: 3, lg: 3.5},
+                                                    height: '100%',
+                                                    flex: 1,
+                                                }}
+                                            >
+                                                <Box
+                                                    sx={{
+                                                        display: 'flex',
+                                                        flexDirection: 'column',
+                                                        alignItems: 'center',
+                                                        mb:1,
+                                                        width: '100%',
+                                                    }}
+                                                >
+                                                    <Box sx={{position: 'relative', mb: {xs: 1.5, sm: 2}}}>
+                                                        <Avatar
+                                                            src={c.profile_image || 'https://via.placeholder.com/100?text=No+Image'}
+                                                            alt={c.full_name}
+                                                            sx={{
+                                                                width: {xs: 60, sm: 70, md: 80},
+                                                                height: {xs: 60, sm: 70, md: 80},
+                                                                border: `4px solid ${PRIMARY_BLUE}`,
+                                                                boxShadow: '0 8px 24px rgba(1,39,101,0.2)',
+                                                                transition: 'all 0.3s ease',
+                                                            }}
+                                                        />
+                                                    </Box>
+                                                    <Typography
+                                                        variant="h6"
+                                                        sx={{
+                                                            color: PRIMARY_BLUE,
+                                                            fontWeight: 700,
+                                                            fontSize: {xs: '0.9rem', sm: '1rem', md: '1.1rem'},
+                                                            textAlign: 'center',
+                                                            mb: {xs: 0.5, sm: 1},
+                                                            lineHeight: 1.2,
+                                                            px: {xs: 1, sm: 0},
+                                                        }}
+                                                    >
+                                                        {c.full_name} ({c.experience || '5+ years'})
+                                                    </Typography>
+                                                    <Typography
+                                                        variant="body2"
+                                                        sx={{
+                                                            color: ACCENT_ORANGE,
+                                                            fontWeight: 600,
+                                                            textAlign: 'center',
+                                                            fontSize: {xs: '0.75rem', sm: '0.8rem', md: '0.85rem'},
+                                                            opacity: 0.9,
+                                                            textTransform: 'capitalize',
+                                                            px: {xs: 1, sm: 0},
+                                                        }}
+                                                    >
+                                                        {c.role} ({c.education || 'Masters in Psychology'})
+                                                    </Typography>
+                                                </Box>
+                                                <Box sx={{flex: 1, minWidth: 0}}>
+                                                    <Typography
+                                                        variant="body2"
+                                                        sx={{
+                                                            color: ACCENT_ORANGE,
+                                                            fontWeight: 600,
+                                                            lineHeight: 1.3,
+                                                            fontSize: {xs: '0.7rem', sm: '0.75rem', md: '0.8rem'},
+                                                            wordBreak: 'break-word',
+                                                            textAlign: 'center',
+                                                            px: {xs: 1, sm: 0},
+                                                        }}
+                                                    >
+                                                        {c.expertise || 'General Counseling'}
+                                                    </Typography>
+                                                </Box>
+                                            </CardContent>
+                                        </Card>
+                                    </SwiperSlide>
+                                );
+                            })}
+                        </Swiper>
+                        <Box
+                            sx={{
+                                display: {xs: 'flex', md: 'none'},
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                gap: {xs: 1, sm: 1.5},
+                                mt: {xs: 2, sm: 3},
+                                mb: {xs: 1, sm: 2},
+                                px: {xs: 1, sm: 2},
+                            }}
+                        >
+                            {counselors.map((_, index) => (
+                                <Box
+                                    key={index}
                                     sx={{
-                                        minWidth: 240,
-                                        borderRadius: 4,
-                                        border: counselors.find(cou => cou.user_id === c.user_id) === counselor ? `2.5px solid ${ACCENT_ORANGE}` : `2px solid #e0e0e0`,
-                                        boxShadow: counselors.find(cou => cou.user_id === c.user_id) === counselor ? '0 6px 24px 0 rgba(255,102,0,0.15)' : '0 2px 8px 0 rgba(1,39,101,0.07)',
+                                        width: {xs: 8, sm: 10, md: 12},
+                                        height: {xs: 8, sm: 10, md: 12},
+                                        borderRadius: '50%',
+                                        bgcolor: index === selectedCounselorIdx ? ACCENT_ORANGE : '#e0e0e0',
+                                        transition: 'all 0.3s ease',
                                         cursor: 'pointer',
-                                        transition: 'all 0.25s',
-                                        bgcolor: counselors.find(cou => cou.user_id === c.user_id) === counselor ? '#fff7f0' : WHITE,
-                                        position: 'relative',
+                                        boxShadow:
+                                            index === selectedCounselorIdx
+                                                ? '0 4px 12px rgba(255,102,0,0.3)'
+                                                : '0 2px 8px rgba(0,0,0,0.1)',
                                         '&:hover': {
-                                            boxShadow: '0 8px 32px 0 rgba(255,102,0,0.18)',
-                                            // transform: 'translateY(-2px) scale(1.03)',
+                                            bgcolor: index === selectedCounselorIdx ? ACCENT_ORANGE : '#ccc',
+                                            transform: 'scale(1.2)',
+                                            boxShadow:
+                                                index === selectedCounselorIdx
+                                                    ? '0 6px 16px rgba(255,102,0,0.4)'
+                                                    : '0 4px 12px rgba(0,0,0,0.15)',
                                         },
                                     }}
-                                >
-                                    <CardContent
-                                        sx={{
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            alignItems: 'center',
-                                            p: {xs: 2, sm: 3},
-                                        }}
-                                    >
-                                        <Avatar src={c.profile_image || 'https://via.placeholder.com/72?text=No+Image'}
-                                                alt={c.full_name} sx={{
-                                            width: 72,
-                                            height: 72,
-                                            mb: 1,
-                                            border: `2.5px solid ${PRIMARY_BLUE}`
-                                        }}/>
-                                        <Typography variant="subtitle1" sx={{
-                                            color: PRIMARY_BLUE,
-                                            fontWeight: 700,
-                                            fontSize: '1.1rem'
-                                        }}>{c.full_name}</Typography>
-                                        <Typography variant="body2"
-                                                    sx={{color: ACCENT_ORANGE, fontWeight: 500}}>{c.role}</Typography>
-                                        <Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
-                                            <EmailIcon sx={{color: ACCENT_ORANGE, fontSize: 18, mr: 0.5}}/>
-                                            <Typography variant="body2" sx={{
-                                                color: ACCENT_ORANGE,
-                                                fontWeight: 600
-                                            }}>{c.email}</Typography>
-                                        </Box>
-                                        {c.phone && (
-                                            <Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
-                                                <PersonIcon sx={{color: ACCENT_ORANGE, fontSize: 18, mr: 0.5}}/>
-                                                <Typography variant="body2" sx={{
-                                                    color: ACCENT_ORANGE,
-                                                    fontWeight: 600
-                                                }}>{c.phone}</Typography>
-                                            </Box>
-                                        )}
-                                        <Box sx={{display: 'flex', alignItems: 'center', mt: 1}}>
-                                            <StarIcon sx={{color: ACCENT_ORANGE, fontSize: 18, mr: 0.5}}/>
-                                            <Typography variant="body2" sx={{
-                                                color: ACCENT_ORANGE,
-                                                fontWeight: 600
-                                            }}>{c.rating}</Typography>
-                                            {c.rating > 4.8 && (
-                                                <Chip label="Top Rated" size="small" sx={{
-                                                    ml: 1,
-                                                    bgcolor: PRIMARY_BLUE,
-                                                    color: WHITE,
-                                                    fontWeight: 700,
-                                                    fontSize: '0.8rem'
-                                                }}/>
-                                            )}
-                                        </Box>
-                                        <Typography variant="caption" sx={{
-                                            color: PRIMARY_BLUE,
-                                            mt: 1,
-                                            textAlign: 'center',
-                                            minHeight: 36
-                                        }}>{c.bio}</Typography>
-                                    </CardContent>
-                                </Card>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                                    onClick={() => window.counselorSwiper?.slideTo(index)}
+                                />
+                            ))}
+                        </Box>
+                    </Box>
+
 
                     {/* Date Picker */}
                     <Typography variant="subtitle1" sx={{
                         color: PRIMARY_BLUE,
                         fontWeight: 700,
-                        mt: 3,
-                        mb: 1,
-                        fontSize: '1.2rem',
-                        letterSpacing: 0.5
+                        mt: {xs: 2, sm: 3},
+                        mb: {xs: 1, sm: 1.5},
+                        fontSize: {xs: '1rem', sm: '1.1rem', md: '1.2rem'},
+                        letterSpacing: 0.5,
+                        px: {xs: 1, sm: 0},
                     }}>
                         Choose Date
                     </Typography>
                     <Box sx={{
                         display: 'flex',
-                        gap: 1.5,
+                        gap: {xs: 1, sm: 1.5},
                         overflowX: 'auto',
-                        pb: 2,
+                        pb: {xs: 1, sm: 2},
                         px: {xs: 1, sm: 0},
                         scrollbarWidth: 'none',
                         '&::-webkit-scrollbar': {display: 'none'},
+                        '&::-webkit-scrollbar-track': {display: 'none'},
+                        '&::-webkit-scrollbar-thumb': {display: 'none'},
                     }}>
                         {days.map((date) => {
                             const dateStr = formatDate(date, 'yyyy-MM-dd');
@@ -325,29 +516,38 @@ const BookAppointment = () => {
                                         setSelectedSlot('');
                                     }}
                                     sx={{
-                                        px: 3,
-                                        py: 1.2,
+                                        px: {xs: 2, sm: 2.5, md: 3},
+                                        py: {xs: 1, sm: 1.2},
                                         borderRadius: "15px",
                                         bgcolor: isSelected ? ACCENT_ORANGE : WHITE,
                                         color: isSelected ? WHITE : PRIMARY_BLUE,
                                         borderColor: ACCENT_ORANGE,
                                         fontWeight: 700,
-                                        fontSize: '1rem',
+                                        fontSize: {xs: '0.8rem', sm: '0.9rem', md: '1rem'},
                                         boxShadow: isSelected ? 2 : 0,
                                         display: 'flex',
                                         alignItems: 'center',
-                                        gap: 1,
+                                        gap: {xs: 0.5, sm: 1},
+                                        minWidth: {xs: 80, sm: 90, md: 100},
+                                        flexShrink: 0,
                                         '&:hover': {
                                             bgcolor: ACCENT_ORANGE,
                                             color: WHITE,
                                         },
                                     }}
-                                    startIcon={isSelected ? <CalendarTodayIcon sx={{fontSize: 18}}/> : null}
+                                    startIcon={isSelected ?
+                                        <CalendarTodayIcon sx={{fontSize: {xs: 16, sm: 18}}}/> : null}
                                 >
                                     <Box>
                                         <Typography variant="body2"
-                                                    fontWeight={700}>{formatDate(date, 'EEE')}</Typography>
-                                        <Typography variant="caption">{formatDate(date, 'd MMM')}</Typography>
+                                                    fontWeight={700}
+                                                    fontSize={{xs: '0.7rem', sm: '0.8rem', md: '0.9rem'}}>
+                                            {formatDate(date, 'EEE')}
+                                        </Typography>
+                                        <Typography variant="caption"
+                                                    fontSize={{xs: '0.6rem', sm: '0.7rem', md: '0.8rem'}}>
+                                            {formatDate(date, 'd MMM')}
+                                        </Typography>
                                     </Box>
                                 </Button>
                             );
@@ -358,18 +558,25 @@ const BookAppointment = () => {
                     <Typography variant="subtitle1" sx={{
                         color: PRIMARY_BLUE,
                         fontWeight: 700,
-                        mt: 3,
-                        mb: 1,
-                        fontSize: '1.2rem',
-                        letterSpacing: 0.5
+                        mt: {xs: 2, sm: 3},
+                        mb: {xs: 1, sm: 1.5},
+                        fontSize: {xs: '1rem', sm: '1.1rem', md: '1.2rem'},
+                        letterSpacing: 0.5,
+                        px: {xs: 1, sm: 0},
                     }}>
                         Choose Time Slot
                     </Typography>
-                    <Grid container spacing={1.5} sx={{mb: 2}}>
+                    <Grid container spacing={{xs: 1, sm: 1.5}} sx={{mb: {xs: 1, sm: 2}, px: {xs: 1, sm: 0}}}>
                         {slots.length === 0 ? (
                             <Grid item xs={12}>
-                                <Typography variant="body2" sx={{color: ACCENT_ORANGE, fontWeight: 600}}>No slots
-                                    available for this day.</Typography>
+                                <Typography variant="body2" sx={{
+                                    color: ACCENT_ORANGE,
+                                    fontWeight: 600,
+                                    fontSize: {xs: '0.8rem', sm: '0.9rem'},
+                                    textAlign: 'center'
+                                }}>
+                                    No slots available for this day.
+                                </Typography>
                             </Grid>
                         ) : (
                             slots.map((slot) => {
@@ -389,8 +596,9 @@ const BookAppointment = () => {
                                                 color: selectedSlot === slot ? WHITE : PRIMARY_BLUE,
                                                 border: `2px solid ${ACCENT_ORANGE}`,
                                                 fontWeight: 700,
-                                                fontSize: '1rem',
-                                                minWidth: 80,
+                                                fontSize: {xs: '0.8rem', sm: '0.9rem', md: '1rem'},
+                                                minWidth: {xs: 70, sm: 80, md: 90},
+                                                height: {xs: 32, sm: 36, md: 40},
                                                 boxShadow: selectedSlot === slot ? 2 : 0,
                                                 transition: 'all 0.18s',
                                                 '&:hover': {
@@ -406,7 +614,11 @@ const BookAppointment = () => {
                     </Grid>
 
                     {/* Book Button */}
-                    <Box sx={{textAlign: 'center', mt: 4}}>
+                    <Box sx={{
+                        textAlign: 'center',
+                        mt: {xs: 3, sm: 4},
+                        px: {xs: 1, sm: 0}
+                    }}>
                         <Button
                             variant="contained"
                             disabled={!selectedSlot}
@@ -414,19 +626,25 @@ const BookAppointment = () => {
                             size="large"
                             sx={{
                                 borderRadius: "15px",
-                                px: 6,
-                                py: 1.5,
+                                px: {xs: 4, sm: 5, md: 6},
+                                py: {xs: 1.2, sm: 1.4, md: 1.5},
                                 fontWeight: 800,
                                 bgcolor: ACCENT_ORANGE,
                                 color: WHITE,
-                                fontSize: '1.15rem',
+                                fontSize: {xs: '1rem', sm: '1.1rem', md: '1.15rem'},
                                 boxShadow: 4,
                                 letterSpacing: 0.5,
                                 textTransform: 'none',
                                 transition: 'all 0.18s',
+                                minWidth: {xs: 200, sm: 220, md: 240},
                                 '&:hover': {
                                     bgcolor: '#FE6A00',
                                     transform: 'scale(1.04)',
+                                },
+                                '&:disabled': {
+                                    bgcolor: '#ccc',
+                                    color: '#666',
+                                    transform: 'none',
                                 },
                             }}
                         >
@@ -436,24 +654,33 @@ const BookAppointment = () => {
                 </Paper>
 
                 {/* Dialog Form */}
-                <Dialog open={formOpen} onClose={() => setFormOpen(false)} fullWidth maxWidth="sm" PaperProps={{
-                    sx: {
-                        borderRadius: 4,
-                        background: 'linear-gradient(135deg, #fff7f0 0%, #f8fafc 100%)'
-                    }
-                }}>
+                <Dialog
+                    open={formOpen}
+                    onClose={() => setFormOpen(false)}
+                    fullWidth
+                    maxWidth="sm"
+                    PaperProps={{
+                        sx: {
+                            borderRadius: {xs: 2, sm: 4},
+                            background: 'linear-gradient(135deg, #fff7f0 0%, #f8fafc 100%)',
+                            m: {xs: 2, sm: 0},
+                            width: {xs: 'calc(100% - 32px)', sm: 'auto'},
+                        }
+                    }}
+                >
                     <DialogTitle sx={{
                         fontFamily: FONT_FAMILY,
                         color: PRIMARY_BLUE,
                         fontWeight: 800,
-                        fontSize: '1.5rem',
+                        fontSize: {xs: '1.2rem', sm: '1.4rem', md: '1.5rem'},
                         textAlign: 'center',
                         letterSpacing: 0.5,
-                        pb: 0
+                        pb: 0,
+                        px: {xs: 2, sm: 3},
                     }}>
                         Book Appointment
                     </DialogTitle>
-                    <DialogContent>
+                    <DialogContent sx={{px: {xs: 2, sm: 3}}}>
                         <Box
                             component="form"
                             onSubmit={handleFormSubmit}
@@ -559,22 +786,34 @@ const BookAppointment = () => {
                                     maxRows={6}
                                 />
                             )}
-                            <DialogActions sx={{px: 0, pt: 2}}>
-                                <Button onClick={() => setFormOpen(false)} sx={{color: PRIMARY_BLUE, fontWeight: 700}}>
+                            <DialogActions sx={{
+                                px: {xs: 1, sm: 0},
+                                pt: {xs: 1, sm: 2},
+                                gap: {xs: 1, sm: 2}
+                            }}>
+                                <Button
+                                    onClick={() => setFormOpen(false)}
+                                    sx={{
+                                        color: PRIMARY_BLUE,
+                                        fontWeight: 700,
+                                        fontSize: {xs: '0.9rem', sm: '1rem'},
+                                        px: {xs: 2, sm: 3},
+                                    }}
+                                >
                                     Cancel
                                 </Button>
                                 <Button
                                     type="submit"
                                     variant="contained"
-                                    disabled={formik.isSubmitting }
+                                    disabled={formik.isSubmitting}
                                     sx={{
                                         bgcolor: ACCENT_ORANGE,
                                         color: WHITE,
                                         fontWeight: 800,
                                         borderRadius: "10px",
-                                        px: 4,
-                                        py: 1.2,
-                                        fontSize: '1.1rem',
+                                        px: {xs: 3, sm: 4},
+                                        py: {xs: 1, sm: 1.2},
+                                        fontSize: {xs: '0.9rem', sm: '1rem', md: '1.1rem'},
                                         '&:hover': {bgcolor: '#FE6A00'},
                                     }}
                                 >
@@ -585,40 +824,66 @@ const BookAppointment = () => {
                     </DialogContent>
                 </Dialog>
 
-                {/* Success Snackbar */}
-                {/* Replacing Snackbar with Dialog */}
-                <Dialog open={successOpen} onClose={handleCloseSuccess} maxWidth="xs" fullWidth PaperProps={{
-                    sx: {
-                        borderRadius: 4,
-                        background: 'linear-gradient(135deg, #fff7f0 0%, #f8fafc 100%)'
-                    }
-                }}>
+                {/* Success Dialog */}
+                <Dialog
+                    open={successOpen}
+                    onClose={handleCloseSuccess}
+                    maxWidth="xs"
+                    fullWidth
+                    PaperProps={{
+                        sx: {
+                            borderRadius: {xs: 2, sm: 4},
+                            background: 'linear-gradient(135deg, #fff7f0 0%, #f8fafc 100%)',
+                            m: {xs: 2, sm: 0},
+                            width: {xs: 'calc(100% - 32px)', sm: 'auto'},
+                        }
+                    }}
+                >
                     <DialogTitle sx={{
                         fontFamily: FONT_FAMILY,
                         color: PRIMARY_BLUE,
                         fontWeight: 800,
-                        fontSize: '1.3rem',
+                        fontSize: {xs: '1.1rem', sm: '1.2rem', md: '1.3rem'},
                         textAlign: 'center',
                         letterSpacing: 0.5,
-                        pb: 0
+                        pb: 0,
+                        px: {xs: 2, sm: 3},
                     }}>
                         Appointment Booked Successfully!
                     </DialogTitle>
-                    <DialogContent>
-                        <Typography sx={{color: PRIMARY_BLUE, fontWeight: 600, textAlign: 'center', mt: 1, mb: 2}}>
+                    <DialogContent sx={{px: {xs: 2, sm: 3}}}>
+                        <Typography sx={{
+                            color: PRIMARY_BLUE,
+                            fontWeight: 600,
+                            textAlign: 'center',
+                            mt: 1,
+                            mb: 2,
+                            fontSize: {xs: '0.9rem', sm: '1rem'},
+                            lineHeight: 1.5,
+                        }}>
                             Thank you for booking your appointment. We look forward to seeing you!
                         </Typography>
                     </DialogContent>
-                    <DialogActions sx={{justifyContent: 'center', pb: 2}}>
-                        <Button onClick={handleCloseSuccess} variant="contained" sx={{
-                            bgcolor: ACCENT_ORANGE,
-                            color: WHITE,
-                            fontWeight: 700,
-                            borderRadius: 2,
-                            px: 4,
-                            '&:hover': {bgcolor: '#FE6A00'}
-                        }}>
-                            ok
+                    <DialogActions sx={{
+                        justifyContent: 'center',
+                        pb: {xs: 1, sm: 2},
+                        px: {xs: 2, sm: 3},
+                    }}>
+                        <Button
+                            onClick={handleCloseSuccess}
+                            variant="contained"
+                            sx={{
+                                bgcolor: ACCENT_ORANGE,
+                                color: WHITE,
+                                fontWeight: 700,
+                                borderRadius: 2,
+                                px: {xs: 3, sm: 4},
+                                py: {xs: 0.8, sm: 1},
+                                fontSize: {xs: '0.9rem', sm: '1rem'},
+                                '&:hover': {bgcolor: '#FE6A00'}
+                            }}
+                        >
+                            OK
                         </Button>
                     </DialogActions>
                 </Dialog>
