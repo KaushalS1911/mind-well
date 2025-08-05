@@ -231,13 +231,13 @@ const Relationship = () => {
     const genderOptions = ["Male", "Female", "Third"];
     
     // Callback request options
-    const callbackRequestOptions = ["Self (18+)", "Child (1 to 25)"];
+    const callbackRequestOptions = ["Self", "Child"];
 
     // Age options based on callback request selection
     const getAgeOptions = (callbackRequest) => {
-        if (callbackRequest === "Self (18+)") {
+        if (callbackRequest === "Self") {
             return Array.from({length: 83}, (_, i) => i + 18); // 18 to 100
-        } else if (callbackRequest === "Child (1 to 25)") {
+        } else if (callbackRequest === "Child") {
             return Array.from({length: 25}, (_, i) => i + 1); // 1 to 25
         }
         return []; // Default empty array
