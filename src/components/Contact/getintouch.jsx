@@ -108,7 +108,7 @@ const GetInTouch = () => {
                             fontSize: {xs: '0.99rem', sm: '1rem', md: '1.2rem'},
                             textAlign: "center"
                         }}
-                    >
+                    >F
                         Have questions about our services? Reach out to our team for personalized support on your mental
                         wellness journey
                     </Typography>
