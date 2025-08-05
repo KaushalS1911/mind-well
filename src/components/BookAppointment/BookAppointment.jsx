@@ -372,7 +372,7 @@ const BookAppointment = () => {
                                                         display: 'flex',
                                                         flexDirection: 'column',
                                                         alignItems: 'center',
-                                                        mb:1,
+                                                        mb: 1,
                                                         width: '100%',
                                                     }}
                                                 >
