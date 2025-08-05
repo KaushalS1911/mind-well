@@ -9,7 +9,7 @@ import {
     Link,
     FormControl,
     MenuItem,
-    FormHelperText
+    FormHelperText, Select
 } from "@mui/material";
 import {
     ContactCard,
@@ -20,6 +20,8 @@ import {
     styles
 } from "./styles";
 import { INQUIRY_TYPES } from "./constants";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 
 const ContactForm = ({ onSubmit, submitStatus, resetTrigger }) => {
     const {
@@ -95,7 +97,7 @@ const ContactForm = ({ onSubmit, submitStatus, resetTrigger }) => {
                             <Typography sx={styles.formLabel}>Phone Number</Typography>
                             <TextField
                                 fullWidth
-                                placeholder="(123) 456-7890"
+                                placeholder="+91 1234567890"
                                 variant="outlined"
                                 InputProps={{ sx: styles.inputField }}
                                 {...register("phone", {
@@ -110,15 +112,24 @@ const ContactForm = ({ onSubmit, submitStatus, resetTrigger }) => {
                         </Grid>
 
                         <Grid item xs={12}>
-                            <Typography sx={styles.formLabel}>Inquiry Type*</Typography>
+                            <Typography sx={{ fontWeight: 500, fontSize: '16px', mb: 1 }}>
+                                Inquiry Type*
+                            </Typography>
                             <FormControl fullWidth error={!!errors.inquiryType}>
-                                <CustomSelect
+                                <Select
                                     displayEmpty
                                     variant="outlined"
                                     defaultValue=""
+                                    IconComponent={ArrowDropDownIcon}
                                     {...register("inquiryType", { required: "Inquiry type is required" })}
+                                    inputProps={{
+                                        sx: {
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                        },
+                                    }}
                                 >
-                                    <MenuItem value="" sx={{ color: "#a0a0a0" }} disabled>
+                                    <MenuItem value="" disabled sx={{ color: "#a0a0a0" }}>
                                         Select an inquiry type
                                     </MenuItem>
                                     {INQUIRY_TYPES.map((option) => (
@@ -139,7 +150,7 @@ const ContactForm = ({ onSubmit, submitStatus, resetTrigger }) => {
                                             {option}
                                         </MenuItem>
                                     ))}
-                                </CustomSelect>
+                                </Select>
                                 {errors.inquiryType && (
                                     <FormHelperText>{errors.inquiryType.message}</FormHelperText>
                                 )}
