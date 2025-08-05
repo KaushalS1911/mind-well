@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
     Box,
     Typography,
@@ -13,8 +13,8 @@ import img3 from '../../assets/images/Vectors/vector-collection.jpg';
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {Navigation, Pagination, Autoplay} from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -61,10 +61,10 @@ const navButtonSx = {
         backgroundColor: "#bababa",
         opacity: 1,
     },
-    display: { xs: "none", lg: "flex" },
+    display: {xs: "none", lg: "flex"},
 };
 
-const HeroSlide = ({ slideData, index }) => {
+const HeroSlide = ({slideData, index}) => {
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
 
     useEffect(() => {
@@ -81,17 +81,17 @@ const HeroSlide = ({ slideData, index }) => {
         <Box
             sx={{
                 display: 'flex',
-                flexDirection: { xs: 'column', lg: 'row' },
+                flexDirection: {xs: 'column', lg: 'row'},
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 height: '100%',
-                mx: { xs: '20px',md:"50px", xl: '100px' }
+                mx: {xs: '20px', md: "50px", xl: '100px'}
             }}
         >
             <Box
                 spacing={4}
                 sx={{
-                    maxWidth: { lg: '62%',xl:"50%" },
+                    maxWidth: {lg: '62%', xl: "50%"},
                     width: '100%',
                 }}
             >
@@ -113,7 +113,7 @@ const HeroSlide = ({ slideData, index }) => {
                             color: "#012765",
                             fontWeight: 700,
                             lineHeight: 1.2,
-                            mb: { xs: 2, md: 3 },
+                            mb: {xs: 2, md: 3},
                         }}
                     >
                         {slideData.mainHeading}&nbsp;
@@ -149,7 +149,7 @@ const HeroSlide = ({ slideData, index }) => {
                         data-aos="fade-up"
                         variant="body1"
                         sx={{
-                            fontSize: { xs: '16px', md: '20px', lg: '18px' },
+                            fontSize: {xs: '16px', md: '20px', lg: '18px'},
                             color: '#676666',
                             maxWidth: '600px',
                             fontWeight: 500,
@@ -163,7 +163,7 @@ const HeroSlide = ({ slideData, index }) => {
 
             <Box
                 sx={{
-                    width: {lg:'40%',xs:"100%",xl:"50%"},
+                    width: {lg: '40%', xs: "100%", xl: "50%"},
                     position: 'relative',
                     display: 'flex',
                     justifyContent: 'center',
@@ -172,7 +172,7 @@ const HeroSlide = ({ slideData, index }) => {
                 <Box
                     sx={{
                         width: '100%',
-                        height: { xs: 'auto', md: '500px' },
+                        height: {xs: 'auto', md: '500px'},
                         position: 'relative',
                         display: 'flex',
                         justifyContent: 'center',
@@ -180,7 +180,7 @@ const HeroSlide = ({ slideData, index }) => {
                 >
                     <Box
                         sx={{
-                            height: { md: "500px", xs: "350px" },
+                            height: {md: "500px", xs: "350px"},
                             width: '100%',
                         }}
                     >
@@ -220,11 +220,11 @@ function WorkPlaceHeroSection() {
     return (
         <Box
             sx={{
-                mt: { md: 8 },
-                py: { xs: 8, md: 10 },
+                mt: {md: 8},
+                py: {xs: 8, md: 10},
                 overflow: 'hidden',
                 backgroundColor: "#fff",
-                px: { sm: "30px", xs: "0", xl: "0" },
+                px: {sm: "30px", xs: "0", xl: "0"},
                 position: 'relative',
             }}
         >
@@ -233,7 +233,7 @@ function WorkPlaceHeroSection() {
                     modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={30}
                     slidesPerView={1}
-                    pagination={{ clickable: true }}
+                    pagination={{clickable: true}}
                     autoplay={{
                         delay: 15000,
                         disableOnInteraction: false,
@@ -242,23 +242,23 @@ function WorkPlaceHeroSection() {
                 >
                     {SLIDE_DATA.map((slideData, index) => (
                         <SwiperSlide key={index}>
-                            <HeroSlide slideData={slideData} index={index} />
+                            <HeroSlide slideData={slideData} index={index}/>
                         </SwiperSlide>
                     ))}
                 </Swiper>
 
                 <IconButton
                     ref={navigationPrevRef}
-                    sx={{ ...navButtonSx, left: "2%" }}
+                    sx={{...navButtonSx, left: "2%"}}
                 >
-                    <ArrowBackIosNewIcon />
+                    <ArrowBackIosNewIcon/>
                 </IconButton>
 
                 <IconButton
                     ref={navigationNextRef}
-                    sx={{ ...navButtonSx, right: "2%" }}
+                    sx={{...navButtonSx, right: "2%"}}
                 >
-                    <ArrowForwardIosIcon />
+                    <ArrowForwardIosIcon/>
                 </IconButton>
             </Container>
         </Box>
