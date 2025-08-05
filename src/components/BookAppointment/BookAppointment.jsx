@@ -217,7 +217,7 @@ const BookAppointment = () => {
                             variant="h4"
                             sx={{
                                 color: PRIMARY_BLUE,
-                                fontWeight: 800,
+                                fontWeight: 700,
                                 mb: {xs: 4, sm: 5},
                                 fontSize: {xs: '1.3rem', sm: '1.5rem', md: '1.8rem', lg: '2rem'},
                                 letterSpacing: 0.5,
@@ -567,10 +567,10 @@ const BookAppointment = () => {
                         Choose Time Slot
                     </Typography>
                     <Grid container spacing={{xs: 1, sm: 1.5}} sx={{mb: {xs: 1, sm: 2}, px: {xs: 1, sm: 0}}}>
-                        {slots.length === 0 ? (
+                                                {slots.length === 0 ? (
                             <Grid item xs={12}>
                                 <Typography variant="body2" sx={{
-                                    color: ACCENT_ORANGE,
+                                    color: ACCENT_ORANGE, 
                                     fontWeight: 600,
                                     fontSize: {xs: '0.8rem', sm: '0.9rem'},
                                     textAlign: 'center'
@@ -580,13 +580,22 @@ const BookAppointment = () => {
                             </Grid>
                         ) : (
                             slots.map((slot) => {
-                                // Convert 'HH:mm' to AM/PM format
-                                const parsed = parse(slot, 'HH:mm', new Date());
-                                const ampm = formatDate(parsed, 'h:mm a');
+                                // Convert 'HH:mm' to AM/PM format for start time
+                                const startTime = parse(slot, 'HH:mm', new Date());
+                                const startTimeFormatted = formatDate(startTime, 'h:mm a');
+                                
+                                // Calculate end time (add 1 hour to start time)
+                                const endTime = new Date(startTime);
+                                endTime.setHours(endTime.getHours() + 1);
+                                const endTimeFormatted = formatDate(endTime, 'h:mm a');
+                                
+                                // Create time range string
+                                const timeRange = `${startTimeFormatted} - ${endTimeFormatted}`;
+                                
                                 return (
                                     <Grid item key={slot} xs="auto">
                                         <Chip
-                                            label={ampm}
+                                            label={timeRange}
                                             clickable
                                             color={selectedSlot === slot ? 'primary' : 'default'}
                                             onClick={() => setSelectedSlot(slot)}
@@ -596,11 +605,12 @@ const BookAppointment = () => {
                                                 color: selectedSlot === slot ? WHITE : PRIMARY_BLUE,
                                                 border: `2px solid ${ACCENT_ORANGE}`,
                                                 fontWeight: 700,
-                                                fontSize: {xs: '0.8rem', sm: '0.9rem', md: '1rem'},
-                                                minWidth: {xs: 70, sm: 80, md: 90},
+                                                fontSize: {xs: '0.7rem', sm: '0.8rem', md: '0.9rem'},
+                                                minWidth: {xs: 100, sm: 120, md: 140},
                                                 height: {xs: 32, sm: 36, md: 40},
                                                 boxShadow: selectedSlot === slot ? 2 : 0,
                                                 transition: 'all 0.18s',
+                                                whiteSpace: 'nowrap',
                                                 '&:hover': {
                                                     bgcolor: ACCENT_ORANGE,
                                                     color: WHITE,
@@ -628,7 +638,7 @@ const BookAppointment = () => {
                                 borderRadius: "15px",
                                 px: {xs: 4, sm: 5, md: 6},
                                 py: {xs: 1.2, sm: 1.4, md: 1.5},
-                                fontWeight: 800,
+                                fontWeight: 600,
                                 bgcolor: ACCENT_ORANGE,
                                 color: WHITE,
                                 fontSize: {xs: '1rem', sm: '1.1rem', md: '1.15rem'},
@@ -671,7 +681,7 @@ const BookAppointment = () => {
                     <DialogTitle sx={{
                         fontFamily: FONT_FAMILY,
                         color: PRIMARY_BLUE,
-                        fontWeight: 800,
+                        fontWeight: 700,
                         fontSize: {xs: '1.2rem', sm: '1.4rem', md: '1.5rem'},
                         textAlign: 'center',
                         letterSpacing: 0.5,
@@ -709,22 +719,61 @@ const BookAppointment = () => {
                                 error={formik.touched.appointment_date && Boolean(formik.errors.appointment_date)}
                                 helperText={formik.touched.appointment_date && formik.errors.appointment_date}
                             />
-                            <TextField
-                                label="Slot Time"
-                                name="slot_time"
-                                value={formik.values.slot_time}
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
+                            <Grid container spacing={2}>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        label="Start Time"
+                                        name="start_time"
+                                        value={(() => {
+                                            if (!formik.values.slot_time) return '';
+                                            try {
+                                                const startTime = parse(formik.values.slot_time, 'HH:mm', new Date());
+                                                return formatDate(startTime, 'h:mm a');
+                                            } catch (error) {
+                                                return '';
+                                            }
+                                        })()}
+                                        fullWidth
+                                        margin="normal"
+                                        InputProps={{readOnly: true}}
+                                        sx={{
+                                            '& .MuiInputBase-input': {
+                                                color: "#000",
+                                                fontWeight: 400,
+                                            }
+                                        }}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        label="End Time"
+                                        name="end_time"
+                                        value={(() => {
+                                            if (!formik.values.slot_time) return '';
+                                            try {
+                                                const startTime = parse(formik.values.slot_time, 'HH:mm', new Date());
+                                                const endTime = new Date(startTime);
+                                                endTime.setHours(endTime.getHours() + 1);
+                                                return formatDate(endTime, 'h:mm a');
+                                            } catch (error) {
+                                                return '';
+                                            }
+                                        })()}
+                                        fullWidth
+                                        margin="normal"
+                                        InputProps={{readOnly: true}}
+                                        sx={{
+                                            '& .MuiInputBase-input': {
+                                                color: "#000",
+                                                fontWeight: 400,
+                                            }
+                                        }}
+                                    />
+                                </Grid>
+                            </Grid>
 
-                                fullWidth
-                                margin="normal"
-                                InputProps={{readOnly: true}}
-                                error={formik.touched.slot_time && Boolean(formik.errors.slot_time)}
-                                helperText={formik.touched.slot_time && formik.errors.slot_time}
-                            />
-
                             <TextField
-                                label="Full Name"
+                                label="Full Name*"
                                 name="client_name"
                                 value={formik.values.client_name}
                                 onChange={formik.handleChange}
@@ -736,7 +785,7 @@ const BookAppointment = () => {
                                 helperText={formik.touched.client_name && formik.errors.client_name}
                             />
                             <TextField
-                                label="Email"
+                                label="Email*"
                                 name="client_email"
                                 value={formik.values.client_email}
                                 onChange={formik.handleChange}
@@ -748,7 +797,7 @@ const BookAppointment = () => {
                                 helperText={formik.touched.client_email && formik.errors.client_email}
                             />
                             <TextField
-                                label="Phone"
+                                label="Phone*"
                                 name="client_phone"
                                 value={formik.values.client_phone}
                                 onChange={formik.handleChange}
@@ -809,7 +858,7 @@ const BookAppointment = () => {
                                     sx={{
                                         bgcolor: ACCENT_ORANGE,
                                         color: WHITE,
-                                        fontWeight: 800,
+                                        fontWeight: 600,
                                         borderRadius: "10px",
                                         px: {xs: 3, sm: 4},
                                         py: {xs: 1, sm: 1.2},
@@ -842,7 +891,7 @@ const BookAppointment = () => {
                     <DialogTitle sx={{
                         fontFamily: FONT_FAMILY,
                         color: PRIMARY_BLUE,
-                        fontWeight: 800,
+                        fontWeight: 600,
                         fontSize: {xs: '1.1rem', sm: '1.2rem', md: '1.3rem'},
                         textAlign: 'center',
                         letterSpacing: 0.5,
