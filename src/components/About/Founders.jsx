@@ -4,7 +4,6 @@ import {styled} from '@mui/material/styles';
 import PersonIcon from '@mui/icons-material/Person';
 import img1 from '../../assets/images/about/Founder/Pandey Nidhi.png';
 import img2 from '../../assets/images/about/Founder/Devesh Kumar.png';
-import img3 from '../../assets/images/about/Founder/Ashutosh_Mishra.png';
 import img4 from '../../assets/images/about/Founder/Fatima Lobo.png';
 import img5 from '../../assets/images/about/Founder/Chaman Kumar.png';
 
@@ -116,14 +115,6 @@ const founders = [
         name: "Devesh Tripathi",
         description: "MBA from IIT(Dhanbad) with over 24 years of experience in Corporate World. A Mental Health Advocate and Life Coach",
         link: "https://www.linkedin.com/in/devesh-tripathi-22b75a14/",
-    },
-    {
-        img: img3,
-        qr: img8,
-        role: "Founder & Director",
-        name: "Ashutosh Mishra",
-        description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid",
-        link: "https://www.linkedin.com/in/ashutosh-mishra-3240b68/",
     },
     // {
     //     img: img4,

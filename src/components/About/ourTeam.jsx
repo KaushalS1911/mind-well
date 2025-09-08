@@ -5,6 +5,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import img1 from '../../assets/images/about/Founder/Fatima Lobo.png';
 import img2 from '../../assets/images/about/Founder/chaman_kumar.jpeg';
 import img3 from '../../assets/images/about/Founder/paurush_sharma.png';
+import img4 from '../../assets/images/about/Founder/Ashutosh_Mishra.png';
+
 import {LinkedIn} from "@mui/icons-material";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
@@ -94,11 +96,18 @@ const Description = styled(Typography)(() => ({
 const founders = [
     {
         image: img1,
-        role: 'Product Head',
+        role: 'Founder & Product Head',
         name: 'Fatima Lobo',
         description:
             'Masters in Psychology, PGD In Therapeutic Counselling and a Certified NLP Practitioner with over 15 Years of experience',
         link: "https://www.linkedin.com/in/fatima-lobo-89a442332/"
+    },
+    {
+        image: img4,
+        role: "Founder & Director",
+        name: "Ashutosh Mishra",
+        description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid",
+        link: "https://www.linkedin.com/in/ashutosh-mishra-3240b68/",
     },
     {
         image: img2,
@@ -115,6 +124,7 @@ const founders = [
         description: 'IT Head with 10 years of experience driving product development across multiple startups, delivering impactful tech solutions. Passion and zeal for building innovative, user-focused products',
         link: "#",
     },
+
 ];
 
 const OurTeam = ({ icon = <PersonIcon /> }) => {
