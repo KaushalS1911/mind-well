@@ -28,6 +28,7 @@ const navigationLinks = [
     // {name: "Resources", path: "/resources"},
     {name: "Contact", path: "/contact"},
 ];
+
 const services = [
     {name: "SHAPE", path: "/services/shape"},
     {name: "SHAPE+", path: "/services/shape-plus"},
@@ -42,9 +43,9 @@ const contactDetails = {
     addresses: [
         {
             icon: <LocationOnIcon/>,
-            value: "HO: B-204, Kanakia Wall Street, Chakala, Andheri-Kurla Road, Andheri East, Mumbai-400093."
+            value: "HO: B-205, Noida One IT Park, Sector 62, Noida 201301"
         },
-        {icon: <PinDropIcon/>, value: "RO: B-205, Noida One, Sector 62, Noida, Uttar Pradesh 201309"}
+        {icon: <PinDropIcon/>, value: "RO: B-130, Unit-29, Mastermind Aareymilk Colony Goregaon East, Mumbai, Maharashtra-400063"}
     ]
 };
 const paymentMethods = ["VISA", "MC", "AMEX", "HSA"];
@@ -261,7 +262,6 @@ const Footer = () => {
                                         fontSize: "14px",
                                         marginTop: "16px",
                                         display: "flex",
-                                        textAlign: "justify",
                                     }}
                                 >
                                     <Box sx={{color: "#FE6A00", mr: 1}}>
