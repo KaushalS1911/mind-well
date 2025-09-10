@@ -69,7 +69,7 @@ function Navigation() {
     const navItems = [
         {label: "Home", path: "/"},
         {
-            label: "About Us", path: "/about", submenu: [{label: "Gallery", path: "/gallery"}]
+            label: "About Us", path: "/about"
         },
         {
             label: "Services",
@@ -89,6 +89,7 @@ function Navigation() {
                 // {label: "Forms", path: "/resources/forms"},
                 {label: "Blogs", path: "/resources/blogs"},],
         }, // {label: "Session", path: "/session"},
+        {label: "Gallery", path: "/gallery"},
         {label: "Careers", path: "/careers"},
         // {label: "Book Appointment", path: "/book-appointment"},
         {label: "Contact Us", path: "/contact"},];
@@ -121,78 +122,79 @@ function Navigation() {
 
                 {/* Desktop Menu */}
                 <Box sx={{display: {xs: "none", lg: "flex"}, gap: 2}}>
-                    {navItems.map((item) => item.submenu ? (<Box
-                        key={item.label}
-                        sx={{
-                            position: "relative", display: "flex", alignItems: "center", gap: "4px",
-                        }}
-                        onMouseEnter={() => setHoverMenu(item.label)}
-                        onMouseLeave={() => setHoverMenu(null)}
-                    >
-                        <Box
+                    {navItems.map((item) => item.submenu ?
+                        (<Box
+                            key={item.label}
                             sx={{
-                                color: "#012765",
-                                fontSize: "16px",
-                                fontWeight: "500",
-                                cursor: "pointer",
-                                "&:hover": {color: "#FF6600"},
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "4px",
+                                position: "relative", display: "flex", alignItems: "center", gap: "4px",
                             }}
-                            onClick={() => navigate(item.path)}
+                            onMouseEnter={() => setHoverMenu(item.label)}
+                            onMouseLeave={() => setHoverMenu(null)}
                         >
-                            {item.label}
-                            <KeyboardArrowDownIcon fontSize="small"/>
-                        </Box>
-                        {hoverMenu === item.label && (<Box
-                            sx={{
-                                position: "absolute",
-                                top: "100%",
-                                left: 0,
-                                backgroundColor: "white",
-                                boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
-                                borderRadius: "5px",
-                                zIndex: 10,
-                                width: "150px",
-                            }}
-                        >
-                            {item.submenu.map((sub) => (<Box
-                                key={sub.label}
-                                onClick={() => {
-                                    // handleScrollToSection(sub.sectionId, item.path)
-                                    navigate(sub.path);
-                                }}
+                            <Box
                                 sx={{
-                                    padding: "10px",
                                     color: "#012765",
-                                    fontSize: "14px",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
                                     cursor: "pointer",
-                                    "&:hover": {
-                                        backgroundColor: "#FF6600", color: "#fff",
-                                    },
+                                    "&:hover": {color: "#FF6600"},
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "4px",
+                                }}
+                                onClick={() => navigate(item.path)}
+                            >
+                                {item.label}
+                                <KeyboardArrowDownIcon fontSize="small"/>
+                            </Box>
+                            {hoverMenu === item.label && (<Box
+                                sx={{
+                                    position: "absolute",
+                                    top: "100%",
+                                    left: 0,
+                                    backgroundColor: "white",
+                                    boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+                                    borderRadius: "5px",
+                                    zIndex: 10,
+                                    width: "150px",
                                 }}
                             >
-                                {sub.label}
-                            </Box>))}
-                        </Box>)}
-                    </Box>) : (<Link
-                        key={item.label}
-                        href={item.path}
-                        style={{textDecoration: "none"}}
-                    >
-                        <Box
-                            sx={{
-                                color: "#012765",
-                                fontSize: "16px",
-                                fontWeight: "500",
-                                cursor: "pointer",
-                                "&:hover": {color: "#FF6600"},
-                            }}
+                                {item.submenu.map((sub) => (<Box
+                                    key={sub.label}
+                                    onClick={() => {
+                                        // handleScrollToSection(sub.sectionId, item.path)
+                                        navigate(sub.path);
+                                    }}
+                                    sx={{
+                                        padding: "10px",
+                                        color: "#012765",
+                                        fontSize: "14px",
+                                        cursor: "pointer",
+                                        "&:hover": {
+                                            backgroundColor: "#FF6600", color: "#fff",
+                                        },
+                                    }}
+                                >
+                                    {sub.label}
+                                </Box>))}
+                            </Box>)}
+                        </Box>) : (<Link
+                            key={item.label}
+                            href={item.path}
+                            style={{textDecoration: "none"}}
                         >
-                            {item.label}
-                        </Box>
-                    </Link>))}
+                            <Box
+                                sx={{
+                                    color: "#012765",
+                                    fontSize: "16px",
+                                    fontWeight: "500",
+                                    cursor: "pointer",
+                                    "&:hover": {color: "#FF6600"},
+                                }}
+                            >
+                                {item.label}
+                            </Box>
+                        </Link>))}
                 </Box>
 
                 <Box>

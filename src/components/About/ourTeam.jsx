@@ -95,19 +95,19 @@ const Description = styled(Typography)(() => ({
 
 const founders = [
     {
+        image: img4,
+        role: "Co Founder & Director",
+        name: "Ashutosh Mishra",
+        description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid",
+        link: "https://www.linkedin.com/in/ashutosh-mishra-3240b68/",
+    },
+    {
         image: img1,
-        role: 'Founder & Product Head',
+        role: 'Co Founder & Product Head',
         name: 'Fatima Lobo',
         description:
             'Masters in Psychology, PGD In Therapeutic Counselling and a Certified NLP Practitioner with over 15 Years of experience',
         link: "https://www.linkedin.com/in/fatima-lobo-89a442332/"
-    },
-    {
-        image: img4,
-        role: "Founder & Director",
-        name: "Ashutosh Mishra",
-        description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid",
-        link: "https://www.linkedin.com/in/ashutosh-mishra-3240b68/",
     },
     {
         image: img2,
