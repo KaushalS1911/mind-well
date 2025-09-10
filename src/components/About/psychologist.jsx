@@ -56,7 +56,7 @@ const StyledAvatar = styled(Avatar)(({theme}) => ({
     width: 120,
     height: 120,
     backgroundColor: '#FFFFFF',
-    border: '3px solid #E6EAF3',
+    // border: '3px solid #E6EAF3',
     position: 'relative',
     zIndex: 1,
     '& .MuiSvgIcon-root': {
@@ -96,64 +96,8 @@ const Description = styled(Typography)(() => ({
     textAlign: 'center',
 }));
 
-const founders = [
 
-    {
-        img: img4,
-        role: "Psychologist / Sp. Educator",
-        name: "Anjali Sinha",
-        skills: "Eclectic approach, CBT, Special Educator & Speec",
-    },
-    {
-        img: img7,
-        role: "Psychologist",
-        name: "Liza Hazarika",
-        skills: "Certified Queer Affirmative, Spiritual Therapist",
-    },
-    {
-        img: img8,
-        role: "Psychotherapist",
-        name: "Anju Sinha",
-        skills: "CBT, REBT, Rehab Counselling",
-    },
-    {
-        img: img2,
-        role: "Psychologist / Soft Skills",
-        name: "Anshita Raghav",
-        skills: "Trauma- Informed Psychologist, Workplace Consultant, Trainer",
-
-    },
-    {
-        img: img6,
-        role: "Psychologist",
-        name: "Pratibha Kotak",
-        skills: "Couple Counselling, Rehabilitation, REBT",
-    },
-    {
-        img: img1,
-        role: "Psychologist",
-        name: "Pratibha Sanganeria",
-        skills: "Client centered therapy, DBT",
-    },
-    {
-        img: img3,
-        role: "Consultant Psychologist",
-        name: "Vedanshi Gupta",
-        skills: "Person Centred Therapy, CBT, ACT and Gestalt, School Counselor",
-    },
-    {
-        img: img5,
-        role: "Psychologist ",
-        name: "Aishwarya Saxena",
-        skills: "CBT, Mindfulness, School Counselor",
-
-    },
-
-
-
-];
-
-const Psychologist = ({ icon = <PersonIcon /> }) => {
+const Psychologist = ({ icon = <PersonIcon />, title, data }) => {
     return (
         <Box sx={{ padding: '0 0 96px 0', }}>
             <Container maxWidth="xl">
@@ -174,7 +118,7 @@ const Psychologist = ({ icon = <PersonIcon /> }) => {
                         mb: 8,
                     }}
                 >
-                    Psychologists
+                    {title}
                 </Typography>
                 {/*<Typography*/}
                 {/*    sx={{*/}
@@ -192,11 +136,11 @@ const Psychologist = ({ icon = <PersonIcon /> }) => {
 
 
                 <Grid container spacing={3}>
-                    {founders.map((founder, index) => (
+                    {data.map((founder, index) => (
                         <Grid item xs={12} sm={6} lg={4} key={index}>
                             <StyledPaper>
                                 <AvatarWrapper className="avatar-wrapper">
-                                    <StyledAvatar>{founder.img ? <img src={founder.img} alt={founder.name} style={{ width: '100%', height: '100%', borderRadius: '50%' }} /> : icon}</StyledAvatar>
+                                    <StyledAvatar>{founder.img ? <img src={founder.img} alt={founder.name} style={{ width: '100%', height: '100%', objectFit:"contain", borderRadius: '50%' }} /> : icon}</StyledAvatar>
                                 </AvatarWrapper>
 
                                 <Role>{founder.role}</Role>
