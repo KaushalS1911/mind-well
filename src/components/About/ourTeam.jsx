@@ -93,39 +93,39 @@ const Description = styled(Typography)(() => ({
     textAlign: 'center',
 }));
 
-const founders = [
+const coFounders = [
     {
         image: img4,
-        role: "Co Founder & Director",
+        role: "Co-Founder & Director",
         name: "Ashutosh Mishra",
         description: "MBA from BHU with over 22 years of experience has transitioned into an entrepreneur. He also is Co-Founder at Agribid",
         link: "https://www.linkedin.com/in/ashutosh-mishra-3240b68/",
     },
     {
         image: img1,
-        role: 'Co Founder & Product Head',
+        role: 'Co-Founder & Product Head',
         name: 'Fatima Lobo',
         description:
             'Masters in Psychology, PGD In Therapeutic Counselling and a Certified NLP Practitioner with over 15 Years of experience',
         link: "https://www.linkedin.com/in/fatima-lobo-89a442332/"
     },
-    {
-        image: img2,
-        role: 'Director- Sales',
-        name: 'Chaman Kumar',
-        description:
-            'A visionary with a successful 25-year corporate career. Worked in Banks and NBFC institutions in sales & Business Development',
-        link: "https://www.linkedin.com/in/chaman-kumar-b3aa8528/",
-    },
+];
+
+const teamMembers = [ {
+    image: img2,
+    role: 'Co-Founder & Director',
+    name: 'Chaman Kumar',
+    description:
+        'A visionary with a successful 25-year corporate career. Worked in Banks and NBFC institutions in sales & Business Development',
+    link: "https://www.linkedin.com/in/chaman-kumar-b3aa8528/",
+},
     {
         image: img3,
-        role: 'IT lead',
+        role: 'IT Head',
         name: 'Paurush Sharma',
         description: 'IT Head with 10 years of experience driving product development across multiple startups, delivering impactful tech solutions. Passion and zeal for building innovative, user-focused products',
         link: "#",
-    },
-
-];
+    },]
 
 const OurTeam = ({ icon = <PersonIcon /> }) => {
     return (
@@ -165,9 +165,65 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
                 {/*</Typography>*/}
 
                 <Grid container spacing={3} justifyContent={'center'}  >
-                    {founders.map((founder, index) => (
+                    {coFounders.map((founder, index) => (
                         <Grid item xs={12} sm={6} lg={4} key={index}>
-                            <StyledPaper>
+                            <StyledPaper >
+                                <AvatarWrapper className="avatar-wrapper">
+                                    <StyledAvatar>
+                                        {founder.image ? (
+                                            <img
+                                                src={founder.image}
+                                                alt={founder.name}
+                                                style={{
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: 'contain',
+                                                    borderRadius: '50%',
+                                                }}
+                                            />
+                                        ) : (
+                                            icon
+                                        )}
+                                    </StyledAvatar>
+                                </AvatarWrapper>
+
+                                <Role>{founder.role}</Role>
+                                <Name>{founder.name}</Name>
+                                <Description>{founder.description}</Description>
+                                {founder.link && (
+                                    <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+                                        <Box
+                                            component="a"
+                                            href={founder.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            sx={{
+                                                width: 48,
+                                                height: 48,
+                                                borderRadius: '50%',
+                                                backgroundColor: '#002D62',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                transition: '0.3s',
+                                                color: 'white',
+                                                '&:hover': {
+                                                    backgroundColor: '#001f44',
+                                                },
+                                            }}
+                                        >
+                                            <LinkedIn sx={{ fontSize: 28 }} />
+                                        </Box>
+                                    </Box>
+                                )}
+                            </StyledPaper>
+                        </Grid>
+                    ))}
+                </Grid>
+                <Grid container spacing={3} justifyContent={'center'}  >
+                    {teamMembers.map((founder, index) => (
+                        <Grid item xs={12} sm={6} lg={4} key={index}>
+                            <StyledPaper >
                                 <AvatarWrapper className="avatar-wrapper">
                                     <StyledAvatar>
                                         {founder.image ? (

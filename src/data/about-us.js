@@ -151,8 +151,8 @@ export const teamMembers = [
 export const supportGroup = [
     {
         img: Arora_Prem,
-        role: "CA Manava Prem",
-        name: "Arora Prem & Associates",
+        role: "Arora Prem & Associates",
+        name: "CA Manava Prem",
     },
     {
         img: Neeraj_Bhasin,
