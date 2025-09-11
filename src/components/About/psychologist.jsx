@@ -135,7 +135,7 @@ const Psychologist = ({ icon = <PersonIcon />, title, data }) => {
                 {/*</Typography>*/}
 
 
-                <Grid container spacing={3}>
+                <Grid container spacing={3}  justifyContent={'center'} >
                     {data.map((founder, index) => (
                         <Grid item xs={12} sm={6} lg={4} key={index}>
                             <StyledPaper>

@@ -164,7 +164,7 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
                 {/*    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey*/}
                 {/*</Typography>*/}
 
-                <Grid container spacing={3}>
+                <Grid container spacing={3} justifyContent={'center'}  >
                     {founders.map((founder, index) => (
                         <Grid item xs={12} sm={6} lg={4} key={index}>
                             <StyledPaper>
