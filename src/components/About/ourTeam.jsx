@@ -164,62 +164,67 @@ const OurTeam = ({ icon = <PersonIcon /> }) => {
                 {/*    From therapeutic counseling to business strategy and tech-driven support, our team brings heart, experience, and expertise to guide you on your wellness journey*/}
                 {/*</Typography>*/}
 
-                <Grid container spacing={3} justifyContent={'center'}  >
-                    {coFounders.map((founder, index) => (
-                        <Grid item xs={12} sm={6} lg={4} key={index}>
-                            <StyledPaper >
-                                <AvatarWrapper className="avatar-wrapper">
-                                    <StyledAvatar>
-                                        {founder.image ? (
-                                            <img
-                                                src={founder.image}
-                                                alt={founder.name}
-                                                style={{
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    objectFit: 'contain',
-                                                    borderRadius: '50%',
-                                                }}
-                                            />
-                                        ) : (
-                                            icon
-                                        )}
-                                    </StyledAvatar>
-                                </AvatarWrapper>
+                <Box sx={{
+                    margin: { xs: '10px 0', sm: '15px 0', md: '20px 0', lg: '24px 0' }
+                }}>
+                    <Grid container spacing={3} justifyContent={'center'}
+                    >
+                        {coFounders.map((founder, index) => (
+                            <Grid item xs={12} sm={6} lg={4} key={index}>
+                                <StyledPaper >
+                                    <AvatarWrapper className="avatar-wrapper">
+                                        <StyledAvatar>
+                                            {founder.image ? (
+                                                <img
+                                                    src={founder.image}
+                                                    alt={founder.name}
+                                                    style={{
+                                                        width: '100%',
+                                                        height: '100%',
+                                                        objectFit: 'contain',
+                                                        borderRadius: '50%',
+                                                    }}
+                                                />
+                                            ) : (
+                                                icon
+                                            )}
+                                        </StyledAvatar>
+                                    </AvatarWrapper>
 
-                                <Role>{founder.role}</Role>
-                                <Name>{founder.name}</Name>
-                                <Description>{founder.description}</Description>
-                                {founder.link && (
-                                    <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
-                                        <Box
-                                            component="a"
-                                            href={founder.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            sx={{
-                                                width: 48,
-                                                height: 48,
-                                                borderRadius: '50%',
-                                                backgroundColor: '#002D62',
-                                                display: 'flex',
-                                                alignItems: 'center',
-                                                justifyContent: 'center',
-                                                transition: '0.3s',
-                                                color: 'white',
-                                                '&:hover': {
-                                                    backgroundColor: '#001f44',
-                                                },
-                                            }}
-                                        >
-                                            <LinkedIn sx={{ fontSize: 28 }} />
+                                    <Role>{founder.role}</Role>
+                                    <Name>{founder.name}</Name>
+                                    <Description>{founder.description}</Description>
+                                    {founder.link && (
+                                        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+                                            <Box
+                                                component="a"
+                                                href={founder.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                sx={{
+                                                    width: 48,
+                                                    height: 48,
+                                                    borderRadius: '50%',
+                                                    backgroundColor: '#002D62',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    transition: '0.3s',
+                                                    color: 'white',
+                                                    '&:hover': {
+                                                        backgroundColor: '#001f44',
+                                                    },
+                                                }}
+                                            >
+                                                <LinkedIn sx={{ fontSize: 28 }} />
+                                            </Box>
                                         </Box>
-                                    </Box>
-                                )}
-                            </StyledPaper>
-                        </Grid>
-                    ))}
-                </Grid>
+                                    )}
+                                </StyledPaper>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
                 <Grid container spacing={3} justifyContent={'center'}  >
                     {teamMembers.map((founder, index) => (
                         <Grid item xs={12} sm={6} lg={4} key={index}>
