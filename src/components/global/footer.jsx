@@ -45,7 +45,7 @@ const contactDetails = {
             icon: <LocationOnIcon/>,
             value: "HO: B-205, Noida One IT Park, Sector 62, Noida 201301"
         },
-        {icon: <PinDropIcon/>, value: "RO: B-130, Unit-29, Mastermind Aareymilk Colony Goregaon East, Mumbai, Maharashtra-400063"}
+        {icon: <LocationOnIcon/>, value: "Reg. Office: B-130, Unit-29, Mastermind Aareymilk Colony Goregaon East, Mumbai, Maharashtra-400063"}
     ]
 };
 const paymentMethods = ["VISA", "MC", "AMEX", "HSA"];

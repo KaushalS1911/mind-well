@@ -130,7 +130,7 @@ export default function PEPMUI() {
                                 textAlign:"center"
                             }}
                         >
-                            Performance Empowerment Program
+                            Performance Enhancement Program
                         </Typography>
 
                         <Divider
