@@ -23,12 +23,19 @@ import Bhavini_Parekh from '../../src/assets/images/about/All People Images/Bhav
 import Uma_Paliwal from '../../src/assets/images/about/All People Images/Uma Paliwal.png';
 import Praful_Korat from '../../src/assets/images/about/All People Images/Praful Korat.png';
 import Kaushal_Sojitra from '../../src/assets/images/about/All People Images/Kaushal Sojitra.png';
-
+import Rathi_Rao from '../assets/images/about/All People Images/Rathi Rao.png'
+import Ashok_Narayanan from '../assets/images/about/All People Images/Ashok Narayanan.png'
 // Support Group
 import Arora_Prem from '../../src/assets/images/about/All People Images/Manava Prem.png';
 import Neeraj_Bhasin from '../../src/assets/images/about/All People Images/Neeraj Bhasin.png';
 
+
 export const advisoryBoard = [
+    {
+        img: Rathi_Rao,
+        role: "Director & Business Advisor",
+        name: "Rathi Rao"
+    },
     {
         img: Anand_Agarwal,
         role: "Mentor/Group CFO Hinduja Finance",
@@ -48,6 +55,11 @@ export const advisoryBoard = [
         img: Krunal_Mehta,
         role: "Mentor/MD Mehta Wealth",
         name: "Krunal Mehta",
+    },
+    {
+        img: Ashok_Narayanan,
+        role: "Business Advisor/ MD Orion Group Dubai",
+        name: "Ashok Narayanan"
     },
     {
         img: G_Himashree,
