@@ -7,6 +7,7 @@ import Rajiva_Sinha from '../../src/assets/images/about/All People Images/Rajiva
 import Naveen_Prakash from '../../src/assets/images/about/All People Images/Naveen Prakash.png';
 import Sudhanshu_Chowdhary from '../../src/assets/images/about/All People Images/Sudhanshu Chaudhary.png';
 import Yogesh_Singh from '../../src/assets/images/about/All People Images/Yogesh Singh.png';
+import Shashi_Singh from '../../src/assets/images/about/All People Images/Shashi_singh.png';
 
 // Team Members
 import Anjali_Sinha from '../../src/assets/images/about/All People Images/Anjali Sinha.png';
@@ -77,6 +78,11 @@ export const advisoryBoard = [
         img: Yogesh_Singh,
         role: "Business Advisor / Prop. Defiance Enterprises",
         name: "Yogesh Singh",
+    },
+    {
+        img: Shashi_Singh,
+        role: "Media & PR",
+        name: "Shashi Singh",
     },
 ];
 
